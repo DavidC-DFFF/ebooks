@@ -1,0 +1,1532 @@
+[
+  {
+    "id": "livre-01",
+    "title": "Nation, État et Économie",
+    "parties": 19,
+    "characters": 529747,
+    "status": "texte et ancres vérifiés",
+    "source_errors": [
+      "http://herve.dequengo.free.fr/Mises/NEE/NEE_1_2.htm: HTTP Error 404: Not Found"
+    ],
+    "missing_anchor_fallbacks": [],
+    "missing_images": [],
+    "sources": [
+      "http://herve.dequengo.free.fr/Mises/NEE/NEE_00.htm",
+      "http://herve.dequengo.free.fr/Mises/NEE/NEE_0.htm",
+      "http://herve.dequengo.free.fr/Mises/NEE/NEE_1_1_1.htm",
+      "http://herve.dequengo.free.fr/Mises/NEE/NEE_1_1_2.htm",
+      "http://herve.dequengo.free.fr/Mises/NEE/NEE_1_1_3.htm",
+      "http://herve.dequengo.free.fr/Mises/NEE/NEE_1_2_1.htm",
+      "http://herve.dequengo.free.fr/Mises/NEE/NEE_1_2_2.htm",
+      "http://herve.dequengo.free.fr/Mises/NEE/NEE_1_2_3.htm",
+      "http://herve.dequengo.free.fr/Mises/NEE/NEE_2_1.htm",
+      "http://herve.dequengo.free.fr/Mises/NEE/NEE_2_2.htm",
+      "http://herve.dequengo.free.fr/Mises/NEE/NEE_2_3.htm",
+      "http://herve.dequengo.free.fr/Mises/NEE/NEE_2_4.htm",
+      "http://herve.dequengo.free.fr/Mises/NEE/NEE_2_5.htm",
+      "http://herve.dequengo.free.fr/Mises/NEE/NEE_2_6.htm",
+      "http://herve.dequengo.free.fr/Mises/NEE/NEE_3_1.htm",
+      "http://herve.dequengo.free.fr/Mises/NEE/NEE_3_2.htm",
+      "http://herve.dequengo.free.fr/Mises/NEE/NEE_3_3.htm",
+      "http://herve.dequengo.free.fr/Mises/NEE/NEE_3_4.htm",
+      "http://herve.dequengo.free.fr/Mises/NEE/NEE_4.htm"
+    ]
+  },
+  {
+    "id": "livre-02",
+    "title": "Le Socialisme",
+    "parties": 40,
+    "characters": 1317786,
+    "status": "texte et ancres vérifiés",
+    "source_errors": [],
+    "missing_anchor_fallbacks": [
+      {
+        "source": "http://herve.dequengo.free.fr/Mises/LS/LS_II_1_2.htm",
+        "target": "http://herve.dequengo.free.fr/Mises/LS/LS_II_1_2.htm#sdfootnote16anc"
+      },
+      {
+        "source": "http://herve.dequengo.free.fr/Mises/LS/LS_II_1_2.htm",
+        "target": "http://herve.dequengo.free.fr/Mises/LS/LS_II_1_2.htm#sdfootnote17anc"
+      },
+      {
+        "source": "http://herve.dequengo.free.fr/Mises/LS/LS_II_1_4.htm",
+        "target": "http://herve.dequengo.free.fr/Mises/LS/LS_II_1_4.htm#sdfootnote16anc"
+      },
+      {
+        "source": "http://herve.dequengo.free.fr/Mises/LS/LS_II_1_4.htm",
+        "target": "http://herve.dequengo.free.fr/Mises/LS/LS_II_1_4.htm#sdfootnote17anc"
+      },
+      {
+        "source": "http://herve.dequengo.free.fr/Mises/LS/LS_II_1_4.htm",
+        "target": "http://herve.dequengo.free.fr/Mises/LS/LS_II_1_4.htm#sdfootnote18anc"
+      },
+      {
+        "source": "http://herve.dequengo.free.fr/Mises/LS/LS_II_1_4.htm",
+        "target": "http://herve.dequengo.free.fr/Mises/LS/LS_II_1_4.htm#sdfootnote19anc"
+      },
+      {
+        "source": "http://herve.dequengo.free.fr/Mises/LS/LS_II_1_4.htm",
+        "target": "http://herve.dequengo.free.fr/Mises/LS/LS_II_1_4.htm#sdfootnote20anc"
+      },
+      {
+        "source": "http://herve.dequengo.free.fr/Mises/LS/LS_II_1_4.htm",
+        "target": "http://herve.dequengo.free.fr/Mises/LS/LS_II_1_4.htm#sdfootnote21anc"
+      },
+      {
+        "source": "http://herve.dequengo.free.fr/Mises/LS/LS_II_1_4.htm",
+        "target": "http://herve.dequengo.free.fr/Mises/LS/LS_II_1_4.htm#sdfootnote22anc"
+      },
+      {
+        "source": "http://herve.dequengo.free.fr/Mises/LS/LS_II_1_4.htm",
+        "target": "http://herve.dequengo.free.fr/Mises/LS/LS_II_1_4.htm#sdfootnote23anc"
+      },
+      {
+        "source": "http://herve.dequengo.free.fr/Mises/LS/LS_II_1_4.htm",
+        "target": "http://herve.dequengo.free.fr/Mises/LS/LS_II_1_4.htm#sdfootnote24anc"
+      },
+      {
+        "source": "http://herve.dequengo.free.fr/Mises/LS/LS_II_1_4.htm",
+        "target": "http://herve.dequengo.free.fr/Mises/LS/LS_II_1_4.htm#sdfootnote25anc"
+      },
+      {
+        "source": "http://herve.dequengo.free.fr/Mises/LS/LS_II_1_4.htm",
+        "target": "http://herve.dequengo.free.fr/Mises/LS/LS_II_1_4.htm#sdfootnote26anc"
+      },
+      {
+        "source": "http://herve.dequengo.free.fr/Mises/LS/LS_II_1_4.htm",
+        "target": "http://herve.dequengo.free.fr/Mises/LS/LS_II_1_4.htm#sdfootnote27anc"
+      },
+      {
+        "source": "http://herve.dequengo.free.fr/Mises/LS/LS_IV_3.htm",
+        "target": "http://herve.dequengo.free.fr/Mises/LS/LS_IV_3.htm#sdfootnote21anc"
+      },
+      {
+        "source": "http://herve.dequengo.free.fr/Mises/LS/LS_A.htm",
+        "target": "http://herve.dequengo.free.fr/Mises/LS/LS_A.htm#sdfootnote3anc"
+      },
+      {
+        "source": "http://herve.dequengo.free.fr/Mises/LS/LS_A.htm",
+        "target": "http://herve.dequengo.free.fr/Mises/LS/LS_A.htm#sdfootnote4anc"
+      },
+      {
+        "source": "http://herve.dequengo.free.fr/Mises/LS/LS_A.htm",
+        "target": "http://herve.dequengo.free.fr/Mises/LS/LS_A.htm#sdfootnote5anc"
+      },
+      {
+        "source": "http://herve.dequengo.free.fr/Mises/LS/LS_A.htm",
+        "target": "http://herve.dequengo.free.fr/Mises/LS/LS_A.htm#sdfootnote6anc"
+      },
+      {
+        "source": "http://herve.dequengo.free.fr/Mises/LS/LS_A.htm",
+        "target": "http://herve.dequengo.free.fr/Mises/LS/LS_A.htm#sdfootnote7anc"
+      },
+      {
+        "source": "http://herve.dequengo.free.fr/Mises/LS/LS_A.htm",
+        "target": "http://herve.dequengo.free.fr/Mises/LS/LS_A.htm#sdfootnote8anc"
+      },
+      {
+        "source": "http://herve.dequengo.free.fr/Mises/LS/LS_A.htm",
+        "target": "http://herve.dequengo.free.fr/Mises/LS/LS_A.htm#sdfootnote9anc"
+      },
+      {
+        "source": "http://herve.dequengo.free.fr/Mises/LS/LS_A.htm",
+        "target": "http://herve.dequengo.free.fr/Mises/LS/LS_A.htm#sdfootnote10anc"
+      },
+      {
+        "source": "http://herve.dequengo.free.fr/Mises/LS/LS_A.htm",
+        "target": "http://herve.dequengo.free.fr/Mises/LS/LS_A.htm#sdfootnote11anc"
+      }
+    ],
+    "missing_images": [],
+    "sources": [
+      "http://herve.dequengo.free.fr/Mises/LS/LS_0_0.htm",
+      "http://herve.dequengo.free.fr/Mises/LS/LS_0_1.htm",
+      "http://herve.dequengo.free.fr/Mises/LS/LS_0_2.htm",
+      "http://herve.dequengo.free.fr/Mises/LS/LS_I_1.htm",
+      "http://herve.dequengo.free.fr/Mises/LS/LS_I_2.htm",
+      "http://herve.dequengo.free.fr/Mises/LS/LS_I_3.htm",
+      "http://herve.dequengo.free.fr/Mises/LS/LS_I_4.htm",
+      "http://herve.dequengo.free.fr/Mises/LS/LS_II_1_1.htm",
+      "http://herve.dequengo.free.fr/Mises/LS/LS_II_1_2.htm",
+      "http://herve.dequengo.free.fr/Mises/LS/LS_II_1_3.htm",
+      "http://herve.dequengo.free.fr/Mises/LS/LS_II_1_4.htm",
+      "http://herve.dequengo.free.fr/Mises/LS/LS_II_1_5.htm",
+      "http://herve.dequengo.free.fr/Mises/LS/LS_II_1_6.htm",
+      "http://herve.dequengo.free.fr/Mises/LS/LS_II_1_7.htm",
+      "http://herve.dequengo.free.fr/Mises/LS/LS_II_2_1.htm",
+      "http://herve.dequengo.free.fr/Mises/LS/LS_II_2_2.htm",
+      "http://herve.dequengo.free.fr/Mises/LS/LS_II_2_3.htm",
+      "http://herve.dequengo.free.fr/Mises/LS/LS_II_3_1.htm",
+      "http://herve.dequengo.free.fr/Mises/LS/LS_II_3_2.htm",
+      "http://herve.dequengo.free.fr/Mises/LS/LS_III_1_1.htm",
+      "http://herve.dequengo.free.fr/Mises/LS/LS_III_1_2.htm",
+      "http://herve.dequengo.free.fr/Mises/LS/LS_III_1_3.htm",
+      "http://herve.dequengo.free.fr/Mises/LS/LS_III_1_4.htm",
+      "http://herve.dequengo.free.fr/Mises/LS/LS_III_1_5.htm",
+      "http://herve.dequengo.free.fr/Mises/LS/LS_III_2_1.htm",
+      "http://herve.dequengo.free.fr/Mises/LS/LS_III_2_2.htm",
+      "http://herve.dequengo.free.fr/Mises/LS/LS_III_2_3.htm",
+      "http://herve.dequengo.free.fr/Mises/LS/LS_III_2_4.htm",
+      "http://herve.dequengo.free.fr/Mises/LS/LS_III_2_5.htm",
+      "http://herve.dequengo.free.fr/Mises/LS/LS_IV_1.htm",
+      "http://herve.dequengo.free.fr/Mises/LS/LS_IV_2.htm",
+      "http://herve.dequengo.free.fr/Mises/LS/LS_IV_3.htm",
+      "http://herve.dequengo.free.fr/Mises/LS/LS_IV_4.htm",
+      "http://herve.dequengo.free.fr/Mises/LS/LS_IV_5.htm",
+      "http://herve.dequengo.free.fr/Mises/LS/LS_IV_6.htm",
+      "http://herve.dequengo.free.fr/Mises/LS/LS_V_1.htm",
+      "http://herve.dequengo.free.fr/Mises/LS/LS_V_2.htm",
+      "http://herve.dequengo.free.fr/Mises/LS/LS_V_3.htm",
+      "http://herve.dequengo.free.fr/Mises/LS/LS_VI.htm",
+      "http://herve.dequengo.free.fr/Mises/LS/LS_A.htm"
+    ]
+  },
+  {
+    "id": "livre-03",
+    "title": "L'Aspect théorique du problème de la stabilisation monétaire",
+    "parties": 3,
+    "characters": 118474,
+    "status": "texte et ancres vérifiés",
+    "source_errors": [],
+    "missing_anchor_fallbacks": [],
+    "missing_images": [],
+    "sources": [
+      "http://herve.dequengo.free.fr/Mises/MMC/MMC_1_0.htm",
+      "http://herve.dequengo.free.fr/Mises/MMC/MMC_1_1.htm",
+      "http://herve.dequengo.free.fr/Mises/MMC/MMC_1_2.htm"
+    ]
+  },
+  {
+    "id": "livre-04",
+    "title": "Le Libéralisme",
+    "parties": 7,
+    "characters": 457803,
+    "status": "texte et ancres vérifiés",
+    "source_errors": [
+      "http://herve.dequengo.free.fr/Mises/LL/LL_0_1.htm: HTTP Error 404: Not Found",
+      "http://herve.dequengo.free.fr/Mises/LL/LL_0_2.htm: HTTP Error 404: Not Found",
+      "http://herve.dequengo.free.fr/Mises/LL/LL_0_3.htm: HTTP Error 404: Not Found",
+      "http://herve.dequengo.free.fr/Mises/LL/LL_0_4.htm: HTTP Error 404: Not Found",
+      "http://herve.dequengo.free.fr/Mises/LL/LL_0_5.htm: HTTP Error 404: Not Found",
+      "http://herve.dequengo.free.fr/Mises/LL/LL_0_6.htm: HTTP Error 404: Not Found",
+      "http://herve.dequengo.free.fr/Mises/LL/LL_10.htm: HTTP Error 404: Not Found"
+    ],
+    "missing_anchor_fallbacks": [],
+    "missing_images": [],
+    "sources": [
+      "http://herve.dequengo.free.fr/Mises/LL/LL_0.htm",
+      "http://herve.dequengo.free.fr/Mises/LL/LL_1.htm",
+      "http://herve.dequengo.free.fr/Mises/LL/LL_2.htm",
+      "http://herve.dequengo.free.fr/Mises/LL/LL_3.htm",
+      "http://herve.dequengo.free.fr/Mises/LL/LL_4.htm",
+      "http://herve.dequengo.free.fr/Mises/LL/LL_5.htm",
+      "http://herve.dequengo.free.fr/Mises/LL/LL_A.htm"
+    ]
+  },
+  {
+    "id": "livre-05",
+    "title": "Stabilisation monétaire et politique cyclique",
+    "parties": 3,
+    "characters": 238082,
+    "status": "texte et ancres vérifiés",
+    "source_errors": [],
+    "missing_anchor_fallbacks": [
+      {
+        "source": "http://herve.dequengo.free.fr/Mises/MMC/MMC_2_2.htm",
+        "target": "http://herve.dequengo.free.fr/Mises/MMC/MMC_2_2.htm#sdfootnote34sym"
+      }
+    ],
+    "missing_images": [],
+    "sources": [
+      "http://herve.dequengo.free.fr/Mises/MMC/MMC_2_0.htm",
+      "http://herve.dequengo.free.fr/Mises/MMC/MMC_2_1.htm",
+      "http://herve.dequengo.free.fr/Mises/MMC/MMC_2_2.htm"
+    ]
+  },
+  {
+    "id": "livre-06",
+    "title": "Critique de l'interventionnisme",
+    "parties": 7,
+    "characters": 331396,
+    "status": "texte et ancres vérifiés",
+    "source_errors": [],
+    "missing_anchor_fallbacks": [
+      {
+        "source": "http://herve.dequengo.free.fr/Mises/CDI/CDI_6.htm",
+        "target": "http://herve.dequengo.free.fr/Mises/CDI/CDI_6.htm#sdfootnote3anc"
+      }
+    ],
+    "missing_images": [],
+    "sources": [
+      "http://herve.dequengo.free.fr/Mises/CDI/CDI_0.htm",
+      "http://herve.dequengo.free.fr/Mises/CDI/CDI_1.htm",
+      "http://herve.dequengo.free.fr/Mises/CDI/CDI_2.htm",
+      "http://herve.dequengo.free.fr/Mises/CDI/CDI_3.htm",
+      "http://herve.dequengo.free.fr/Mises/CDI/CDI_4.htm",
+      "http://herve.dequengo.free.fr/Mises/CDI/CDI_5.htm",
+      "http://herve.dequengo.free.fr/Mises/CDI/CDI_6.htm"
+    ]
+  },
+  {
+    "id": "livre-07",
+    "title": "Les Raisons de la crise économique — une contribution",
+    "parties": 1,
+    "characters": 61175,
+    "status": "texte et ancres vérifiés",
+    "source_errors": [],
+    "missing_anchor_fallbacks": [],
+    "missing_images": [],
+    "sources": [
+      "http://herve.dequengo.free.fr/Mises/MMC/MMC_3.htm"
+    ]
+  },
+  {
+    "id": "livre-08",
+    "title": "Les Problèmes fondamentaux de l'économie politique",
+    "parties": 15,
+    "characters": 611955,
+    "status": "texte et ancres vérifiés",
+    "source_errors": [],
+    "missing_anchor_fallbacks": [
+      {
+        "source": "http://herve.dequengo.free.fr/Mises/PFEP/PFEP_1A.htm",
+        "target": "http://herve.dequengo.free.fr/Mises/PFEP/PFEP_1A.htm#sdfootnote11anc"
+      },
+      {
+        "source": "http://herve.dequengo.free.fr/Mises/PFEP/PFEP_1A.htm",
+        "target": "http://herve.dequengo.free.fr/Mises/PFEP/PFEP_1A.htm#sdfootnote18anc"
+      },
+      {
+        "source": "http://herve.dequengo.free.fr/Mises/PFEP/PFEP_1D.htm",
+        "target": "http://herve.dequengo.free.fr/Mises/PFEP/PFEP_1D.htm#sdfootnote18anc"
+      },
+      {
+        "source": "http://herve.dequengo.free.fr/Mises/PFEP/PFEP_2.htm",
+        "target": "http://herve.dequengo.free.fr/Mises/PFEP/PFEP_2.htm#sdfootnote18anc"
+      },
+      {
+        "source": "http://herve.dequengo.free.fr/Mises/PFEP/PFEP_3.htm",
+        "target": "http://herve.dequengo.free.fr/Mises/PFEP/PFEP_3.htm#sdfootnote18anc"
+      }
+    ],
+    "missing_images": [],
+    "sources": [
+      "http://herve.dequengo.free.fr/Mises/PFEP/PFEP_00.htm",
+      "http://herve.dequengo.free.fr/Mises/PFEP/PFEP_0.htm",
+      "http://herve.dequengo.free.fr/Mises/PFEP/PFEP_1A.htm",
+      "http://herve.dequengo.free.fr/Mises/PFEP/PFEP_1B.htm",
+      "http://herve.dequengo.free.fr/Mises/PFEP/PFEP_1C.htm",
+      "http://herve.dequengo.free.fr/Mises/PFEP/PFEP_1D.htm",
+      "http://herve.dequengo.free.fr/Mises/PFEP/PFEP_2.htm",
+      "http://herve.dequengo.free.fr/Mises/PFEP/PFEP_2bis.htm",
+      "http://herve.dequengo.free.fr/Mises/PFEP/PFEP_2ter.htm",
+      "http://herve.dequengo.free.fr/Mises/PFEP/PFEP_3.htm",
+      "http://herve.dequengo.free.fr/Mises/PFEP/PFEP_4.htm",
+      "http://herve.dequengo.free.fr/Mises/PFEP/PFEP_5.htm",
+      "http://herve.dequengo.free.fr/Mises/PFEP/PFEP_6.htm",
+      "http://herve.dequengo.free.fr/Mises/PFEP/PFEP_7.htm",
+      "http://herve.dequengo.free.fr/Mises/PFEP/PFEP_8.htm"
+    ]
+  },
+  {
+    "id": "livre-09",
+    "title": "Le Gouvernement omnipotent",
+    "parties": 16,
+    "characters": 824703,
+    "status": "texte et ancres vérifiés",
+    "source_errors": [],
+    "missing_anchor_fallbacks": [],
+    "missing_images": [],
+    "sources": [
+      "http://herve.dequengo.free.fr/Mises/GO/GO_00.htm",
+      "http://herve.dequengo.free.fr/Mises/GO/GO_0.htm",
+      "http://herve.dequengo.free.fr/Mises/GO/GO_1.htm",
+      "http://herve.dequengo.free.fr/Mises/GO/GO_2.htm",
+      "http://herve.dequengo.free.fr/Mises/GO/GO_3.htm",
+      "http://herve.dequengo.free.fr/Mises/GO/GO_4.htm",
+      "http://herve.dequengo.free.fr/Mises/GO/GO_5.htm",
+      "http://herve.dequengo.free.fr/Mises/GO/GO_6.htm",
+      "http://herve.dequengo.free.fr/Mises/GO/GO_7.htm",
+      "http://herve.dequengo.free.fr/Mises/GO/GO_8.htm",
+      "http://herve.dequengo.free.fr/Mises/GO/GO_9.htm",
+      "http://herve.dequengo.free.fr/Mises/GO/GO_10.htm",
+      "http://herve.dequengo.free.fr/Mises/GO/GO_11.htm",
+      "http://herve.dequengo.free.fr/Mises/GO/GO_12.htm",
+      "http://herve.dequengo.free.fr/Mises/GO/GO_13.htm",
+      "http://herve.dequengo.free.fr/Mises/GO/GO_0_0.htm"
+    ]
+  },
+  {
+    "id": "livre-10",
+    "title": "La Bureaucratie",
+    "parties": 9,
+    "characters": 263668,
+    "status": "texte et ancres vérifiés",
+    "source_errors": [],
+    "missing_anchor_fallbacks": [
+      {
+        "source": "http://herve.dequengo.free.fr/Mises/LB/LB_2.htm",
+        "target": "http://herve.dequengo.free.fr/Mises/LB/LB_2.htm#sdfootnote1anc"
+      },
+      {
+        "source": "http://herve.dequengo.free.fr/Mises/LB/LB_2.htm",
+        "target": "http://herve.dequengo.free.fr/Mises/LB/LB_2.htm#sdfootnote2anc"
+      },
+      {
+        "source": "http://herve.dequengo.free.fr/Mises/LB/LB_2.htm",
+        "target": "http://herve.dequengo.free.fr/Mises/LB/LB_2.htm#sdfootnote3anc"
+      },
+      {
+        "source": "http://herve.dequengo.free.fr/Mises/LB/LB_2.htm",
+        "target": "http://herve.dequengo.free.fr/Mises/LB/LB_2.htm#sdfootnote1anc"
+      }
+    ],
+    "missing_images": [],
+    "sources": [
+      "http://herve.dequengo.free.fr/Mises/LB/LB_0.htm",
+      "http://herve.dequengo.free.fr/Mises/LB/LB_1.htm",
+      "http://herve.dequengo.free.fr/Mises/LB/LB_2.htm",
+      "http://herve.dequengo.free.fr/Mises/LB/LB_3.htm",
+      "http://herve.dequengo.free.fr/Mises/LB/LB_4.htm",
+      "http://herve.dequengo.free.fr/Mises/LB/LB_5.htm",
+      "http://herve.dequengo.free.fr/Mises/LB/LB_6.htm",
+      "http://herve.dequengo.free.fr/Mises/LB/LB_7.htm",
+      "http://herve.dequengo.free.fr/Mises/LB/LB_8.htm"
+    ]
+  },
+  {
+    "id": "livre-11",
+    "title": "Le Chaos du planisme",
+    "parties": 11,
+    "characters": 185422,
+    "status": "texte et ancres vérifiés",
+    "source_errors": [],
+    "missing_anchor_fallbacks": [],
+    "missing_images": [],
+    "sources": [
+      "http://herve.dequengo.free.fr/Mises/CP/CP_0.htm",
+      "http://herve.dequengo.free.fr/Mises/CP/CP_1.htm",
+      "http://herve.dequengo.free.fr/Mises/CP/CP_2.htm",
+      "http://herve.dequengo.free.fr/Mises/CP/CP_3.htm",
+      "http://herve.dequengo.free.fr/Mises/CP/CP_4.htm",
+      "http://herve.dequengo.free.fr/Mises/CP/CP_5.htm",
+      "http://herve.dequengo.free.fr/Mises/CP/CP_6.htm",
+      "http://herve.dequengo.free.fr/Mises/CP/CP_7.htm",
+      "http://herve.dequengo.free.fr/Mises/CP/CP_8.htm",
+      "http://herve.dequengo.free.fr/Mises/CP/CP_9.htm",
+      "http://herve.dequengo.free.fr/Mises/CP/CP_10.htm"
+    ]
+  },
+  {
+    "id": "livre-12",
+    "title": "Notes sur le mouvement coopératif",
+    "parties": 1,
+    "characters": 113807,
+    "status": "texte et ancres vérifiés",
+    "source_errors": [],
+    "missing_anchor_fallbacks": [
+      {
+        "source": "http://herve.dequengo.free.fr/Mises/MMM/MMM_18.htm",
+        "target": "http://herve.dequengo.free.fr/Mises/MMM/MMM_18.htm#sdfootnote2anc"
+      }
+    ],
+    "missing_images": [],
+    "sources": [
+      "http://herve.dequengo.free.fr/Mises/MMM/MMM_18.htm"
+    ]
+  },
+  {
+    "id": "livre-13",
+    "title": "L'Action humaine — Traité d'économie",
+    "parties": 43,
+    "characters": 2620626,
+    "status": "texte et ancres vérifiés",
+    "source_errors": [
+      "http://herve.dequengo.free.fr/Mises/AH/AH17.htm: HTTP Error 404: Not Found"
+    ],
+    "missing_anchor_fallbacks": [
+      {
+        "source": "http://herve.dequengo.free.fr/Mises/AH/AH32.htm",
+        "target": "http://herve.dequengo.free.fr/Mises/AH/AH32.htm#sdfootnote3anc"
+      },
+      {
+        "source": "http://herve.dequengo.free.fr/Mises/AH/AHNoms.htm",
+        "target": "http://herve.dequengo.free.fr/Mises/AH/AH16.htm#p376</A>,<AHREF="
+      },
+      {
+        "source": "http://herve.dequengo.free.fr/Mises/AH/AHIndex.htm",
+        "target": "http://herve.dequengo.free.fr/Mises/AH/AH22.htm#par6"
+      },
+      {
+        "source": "http://herve.dequengo.free.fr/Mises/AH/AHIndex.htm",
+        "target": "http://herve.dequengo.free.fr/Mises/AH/AH25.htm#par4"
+      },
+      {
+        "source": "http://herve.dequengo.free.fr/Mises/AH/AHIndex.htm",
+        "target": "http://herve.dequengo.free.fr/Mises/AH/AH11.htm#p<AHREF="
+      },
+      {
+        "source": "http://herve.dequengo.free.fr/Mises/AH/AHIndex.htm",
+        "target": "http://herve.dequengo.free.fr/Mises/AH/AH16.htm#p355"
+      },
+      {
+        "source": "http://herve.dequengo.free.fr/Mises/AH/AHIndex.htm",
+        "target": "http://herve.dequengo.free.fr/Mises/AH/AH37.htm#par12"
+      },
+      {
+        "source": "http://herve.dequengo.free.fr/Mises/AH/AHIndex.htm",
+        "target": "http://herve.dequengo.free.fr/Mises/AH/AH15.htm#par4"
+      },
+      {
+        "source": "http://herve.dequengo.free.fr/Mises/AH/AHIndex.htm",
+        "target": "http://herve.dequengo.free.fr/Mises/AH/AH27.htm#par15"
+      },
+      {
+        "source": "http://herve.dequengo.free.fr/Mises/AH/AHIndex.htm",
+        "target": "http://herve.dequengo.free.fr/Mises/AH/AH27.htm#par16"
+      },
+      {
+        "source": "http://herve.dequengo.free.fr/Mises/AH/AHIndex.htm",
+        "target": "http://herve.dequengo.free.fr/Mises/AH/AH20.htm#p<AHREF="
+      },
+      {
+        "source": "http://herve.dequengo.free.fr/Mises/AH/AHIndex.htm",
+        "target": "http://herve.dequengo.free.fr/Mises/AH/AH18.htm#par19"
+      },
+      {
+        "source": "http://herve.dequengo.free.fr/Mises/AH/AHIndex.htm",
+        "target": "http://herve.dequengo.free.fr/Mises/AH/AH17a.htm#par18"
+      },
+      {
+        "source": "http://herve.dequengo.free.fr/Mises/AH/AHIndex.htm",
+        "target": "http://herve.dequengo.free.fr/Mises/AH/AH7.htm#par8"
+      },
+      {
+        "source": "http://herve.dequengo.free.fr/Mises/AH/AHIndex.htm",
+        "target": "http://herve.dequengo.free.fr/Mises/AH/AH15.htm#par4"
+      },
+      {
+        "source": "http://herve.dequengo.free.fr/Mises/AH/AHIndex.htm",
+        "target": "http://herve.dequengo.free.fr/Mises/AH/AH25.htm#par"
+      },
+      {
+        "source": "http://herve.dequengo.free.fr/Mises/AH/AHIndex.htm",
+        "target": "http://herve.dequengo.free.fr/Mises/AH/AH15.htm#par4"
+      },
+      {
+        "source": "http://herve.dequengo.free.fr/Mises/AH/AHIndex.htm",
+        "target": "http://herve.dequengo.free.fr/Mises/AH/AH16.htm#par16"
+      },
+      {
+        "source": "http://herve.dequengo.free.fr/Mises/AH/AHIndex.htm",
+        "target": "http://herve.dequengo.free.fr/Mises/AH/AH29.htm#par2"
+      },
+      {
+        "source": "http://herve.dequengo.free.fr/Mises/AH/AHIndex.htm",
+        "target": "http://herve.dequengo.free.fr/Mises/AH/AH25.htm#par4"
+      },
+      {
+        "source": "http://herve.dequengo.free.fr/Mises/AH/AHIndex.htm",
+        "target": "http://herve.dequengo.free.fr/Mises/AH/AH16.htm#p355"
+      },
+      {
+        "source": "http://herve.dequengo.free.fr/Mises/AH/AHIndex.htm",
+        "target": "http://herve.dequengo.free.fr/Mises/AH/AH14.htm#p260"
+      }
+    ],
+    "missing_images": [],
+    "sources": [
+      "http://herve.dequengo.free.fr/Mises/AH/AH0.htm",
+      "http://herve.dequengo.free.fr/Mises/AH/AH1.htm",
+      "http://herve.dequengo.free.fr/Mises/AH/AH2.htm",
+      "http://herve.dequengo.free.fr/Mises/AH/AH3.htm",
+      "http://herve.dequengo.free.fr/Mises/AH/AH4.htm",
+      "http://herve.dequengo.free.fr/Mises/AH/AH5.htm",
+      "http://herve.dequengo.free.fr/Mises/AH/AH6.htm",
+      "http://herve.dequengo.free.fr/Mises/AH/AH7.htm",
+      "http://herve.dequengo.free.fr/Mises/AH/AH8.htm",
+      "http://herve.dequengo.free.fr/Mises/AH/AH9.htm",
+      "http://herve.dequengo.free.fr/Mises/AH/AH10.htm",
+      "http://herve.dequengo.free.fr/Mises/AH/AH11.htm",
+      "http://herve.dequengo.free.fr/Mises/AH/AH12.htm",
+      "http://herve.dequengo.free.fr/Mises/AH/AH13.htm",
+      "http://herve.dequengo.free.fr/Mises/AH/AH14.htm",
+      "http://herve.dequengo.free.fr/Mises/AH/AH15.htm",
+      "http://herve.dequengo.free.fr/Mises/AH/AH16.htm",
+      "http://herve.dequengo.free.fr/Mises/AH/AH17a.htm",
+      "http://herve.dequengo.free.fr/Mises/AH/AH17b.htm",
+      "http://herve.dequengo.free.fr/Mises/AH/AH18.htm",
+      "http://herve.dequengo.free.fr/Mises/AH/AH19.htm",
+      "http://herve.dequengo.free.fr/Mises/AH/AH20.htm",
+      "http://herve.dequengo.free.fr/Mises/AH/AH21.htm",
+      "http://herve.dequengo.free.fr/Mises/AH/AH22.htm",
+      "http://herve.dequengo.free.fr/Mises/AH/AH23.htm",
+      "http://herve.dequengo.free.fr/Mises/AH/AH24.htm",
+      "http://herve.dequengo.free.fr/Mises/AH/AH25.htm",
+      "http://herve.dequengo.free.fr/Mises/AH/AH26.htm",
+      "http://herve.dequengo.free.fr/Mises/AH/AH27.htm",
+      "http://herve.dequengo.free.fr/Mises/AH/AH28.htm",
+      "http://herve.dequengo.free.fr/Mises/AH/AH29.htm",
+      "http://herve.dequengo.free.fr/Mises/AH/AH30.htm",
+      "http://herve.dequengo.free.fr/Mises/AH/AH31.htm",
+      "http://herve.dequengo.free.fr/Mises/AH/AH32.htm",
+      "http://herve.dequengo.free.fr/Mises/AH/AH33.htm",
+      "http://herve.dequengo.free.fr/Mises/AH/AH34.htm",
+      "http://herve.dequengo.free.fr/Mises/AH/AH35.htm",
+      "http://herve.dequengo.free.fr/Mises/AH/AH36.htm",
+      "http://herve.dequengo.free.fr/Mises/AH/AH37.htm",
+      "http://herve.dequengo.free.fr/Mises/AH/AH38.htm",
+      "http://herve.dequengo.free.fr/Mises/AH/AH39.htm",
+      "http://herve.dequengo.free.fr/Mises/AH/AHNoms.htm",
+      "http://herve.dequengo.free.fr/Mises/AH/AHIndex.htm"
+    ]
+  },
+  {
+    "id": "livre-14",
+    "title": "Profits et pertes",
+    "parties": 1,
+    "characters": 79681,
+    "status": "texte et ancres vérifiés",
+    "source_errors": [],
+    "missing_anchor_fallbacks": [],
+    "missing_images": [],
+    "sources": [
+      "http://herve.dequengo.free.fr/Mises/PLL/PLL_9.htm"
+    ]
+  },
+  {
+    "id": "livre-15",
+    "title": "Planifier la liberté et autres essais",
+    "parties": 17,
+    "characters": 414970,
+    "status": "texte et ancres vérifiés",
+    "source_errors": [
+      "http://herve.dequengo.free.fr/Mises/PLL/PPL_13.htm: HTTP Error 404: Not Found"
+    ],
+    "missing_anchor_fallbacks": [
+      {
+        "source": "http://herve.dequengo.free.fr/Mises/PLL/PLL_2.htm",
+        "target": "http://herve.dequengo.free.fr/Mises/PLL/PLL_2.htm#notev"
+      }
+    ],
+    "missing_images": [],
+    "sources": [
+      "http://herve.dequengo.free.fr/Mises/PLL/PLL_1.htm",
+      "http://herve.dequengo.free.fr/Mises/PLL/PLL_2.htm",
+      "http://herve.dequengo.free.fr/Mises/PLL/PLL_3.htm",
+      "http://herve.dequengo.free.fr/Mises/PLL/PLL_4.htm",
+      "http://herve.dequengo.free.fr/Mises/PLL/PLL_5.htm",
+      "http://herve.dequengo.free.fr/Mises/PLL/PLL_6.htm",
+      "http://herve.dequengo.free.fr/Mises/PLL/PLL_7.htm",
+      "http://herve.dequengo.free.fr/Mises/PLL/PLL_8.htm",
+      "http://herve.dequengo.free.fr/Mises/PLL/PLL_9.htm",
+      "http://herve.dequengo.free.fr/Mises/PLL/PLL_10.htm",
+      "http://herve.dequengo.free.fr/Mises/PLL/PLL_11.htm",
+      "http://herve.dequengo.free.fr/Mises/PLL/PLL_12.htm",
+      "http://herve.dequengo.free.fr/Mises/PLL/PLL_13.htm",
+      "http://herve.dequengo.free.fr/Mises/PLL/PLL_14.htm",
+      "http://herve.dequengo.free.fr/Mises/PLL/PLL_15.htm",
+      "http://herve.dequengo.free.fr/Mises/PLL/PLL_16.htm",
+      "http://herve.dequengo.free.fr/Mises/PLL/PLL_17.htm"
+    ]
+  },
+  {
+    "id": "livre-16",
+    "title": "La Mentalité anti-capitaliste",
+    "parties": 6,
+    "characters": 185111,
+    "status": "texte et ancres vérifiés",
+    "source_errors": [],
+    "missing_anchor_fallbacks": [
+      {
+        "source": "http://herve.dequengo.free.fr/Mises/MAC/MAC_3.htm",
+        "target": "http://herve.dequengo.free.fr/Mises/MAC/MAC_4.htm#architecture"
+      }
+    ],
+    "missing_images": [],
+    "sources": [
+      "http://herve.dequengo.free.fr/Mises/MAC/MAC_0.htm",
+      "http://herve.dequengo.free.fr/Mises/MAC/MAC_1.htm",
+      "http://herve.dequengo.free.fr/Mises/MAC/MAC_2.htm",
+      "http://herve.dequengo.free.fr/Mises/MAC/MAC_3.htm",
+      "http://herve.dequengo.free.fr/Mises/MAC/MAC_4.htm",
+      "http://herve.dequengo.free.fr/Mises/MAC/MAC_5.htm"
+    ]
+  },
+  {
+    "id": "livre-17",
+    "title": "Théorie et Histoire",
+    "parties": 18,
+    "characters": 669033,
+    "status": "texte et ancres vérifiés",
+    "source_errors": [],
+    "missing_anchor_fallbacks": [
+      {
+        "source": "http://herve.dequengo.free.fr/Mises/TH/TH13.htm",
+        "target": "http://herve.dequengo.free.fr/Mises/TH/TH13.htm#note3"
+      },
+      {
+        "source": "http://herve.dequengo.free.fr/Mises/TH/TH13.htm",
+        "target": "http://herve.dequengo.free.fr/Mises/TH/TH13.htm#note4"
+      },
+      {
+        "source": "http://herve.dequengo.free.fr/Mises/TH/TH13.htm",
+        "target": "http://herve.dequengo.free.fr/Mises/TH/TH13.htm#note5"
+      },
+      {
+        "source": "http://herve.dequengo.free.fr/Mises/TH/TH13.htm",
+        "target": "http://herve.dequengo.free.fr/Mises/TH/TH13.htm#note6"
+      },
+      {
+        "source": "http://herve.dequengo.free.fr/Mises/TH/TH13.htm",
+        "target": "http://herve.dequengo.free.fr/Mises/TH/TH13.htm#note7"
+      },
+      {
+        "source": "http://herve.dequengo.free.fr/Mises/TH/TH13.htm",
+        "target": "http://herve.dequengo.free.fr/Mises/TH/TH13.htm#note8"
+      }
+    ],
+    "missing_images": [],
+    "sources": [
+      "http://herve.dequengo.free.fr/Mises/TH/THP.htm",
+      "http://herve.dequengo.free.fr/Mises/TH/TH0.htm",
+      "http://herve.dequengo.free.fr/Mises/TH/TH1.htm",
+      "http://herve.dequengo.free.fr/Mises/TH/TH2.htm",
+      "http://herve.dequengo.free.fr/Mises/TH/TH3.htm",
+      "http://herve.dequengo.free.fr/Mises/TH/TH5.htm",
+      "http://herve.dequengo.free.fr/Mises/TH/TH6.htm",
+      "http://herve.dequengo.free.fr/Mises/TH/TH7.htm",
+      "http://herve.dequengo.free.fr/Mises/TH/TH8.htm",
+      "http://herve.dequengo.free.fr/Mises/TH/TH9.htm",
+      "http://herve.dequengo.free.fr/Mises/TH/TH10.htm",
+      "http://herve.dequengo.free.fr/Mises/TH/TH11.htm",
+      "http://herve.dequengo.free.fr/Mises/TH/TH12.htm",
+      "http://herve.dequengo.free.fr/Mises/TH/TH13.htm",
+      "http://herve.dequengo.free.fr/Mises/TH/TH14.htm",
+      "http://herve.dequengo.free.fr/Mises/TH/TH15.htm",
+      "http://herve.dequengo.free.fr/Mises/TH/TH16.htm",
+      "http://herve.dequengo.free.fr/Mises/TH/TH4.htm"
+    ]
+  },
+  {
+    "id": "livre-18",
+    "title": "Les Débuts historiques de l'École économique autrichienne",
+    "parties": 1,
+    "characters": 68825,
+    "status": "texte et ancres vérifiés",
+    "source_errors": [],
+    "missing_anchor_fallbacks": [],
+    "missing_images": [],
+    "sources": [
+      "http://herve.dequengo.free.fr/Mises/EAE.htm"
+    ]
+  },
+  {
+    "id": "livre-19",
+    "title": "Le Fondement ultime de la science économique",
+    "parties": 9,
+    "characters": 308822,
+    "status": "texte et ancres vérifiés",
+    "source_errors": [],
+    "missing_anchor_fallbacks": [],
+    "missing_images": [],
+    "sources": [
+      "http://herve.dequengo.free.fr/Mises/FUSE/FUSE_0.htm",
+      "http://herve.dequengo.free.fr/Mises/FUSE/FUSE_1.htm",
+      "http://herve.dequengo.free.fr/Mises/FUSE/FUSE_2.htm",
+      "http://herve.dequengo.free.fr/Mises/FUSE/FUSE_3.htm",
+      "http://herve.dequengo.free.fr/Mises/FUSE/FUSE_4.htm",
+      "http://herve.dequengo.free.fr/Mises/FUSE/FUSE_5.htm",
+      "http://herve.dequengo.free.fr/Mises/FUSE/FUSE_6.htm",
+      "http://herve.dequengo.free.fr/Mises/FUSE/FUSE_7.htm",
+      "http://herve.dequengo.free.fr/Mises/FUSE/FUSE_8.htm"
+    ]
+  },
+  {
+    "id": "livre-20",
+    "title": "Souvenirs d'Europe",
+    "parties": 16,
+    "characters": 224600,
+    "status": "texte et ancres vérifiés",
+    "source_errors": [],
+    "missing_anchor_fallbacks": [
+      {
+        "source": "http://herve.dequengo.free.fr/Mises/SE/SE_0.htm",
+        "target": "http://herve.dequengo.free.fr/Mises/SE/SE_0.htm#sdfootnotebanc"
+      }
+    ],
+    "missing_images": [],
+    "sources": [
+      "http://herve.dequengo.free.fr/Mises/SE/SE_0.htm",
+      "http://herve.dequengo.free.fr/Mises/SE/SE_1.htm",
+      "http://herve.dequengo.free.fr/Mises/SE/SE_2.htm",
+      "http://herve.dequengo.free.fr/Mises/SE/SE_3.htm",
+      "http://herve.dequengo.free.fr/Mises/SE/SE_4.htm",
+      "http://herve.dequengo.free.fr/Mises/SE/SE_5.htm",
+      "http://herve.dequengo.free.fr/Mises/SE/SE_6.htm",
+      "http://herve.dequengo.free.fr/Mises/SE/SE_7.htm",
+      "http://herve.dequengo.free.fr/Mises/SE/SE_8.htm",
+      "http://herve.dequengo.free.fr/Mises/SE/SE_9.htm",
+      "http://herve.dequengo.free.fr/Mises/SE/SE_10.htm",
+      "http://herve.dequengo.free.fr/Mises/SE/SE_11.htm",
+      "http://herve.dequengo.free.fr/Mises/SE/SE_12.htm",
+      "http://herve.dequengo.free.fr/Mises/SE/SE_13.htm",
+      "http://herve.dequengo.free.fr/Mises/SE/SE_14.htm",
+      "http://herve.dequengo.free.fr/Mises/SE/SE_15.htm"
+    ]
+  },
+  {
+    "id": "livre-21",
+    "title": "De la Manipulation de la monnaie et du crédit",
+    "parties": 9,
+    "characters": 460450,
+    "status": "texte et ancres vérifiés",
+    "source_errors": [],
+    "missing_anchor_fallbacks": [
+      {
+        "source": "http://herve.dequengo.free.fr/Mises/MMC/MMC_2_2.htm",
+        "target": "http://herve.dequengo.free.fr/Mises/MMC/MMC_2_2.htm#sdfootnote34sym"
+      }
+    ],
+    "missing_images": [],
+    "sources": [
+      "http://herve.dequengo.free.fr/Mises/MMC/MMC_1_0.htm",
+      "http://herve.dequengo.free.fr/Mises/MMC/MMC_1_1.htm",
+      "http://herve.dequengo.free.fr/Mises/MMC/MMC_1_2.htm",
+      "http://herve.dequengo.free.fr/Mises/MMC/MMC_2_0.htm",
+      "http://herve.dequengo.free.fr/Mises/MMC/MMC_2_1.htm",
+      "http://herve.dequengo.free.fr/Mises/MMC/MMC_2_2.htm",
+      "http://herve.dequengo.free.fr/Mises/MMC/MMC_3.htm",
+      "http://herve.dequengo.free.fr/Mises/MMC/MMC_4_1.htm",
+      "http://herve.dequengo.free.fr/Mises/MMC/MMC_4_2.htm"
+    ]
+  },
+  {
+    "id": "livre-22",
+    "title": "Le Choc des intérêts de groupe et autres essais",
+    "parties": 5,
+    "characters": 87054,
+    "status": "texte et ancres vérifiés",
+    "source_errors": [],
+    "missing_anchor_fallbacks": [],
+    "missing_images": [],
+    "sources": [
+      "http://herve.dequengo.free.fr/Mises/CIG/CIG0.htm",
+      "http://herve.dequengo.free.fr/Mises/CIG/CIG1.htm",
+      "http://herve.dequengo.free.fr/Mises/CIG/CIG2.htm",
+      "http://herve.dequengo.free.fr/Mises/CIG/CIG3.htm",
+      "http://herve.dequengo.free.fr/Mises/CIG/CIG4.htm"
+    ]
+  },
+  {
+    "id": "livre-23",
+    "title": "Politique économique — Réflexions pour aujourd'hui et pour demain",
+    "parties": 9,
+    "status": "vérifié auparavant",
+    "errors": []
+  },
+  {
+    "id": "livre-24",
+    "title": "Monnaie, méthode et marché",
+    "parties": 21,
+    "characters": 818717,
+    "status": "texte et ancres vérifiés",
+    "source_errors": [],
+    "missing_anchor_fallbacks": [
+      {
+        "source": "http://herve.dequengo.free.fr/Mises/MMM/MMM_1.htm",
+        "target": "http://herve.dequengo.free.fr/Mises/MMM/MMM_1.htm#sdfootnote3anc"
+      },
+      {
+        "source": "http://herve.dequengo.free.fr/Mises/MMM/MMM_15.htm",
+        "target": "http://herve.dequengo.free.fr/Mises/MMM/MMM_15.htm#sdfootnote4sym"
+      },
+      {
+        "source": "http://herve.dequengo.free.fr/Mises/MMM/MMM_18.htm",
+        "target": "http://herve.dequengo.free.fr/Mises/MMM/MMM_18.htm#sdfootnote2anc"
+      }
+    ],
+    "missing_images": [],
+    "sources": [
+      "http://herve.dequengo.free.fr/Mises/MMM/MMM_1.htm",
+      "http://herve.dequengo.free.fr/Mises/MMM/MMM_2.htm",
+      "http://herve.dequengo.free.fr/Mises/MMM/MMM_3.htm",
+      "http://herve.dequengo.free.fr/Mises/MMM/MMM_4.htm",
+      "http://herve.dequengo.free.fr/Mises/MMM/MMM_5.htm",
+      "http://herve.dequengo.free.fr/Mises/MMM/MMM_6.htm",
+      "http://herve.dequengo.free.fr/Mises/MMM/MMM_7.htm",
+      "http://herve.dequengo.free.fr/Mises/MMM/MMM_8.htm",
+      "http://herve.dequengo.free.fr/Mises/MMM/MMM_9.htm",
+      "http://herve.dequengo.free.fr/Mises/MMM/MMM_10.htm",
+      "http://herve.dequengo.free.fr/Mises/MMM/MMM_11.htm",
+      "http://herve.dequengo.free.fr/Mises/MMM/MMM_12.htm",
+      "http://herve.dequengo.free.fr/Mises/MMM/MMM_13.htm",
+      "http://herve.dequengo.free.fr/Mises/MMM/MMM_14.htm",
+      "http://herve.dequengo.free.fr/Mises/MMM/MMM_15.htm",
+      "http://herve.dequengo.free.fr/Mises/MMM/MMM_16.htm",
+      "http://herve.dequengo.free.fr/Mises/MMM/MMM_17.htm",
+      "http://herve.dequengo.free.fr/Mises/MMM/MMM_18.htm",
+      "http://herve.dequengo.free.fr/Mises/MMM/MMM_19.htm",
+      "http://herve.dequengo.free.fr/Mises/MMM/MMM_20.htm",
+      "http://herve.dequengo.free.fr/Mises/MMM/MMM_21.htm"
+    ]
+  },
+  {
+    "id": "livre-25",
+    "title": "Liberté économique et interventionnisme",
+    "parties": 51,
+    "characters": 650908,
+    "status": "texte et ancres vérifiés",
+    "source_errors": [],
+    "missing_anchor_fallbacks": [
+      {
+        "source": "http://herve.dequengo.free.fr/Mises/LEI/LEI_10.htm",
+        "target": "http://herve.dequengo.free.fr/Mises/LEI/LEI_10.htm#sdfootnote1anc"
+      }
+    ],
+    "missing_images": [],
+    "sources": [
+      "http://herve.dequengo.free.fr/Mises/LEI/LEI_I.htm",
+      "http://herve.dequengo.free.fr/Mises/LEI/LEI_1.htm",
+      "http://herve.dequengo.free.fr/Mises/LEI/LEI_2.htm",
+      "http://herve.dequengo.free.fr/Mises/LEI/LEI_3.htm",
+      "http://herve.dequengo.free.fr/Mises/LEI/LEI_4.htm",
+      "http://herve.dequengo.free.fr/Mises/LEI/LEI_5.htm",
+      "http://herve.dequengo.free.fr/Mises/LEI/LEI_6.htm",
+      "http://herve.dequengo.free.fr/Mises/LEI/LEI_7.htm",
+      "http://herve.dequengo.free.fr/Mises/LEI/LEI_8.htm",
+      "http://herve.dequengo.free.fr/Mises/LEI/LEI_9.htm",
+      "http://herve.dequengo.free.fr/Mises/LEI/LEI_II.htm",
+      "http://herve.dequengo.free.fr/Mises/LEI/LEI_10.htm",
+      "http://herve.dequengo.free.fr/Mises/LEI/LEI_11.htm",
+      "http://herve.dequengo.free.fr/Mises/LEI/LEI_12.htm",
+      "http://herve.dequengo.free.fr/Mises/LEI/LEI_13.htm",
+      "http://herve.dequengo.free.fr/Mises/LEI/LEI_14.htm",
+      "http://herve.dequengo.free.fr/Mises/LEI/LEI_15.htm",
+      "http://herve.dequengo.free.fr/Mises/LEI/LEI_16.htm",
+      "http://herve.dequengo.free.fr/Mises/LEI/LEI_17.htm",
+      "http://herve.dequengo.free.fr/Mises/LEI/LEI_18.htm",
+      "http://herve.dequengo.free.fr/Mises/LEI/LEI_19.htm",
+      "http://herve.dequengo.free.fr/Mises/LEI/LEI_20.htm",
+      "http://herve.dequengo.free.fr/Mises/LEI/LEI_21.htm",
+      "http://herve.dequengo.free.fr/Mises/LEI/LEI_22.htm",
+      "http://herve.dequengo.free.fr/Mises/LEI/LEI_23.htm",
+      "http://herve.dequengo.free.fr/Mises/LEI/LEI_III.htm",
+      "http://herve.dequengo.free.fr/Mises/LEI/LEI_24.htm",
+      "http://herve.dequengo.free.fr/Mises/LEI/LEI_25.htm",
+      "http://herve.dequengo.free.fr/Mises/LEI/LEI_26.htm",
+      "http://herve.dequengo.free.fr/Mises/LEI/LEI_27.htm",
+      "http://herve.dequengo.free.fr/Mises/LEI/LEI_28.htm",
+      "http://herve.dequengo.free.fr/Mises/LEI/LEI_29.htm",
+      "http://herve.dequengo.free.fr/Mises/LEI/LEI_30.htm",
+      "http://herve.dequengo.free.fr/Mises/LEI/LEI_31.htm",
+      "http://herve.dequengo.free.fr/Mises/LEI/LEI_32.htm",
+      "http://herve.dequengo.free.fr/Mises/LEI/LEI_33.htm",
+      "http://herve.dequengo.free.fr/Mises/LEI/LEI_34.htm",
+      "http://herve.dequengo.free.fr/Mises/LEI/LEI_35.htm",
+      "http://herve.dequengo.free.fr/Mises/LEI/LEI_36.htm",
+      "http://herve.dequengo.free.fr/Mises/LEI/LEI_37.htm",
+      "http://herve.dequengo.free.fr/Mises/LEI/LEI_38.htm",
+      "http://herve.dequengo.free.fr/Mises/LEI/LEI_39.htm",
+      "http://herve.dequengo.free.fr/Mises/LEI/LEI_40.htm",
+      "http://herve.dequengo.free.fr/Mises/LEI/LEI_41.htm",
+      "http://herve.dequengo.free.fr/Mises/LEI/LEI_42.htm",
+      "http://herve.dequengo.free.fr/Mises/LEI/LEI_43.htm",
+      "http://herve.dequengo.free.fr/Mises/LEI/LEI_44.htm",
+      "http://herve.dequengo.free.fr/Mises/LEI/LEI_45.htm",
+      "http://herve.dequengo.free.fr/Mises/LEI/LEI_46.htm",
+      "http://herve.dequengo.free.fr/Mises/LEI/LEI_47.htm",
+      "http://herve.dequengo.free.fr/Mises/LEI/LEI_IV.htm"
+    ]
+  },
+  {
+    "id": "livre-26",
+    "title": "L'Interventionnisme",
+    "parties": 10,
+    "characters": 246912,
+    "status": "texte et ancres vérifiés",
+    "source_errors": [],
+    "missing_anchor_fallbacks": [],
+    "missing_images": [],
+    "sources": [
+      "http://herve.dequengo.free.fr/Mises/Interventionnisme/Interventionnisme_00.htm",
+      "http://herve.dequengo.free.fr/Mises/Interventionnisme/Interventionnisme_0.htm",
+      "http://herve.dequengo.free.fr/Mises/Interventionnisme/Interventionnisme_1.htm",
+      "http://herve.dequengo.free.fr/Mises/Interventionnisme/Interventionnisme_2.htm",
+      "http://herve.dequengo.free.fr/Mises/Interventionnisme/Interventionnisme_3.htm",
+      "http://herve.dequengo.free.fr/Mises/Interventionnisme/Interventionnisme_4.htm",
+      "http://herve.dequengo.free.fr/Mises/Interventionnisme/Interventionnisme_5.htm",
+      "http://herve.dequengo.free.fr/Mises/Interventionnisme/Interventionnisme_6.htm",
+      "http://herve.dequengo.free.fr/Mises/Interventionnisme/Interventionnisme_7.htm",
+      "http://herve.dequengo.free.fr/Mises/Interventionnisme/Interventionnisme_8.htm"
+    ]
+  },
+  {
+    "id": "livre-27",
+    "title": "Les Illusions du protectionnisme et de l'autarcie",
+    "parties": 1,
+    "characters": 67777,
+    "status": "texte et ancres vérifiés",
+    "source_errors": [],
+    "missing_anchor_fallbacks": [],
+    "missing_images": [],
+    "sources": [
+      "http://herve.dequengo.free.fr/Mises/MMM/MMM_9.htm"
+    ]
+  },
+  {
+    "id": "livre-28",
+    "title": "Les Soirées de la rue Saint-Lazare",
+    "parties": 13,
+    "characters": 538804,
+    "status": "texte et ancres vérifiés",
+    "source_errors": [],
+    "missing_anchor_fallbacks": [],
+    "missing_images": [],
+    "sources": [
+      "http://herve.dequengo.free.fr/Molinari/SRSL/SRSL_0.htm",
+      "http://herve.dequengo.free.fr/Molinari/SRSL/SRSL_1.htm",
+      "http://herve.dequengo.free.fr/Molinari/SRSL/SRSL_2.htm",
+      "http://herve.dequengo.free.fr/Molinari/SRSL/SRSL_3.htm",
+      "http://herve.dequengo.free.fr/Molinari/SRSL/SRSL_4.htm",
+      "http://herve.dequengo.free.fr/Molinari/SRSL/SRSL_5.htm",
+      "http://herve.dequengo.free.fr/Molinari/SRSL/SRSL_6.htm",
+      "http://herve.dequengo.free.fr/Molinari/SRSL/SRSL_7.htm",
+      "http://herve.dequengo.free.fr/Molinari/SRSL/SRSL_8.htm",
+      "http://herve.dequengo.free.fr/Molinari/SRSL/SRSL_9.htm",
+      "http://herve.dequengo.free.fr/Molinari/SRSL/SRSL_10.htm",
+      "http://herve.dequengo.free.fr/Molinari/SRSL/SRSL_11.htm",
+      "http://herve.dequengo.free.fr/Molinari/SRSL/SRSL_12.htm"
+    ]
+  },
+  {
+    "id": "livre-29",
+    "title": "De l'Enseignement obligatoire",
+    "parties": 31,
+    "characters": 578745,
+    "status": "texte et ancres vérifiés",
+    "source_errors": [],
+    "missing_anchor_fallbacks": [
+      {
+        "source": "http://herve.dequengo.free.fr/Molinari/EO/EO_3_2_C.htm",
+        "target": "http://herve.dequengo.free.fr/Molinari/EO/EO_3_2_C.htm#note1"
+      },
+      {
+        "source": "http://herve.dequengo.free.fr/Molinari/EO/EO_3_2_C.htm",
+        "target": "http://herve.dequengo.free.fr/Molinari/EO/EO_3_2_C.htm#note2"
+      },
+      {
+        "source": "http://herve.dequengo.free.fr/Molinari/EO/EO_3_2_C.htm",
+        "target": "http://herve.dequengo.free.fr/Molinari/EO/EO_3_2_C.htm#note3"
+      },
+      {
+        "source": "http://herve.dequengo.free.fr/Molinari/EO/EO_3_2_C.htm",
+        "target": "http://herve.dequengo.free.fr/Molinari/EO/EO_3_2_C.htm#note4"
+      },
+      {
+        "source": "http://herve.dequengo.free.fr/Molinari/EO/EO_3_2_E.htm",
+        "target": "http://herve.dequengo.free.fr/Molinari/EO/EO_3_2_E.htm#note1"
+      },
+      {
+        "source": "http://herve.dequengo.free.fr/Molinari/EO/EO_3_2_E.htm",
+        "target": "http://herve.dequengo.free.fr/Molinari/EO/EO_3_2_E.htm#note2"
+      }
+    ],
+    "missing_images": [],
+    "sources": [
+      "http://herve.dequengo.free.fr/Molinari/EO/EO_0.htm",
+      "http://herve.dequengo.free.fr/Molinari/EO/EO_1_1.htm",
+      "http://herve.dequengo.free.fr/Molinari/EO/EO_1_2.htm",
+      "http://herve.dequengo.free.fr/Molinari/EO/EO_2_1.htm",
+      "http://herve.dequengo.free.fr/Molinari/EO/EO_2_2.htm",
+      "http://herve.dequengo.free.fr/Molinari/EO/EO_2_3.htm",
+      "http://herve.dequengo.free.fr/Molinari/EO/EO_2_4.htm",
+      "http://herve.dequengo.free.fr/Molinari/EO/EO_2_5.htm",
+      "http://herve.dequengo.free.fr/Molinari/EO/EO_2_6.htm",
+      "http://herve.dequengo.free.fr/Molinari/EO/EO_2_7.htm",
+      "http://herve.dequengo.free.fr/Molinari/EO/EO_2_8.htm",
+      "http://herve.dequengo.free.fr/Molinari/EO/EO_3_1_A.htm",
+      "http://herve.dequengo.free.fr/Molinari/EO/EO_3_1_B.htm",
+      "http://herve.dequengo.free.fr/Molinari/EO/EO_3_1_C.htm",
+      "http://herve.dequengo.free.fr/Molinari/EO/EO_3_1_D.htm",
+      "http://herve.dequengo.free.fr/Molinari/EO/EO_3_1_E.htm",
+      "http://herve.dequengo.free.fr/Molinari/EO/EO_3_1_F.htm",
+      "http://herve.dequengo.free.fr/Molinari/EO/EO_3_2_A.htm",
+      "http://herve.dequengo.free.fr/Molinari/EO/EO_3_2_B.htm",
+      "http://herve.dequengo.free.fr/Molinari/EO/EO_3_2_C.htm",
+      "http://herve.dequengo.free.fr/Molinari/EO/EO_3_2_D.htm",
+      "http://herve.dequengo.free.fr/Molinari/EO/EO_3_2_E.htm",
+      "http://herve.dequengo.free.fr/Molinari/EO/EO_3_2_F.htm",
+      "http://herve.dequengo.free.fr/Molinari/EO/EO_3_2_G.htm",
+      "http://herve.dequengo.free.fr/Molinari/EO/EO_3_2_H.htm",
+      "http://herve.dequengo.free.fr/Molinari/EO/EO_3_2_I.htm",
+      "http://herve.dequengo.free.fr/Molinari/EO/EO_3_3_1.htm",
+      "http://herve.dequengo.free.fr/Molinari/EO/EO_3_3_2.htm",
+      "http://herve.dequengo.free.fr/Molinari/EO/EO_3_3_3.htm",
+      "http://herve.dequengo.free.fr/Molinari/EO/EO_3_3_4.htm",
+      "http://herve.dequengo.free.fr/Molinari/EO/EO_3_3_5.htm"
+    ]
+  },
+  {
+    "id": "livre-30",
+    "title": "L'Irlande, le Canada, Jersey",
+    "parties": 22,
+    "characters": 514985,
+    "status": "texte et ancres vérifiés",
+    "source_errors": [],
+    "missing_anchor_fallbacks": [],
+    "missing_images": [],
+    "sources": [
+      "http://herve.dequengo.free.fr/Molinari/ICJ/ICJ_0.htm",
+      "http://herve.dequengo.free.fr/Molinari/ICJ/ICJ_1_1.htm",
+      "http://herve.dequengo.free.fr/Molinari/ICJ/ICJ_1_2.htm",
+      "http://herve.dequengo.free.fr/Molinari/ICJ/ICJ_1_3.htm",
+      "http://herve.dequengo.free.fr/Molinari/ICJ/ICJ_1_4.htm",
+      "http://herve.dequengo.free.fr/Molinari/ICJ/ICJ_1_5.htm",
+      "http://herve.dequengo.free.fr/Molinari/ICJ/ICJ_1_6.htm",
+      "http://herve.dequengo.free.fr/Molinari/ICJ/ICJ_1_7.htm",
+      "http://herve.dequengo.free.fr/Molinari/ICJ/ICJ_1_8.htm",
+      "http://herve.dequengo.free.fr/Molinari/ICJ/ICJ_1_9.htm",
+      "http://herve.dequengo.free.fr/Molinari/ICJ/ICJ_1_10.htm",
+      "http://herve.dequengo.free.fr/Molinari/ICJ/ICJ_2_1.htm",
+      "http://herve.dequengo.free.fr/Molinari/ICJ/ICJ_2_2.htm",
+      "http://herve.dequengo.free.fr/Molinari/ICJ/ICJ_2_3.htm",
+      "http://herve.dequengo.free.fr/Molinari/ICJ/ICJ_2_4.htm",
+      "http://herve.dequengo.free.fr/Molinari/ICJ/ICJ_2_5.htm",
+      "http://herve.dequengo.free.fr/Molinari/ICJ/ICJ_2_6.htm",
+      "http://herve.dequengo.free.fr/Molinari/ICJ/ICJ_2_7.htm",
+      "http://herve.dequengo.free.fr/Molinari/ICJ/ICJ_3_1.htm",
+      "http://herve.dequengo.free.fr/Molinari/ICJ/ICJ_3_2.htm",
+      "http://herve.dequengo.free.fr/Molinari/ICJ/ICJ_3_3.htm",
+      "http://herve.dequengo.free.fr/Molinari/ICJ/ICJ_A.htm"
+    ]
+  },
+  {
+    "id": "livre-31",
+    "title": "Conversations sur le commerce des grains et la protection de l'agriculture",
+    "parties": 10,
+    "characters": 415161,
+    "status": "texte et ancres vérifiés",
+    "source_errors": [],
+    "missing_anchor_fallbacks": [],
+    "missing_images": [],
+    "sources": [
+      "http://herve.dequengo.free.fr/Molinari/CG/CG_1_0.htm",
+      "http://herve.dequengo.free.fr/Molinari/CG/CG_1_1.htm",
+      "http://herve.dequengo.free.fr/Molinari/CG/CG_1_2.htm",
+      "http://herve.dequengo.free.fr/Molinari/CG/CG_1_3.htm",
+      "http://herve.dequengo.free.fr/Molinari/CG/CG_1_4.htm",
+      "http://herve.dequengo.free.fr/Molinari/CG/CG_1_5.htm",
+      "http://herve.dequengo.free.fr/Molinari/CG/CG_1_6.htm",
+      "http://herve.dequengo.free.fr/Molinari/CG/CG_2_1.htm",
+      "http://herve.dequengo.free.fr/Molinari/CG/CG_2_2.htm",
+      "http://herve.dequengo.free.fr/Molinari/CG/CG_2_3.htm"
+    ]
+  },
+  {
+    "id": "livre-32",
+    "title": "A Panama. L'isthme de Panama, la Martinique, Haïti",
+    "parties": 17,
+    "characters": 496000,
+    "status": "texte et ancres vérifiés",
+    "source_errors": [
+      "http://herve.dequengo.free.fr/Molinari/AP/AP_Gravure_1.JPG: HTTP Error 404: Not Found",
+      "http://herve.dequengo.free.fr/Molinari/AP/AP_TDM.htm: HTTP Error 404: Not Found",
+      "http://herve.dequengo.free.fr/Molinari/AP/AP_Gravure_2.JPG: HTTP Error 404: Not Found",
+      "http://herve.dequengo.free.fr/Molinari/AP/AP_Gravure_3.JPG: HTTP Error 404: Not Found",
+      "http://herve.dequengo.free.fr/Molinari/AP/AP_Gravure_4.JPG: HTTP Error 404: Not Found",
+      "http://herve.dequengo.free.fr/Molinari/AP/AP_Gravure_5.JPG: HTTP Error 404: Not Found",
+      "http://herve.dequengo.free.fr/Molinari/AP/AP_Gravure_6.JPG: HTTP Error 404: Not Found",
+      "http://herve.dequengo.free.fr/Molinari/AP/AP_Carte.JPG: HTTP Error 404: Not Found"
+    ],
+    "missing_anchor_fallbacks": [],
+    "missing_images": [
+      "http://herve.dequengo.free.fr/Molinari/AP/AP_Gravure_1.JPG",
+      "http://herve.dequengo.free.fr/Molinari/AP/AP_Gravure_2.JPG",
+      "http://herve.dequengo.free.fr/Molinari/AP/AP_Gravure_3.JPG",
+      "http://herve.dequengo.free.fr/Molinari/AP/AP_Gravure_4.JPG",
+      "http://herve.dequengo.free.fr/Molinari/AP/AP_Gravure_5.JPG",
+      "http://herve.dequengo.free.fr/Molinari/AP/AP_Gravure_6.JPG",
+      "http://herve.dequengo.free.fr/Molinari/AP/AP_Carte.JPG"
+    ],
+    "sources": [
+      "http://herve.dequengo.free.fr/Molinari/AP/AP_0.htm",
+      "http://herve.dequengo.free.fr/Molinari/AP/AP_1.htm",
+      "http://herve.dequengo.free.fr/Molinari/AP/AP_2.htm",
+      "http://herve.dequengo.free.fr/Molinari/AP/AP_3.htm",
+      "http://herve.dequengo.free.fr/Molinari/AP/AP_4.htm",
+      "http://herve.dequengo.free.fr/Molinari/AP/AP_5.htm",
+      "http://herve.dequengo.free.fr/Molinari/AP/AP_6.htm",
+      "http://herve.dequengo.free.fr/Molinari/AP/AP_7.htm",
+      "http://herve.dequengo.free.fr/Molinari/AP/AP_8.htm",
+      "http://herve.dequengo.free.fr/Molinari/AP/AP_9.htm",
+      "http://herve.dequengo.free.fr/Molinari/AP/AP_10.htm",
+      "http://herve.dequengo.free.fr/Molinari/AP/AP_11.htm",
+      "http://herve.dequengo.free.fr/Molinari/AP/AP_12.htm",
+      "http://herve.dequengo.free.fr/Molinari/AP/AP_13.htm",
+      "http://herve.dequengo.free.fr/Molinari/AP/AP_14.htm",
+      "http://herve.dequengo.free.fr/Molinari/AP/AP_15.htm",
+      "http://herve.dequengo.free.fr/Molinari/AP/AP_A.htm"
+    ]
+  },
+  {
+    "id": "livre-33",
+    "title": "Les Bourses du travail",
+    "parties": 48,
+    "characters": 454988,
+    "status": "texte et ancres vérifiés",
+    "source_errors": [],
+    "missing_anchor_fallbacks": [],
+    "missing_images": [],
+    "sources": [
+      "http://herve.dequengo.free.fr/Molinari/BT/BT_0.htm",
+      "http://herve.dequengo.free.fr/Molinari/BT/BT_1.htm",
+      "http://herve.dequengo.free.fr/Molinari/BT/BT_2.htm",
+      "http://herve.dequengo.free.fr/Molinari/BT/BT_3.htm",
+      "http://herve.dequengo.free.fr/Molinari/BT/BT_4.htm",
+      "http://herve.dequengo.free.fr/Molinari/BT/BT_5.htm",
+      "http://herve.dequengo.free.fr/Molinari/BT/BT_6.htm",
+      "http://herve.dequengo.free.fr/Molinari/BT/BT_7.htm",
+      "http://herve.dequengo.free.fr/Molinari/BT/BT_8.htm",
+      "http://herve.dequengo.free.fr/Molinari/BT/BT_9.htm",
+      "http://herve.dequengo.free.fr/Molinari/BT/BT_10.htm",
+      "http://herve.dequengo.free.fr/Molinari/BT/BT_11.htm",
+      "http://herve.dequengo.free.fr/Molinari/BT/BT_12.htm",
+      "http://herve.dequengo.free.fr/Molinari/BT/BT_13.htm",
+      "http://herve.dequengo.free.fr/Molinari/BT/BT_14.htm",
+      "http://herve.dequengo.free.fr/Molinari/BT/BT_15.htm",
+      "http://herve.dequengo.free.fr/Molinari/BT/BT_16.htm",
+      "http://herve.dequengo.free.fr/Molinari/BT/BT_17.htm",
+      "http://herve.dequengo.free.fr/Molinari/BT/BT_18.htm",
+      "http://herve.dequengo.free.fr/Molinari/BT/BT_19.htm",
+      "http://herve.dequengo.free.fr/Molinari/BT/BT_20.htm",
+      "http://herve.dequengo.free.fr/Molinari/BT/BT_21.htm",
+      "http://herve.dequengo.free.fr/Molinari/BT/BT_A.htm",
+      "http://herve.dequengo.free.fr/Molinari/BT/BT_B.htm",
+      "http://herve.dequengo.free.fr/Molinari/BT/BT_C.htm",
+      "http://herve.dequengo.free.fr/Molinari/BT/BT_D.htm",
+      "http://herve.dequengo.free.fr/Molinari/BT/BT_E.htm",
+      "http://herve.dequengo.free.fr/Molinari/BT/BT_F.htm",
+      "http://herve.dequengo.free.fr/Molinari/BT/BT_G.htm",
+      "http://herve.dequengo.free.fr/Molinari/BT/BT_H.htm",
+      "http://herve.dequengo.free.fr/Molinari/BT/BT_I.htm",
+      "http://herve.dequengo.free.fr/Molinari/BT/BT_K.htm",
+      "http://herve.dequengo.free.fr/Molinari/BT/BT_L.htm",
+      "http://herve.dequengo.free.fr/Molinari/BT/BT_M.htm",
+      "http://herve.dequengo.free.fr/Molinari/BT/BT_N.htm",
+      "http://herve.dequengo.free.fr/Molinari/BT/BT_O.htm",
+      "http://herve.dequengo.free.fr/Molinari/BT/BT_P.htm",
+      "http://herve.dequengo.free.fr/Molinari/BT/BT_Q.htm",
+      "http://herve.dequengo.free.fr/Molinari/BT/BT_R.htm",
+      "http://herve.dequengo.free.fr/Molinari/BT/BT_S.htm",
+      "http://herve.dequengo.free.fr/Molinari/BT/BT_T.htm",
+      "http://herve.dequengo.free.fr/Molinari/BT/BT_U.htm",
+      "http://herve.dequengo.free.fr/Molinari/BT/BT_V.htm",
+      "http://herve.dequengo.free.fr/Molinari/BT/BT_W.htm",
+      "http://herve.dequengo.free.fr/Molinari/BT/BT_X.htm",
+      "http://herve.dequengo.free.fr/Molinari/BT/BT_Y.htm",
+      "http://herve.dequengo.free.fr/Molinari/BT/BT_Z.htm",
+      "http://herve.dequengo.free.fr/Molinari/BT/BT_AB.htm"
+    ]
+  },
+  {
+    "id": "livre-34",
+    "title": "Grandeur et décadence de la guerre",
+    "parties": 36,
+    "characters": 431034,
+    "status": "texte et ancres vérifiés",
+    "source_errors": [
+      "http://herve.dequengo.free.fr/Molinari/GDG/GDG_A.htm: HTTP Error 404: Not Found"
+    ],
+    "missing_anchor_fallbacks": [
+      {
+        "source": "http://herve.dequengo.free.fr/Molinari/GDG/GDG_3_K.htm",
+        "target": "http://herve.dequengo.free.fr/Molinari/GDG/GDG_2_6.htm#sdfootnote3anc"
+      }
+    ],
+    "missing_images": [],
+    "sources": [
+      "http://herve.dequengo.free.fr/Molinari/GDG/GDG_0.htm",
+      "http://herve.dequengo.free.fr/Molinari/GDG/GDG_1_1.htm",
+      "http://herve.dequengo.free.fr/Molinari/GDG/GDG_1_2.htm",
+      "http://herve.dequengo.free.fr/Molinari/GDG/GDG_1_3.htm",
+      "http://herve.dequengo.free.fr/Molinari/GDG/GDG_1_4.htm",
+      "http://herve.dequengo.free.fr/Molinari/GDG/GDG_1_5.htm",
+      "http://herve.dequengo.free.fr/Molinari/GDG/GDG_1_6.htm",
+      "http://herve.dequengo.free.fr/Molinari/GDG/GDG_1_7.htm",
+      "http://herve.dequengo.free.fr/Molinari/GDG/GDG_1_8.htm",
+      "http://herve.dequengo.free.fr/Molinari/GDG/GDG_1_9.htm",
+      "http://herve.dequengo.free.fr/Molinari/GDG/GDG_2_1.htm",
+      "http://herve.dequengo.free.fr/Molinari/GDG/GDG_2_2.htm",
+      "http://herve.dequengo.free.fr/Molinari/GDG/GDG_2_3.htm",
+      "http://herve.dequengo.free.fr/Molinari/GDG/GDG_2_4.htm",
+      "http://herve.dequengo.free.fr/Molinari/GDG/GDG_2_5.htm",
+      "http://herve.dequengo.free.fr/Molinari/GDG/GDG_2_6.htm",
+      "http://herve.dequengo.free.fr/Molinari/GDG/GDG_2_7.htm",
+      "http://herve.dequengo.free.fr/Molinari/GDG/GDG_2_8.htm",
+      "http://herve.dequengo.free.fr/Molinari/GDG/GDG_2_9.htm",
+      "http://herve.dequengo.free.fr/Molinari/GDG/GDG_2_10.htm",
+      "http://herve.dequengo.free.fr/Molinari/GDG/GDG_2_11.htm",
+      "http://herve.dequengo.free.fr/Molinari/GDG/GDG_3_A.htm",
+      "http://herve.dequengo.free.fr/Molinari/GDG/GDG_3_B.htm",
+      "http://herve.dequengo.free.fr/Molinari/GDG/GDG_3_C.htm",
+      "http://herve.dequengo.free.fr/Molinari/GDG/GDG_3_D.htm",
+      "http://herve.dequengo.free.fr/Molinari/GDG/GDG_3_E.htm",
+      "http://herve.dequengo.free.fr/Molinari/GDG/GDG_3_F.htm",
+      "http://herve.dequengo.free.fr/Molinari/GDG/GDG_3_G.htm",
+      "http://herve.dequengo.free.fr/Molinari/GDG/GDG_3_H.htm",
+      "http://herve.dequengo.free.fr/Molinari/GDG/GDG_3_I.htm",
+      "http://herve.dequengo.free.fr/Molinari/GDG/GDG_3_K.htm",
+      "http://herve.dequengo.free.fr/Molinari/GDG/GDG_3_L.htm",
+      "http://herve.dequengo.free.fr/Molinari/GDG/GDG_3_M.htm",
+      "http://herve.dequengo.free.fr/Molinari/GDG/GDG_3_N.htm",
+      "http://herve.dequengo.free.fr/Molinari/GDG/GDG_3_O.htm",
+      "http://herve.dequengo.free.fr/Molinari/GDG/GDG_3_P.htm"
+    ]
+  },
+  {
+    "id": "livre-35",
+    "title": "Esquisse de l'organisation politique et économique de la société future",
+    "parties": 27,
+    "characters": 288854,
+    "status": "texte et ancres vérifiés",
+    "source_errors": [],
+    "missing_anchor_fallbacks": [],
+    "missing_images": [],
+    "sources": [
+      "http://herve.dequengo.free.fr/Molinari/SF/SF_0.htm",
+      "http://herve.dequengo.free.fr/Molinari/SF/SF_1_1.htm",
+      "http://herve.dequengo.free.fr/Molinari/SF/SF_1_2.htm",
+      "http://herve.dequengo.free.fr/Molinari/SF/SF_1_3.htm",
+      "http://herve.dequengo.free.fr/Molinari/SF/SF_1_4.htm",
+      "http://herve.dequengo.free.fr/Molinari/SF/SF_1_5.htm",
+      "http://herve.dequengo.free.fr/Molinari/SF/SF_1_6.htm",
+      "http://herve.dequengo.free.fr/Molinari/SF/SF_2_1.htm",
+      "http://herve.dequengo.free.fr/Molinari/SF/SF_2_2.htm",
+      "http://herve.dequengo.free.fr/Molinari/SF/SF_2_3.htm",
+      "http://herve.dequengo.free.fr/Molinari/SF/SF_2_4.htm",
+      "http://herve.dequengo.free.fr/Molinari/SF/SF_2_5.htm",
+      "http://herve.dequengo.free.fr/Molinari/SF/SF_2_6.htm",
+      "http://herve.dequengo.free.fr/Molinari/SF/SF_2_7.htm",
+      "http://herve.dequengo.free.fr/Molinari/SF/SF_2_8.htm",
+      "http://herve.dequengo.free.fr/Molinari/SF/SF_2_9.htm",
+      "http://herve.dequengo.free.fr/Molinari/SF/SF_2_10.htm",
+      "http://herve.dequengo.free.fr/Molinari/SF/SF_2_11.htm",
+      "http://herve.dequengo.free.fr/Molinari/SF/SF_2_12.htm",
+      "http://herve.dequengo.free.fr/Molinari/SF/SF_2_13.htm",
+      "http://herve.dequengo.free.fr/Molinari/SF/SF_2_14.htm",
+      "http://herve.dequengo.free.fr/Molinari/SF/SF_2_15.htm",
+      "http://herve.dequengo.free.fr/Molinari/SF/SF_3_A.htm",
+      "http://herve.dequengo.free.fr/Molinari/SF/SF_3_B.htm",
+      "http://herve.dequengo.free.fr/Molinari/SF/SF_3_C.htm",
+      "http://herve.dequengo.free.fr/Molinari/SF/SF_3_D.htm",
+      "http://herve.dequengo.free.fr/Molinari/SF/SF_3_E.htm"
+    ]
+  },
+  {
+    "id": "livre-36",
+    "title": "Questions économiques à l'ordre du jour",
+    "parties": 9,
+    "characters": 496734,
+    "status": "texte et ancres vérifiés",
+    "source_errors": [],
+    "missing_anchor_fallbacks": [],
+    "missing_images": [],
+    "sources": [
+      "http://herve.dequengo.free.fr/Molinari/QE/QE_0.htm",
+      "http://herve.dequengo.free.fr/Molinari/QE/QE_1.htm",
+      "http://herve.dequengo.free.fr/Molinari/QE/QE_2.htm",
+      "http://herve.dequengo.free.fr/Molinari/QE/QE_3.htm",
+      "http://herve.dequengo.free.fr/Molinari/QE/QE_4.htm",
+      "http://herve.dequengo.free.fr/Molinari/QE/QE_5.htm",
+      "http://herve.dequengo.free.fr/Molinari/QE/QE_6.htm",
+      "http://herve.dequengo.free.fr/Molinari/QE/QE_7.htm",
+      "http://herve.dequengo.free.fr/Molinari/QE/QE_8.htm"
+    ]
+  },
+  {
+    "id": "livre-37",
+    "title": "L'Empire socialiste des Inka",
+    "parties": 21,
+    "characters": 835345,
+    "status": "texte et ancres vérifiés",
+    "source_errors": [
+      "http://herve.dequengo.free.fr/Baudin/ESI/ESI_A.htm: HTTP Error 404: Not Found"
+    ],
+    "missing_anchor_fallbacks": [
+      {
+        "source": "http://herve.dequengo.free.fr/Baudin/ESI/ESI_13.htm",
+        "target": "http://herve.dequengo.free.fr/Baudin/ESI/ESI_9.htm#158"
+      },
+      {
+        "source": "http://herve.dequengo.free.fr/Baudin/ESI/ESI_15.htm",
+        "target": "http://herve.dequengo.free.fr/Baudin/ESI/ESI_15.htm#sdfootnote35anc"
+      }
+    ],
+    "missing_images": [],
+    "sources": [
+      "http://herve.dequengo.free.fr/Baudin/ESI/ESI_I.htm",
+      "http://herve.dequengo.free.fr/Baudin/ESI/ESI_1.htm",
+      "http://herve.dequengo.free.fr/Baudin/ESI/ESI_2.htm",
+      "http://herve.dequengo.free.fr/Baudin/ESI/ESI_3.htm",
+      "http://herve.dequengo.free.fr/Baudin/ESI/ESI_4.htm",
+      "http://herve.dequengo.free.fr/Baudin/ESI/ESI_5.htm",
+      "http://herve.dequengo.free.fr/Baudin/ESI/ESI_6.htm",
+      "http://herve.dequengo.free.fr/Baudin/ESI/ESI_7.htm",
+      "http://herve.dequengo.free.fr/Baudin/ESI/ESI_8.htm",
+      "http://herve.dequengo.free.fr/Baudin/ESI/ESI_9.htm",
+      "http://herve.dequengo.free.fr/Baudin/ESI/ESI_10.htm",
+      "http://herve.dequengo.free.fr/Baudin/ESI/ESI_11.htm",
+      "http://herve.dequengo.free.fr/Baudin/ESI/ESI_12.htm",
+      "http://herve.dequengo.free.fr/Baudin/ESI/ESI_13.htm",
+      "http://herve.dequengo.free.fr/Baudin/ESI/ESI_14.htm",
+      "http://herve.dequengo.free.fr/Baudin/ESI/ESI_15.htm",
+      "http://herve.dequengo.free.fr/Baudin/ESI/ESI_C.htm",
+      "http://herve.dequengo.free.fr/Baudin/ESI/ESI_A1.htm",
+      "http://herve.dequengo.free.fr/Baudin/ESI/ESI_A2.htm",
+      "http://herve.dequengo.free.fr/Baudin/ESI/ESI_B.htm",
+      "http://herve.dequengo.free.fr/Baudin/ESI/ESI_CG.htm"
+    ]
+  },
+  {
+    "id": "livre-38",
+    "title": "Toits ou plafonds ?",
+    "parties": 1,
+    "characters": 43944,
+    "status": "texte et ancres vérifiés",
+    "source_errors": [],
+    "missing_anchor_fallbacks": [],
+    "missing_images": [],
+    "sources": [
+      "http://herve.dequengo.free.fr/Friedman/TOP/TOP.htm"
+    ]
+  },
+  {
+    "id": "livre-39",
+    "title": "L'Économie politique en une leçon",
+    "parties": 30,
+    "characters": 439254,
+    "status": "texte et ancres vérifiés",
+    "source_errors": [],
+    "missing_anchor_fallbacks": [],
+    "missing_images": [],
+    "sources": [
+      "http://herve.dequengo.free.fr/Hazlitt/EPL/EPL_P2.htm",
+      "http://herve.dequengo.free.fr/Hazlitt/EPL/EPL_P.htm",
+      "http://herve.dequengo.free.fr/Hazlitt/EPL/EPL_0.htm",
+      "http://herve.dequengo.free.fr/Hazlitt/EPL/EPL_1.htm",
+      "http://herve.dequengo.free.fr/Hazlitt/EPL/EPL_2.htm",
+      "http://herve.dequengo.free.fr/Hazlitt/EPL/EPL_3.htm",
+      "http://herve.dequengo.free.fr/Hazlitt/EPL/EPL_4.htm",
+      "http://herve.dequengo.free.fr/Hazlitt/EPL/EPL_5.htm",
+      "http://herve.dequengo.free.fr/Hazlitt/EPL/EPL_6.htm",
+      "http://herve.dequengo.free.fr/Hazlitt/EPL/EPL_7.htm",
+      "http://herve.dequengo.free.fr/Hazlitt/EPL/EPL_8.htm",
+      "http://herve.dequengo.free.fr/Hazlitt/EPL/EPL_9.htm",
+      "http://herve.dequengo.free.fr/Hazlitt/EPL/EPL_10.htm",
+      "http://herve.dequengo.free.fr/Hazlitt/EPL/EPL_11.htm",
+      "http://herve.dequengo.free.fr/Hazlitt/EPL/EPL_12.htm",
+      "http://herve.dequengo.free.fr/Hazlitt/EPL/EPL_13.htm",
+      "http://herve.dequengo.free.fr/Hazlitt/EPL/EPL_14.htm",
+      "http://herve.dequengo.free.fr/Hazlitt/EPL/EPL_15.htm",
+      "http://herve.dequengo.free.fr/Hazlitt/EPL/EPL_16.htm",
+      "http://herve.dequengo.free.fr/Hazlitt/EPL/EPL_17.htm",
+      "http://herve.dequengo.free.fr/Hazlitt/EPL/EPL_18bis.htm",
+      "http://herve.dequengo.free.fr/Hazlitt/EPL/EPL_18.htm",
+      "http://herve.dequengo.free.fr/Hazlitt/EPL/EPL_19.htm",
+      "http://herve.dequengo.free.fr/Hazlitt/EPL/EPL_20.htm",
+      "http://herve.dequengo.free.fr/Hazlitt/EPL/EPL_21.htm",
+      "http://herve.dequengo.free.fr/Hazlitt/EPL/EPL_22.htm",
+      "http://herve.dequengo.free.fr/Hazlitt/EPL/EPL_23.htm",
+      "http://herve.dequengo.free.fr/Hazlitt/EPL/EPL_24.htm",
+      "http://herve.dequengo.free.fr/Hazlitt/EPL/EPL_26.htm",
+      "http://herve.dequengo.free.fr/Hazlitt/EPL/EPL_N.htm"
+    ]
+  },
+  {
+    "id": "livre-40",
+    "title": "Guide à travers les panacées économiques",
+    "parties": 17,
+    "characters": 395927,
+    "status": "texte et ancres vérifiés",
+    "source_errors": [
+      "http://herve.dequengo.free.fr/Machlup/GTPE/GTPE_01.htm: HTTP Error 404: Not Found"
+    ],
+    "missing_anchor_fallbacks": [
+      {
+        "source": "http://herve.dequengo.free.fr/Machlup/GTPE/GTPE_3.htm",
+        "target": "http://herve.dequengo.free.fr/Machlup/GTPE/GTPE_5.htm#D"
+      },
+      {
+        "source": "http://herve.dequengo.free.fr/Machlup/GTPE/GTPE_7.htm",
+        "target": "http://herve.dequengo.free.fr/Machlup/GTPE/GTPE_5.htm#C"
+      }
+    ],
+    "missing_images": [],
+    "sources": [
+      "http://herve.dequengo.free.fr/Machlup/GTPE/GTPE_0_0.htm",
+      "http://herve.dequengo.free.fr/Machlup/GTPE/GTPE_0_1.htm",
+      "http://herve.dequengo.free.fr/Machlup/GTPE/GTPE_0_2.htm",
+      "http://herve.dequengo.free.fr/Machlup/GTPE/GTPE_1.htm",
+      "http://herve.dequengo.free.fr/Machlup/GTPE/GTPE_2.htm",
+      "http://herve.dequengo.free.fr/Machlup/GTPE/GTPE_3.htm",
+      "http://herve.dequengo.free.fr/Machlup/GTPE/GTPE_4.htm",
+      "http://herve.dequengo.free.fr/Machlup/GTPE/GTPE_5.htm",
+      "http://herve.dequengo.free.fr/Machlup/GTPE/GTPE_6.htm",
+      "http://herve.dequengo.free.fr/Machlup/GTPE/GTPE_7.htm",
+      "http://herve.dequengo.free.fr/Machlup/GTPE/GTPE_8.htm",
+      "http://herve.dequengo.free.fr/Machlup/GTPE/GTPE_9.htm",
+      "http://herve.dequengo.free.fr/Machlup/GTPE/GTPE_10.htm",
+      "http://herve.dequengo.free.fr/Machlup/GTPE/GTPE_11.htm",
+      "http://herve.dequengo.free.fr/Machlup/GTPE/GTPE_12.htm",
+      "http://herve.dequengo.free.fr/Machlup/GTPE/GTPE_13.htm",
+      "http://herve.dequengo.free.fr/Machlup/GTPE/GTPE_14.htm"
+    ]
+  },
+  {
+    "id": "livre-41",
+    "title": "Introduction aux principes fondamentaux de l'économie politique",
+    "parties": 9,
+    "characters": 477458,
+    "status": "texte et ancres vérifiés",
+    "source_errors": [],
+    "missing_anchor_fallbacks": [
+      {
+        "source": "http://herve.dequengo.free.fr/Strigl/IPFEP/IPFEP_3.htm",
+        "target": "http://herve.dequengo.free.fr/Strigl/IPFEP/IPFEP_5.htm#p137"
+      },
+      {
+        "source": "http://herve.dequengo.free.fr/Strigl/IPFEP/IPFEP_4.htm",
+        "target": "http://herve.dequengo.free.fr/Strigl/IPFEP/IPFEP_4.htm#fig11"
+      },
+      {
+        "source": "http://herve.dequengo.free.fr/Strigl/IPFEP/IPFEP_4.htm",
+        "target": "http://herve.dequengo.free.fr/Strigl/IPFEP/IPFEP_3.htm#fig10"
+      },
+      {
+        "source": "http://herve.dequengo.free.fr/Strigl/IPFEP/IPFEP_4.htm",
+        "target": "http://herve.dequengo.free.fr/Strigl/IPFEP/IPFEP_3.htm#fig10"
+      },
+      {
+        "source": "http://herve.dequengo.free.fr/Strigl/IPFEP/IPFEP_4.htm",
+        "target": "http://herve.dequengo.free.fr/Strigl/IPFEP/IPFEP_4.htm#fig11"
+      },
+      {
+        "source": "http://herve.dequengo.free.fr/Strigl/IPFEP/IPFEP_5.htm",
+        "target": "http://herve.dequengo.free.fr/Strigl/IPFEP/IPFEP_5.htm#p128"
+      }
+    ],
+    "missing_images": [],
+    "sources": [
+      "http://herve.dequengo.free.fr/Strigl/IPFEP/IPFEP_0.htm",
+      "http://herve.dequengo.free.fr/Strigl/IPFEP/IPFEP_1.htm",
+      "http://herve.dequengo.free.fr/Strigl/IPFEP/IPFEP_2.htm",
+      "http://herve.dequengo.free.fr/Strigl/IPFEP/IPFEP_3.htm",
+      "http://herve.dequengo.free.fr/Strigl/IPFEP/IPFEP_4.htm",
+      "http://herve.dequengo.free.fr/Strigl/IPFEP/IPFEP_5.htm",
+      "http://herve.dequengo.free.fr/Strigl/IPFEP/IPFEP_6.htm",
+      "http://herve.dequengo.free.fr/Strigl/IPFEP/IPFEP_7.htm",
+      "http://herve.dequengo.free.fr/Strigl/IPFEP/IPFEP_8.htm"
+    ]
+  }
+]

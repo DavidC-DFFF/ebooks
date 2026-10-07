@@ -1,0 +1,557 @@
+<!doctype html><html lang="fr"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Les Débuts historiques de l&#x27;École économique autrichienne — Ludwig von Mises</title><style>:root {
+  --bg: #ffffff;
+  --text: #000000;
+  --accent: #4444ff;
+  --background: #ffffff;
+  --button-bg: #f7f7f7;
+  --button-hover-bg: #eaeaea;
+  --progress-color: #660000;
+}
+
+[data-theme="dark"] {
+  --bg: #2c2c2e;
+  --text: #e0e0e0;
+  --accent: #9b9bff;
+  --background: #2c2c2e;
+  --button-bg: #3a3a3c;
+  --button-hover-bg: #48484a;
+  --progress-color: #ffdddd;
+}
+
+body {
+  margin: 0;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 1.2rem;
+  line-height: 1.6;
+  text-align: justify;
+  background: var(--bg);
+  color: var(--text);
+  padding: 0;
+}
+
+/* === NAVBAR === */
+nav.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2.2rem;
+  background-color: var(--background);
+  backdrop-filter: blur(6px);
+  box-shadow: 0 1px 6px rgba(0, 0, 0, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: nowrap;
+  padding: 0 0.5rem;
+  gap: 0.5rem;
+  z-index: 1000;
+  font-size: 0.85rem;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+nav.navbar select {
+  flex-grow: 1;
+  min-width: 0;
+  max-width: 100%;
+  padding: 0.25rem;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  background: var(--button-bg);
+  color: var(--text);
+}
+
+nav.navbar button {
+  flex-shrink: 0;
+  background: none;
+  border: none;
+  font-size: 1.2em;
+  cursor: pointer;
+  color: var(--text);
+}
+
+/* === CONTENU === */
+main {
+  padding: 3rem 1rem 2rem;
+  max-width: 600px;
+  margin: auto;
+}
+
+article p {
+  text-indent: 1.5em;
+  text-align: justify;
+  hyphens: auto;
+}
+
+/* === TITRES === */
+h1 {
+  font-family: 'Segoe UI', 'Helvetica Neue', sans-serif;
+  font-weight: bold;
+  text-align: center;
+  font-size: 1.8rem;
+  margin-bottom: 0.5em;
+}
+
+main.centered h2 {
+  font-family: 'Playfair Display', Georgia, serif;
+  /* ou ta police préférée */
+  font-size: 2.4rem;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 0.5em;
+}
+
+.subtitle {
+  font-size: 1.2em;
+  color: var(--accent);
+  margin-bottom: 2em;
+}
+
+.start-button {
+  display: inline-block;
+  padding: 1em 2em;
+  background: var(--accent);
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 0.5em;
+  transition: opacity 0.3s;
+}
+
+.start-button:hover {
+  opacity: 0.8;
+}
+
+/* === NAVIGATION CHAPITRES === */
+.chapter-nav {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 1rem;
+  margin: 2rem auto 0rem auto;
+  max-width: 640px;
+  background-color: var(--background);
+}
+
+.chapter-nav a {
+  flex: 1;
+  text-align: center;
+  text-decoration: none;
+  padding: 0.75rem;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  background-color: var(--button-bg);
+  color: inherit;
+  transition: background-color 0.2s;
+}
+
+.chapter-nav a:hover {
+  background-color: var(--button-hover-bg);
+}
+
+.fixed-bottom {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  justify-content: center;
+  background-color: var(--background);
+  box-shadow: 0 -1px 6px rgba(0, 0, 0, 0.1);
+  padding: 1rem;
+  z-index: 100;
+}
+
+main.centered {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding-top: 2.5rem;
+  /* pour éviter de passer sous la navbar */
+  box-sizing: border-box;
+  text-align: center;
+}
+
+.index-image {
+  max-width: 80%;
+  height: auto;
+  margin-top: 2rem;
+}
+
+ul.tiret {
+  list-style: none;
+  padding-left: 0.5rem;
+}
+
+ul.tiret li {
+  position: relative;
+  padding-left: 1.5rem;
+  text-align: justify;
+  margin-bottom: 0rem;
+}
+
+ul.tiret li::before {
+  content: "—";
+  /* Tiret cadratin */
+  position: absolute;
+  left: 0;
+  color: var(--text);
+}
+
+main.end-page {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 3rem 1rem;
+  text-align: center;
+}
+
+.end-page h1 {
+  font-size: 2.5rem;
+  font-family: 'Playfair Display', Georgia, serif;
+  margin-bottom: 2rem;
+  color: var(--text);
+}
+
+.end-image {
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  object-fit: cover;
+  filter: grayscale(100%);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.fade-in {
+  opacity: 0;
+  animation: fadeIn 0.8s ease-in forwards;
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
+}
+
+#global-progress {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  height: 4px;
+  background-color: var(--progress-color); /* couleur personnalisable */
+  width: 0%;
+  z-index: 9999;
+  transition: width 0.4s ease;
+}
+
+html[data-font="small"] {
+  font-size: 0.9rem;
+}
+
+html[data-font="medium"] {
+  font-size: 1.1rem;
+}
+
+html[data-font="large"] {
+  font-size: 1.3rem;
+}
+
+html {
+  transition: font-size 0.3s ease;
+}
+
+*{box-sizing:border-box}html{scroll-padding-top:4rem}nav.navbar{height:auto;min-height:3rem;max-width:600px;padding:.3rem .5rem}nav.navbar button{min-width:44px;min-height:44px}nav.navbar select{min-height:44px;width:50%;font-size:.85rem}main{padding-top:4rem;padding-bottom:7rem}h2{font-family:'Segoe UI',sans-serif;font-size:1.65rem;line-height:1.35;text-align:center}a{color:var(--accent);overflow-wrap:anywhere}header{text-align:center;margin-bottom:2rem}section{margin-top:2rem}body.js article section{display:none}body.js article section.active{display:block}body.js header,body.js details,body.js footer{display:none}body.js.home header,body.js.home details,body.js.home footer{display:block}body.js.home article section{display:none}.chapter-nav{max-width:600px;margin:auto;padding:.5rem;gap:.5rem}.chapter-nav a{min-height:44px;font-size:.9rem;padding:.65rem .4rem}.chapter-nav a[aria-disabled=true]{visibility:hidden}#global-progress{transition:none}.meta{font-size:.85rem;text-align:left}details nav a{display:block;padding:.5rem 0}button:focus-visible,a:focus-visible,select:focus-visible{outline:3px solid var(--accent);outline-offset:2px}sup{line-height:0}sup a{padding:.25rem}.reader-bottom{display:none}.js .reader-bottom{display:flex}@media print{nav.navbar,.reader-bottom,#global-progress{display:none}body.js article section{display:block!important}main{padding:0}section{break-before:page}}
+
+:root{--bg:oklch(0.98 0.008 90);--background:var(--bg);--text:oklch(0.23 0.012 160);--accent:oklch(0.35 0.077 160);--line:oklch(0.83 0.015 160);--button-bg:var(--bg);--button-hover-bg:oklch(0.94 0.012 90);--progress-color:var(--accent);--size:1.15rem}
+html{font-size:16px;transition:none}
+[data-theme="dark"]{color-scheme:dark;--bg:oklch(0.2 0.008 160);--background:var(--bg);--text:oklch(0.91 0.008 90);--accent:oklch(0.82 0.08 160);--line:oklch(0.4 0.015 160);--button-bg:var(--bg);--button-hover-bg:oklch(0.27 0.012 160);--progress-color:var(--accent)}
+body{font-family:Georgia,'Times New Roman',serif;font-size:var(--size);line-height:1.75}
+h1,h2,h3,h4{font-family:Georgia,'Times New Roman',serif}h1{font-size:clamp(2.25rem,8vw,3.75rem);line-height:1.12;letter-spacing:-.03em}h2{font-size:1.7rem;line-height:1.3}h3,h4{line-height:1.4}.subtitle{font-size:1.35rem;line-height:1.5}p{margin:0 0 1.1em}
+nav.navbar{font-family:system-ui,sans-serif;box-shadow:none;border-bottom:1px solid var(--line);gap:.3rem}
+nav.navbar button{font-size:.9rem;border:1px solid var(--line);border-radius:.3rem;padding:.4rem;min-width:40px}
+nav.navbar>a{display:flex;align-items:center;justify-content:center;min-width:32px;min-height:44px;text-decoration:none}
+nav.navbar select{border-color:var(--line);width:auto;flex:1}
+.chapter-nav a{border-color:var(--line)}.start-button{background:oklch(0.35 0.077 160);color:oklch(0.98 0.008 90)}
+@media print{body{font-size:11pt;background:white;color:black}}
+
+img{max-width:100%;height:auto}table{max-width:100%;display:block;overflow-x:auto}pre{white-space:pre-wrap;overflow-wrap:anywhere}section>h2:first-child,section>h3:first-child{margin-top:0}</style></head><body>
+<nav class="navbar" aria-label="Navigation de lecture"><a href="../index.html" aria-label="Retour à la bibliothèque">⌂</a><a href="#sommaire" aria-label="Accueil et sommaire">☰</a><select id="toc" aria-label="Choisir une partie"><option value="">Sommaire</option><option value="partie-0">I. Carl Menger et l&#x27;École autrichienne</option></select><button id="smaller" aria-label="Réduire la taille du texte">A−</button><button id="larger" aria-label="Agrandir le texte">A+</button><button id="toggle-theme" aria-label="Changer le thème" aria-pressed="false">☾</button></nav>
+<main><header><h1>Les Débuts historiques de l&#x27;École économique autrichienne</h1><p>Ludwig von Mises</p><a class="start-button" id="resume" href="#partie-0">Commencer la lecture</a></header><details id="sommaire" open><summary>Table des matières</summary><nav aria-label="Sommaire"><a href="#partie-0">I. Carl Menger et l&#x27;École autrichienne</a></nav></details><article><section id="partie-0">
+
+
+
+
+
+
+<p> </p>
+
+<p><b>Note :</b> Ce texte a été publié pour la première fois
+dans sa traduction espagnole (<i>El Establecimiento Histórico de la Escuela
+Austriaca de Economica</i>) en 1962. La version
+en anglaise ne fut publiée qu'en 1969 sous le titre
+<i>The Historical Setting of the Austrian School of Economics</i> par Arlington House.
+Il en existe aussi une traduction italienne datant de 1992 (<i>La Collacazione
+Storica della Scuola Autriaca di Economica</i>).</p>
+
+<p> </p>
+<h2>I. Carl Menger et l'École autrichienne</h2>
+<p> </p>
+
+<h4>1. Les origines</h4>
+
+<p>Ce qu'on appelle, en économie, "l'École autrichienne" commence en 1871, lorsque Carl Menger publia un mince volume sous le titre <i>Grundsätze der Volkswirtschaftslehre</i> [Principes d'économie politique].</p>
+
+<p>Il est habituel de dépister l'influence que le milieu a exercé sur les réalisations du génie. Les gens aiment attribuer les exploits d'un homme de génie, au moins dans une certaine mesure, à l'effet de l'environnement et aux courants de l'opinion de son époque et de son pays. Quels que soient les résultats de cette méthode dans certains cas,  il n'y a pas de doute qu'elle est inapplicable en ce qui concerne les Autrichiens dont les réflexions, les idées et les doctrines comptent pour l'humanité. Bernard Bolzano, Gregor Mendel et Sigmund Freud ne furent pas stimulés par leurs parents, professeurs, collègues ou amis. Leurs efforts ne rencontrèrent aucune sympathie, ni de la part des compatriotes de leur temps, ni de celle du gouvernement de leur pays. Bolzano et Mendel poursuivirent leur principaux travaux dans des endroits qui, dans leurs domaines particuliers, pouvaient être considérés comme un désert intellectuel. Et ils moururent bien avant que les gens ne commencèrent à pressentir la valeur de leurs contributions. On se moqua de Freud quand il rendit publiques ses doctrines au sein de l'Association médicale de Vienne.</p>
+
+<p>On pourrait dire que la théorie du subjectivisme et du marginalisme développée par Menger était dans l'air. Plusieurs précurseurs la laissaient prévoir. De plus, à peu près en même temps que Menger écrivait et publiait son livre, William Stanley Jevons et Léon Walras écrivirent et publièrent eux aussi des livres dans lesquels ils présentaient le concept d'utilité marginale. Malgré cela, il est certain qu'aucun de ses professeurs, amis ou collègues n'éprouvait le moindre intérêt pour les problèmes qui passionnaient Menger. Quelque temps avant le déclenchement de la Première Guerre Mondiale, alors je lui parlais des réunions informelles mais régulières aux cours desquelles les jeunes économistes viennois avaient l'habitude de discuter des questions de théorie économique, il remarqua d'un air songeur : "Quand j'avais votre âge, personne ne se souciait de ces choses à Vienne." Jusqu'à la fin des années 1870 il n'y avait pas d' "École autrichienne" : il n'y avait que Carl Menger.</p>
+
+<p>Eugen von Böhm-Bawerk et Friedrich Wieser n'eurent jamais Menger comme professeur. Ils terminèrent leurs études à l'Université de Vienne avant que Menger ne commença ses cours comme <i>Privatdozent</i>. Ce qu'ils apprirent de lui, ils le trouvèrent en étudiant les <i>Grundsätze</i>. Quand ils revinrent en Autriche après avoir passé quelque temps dans les universités allemandes, en particulier au séminaire de Karl Kniess à Heidelberg, et qu'ils publièrent leurs premiers livres, ils étaient payés pour enseigner l'économie dans les universités d'Innsbruck et de Prague respectivement. Très vite, certains jeunes gens ayant participé au séminaire de Menger et ayant subi son influence personnelle, augmentèrent le nombre des auteurs contribuant à la recherche économique. Des étrangers commencèrent à parler de ces auteurs en disant "les Autrichiens." Mais l'appellation "École autrichienne d'économie" ne fut utilisée que plus tard, quand leur opposition à l'École historique allemande occupa le devant de la scène après la publication, en 1883, du deuxième livre de Menger, <i>Untersuchungen über die Methode der Sozialwissenschaften und der Politischen Ökonomie insbesondere</i>.</p>
+
+<h4>2. L'École économique autrichienne et les Universités autrichiennes</h4>
+
+<p>Le Cabinet autrichien dans lequel Menger travaillait (au service de presse) au début des années 1870 — avant d'être nommé maître assistant à l'Université de Vienne — était composé de membres du Parti Libéral défendant les libertés civiques, le gouvernement représentatif, l'égalité de tous les citoyens devant la loi, une monnaie saine et la liberté du commerce. A la fin des années 1870, le Parti Libéral fut écarté par une alliance de l'Église, des princes et comtes de l'aristocratie tchèque et polonaise et des partis nationalistes des diverses nationalités slaves. Cette coalition s'opposait à tous les idéaux que les Libéraux avaient soutenus. Cependant, et jusqu'à la désintégration de l'Empire des Habsbourg en 1918, la Constitution que les Libéraux avait conduit l'Empereur à accepter en 1867 et les lois fondamentales qui la complétaient restaient très largement en vigueur.</p>
+
+<p>Dans le climat de liberté que ces lois garantissaient, Vienne devint un centre pour les pionniers des nouvelles façons de penser. Depuis le milieu du seizième jusqu'à la fin du dix-huitième siècle, l'Autriche était restée étrangère à l'effort intellectuel de l'Europe. Personne à Vienne — et encore moins dans les autres territoires autrichiens — ne se souciait de la philosophie, de la littérature et des sciences de l'Europe occidentale. Quand Leibniz et plus tard David Hume visitèrent Vienne, il ne s'y trouvait aucun autochtone qui aurait pu être intéressé par leurs travaux <a href="#partie-0-note1">[1]</a>. A l'exception de Bolzano, aucun Autrichien ne contribua avant la seconde moitié de dix-neuvième siècle de manière importante aux sciences philosophiques ou historiques.</p>
+
+<p>Mais quand les Libéraux eurent éliminé les chaînes qui avaient empêché tout effort intellectuel, quand ils eurent fini d'abolir la censure et de dénoncer le concordat, d'éminents esprits commencèrent à converger vers Vienne. Certains venaient d'Allemagne — comme les philosophes Lorenz von Stein et Rudolf von Jhering — mais la plupart venaient des provinces autrichiennes ; un petit nombre étaient nés à Vienne. Il n'y avait aucun conformisme entre ces leaders, ni au sein de leur successeurs. Brentano, l'ex-Dominicain, inaugura un courant de pensée qui aboutit finalement à la phénoménologie de Husserl. Mach fut le chef de file d'une philosophie qui conduisit au positivisme logique de Schlick, Carnap et de leur "Cercle de Vienne." Breuer, Freud et Adler interprétèrent les phénomènes névrotiques d'une façon radicalement différente de celle des méthodes de Krafft-Ebing et Wagner-Jauregg.</p>
+
+<p>Le "Ministère de l'instruction et des cultes" autrichien voyait d'un mauvais oeil toutes ces tentatives. Depuis le début des années 1880, le Cabinet ministériel et le personnel de ce département avait été choisi parmi les plus sûrs des conservateurs et des ennemis de toutes les idées et institutions politiques modernes. Ils n'avaient que mépris pour ce qui était à leurs yeux des "folies exotiques." Ils auraient aimé interdire l'accès aux universités à toutes ces nouveautés.</p>
+
+<p>Mais le pouvoir de l'administration était sérieusement restreint par trois "privilèges" que les universités avaient acquis suite à l'inflence des idées libérales. Les professeurs étaient des fonctionnaires et, comme tous les autres fonctionnaires, devaient obéir aux ordres de leurs supérieurs, c'est-à-dire du Cabinet ministériel et de ses aides. Toutefois, ces supérieurs n'avaient pas le droit de se mêler du contenu des doctrines enseignées dans les classes et les séminaires. A cet égard les professeurs jouissaient de cette "liberté de l'enseignement" dont on parle tant. De plus, le ministère était obligé — bien que cette obligation n'ait jamais été énoncée de façon claire — d'accepter de nommer les professeurs, ou pour être plus précis de suggérer à l'Empereur la nomination d'un professeur, d'après les suggestions faites par la faculté concernée. Enfin, il existait une institution appelée <i>Privatdozent</i>. Un docteur ayant publié un livre savant pouvait demander à la faculté de l'admettre comme enseignant libre et privé dans sa discipline. Si la faculté tranchait en faveur du candidat, le consentement du ministère était encore requis. En pratique ce consentement était, avant le régime de Schuschnigg, toujours accordé.</p>
+
+<p>Le <i>Privatdozent</i> dûment admis n'était pas, dans cette fonction, un fonctionnaire. Même si le titre de professeur lui était accordé, il ne recevait aucune rémunération de la part du gouvernement. Quelques <i>Privatdozents</i> pouvaient vivre de leurs fonds propres. La plupart travaillaient pour gagner leur vie. Leur droit de toucher les frais d'inscription payés par les étudiants suivant leurs cours était dans la plupart des cas sans valeur.</p>
+
+<p>L'effet de cet aménagement de la vie universitaire fut que les conseils de professeurs jouissaient d'une autonomie presque illimitée dans la direction de leurs écoles. L'économie était enseignée dans les Facultés de Droit et de Sciences sociales (<i>Rechts und staatswissenschafltiche Fakultäten</i>) des universités. Dans la plupart de ces universités il y avait deux chaires d'économie. Quand l'une d'elle devenait vacante, un corps de spécialistes du droit devait — avec le concours d'au plus un économiste — choisir le futur titulaire. La décision appartenait ainsi à des non économistes. On peut raisonnablement supposer que ces professeurs de droit étaient animés des meilleures intentions. Mais ils n'étaient pas économistes. Ils devaient choisir entre deux écoles des pensée rivales : l'École autrichienne d'une part, et l'École historique, prétendument moderne, de l'autre. Même si aucun préjugé politique et nationaliste ne troublait leur jugement, ils ne pouvaient s'empêcher d'être un peu méfiants à l'égard un courant de pensée que les professeurs des universités de l'Empire allemand qualifiaient de spécifiquement autrichien. Jamais auparavant le moindre nouveau mode de pensée n'était né en Autriche. Les universités autrichiennes étaient restées stériles jusqu'à ce qu'elles furent — après la révolution de 1848 — réorganisées selon le modèle des universités allemandes. Pour des personnes peu familières des sujets économiques, l'attribut "autrichien" appliqué à une doctrine portait en lui de forts relents des jours sombres de la contre-réforme et de Metternich. Pour un intellectuel autrichien, rien ne pouvait sembler plus désastreux qu'un retour de son pays à l'inanité spirituelle du bon vieux temps.</p>
+
+<p>Carl Menger, Wieser et Böhm-Bawerk avaient obtenu leurs chaires à Vienne, Prague et Innsbruck avant que la "Querelle des méthodes" [<i>Methodenstreit</i>] n'eut commencé à apparaître aux yeux du profane autrichien comme un conflit entre la science "moderne" et "l'arriération" autrichienne. Leurs collègues n'avaient aucune rancune contre eux. Mais ils essayaient à chaque fois que c'était possible de faire venir d'Allemagne des partisans de l'École historique dans les universités autrichiennes. Ceux que le monde appelait les "économistes autrichiens" étaient, dans les universités autrichiennes, des marginaux tolérés plutôt avec réticence.</p>
+
+<h4>3. L'École autrichienne et la vie intellectuelle de l'Autriche</h4>
+
+<p>Les universités françaises et allemandes les plus distinguées n'étaient pas uniquement, à la grande époque du libéralisme, des institutions d'apprentissage permettant de donner aux générations montantes l'instruction requise pour la pratique satisfaisante de leurs métiers. Elles étaient des centres de culture. Certains de leurs professeurs étaient connus et admirés dans le monde entier. Leurs cours étaient suivis non seulement par des étudiants ordinaires prévoyant de passer leurs diplômes universitaires, mais aussi par des hommes et des femmes mûrs, tenant une place active dans leurs professions, leurs affaires ou en politique, et n'attendant de ces cours rien d'autre que la satisfaction du plaisir intellectuel. Ainsi, de telles personnes extérieures, qui n'étaient pas des étudiants au sens officiel, affluaient aux cours de Renan, Fustel de Coulanges et Bergson à Paris, à ceux de Hegel, Helmholtz, Mommsen et Treitschke à Berlin. Le public instruit s'intéressait de manière sérieuse au travail des cercles universitaires. Les élites lisaient les livres et les magazines publiés par les professeurs, s'inscrivaient aux sociétés savantes et suivaient passionnément les débats se déroulant lors des réunions.</p>
+
+<p>Certains de ces amateurs, qui ne consacraient que des heures de loisir à leurs études, dépassèrent le niveau de simples dilettantes. L'histoire de la science moderne retient les noms de nombreux "marginaux" merveilleux de ce genre. C'est par exemple un fait typique que la seule contribution remarquable (bien que n'ayant pas marqué son époque) à l'économie en provenance de l'Allemagne du deuxième Reich vint d'un conseiller d'entreprise affairé, Heinrich Oswalt, de Francfort, ville qui n'avait pas d'université à l'époque où son livre fut écrit <a href="#partie-0-note2">[2]</a>.</p>
+
+<p>A Vienne également, une association intime entre les professeurs de l'université et le public cultivé de la ville prévalait dans les dernières décennies du dix-neuvième siècle et au début du vingtième. Elle commença à s'évanouir lorsque les vieux maîtres moururent ou partirent à la retraite et que des hommes de moindre stature obtinrent leurs chaires. Ce fut l'époque où la réputation de l'Université de Vienne ainsi que le rang culturel éminent de la ville se maintinrent et s'élevèrent grâce à quelques <i>Privatdozents</i>. Le cas le plus remarquable est celui de la psychanalyse. Elle n'obtint jamais le moindre encouragement de la part des institutions officielles ; elle se développa et prospéra en dehors de l'université et ses seuls liens avec la hiérarchie bureaucratique de l'enseignement résidaient dans le fait que Freud était un <i>Privatdozent</i> ayant le titre sans signification de professeur.</p>
+
+<p>Il existait à Vienne, en tant qu'héritage des années où les fondateurs de l'École autrichienne avaient finalement obtenu la reconnaissance, un vif intérêt pour les problèmes économique. Cet intérêt permit à l'auteur de ces lignes d'organiser un <i>Privatseminar</i> dans les années 1920, de créer l'Association économique, de mettre sur pied l'Institut autrichien de recherches sur le cycle économique, devenu plus tard l'Institut autrichien de recherche économique.</p>
+
+<p>Le <i>Privatseminar</i> n'avait aucun lien avec l'Université, ni avec aucune autre institution. Deux fois par mois, un groupe d'érudits, parmi eux plusieurs <i>Privatdozents</i>, se réunissait dans le bureau de l'auteur de ces lignes à la Chambre de commerce. La plupart des participants appartenaient à la génération qui avait commencé ses études universitaires après la fin de le Première Guerre Mondiale. Certains étaient plus âgés. Ils étaient unis par un intérêt ardent pour tous les domaines des sciences de l'action humaine. Au cours des débats, on traitait de problèmes de philosophie, d'épistémologie, de théorie économique et de diverses branches de recherche historique. Le <i>Privatseminar</i> s'arrêta quand, en 1934, l'auteur de ces lignes fut nommé à la chaire de relations économiques internationales de l'Institut Universitaire des Hautes Études Internationales de Genève, en Suisse.</p>
+
+<p>A l'exception de Richard von Strigl, dont la mort prématurée mit fin à une brillante carrière scientifique, et de Ludwig Bettelheim-Gabillon, sur lequel nous reviendrons, tous les membres de ce <i>Privatseminar</i> trouvèrent un domaine adéquat pour continuer hors de l'Autriche leur travail en tant que savants, auteurs et enseignants.</p>
+
+<p>Dans le domaine de l'esprit, Vienne joua un rôle important dans les années séparant l'établissement du Parlement au début des années 1860 et l'invasion des nazis en 1938. L'épanouissement s'était produit soudainement, après des siècles de stérilité et d'apathie. Le déclin avait déjà commencé plusieurs années avant l'intrusion des nazis.</p>
+
+<p>Dans toutes les nations et dans toutes les périodes historiques, les exploits intellectuels sont le fruit du travail d'un petit nombre d'hommes et ne sont appréciés que par une petite élite. Le grand nombre regarde ces prouesses avec haine et mépris, au mieux avec indifférence. En Autriche et à Vienne l'élite était particulièrement réduite, et la haine des masses et de leurs chefs était particulièrement venimeuse.</p>
+
+<h4>4. Böhm-Bawerk et Wieser, membres du Cabinet autrichien</h4>
+
+<p>L'impopularité de l'économie est la conséquence de son analyse des effets des privilèges. Il est impossible de trouver une erreur dans la démonstration des économistes prouvant que tous les privilèges nuisent aux intérêts du reste de la nation ou au moins d'une grande partie de celle-ci, que ceux qui en sont victimes ne toléreront l'existence de tels privilèges que si on leur en accorde à eux aussi, et que lorsque tous le monde jouit de privilèges, personne n'y gagne mais tout le monde y perd du fait de la baisse de la productivité du travail <a href="#partie-0-note3">[3]</a>. Les avertissements des économistes sont toutefois écartés par la convoitise de gens pleinement conscients de leur incapacité à réussir dans un marché concurrentiel sans l'aide de privilèges spéciaux. Ils sont persuadés qu'ils obtiendront des privilèges plus intéressants que les autres groupes ou qu'ils seront en mesure d'empêcher, au moins pendant un certain temps, tout octroi de privilèges compensatoires aux autres groupes. A leurs yeux, l'économiste est simplement une source d'ennuis qui veut contrarier leurs plans.</p>
+
+<p>Quand Menger, Böhm-Bawerk et Wieser commencèrent leurs carrières scientifiques, ils ne s'intéressaient pas aux questions de politique économique et au rejet de l'interventionnisme de la part de l'économie classique. Ils considéraient que leur vocation était de fonder la théorie économique sur une base saine, et ils étaient prêts à se consacrer entièrement à cette cause. Menger désapprouvait de tout son coeur la politique interventionniste que le gouvernement autrichien — comme presque tous les gouvernements de l'époque — avait adopté. Mais il ne croyait pas pouvoir contribuer à un retour à des politiques correctes autrement qu'en expliquant la bonne économie dans ses livres et articles, et dans son enseignement universitaire.</p>
+
+<p>Böhm-Bawerk rejoignit l'équipe du Ministère autrichien des finances en 1890. Il fut deux fois brièvement ministre des finances dans un cabinet prudent. De 1900 à 1904, il fut ministre des finances dans le cabinet d'Ernest von Körber. Les principes de Böhm-Bawerk dans son travail étaient de maintenir de manière rigoureuse d'une part la parité-or, fixée par la loi, de la devise autrichienne et d'autre part un budget équilibré sans aucune aide de la banque centrale. Un savant éminent, Ludwig Bettelheim-Gabillon, avait eu l'intention de publier un ouvrage détaillé analysant les activités de Böhm-Bawerk au Ministère des finances. Malheureusement, les nazis tuèrent l'auteur et détruisirent son manuscrit <a href="#partie-0-note4">[4]</a>.</p>
+
+<p>Wieser fut pendant un moment, durant la Première Guerre Mondiale, ministre du commerce du Cabinet autrichien. Son travail était cependant plutôt entravé par les pouvoirs importants qui avaient déjà été donnés à un fonctionnaire du ministère, Richard Riedl, et ce avant que Wieser ne prenne ses fonctions. En pratique, seules des décisions portant sur questions d'importance secondaire était laissées à Wieser lui-même.</p>
+
+<p> </p>
+<h2>II. Le conflit avec l'École historique allemande</h2>
+<p> </p>
+
+<h4>1. Le rejet allemand de l'économie classique</h4>
+
+<p>L'hostilité que les enseignements de la théorie économique classique rencontra sur le continent européen fut principalement causée par des préjugés politiques. L'économie politique, telle qu'elle avait été développée par plusieurs générations de penseurs anglais, brillamment exposée par Hume et Adam Smith et perfectionnée par Ricardo, fut le résultat le plus remarquable de la philosophie des Lumières. C'était le coeur de la doctrine libérale, qui visait à établir le gouvernement représentatif et l'égalité de tous devant la loi. Il n'était pas surprenant qu'elle fut repoussée par ceux dont les privilèges étaient attaqués. Leur tendance naturelle à rejeter l'économie était considérablement renforcée en Allemagne par l'esprit nationaliste montant. Le rejet borné de la civilisation occidentale — que ce soit la philosophie, la science, la doctrine et les institutions politiques, l'art et la littérature — qui conduisit en fin de compte au nazisme, trouve ses origines dans la critique véhémente de l'économie politique britannique.</p>
+
+<p>Il ne faut cependant pas oublier qu'il y avait aussi d'autres raisons à cette révolte contre l'économe politique. Cette nouvelle branche de la connaissance soulevait des problèmes épistémologiques et philosophiques auxquels les savants ne trouvaient pas de réponse satisfaisante. Elle ne pouvait pas être intégrée dans le système traditionnel d'épistémologie et de méthodologie. La tendance empiriste qui domine la philosophie occidentale suggérait de considérer l'économie comme une science expérimentale, à l'instar de la physique et de la biologie. L'idée même qu'une discipline traitant de problèmes "pratiques" comme ceux des prix et des salaires puisse avoir un caractère épistémologique différent de celui des autres disciplines portant aussi sur des sujets pratiques, était au delà des possibilités de compréhension de l'époque. Mais, d'un autre côté, seuls les positivistes les plus doctrinaires n'arrivaient pas à comprendre qu'il était implossible d'entreprendre des expériences dans le domaine que l'économie essaye d'expliquer.</p>
+
+<p>Nous n'avons pas à traiter ici de la situation telle qu'elle s'est développée à l'époque du néo-positivisme ou de l'hyper-positivisme du vingtième siècle. Aujourd'hui, partout dans le monde mais avant tout aux États-Unis, des nuées de statisticiens se consacrent dans des instituts à ce que les gens appellent "la recherche économique". Ils rassemblent des chiffres fournis par le gouvernement et par diverses entreprises, les réarrangent, les ajustent et les reproduisent, calculent des moyennes et tracent des graphiques. Ils présument qu'ils "mesurent" de ce fait le "comportement" de l'humanité et qu'il n'y a pas de différence notable entre leurs méthodes de recherche et celles appliquées dans les laboratoires de recherche en physique, en chimie ou en biologie. Ils regardent avec pitié et mépris les économistes qui, ainsi qu'ils le disent, sont comme les botanistes de "l'antiquité" et comptent sur "de nombreuses réflexions spéculatives" au lieu de compter sur les "expériences" <a href="#partie-0-note5">[5]</a>.</p>
+
+<p>Mais chez les économistes de la première partie du dix-neuvième siècle, ce contresens quant aux fondements des sciences de l'action humaine n'allait pas aussi loin. Leurs tentatives de traiter des questions épistémologiques de l'économie se soldèrent, bien entendu, par un échec total. Rétrospectivement, nous pouvons pourtant dire que cette frustration était une étape nécessaire sur la route conduisant à une solution plus satisfaisante du problème. Ce fut le traitement avorté de John Stuart Mill au sujet des méthodes des sciences morales qui montra de manière involontaire la futilité de tous les arguments avancés en faveur de l'interprétation empiriste de la nature de l'économie.</p>
+
+<p>Quand les Allemands commencèrent à étudier les travaux des économistes classiques britanniques, ils acceptaient sans aucun problème l'hypothèse selon laquelle la théorie économique découlait de l'expérience. Mais cette simple explication ne pouvait satisfaire ceux qui étaient en désaccord avec les conclusions auxquelles, à partir de la doctrine classique, on devait aboutir quant à l'action politique. Ils soulevèrent rapidement des questions : L'expérience à partir de laquelle les auteurs britanniques ont déduit leurs théorèmes n'est-elle pas différente de celle à laquelle est confronté un auteur allemand ? L'économie britannique n'est-elle pas défectueuse parce que le matériel duquel elle a été extraite était uniquement en provenance de Grande-Bretagne, et uniquement de la Grande-Bretagne du hanovrien Georges ? Après tout, existe-il vraiment une science économique valable pour tous les pays, toutes les nations et toutes les époques ?</p>
+
+<p>La façon dont répondaient à ces trois questions les auteurs considérant l'économie comme une discipline expérimentale est évidente. Mais une telle réponse équivalait à la négation apodictique de l'économie en tant que telle. L'École historique aurait été cohérente si elle avait rejeté l'idée même de la possibilité d'une science économique, et si elle s'était scrupuleusement abstenue de faire la moindre déclaration différant d'un compte rendu sur ce qui s'est passé à un moment donné du passé et en un lieu donné de la terre. Une prévision des effets à attendre d'un événement donné ne peut être faite que sur la base d'une théorie revendiquant une validité générale, et non une simple validité quant à ce qui s'est produit par le passé dans un pays déterminé. L'École historique nie catégoriquement qu'il puisse exister des théorèmes économiques d'une telle validité universelle. Mais cela ne l'empêche pas de recommander ou de condamner — au nom de la science — diverses idées ou mesures nécessairement destinées à modifier les conditions futures.</p>
+
+<p>Il y avait par exemple la doctrine classique concernant les effets de la liberté du commerce et du protectionnisme. Les critiques n'entreprirent pas la tâche (sans espoir) de découvrir quelque syllogisme erroné dans la chaîne de raisonnement de Ricardo. Ils se contentèrent d'affirmer que des solutions "absolues" n'étaient pas concevables sur de tels sujets. Il existe des situations historiques, disaient-ils, où les effets engendrés par la liberté du commerce ou le protectionnisme diffèrent de ceux décrits par la théorie "abstraite" d'auteurs "en chambre". Pour soutenir leur idée, ils se référaient à divers précédents historiques. Ce faisant, ils négligeaient gaiement de prendre en compte une chose : que les faits historiques, étant toujours le résultat conjoint de l'opération d'une multitude de facteurs, ne peuvent prouver ou réfuter aucun théorème.</p>
+
+<p>Ainsi, l'économie du deuxième Reich, représentée par les professeurs d'université nommés par le gouvernement, dégénéra en un ensemble incohérent, pauvrement assorti, de diverses bribes de connaissance empruntées à l'histoire, à la géographie, à la technologie, au droit et pour partie à la politique, ensemble truffé de remarques réprobatrices sur les erreurs des "abstractions" de l'école classique. La plupart des professeurs faisaient de la propagande plus ou moins ardente dans leurs livres et dans leurs cours en faveur des politiques du gouvernement impérial : conservatisme autoritaire, <i>Sozialpolitik</i>, protectionnisme, armements immenses et nationalisme agressif. Il serait injuste de considérer cette intrusion de la politique dans le domaine de l'économie comme un phénomène spécifiquement allemand. Il était au fond causé par une interprétation épistémologique perverse de la théorie économique, défaut qui ne se limitait pas à l'Allemagne.</p>
+
+<p>Il y a un deuxième facteur qui conduisit l'Allemagne du dix-neuvième siècle en général et les universités allemandes en particulier à regarder d'un mauvais oeil l'économie politique britannique : c'était la préoccupation de cette dernière quant à la richesse et sa relation avec la philosophie utilitariste.</p>
+
+<p>Les définitions alors en vigueur de l'économie politique la décrivaient comme la science traitant de la production et de la distribution de la richesse. Une telle discipline ne pouvait pas être autre chose que méprisable aux yeux des professeurs allemands. Ces derniers s'estimaient être des personnes se sacrifiant pour poursuivre la recherche de la connaissance pure, sans point commun avec tous ces individus triviaux aux buts lucratifs, ne se souciant que de biens terrestres. La seule mention de choses vulgaires comme la richesse et la monnaie était taboue au sein de ceux qui se vantaient de leur haute culture (<i>Bildung</i>). Les professeurs d'économie ne pouvaient conserver leur réputation au sein des cercles de leurs collègues qu'en soulignant que le sujet de leurs études n'était pas les basses préoccupations de l'industrie à la recherche du profit mais la recherche historique, par exemple les nobles exploits des Électeurs de Brandebourg et des Rois de Prusse.</p>
+
+<p>La question de l'utilitarisme n'était pas moins importante. La philosophie utilitariste n'était pas tolérée dans les universités allemandes. Des deux grands utilitaristes allemands, Ludwig Feuerbach ne réussit jamais à obtenir un poste d'enseignement, tandis que Rudolf von Jhering enseignait le Droit romain. Tous les malentendus qui depuis plus de deux mille ans ont été avancés à l'encontre de l'hédonisme et de l'eudémonisme étaient répétés par les professeurs des <i>Staatswissenschaften</i> dans leurs critiques des économistes britanniques <a href="#partie-0-note6">[6]</a>. Si rien d'autre n'avait  éveillé les suspicions des savants allemands, ils auraient condamné l'économie pour la seule raison que Bentham et les Mill y avait contribué.</p>
+
+<h4>2. La stérilité de l'Allemagne dans le domaine économique</h4>
+
+<p>Les universités allemandes étaient la possédées et dirigées par les divers royaumes et grands duchés formant le Reich <a href="#partie-0-note7">[7]</a>. Les professeurs étaient des fonctionnaires et, en tant que tels, devaient obéir strictement aux ordres et aux règlements émis par leurs supérieurs, les bureaucrates des ministères de l'instruction publique. Cette subordination totale et sans condition des universités et de leur enseignement à la suprématie des gouvernements fut remise en question — sans succès — par l'opinion publique libérale allemande lorsqu'en 1837 le Roi de Hanovre renvoya sept professeurs de l'Université de Göttingen qui protestaient contre la violation de la constitution par le Roi. Les gouvernements ne firent pas attention à la réaction du public. Ils continuèrent à congédier les professeurs dont les doctrines politiques ou religieuses n'étaient pas les leurs. Mais après un certain temps, ils eurent recours à des méthodes plus subtiles et plus efficaces pour transformer les professeurs en soutiens loyaux de la politique officielle. Ils passèrent soigneusement en revue les candidats avant de les nommer. Seuls des hommes sûrs obtenaient les chaires. La question de la liberté de l'enseignement était ainsi reléguée à l'arrière-plan. Les professeurs enseignaient de leur propre chef ce que le gouvernement leur permettait d'enseigner.</p>
+
+<p>La guerre de 1866 mit fin au conflit constitutionnel prussien. Le parti du Roi — le parti conservateur des junkers, mené par Bismarck — triompha du parti progressiste prussien qui défendait le gouvernement parlementaire, et des autres groupes démocratiques du sud de l'Allemagne. Dans le nouveau cadre politique, tout d'abord du <i>Norddeutscher Bund</i> et, après 1871, du <i>Deutsches Reich</i>, il ne restait plus de place pour les doctrines "étrangères" de l'École de Manchester et du laissez-faire. Les vainqueurs de Königgrätz et de Sedan pensaient n'avoir rien à apprendre d'une "nation de boutiquiers" — la Grande-Bretagne — ou de la France défaite.</p>
+
+<p>Lors du déclenchement de la guerre de 1870, l'un des plus éminents scientifiques allemands, Emil du Bois-Reymond, se vantait que l'Université de Berlin était "la garde intellectuelle de la Maison de Hohenzollern". Cela ne voulait pas dire grand-chose pour les sciences naturelles, mais avait une signification très claire et précise pour les sciences de l'action humaine. Les titulaires des chaires d'histoire et des <i>Staatswissenschaften</i> (c'est-à-dire des sciences politiques, comprenant tout ce qui se rapporte à l'économie et à la finance) savaient ce que leur souverain attendaient d'eux. Et ils le fournissaient.</p>
+
+<p>De 1882 à 1907, Friedrich Althoff était en charge des questions universitaires au ministère prussien de l'instruction. Il dirigea les universités comme un dictateur. Comme la Prusse possédait le plus grand nombre de postes de professeurs rémunérés, et offrait donc le champ le plus favorable aux savants ambitieux, les professeurs des autres États allemands, voire ceux de l'Autriche et de la Suisse, aspiraient à s'assurer un poste en Prusse. Althoff pouvait ainsi, en règle générale, leur faire également accepter en fait ses principes et ses idées. Sur tous les sujets relatifs aux sciences sociales et aux disciplines historiques, Althoff faisait entièrement confiance aux conseils de son ami Gustav von Schmoller. Ce dernier avait un flair infaillible pour séparer les torchons et les serviettes.</p>
+
+<p>Dans les deuxième et troisième quarts du dix-neuvième siècle, certains professeurs allemands firent des contributions valables à la théorie économique. Il est vrai que les plus remarquables contributions de cette période, celles de Thünen et de Gossen, n'étaient pas l'oeuvre de professeurs mais d'hommes n'occupant aucun poste d'enseignement. Toutefois, les livres des professeurs Hermann, Mangoldt et Knies resteront dans l'histoire de la pensée économique. Mais après 1866, les hommes qui entraient dans la carrière universitaire n'avaient que mépris pour "les abstractions sans vie". Ils publièrent des études historiques, traitant de préférence des conditions de travail dans un passé récent. Nombre d'entre eux étaient fermement convaincus que la tâche principale des économistes était d'aider le "peuple" dans sa guerre de libération contre les "exploiteurs", et que les dirigeants du peuple, choisis par Dieu, étaient les dynasties, en particulier les Hohenzollern.</p>
+
+<h4>3. La querelle des méthodes</h4>
+
+<p>Dans <i>Untersuchungen</i>, Menger rejetait les idées épistémologiques qui sous-tendaient les écrits de l'École historique. Schmoller publia une critique plutôt méprisante de ce livre. Menger réagit en 1884 avec un pamphlet, <i>Die Irrtümer des Historismus in der Deutschen Nationalökonomie</i> [<i>Les Erreurs de l'historicisme dans l'économie allemande</i>]. Les diverses publications que cette controverse engendrèrent sont connues sous le nom de <i>Methodenstreit</i>, de querelle des méthodes.</p>
+
+<p>Cette querelle des méthodes ne contribua que peu à clarifier les problèmes en jeu. Menger subissait trop l'emprise de l'empirisme de John Stuart Mill pour laisser son propre point de vue aboutir à la totalité de ses conséquences logiques. Schmoller et ses disciples, engagés dans la défense d'une position intenable, ne se rendirent même pas compte du sujet de la controverse.</p>
+
+<p>Le terme de querelle des méthodes est bien entendu trompeur. Car la question n'était pas de découvrir la procédure la plus appropriée pour traiter des problèmes communément considérés comme problèmes économiques. Le sujet du débat était fondamentalement de savoir s'il pouvait exister une science, autre que l'histoire, traitant des différents aspects de l'action humaine.</p>
+
+<p>Il y avait, en premier lieu, le déterminisme matérialiste radical, philosophie presque universellement admise dans l'Allemagne de l'époque par les physiciens, les chimistes et les biologistes, bien que ce ne fut jamais expressément et clairement formulé. Selon ces personnes, les idées, volontés et actions humaines sont la conséquence d'événements physiques et chimiques que les sciences naturelles décriront un jour de la même façon qu'elles décrivent aujourd'hui l'apparition d'un composé chimique à partir d'une combinaison de plusieurs ingrédients. Il préconisaient l'expérimentation dans des laboratoires de biologie et de physiologie comme constituant la seule route pouvant conduire à cette réalisation scientifique.</p>
+
+<p>Schmoller et ses disciples rejetaient de façon véhémente cette philosophie, non parce qu'ils étaient conscients de ses défauts, mais parce qu'elle était incompatible avec les principes religieux du gouvernement prussien. Ils lui préféraient en fait une doctrine qui différait peu du positivisme de Comte, qu'ils dénonçaient officiellement, bien sûr, en raison de son athéisme et de son origine française. En réalité, le positivisme, interprété de manière raisonnable, doit conduire au déterminisme matérialiste. Mais la plupart des partisans de Comte n'étaient pas carrés à cet égard. Leurs discussions n'écartaient pas toujours la possibilité que les lois de la physique sociale (i.e. la sociologie), dont l'établissement représentait à leurs yeux le but le plus élevé de la science, puissent être découvertes par ce qu'ils appelaient une méthode plus "scientifique" de traitement du matériel assemblé par les procédures traditionnelles des historiens. Ce fut cette position qu'embrassa Schmoller à propos de l'économie. Il accusait sans cesse les économistes d'avoir tiré des conclusions prématurées à partir d'un matériel quantitativement insuffisant. Selon lui, ce qu'il fallait faire, afin de remplacer les généralisations hâtives des économistes britanniques "en chambre" par une science réaliste de l'économie, c'était davantage de statistiques, d'histoire, d'accumulation de "matériel". A partir des résultats de telles recherches, les économiste du futur, assurait-il, pourront un jour développer de nouvelles idées par "induction".</p>
+
+<p>Les idées de Schmoller étaient tellement embrouillées qu'il ne voyait pas l'incompatibilité de sa propre doctrine épistémologique avec le rejet de l'attaque positiviste à l'encontre de l'histoire. Il ne comprenait pas le gouffre qui séparait ses idées de celles des philosophes allemands qui avaient démoli les idées du positivisme quant à l'usage et au traitement de l'histoire — tout d'abord Dilthey, puis plus tard Windelband, Rickert et Max Weber. Dans le même article où il critiquait les <i>Grundsätze</i> de Menger, il faisait aussi le compte rendu du premier livre important de Dilthey, son <i>Einleitung in die Geisteswissenschaften</i>. Mais il ne put saisir le fait que la teneur de la doctrine de Dilthey était l'annihilation de la thèse fondamentale de sa propre épistémologie, à savoir que certaines lois du développement social pourraient être tirées de l'expérience historique.</p>
+
+<h4>4. Les aspects politiques de la querelle des méthodes</h4>
+
+<p>La philosophie britannique du libre échange triompha au dix-neuvième siècle dans les pays de l'Europe occidentale et orientale. Elle démolit l'idéologie peu solide de l'État-providence souverain et autoritaire (<i>landesfürstlicher Wohlfahrtsstaat</i>), qui guidait les politiques des principautés allemandes du dix-huitième siècle. Les points culminants de sa liberté du commerce furent les tarifs douaniers de la <i>Zollverein</i> de 1865 et le Code du commerce de 1969 (<i>Gewerbeordnung</i>) pour le territoire du <i>Norddeutscher Bund</i> (et ultérieurement du <i>Deutsches Reich</i>). Mais rapidement, le gouvernement de Bismarck se mit à inaugurer sa <i>Sozialpolitik</i>, système de mesures interventionnistes telles que la législation du travail, la sécurité sociale, les positions prosyndicales, la taxation progressive, les tarifs protectionnistes, les cartels et le dumping <a href="#partie-0-note8">[8]</a>.</p>
+
+<p>Si l'on essaie de réfuter la critique dévastatrice faite par l'économie à l'encontre de la possibilité de tous ces projets interventionnistes, on est forcé de nier l'existence même — pour ne pas parler des prétentions épistémologiques — de la science économique ainsi que de la praxéologie. C'est ce qu'ont toujours fait les champions de l'autoritarisme, de l'omnipotence gouvernementale et des politiques de "bien-être". Ils accusent l'économie d'être "abstraite" et préconisent un mode "expressif" (<i>anschaulich</i>) pour traiter des problèmes en jeu. Ils soulignent que les questions de ce domaine sont trop compliquées pour être décrites avec des formules et des théorèmes. Ils affirment que les diverses nations et les diverses races sont si différentes entre elles que leurs actions ne peuvent pas être comprises par une théorie uniforme. : il faudrait autant de théories économiques qu'il y a de nations et de races. D'autres ajoutent que même au sein d'une même nation ou d'une même race, l'action économique est différente aux diverses époques de l'histoire. Ces objections et d'autres similaires, souvent incompatibles entre elles, sont avancées afin de discréditer l'économie en tant que telle.</p>
+
+<p>En fait, l'économie disparut totalement des universités de l'Empire allemand. Il resta un unique épigone de l'économie classique à l'Université de Bonn, Heinrich Dietzel, qui n'avait toutefois jamais réussi à comprendre ce que signifiait la théorie subjectiviste de la valeur. Dans toutes les autres universités les enseignants désiraient ridiculiser l'économie et les économistes. Il n'est pas nécessaire de s'étendre sur ce qui fut offert pour remplacer l'économie à Berlin, Munich et dans d'autres universités du Reich. Personne ne se soucie aujourd'hui de tout ce que purent écrire Gustav von Schmoller, Adolf Wagner, Lujo Brentano et de nombreux adeptes dans leurs volumineux livres et revues.</p>
+
+<p>L'importance politique des travaux de l'École historique consistait en réalité en ce qu'elle rendit l'Allemagne mûre pour des idées qui, une fois acceptées, rendirent populaires au sein du peuple allemand toutes ces politiques désastreuses qui se terminèrent par de grandes catastrophes. L'impérialisme agressif qui aboutit par deux fois à la guerre et à la défaite, l'inflation illimitée du début des années 1920, la <i>Zwangswirtschaft</i> (économie contrôlée) et toutes les horreurs du régime nazi furent accomplis par des politiciens ayant agi comme le leur avaient enseigné les champions de l'École historique.</p>
+
+<p>Schmoller, ses amis et ses disciples préconisaient ce qu'on a appelé le socialisme d'État, à savoir un système socialiste — planificateur — dans lequel la direction principale seraient aux mains de l'aristocratie des junkers. C'est ce type de socialisme que Bismarck et ses successeurs cherchaient à atteindre. La timide opposition qu'ils rencontrèrent de la part d'un petit groupe d'hommes d'affaires fut négligeable, non pas tant en raison du fait que ces opposants n'étaient pas nombreux que parce que leurs tentatives manquaient de support idéologique. Il ne restait plus de penseurs libéraux en Allemagne. La seule résistance qui fut offerte au parti du socialisme d'État vint du parti marxiste des sociaux-démocrates. Tout comme les socialistes de Schmoller — les socialistes de la chaire (<i>Kathedersozialisten</i>) — les marxistes prônaient le socialisme. La seule différence entre les deux groupes portait sur le choix de ceux qui devaient diriger le bureau suprême de planification : les junkers, les professeurs et la bureaucratie de la Prusse des Hohenzollern, ou les membres du comité directeur du parti social-démocrate et des syndicats qui leurs étaient affiliés.</p>
+
+<p>Les seuls adversaires sérieux que l'École de Schmoller eut ainsi à combattre en Allemagne furent les marxistes. Dans cette controverse, ces derniers prirent rapidement le dessus. Car ils avaient au moins un corps de doctrine, aussi faux et contradictoire fût-il, alors que les enseignements de l'École historique constituaient plutôt la négation de toute théorie. A la recherche d'un minimum de soutien théorique, l'École de Schmoller commença petit à petit à emprunter au fonds intellectuel des marxistes. Pour finir, Schmoller avalisa lui-même en grande partie la doctrine marxiste de la lutte des classes et de l'imprégnation "idéologique" de toute réflexion par l'appartenance de classe du penseur. L'un de ses amis et collègues professeurs, Wilhelm Lexis, développa une théorie de l'intérêt qu'Engels décrivit comme paraphrase de la théorie marxiste de l'exploitation <a href="#partie-0-note9">[9]</a>. L'une des conséquences des écrits des champions de la <i>Sozialpolitik</i> fut que l'épithète "bourgeois" (<i>bürgerlich</i>) acquit dans la langue allemande une connotation chargée d'opprobre.</p>
+
+<p>La défaite cuisante de la Première Guerre Mondiale fit voler en éclat le prestige des princes, aristocrates et bureaucrates allemands. Les adeptes de l'École historique et de la <i>Sozialpolitik</i> transférèrent leur loyauté à divers groupes dissidents, parmi lesquels le Parti national-socialiste ouvrier allemand, les nazis, finit par émerger.</p>
+
+<p>La ligne droite qui conduit des travaux de l'École historique au nazisme ne peut pas être montrée en esquissant l'évolution de l'un des fondateurs de cette école, car les protagonistes de l'époque de la querelle des méthodes moururent avant la défaite de 1918 et l'ascension d'Hitler. Mais la vie du personnage le plus important de la deuxième génération de cette école illustre toutes les phases de l'économie universitaire allemande dans la période séparant Bismarck d'Hitler.</p>
+
+<p>Werner Sombart était de loin le plus doué des étudiants de Schmoller. Il n'avait que vingt-cinq ans lorsque son maître, en pleine querelle des méthodes, lui confia le travail de faire la critique et d'anéantir le livre de Wieser, <i>Der natürliche Wert</i>. Le fidèle disciple condamna le livre comme "spécieux de bout en bout" <a href="#partie-0-note10">[10]</a>. Vingt ans plus tard, Sombart se vantait d'avoir consacré une bonne partie de sa vie à se battre pour Marx <a href="#partie-0-note11">[11]</a>. Quand la guerre éclata en 1914, Sombart publia un ouvrage, <i>Händler und Helden</i> ("Marchands et héros") <a href="#partie-0-note12">[12]</a>. Dans celui-ci il rejetait, dans une langue grossière et ordurière, tout ce qui était britannique ou anglo-saxon, mais par dessus tout la philosophie et l'économie britanniques, comme manifestation d'une mentalité de sales intermédiaires. Après la guerre, Sombart révisa son livre sur le socialisme. Avant la guerre neuf éditions en avaient été publiées <a href="#partie-0-note13">[13]</a>. Alors que les éditions d'avant-guerre faisaient l'éloge du marxisme, la dixième édition l'attaquait de manière fanatique, particulièrement en raison de son caractère "prolétarien" et de son manque de patriotisme et de nationalisme. Quelques années plus tard, Sombart essaya de réactualiser la querelle des méthodes avec un volume plein d'invectives à l'encontre des économistes dont il étai incapable de comprendre la pensée <a href="#partie-0-note14">[14]</a>. Puis, quand les nazis prirent le pouvoir, il couronna une carrière littéraire de quarante-cinq ans par un livre sur le socialisme allemand. L'idée directrice de cet ouvrage était que le <i>Führer</i> prenait ses ordres auprès de Dieu, le <i>Führer</i> suprême de l'univers, et que le <i>Führertum</i> était une révélation permanente <a href="#partie-0-note15">[15]</a>.</p>
+
+<p>Tel était la progression de l'économie universitaire allemande depuis la glorification par Schmoller des Électeurs et des Rois de Hohenzollern jusqu'à la canonisation d'Adolf Hitler par Sombart.</p>
+
+<h4>5. Le libéralisme des économistes autrichiens</h4>
+
+<p>Platon rêvait d'un tyran bienveillant qui confierait au sage philosophe le pouvoir d'établir le système social parfait. Les Lumières ne mettaient pas leurs espoirs dans l'émergence plus ou moins accidentelle de dirigeants bien intentionnés et de sages prévoyants. Leur optimisme quant à l'avenir de l'humanité se fondait sur le double confiance en la bonté de l'homme et en son esprit rationnel. Par le passé une minorité de scélérats — rois malhonnêtes, prêtres sacrilèges, nobles corrompus — étaient capables de faire le mal. Mais désormais — d'après la doctrine des Lumières — comme l'homme est devenu conscient du pouvoir de sa raison et un retour aux ténèbres et aux défauts des époques révolues n'est plus à craindre. Chaque nouvelle génération ajoutera quelque chose au bien accompli par ses ancêtres. L'humanité est ainsi à l'aube d'une marche continue vers une condition meilleure. Progresser régulièrement est la nature de l'homme. Il est inutile de se plaindre de la prétendue volupté perdue d'un âge d'or fabuleux. L'état idéal de la société est devant nous, pas derrière.</p>
+
+<p>La plupart des politiciens libéraux, progressistes et démocrates du dix-neuvième siècle préconisant le gouvernement représentatif et le suffrage universel étaient guidés par une solide confiance en l'infaillibilité de l'esprit rationnel de l'homme ordinaire. A leurs yeux les majorités ne pouvaient pas se tromper. Les idées en provenance du peuple et approuvées par les électeurs ne pouvaient pas ne pas être bénéfiques à la communauté.</p>
+
+<p>Il est important de comprendre que les arguments en faveur du gouvernement représentatif mis en avant par le petit groupe des philosophes libéraux étaient assez différents et ne faisaient aucune référence à une prétendue infaillibilité des majorités. Hume avait souligné qu'un gouvernement se fonde toujours sur l'opinion publique. A long terme, l'opinion du plus grand nombre l'emporte toujours. Un gouvernement qui n'est pas soutenu par l'opinion de la majorité doit tôt ou tard perdre le pouvoir : s'il n'abdique pas, il est violemment renversé par la majorité. Les peuples ont en définitive le pouvoir de mettre à leur tête ceux qui sont disposés à diriger selon les principes que la majorité considère comme adéquats. Il n'existe pas sur le long terme de gouvernement impopulaire maintenant un système que le grand nombre condamne comme injuste. La justification du gouvernement représentatif n'est pas que les majorités sont semblables à Dieu et infaillibles ; c'est la volonté de permettre par des méthodes pacifiques l'ajustement finalement inévitable du système politique et des hommes qui le dirigent à l'idéologie de la majorité. Les horreurs de la révolution et de la guerre civile peuvent être évitées si un gouvernement impopulaire peut être facilement délogé lors de l'élection suivante.</p>
+
+<p>Les libéraux authentiques étaient convaincus que l'économie de marché, seul système économique garantissant une amélioration continue du bien-être matériel de l'humanité, ne peut fonctionner que dans une atmosphère de paix non troublée. Ils prônaient un gouvernement de représentants élus par le peuple parce qu'ils considéraient comme certain que seul ce système préserverait durablement la paix à la fois à l'intérieur du pays et dans les affaires internationales.</p>
+
+<p>Ce qui séparait ces vrais libéraux des radicaux autoproclamés et partisans du culte aveugle de la majorité, c'était qu'ils fondaient leur optimisme quant à l'avenir de l'humanité non sur la confiance mystique en l'infaillibilité des majorités mais sur la conviction que le pouvoir d'un argument logique solide est irrésistible. Il voyaient bien que les hommes ordinaires, dans leur immense majorité, étaient à la fois trop obtus et trop nonchalants pour suivre et comprendre de longues chaînes de raisonnement. Mais ils espéraient que ces masses, précisément en raison de leur mentalité obtuse et nonchalante, ne pourraient pas s'empêcher de souscrire aux idées que les intellectuels leur apporteraient. Du jugement correct d'une minorité cultivée et de sa capacité à persuader la majorité, les grands leaders du mouvement libéral du dix-neuvième siècle attendaient une amélioration continue des affaires humaines.</p>
+
+<p>Il y avait à cet égard un accord total entre Carl Menger et ses deux partisans les plus anciens, Wieser et Böhm-Bawerk. Dans les papiers non publiés de Menger, le professeur Hayek a découvert une note qui dit : "Il n'y a pas de meilleur moyen pour démontrer l'absurdité d'un mode de raisonnement que de le laisser suivre son cours jusqu'au bout." Les trois économistes aimaient se référer à l'argument de Spinoza figurant dans le premier livre de son <i>Éthique</i>, qui se termine par la fameuse formule : "<i>Sane sicut lux se ipsam et tenebras manifestat, sic veritas norma sui et falsi</i>" ["En réalité, tout comme la lumière se définit elle-même et définit les ténèbres, la vérité représente sa propre norme et celle de la fausseté"]. Ils regardaient avec calme la propagande véhémente à la fois de l'École historique et du marxisme. Ils étaient pleinement convaincus que les dogmes logiquement indéfendables de ces factions seraient en fin de compte rejetés par tous les hommes raisonnables précisément en raison de leur absurdité, et que les masses des hommes ordinaires suivraient nécessairement l'exemple des intellectuels <a href="#partie-0-note16">[16]</a>.</p>
+
+<p>La sagesse de ce mode de raisonnement doit se voir dans le soin mis à éviter la pratique populaire de jouer la carte d'une prétendue psychologie contre le raisonnement logique. Il est vrai que les erreurs de raisonnement sont souvent causées par la prédisposition des individus à préférer une conclusion erronée à une conclusion correcte. Il y a même une foule de gens que leurs affections empêchent tout simplement de raisonner sereinement. Mais il y a un long chemin entre l'établissement de ces faits et les doctrines enseignées ces derniers temps sous le nom de "sociologie de la connaissance". La pensée et le raisonnement humains, la science et la technique humaines sont les produits d'un processus social dans la mesure où le penseur individuel se trouve face à la fois aux réussites et aux erreurs de ses prédécesseurs et entretient avec eux une discussion virtuelle en les approuvant ou en les désapprouvant. Il est possible pour l'histoire des idées de rendre compréhensibles les erreurs d'un individu tout comme ses exploits en analysant les conditions dans lesquelles il vivait et travaillait. Ce n'est qu'en ce sens qu'il est acceptable de se référer à ce qu'on appelle l'esprit d'une époque, d'une nation, d'un milieu. Mais c'est un raisonnement circulaire si l'on essaie d'expliquer l'émergence d'une idée, encore plus de la justifier, en se référant à l'environnement de son auteur. Les idées surgissent toujours de l'esprit d'un individu et l'histoire ne peut pas dire plus sur elles que le fait qu'elles sont nées à un moment donné chez un individu précis. Il n'y a pas d'autre excuse à la pensée erronée d'un homme que celle qu'un gouvernement autrichien énonça à propos du cas d'un général vaincu : personne n'est responsable du fait de ne pas être un génie. La psychologie peut nous aider à expliquer pourquoi un homme s'est trompé dans son raisonnement. Mais aucune explication ne peut convertir cette erreur en vérité.</p>
+
+<p>Les économistes autrichiens rejetaient sans réserve le relativisme logique sous-entendu dans les enseignements de l'École historique prussienne ou allemande. En réponse aux déclarations de Schmoller et de ses partisans, ils maintenaient qu'il existait un corpus de théorèmes économiques valables pour toute action humaine, indépendamment de tout lieu et de toute époque, des caractéristiques nationales et raciales des agents, ainsi que des idéologies religieuses, philosophiques et éthiques.</p>
+
+<p>On ne peut pas surestimer la grandeur du service que ces trois économistes autrichiens ont rendu en défendant la cause de l'économie contre la critique creuse de l'historicisme. Ils ne déduisirent de leurs convictions épistémologiques aucun optimisme concernant l'évolution future de l'humanité. Quoi que l'on puisse dire en faveur de la pensée logique et correcte, cela ne prouve pas que les générations à venir surpasseront leurs aïeux dans leurs efforts et réussites intellectuels. L'histoire montre que des périodes de fabuleuses réalisations mentales furent à maintes et maintes reprises suivies de périodes de déclin et de retour en arrière. Nous ne savons pas si la génération suivante engendrera des individus capables de prendre la suite des génies qui ont rendu les derniers siècles si glorieux. Nous ne savons rien quant aux conditions biologiques qui permettent à un homme de faire un pas en avant dans la marche du progrès intellectuel. Nous ne pouvons pas écarter l'hypothèse qu'il y ait des limites à l'ascension intellectuelle future de l'homme. Et nous ne savons certainement pas s'il n'existe pas dans cette ascension un point au-delà duquel les leaders intellectuels ne réussiront plus à convaincre les masses et à leur faire suivre leur exemple.</p>
+
+<p>La conclusion tirée de ces prémisses par les économistes autrichiens était que, s'il était du devoir d'un esprit pionnier de faire tout ce que ses facultés lui permettent de réaliser, il ne lui incombe pas de faire de la propagande en faveur de ses idées, encore moins d'utiliser des méthodes douteuses afin de rendre ses réflexions acceptables au peuple. Ils ne se souciaient pas de la circulation de leurs écrits. Menger ne publia pas de deuxième édition de ses fameux <i>Grundsätze</i>, bien que le livre fut depuis longtemps épuisé, que des exemplaire d'occasion étaient vendus à des prix élevés et que l'éditeur le pressait sans cesse d'accepter.</p>
+
+<p>La principale et unique préoccupation des économistes autrichiens était de contribuer au progrès de l'économie. Ils n'essayèrent jamais de gagner le soutien de quiconque par des moyens autres que les pouvoirs de persuasion développés dans leurs livres et leurs articles. Ils regardaient avec indifférence le fait que les universités des pays de langue allemande, et même de nombreuses universités autrichiennes, étaient hostiles à l'économie en tant que telle et encore plus aux nouvelles doctrines économiques du subjectivisme.</p>
+
+<p> </p>
+<h2>III. La place de l'École autrichienne dans l'évolution de l'économie</h2>
+<p> </p>
+
+<h4>1. "L'École autrichienne" et l'Autriche</h4>
+
+<p>Quand les professeurs allemands attachèrent l'épithète "autrichien" aux théories de Menger et à ses deux successeurs et continuateurs les plus anciens, ils utilisaient ces adjectif dans un sens péjoratif. Après la bataille de Koniggrätz — 1866, où les Prussiens de Guillaume Ier remportèrent une victoire nette contre l'armée autrichienne — la qualification d'une chose comme autrichienne avait toujours cette coloration désobligeante à Berlin, ce "quartier général du <i>Geist</i>" comme l'avait appelé Herbert Spencer de façon sarcastique <a href="#partie-0-note17">[17]</a>. Mais l'insulte recherchée eut un effet de boomerang. Rapidement, la désignation "École autrichienne" fut célèbre dans le monde entier.</p>
+
+<p>Bien entendu, la pratique consistant à attacher une étiquette nationale à un courant de pensée est nécessairement trompeuse. Seuls très peu d'Autrichiens — et de non Autrichiens d'ailleurs — savent quelque chose en économie, et le nombre des Autrichiens que l'on pourrait désigner comme étant des économistes est encore plus réduit, aussi généreux que l'on puisse être en conférant ce titre. De plus, au sein des économistes nés autrichiens certains d'entre eux ne travaillaient pas dans la lignée de ce qu'on appelait "l'École autrichienne". Les plus connus étaient les mathématiciens Rudolf Auspitz et Richard Lieben, puis plus tard Alfred Amonn et Joseph Schumpeter. D'un autre côté, le nombre des économistes étrangers se consacrant à poursuivre les travaux inaugurés par les "Autrichiens" était en croissance régulière. Il arriva parfois au début que les tentatives de ces économistes britanniques, américains ou d'autres nationalités non autrichiennes durent faire face à une opposition dans leurs propres pays et qu'ils furent ironiquement appelés "Autrichiens" par leurs critiques. Mais après quelques années toutes les idées fondamentales de l'École autrichienne furent à tout prendre acceptées comme partie intégrante de la théorie économique. Au moment de la mort de Menger (1921), personne ne distinguait plus aucune École autrichienne du reste de l'économie. L'appellation "École autrichienne" devint le nom attribué à un chapitre important de l'histoire économique ; ce n'était plus le nom d'une secte particulière défendant des doctrines différentes de celles des autres économistes.</p>
+
+<p>Il y avait, bien sûr, une exception. L'interprétation des causes et du déroulement des cycles économiques que l'auteur de ces lignes a fourni, tout d'abord dans la <i>Théorie de la monnaie et du crédit</i> <a href="#partie-0-note18">[18]</a> et finalement dans son traité <i>L'Action humaine</i> <a href="#partie-0-note19">[19]</a> sous le nom de théorie monétaire du cycle économique, fut appelée par certains auteurs "théorie autrichienne du cycle économique". Comme toutes les étiquettes nationales de ce type, on peut également critiquer cet usage. La théorie monétaire est une continuation, un élargissement et une généralisation d'idées initialement développées par l'École britannique de la <i>Currency school</i> et de certains ajouts qui lui furent faits par des économistes ultérieurs, parmi eux le Suédois Knut Wicksell.</p>
+
+<p>Comme il est devenu inévitable de se référer à cette dénomination nationale, "l'École autrichienne", on peut ajouter quelques mots sur le groupe linguistique auquel appartenaient les économistes autrichiens. Menger, Böhm-Bawerk et Wieser étaient des autrichiens allemands : ils parlaient allemand et écrivaient leurs livres en allemand. Il en est de même de leurs étudiants les plus éminents — Johann von Komorzynski, Hans Mayer, Robert Meyer, Richard Schüller, Richard von Strigl et Robert Zuckerkandl. En ce sens, l'oeuvre de l'École autrichienne fait partie de la philosophie et de la science allemandes. Mais parmi les étudiants de Menger, de Böhm-Bawerk et de Wieser, il y avait aussi des Autrichiens n'étant pas de langue allemande. Deux d'entre eux se sont distingués par des contributions de premier plan : le Tchèque Franz Cuhel et Karel Englis.</p>
+
+<h4>2. La portée historique de la querelle des méthodes</h4>
+
+<p>L'état particulier de la situation idéologique et politique allemande au cours du dernier quart du dix-neuvième siècle engendra le conflit entre deux écoles de pensée dont sortirent la <i>Methodenstreit</i> (querelle des méthodes) et l'appellation "École autrichienne". Mais l'antagonisme qui se manifesta au cours de ce débat ne se confine pas à une période ou à un pays précis. Il est éternel. La nature humaine étant ce qu'elle est, il est inévitable dans toute société où la division du travail et son corollaire, l'échange sur le marché, ont atteint une intensité telle que l'existence de chacun dépend du comportement des autres. Dans une telle société, chacun est servi par ses semblables et, à son tout, est à leur service. Les services sont rendus volontairement : afin qu'un homme fasse une chose A pour moi, je dois lui offrir quelque chose qu'il préfère à l'abstention de faire cette chose A. Le système tout entier est construit autour de ce caractère volontaire des services échangés. Des conditions naturelles inexorables empêchent l'homme de se consacrer à une jouissance insouciante de son existence. Mais son intégration dans la communauté de l'économie de marché est spontanée, et résulte de ce qu'il comprend qu'il n'y a pas de meilleure (ni en l'occurrence d'autre) méthode de survie possible pour lui.</p>
+
+<p>Cependant, la portée et les conséquences de cette spontanéité ne sont comprises que par les économistes. Tout ceux qui ne sont pas familiers de l'économie, c'est-à-dire l'immense majorité des gens, ne voient aucune raison pour laquelle ils ne devraient pas obliger les autres par la force à faire ce que ces derniers ne veulent pas faire d'eux-mêmes. Que l'appareil de contrainte physique utilisé dans de telles tentatives soit celui des forces de police du gouvernement ou la force d'un piquet de grève illégal dont la violence est tolérée par le gouvernement, ne fait aucune différence. Ce qui compte, c'est le fait de substituer la contrainte à l'action volontaire.</p>
+
+<p>En raison d'un ensemble donné de conditions politiques que l'on pourrait qualifier d'accidentelles, le rejet de la philosophie de coopération pacifique fut, dans les temps modernes, initialement développé sous la forme d'une doctrine détaillée par les sujets de l'État prussien. Les victoires obtenues lors des trois guerres de Bismarck intoxiquèrent les savants allemands, dont la plupart étaient des fonctionnaires du gouvernement. Certains considérent comme une marque significative le fait que l'adoption des idées de l'École de Schmoller fut plus lente dans les pays dont les armées furent battues en 1866 et 1870. Il est bien entendu ridicule de chercher le moindre lien entre le développement de la théorie économique autrichienne et les défaites, échecs et frustrations du régime des Habsbourg. Pourtant, le fait que les universités d'État françaises se tinrent à l'écart de l'historicisme et de la <i>Sozialpolitik</i> plus longtemps que celles des autres nations étaient certainement, au moins dans une certaine mesure, dû à l'étiquette prussienne attachée à ces doctrines. La France, comme tous les autres pays, devint un bastion de l'interventionnisme et de l'économie contrôlée.</p>
+
+<p>L'apogée philosophique des idées glorifiant l'intervention du gouvernement, c'est-à-dire l'action de gendarmes armés, fut atteinte par Nietzsche et Georges Sorel. Ils inventèrent la plupart des slogans qui guidèrent les boucheries du bolchevisme, du fascisme et du nazisme. Des intellectuels exaltant les délices du meurtre, des écrivains préconisant la censure, des philosophes jugeant les mérites des penseurs et des auteurs d'après leurs réalisations sur les champs de bataille plutôt que d'après la valeur de leurs contributions <a href="#partie-0-note20">[20]</a>, sont les leaders spirituels de notre époque de lutte perpétuelle. Quel spectacle que celui offert par ces auteurs et professeurs américains qui attribuaient l'origine de la constitution et de l'indépendance politique de leur propre nation à une ruse destinée à protéger des "intérêts particuliers", tout en lorgnant avec envie vers le paradis soviétique de la Russie !</p>
+
+<p>La grandeur du dix-neuvième siècle consistait dans le fait que, dans une certaine mesure, les idées de l'économie classique devinrent la philosophie dominante de l'État et de la société. Elles transformèrent les traditionnelles sociétés de statut en nations de citoyens libres, l'absolutisme royal en gouvernement représentatif et, par-dessus tout, la pauvreté des masses de l'<i>ancien régime</i> en bien-être pour le grand nombre dans le laissez faire capitaliste. Aujourd'hui, la réaction de l'étatisme et du socialisme est en train de saper les fondations de la civilisation occidentale et de son bien-être. Peut-être que ceux qui affirment qu'il est trop tard pour empêcher le triomphe final de la barbarie et de la destruction ont raison. Quoi qu'il en soit, une chose est sûre : la société, c'est-à-dire la coopération pacifique des hommes dans le cade de la division du travail, ne peut exister et fonctionner que si elle adopte une politique que l'analyse économique déclare adaptée à l'obtention des fins recherchées. La pire illusion de notre époque est la confiance superstitieuse mise dans des panacées qui — comme les économistes l'ont démontré de manière irréfutable — sont contraires aux buts poursuivis.</p>
+
+<p>Les gouvernements, les partis politiques, les groupes de pression et les bureaucrates de la hiérarchie de l'éducation pensent pouvoir éviter les conséquences inévitables des mesures mal adaptées en boycottant et en réduisant au silence les économistes indépendants. Mais la vérité demeure et est à l'oeuvre, même si personne ne peut la proférer.</p>
+
+<p> </p>
+
+<p>
+<b>Notes</b>
+</p>
+
+<p><a id="partie-0-note1">[1] Le seul Viennois de l'époque qui appréciait l'oeuvre philosophique de Leibniz était le Prince Eugène de Savoie, descendant d'une famille française, né et éduqué en France.</a></p>
+
+<p><a id="partie-0-note2">[2] Cf. H. Oswalt, <i>Vorträge über wirtschaftliche Grundbegriffe</i>, 3ème éd. (Iéna, 1920).</a></p>
+
+<p><a id="partie-0-note3">[3] Cf. Mises <i>Human Action</i> [<i>L'Action humaine</i>] (1949) et éditions ultérieures, chapitres XXVII-XXXVI.</a></p>
+
+<p><a id="partie-0-note4">[4] Seuls deux chapitres, que l'auteur avait publiés avant l'Anschluss, furent préservés : "Böhm-Bawerk und die Brüsseler Zuckerkonvention" et "Böhm-Bawerk und die Konvertierung von Obligationen der einheitlichen Staatsschuld" dans la <i>Zeitschrift für Nationalökonomie</i>, Vol. VII et VIII (1936 et 1937).</a></p>
+
+<p><a id="partie-0-note5">[5] Cf. Arthur Burns, <i>The Frontiers of Economic Knowledge</i> (Princeton University Press, 1954), p. 189.</a></p>
+
+<p><a id="partie-0-note6">[6] Plus tard, des arguments similaires furent employés pour discréditer le pragmatisme. La maxime de William James selon laquelle la méthode pragmatique vise à faire ressortir de chaque mot "sa valeur sonnante et trébuchante" (<i>Pragmatism</i>, 1907, p. 53) fut citée pour caractériser la bassesse de la "philosophie du dollar".</a></p>
+
+<p><a id="partie-0-note7">[7] Le Reich lui-même ne possédait et ne dirigeait que l'Université de Strasbourg. Les trois cités-républiques allemandes n'avaient à cette époque pas d'université.</a></p>
+
+<p><a id="partie-0-note8">[8] Cf. Mises, <i>Omipotent Government</i> [<i>Le Gouvernement omnipotent</i>] (Yale University Press, 1944 et éditions ultérieures), pp. 149 et suivantes.</a></p>
+
+<p><a id="partie-0-note9">[9] Cf. l'analyse plus détaillée figurant dans Mises, <i>Kritik des Interventionismus</i> (Iéna, 1929), pp. 92 et suivantes.</a></p>
+
+<p><a id="partie-0-note10">[10] Cf. le <i>Jahrbuch</i> de Schmoller, vol. 13 (1889), pp. 1488-1490.</a></p>
+
+<p><a id="partie-0-note11">[11] Cf. Sombart, <i>Das Lebenswerk von Karl Marx</i> (Iéna, 1909), p. 3.</a></p>
+
+<p><a id="partie-0-note12">[12] Cf. Sombart, <i>Händler und Helden</i> (Munich, 1915).</a></p>
+
+<p><a id="partie-0-note13">[13] Cf. Sombart, <i>Der proletarische Sozialismus</i>, 10ème éd. (Iéna, 1924)., 2 vol.</a></p>
+
+<p><a id="partie-0-note14">[14] Cf. Sombart, <i>Die drei Nationalökonomien</i> (Munich, 1930).</a></p>
+
+<p><a id="partie-0-note15">[15] Cf. Sombart, <i>Deustcher Sozialismus</i> (Charlottenburg, 1934), p. 213. (Dans l'édition américaine : <i>A New Social Philosophy</i>, traduite et éditée par K.F. Geiser, Princeton, 1937, p. 149). Les écrits de Sombart furent appréciés à l'étranger. Ainsi, par exemple, il fut élu en 1929 comme membre honoraire de l'<i>American Economic Association</i>.</a></p>
+
+<p><a id="partie-0-note16">[16] Il est nécessaire d'ajouter que Menger, Böhm-Bawerk et Wieser regardaient avec le plus grand pessimisme l'avenir politique de l'Empire autrichien. Mais ce problème ne peut pas être traité dans cet essai.</a></p>
+
+<p><a id="partie-0-note17">[17] Cf. Herbert Spencer, <i>The Study of Sociology</i>, 9ème édition (Londres, 1880), p. 217.</a></p>
+
+<p><a id="partie-0-note18">[18] En 1912 et 1924 pour les éditions de langue allemande, en 1934, 1953 [et 1980] pour les éditions en langue anglaise.</a></p>
+
+<p><a id="partie-0-note19">[19] Première édition, Yale University Press ; [4ème édition en langue anglaise, Foundation for Economic Education, 1996]</a></p>
+
+<p><a id="partie-0-note20">[20] Cf. les passages cités par Julien Benda, <i>La Trahison des clercs</i> (Paris, 1927), annexe, note O, pp. 292-295.</a></p>
+
+<br>
+
+
+</section></article><footer class="meta"><p>Source : <a href="http://herve.dequengo.free.fr/Mises/EAE.htm">Hervé de Quengo</a>. Texte conservé ; présentation adaptée à la lecture sur écran.</p></footer></main><nav class="chapter-nav fixed-bottom reader-bottom" aria-label="Parties précédente et suivante"><a id="previous" href="#sommaire">← Précédent</a><a href="#sommaire">Sommaire</a><a id="next" href="#partie-0">Suivant →</a></nav><div id="global-progress" aria-hidden="true"></div><script>
+document.body.classList.add('js');
+const sections=[...document.querySelectorAll('article section')],toc=document.getElementById('toc'),previous=document.getElementById('previous'),next=document.getElementById('next'),resume=document.getElementById('resume');
+function get(k){try{return localStorage.getItem('livre-18-'+k)}catch(e){return null}}function put(k,v){try{localStorage.setItem('livre-18-'+k,v)}catch(e){}}
+let size=Math.max(.95,Math.min(1.65,Number(get('size'))||1.15));
+function applySize(){document.documentElement.style.setProperty('--size',size+'rem')}applySize();
+function sharedTheme(){try{return localStorage.getItem('ebooks-theme')||get('theme')}catch(e){return get('theme')}}
+document.documentElement.dataset.theme=sharedTheme()==='dark'?'dark':'light';
+const theme=document.getElementById('toggle-theme');function themeLabel(){theme.textContent=document.documentElement.dataset.theme==='dark'?'☀':'☾';theme.setAttribute('aria-pressed',String(document.documentElement.dataset.theme==='dark'))}themeLabel();
+theme.onclick=()=>{document.documentElement.dataset.theme=document.documentElement.dataset.theme==='dark'?'light':'dark';put('theme',document.documentElement.dataset.theme);try{localStorage.setItem('ebooks-theme',document.documentElement.dataset.theme)}catch(e){}themeLabel()};
+addEventListener('pageshow',()=>{document.documentElement.dataset.theme=sharedTheme()==='dark'?'dark':'light';themeLabel()});
+document.getElementById('smaller').onclick=()=>{size=Math.max(.95,Math.round((size-.1)*100)/100);applySize();put('size',String(size))};
+document.getElementById('larger').onclick=()=>{size=Math.min(1.65,Math.round((size+.1)*100)/100);applySize();put('size',String(size))};
+const last=get('last');if(sections.some(s=>s.id===last)){resume.href='#'+last;resume.textContent='Reprendre la lecture'}
+toc.onchange=()=>{location.hash=toc.value||'sommaire'};
+let active=-1;
+function show(){const id=decodeURIComponent(location.hash.slice(1));const target=document.getElementById(id);const section=target?.closest('article section');active=sections.indexOf(section);sections.forEach(s=>s.classList.toggle('active',s===section));document.body.classList.toggle('home',active<0);toc.value=section?.id||'';previous.href=active>0?'#'+sections[active-1].id:'#sommaire';previous.setAttribute('aria-disabled',String(active<0));next.href=active<sections.length-1?'#'+sections[Math.max(0,active+1)].id:'#sommaire';next.textContent=active===sections.length-1?'Sommaire':'Suivant →';if(section){put('last',section.id);requestAnimationFrame(()=>{if(target!==section)target.scrollIntoView();else window.scrollTo(0,0)})}else window.scrollTo(0,0);progress()}
+function progress(){const bar=document.getElementById('global-progress');const max=document.documentElement.scrollHeight-innerHeight;const fraction=max>0?Math.min(1,Math.max(0,scrollY/max)):1;bar.style.width=active<0?'0%':((active+fraction)/sections.length*100)+'%'}
+addEventListener('hashchange',show);addEventListener('scroll',progress,{passive:true});addEventListener('resize',progress);show();
+</script></body></html>

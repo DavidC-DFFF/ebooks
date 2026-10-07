@@ -1,0 +1,553 @@
+<!doctype html><html lang="fr"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Les Raisons de la crise économique — une contribution — Ludwig von Mises</title><style>:root {
+  --bg: #ffffff;
+  --text: #000000;
+  --accent: #4444ff;
+  --background: #ffffff;
+  --button-bg: #f7f7f7;
+  --button-hover-bg: #eaeaea;
+  --progress-color: #660000;
+}
+
+[data-theme="dark"] {
+  --bg: #2c2c2e;
+  --text: #e0e0e0;
+  --accent: #9b9bff;
+  --background: #2c2c2e;
+  --button-bg: #3a3a3c;
+  --button-hover-bg: #48484a;
+  --progress-color: #ffdddd;
+}
+
+body {
+  margin: 0;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 1.2rem;
+  line-height: 1.6;
+  text-align: justify;
+  background: var(--bg);
+  color: var(--text);
+  padding: 0;
+}
+
+/* === NAVBAR === */
+nav.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2.2rem;
+  background-color: var(--background);
+  backdrop-filter: blur(6px);
+  box-shadow: 0 1px 6px rgba(0, 0, 0, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: nowrap;
+  padding: 0 0.5rem;
+  gap: 0.5rem;
+  z-index: 1000;
+  font-size: 0.85rem;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+nav.navbar select {
+  flex-grow: 1;
+  min-width: 0;
+  max-width: 100%;
+  padding: 0.25rem;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  background: var(--button-bg);
+  color: var(--text);
+}
+
+nav.navbar button {
+  flex-shrink: 0;
+  background: none;
+  border: none;
+  font-size: 1.2em;
+  cursor: pointer;
+  color: var(--text);
+}
+
+/* === CONTENU === */
+main {
+  padding: 3rem 1rem 2rem;
+  max-width: 600px;
+  margin: auto;
+}
+
+article p {
+  text-indent: 1.5em;
+  text-align: justify;
+  hyphens: auto;
+}
+
+/* === TITRES === */
+h1 {
+  font-family: 'Segoe UI', 'Helvetica Neue', sans-serif;
+  font-weight: bold;
+  text-align: center;
+  font-size: 1.8rem;
+  margin-bottom: 0.5em;
+}
+
+main.centered h2 {
+  font-family: 'Playfair Display', Georgia, serif;
+  /* ou ta police préférée */
+  font-size: 2.4rem;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 0.5em;
+}
+
+.subtitle {
+  font-size: 1.2em;
+  color: var(--accent);
+  margin-bottom: 2em;
+}
+
+.start-button {
+  display: inline-block;
+  padding: 1em 2em;
+  background: var(--accent);
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 0.5em;
+  transition: opacity 0.3s;
+}
+
+.start-button:hover {
+  opacity: 0.8;
+}
+
+/* === NAVIGATION CHAPITRES === */
+.chapter-nav {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 1rem;
+  margin: 2rem auto 0rem auto;
+  max-width: 640px;
+  background-color: var(--background);
+}
+
+.chapter-nav a {
+  flex: 1;
+  text-align: center;
+  text-decoration: none;
+  padding: 0.75rem;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  background-color: var(--button-bg);
+  color: inherit;
+  transition: background-color 0.2s;
+}
+
+.chapter-nav a:hover {
+  background-color: var(--button-hover-bg);
+}
+
+.fixed-bottom {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  justify-content: center;
+  background-color: var(--background);
+  box-shadow: 0 -1px 6px rgba(0, 0, 0, 0.1);
+  padding: 1rem;
+  z-index: 100;
+}
+
+main.centered {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding-top: 2.5rem;
+  /* pour éviter de passer sous la navbar */
+  box-sizing: border-box;
+  text-align: center;
+}
+
+.index-image {
+  max-width: 80%;
+  height: auto;
+  margin-top: 2rem;
+}
+
+ul.tiret {
+  list-style: none;
+  padding-left: 0.5rem;
+}
+
+ul.tiret li {
+  position: relative;
+  padding-left: 1.5rem;
+  text-align: justify;
+  margin-bottom: 0rem;
+}
+
+ul.tiret li::before {
+  content: "—";
+  /* Tiret cadratin */
+  position: absolute;
+  left: 0;
+  color: var(--text);
+}
+
+main.end-page {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 3rem 1rem;
+  text-align: center;
+}
+
+.end-page h1 {
+  font-size: 2.5rem;
+  font-family: 'Playfair Display', Georgia, serif;
+  margin-bottom: 2rem;
+  color: var(--text);
+}
+
+.end-image {
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  object-fit: cover;
+  filter: grayscale(100%);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.fade-in {
+  opacity: 0;
+  animation: fadeIn 0.8s ease-in forwards;
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
+}
+
+#global-progress {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  height: 4px;
+  background-color: var(--progress-color); /* couleur personnalisable */
+  width: 0%;
+  z-index: 9999;
+  transition: width 0.4s ease;
+}
+
+html[data-font="small"] {
+  font-size: 0.9rem;
+}
+
+html[data-font="medium"] {
+  font-size: 1.1rem;
+}
+
+html[data-font="large"] {
+  font-size: 1.3rem;
+}
+
+html {
+  transition: font-size 0.3s ease;
+}
+
+*{box-sizing:border-box}html{scroll-padding-top:4rem}nav.navbar{height:auto;min-height:3rem;max-width:600px;padding:.3rem .5rem}nav.navbar button{min-width:44px;min-height:44px}nav.navbar select{min-height:44px;width:50%;font-size:.85rem}main{padding-top:4rem;padding-bottom:7rem}h2{font-family:'Segoe UI',sans-serif;font-size:1.65rem;line-height:1.35;text-align:center}a{color:var(--accent);overflow-wrap:anywhere}header{text-align:center;margin-bottom:2rem}section{margin-top:2rem}body.js article section{display:none}body.js article section.active{display:block}body.js header,body.js details,body.js footer{display:none}body.js.home header,body.js.home details,body.js.home footer{display:block}body.js.home article section{display:none}.chapter-nav{max-width:600px;margin:auto;padding:.5rem;gap:.5rem}.chapter-nav a{min-height:44px;font-size:.9rem;padding:.65rem .4rem}.chapter-nav a[aria-disabled=true]{visibility:hidden}#global-progress{transition:none}.meta{font-size:.85rem;text-align:left}details nav a{display:block;padding:.5rem 0}button:focus-visible,a:focus-visible,select:focus-visible{outline:3px solid var(--accent);outline-offset:2px}sup{line-height:0}sup a{padding:.25rem}.reader-bottom{display:none}.js .reader-bottom{display:flex}@media print{nav.navbar,.reader-bottom,#global-progress{display:none}body.js article section{display:block!important}main{padding:0}section{break-before:page}}
+
+:root{--bg:oklch(0.98 0.008 90);--background:var(--bg);--text:oklch(0.23 0.012 160);--accent:oklch(0.35 0.077 160);--line:oklch(0.83 0.015 160);--button-bg:var(--bg);--button-hover-bg:oklch(0.94 0.012 90);--progress-color:var(--accent);--size:1.15rem}
+html{font-size:16px;transition:none}
+[data-theme="dark"]{color-scheme:dark;--bg:oklch(0.2 0.008 160);--background:var(--bg);--text:oklch(0.91 0.008 90);--accent:oklch(0.82 0.08 160);--line:oklch(0.4 0.015 160);--button-bg:var(--bg);--button-hover-bg:oklch(0.27 0.012 160);--progress-color:var(--accent)}
+body{font-family:Georgia,'Times New Roman',serif;font-size:var(--size);line-height:1.75}
+h1,h2,h3,h4{font-family:Georgia,'Times New Roman',serif}h1{font-size:clamp(2.25rem,8vw,3.75rem);line-height:1.12;letter-spacing:-.03em}h2{font-size:1.7rem;line-height:1.3}h3,h4{line-height:1.4}.subtitle{font-size:1.35rem;line-height:1.5}p{margin:0 0 1.1em}
+nav.navbar{font-family:system-ui,sans-serif;box-shadow:none;border-bottom:1px solid var(--line);gap:.3rem}
+nav.navbar button{font-size:.9rem;border:1px solid var(--line);border-radius:.3rem;padding:.4rem;min-width:40px}
+nav.navbar>a{display:flex;align-items:center;justify-content:center;min-width:32px;min-height:44px;text-decoration:none}
+nav.navbar select{border-color:var(--line);width:auto;flex:1}
+.chapter-nav a{border-color:var(--line)}.start-button{background:oklch(0.35 0.077 160);color:oklch(0.98 0.008 90)}
+@media print{body{font-size:11pt;background:white;color:black}}
+
+img{max-width:100%;height:auto}table{max-width:100%;display:block;overflow-x:auto}pre{white-space:pre-wrap;overflow-wrap:anywhere}section>h2:first-child,section>h3:first-child{margin-top:0}</style></head><body>
+<nav class="navbar" aria-label="Navigation de lecture"><a href="../index.html" aria-label="Retour à la bibliothèque">⌂</a><a href="#sommaire" aria-label="Accueil et sommaire">☰</a><select id="toc" aria-label="Choisir une partie"><option value="">Sommaire</option><option value="partie-0">Les Raisons de la crise économique — une contribution</option></select><button id="smaller" aria-label="Réduire la taille du texte">A−</button><button id="larger" aria-label="Agrandir le texte">A+</button><button id="toggle-theme" aria-label="Changer le thème" aria-pressed="false">☾</button></nav>
+<main><header><h1>Les Raisons de la crise économique — une contribution</h1><p>Ludwig von Mises</p><a class="start-button" id="resume" href="#partie-0">Commencer la lecture</a></header><details id="sommaire" open><summary>Table des matières</summary><nav aria-label="Sommaire"><a href="#partie-0">Les Raisons de la crise économique — une contribution</a></nav></details><article><section id="partie-0">
+
+
+
+
+
+<p> </p>
+
+<h2>Les Raisons de la crise économique — une contribution</h2>
+
+<p> </p>
+
+<h3>I. Le statut de la recherche sur le cycle économique
+et ses perspectives concernant le futur immédiat (1933)</h3>
+
+
+<p><i>La Crise économique — Discours</i> (1931) prononcé le 28 février 1931 à Teplitz-Schönau (Tchécoslovaquie),
+devant une assemblée d'industriels allemands (<i>Deutscher Hauptverband der Industrie).</i></p>
+<p>[Titre original :<i> Die Ursachen der Wirtschaftskrise: Ein Vortrag </i>(Tübingen: J. C. B. Mohr, Paul Siebeck, 1931).]</p>
+
+<a id="partie-0-par1">
+<h3>I. La nature et le rôle du marché</h3>
+<h4>1. La légende marxiste de « l'anarchie de la production »</h4>
+
+<p>La critique marxiste dénonce l'ordre social capitaliste pour l'anarchie et l'absence de plan de ses méthodes de production. D'après elle, tout entrepreneur produirait aveuglément, guidé par son seul désir de profits, sans se préoccuper le moins du monde de savoir si son action répond à un besoin. Ainsi, pour les marxistes, il n'est pas surprenant que de graves perturbations reviennent sans cesse sous la forme de crises économiques périodiques. Ils soutiennent qu'il serait vain de lutter contre elles avec le capitalisme. Ils affirment que seul le socialisme pourra offrir le remède, en remplaçant l'économie anarchique pour le profit par un système d'économie planifiée visant à satisfaire les besoins.</p>
+
+<p>Strictement parlant, le reproche selon lequel l'économie de marché est « anarchique » ne dit rien de plus que le fait qu'elle n'est pas socialiste. C'est-à-dire que la gestion effective de la production n'est pas abandonnée à un bureau central qui décide de l'emploi de tous les facteurs de production, mais est laissée aux entrepreneurs et aux propriétaires des moyens de production. Qualifier l'économie capitaliste d' « anarchique » veut seulement dire, par conséquent, que la production capitaliste ne relève pas d'institutions gouvernementales.</p>
+
+<p>Le mot « anarchie » véhicule également d'autres connotations. Nous utilisons habituellement ce mot pour nous référer à des conditions sociales où, en raison de l'absence d'un appareil de force gouvernemental  destiné à protéger la paix et à faire respecter la loi, prévaut un chaos de conflits perpétuels. Le mot « anarchie » est par conséquent associé à l'idée d'une situation intolérable. Les théoriciens marxistes adorent utiliser de telles expressions. La théorie marxiste a besoin des insinuations que celles-ci entraînent afin de susciter des sympathies et des animosités émotionnelles qui empêcheront vraisemblablement l'analyse critique. Le slogan de « l'anarchie de la production » a rendu ce service à la perfection. Des générations entières se sont laissées troubler par lui. Il a influencé les idées politiques et économiques de tous les partis politiques actuellement en activité et même, à un point remarquable, de ceux qui proclament haut et fort être anti-marxistes.</p>
+
+<h4>2. Le rôle et le règne des consommateurs</h4>
+
+<p>Même si la méthode capitaliste de production était « anarchique », c'est-à-dire si elle manquait de la réglementation systématique d'un bureau central et même si les entrepreneurs et les capitalistes individuels dirigeaient leurs actions dans l'espoir de faire des profits indépendamment les uns des autres, il serait encore totalement faux de penser qu'ils n'auraient pas de guide permettant d'arranger la production en vue de satisfaire les besoins. Il est dans la nature de l'économie capitaliste que, en dernière analyse, l'emploi des facteurs de production ne vise qu'à servir les désirs des consommateurs. En affectant la main-d'œuvre et les biens du capital à certains usages, les entrepreneurs et les capitalistes  sont obligés, par des forces auxquelles ils sont incapables d'échapper, de satisfaire les besoins des consommateurs dans la mesure où le permet l'état de la santé de l'économie et celui la technique. Ainsi, l'opposition faite entre la méthode capitaliste de production, qualifiée de production pour le profit, et la méthode socialiste, dite production pour l'usage, est totalement trompeuse. Dans l'économie capitaliste c'est la demande des consommateurs qui détermine l'agencement et l'orientation de la production, précisément parce que les entrepreneurs et les capitalistes <i>doivent</i> prendre en compte la rentabilité de leurs entreprises.</p>
+
+<p>Une économie basée sur la propriété privée des facteurs de production ne prend son sens qu'à travers le marché. Le marché opère en modifiant le niveau des prix de telle sorte que la demande et l'offre tendent sans cesse à coïncider. Si la demande pour un bien augmente, son prix augmente et cette hausse de prix conduit à un accroissement de l'offre. Les entrepreneurs essaient de produire les biens dont la vente leur offre les bénéfices les plus élevés possibles. Ils augmente la production d'un article spécifique jusqu'au moment où cela cesse d'être rentable. Si les entrepreneurs ne produisent que les biens dont la vente promet de rapporter un profit, cela veut dire qu'ils ne produisent pas de biens dont la fabrication utiliserait de la main-d'œuvre et des biens du capital nécessaires à la fabrication d'autres articles plus instamment désirés par les consommateurs.</p>
+
+<p>Au bout du compte ce sont les consommateurs qui décident ce qui doit être produit, et comment. La loi du marché contraint les entrepreneurs et les capitalistes à obéir aux ordres des consommateurs et à répondre à leurs souhaits avec la plus faible dépense de temps, de main-d'œuvre et de biens du capital. La concurrence du marché veille à ce que les entrepreneurs et les capitalistes qui ne sont pas à la hauteur de cette tâche perdent le contrôle du processus de production. S'ils n'arrivent pas survivre dans la concurrence, c'est-à-dire à satisfaire mieux et pour moins cher les désirs des consommateurs, alors ils subissent des pertes qui réduisent leur importance au sein du processus économique. S'ils ne corrigent pas très vite leurs défauts dans la gestion de leur entreprise et concernant les investissements en capital, ils sont totalement éliminés par la perte de leur capital et de leur situation entrepreneuriale. Ils doivent dès lors se contenter d'un rôle plus modeste d'employé, aux revenus moins élevés.</p>
+
+<h4>3. La production pour la consommation</h4>
+
+<p>La loi du marché s'applique aussi au travail. Comme les autres facteurs de production, le travail est évalué en fonction de son utilité à satisfaire les besoins des hommes. Son prix, le taux de salaire, est un phénomène du marché comme les autres : il est déterminé par l'offre et la demande, par la valeur que revêt le produit du travail aux yeux des consommateurs. En modifiant le montant des salaires, le marché oriente les travailleurs vers les branches de la production où l'on a le plus instamment besoin d'eux. Le marché offre ainsi à chaque type d'emploi la qualité et la quantité de main-d'œuvre nécessaire à la satisfaction des besoins des consommateurs et ce de la meilleure façon possible.</p>
+
+<p>Dans la société féodale les hommes devenaient riches grâce à la guerre et aux conquêtes ou au travers de la largesse du dirigeant absolu. Les hommes devenaient pauvres quand ils étaient vaincus dans la bataille ou quand ils perdaient les bonnes grâces du monarque. Dans la société capitaliste les hommes deviennent riches en servant un grand nombre de consommateurs — soit directement comme producteurs de biens de consommation, soit indirectement comme producteurs de matières premières ou de facteurs de production semi-finis. Cela signifie que ceux qui deviennent riches dans la société capitaliste sont ceux qui servent le peuple. L'économie de marché capitaliste est une démocratie dans laquelle chaque sou donne un droit de vote. La richesse des hommes d'affaires à succès résulte d'un plébiscite des consommateurs. La richesse, une fois acquise, ne peut être conservée que par ceux qui continuent à la gagner à nouveau en satisfaisant les désirs des consommateurs.</p>
+
+<p>L'ordre social capitaliste est par conséquent une démocratie économique au sens le plus strict du terme. En dernière analyse toutes les décisions dépendent de la volonté des individus en tant que consommateurs. Ainsi, à chaque fois qu'il existe un conflit entre les vues des consommateurs et celles des dirigeants commerciaux, la pression du marché garantit que ce sera l'opinion des consommateurs qui finira par l'emporter. Il s'agit certes de quelque chose de très différent de la démocratie pseudo-économique que recherchent les syndicats ouvriers. Dans le système qu'ils proposent, les gens sont censés diriger directement la production en tant que producteurs et non en tant que consommateurs. Ils voudraient avoir une influence non pas en leur qualité d'acheteurs de produits, mais en leur qualité de vendeurs de travail, c'est-à-dire en tant que vendeurs de l'un des facteurs de production. Si ce système était
+mis en pratique il désorganiserait tout l'appareil de production et détruirait ainsi notre civilisation. L'absurdité de cette position apparaît clairement quand on se rappelle simplement que la production n'est pas une fin en soi. Son but est de se mettre au service de la production.</p>
+
+<h4>4. Le caractère pernicieux d'une politique de « producteurs »</h4>
+
+<p>Sous la pression du marché les entrepreneurs et les capitalistes doivent organiser la production afin qu'elle réponde aux souhaits des consommateurs. Les dispositions qu'ils prennent et ce qu'ils demandent aux travailleurs sont toujours déterminés par la nécessité de satisfaire les besoins les plus urgents des consommateurs. C'est précisément cela qui garantit que la volonté de ces derniers sera la seule ligne directrice du commerce. Et pourtant on reproche habituellement au capitalisme de placer la logique de l'efficacité avant les sentiments et de tout organiser dans la société en vue du profit monétaire, sans passion et de manière impersonnelle. C'est parce que le marché oblige l'entrepreneur à mener ses affaires de sorte qu'il en tire le plus grand bénéfice possible, que les besoins des consommateurs sont traités au mieux et de la manière la moins chère. Si les profits potentiels n'étaient plus pris en compte par les entreprises et qu'à la place les désirs des travailleurs devenaient la norme, de sorte que le travail soit arrangé à <i>leur</i> convenance, alors on porterait tort aux intérêts des consommateurs. Si l'entrepreneur recherche le plus grand profit possible, il rend un service à la société en dirigeant une entreprise. Quiconque l'empêche de le faire, afin de donner la préférence à des considérations autres que celles des profits industriels, agit à l'encontre des intérêts de la société et met en péril la satisfaction des besoins du consommateur.</p>
+
+<p>Les travailleurs et les consommateurs sont bien sûr les mêmes personnes. Si nous les distinguons, nous ne faisons que séparer mentalement leurs fonctions respectives dans le cadre de l'économie. Nous ne devons pas pour cela commettre l'erreur de penser qu'il s'agirait de deux groupes de gens différents. Le fait que les entrepreneurs et les capitalistes consomment eux aussi joue un rôle moins important sur le plan quantitatif : pour l'économie de marché la consommation qui compte est la consommation de masse. Directement ou indirectement, la production capitaliste est tout d'abord au service de la consommation des masses. La seule façon d'améliorer la situation du consommateur est par conséquent de rendre les entreprises encore plus productives ou, comme les gens le disent parfois aujourd'hui, de « rationaliser » <sup><a href="#partie-0-sdfootnote1sym" id="partie-0-sdfootnote1anc">1</a></sup> encore davantage. Ce n'est que si l'on veut réduire la consommation que l'on devrait préconiser ce qui est connu sous le nom de « politique de producteurs » — plus explicitement l'adoption de mesures mettant les intérêts des producteurs au-dessus de ceux des consommateurs.</p>
+
+<p>L'opposition aux lois économiques que le marché décrète pour la production doit toujours se faire aux dépens de la consommation. Il faudrait avoir cela à l'esprit à chaque fois que l'on propose des interventions destiner à libérer les producteurs de la nécessité d'obéir au marché.</p>
+
+<p>Les processus du marché donnent son sens à l'économie capitaliste. Ils mettent l'entrepreneur et les capitalistes au service des besoins des consommateurs. Si l'on s'immisce dans la marche de ces processus complexes, cela conduit à des perturbations qui gênent l'ajustement de l'offre à la demande et qui entraînent la production sur des chemins qui les empêchent d'atteindre le but de l'action économique, à savoir la satisfaction des besoins.</p>
+
+<p>Ces perturbations constituent la crise économique.</p>
+
+
+<p> </p>
+</a><a id="partie-0-par2">
+<h3>II. Les changements cycliques concernant la situation économique</h3>
+
+<h4>1. Le rôle des taux d'intérêt</h4>
+
+<p>Dans notre système économique les époques de prospérité alternent habituellement de manière plus ou moins régulière avec des époques de dépression. Le déclin suit l'essor économique, l'essor suit le déclin, etc. L'attention de la théorie économique a été grandement attirée, pour des raisons bien compréhensibles, par ce problème des changements cycliques des conditions économiques. Au début, plusieurs hypothèses incapables de résister à l'examen critique furent proposées. Toutefois on finit par développer une théorie des fluctuations cycliques répondant aux exigences légitimement attendues de la part d'une solution scientifique au problème. Il s'agit de la Théorie du crédit de circulation, habituellement appelée Théorie monétaire des cycles économiques. Cette théorie est généralement acceptée par les scientifiques. Toutes les mesures de politique cyclique prises au sérieux sont issues du raisonnement qui est à la base de cette théorie.</p>
+
+<p>D'après la Théorie du crédit de circulation (Théorie monétaire des cycles économiques), les changements cycliques de la situation économique proviennent des tentatives de baisse artificielle des taux d'intérêt sur les prêts par l'intermédiaire de décisions de politique bancaire — expansion du crédit bancaire par le biais d'une émission ou d'une création d'instruments fiduciaires supplémentaires (c'est-à-dire de billets de banque et/ou de dépôts à vue non couverts à 100 % par de l'or). Sur un marché non perturbé par l'interférence d'une telle politique bancaire « inflationniste », les taux d'intérêt s'établissent à un niveau pour lequel tous les moyens sont disponibles pour réaliser tous les plans et toutes les initiatives qui ont été entrepris. Ces taux d'intérêt d'un marché non entravé sont connus sous le nom de taux « naturels » ou « statiques ». Si l'on respectait ces taux d'intérêt, le progrès économique se poursuivrait sans interruption — en dehors de l'influence des cataclysmes naturels ou d'actes politiques comme les guerres, les révolutions et autres phénomènes du même genre. Le fait que le développement économique suit un mouvement sinusoïdal doit être mis sur le compte de l'intervention des banques au travers de leur politique de taux d'intérêt. Chez les politiciens, dans le monde des affaires, dans la presse et au sein de l'opinion publique l'idée qui prévaut généralement est que la réduction des taux d'intérêt en dessous du niveau engendré par les conditions du marché est un objectif louable en matièe de politique économique, et que la façon la plus simple de parvenir à ce but est d'accroître le crédit bancaire. Sous l'influence de cette idée, on tente sans arrêt de déclencher un essor économique en accordant des prêts supplémentaires. Certes, le résultat d'une telle expansion du crédit répond au départ aux attentes. Les affaires reprennent vie. Une amélioration notable se produit. Mais l'effet stimulant émanant de l'accroissement du crédit ne peut toutefois pas continuer éternellement. Tôt ou tard, un boom économique créé de cette manière doit s'effondrer.</p>
+
+<p>Aux taux d'intérêt qui s'établissaient sur le marché, avant toute intervention des banques par l'intermédiaire de la création d'un crédit de circulation supplémentaire, les seules entreprises et affaires qui paraissaient rentables étaient celles pour lesquelles les facteurs de production étaient disponibles dans l'économie. Quand les taux d'intérêt baissent suite à l'expansion du crédit, certaines affaires qui ne semblaient pas rentables auparavant donnent l'impression de l'être. C'est précisément le fait que de telles affaires soient entreprises qui déclenche l'essor. Mais l'économie n'est pas suffisamment riche pour elles. Les ressources dont elles ont besoin pour être achevées ne sont pas disponibles : elles doivent être retirées à d'<i>autres</i> entreprises. Si les moyens <i>avaient</i> été disponibles l'accroissement du crédit n'aurait pas été nécessaire pour rendre possibles les nouveaux projets.</p>
+
+<h4>2. Les conséquences de l'expansion du crédit</h4>
+
+<p>L'expansion du crédit ne peut pas augmenter la quantité de biens réels. Elle ne conduit qu'à un réarrangement. Elle détourne les investissements en capital du cours prescrit par la situation de la richesse économique et des conditions du marché. A cause d'elle la production suit des voies qu'elle n'aurait empruntées que si l'économie avait connu un accroissement du nombre des biens matériels. Il en résulte que l'essor ne repose pas sur une base solide. Il ne s'agit pas d'une prospérité <i>réelle</i>. C'est une prospérité <i>illusoire</i>. Elle ne s'est pas développée à la suite d'une augmentation de la richesse économique. Elle est née au contraire parce que l'expansion du crédit a créé l'illusion d'un tel accroissement. Tôt ou tard il doit apparaître que cette situation économique est construite sur du sable.</p>
+
+<p>Tôt ou tard l'accroissement du crédit, par la création d'instruments fiduciaires supplémentaires, doit s'arrêter. Même si les banques le voulaient elles ne pourraient pas continuer cette politique indéfiniment, même si elles étaient obligées de le faire par une forte pression extérieure. L'augmentation constante de la quantité d'instruments fiduciaires aboutit à la hausse constante des prix. L'inflation ne peut continuer que tant que persiste l'opinion qu'elle s'arrêtera dans un avenir prévisible. Mais si la conviction que l'inflation ne s'arrêtera pas s'empare des esprits, le public tient compte à l'avance des hausses de prix anticipées. En conséquence les prix s'emballent par à-coups, sans qu'il y ait de limites.  Les gens se détournent de l'usage de la monnaie, qui est mis en danger par l'accroissement des instruments fiduciaires. Ils « fuient » vers les devises étrangères, vers les lingots métalliques, les « valeurs réelles », le troc. Bref la monnaie s'effondre.</p>
+
+<p>La politique d'expansion  du crédit est habituellement abandonnée bien avant que ce point critique ne soit atteint. Elle est interrompue en raison de la situation qui se développe concernant les relations commerciales internationales et aussi, en particulier, en raison de l'expérience des crises précédentes, qui ont fréquemment aboutit à des limitations légales du droit des banques centrales d'émettre des billets et de créer du crédit. En tout cas la politique d'accroissement du crédit doit prendre fin, si ce n'est suffisamment vite suite à une volte-face des banques, alors plus tard dans un effondrement catastrophique. Plus vite elle est arrêtée, moins il y aura de dommages consécutifs au fourvoiement de l'activité entrepreneuriale, plus la crise sera douce et plus la période de stagnation économique et de dépression générale sera courte.</p>
+
+<p>L'apparition de crises économiques revenant périodiquement est la conséquence nécessaire des tentatives continuellement répétées visant à faire baisser les taux d'intérêt « naturels » du marché au moyen de la politique bancaire. Les crises ne disparaîtront pas tant que les hommes n'auront pas appris à éviter de tels « amorçages de la pompe », parce qu'un boom stimulé de manière artificielle doit inévitablement conduire a une crise et à la dépression.</p>
+
+
+<p> </p>
+</a><a id="partie-0-par3">
+<h3>III. La crise actuelle</h3>
+<p>La crise dont nous souffrons aujourd'hui est également le résultat d'une expansion du crédit. La crise actuelle est la conséquence inévitable d'un boom. Une telle crise suit nécessairement tout boom suscité par la tentative de réduire le « taux d'intérêt naturel » par l'accroissement des instruments fiduciaires. Mais la crise actuelle diffère sur certains points essentiels des crises précédentes, tout comme le boom l'ayant précédée différait des essors économiques précédents.</p>
+
+<p>La période de boom la plus récente n'a pas entièrement pris fin, au moins en Europe. Certains pays et certaines branches de la production n'ont pas été touchés de façon très importante par l'embellie qui, dans de nombreux pays, fut assez agitée. Un peu de la dépression précédente continuait, y compris pendant l'embellie. Pour cette raison — en accord avec notre théorie et sur la base de l'expérience passée — on aurait pu s'attendre cette fois à ce que la crise soit plus douce. Mais elle est à coup sûr bien plus sévère que les crises précédentes et il apparaît peu probable que la situation économique s'améliore de sitôt.</p>
+
+<p>L'absence de rentabilité de nombreuses branches de la production et le chômage d'une proportion importante de travailleurs ne peuvent évidemment pas être dus au seul ralentissement des affaires. Cette absence de rentabilité et ce chômage sont tous deux accentués en ce moment par la dépression généralisée. Mais ils sont devenus, en cette période d'après-guerre, un phénomène durable qui ne disparaît pas complètement y compris lors de l'essor économique. Nous sommes confrontés ici à un nouveau problème que la théorie des changements cycliques ne peut pas résoudre à elle seule.</p>
+
+<p>Étudions en premier lieu le chômage.</p>
+
+<p> </p>
+<h4>A. Le chômage</h4>
+<h4>1. Le processus du marché concernant les taux de salaire</h4>
+
+<p>Les taux de salaire sont un phénomène du marché, tout comme les taux d'intérêt et les prix. Les taux de salaire sont déterminés par la productivité du travail. Aux taux de salaire vers lesquels tend le marché, tous ceux qui cherchent du travail trouvent un emploi et tous les entrepreneurs trouvent les travailleurs qu'ils cherchent. Mais les phénomènes mutuellement liés du marché qui donnent naissance aux taux de salaire « naturels » ou « statiques » sont toujours l'objet de changements conduisant à des modifications des taux de salaire entre les différents métiers. Il y a aussi toujours un délai avant que les chercheurs d'emploi et ceux qui proposent du travail ne se rencontrent. Il en résulte qu'il y aura toujours un certain nombre de chômeurs. Tout comme il y a toujours des maisons vides et des gens à la recherche d'une maison sur un marché libre, et tout comme il y a toujours des articles invendus sur les marchés et des personnes désirant acheter les articles qu'elles n'ont toujours pas trouvés, il y a toujours des gens à la recherche d'un travail. Mais, sur un marché libre, ce chômage ne peut pas atteindre de grandes proportions. Les individus aptes au travail ne chercheront pas un emploi pendant une période très longue — plusieurs mois, voire plusieurs années — sans en trouver. Si un travailleur se retrouve pendant une longue période sans trouver l'emploi qu'il cherche et correspondant à son ancien métier, il doit soit accepter de diminuer le salaire qu'il demande soit se tourner vers un autre secteur où il peut espérer obtenir un salaire plus élevé que celui qu'il toucherait dans son ancien métier. Pour l'entrepreneur, l'embauche des travailleurs constitue une partie des affaires. Si le taux des salaires baisse, la rentabilité de son entreprise augmente et il peut faire travailler plus de monde. En réduisant les taux de salaire qu'ils cherchent, les travailleurs sont ainsi en mesure d'augmenter la demande de main-d'œuvre.</p>
+
+<p>Cela ne veut nullement dire que le marché tendra indéfiniment à pousser les salaires à la baisse. Tout comme la concurrence entre les travailleurs a tendance à faire monter les salaires, la concurrence entre les employeurs a tendance à les tirer à la hausse. Les taux de salaire du marché découlent ainsi du jeu de l'offre et de la demande.</p>
+
+<p>L'ampleur que la concurrence entre employeurs revêt pour les travailleurs peut se constater clairement en étudiant les deux migrations de masse qui ont caractérisé le XIX<sup>e</sup> siècle et le début du XX<sup>e</sup> siècle. L'exode rural souvent mentionné provenait de ce que l'agriculture devait laisser partir des travailleurs pour l'industrie. L'agriculture ne pouvait pas payer les taux de salaire élevés que l'industrie pouvait offrir et <i>offrait</i> bel et bien afin d'attirer des ouvriers hors du travail à domicile, du travail manuel ou de l'agriculture. La migration des travailleurs se faisait constamment des régions où les salaires restaient bas en raison de l'infériorité des conditions naturelles de production vers les régions où la productivité permettait de payer des salaires élevés.</p>
+
+<p>Pour tout accroissement de la productivité le salarié touche sa part. Pour des entreprises rentables cherchant à se développer, le seul moyen disponible pour attirer davantage de travailleurs est d'augmenter les taux de salaire. Le prodigieux essor du capitalisme résulte de la hausse des salaires réels qui suit les progrès de la productivité industrielle.</p>
+
+<p>Ce processus d'ajustement automatique du marché est gravement perturbé de nos jours par l'intervention des syndicats, dont l'efficacité a cru sous la protection et avec l'aide de la puissance gouvernementale.</p>
+
+<h4>2. La conception syndicale des taux de salaire</h4>
+
+<p>D'après la doctrine syndicale, les salaires seraient déterminés par les rapports de force. Selon cette conception, si les syndicats réussissent à intimider les entrepreneurs, par la force ou la menace d'y recourir, et en maintenant les travailleurs non syndiqués à l'écart par l'usage de la force brute, alors les salaires peuvent être fixés à n'importe quel niveau souhaité sans faire apparaître aucun effet de bord indésirable. Le conflit entre les employeurs et les travailleurs semblent ainsi être une lutte dans laquelle la justice et la morale sont entièrement du côté des travailleurs. L'intérêt sur le capital et le profit entrepreneurial semblent être des biens mal acquis. Ils proviendraient de l'exploitation du travailleur et devraient être mis de côté pour indemniser le chômage. Cette tâche, d'après la doctrine syndicale, devrait être accomplie non seulement par des taux de salaires plus élevés mais aussi par des impôts et des dépenses sociales qui, dans un régime dominé par des partis pro-syndicaux, devraient être utilisés indirectement au bénéfice des travailleurs.</p>
+
+<p>Les syndicats utilisent la force pour parvenir à leurs buts. Seuls les membres des syndicats, qui réclament le taux syndical en vigueur et qui travaillent selon les méthodes prescrites par le syndicat, ont le droit de travailler dans les entreprises industrielles. Si un employeur refuse d'accepter les condition syndicales, il y a des arrêts de travail. Les travailleurs qui voudraient travailler malgré les reproches du syndicat vis-à-vis d'une telle initiative, sont contraints par des actes de violence d'abandonner tout plan de ce type. Cette tactique syndicale suppose, bien entendu, que le gouvernement soit au moins d'accord avec ce comportement.</p>
+
+<h4>3. La cause du chômage</h4>
+
+<p>Si le gouvernement devait agir contre ceux qui molestent des personnes voulant travailler et contre ceux qui détruisent des machines et des équipements industriels dans des entreprises souhaitant embaucher des briseurs de grèves, comme il le fait normalement contre les autres individus coupables de violence, la situation serait très différente. Mais le trait caractéristique du gouvernement moderne est d'avoir capitulé devant les syndicats. Ces derniers ont désormais le pouvoir de faire monter les taux salariaux au-delà du niveau auquel ils seraient sur un marché libre. Les interventions de ce type suscitent cependant une réaction. Au taux du marché tous ceux qui cherchent du travail peuvent en trouver. Voilà précisément l'essence des salaires du marché — ils s'établissent à un niveau auquel la demande et l'offre tendent à coïncider. Si les taux de salaire sont plus élevés, le nombre des travailleurs employés diminue. Le chômage devient dès lors un phénomène durable. Au taux salariaux imposés par les syndicats, une partie importante des travailleurs ne peut trouver aucun emploi. Les hausses de salaire pour une partie des travailleurs se font aux dépens d'un nombre nettement plus grand de chômeurs.</p>
+
+<p>Les gens sans emploi n'accepteraient probablement cette situation que pour un temps limité. Certains se diraient finalement : « Mieux vaut un salaire peu élevé que pas de salaire du tout. » Même les syndicats ne pourraient pas résister à un assaut de centaines de milliers ou de millions de demandeurs d'emploi. La politique syndicale maintenant à l'écart ceux qui désirent travailler s'écroulerait. Les taux salariaux du marché règneraient à nouveau. C'est ici que les aides aux chômeurs entrent en jeu. Leur rôle [empêcher les travailleurs de venir faire concurrence sur le marché du travail] ne nécessite aucune explication supplémentaire.</p>
+
+<p>Nous voyons ainsi que le chômage, en tant que phénomène durable de masse, est la conséquence de la politique syndicale visant à faire monter les taux de salaire. Sans les aides aux chômeurs cette politique se serait effondrée depuis longtemps. Ces aides ne constituent ainsi pas un moyen pour soulager le besoin engendré par le chômage, comme le croit une opinion publique abusée. Elles sont au contraire l'un des liens de la chaîne des causes qui ont bel et bien fait du chômage un phénomène de masse à long terme.</p>
+
+<h4>4. Le remède au chômage de masse</h4>
+
+<p>La reconnaissance de cette relation s'est certainement davantage diffusée ces dernières années. Avec toute la prudence nécessaire et avec mille réserves, on admet généralement que la politique syndicale est responsable de l'étendue et de la durée du chômage. Toutes les propositions sérieuses de lutte contre le chômage dépendent de l'acceptation de cette théorie. Lorsque l'on fait des propositions pour rembourser les entrepreneurs, directement ou indirectement et sur fonds publics, afin de payer une partie du coût des salaires en cas d'embauche de chômeurs dans leurs usines, on reconnaît que les entrepreneurs emploieraient davantage de travailleurs avec une échelle de salaires inférieure. Si l'on propose qu'un gouvernement national ou municipal entreprenne des projets sans prendre en compte leur rentabilité, des projets dans lesquels les entreprises privées ne veulent pas se lancer parce qu'elle ne sont pas rentables, cela aussi veut simplement dire que les taux de salaire sont si élevés qu'ils ne permettent pas à ces entreprises de faire des profits. (Au passage, on peut noter que cette dernière proposition passe totalement à côté du fait qu'un gouvernement ne peut construire et investir que s'il prend à l'économie privée les moyens nécessaires. Mettre cette proposition en pratique doit ainsi conduire à autant de nouveaux chômeurs d'un côté qu'elle n'en élimine de l'autre.) Ici encore, si l'on étudie une réduction des heures de travail, cela équivaut également à reconnaître notre thèse. Car, après tout, cette proposition cherche à réduire le nombre d'heures travaillées de sorte que tous les chômeurs trouvent du travail et que chaque travailleur, dans la mesure où il travaillerait moins qu'il ne le fait aujourd'hui, recevrait moins. Évidemment ceci suppose que l'on ne puisse pas trouver davantage de travail, au taux de salaire actuel, que l'on n'en fournit actuellement. Le fait que les taux de salaire sont trop élevés pour donner un emploi à tout le monde est également admis par tous ceux qui demandent aux travailleurs d'augmenter la production sans hausse des taux de salaire. Il va sans dire que lorsque l'on paie des salaires horaires, cela signifie une réduction du prix du travail. Si l'on suppose une réduction du salaire à la pièce, le travail serait également meilleur marché là où le travail à la pièce prédomine. Il est dès lors évident que le facteur crucial n'est pas le niveau absolu des taux de salaire horaires ou quotidiens, mais le coût du salaire permettant d'obtenir une production donnée.</p>
+
+<p>Toutefois la demande de baisse des taux de salaire est désormais également faite ouvertement. En réalité les taux des salaires ont déjà substantiellement diminué dans de nombreuses entreprises. Les travailleurs sont appelés par la presse et les fonctionnaires du gouvernement à modérer leurs exigences salariales et à faire un sacrifice en faveur du bien-être général. Pour que cela soit supportable, on offre aux travailleurs la perspective d'une baisse des prix et les gouvernements essaient de garantir ces réductions de prix en faisant pression sur les entrepreneurs.</p>
+
+<p>Ce n'est toutefois pas une question de baisse des taux de salaire. Il faut le répéter en le soulignant très nettement. Le problème est de rétablir la liberté de détermination des taux de salaire. Il est vrai que cela conduirait au début à une baisse des taux de salaire nominaux pour bon nombre de travailleurs. Jusqu'à quel point cette baisse des taux salariaux doit aller afin d'éliminer le chômage en tant que phénomène durable ne peut être montré que par la liberté de la détermination des taux de salaire sur le marché du travail. Les négociations entre les dirigeants syndicaux et les entreprises commerciales, avec ou sans la coopération des fonctionnaires, les décisions par des médiateurs ou par d'autres techniques interventionnistes ne la remplace pas. La détermination des taux de salaire doit à nouveau devenir libre. La formation des taux de salaire ne devrait être entravée ni par les matraques des piquets de grève ni par l'appareil de contrainte gouvernemental. Ce n'est que si la détermination des taux est libre qu'ils pourront remplir leur rôle, qui est d'équilibrer l'offre et la demande sur le marché du travail.</p>
+
+<h4>5. Les effets de l'intervention du gouvernement</h4>
+
+<p>La demande de lier la réduction des prix à celle des taux salariaux ignore le fait que ces derniers sont trop élevés précisément parce que des baisses de salaire n'ont pas accompagné la baisse pratiquement universelle des prix. Certes, les prix de nombreux articles n'ont pas pu se joindre à la baisse de prix comme ils l'auraient fait sur un marché libre, soit parce qu'ils étaient protégés par des interventions spéciales du gouvernement (via des tarifs par exemple), soit parce qu'ils comprenaient des coûts substantiels sous forme de taxes et des taux de salaire plus élevés que ceux du marché libre. La baisse du prix du charbon fut empêchée en Allemagne par la rigidité des taux salariaux qui, dans l'industrie du charbon, représentaient 56 % de la valeur de la production <sup><a href="#partie-0-sdfootnote2sym" id="partie-0-sdfootnote2anc">2</a></sup>. Le prix intérieur du fer en Allemagne ne peut rester supérieur au prix du marché mondial que parce que la politique de tarifs permet la création d'un cartel national du fer et des accords internationaux entre cartels nationaux. Ici aussi il faut uniquement demander d'abolir les interventions venant contrarier la formation des prix sur un marché libre. Il n'est nul besoin de réclamer une baisse des prix imposée par le gouvernement, les syndicats, l'opinion publique ou qui que soit d'autre.</p>
+
+<p>Face à l'affirmation selon laquelle le chômage est dû au très haut niveau des salaires, il est totalement erroné d'introduire l'argument selon lequel les salaires sont encore plus élevés ailleurs. Si les travailleurs jouissaient d'une liberté de circulation totale, il y aurait dans le monde économique une tendance à ce que les taux de salaire soient uniformes pour des travaux similaires. Cependant, ces dernières années, la liberté de circulation des travailleurs a été considérablement réduite et même presque totalement supprimée. Les syndicats demandent au gouvernement d'interdire l'immigration des travailleurs en provenance de l'étranger de peur que ces immigrants ne fassent échouer la politique syndicale en proposant leurs services à des taux de salaire inférieurs à ceux que réclament les syndicats. S'il n'y avait pas eu de barrières à l'immigration, des millions de travailleurs seraient partis ces dernières décennies d'Europe en direction des États-Unis. Ce mouvement migratoire aurait réduit les différences de taux de salaire entre Américains et Européens. En arrêtant l'immigration aux États-Unis, on y fait monter les taux salariaux tout en les faisant baisser en Europe. Ce n'est pas la nature impitoyable des capitalistes européens mais la politique du travail des États-Unis (ainsi que de l'Australie et d'autres pays étrangers) qui est responsable de l'ampleur de la différence entre les taux de salaire ici, en Europe, et outremer. Après tout les travailleurs de la plupart des pays européens poursuivent la même politique d'élimination des concurrents étrangers. Eux aussi restreignent ou même interdisent la venue de travailleurs étrangers dans leurs pays de façon à protéger ainsi la politique syndicale de hausse des taux de salaire.</p>
+
+<h4>6. Le processus du progrès</h4>
+
+<p>Une doctrine populaire rend la « rationalisation » <sup><a href="#partie-0-sdfootnote3sym" id="partie-0-sdfootnote3anc">3</a></sup> responsable du chômage. Suite à la « rationalisation », à une « rationalisation » pratiquement universelle, on considère que les travailleurs ne pouvant pas trouver d'emploi quelque part deviennent un surplus. « Rationalisation » est un terme moderne qui n'est entré que récemment dans l'usage. Le concept n'est toutefois en aucun cas nouveau. L'entrepreneur capitaliste cherche continuellement à rendre la production et la commercialisation plus efficaces. Il y a eu des époques où le cours de la « rationalisation » était plus turbulent que ces dernières années. La « rationalisation » se produisait sur une grande échelle quand le forgeron était remplacé par les aciéries et les lamineries, le tissage et le filage à la main par les métiers à tisser et à filer mécaniques ou la diligence par le moteur à vapeur — même si le mot de « rationalisation » n'était pas connu alors et même s'il n'y avait aucun fonctionnaire et aucune agence ou commission consultative avec ses rapports, programmes et dogmes qui accompagnent aujourd'hui la révolution technique.</p>
+
+<p>Le progrès industriel a toujours conduit à faire perdre leur emploi à des travailleurs. Il y a toujours eu des personnes myopes qui, par crainte que l'on ne trouve pas d'emplois pour les travailleurs mis au chômage, ont essayé d'arrêter le progrès. Les travailleurs se sont toujours opposés au progrès technique et on a toujours trouvé des auteurs pour justifier cette opposition. Tout accroissement de la productivité du travail s'est produit malgré la résistance déterminée des gouvernements, des philanthropes, des moralistes et des travailleurs. Si la théorie qui attribue le chômage à la « rationalisation » était correcte, alors 99 % des travailleurs se seraient retrouvés sans emploi à la fin du XIX<sup>e</sup> siècle.</p>
+
+<p>Les travailleurs mis au chômage par l'introduction de la technique industrielle retrouvent un emploi à d'autres postes. Les rangs des nouvelles branches de l'industrie accueillent ces travailleurs. Les biens supplémentaires, disponibles pour la consommation, qui suivent le sillage de la « rationalisation », sont produits avec leur travail. Ce processus est aujourd'hui entravé par le fait que les travailleurs cessant leur travail perçoivent des aides aux chômeurs et ne considèrent plus qu'il soit nécessaire de changer de métier et de lieu de travail afin de retrouver un emploi. Ce n'est pas en raison de la « rationalisation » mais parce que les chômeurs ne sont plus obligés de chercher un nouvel emploi que le chômage est devenu un phénomène durable.</p>
+
+<p> </p>
+<h4>B. Les baisses de prix et le soutien aux prix</h4>
+<h4>1. La subvention des surplus</h4>
+
+<p>L'opposition à la détermination des prix par le marché ne se limite pas aux salaires et aux taux d'intérêt. Une fois que l'on décide de ne pas permettre à la structure des prix du marché d'exercer ses effets sur la production il n'y a plus de raison de ne pas s'occuper du prix des biens.</p>
+
+<p>Si les prix du charbon, du sucre, du café ou du seigle chutent, cela veut dire que les consommateurs demandent de façon plus pressante d'autres biens. Il résulte de la baisse de ces prix que certaines entreprises produisant ces biens cessent d'être rentables et sont forcées de réduire la production ou de fermer totalement. Le capital et la main-d'œuvre ainsi libérés sont alors transférés vers d'autres branches de l'économie afin de produire les biens pour lesquels prévaut une demande plus forte.</p>
+
+<p>La politique intervient cependant à nouveau. Elle essaie d'empêcher l'ajustement de la production aux exigences de la consommation — en venant en aide au producteur frappé par les baisses de prix.</p>
+
+<p>Ces dernières années les méthodes de production capitalistes ont été appliquées de manière de plus en plus répandue à la production de matières premières. Comme toujours, comme à chaque fois que prévaut le capitalisme, le résultat en a été une surprenante augmentation de productivité. Le blé, les fruits, la viande, le caoutchouc, la laine, le coton, le pétrole, le cuivre, le charbon et les minéraux sont bien plus aisément disponibles de nos jours qu'ils ne l'étaient avant la guerre et dans les premières années d'après-guerre. Pourtant, il y a encore peu de temps les gouvernements croyaient avoir trouvé une méthode et des moyens pour soulager la pénurie de matières premières. Quand, sans leur aide, survinrent les années d'abondance, ils choisirent la force pour empêcher que cette richesse exerce tous ses effets sur le bien-être économique. Le gouvernement brésilien veut éviter la baisse du prix du café afin d'éviter que les propriétaires de plantations travaillant sur des sols plus pauvres ou avec moins de capital ne soient obligés de réduire ou d'abandonner leur culture. Le gouvernement bien plus riche des États-Unis veut arrêter la baisse du prix du blé et de nombreux autres prix parce qu'il veut éviter au fermier travaillant sur un sol plus pauvre d'avoir à adapter ou à fermer son entreprise.</p>
+
+<p>On sacrifie des sommes considérables à travers le monde dans des tentatives complètement désespérées de prévenir les effets des améliorations faite par la production capitaliste. Des milliards sont dépensés dans un effort stérile visant à maintenir les prix et dans une aide directe aux producteurs moins capables de résister à la concurrence. D'autres milliards sont utilisés de manière indirecte dans les mêmes buts, par le biais de tarifs protecteurs et de mesures similaires qui forcent les consommateurs à payer des prix plus élevés. L'objectif de toutes ces interventions — qui entraînent les prix à un niveau aussi élevé pour permettre à des producteurs qui seraient sinon incapables de faire face à la concurrence de rester en activité — ne pourra à coup sûr jamais être atteint. Toutefois, toutes ces mesures retardent les industries de transformation, qui utilisent du capital et de la main-d'œuvre, dans l'ajustement de leurs ressources aux nouvelles quantités de matières premières produites. L'augmentation de la quantité des biens représente ainsi d'abord un sujet d'embarras et non une amélioration du niveau de vie. Au lieu de devenir un bienfait pour le consommateur, la richesse devient une charge pour lui s'il doit payer les interventions gouvernementales sous la forme de taxes et de tarifs plus élevés.</p>
+
+<h4>2. La nécessité de réajustements</h4>
+
+<p>La culture du blé en Europe centrale était mise en péril par l'accroissement de la production d'outremer. Même si les fermiers européens avaient été plus efficaces, plus qualifiés concernant les méthodes modernes et mieux équipés en capital, même si la disposition industrielle en vigueur n'avaient pas été des entreprises petites et minuscules, source de gaspillages et nuisant à la productivité, ces fermes sur un sol moins fertile et bénéficiant de conditions météorologiques moins favorables n'auraient toujours pas pu rivaliser avec les grandes exploitations de blé du Canada. L'Europe centrale doit réduire sa culture du blé, comme elle a réduit l'élevage de moutons il y a des décennies. Les milliards qu'a déjà coûtés une lutte désespérée contre un sol américain plus fertile représentent des sommes inutilement dilapidées. L'avenir de l'agriculture en Europe centrale ne réside pas dans la culture du blé. Le Danemark et la Hollande ont montré qu'il peut exister une agriculture en Europe y compris sans la protection de tarifs, de subventions et de privilèges spéciaux. Toutefois l'économie de l'Europe centrale dépendra dans l'avenir de l'industrie, et ce dans une mesure encore plus forte qu'auparavant.</p>
+
+<p>A cet instant il est facile de comprendre le paradoxe du phénomène qui fait que des rendements plus élevés dans la production de matières premières et de denrées alimentaires engendrent des nuisances. Les interventions des gouvernements et des groupes privilégiés, qui cherchent à empêcher l'adaptation du marché à la situation engendrée par les nouvelles circonstances, signifient qu'une récolte plus abondante apportera la malheur pour tout le monde.</p>
+
+<p>Ces dernières décennies, dans presque tous les pays du monde, des tentatives ont été faites pour utiliser des tarifs protecteurs élevés en vue de développer l'autonomie économique (l'autarcie) de petites et moyennes régions.</p>
+
+<p>Des sommes énormes ont été investies pour fabriquer des usines ne répondant à aucune demande économique. Le résultat est que nous avons aujourd'hui un grand nombre de structures physiques et d'équipements ne pouvant pas être pleinement exploités, voire pas même utilisés du tout.</p>
+
+<p>Le résultat de tous ces efforts faits pour annuler les lois que décrète le marché pour l'économie capitaliste est, en résumé, le chômage durable pour plusieurs millions, la non-rentabilité de l'industrie et de l'agriculture et des usines à l'arrêt. Le résultat de tout cela, c'est que les conflits politiques s'aggravent sérieusement, pas seulement au sein des pays mais aussi entre les nations.</p>
+
+<p> </p>
+<h4>C. La politique fiscale</h4>
+<h4>1. La mentalité anti-capitaliste</h4>
+
+<p>L'influence néfaste de la politique sur l'économie va bien au-delà des conséquences des mesures interventionnistes évoquées ci-dessus. Il n'est pas besoin de mentionner les politiques de mobilisation du gouvernement, les controverses continuelles émergeant constamment de conflits nationalistes dans les communautés multilingues et l'anxiété causée par des ministres et des partis politiques faisant un bruit de sabre. Toutes ces choses créent l'agitation. Elles peuvent ainsi aggraver <i>indirectement</i> la situation de crise et en particulier le malaise dans le monde des affaires.</p>
+
+<p>La politique financière agit cependant <i>directement</i>.</p>
+
+<p>La part du revenu du peuple que le gouvernement soustrait pour ses dépenses, même sans compter les dépenses militaires, est continuellement en hausse. Il n'y a pas un seul pays d'Europe où des sommes gigantesques ne soient gaspillées dans des entreprises nationales ou municipales particulièrement malavisées. Partout nous voyons le gouvernement prendre continuellement la responsabilité de nouvelles tâches alors qu'il n'est guère capable de remplir de façon satisfaisante ses précédentes obligations. Partout nous voyons croître la bureaucratie. Le résultat, ce sont des impôts en augmentation partout. A un moment où l'on discute de manière universelle du besoin de réduire les coûts de production, de nouvelles taxes sont imposées à la production. La crise économique est ainsi, en même temps, une crise des finances publiques. Cette crise des finances publiques ne sera pas résolue sans une révision complète des pratiques gouvernementales. Une opinion largement partagée, qui occupe aujourd'hui facilement une place prédominante dans l'opinion publique, affirme que les taxes sur la richesse sont inoffensives. Chaque dépense gouvernementale est ainsi justifiée si les fonds pour la payer ne sont pas prélevés en taxant la consommation de masse ou en faisant payer des impôts sur le revenu aux masses. Cette idée, qui doit être tenue pour responsable de la tendance aux folles dépenses gouvernementales, a entraîné les gens en charge de la politique financière du gouvernement à perdre tout sentiment de la nécessité de faire des économies. Dépenser une grande part du revenu du peuple de manière insensée — afin d'exécuter les opérations futiles de soutien des prix, d'entreprendre la tâche désespérée consistant à essayer de soutenir par des aides des entreprises non rentables qui ne pourraient sinon pas survivre, de couvrir les pertes des entreprises publiques non rentables et de financer le chômage de millions de gens — ne serait pas justifié, même si les fonds pour l'objectif à atteindre étaient collectés de manière à ne pas aggraver la crise. Mais la politique fiscale a pour but premier, ou même exclusif, de taxer le rendement du capital et le capital lui-même. Ceci aboutit à ralentir la formation de capital et même, dans de nombreux pays, à une consommation du capital. Or ceci ne concerne pas que les capitalistes, comme on le croit en général. Plus le ratio de capital par travailleur est quantitativement faible, plus les taux de salaire qui se développent sur le marché libre du travail sont bas. Ainsi, même les travailleurs sont affectés par cette politique. En raison de la législation fiscale, les entrepreneurs doivent fréquemment diriger leurs affaires autrement que ce que la raison leur indiquerait sinon. Il en résulte une baisse de la productivité et par conséquent une baisse de la production de biens de consommation. Comme on pouvait s'y attendre, les capitalistes répugnent à laisser leurs capitaux dans les pays ayant la taxation la  plus lourde et se tournent vers des pays où les impôts sont plus faibles. Il devient plus difficile, pour cette raison, au système productif de s'adapter à la configuration changeante de la demande économique.</p>
+
+<p>La politique financière n'a certainement pas créé la crise. Mais elle contribue substantiellement à l'empirer.</p>
+
+<p> </p>
+<h4>D. La production d'or</h4>
+<h4>1. La baisse des prix</h4>
+
+<p>Une doctrine populaire fait porter la responsabilité de la crise sur l'insuffisance de la production d'or.</p>
+
+<p>L'erreur fondamentale de cette tentative d'explication de la crise réside dans le fait de considérer une baisse des prix comme une crise. Une diminution faible, constante des prix de tous les biens et services pourrait être expliquée par la relation de la situation vis-à-vis de la production d'or. Les hommes d'affaires se sont habitués à une relation de l'offre et de la demande d'or conduisant à une augmentation constante des prix, comme s'il s'agissait d'une tendance permanente. Mais ils pourraient tout aussi bien s'habituer à une autre configuration et l'auraient certainement fait si le cours des choses l'avait rendu nécessaire. Après tout la caractéristique la plus importante des hommes d'affaires est leur flexibilité. L'homme d'affaires peut faire des profits, même si la tendance générale des prix est à la baisse, et les conditions économiques peuvent même s'améliorer dans ce cas.</p>
+
+<p>Les turbulentes baisses de prix depuis 1929 n'ont certainement pas été causées par la situation de la production d'or. En outre la production d'or n'a rien à faire avec le fait que la baisse des prix n'est pas universelle, ni qu'elle ne comprend pas spécifiquement les salaires.</p>
+
+<p>Il est vrai qu'il y a un lien étroit entre la quantité d'or produit et la formation des prix. Heureusement, plus personne ne le discute. Si la production d'or avait été bien plus grande qu'elle ne le fut en réalité ces dernières années, la baisse des prix aurait été modérée, voire ne serait pas apparue. Il serait cependant erroné de penser que le phénomène de la crise ne se serait alors pas produit. Les tentatives des syndicats pour faire monter les salaires au-dessus de ce qu'ils seraient sur un marché libre et les efforts des gouvernements pour soulager les difficultés de divers groupes de producteurs n'ont rien à voir avec le fait que les véritables prix monétaires sont plus ou moins élevés. Les syndicats ne se battent plus au sujet du niveau des prix <i>nominaux</i> (monétaires) mais à propos du niveau des prix <i>réels</i>. Ce n'est pas à cause des prix faibles que les producteurs de seigle, de blé, de café, etc. sont poussés à réclamer des interventions gouvernementales. C'est à cause de la non-rentabilité de leurs entreprises. La rentabilité de ces entreprises ne serait toutefois pas plus grande si les prix étaient plus élevés. Car si l'offre d'or avait cru, non seulement le prix des produits que produisent et que veulent vendre les entreprises en question seraient devenus proportionnellement plus élevés, mais il en aurait été de même pour les prix de tous les biens constituant leurs coûts. Et dans ce cas, comme pour toute inflation, un accroissement de la quantité d'or n'affecte pas tous les prix en même temps, ni dans la même mesure. Il aide certains groupes dans l'économie et est préjudiciable à d'autres. Il ne reste ainsi aucune raison pour penser qu'une augmentation de la quantité d'or doit, dans un cas particulier, améliorer la situation précisément pour les producteurs qui ont des raisons de se plaindre actuellement de la non-rentabilité de leurs entreprises. Il se pourrait que leur situation ne s'améliore pas : elle pourrait même empirer.</p>
+
+<p>L'erreur impliquée dans le fait de croire que la baisse des prix et la crise sont deux choses équivalentes et donc de considérer que la cause de la crise serait une production insuffisante d'or, est particulièrement dangereuse. Elle conduit à l'idée que la crise pourrait être surmontée en accroissant les instruments fiduciaires en circulation. On demande ainsi aux banques de stimuler les conditions économiques par l'émission de billets supplémentaires et par une expansion supplémentaire du crédit via des lignes de crédit. On peut certes créer au début un boom de cette façon. Mais, comme nous l'avons vu, un tel essor doit se terminer au bout du compte par un effondrement des perspectives économiques et une nouvelle crise.</p>
+
+<h4>2. L'inflation comme « remède »</h4>
+
+<p>Il est surprenant que des personnes sincères puissent faire une telle demande ou la soutenir. Tous les arguments possibles en faveur d'un tel projet ont déjà été proposés une centaine de fois, et démolis un millier de fois. <i>Un</i> <i>seul</i> argument est nouveau, bien que tout aussi faux. Il s'agit de l'idée que des taux de salaire plus élevés que ceux d'un marché libre pourraient être plus facilement ramenés à leur niveau correct par une inflation.</p>
+
+<p>Cet argument montre à quel point nos économistes cherchent à éviter de déplaire aux syndicats. Bien qu'ils ne puissent s'empêcher de reconnaître que les taux de salaire sont trop élevés et doivent être baissés, ils n'osent pas réclamer ouvertement un arrêt de telles surpayes. Au lieu de cela ils proposent de duper les syndicats d'une certaine manière. Ils proposent que les taux monétaires en vigueur demeurent inchangés dans l'inflation à venir. En effet cela reviendrait à réduire le salaire réel. Ceci suppose bien entendu que les syndicats s'abstiendront de toute revendication salariale supplémentaire lors du prochain boom et qu'ils resteront au lieu de cela passifs pendant que les salaires réels baisseront. Même si cette attente optimiste totalement injustifiée était acceptée comme exacte, on n'y gagnerait rien. Un boom engendré par des mesures de politique bancaire doit au bout du compte se terminer par une crise et une dépression. Ainsi, par cette méthode, le problème de la baisse des taux de salaire n'est pas résolu mais simplement repoussé.</p>
+
+<p>Pourtant, en prenant en compte toutes les choses, nombre de gens peuvent penser qu'il serait avantageux de retarder l'épreuve de force inévitable avec la politique syndicale. Ceci ignore toutefois le fait que, dans tout boom artificiel, de fortes sommes de capitaux sont mal investies et donc gaspillées. Toute diminution de la quantité de capitaux d'une société doit conduire à une réduction du taux de salaire « naturel » ou « statique ». Repousser la décision coûte ainsi beaucoup aux masses. En outre, cela rendra la confrontation encore plus difficile, plutôt que plus aisée.</p>
+
+
+<p> </p>
+</a><a id="partie-0-par4">
+<h3>IV. Y a-t-il une issue ?</h3>
+<h4>1. La raison de nos difficultés</h4>
+
+<p>Les graves convulsions de l'économie sont le résultat inévitable de politiques entravant l'activité du marché, activité qui régule la production capitaliste. Si tout ce qui est possible est fait pour empêcher le marché de remplir sa fonction d'équilibre de l'offre et de la demande, il ne devrait pas être surprenant qu'un écart important subsiste entre ces deux grandeurs, que des biens demeurent invendus, que des usines soient à l'arrêt, que des millions de gens soient au chômage, que l'indigence et la misère progressent et qu'enfin, dans le sillage de tout ceci, un radicalisme destructeur sévisse en politique.</p>
+
+<p>Le retour périodique des crises survenant au cours des changements cycliques de
+la conjoncture économique sont la conséquence des tentatives, faites de manière répétée, visant à faire baisser les taux d'intérêt se développant sur le marché libre. Ces tentatives sont faites par le biais d'une intervention de politique bancaire — par une expansion du crédit au travers de la création additionnelle de billets non couverts et de dépôts autorisant à tirer des chèques — destinée à engendrer un boom. La crise dont nous souffrons actuellement est elle aussi de ce type. Mais elle va plus loin que la dépression du cycle économique classique, non seulement par son ampleur mais aussi par sa nature, parce que les interventions dans les processus du marché qui ont provoqué la crise ne se limitaient pas seulement à influencer le taux d'intérêt. Les interventions ont également directement concerné les taux de salaire et le prix des biens.</p>
+
+<p>Avec la crise économique, l'effondrement de la politique économique interventionniste — politique suivie aujourd'hui par tous les gouvernements, qu'ils soient responsables devant un parlement ou qu'ils s'agissent ouvertement de dictatures — apparaît clairement. Cette catastrophe n'est évidemment pas une surprise. La théorie économique a prédit depuis longtemps une telle fin pour l'interventionnisme.</p>
+
+<p>Le système économique capitaliste, c'est-à-dire le système social basé sur la propriété privée des moyens de production, est unanimement rejeté aujourd'hui par tous les partis politiques et par tous les gouvernements. Aucun accord semblable ne peut être trouvé à propos du système économique qui devrait le remplacer dans l'avenir. Beaucoup, mais pas tous, considèrent le socialisme comme le but. Ils rejettent obstinément les résultats de l'étude scientifique de l'idéologie socialiste, étude qui a montré l'impraticabilité du socialisme. Ils refusent d'apprendre quoi que ce soit des expériences socialistes de la Russie ou d'autres pays européens .</p>
+
+<h4>2. La solution non désirée</h4>
+
+<p>Concernant le rôle de la politique économique actuelle, il prévaut toutefois un accord total. Le but est une organisation économique supposée représenter une solution de compromis, la solution « médiane » entre le socialisme et le capitalisme. Certes, il n'y a aucune intention de supprimer la propriété privée des moyens de production. La propriété privée aura le droit de continuer à exister, mais dirigée, réglementée et contrôlée par le gouvernement et par d'autres agents de l'appareil coercitif de la société. A propos de ce système interventionniste, la science économique montre, avec une logique implacable, qu'elle est contraire à la raison, que les interventions qui constituent ce système ne peuvent jamais parvenir aux buts que leurs défenseurs espèrent atteindre, et que toute intervention aura des conséquences dont personne ne voulait.</p>
+
+<p>L'ordre social capitaliste ne reçoit son sens et son but qu'à travers le marché. Entraver les fonctions du marché et la formation des prix ne crée pas l'ordre. Cela conduit à la place au chaos, à la crise économique.</p>
+
+<p>Toutes les tentatives faites pour sortir de la crise par de nouvelles mesures interventionnistes sont parfaitement erronées. Il n'y a qu'une issue pour sortir de la crise : renoncer à toute tentative destinée à empêcher l'impact des prix du marché sur la production. Abandonner la poursuite de politiques cherchant à établir des taux d'intérêt, des taux salariaux et des prix pour les biens différents de ceux qu'indique le marché. Ceci peut aller à l'encontre des idées dominantes. Ce n'est certainement pas populaire. De nos jours tous les gouvernements et tous les partis politiques ont pleinement confiance dans l'interventionnisme et il est peu probable qu'ils abandonnent leur programme. Mais il n'est peut-être pas trop optimiste de supposer que ces gouvernements et ces partis dont les politiques ont amené la crise actuelle disparaîtront un jour de la scène et laisseront la place à des hommes dont le programme économique conduit non pas à la destruction et au chaos mais au développement économique et au progrès.</p>
+
+
+
+<p>
+<b>Notes</b>
+</p>
+
+<div id="partie-0-sdfootnote1">
+	<p><a href="#partie-0-sdfootnote1anc" id="partie-0-sdfootnote1sym">1.</a>
+Terme vague pour désigner une organisation plus efficace de la production industrielle par le biais d'une automatisation et d'une mécanisation plus modernes sur le plan technique. Il vint à point nommé pour laisser sous-entendre que la planification centralisée et la réglementation gouvernementale pourraient aider à éliminer une concurrence « inutile » et source de gaspillages. Le terme fut appliqué plus tard aux plans d'organisation industrielle des nazis et des soviétiques. Note de l'édition américaine.</p>
+</div>
+<div id="partie-0-sdfootnote2">
+	<p><a href="#partie-0-sdfootnote2anc" id="partie-0-sdfootnote2sym">2.</a>
+Cette conférence devant des industriels allemands se déroulait en 1931. Note de l'édition américaine.</p>
+</div>
+<div id="partie-0-sdfootnote3">
+	<p><a href="#partie-0-sdfootnote3anc" id="partie-0-sdfootnote3sym">3.</a>
+Voir plus haut, <a href="#partie-0-sdfootnote1">note 1</a>. Note de l'édition américaine.</p>
+</div>
+
+
+<br>
+
+
+</a></section></article><footer class="meta"><p>Source : <a href="http://herve.dequengo.free.fr/Mises/MMC/MMC_3.htm">Hervé de Quengo</a>. Texte conservé ; présentation adaptée à la lecture sur écran.</p></footer></main><nav class="chapter-nav fixed-bottom reader-bottom" aria-label="Parties précédente et suivante"><a id="previous" href="#sommaire">← Précédent</a><a href="#sommaire">Sommaire</a><a id="next" href="#partie-0">Suivant →</a></nav><div id="global-progress" aria-hidden="true"></div><script>
+document.body.classList.add('js');
+const sections=[...document.querySelectorAll('article section')],toc=document.getElementById('toc'),previous=document.getElementById('previous'),next=document.getElementById('next'),resume=document.getElementById('resume');
+function get(k){try{return localStorage.getItem('livre-07-'+k)}catch(e){return null}}function put(k,v){try{localStorage.setItem('livre-07-'+k,v)}catch(e){}}
+let size=Math.max(.95,Math.min(1.65,Number(get('size'))||1.15));
+function applySize(){document.documentElement.style.setProperty('--size',size+'rem')}applySize();
+function sharedTheme(){try{return localStorage.getItem('ebooks-theme')||get('theme')}catch(e){return get('theme')}}
+document.documentElement.dataset.theme=sharedTheme()==='dark'?'dark':'light';
+const theme=document.getElementById('toggle-theme');function themeLabel(){theme.textContent=document.documentElement.dataset.theme==='dark'?'☀':'☾';theme.setAttribute('aria-pressed',String(document.documentElement.dataset.theme==='dark'))}themeLabel();
+theme.onclick=()=>{document.documentElement.dataset.theme=document.documentElement.dataset.theme==='dark'?'light':'dark';put('theme',document.documentElement.dataset.theme);try{localStorage.setItem('ebooks-theme',document.documentElement.dataset.theme)}catch(e){}themeLabel()};
+addEventListener('pageshow',()=>{document.documentElement.dataset.theme=sharedTheme()==='dark'?'dark':'light';themeLabel()});
+document.getElementById('smaller').onclick=()=>{size=Math.max(.95,Math.round((size-.1)*100)/100);applySize();put('size',String(size))};
+document.getElementById('larger').onclick=()=>{size=Math.min(1.65,Math.round((size+.1)*100)/100);applySize();put('size',String(size))};
+const last=get('last');if(sections.some(s=>s.id===last)){resume.href='#'+last;resume.textContent='Reprendre la lecture'}
+toc.onchange=()=>{location.hash=toc.value||'sommaire'};
+let active=-1;
+function show(){const id=decodeURIComponent(location.hash.slice(1));const target=document.getElementById(id);const section=target?.closest('article section');active=sections.indexOf(section);sections.forEach(s=>s.classList.toggle('active',s===section));document.body.classList.toggle('home',active<0);toc.value=section?.id||'';previous.href=active>0?'#'+sections[active-1].id:'#sommaire';previous.setAttribute('aria-disabled',String(active<0));next.href=active<sections.length-1?'#'+sections[Math.max(0,active+1)].id:'#sommaire';next.textContent=active===sections.length-1?'Sommaire':'Suivant →';if(section){put('last',section.id);requestAnimationFrame(()=>{if(target!==section)target.scrollIntoView();else window.scrollTo(0,0)})}else window.scrollTo(0,0);progress()}
+function progress(){const bar=document.getElementById('global-progress');const max=document.documentElement.scrollHeight-innerHeight;const fraction=max>0?Math.min(1,Math.max(0,scrollY/max)):1;bar.style.width=active<0?'0%':((active+fraction)/sections.length*100)+'%'}
+addEventListener('hashchange',show);addEventListener('scroll',progress,{passive:true});addEventListener('resize',progress);show();
+</script></body></html>

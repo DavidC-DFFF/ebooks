@@ -1,0 +1,555 @@
+<!doctype html><html lang="fr"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Les Illusions du protectionnisme et de l&#x27;autarcie — Ludwig von Mises</title><style>:root {
+  --bg: #ffffff;
+  --text: #000000;
+  --accent: #4444ff;
+  --background: #ffffff;
+  --button-bg: #f7f7f7;
+  --button-hover-bg: #eaeaea;
+  --progress-color: #660000;
+}
+
+[data-theme="dark"] {
+  --bg: #2c2c2e;
+  --text: #e0e0e0;
+  --accent: #9b9bff;
+  --background: #2c2c2e;
+  --button-bg: #3a3a3c;
+  --button-hover-bg: #48484a;
+  --progress-color: #ffdddd;
+}
+
+body {
+  margin: 0;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 1.2rem;
+  line-height: 1.6;
+  text-align: justify;
+  background: var(--bg);
+  color: var(--text);
+  padding: 0;
+}
+
+/* === NAVBAR === */
+nav.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2.2rem;
+  background-color: var(--background);
+  backdrop-filter: blur(6px);
+  box-shadow: 0 1px 6px rgba(0, 0, 0, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: nowrap;
+  padding: 0 0.5rem;
+  gap: 0.5rem;
+  z-index: 1000;
+  font-size: 0.85rem;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+nav.navbar select {
+  flex-grow: 1;
+  min-width: 0;
+  max-width: 100%;
+  padding: 0.25rem;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  background: var(--button-bg);
+  color: var(--text);
+}
+
+nav.navbar button {
+  flex-shrink: 0;
+  background: none;
+  border: none;
+  font-size: 1.2em;
+  cursor: pointer;
+  color: var(--text);
+}
+
+/* === CONTENU === */
+main {
+  padding: 3rem 1rem 2rem;
+  max-width: 600px;
+  margin: auto;
+}
+
+article p {
+  text-indent: 1.5em;
+  text-align: justify;
+  hyphens: auto;
+}
+
+/* === TITRES === */
+h1 {
+  font-family: 'Segoe UI', 'Helvetica Neue', sans-serif;
+  font-weight: bold;
+  text-align: center;
+  font-size: 1.8rem;
+  margin-bottom: 0.5em;
+}
+
+main.centered h2 {
+  font-family: 'Playfair Display', Georgia, serif;
+  /* ou ta police préférée */
+  font-size: 2.4rem;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 0.5em;
+}
+
+.subtitle {
+  font-size: 1.2em;
+  color: var(--accent);
+  margin-bottom: 2em;
+}
+
+.start-button {
+  display: inline-block;
+  padding: 1em 2em;
+  background: var(--accent);
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 0.5em;
+  transition: opacity 0.3s;
+}
+
+.start-button:hover {
+  opacity: 0.8;
+}
+
+/* === NAVIGATION CHAPITRES === */
+.chapter-nav {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 1rem;
+  margin: 2rem auto 0rem auto;
+  max-width: 640px;
+  background-color: var(--background);
+}
+
+.chapter-nav a {
+  flex: 1;
+  text-align: center;
+  text-decoration: none;
+  padding: 0.75rem;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  background-color: var(--button-bg);
+  color: inherit;
+  transition: background-color 0.2s;
+}
+
+.chapter-nav a:hover {
+  background-color: var(--button-hover-bg);
+}
+
+.fixed-bottom {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  justify-content: center;
+  background-color: var(--background);
+  box-shadow: 0 -1px 6px rgba(0, 0, 0, 0.1);
+  padding: 1rem;
+  z-index: 100;
+}
+
+main.centered {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding-top: 2.5rem;
+  /* pour éviter de passer sous la navbar */
+  box-sizing: border-box;
+  text-align: center;
+}
+
+.index-image {
+  max-width: 80%;
+  height: auto;
+  margin-top: 2rem;
+}
+
+ul.tiret {
+  list-style: none;
+  padding-left: 0.5rem;
+}
+
+ul.tiret li {
+  position: relative;
+  padding-left: 1.5rem;
+  text-align: justify;
+  margin-bottom: 0rem;
+}
+
+ul.tiret li::before {
+  content: "—";
+  /* Tiret cadratin */
+  position: absolute;
+  left: 0;
+  color: var(--text);
+}
+
+main.end-page {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 3rem 1rem;
+  text-align: center;
+}
+
+.end-page h1 {
+  font-size: 2.5rem;
+  font-family: 'Playfair Display', Georgia, serif;
+  margin-bottom: 2rem;
+  color: var(--text);
+}
+
+.end-image {
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  object-fit: cover;
+  filter: grayscale(100%);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.fade-in {
+  opacity: 0;
+  animation: fadeIn 0.8s ease-in forwards;
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
+}
+
+#global-progress {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  height: 4px;
+  background-color: var(--progress-color); /* couleur personnalisable */
+  width: 0%;
+  z-index: 9999;
+  transition: width 0.4s ease;
+}
+
+html[data-font="small"] {
+  font-size: 0.9rem;
+}
+
+html[data-font="medium"] {
+  font-size: 1.1rem;
+}
+
+html[data-font="large"] {
+  font-size: 1.3rem;
+}
+
+html {
+  transition: font-size 0.3s ease;
+}
+
+*{box-sizing:border-box}html{scroll-padding-top:4rem}nav.navbar{height:auto;min-height:3rem;max-width:600px;padding:.3rem .5rem}nav.navbar button{min-width:44px;min-height:44px}nav.navbar select{min-height:44px;width:50%;font-size:.85rem}main{padding-top:4rem;padding-bottom:7rem}h2{font-family:'Segoe UI',sans-serif;font-size:1.65rem;line-height:1.35;text-align:center}a{color:var(--accent);overflow-wrap:anywhere}header{text-align:center;margin-bottom:2rem}section{margin-top:2rem}body.js article section{display:none}body.js article section.active{display:block}body.js header,body.js details,body.js footer{display:none}body.js.home header,body.js.home details,body.js.home footer{display:block}body.js.home article section{display:none}.chapter-nav{max-width:600px;margin:auto;padding:.5rem;gap:.5rem}.chapter-nav a{min-height:44px;font-size:.9rem;padding:.65rem .4rem}.chapter-nav a[aria-disabled=true]{visibility:hidden}#global-progress{transition:none}.meta{font-size:.85rem;text-align:left}details nav a{display:block;padding:.5rem 0}button:focus-visible,a:focus-visible,select:focus-visible{outline:3px solid var(--accent);outline-offset:2px}sup{line-height:0}sup a{padding:.25rem}.reader-bottom{display:none}.js .reader-bottom{display:flex}@media print{nav.navbar,.reader-bottom,#global-progress{display:none}body.js article section{display:block!important}main{padding:0}section{break-before:page}}
+
+:root{--bg:oklch(0.98 0.008 90);--background:var(--bg);--text:oklch(0.23 0.012 160);--accent:oklch(0.35 0.077 160);--line:oklch(0.83 0.015 160);--button-bg:var(--bg);--button-hover-bg:oklch(0.94 0.012 90);--progress-color:var(--accent);--size:1.15rem}
+html{font-size:16px;transition:none}
+[data-theme="dark"]{color-scheme:dark;--bg:oklch(0.2 0.008 160);--background:var(--bg);--text:oklch(0.91 0.008 90);--accent:oklch(0.82 0.08 160);--line:oklch(0.4 0.015 160);--button-bg:var(--bg);--button-hover-bg:oklch(0.27 0.012 160);--progress-color:var(--accent)}
+body{font-family:Georgia,'Times New Roman',serif;font-size:var(--size);line-height:1.75}
+h1,h2,h3,h4{font-family:Georgia,'Times New Roman',serif}h1{font-size:clamp(2.25rem,8vw,3.75rem);line-height:1.12;letter-spacing:-.03em}h2{font-size:1.7rem;line-height:1.3}h3,h4{line-height:1.4}.subtitle{font-size:1.35rem;line-height:1.5}p{margin:0 0 1.1em}
+nav.navbar{font-family:system-ui,sans-serif;box-shadow:none;border-bottom:1px solid var(--line);gap:.3rem}
+nav.navbar button{font-size:.9rem;border:1px solid var(--line);border-radius:.3rem;padding:.4rem;min-width:40px}
+nav.navbar>a{display:flex;align-items:center;justify-content:center;min-width:32px;min-height:44px;text-decoration:none}
+nav.navbar select{border-color:var(--line);width:auto;flex:1}
+.chapter-nav a{border-color:var(--line)}.start-button{background:oklch(0.35 0.077 160);color:oklch(0.98 0.008 90)}
+@media print{body{font-size:11pt;background:white;color:black}}
+
+img{max-width:100%;height:auto}table{max-width:100%;display:block;overflow-x:auto}pre{white-space:pre-wrap;overflow-wrap:anywhere}section>h2:first-child,section>h3:first-child{margin-top:0}</style></head><body>
+<nav class="navbar" aria-label="Navigation de lecture"><a href="../index.html" aria-label="Retour à la bibliothèque">⌂</a><a href="#sommaire" aria-label="Accueil et sommaire">☰</a><select id="toc" aria-label="Choisir une partie"><option value="">Sommaire</option><option value="partie-0">Introduction</option></select><button id="smaller" aria-label="Réduire la taille du texte">A−</button><button id="larger" aria-label="Agrandir le texte">A+</button><button id="toggle-theme" aria-label="Changer le thème" aria-pressed="false">☾</button></nav>
+<main><header><h1>Les Illusions du protectionnisme et de l&#x27;autarcie</h1><p>Ludwig von Mises</p><a class="start-button" id="resume" href="#partie-0">Commencer la lecture</a></header><details id="sommaire" open><summary>Table des matières</summary><nav aria-label="Sommaire"><a href="#partie-0">Introduction</a></nav></details><article><section id="partie-0">
+
+
+
+<p> </p>
+
+<h2>9. Les illusions du protectionnisme et de l'autarcie</h2>
+
+<p> </p>
+
+
+
+<p><em>Extrait de </em>La Crise mondiale<em>.<br> Collection d'études publiée à l'occasion du dixième anniversaire de l'Institut des Hautes Études Internationales à Genève.
+<br>Publié en français dans la série « Fausses solutions à de vrais problèmes » – N°1 – Librairie de Médicis – Paris (1938).</em>
+</p>
+
+
+
+
+<h4>Introduction</h4>
+
+
+<p>La division du travail était une conquête de l'esprit de libéralisme. Un commerce international existe depuis les temps les plus reculés. Plusieurs marchandises, dont la production était limitée à des régions remplissant certaines conditions spéciales, faisaient l'objet d'un commerce régulier. Un commerce occasionnel apparaissait lorsque quelque événement extraordinaire survenait, qui créait des occasions inusitées. Toutefois, quelque importants qu'aient été les effets civilisateurs de ce commerce international, quelque important qu'ait été son volume, si l'on considère les difficultés d'ordre technique que les transports avaient à surmonter, le rôle qu'il a  joué dans la satisfaction des besoins des marchés est négligeable. Une très petite partie seulement de la consommation quotidienne de l'individu moyen provenait de l'étranger. Les marchandises importées pouvaient être, en majeure partie, considérées comme des articles de luxe, car les gens pouvaient s'en passer sans endurer de trop grandes privations.</p>
+
+<p>Au début du XIX<sup>e</sup> siècle, le blocus continental napoléonien, même s'il avait été tout à fait effectif, n'aurait pu avoir d'effets notables sur la consommation des masses de l'Europe centrale. A cette époque, le sucre même (il ne s'agissait, bien entendu, alors que du sucre de canne) et le coton passaient pour des marchandises de luxe.</p>
+
+<p>Le développement du commerce international était dû à l'abolition de la plus grande partie des entraves au commerce
+qu'une fiscalité mal inspirée et une politique mercantile fourvoyée avaient suscitées. Le libéralisme avait abattu ces barrières et, par là, frayé la voie à une intensification sans précédent des relations commerciales internationales. Lorsque Cobden et Bastiat étaient au summum de leur prestige, tout le monde était persuadé que les entraves au commerce étaient destinées à disparaître à jamais, de même que les autres survivances d'un sombre passé telles que l'absolutisme, la superstition, l'intolérance, l'ignorance et les guerres.</p>
+
+<p>La théorie du commerce extérieur telle que l'a bâtie Ricardo a montré de façon irréfutable que la liberté des échanges est seule capable d'assurer aux efforts économiques une productivité maxima et que tout protectionnisme doit nécessairement entraîner une diminution des fruits du capital et du travail. Durant cent vingt ans, un flot de livres et de brochures a cherché à infirmer cette théorie et à prouver que, de la protection, peut sortir quelque bien. En vain. Ils n'ont pas pu faire brèche dans cette idée qu'au point de vue du ravitaillement du consommateur en marchandises le libre-échange est plus efficace que tout autre système. Jamais aucune proposition n'a été avancée qui fût de nature à ébranler les bases de la doctrine libre-échangiste.</p>
+
+<p>La plus fameuse objection qui ait été formulée dans le passé a été tirée de la nécessité d'une « éducation industrielle ». Mais tout ce qu'on pouvait dire de l'incapacité où sont les industries de création récente de se défendre avec succès contre les producteurs anciens et fortement établis est vrai dans le cas où les concurrents appartiennent à la même nation, comme dans le cas où ils appartiennent à des nations différentes. Que personne ne s'avise de réclamer une protection pour de nouvelles maisons entreprenant de nouvelles affaires contre l'écrasante concurrence de vieilles maisons travaillant dans la même ville, dans la même province ou dans le même pays, voilà qui peut déjà être considéré comme une preuve que l'argument est moins économique que politique. Évidemment, chaque entreprise nouvelle doit éprouver des difficultés variées jusqu'au moment où elle fonctionne sans heurts. Il est des inconvénients qui condamnent les affaires à être mauvaises pendant une période d'initiation plus ou moins longue. S'il n'y a aucune chance que ses pertes soient compensées et au delà par des gains ultérieurs, alors la création de la nouvelle entreprise n'est pas une opération rémunératrice. Dans ce cas, c'est pur gaspillage que d'ajouter de nouvelles maisons ou de nouvelles entreprises à celles qui existent déjà. A cet égard, il importe peu que le nouveau centre de production se situe dans le pays même ou à l'étranger. L'histoire offre nombre d'exemples qui prouvent que des industries se sont déplacées, dans le même pays, d'un endroit moins propice à un autre qui l'était davantage, cela bien qu'aucune mesure ne soit venue protéger l'enfance du nouvel établissement. En pareil cas, dans les calculs de l'homme d'affaires, les pertes du début devaient être dépassées par les gains ultérieurs. L'impulsion fut donnée sans qu'on se soit assuré une protection. Cette protection n'est pas plus nécessaire si le déplacement doit s'effectuer d'un pays dans un autre. Soumis à un examen plus serré, l'argument tiré de l'industrie naissante livre son caractère purement politique. Il ne peut être considéré comme un argument économique judicieux en faveur de la protection.</p>
+
+<p>Or, il a joué un rôle important soit dans les écrits des économistes, soit dans les politiques économiques. Mais l'histoire économique ne nous fournit pas un seul exemple de protection des industries naissantes qui n'ait dégénéré en une protection permanente et tenace. Les industries de l'Amérique, de l'Australie et des pays orientaux de l'Europe ont fortement bénéficié, dans leur enfance, des bienfaits de cet argument. Maintenant qu'elles ont l'âge adulte, elles sont encore protégées, et même beaucoup plus efficacement, et il n'est pas question de les déclarer majeures en abolissant cette protection.</p>
+
+<p>L'argument de l'industrie naissante appartient aujourd'hui au passé. Dans le monde actuel, ce sont d'autres arguments qui font triompher le protectionnisme et sa conséquence logique : le désir d'autarcie. Ces arguments sont celui du prestige national, celui de la guerre, celui des salaires, celui du surpeuplement et celui de la monnaie ou des changes.</p>
+
+
+<h4>I. L'argument du prestige mondial</h4>
+
+
+<p>Selon List, chaque nation doit passer par diverses phases d'évolution économique. Lorsqu'elle est parvenue à la phase suprême, elle n'a pas développé seulement son agriculture, mais aussi son commerce et son industrie. Jusqu'à ce moment-là, elle ne peut faire jouer harmonieusement toutes ses forces productives. De cette philosophie, toutes les nations du monde qui étaient en retard au point de vue de la production industrielle ont conclu que le fait de n'avoir pas une industrie moderne et une production moderne de grande envergure était un signe d'infériorité. Tandis que les romantiques, dans les pays industriels, désirent le retour d'une ère plus agricole, dans les pays agricoles, les romantiques rêvent d'une industrialisation de leur propre pays. Ils estimaient qu'une nation dont la richesse est fondée uniquement sur l'agriculture et sur la production de matières premières ne peut jamais atteindre le niveau de civilisation morale et intellectuelle propre aux nations qui sont à la tête du monde occidental. Ils désirent une ère industrielle, parce qu'ils aspirent à la plénitude de la culture moderne.</p>
+
+<p>C'est ce romantisme qui explique que, dans les pays à prédominance agricole, les programmes des partis nationalistes comportent toujours la production de l'industrie et attribuent moins d'importance aux besoins de l'agriculture. Avant la guerre, lorsque l'immigration dans les pays industriels de l'Europe et d'outre-mer était encore libre, le mobile principal de cette politique protectionniste était, dans beaucoup de pays européens, le désir de rendre l'émigration inutile. Les conditions de la production industrielle étaient, à tous égards, plus favorables en Europe centrale et occidentale que dans les Balkans, par exemple. Sous un régime de laisser-faire, l'excédent de population de ces nations, qui ne pouvait trouver du travail dans la production agricole, devait émigrer en Europe centrale et occidentale et au Nouveau-Monde. Lorsque les gouvernements de ces nations de l'Europe orientale ont encouragé la production industrielle en usant d'un protectionnisme strict, c'est qu'ils désiraient mettre un frein à l'émigration qui, selon eux, portait préjudice à la grandeur et à la puissance politique et militaire de l'État. Ils craignaient qu'à la longue les émigrants ne perdissent à l'étranger leur attachement à la mère-patrie, à ses habitudes, à sa langue et à sa civilisation. La protection de la production industrielle était une politique de conservation nationale et raciale. Elle avait pour but d'éloigner les citoyens du pays du creuset de l'Europe occidentale, des États-Unis et des autres nations américaines. Aujourd'hui, cette idée a perdu sa valeur. L'immigration n'est plus libre, les excédents de population sont sans exutoire, car il n'existe presque plus de pays où il soit possible d'immigrer.</p>
+
+<p>Avant la guerre, l'argument de la migration valait non seulement pour les pays agricoles de l'Europe, mais même pour l'un des pays les plus industrialisés, l'Allemagne. Lorsque l'agriculture allemande, notamment celle des provinces orientales de la Prusse, ne put plus soutenir, sur un marché non privilégié, la concurrence de la production agricole de pays plus fertiles, comme la Russie, la Roumanie, les États-Unis, le Canada et l'Argentine, l'Allemagne s'est mise à avancer pas à pas dans la voie du protectionnisme, parce qu'elle désirait, dans la mesure du possible, réduire les pertes qui lui valait l'émigration. Mais nous ne nous attarderons pas sur ce point, car, à l'heure actuelle, les migrations internationales de grande amplitude sont devenues impossibles.</p>
+
+<p>Si les considérations de population influençaient la politique commerciale des pays relativement surpeuplés qui étaient, par conséquent, des pays d'émigration, dans un certain sens, elles déterminaient, en sens inverse, celle des pays relativement sous-peuplés. Ces derniers pays, et surtout ceux de l'Amérique latine, désiraient augmenter leur population en renforçant leur immigration, et la protection était, à leurs yeux, l'un des moyens d'attirer de la main-d'œuvre. Mais maintenant cela aussi appartient au passé.</p>
+
+<p>Dans les conditions actuelles, où les migrations se réduisent à un minimum et ou aucun pays important n'ouvre ses portes à des nouveaux-venus, ce genre de considération n'importe plus. Nous parlerons plus loin du rôle joué par les barrières à l'immigration.</p>
+
+
+
+<h4>II. L'argument de la guerre</h4>
+
+
+<p>La raison principale invoquée pour justifier le protectionnisme et la lutte pour l'autarcie, dans le monde actuel, est la guerre. Pour les pays militaristes, être prêt à faire la guerre est la grande affaire, et la guerre elle-même, le moyen normal de parvenir à leurs fins. Ils ne considèrent, par conséquent, la paix que comme le temps pendant lequel l'on prépare la guerre à venir. Les activités économiques du pays doivent, dès le temps de paix, être organisées de façon à pouvoir, le moment venu, servir à des fins de guerre. Ce système comporte l'autarcie par rapport à tous les produits nécessaires à une nation en guerre.</p>
+
+<p>Lorsque les libéraux recommandaient la liberté des échanges et la division internationale du travail, c'était parce que la paix entre toutes les nations civilisées était l'article principal de leur foi politique. Il faut nous rendre compte que la condition <i>sine qua non</i> du libre-échange est la bonne volonté et la paix entre les nations. La division du travail à l'intérieur d'un pays présuppose la paix entre ses différentes parties et provinces. Au moyen âge, et même plus tard, lorsque la division du travail était à l'état embryonnaire, les contrées et les villes même pouvaient se faire la guerre. Comme chaque partie du pays produisait tout ce qui était nécessaire à la guerre, celle-ci ne suscitait pas de problèmes de fournitures de vivres, d'équipements et d'armes. Les belligérants avaient besoin d'argent pour conduire la guerre, mais une fois qu'ils en possédaient, ils pouvaient acheter ce dont ils avaient besoin.</p>
+
+<p>Il en va tout autrement, dans le monde moderne, où règne la division internationale du travail. Les pays européens comptent plus ou moins sur les denrées alimentaires et sur les matières premières importées de l'étranger. La fabrication des armes et du matériel de guerre modernes n'est possible que dans de grandes entreprises, hautement spécialisées, qui doivent exercer leur activité en temps de paix déjà, afin de pouvoir fonctionner sans surprise en temps de guerre. Une nation qui ne produit pas toutes les matières premières et les denrées alimentaires et toutes les armes et autres matériels militaires à l'intérieur de ses frontières en manquera en temps de guerre.</p>
+
+<p>Lorsque, à partir des années quatre-vingt-dix du siècle dernier, l'Allemagne commença ses préparatifs en vue d'une guerre décisive, ses prévisions économiques se bornaient au ravitaillement en produits alimentaires. L'une des raisons de protéger l'agriculture était alors la nécessité de rendre le pays indépendant des fournitures étrangères en temps de guerre. Mais personne ne s'était avisé  qu'un pays belligérant pouvait souffrir de la pénurie d'autres marchandises que les denrées alimentaires. C'est la grande guerre qui a enseigné cette leçon.</p>
+
+<p>Aujourd'hui, les puissances qui considèrent la guerre comme le moyen de satisfaire leurs aspirations « dynamiques » visent à l'autarcie afin de ne pas avoir à faire appel aux fournitures étrangères dans la conflagration à venir. Ce sont ces puissances qui ont systématiquement élaboré la théorie et la pratique de l'autarcie pour les fins de la guerre. Leurs efforts ont été stimulés par la menace de l'article 16 du Pacte de la Société des Nations, où sont inscrits des mesures économiques contre la nation qui recourt à la guerre.</p>
+
+<p>Désireuses de se suffire à elles-mêmes en temps de guerre, ces nations cherchent, dans toute la mesure du possible, à s'affranchir des importations de matières premières. Elles veulent remplacer les matières premières et les denrées alimentaires importées par celles qu'elles peuvent produire chez elles. Elles favorisent, au moyen des mesures de protectionnisme les plus strictes, la production des denrées alimentaires et des matières premières qui peuvent être obtenues à l'intérieur de leurs frontières. Elles cherchent à remplacer les matières premières qu'elles ne peuvent produire sur le sol national par des succédanés fabriqués dans le pays. Elles ne tiennent pas compte, dans leurs efforts, du prix de la production. Aux yeux des partisans de cette politique, peu importe que ces succédanés aient un coût de production plusieurs fois plus élevé que celui de la marchandise importée. Las seule chose qui compte, c'est qu'ils puissent être produits dans le pays. C'est dans cet esprit que ces pays ont cherché à produire du caoutchouc synthétique, du pétrole synthétique, de la laine synthétique, etc.</p>
+
+<p>Dans le raisonnement qui est à la base de cette thèse d'inspiration militariste, en faveur de l'autarcie, une erreur frappante s'est glissée. Chaque fois que la technique moderne réussit à remplacer une matière première précédemment en usage par un article dont — dans le cas le moins favorable — le rendement n'est pas moins bon et l'utilisation n'est pas plus coûteuse que ceux du produit naturel, il est évident que ce nouvel article a tendance à chasser l'ancien du marché. C'est de cette façon que la garance a été remplacée par l'aniline, de cette façon que la soie et le coton ont perdu du terrain, qui a été gagné par la rayonne. Dans ces conditions, le nouvel article ne peut plus être appelé un succédané, pas plus que l'automobile n'est le succédané d'un char ou le canon de l'arc et de la flèche. Mais là n'est pas le problème. Les succédanés dont il s'agit appartiennent à une catégorie inférieure et sont incapables de rendre des services meilleurs et à meilleur marché que la marchandise qu'ils sont appelés à remplacer ; leur rendement est, au contraire, moins grand, et leur emploi revient plus cher. En recherchant de tels succédanés, il peut arriver, un jour ou l'autre, qu'on invente quelque chose de nouveau, qui soit plus satisfaisant que la marchandise précédemment en usage. Toutefois, pour le moment, on ne peut s'appuyer sur de vagues probabilités, il faut compter avec les réalités. Nous avons à envisager ce fait que les nations désirent se rendre économiquement indépendantes, en remplaçant certaines matières premières et denrées alimentaires importées par un succédané plus cher et moins bon produit sur leur sol. Elles croient que ces inconvénients sont compensés par le fait que le pays se libère de la production étrangère et pourra s'en passer, par conséquent, en temps de guerre. Elles estiment que, lorsque des problèmes de défense nationale se posent, il est possible de négliger la question du prix de revient. La seule chose qui ait du prix à leurs yeux, c'est l'indépendance.</p>
+
+<p>Toutefois, ce raisonnement est fallacieux. Il n'est pas vrai qu'il soit sans importance que la production d'une marchandise utile à la guerre soit plus ou moins coûteuse. Les prix de revient plus élevés indiquent que la même quantité de capital et de travail produits moins. Si un pays belligérant est forcé d'employer plus de capital et plus de travail pour obtenir une quantité donnée de marchandise, il en sera moins abondamment pourvu que ses adversaires. En particulier, le fait, pour ce pays, d'avoir à employer plus de main-d'œuvre pour la production de la même quantité de marchandise représentera une véritable calamité. Ce sont autant de bras qui manqueront dans les tranchées, car les hommes ne peuvent se battre et travailler en même temps. Déjà, au temps de la grande guerre, les puissances de l'Europe centrale se plaignaient que la production des matériels de guerre exigeât un trop grand nombre d'hommes jeunes.</p>
+
+<p>Et il y a un deuxième grand inconvénient. Les succédanés sont moins bons que les marchandises qu'ils doivent remplacer. S'ils étaient aussi bons, ce ne seraient pas des succédanés, mais la marchandise qu'il convient d'employer, et l'adversaire lui aussi ne manquerait pas de s'en servir. Le fait que l'une des deux parties est forcée d'utiliser des matériaux qui conviennent moins bien constitue un lourd handicap. La partie la mieux outillée tirera de sa supériorité d'équipement un avantage à la fois moral et matériel. La meilleure armée se démoralise à constater que l'adversaire est mieux nourri, mieux armé et mieux protégé contre les dangers qu'elle ne l'est elle-même. Dans la guerre mondiale, rien n'a autant découragé les soldats des puissances centrales que, lorsque après avoir conquis des tranchées sur les alliés, ils constataient que ceux-ci étaient mieux armés, mieux équipés et mieux nourris qu'eux-mêmes. Personne ne saurait contester que la victoire des alliés a été due en grande partie à leur supériorité en matériel.</p>
+
+<p>Ensuite, il faut considérer que, pour la production des succédanés, quelques matières premières sont aussi nécessaires. Dans de très rares cas seulement, ces matières premières peuvent être trouvées en quantité suffisante sur le marché national. Pour la plupart, elles doivent être importées, elles aussi, soit parce qu'on ne les produit pas du tout dans le pays, soit parce qu'on ne les y produit pas en quantité suffisante. Pour la fabrication du textile, par lequel l'Allemagne désire remplacer le drap de laine, il faut aussi de la laine, et l'on peut se demander si l'Allemagne sera capable de développer sa production de laine au point de pouvoir fabriquer toute celle dont elle aura besoin. En tout état de cause, elle ne pourra développer sa production de laine qu'en restreignant celle d'un autre produit agricole, étant donné qu'il faudra, pour cela, du terrain, et que le terrain est rare en Allemagne. Si l'Allemagne ou l'Italie cherchent à produire des succédanés à partir du bois, elles se rendront compte que leur production de bois ne suffira pas. Lorsque l'Italie se propose de fabriquer du drap à partir des produits laitiers, elle se trouve en présence de ce fait que sa production de lait est également limitée et qu'elle doit par conséquent importer de la caséine. La production de succédanés ne supprime pas le problème des matières premières, elle le transporte seulement dans d'autres branches de la production.</p>
+
+<p>C'est, au point de vue économique, une des caractéristiques des collectivités industrielles modernes de ne pouvoir se passer des matières premières importées et payées par les produits fabriqués qu'elles exportent. Ces pays industriels modernes sont donc en relation avec le reste du monde de la même façon que les centres industriels sont en relation avec les régions productrices d'articles agricoles et de matières premières de leur propre pays. De même qu'il est impossible, pour une ville, de faire la guerre à la campagne qui la ravitaille en denrées alimentaires et en matières premières, de même il est impossible, pour un pays industriel, de faire la guerre au reste du monde. Telle est la situation où se trouvent les pays industriels de l'Europe d'à présent.</p>
+
+<p>L'économiste libéral déduit de ce fait la nécessité de la paix internationale. Il est d'avis que la guerre est incompatible avec l'état actuel de division internationale du travail. Mais le militariste, qui estime que la guerre est l'activité la plus haute et la plus noble d'une nation, croit que cette division internationale du travail est un esclavage pour son pays, parce qu'elle l'empêche de faire la guerre. Pour lui, l'indépendance de son pays est réalisée lorsque celui-ci est en état de faire la guerre à tous les autres, ou à quelques autres, sans dépendre de l'étranger pour les fournitures dont il a besoin. L'Allemagne et l'Italie désirent l'une et l'autre être en mesure de soutenir une guerre contre la France et les nations alliées à la France sans souffrir d'un manque de denrées alimentaires et de matières premières. Cela ne signifie pas qu'elles veulent réellement attaquer la France, ni qu'elles pensent que la France veuille les attaquer — c'est là un problème que nous n'avons pas à discuter — mais elles considèrent comme un handicap insupportable un état de choses dans lequel elles seraient incapables de recourir à la guerre en tant qu'<i>ultima ratio</i>. La liberté, telle qu'elles la conçoivent, c'est la possibilité d'être prêtes à faire la guerre lorsque le chef de la nation le juge nécessaire.</p>
+
+<p>Il est bien évident que cette notion de la liberté est à l'usage exclusif des grandes nations. Une petite nation n'oserait jamais formuler dans ces termes ses aspirations à l'indépendance. M. Hitler et M. Mussolini soulignent que leur revendication est justifiée parce qu'une grande nation ne saurait vivre dans les conditions qui peuvent paraître satisfaisantes à une petite nation. Ils réclament des territoires où ils pourront produire des matières premières sur un sol qui sera le leur, et, lorsqu'ils déclarent que leurs nations ne sont pas satisfaites, ils appuient leur assertion en faisant ressortir la répartition injuste des colonies et des matières premières. C'est tout particulièrement en vue des négociations à venir au sujet d'une nouvelle répartition des matières premières et des colonies qu'ils désirent atteindre à l'autarcie, parce qu'ils veulent pouvoir jeter dans les plateaux de la balance une épée acérée.</p>
+
+<p>Peut-être comprendrons-nous mieux maintenant le rôle joué par l'autarcie dans les plans de ces deux puissances. Elles n'envisagent pas l'autarcie dans les limites actuelles du territoire national comme une mesure durable, mais seulement comme une mesure temporaire, en vue de la préparation de la prochaine guerre pour la suprématie. C'est à cette guerre que M. Hitler fait fréquemment allusion dans son livre <i>Mein Kampf</i> <sup><a href="#partie-0-sdfootnote1sym" id="partie-0-sdfootnote1anc">1</a></sup>.</p>
+
+<p>Bien entendu, la politique de l'autarcie n'apparaît pas plus raisonnable si on la considère comme une préparation à la prochaine guerre que si on la considère comme une institution militaire durable.</p>
+
+<p>Certains experts militaires estiment que la guerre future sera entièrement différente de la dernière guerre mondiale. Ils supposent que l'agresseur parviendra très rapidement à ses fins s'il attaque à l'improviste un pays qui n'est pas conscient du danger, et qui n'est, par conséquent, pas prêt à résister. D'un seul coup, cet « Überfallskrieg » peut amener la victoire décisive. Quant à savoir, cependant, si une attaque par surprise aurait plus de succès dans une guerre à venir qu'elle n'en a eu dans les dernières guerres, le point est des plus douteux. Une attaque foudroyante a fondu sur la Saxe en 1756, et sur la Belgique en 1914, mais elle n'a pu, ni dans un cas ni dans l'autre, décider de l'issue de la lutte, ni terminer la guerre, au contraire, elle n'a fait que mettre le feu aux poudres. Il n'y a aucune raison de croire que les choses se passeraient de façon différente dans l'hypothèse d'une nouvelle guerre mondiale. D'autre part, dans une guerre où l'agresseur met tous ses atouts dans une attaque qui doit amener un succès rapide, la supériorité d'équipement et d'armement joue un plus grand rôle que dans tout autre. Pour le succès d'un tel projet, l'infériorité de l'armement qui provient de l'emploi de succédanés peut avoir des conséquences fatales.</p>
+
+<p>Au point de vue militaire, la substitution de succédanés aux matières premières convenables semble donc constituer un inconvénient à tous égards. Lorsque les puissances de l'Europe centrale partirent en guerre, en 1914, sans s'être assuré des possibilités de ravitaillement en matières premières étrangères, elles pouvaient compter sur les stocks considérables de ces marchandises que détenaient normalement le commerce et l'industrie. Ces stocks étaient suffisants pour les deux premières années de guerre. Or, l'un des résultats de la politique d'autarcie et de préparation économique à la guerre sera que, dans une nouvelle campagne, ces stocks seront à peu près inexistants.</p>
+
+<p>C'est le paradoxe de l'autarcie, en tant que préparation économique à la guerre, d'affaiblir le potentiel militaire de la nation, en diminuant l'efficacité de ses armes. L'état actuel de la division internationale du travail place les nations qui se proposent de recourir à la guerre devant un dilemme insoluble. Elles doivent considérer d'une part, qu'elles ne peuvent combattre sans importer continuellement des matières premières et des denrées alimentaires et, d'autre part, que le remplacement de ces marchandises importées par des succédanés produits sur place réduit leur force militaire.</p>
+
+<p>En temps de paix, les nations peuvent acheter toutes les matières premières et les denrées alimentaires qu'elles désirent et qu'elles sont disposées à payer. Évidemment, cette situation fait dépendre la nation des fournitures de l'étranger et l'intègre dans le système international de la division du travail, mais, quant à considérer cet état de choses comme plein d'inconvénients parce qu'il rend la guerre impossible, c'est céder à un incorrigible atavisme.</p>
+
+
+<h4>III. L'argument de la guerre dans les pays neutres</h4>
+
+
+<p>Il est des pays fortunés qui ont décidé de rester neutres dans toutes les guerres. Pour eux, l'argument de la guerre invoqué en faveur de l'autarcie par les militaristes est sans valeur. Ils n'ont pas l'intention de conquérir des territoires, et leur seul désir est de vivre en paix et de vaquer sans ennuis à leurs affaires. Mais à supposer même qu'ils réussissent à appliquer cette politique et à représenter un îlot pacifique dans un océan de sang, ils peuvent souffrir des conséquences de la guerre. A cet égard, la situation de la Suisse pendant la guerre mondiale a été caractéristique. Son ravitaillement en denrées alimentaires et en matières premières importées était à la merci des belligérants. Si la Suisse n'avait pu s'entendre avec eux, elle n'aurait obtenu ni combustible, ni denrées alimentaires, et ç'aurait été pour elle la famine.</p>
+
+<p>Dans un pays tel que celui-ci, une politique visant à l'autarcie, afin d'écarter les dangers que représenterait pour lui une nouvelle guerre mondiale, paraît plus raisonnable que dans les pays qui désirent attaquer. Il n'est pas au pouvoir de la Confédération suisse d'empêcher ses voisins de recourir à la guerre. Elle ne peut que protéger ses propres intérêts, par le moyen non seulement d'armements mais encore de mesures destinées à assurer son ravitaillement en temps de guerre. Mainte mesure politique économique suisse, qui pourrait paraître complètement déraisonnable dans un monde paisible et doué de bon sens, se justifie par une situation internationale dont le pays est obligé de tenir compte. Les conditions dans lesquelles se trouvent d'autres nations ne sont pas très différentes, bien que pour aucune d'entre elles, la situation géographique ne soit aussi défavorable que pour la Suisse.</p>
+
+<p>La tendance à l'autarcie résulte, dans ces cas aussi de l'esprit de guerre qui, maintenant, infecte le monde. La menace de guerres futures met en danger le maintien de la division internationale du travail, et chaque gouvernement, fût-ce le plus pacifique et le plus international d'esprit, doit se prémunir contre cette éventualité.</p>
+
+
+<h4>IV. L'argument des salaires</h4>
+
+
+<p>L'un des effets de la division internationale du travail est de créer l'interdépendance des salaires dans tout le monde.</p>
+
+<p>Dans un régime où la mobilité de la main-d'œuvre, du capital et des marchandises sur toute la surface du globe serait totale, il devrait y avoir une tendance à l'égalisation, aussi bien du taux des bénéfices que du taux des salaires pour un travail de même espèce. Le capital et le travail devraient passer des régions où les conditions naturelles de la production sont moins favorables dans les régions où elles le sont plus, jusqu'à réalisation de cette égalité. Dans le régime actuel, toutefois, il existe des barrières qui s'opposent très efficacement au transfert, soit du capital, soit de la main-d'œuvre, d'un pays dans un autre, d'où des différences considérables dans le taux des bénéfices et le niveau des salaires. Il n'en demeure pas moins que l'interdépendance de ces deux pays est une réalité.</p>
+
+<p>L'un des facteurs qui déterminent les salaires, au Japon, est le fait que les Japonais ne sont pas libres d'émigrer, car aucun pays n'admet l'immigration de Japonais. L'un des facteurs qui déterminent les salaires, aux États-Unis, c'est que l'immigration, dans ce pays, est restreinte. La main-d'œuvre ne peut circuler librement du Japon aux États-Unis, mais il n'en existe pas moins un lien entre le niveau des salaires dans les deux pays. Ce lien résulte de la faculté de déplacement du produit du travail. Les marchandises produites par n'importe laquelle de ces deux nations peuvent entrer en concurrence. Dans un monde où existerait le libre-échange des marchandises, celles-ci devraient être vendues au même prix par le producteur, compte non tenu du coût des transports. La possibilité, pour les syndicats ouvriers d'un pays, de relever le niveau des salaires semble donc limitée par la concurrence des marchandises produites à l'étranger par une main-d'œuvre moins onéreuse. Les syndicats ouvriers des pays bénéficiant de conditions de production plus favorables et de salaires plus élevés désireraient que les salaires se relèvent dans les pays les moins favorisés. Mais ce résultat ne pourrait être atteint qu'en transférant de la main-d'œuvre des pays moins favorisés dans les pays les plus favorisés, et c'est précisément ce à quoi s'opposent les syndicats ouvriers des pays les mieux pourvus. Sans une modification de la répartition des travailleurs sur toute la surface de la terre, il est cependant impossible d'arriver à l'égalité des salaires.</p>
+
+<p>En vertu du système actuel des restrictions à l'immigration, les salaires trouvent leur point d'équilibre à un niveau autre que celui qu'ils atteindraient dans un monde où la main-d'œuvre pourrait circuler en liberté ; dans certains pays ils sont plus  hauts, dans d'autres plus bas. Mais il existe, pour chaque région à l'intérieur de laquelle aucune barrière n'empêche le déplacement de la main-d'œuvre d'un lieu à un autre, un taux uniforme d'équilibre des salaires pour chaque genre de travail. Aussi longtemps que les salaires effectivement payés ne dépassent pas ce niveau d'équilibre, l'emploi et le chômage sont normaux. Il est dans la nature du taux d'équilibre de faire coïncider l'offre et la demande sur le marché du travail.</p>
+
+<p>Si les syndicats ouvriers des pays jouissant de conditions de production plus favorables limitaient leurs activités à restreindre l'immigration, et s'ils se contentaient de l'élévation des salaires d'équilibre résultant de ces restrictions, ils n'accroîtraient pas le chômage. Mais si les syndicats ouvriers cherchent, comme on les voit faire, à relever les salaires au-dessus de ce taux d'équilibre, ils provoquent un chômage persistant fort dont pâtit une grande partie des classes ouvrières. C'est là, de toute évidence, dans un organisme économique fondé sur la division du travail et l'échange, l'effet nécessaire d'un taux de salaires dépassant le taux d'équilibre.</p>
+
+<p>Les employeurs attribuent à la pression de la concurrence étrangère l'impossibilité où ils sont d'employer plus d'ouvriers aux taux résultant de contrats collectifs. L'opinion publique tient, par conséquent, les barrières érigées contre les importations de l'étranger, pour des mesures efficaces de lutte contre le chômage, sans abaissement du niveau des salaires. L'un des arguments les plus goûtés en faveur du protectionnisme consiste à dire qu'il convient de défendre le niveau de vie du pays contre le dumping des marchandises produites par la main-d'œuvre peu coûteuse.</p>
+
+<p>Or, on appelle « dumping » l'importation de marchandises produites par une main-d'œuvre moins coûteuse et l'on considère l'interdiction d'admettre ces marchandises comme pleinement justifiée. Les pays qui, d'une part, jouissent, par la volonté de la nature, et par leur richesse en capitaux, de conditions de production plus favorables, et qui, d'autre part, ne veulent pas laisser entrer d'immigrants étrangers, tiennent donc pour justifiés les droits de douane élevés, les contingentements rigoureux, et même la complète autarcie.</p>
+
+<p>Si un pays ne veut admettre ni l'immigration de travailleurs, ni les importations de marchandises produites à l'étranger par une main-d'œuvre peu coûteuse, ni l'exportation de capital, il est sur la voie de l'isolement économique complet.</p>
+
+<p>Les pays anglo-saxons et quelques autres pays occidentaux sont doublement responsables du taux peu élevé des salaires et du niveau peu élevé de vie des régions surpeuplées, premièrement parce qu'ils ont rendu l'immigration pratiquement impossible et deuxièmement parce qu'ils se sont opposés à l'importation des produits fabriqués. En voulant maintenir leur propre niveau de vie au point le plus élevé qu'il avait atteint, ils exercent une pression sur le niveau de vie des autres pays, particulièrement de l'Europe centrale, orientale et méridionale, et au Japon. Ils réduisent leurs importations de marchandises fabriquées, mais, en même temps, leurs exportations de denrées alimentaires, de matières premières et de produits fabriqués ; il en résulte une baisse du volume total du commerce international.</p>
+
+<p>La tendance à ériger des barrières au commerce toujours plus efficaces et à isoler toujours davantage les pays au point de vue économique est, par conséquent, un résultat de la politique qui vise à combattre le chômage en protégeant la production. L'idée sur laquelle repose cette politique est trompeuse. Les bas salaires à l'étranger s'effondrent davantage, et les ventes du pays à l'étranger diminuent dans la même proportion que ses importations.</p>
+
+<p>Il est vain de vouloir faire disparaître le chômage par une politique de barrières au commerce. Que les salaires ne puissent se maintenir à un taux plus élevé que le taux d'équilibre qu'à condition de laisser inemployée une fraction considérable des travailleurs, c'est un fait qui se vérifie dans le cas d'un pays isolé, tout autant que dans celui d'un pays qui achète et qui vend à l'étranger. C'est une erreur de croire qu'à la longue le chômage peut être occasionné par la concurrence étrangère, ou, pour mieux dire, le fait que le marché national n'est qu'une partie du marché international, constitue l'un des facteurs qui déterminent la hauteur à laquelle s'établit l'équilibre du taux des salaires. Au point d'équilibre du taux des salaires, le chômage devient un simple phénomène transitoire. La concurrence étrangère peut abaisser le point d'équilibre des salaires, mais elle ne saurait provoquer immédiatement un chômage durable et de vaste envergure.</p>
+
+<p>Si un pays veut soustraire son marché national à l'influence des marchés étrangers du travail, il faut qu'il cesse de participer à la division internationale du travail. Mais alors il retire à son peuple tous les avantages de la collaboration économique internationale. Cela signifie qu'avec le temps, les salaires réels doivent baisser. La politique de l'isolement économique n'est nullement le moyen d'améliorer le niveau de vie d'une nation.</p>
+
+
+
+<h4>V. L'argument du surpeuplement</h4>
+
+
+<p>L'argument du surpeuplement invoqué en faveur du protectionnisme n'est autre que l'argument des salaires considéré du point de vue des pays surpeuplés. Dans ces pays, les salaires sont bas et, sous le régime actuel des barrières aux migrations, il n'y a aucun espoir de relever les salaires par l'émigration.</p>
+
+<p>Les salaires d'équilibre sont bas dans ces pays. Mais aussi longtemps que les salaires effectifs ne dépassent pas le taux d'équilibre, il ne se produit pas de chômage durable sur une grande échelle. Les salaires d'équilibre peuvent, bien entendu, tomber extrêmement bas par rapport à ceux de l'étranger.</p>
+
+<p>Les bas salaires sont très peu satisfaisants et les gouvernements et les syndicats ouvriers y cherchent, les uns et les autres, un remède. Malheureusement, le seul remède efficace, l'émigration, ne peut pas être envisagé. Les salaires minima, qu'ils soient imposés par une intervention du gouvernement ou par les contrats collectifs, ne font qu'augmenter le chômage. Pour combattre celui-ci, on s'efforce alors de protéger la production nationale, mais, en le faisant, on augmente le prix des marchandises et on abaisse encore davantage le niveau de vie.</p>
+
+<p>Les récriminations des pays surpeuplés contre les pays plus favorisés sont justifiées. Les pays où les salaires ont un point d'équilibre plus élevé leur portent préjudice de deux façons : en rendant l'immigration impossible et en fermant leur marché à l'importation de leurs produits. Néanmoins, ces pays surpeuplés ne font qu'aggraver leur situation en fermant eux-mêmes leur propre marché, car, par là, ils ne peuvent que provoquer un nouvel abaissement de leur niveau de vie.</p>
+
+<p>Dans ce cas également, la protection et l'autarcie sont des remèdes qui ne peuvent qu'aggraver le mal.</p>
+
+
+
+<h4>VI. L'argument de la monnaie ou du change étranger</h4>
+
+
+<p>L'argument de la monnaie ou du change étranger invoqué en faveur du protectionnisme diffère de la plupart des autres arguments en ce sens qu'il est purement économique. Malheureusement, c'est, lui aussi, un argument faux.</p>
+
+<p>Le maintien d'une monnaie saine n'a rien à voir avec le commerce extérieur. C'est la vieille et fondamentale erreur de tous les genres de mercantilisme de croire qu'une balance passive du commerce chasse la monnaie du pays. Mais la balance du commerce n'est qu'un poste de la balance des paiements. Un excédent des importations par rapport aux exportations est compensé, peut-être même surabondamment, par les actifs d'autres postes. La balance des paiements est, par définition, toujours en équilibre. Si les deux colonnes de la balance des paiements ne s'équilibrent que par exportation d'or, il faut que les prix baissent. Les prix bas ont pour effet d'augmenter les exportations et de mettre un frein aux importations. Dans les pays où la monnaie n'est pas purement métallique, les pertes d'or forcent la banque à resserrer le crédit. L'ajustement s'opère alors par les prêts à court terme de l'étranger qu'attire le taux élevé d'intérêt ; ainsi, dans un cas comme dans l'autre, l'équilibre se rétablit automatiquement. A la longue, un pays qui ne s'est pas lancé dans une politique d'inflation et d'expansion du crédit ne s'expose jamais à voir sortir ses stocks monétaires. Au contraire, s'il y a inflation et si, par suite d'un excès de monnaie, les prix montent et l'unité monétaire se déprécie, rien ne peut empêcher le jeu du mécanisme qui est décrit par la loi de Gresham. Si le gouvernement attribue le même pouvoir libératoire légal au papier-monnaie déprécié et aux pièces d'or, ces dernières disparaissent de la circulation. Étant donné qu'on se trouve en présence d'une inflation et d'une expansion du crédit, le réajustement automatique ne peut se produire, l'étalon-or est remplacé par une monnaie de papier qui se déprécie de plus en plus au fur et à mesure que l'inflation gagne du terrain.</p>
+
+<p>C'est en vain que les gouvernements s'efforcent d'empêcher la dépréciation en restreignant les importations. Si les citoyens ne peuvent plus acheter de marchandises étrangères, ils achèteront plus de produits nationaux. Les prix de ces produits monteront alors et leur exportation diminuera. Ainsi, l'intervention du gouvernement, qui est dictée par un désir d'améliorer la balance du commerce en restreignant les importations, finit par abaisser les deux plateaux de la balance. Elle comprime simultanément les importations et les exportations et amène une réduction du volume global du commerce extérieur.</p>
+
+<p>Si le gouvernement désire le succès de sa politique, il faudra qu'il enlève aux citoyens leurs encaisses monétaires. Il faudra qu'il prélève des impôts ou qu'il émette un emprunt sur le marché national et qu'il retire de la circulation la monnaie qu'il aura ainsi recueillie. Cela équivaut à une politique de déflation. Bien entendu, la déflation est le seul moyen efficace d'abaisser le taux des changes étrangers et de restituer à l'unité monétaire son ancien pouvoir d'achat. Mais si le gouvernement ne se résout pas à la déflation, il n'a aucun moyen de réduire les prix payés pour les devises étrangères.</p>
+
+<p>Il existe deux types différents de contrôle des devises. Il y a des pays qui désirent simplement maintenir les prix auxquels s'échangent les devises étrangères. Ils estiment que quelque chose doit être fait pour entraver les progrès de la dévaluation et que le contrôle des changes est le bon moyen à employer à cet effet. Ils ne désirent cependant pas forcer les citoyens à acheter et à vendre des devises étrangères à un prix inférieur à celui qui est pratiqué sur le marché. Dans de telles conditions, le contrôle des devises est assez bénin. Étant donné qu'on ne cherche pas à imposer, sur le marché, un prix inférieur pour les devises étrangères, comme ces devises sont achetées et vendues au prix du marché, il importe peu que les transactions soient libres ou qu'elles soient le privilège d'une institution comme la banque centrale ou comme le fonds d'égalisation des changes. Évidemment, si le gouvernement, ou si cette institution chargée des affaires de change, empêchent certaines importations de s'effectuer, cela afin d'économiser des devises étrangères, ils restreignent également les exportations et, par conséquent, le volume du commerce extérieur. Mais il n'existe, dans ces circonstances, aucun motif urgent de prendre des mesures très énergiques à cet égard, étant donné que le contrôle des devises ne diminue pas immédiatement la quantité de devises étrangères disponibles.</p>
+
+<p>Il en va autrement lorsque le contrôle des devises a pour but d'imposer au marché des devises étrangères, un prix inférieur à celui qui se pratiquerait si les transactions étaient libres. Si tout citoyen est tenu de vendre toutes ses devises au fonds d'égalisation des changes à ce prix légal ou officiel, qui est plus bas que le prix du marché, tout se passe exactement comme si l'on imposait un droit sur les exportations. Le volume des exportations tombe, entraînant une baisse également du montant des devises étrangères offertes au fonds d'égalisation des changes et achetées par lui. La pénurie de devises étrangères est la conséquence fatale d'une politique qui prétend imposer au marché un prix trop bas pour l'or et les monnaies étrangères, et la pénurie sera d'autant plus grande que le contrôle sera plus strictement appliqué. Les exportations disparaîtraient complètement, n'étaient les primes payées par le gouvernement pour compenser les pertes que subit l'exportateur du fait qu'il est obligé de vendre ses devises étrangères à un prix inférieur à leur valeur sur le marché.</p>
+
+<p>Si un pays qui a adopté ce régime se plaint d'un manque de devises étrangères, il faut qu'il se rende compte que le mal provient de sa propre politique. Pour la formation du prix des devises, il est à la longue parfaitement indifférent que les citoyens achètent les produits nationaux ou les produits étrangers. Le problème des transferts est un problème illusoire. Qu'un Allemand achète du coton, ou qu'il achète n'importe quel produit national (comme du charbon, par exemple), cela ne fait aucune différence pour le système monétaire de son pays. Dans les deux cas, il faut qu'il s'abstienne d'acheter quelque chose d'autre. Il doit dépenser moins de marks pour d'autres objets qu'il ne l'aurait fait s'il n'avait pas acheté de coton ou de charbon. La vraie question pour lui est d'être assez riche pour acheter du coton ou du charbon et de disposer de la quantité de marks nécessaire. S'il achète plus de marchandises importées, il devra se passer des produits de son pays. Ces dernières marchandises deviennent, par conséquent, meilleur marché, et peuvent s'exporter plus facilement, de telle sorte que des entrées d'argent compensent les sorties. Si pour un motif quelconque, les exportations ne peuvent se développer, la demande accrue de devises étrangères entraîne un relèvement du prix de ces devises et, par conséquent, de celui des marchandises importées, et ce mouvement ascendant des prix oblige les citoyens à restreindre leurs achats de marchandises importées. Sous ce régime, également, l'automatisme du marché fonctionne sans heurt.</p>
+
+<p>Supposons que, par une répartition nouvelle des régions productrices de matières premières, certaines parties de l'Australie et du sud des États-Unis d'Amérique deviennent possessions allemandes. Rien ne serait changé dans le domaine économique et monétaire. Le consommateur allemand aurait à payer tout juste autant pour le coton et pour la laine qu'il le fait en ce moment. Il ne serait ni plus aisé pour lui, ni plus difficile pour les Britanniques ou pour les Américains, d'effectuer des achats dans ces territoires récemment cédés. Bien entendu, dans les circonstances actuelles également, le commerce ne s'opère pas de façon différente entre la Grande-Bretagne et l'Australie et entre la Grande-Bretagne et l'Allemagne, ou entre l'Allemagne et l'Australie. Le fait que son roi est, en même temps, le souverain de l'Australie, ne comporte aucun avantage pour l'acheteur britannique de laine, pas plus que le fait que les citoyens de l'Australie parlent l'anglais et sont les descendants d'ancêtres britanniques. L'acheteur allemand se mesure avec l'acheteur britannique, danois ou polonais, sur le marché de la laine, dans des conditions de parfaite égalité.</p>
+
+<p>Supposons, au contraire, que la Bavière soit séparée du Reich. N'était l'intervention gouvernementale dans le système monétaire et le contrôle des devises, le commerce entre la Bavière et le reste du Reich n'en serait nullement affecté. Ce que les Saxons achètent en Bavière doit se payer soit par des exportations directes, soit par un commerce triangulaire, que la Bavière fasse partie du Reich ou non.</p>
+
+<p>C'est une erreur de croire que les achats de marchandises importées font brèche dans le stock de devises de la nation. Il est faux de dire à un homme : « N'achetez pas cette marchandise étrangère parce qu'il faudra consacrer à cette opération une partie du trésor national de devises étrangères. » La quantité de devises étrangères est essentiellement mobile. Les avoirs en devises étrangères sont en flux et en reflux continuels. Ils s'épuisent et se reconstituent tous les jours. En achetant des produits étrangers, le consommateur crée, du fait qu'il diminue ses achats de marchandises nationales, le montant de devises étrangères nécessaires pour ce qu'il achète.</p>
+
+<p>Le fait qu'il existe des barrières au commerce ne modifie pas le fonctionnement de ce mécanisme. Ces barrières font, il est vrai, qu'il est plus difficile d'exporter et de se procurer des devises étrangères, mais le fléchissement des exportations et des entrées de devises étrangères conduisent automatiquement à une restriction des achats à l'étranger. Lorsque les prix, les salaires et les gains des industries d'exportation baissent, les groupes qui sont affectés par cette circonstance sont obligés, soit de restreindre leurs achats de marchandises étrangères, soit leurs achats des produits nationaux. Dans le premier cas, la demande de devises étrangères fléchit. Dans le second, les prix de ces marchandises, dont il se vend de moindres quantités sur le marché national, tombent, et il devient plus facile de les exporter.</p>
+
+<p>Si un pays désire jouir des avantages d'une monnaie saine et d'une stabilité des devises étrangères, il faut qu'il écarte l'inflation et le gonflement du crédit. S'il préfère les prétendus avantages de la dépréciation, il faut alors qu'il laisse le marché fixer la valeur de son unité monétaire. Dans l'un et l'autre cas, il n'y aura, pour lui, aucune difficulté d'ordre monétaire à traiter avec les pays étrangers. Ce n'est que lorsqu'on veut fixer les changes étrangers au-dessous du prix du marché, en adoptant le contrôle des changes, que l'on provoque la pénurie de devises étrangères.</p>
+
+<p>La situation en Allemagne dans le système économique du monde, comme celle, d'ailleurs, de beaucoup d'autres nations européennes, reposait, et repose encore, sur l'industrie. Ces pays importent surtout des matières premières et des denrées alimentaires, et exportent, principalement, des produits fabriqués. En restreignant les achats de matières premières, le gouvernement allemand restreint aussi les exportations de produits fabriqués. En utilisant les matières premières à des fins de réarmement, au lieu de les affecter à la fabrication de produits exportables, il réduite la quantité de devises étrangères disponibles. Mais l'Allemagne n'offre que l'exemple le plus en vue d'une politique suivie aujourd'hui par de nombreux pays.</p>
+
+<p>Dans un système économique fondé sur le marchandage et les échanges directs entre deux parties seulement, nul doute que ces deux parties n'obtiennent satisfaction. Le rôle de la monnaie est de procurer les mêmes facilités au commerce triangulaire. Cette fonction compensatrice de la monnaie n'est pas limitée au commerce local. Elle s'exerce de la même façon dans le commerce de ville à ville, de région à région, et de pays à pays. Le système de compensation le plus efficace et le plus simple est le système monétaire. Si une nation remplace l'usage de la monnaie, dans le commerce international, par des chambres de compensation bilatérales, elle se prive des avantages du commerce triangulaire, elle perd la faculté d'acheter sur le marché le moins cher et de vendre là où elle pourrait obtenir, pour ses marchandises, les prix les plus élevés. Il faut qu'elle achète là où elle peut vendre quelque chose, même si le niveau des prix y est très élevé, et il faut qu'elle vende là où elle désire acheter quelque chose, même si le niveau des prix y est très bas.</p>
+
+<p>L'étalon-or était et demeure le meilleur système, et même le seul système applicable, d'organisation internationale du commerce triangulaire. Le fait qu'il ne fonctionne plus n'est pas dû à des défauts inhérents à sa nature, ni à un changement des conditions qu'il présuppose. C'est simplement que certains gouvernements ne désirent plus laisser fonctionner son mécanisme. Ces gouvernements combattent la division internationale du travail et veulent, par conséquent, détruire l'instrument le plus important du commerce international. Ce n'est pas une faillite de l'étalon-or, et ce n'est pas l'état peu satisfaisant du système monétaire international, qui rendent nécessaire une politique de restrictions au commerce, pour des motifs monétaires. Bien au contraire, l'étalon-or et le système monétaire international se sont effondrés parce que les gouvernements les ont détruits, dans l'intention de supprimer le commerce international.</p>
+
+
+<h4>VII. La protection du point de vue de la politique intérieure</h4>
+
+
+<p>Les nations ont recouru à la protection parce qu'elles ont cru que, dans le commerce, les intérêts nationaux sont en conflit avec les intérêts étrangers, et qu'il est, par conséquent, nécessaire de protéger le marché intérieur contre les marchandises étrangères. Même si ces idées erronées n'avaient pas eu de suites, des considérations de politique intérieure auraient amené sensiblement le même résultat.</p>
+
+<p>Dans le monde actuel, l'on considère communément que l'État a le devoir de protéger le producteur le moins habile contre la concurrence du plus habile. De cette façon, le gouvernement empêche le plus habile de tirer entièrement parti de sa supériorité. Il restreint le champ d'action des grands magasins au bénéfice des boutiquiers. Il impose à toute une industrie une quote-part de réduction de la production, au lieu de laisser le marché éliminer les producteurs les moins aptes. Il rend à la route la concurrence avec le rail plus difficile. Il cherche, par son intervention, à créer des positions de placement meilleures pour les marchandises qui sont produites en quantité plus grande que ne le demande le public.</p>
+
+<p>Les gouvernements forts des États autoritaires, qui disent que leur mission est de conduire, et non de se laisser conduire, et qui obligent leurs sujets à se plier à leur volonté, préconisent l'interventionnisme, de la même façon que les gouvernements démocratiques auxquels ils reprochent leur faiblesse. Tout gouvernement, qu'il soit parlementaire ou dictatorial est prêt, aujourd'hui, à intervenir en faveur de l'intérêt particulier de groupes dont il veut assurer l'appui. Des petits groupes sont parfois même considérés comme très importants pour les buts politiques du souverain, qu'il soit démocratique ou dictatorial. Le cas de l'argent, aux États-Unis, est un excellent exemple de la possibilité qu'une position stratégique spéciale peut donner, même à un petit groupe, d'influencer la politique d'un grand pays. De même, dans chaque pays, des groupes d'industriels et de membres de syndicats ouvriers, même petits, provoquent certaines mesures de protection et de restriction.</p>
+
+<p>Il semble légitime à nos contemporains que leurs compatriotes, qui trouvent de la difficulté à résister à la concurrence étrangère, soient protégés. L'on estime qu'un gouvernement qui ne cherche pas à aider un producteur moins habile néglige le premier de ses devoirs.</p>
+
+<p>Mais ce serait expliquer trop simplement les choses que de dire qu'au fond de la protection réside l'égoïsme de l'intérêt particulier, qui est en opposition avec l'intérêt général. Cet intérêt particulier est toujours celui de groupes de la minorité. Les producteurs, — qu'ils soient employeurs ou employés, — de chaque marchandise constituent toujours une minorité par rapport à l'ensemble des consommateurs. Ils réussissent à faire protéger leurs intérêts particuliers contre l'intérêt de la majorité pour cette seule raison qu'ils ont l'appui de l'opinion publique, persuadée que cette protection avantage la nation. Il y a cent ans, les cochers et les postillons n'ont pas trouvé de protection contre la concurrence écrasante de la vapeur et du chemin de fer, parce qu'à cette époque, l'esprit libéral n'aurait pas voulu d'un privilège qui avantageait un petit groupe au détriment du public en général. Aujourd'hui, le désir des chemins de fer d'obtenir une sauvegarde dirigée contre l'automobile paraît justifié au législateur. Aujourd'hui, chaque intérêt particulier est certain de trouver l'appui de l'opinion publique. C'est l'opinion publique qui est responsable de l'existence des privilèges, et non pas ceux qui désirent en jouir. Examinée du point de vue de la politique intérieure la protection apparaît comme une catégorie de mesures relevant de l'interventionnisme gouvernemental.</p>
+
+
+<h4>VIII. Le conflit international des intérêts économiques</h4>
+
+
+<p>Dans notre monde, hérissé de barrières à la migration naissent de très graves conflits d'intérêts économiques entre les nations. En restreignant l'immigration, quelques nations réussissent à relever les salaires de leurs citoyens, mais elles ne le font qu'aux dépens des citoyens d'autres nations. Le heurt des intérêts économiques internationaux en est la conséquence. Il n'existe pas de conflits graves concernant les matières premières ou les colonies, dans un monde de paix et de commerce pacifique, où chacun a le droit d'acheter aux mêmes conditions que tout le monde. Mais il y a conflit lorsque les citoyens de quelques pays d'Europe et d'Asie sont empêchés d'aller dans les pays où ils pourraient gagner davantage que dans le leur. Le niveau de vie élevé des États-Unis et des dominions britanniques trouve son corollaire dans le niveau de vie bas des pays de l'est, du centre et du sud de l'Europe, de l'Inde, de la Chine et du Japon.</p>
+
+<p>Les citoyens des États-Unis et des dominions britanniques défendent leur niveau de vie élevé en fermant leurs portes aux arrivants. Il s'ensuit qu'à l'intérieur de leurs frontières des millions d'hectares sont en friche, alors qu'il faut cultiver, dans d'autres pays, une terre bien moins fertile. On ne saurait dresser un tableau de la situation actuelle, économique et politique du monde, sans faire ressortir cette anomalie.</p>
+
+<p>Il y a trois raison qui expliquent pourquoi ce problème, d'importance vitale, est négligé par tout le monde dans les discussions politiques actuelles. En premier lieu, nos idées économiques et politiques sont faussées par la doctrine marxiste. D'après le marxisme, les intérêts des prolétaires de tout le monde sont identiques. Les conflits internationaux ne proviennent que de la prééminence accordée aux intérêts particuliers des classes bourgeoises. Le nationalisme, la haine entre les nations, les aspirations impérialistes et militaristes, dans les relations internationales, sont liés au régime capitaliste. Un monde dominé par le régime populaire serait pacifique et ennemi des conflits internationaux. Les prolétaires sont tous amis et frères. Aveuglés par ce dogme, les marxismes ne voient pas que la pauvreté de la grande masse des prolétaires de l'Europe et de l'Asie, qu'ils déplorent, provient de ce que ceux-ci sont obligés de demeurer, de vivre et de travailler dans des régions où les conditions naturelles de production sont moins favorables, parce que les prolétaires de régions plus heureuses leur refusent l'accès de leur pays. Ce serait appliquer avec conséquence la doctrine marxiste de la « superstructure » que de dire que les prolétaires de l'Europe et de l'Asie sont exploités par les prolétaires du Nouveau Monde, que l'impérialisme et le militarisme modernes constituent la « superstructure » du conflit des intérêts économiques entre les prolétaires des nations plus favorisées et les prolétaires des nations moins favorisées. Mais les marxistes se gardent bien de parler de ces conflits. Il est très intéressant de noter que les écrits traitant des restrictions à la migration sont très rares par rapport aux publications concernant les autres mesures de la politique économique actuelle. Il est encore plus frappant de constater combien les marxistes s'efforcent de développer des hypothèses artificielles et futiles pour expliquer que l'impérialisme provient de difficultés qui seraient inhérentes au régime capitaliste.</p>
+
+<p>Les ennemis du marxisme, fascistes et nationalistes, ne sont pas plus prêts à discuter le problème des barrières à la migration. Leur philosophie est contraire à l'émigration. Ils désirent conserver tous leurs hommes pour la guerre future. Ils veulent conquérir les pays les plus riches et se les annexer. Ils refuser d'envoyer leurs enfants comme émigrants dans les pays étrangers. Leur remède à la situation du « Volk ohne Raum » (peuple sans espace) est la conquête. La pression de la population d'Italie, fortement aggravée par les restrictions que la migration a connues après la guerre, n'incite pas M. Mussolini à critiquer la politique des pays qui refusent les immigrants italiens. Il n'en fait pas mention sur la liste de ses griefs. Au contraire, désireux d'accroître sa force militaire, il se prononce contre l'émigration et désire augmenter le taux des naissances.</p>
+
+<p>Il y a encore  une troisième raison de sous-estimer l'importance des barrières à la migration. Les représentants les plus éminents de l'esprit international d'aujourd'hui sont les intellectuels des nations de langue anglaise. N'était leur noble attitude, la cause de la paix et de la collaboration internationale serait désespérée. Mais ces intellectuels sympathisent avec les syndicats ouvriers qui, dans les pays de langue anglaise, se sont faits les champions des barrières à l'immigration.</p>
+
+<p>Les inconvénients de ces barrières sont encore aggravées par les obstacles qui s'opposent au transfert des capitaux. Il est difficile de dire si c'est la politique des pays débiteurs ou celle des pays créditeurs qui est responsable de la cessation des migrations de capitaux. Les pays qui ont importé du capital ont détruit le caractère international des transactions de capital en procédant à des répudiations ouvertes et en adoptant le contrôle des changes. Mais les pays qui exportent des capitaux portent aussi leur part de responsabilité, car ils ont limité les sorties de ces capitaux. La conséquence en a été que les populations, forcées par des restrictions à l'immigration, de travailler dans des régions où les conditions naturelles de la production sont moins favorables, et où les salaires sont nécessairement bas, ont vu leur existence rendue plus dure encore par la pénurie de capital, qui abaisse le rendement de la main-d'œuvre et, par là, réduit les salaires davantage encore.</p>
+
+<p>Il peut sembler frappant que l'opinion publique se préoccupe davantage, à l'heure actuelle, du problème fictif des matières premières et laisse de côté le problème si grave des relations internationales contemporaines, celui de la mobilité de la main-d'œuvre.</p>
+
+<p>Mais, soit que nous considérions la question des matières premières ou celle de la migration comme le point crucial de l'internationalisme, il faudra nous rendre compte que ni la suppression du commerce international ni la guerre ne constituent des remèdes efficaces. Même une nation qui souffre de la pauvreté de son territoire — dont elle ne peut tirer assez de matières premières, et dont les citoyens ne peuvent émigrer — n'aurait pas à se louer de la protection. Il est remarquable que la preuve irréfutable apportée par Ricardo de la supériorité du libre-échange est précisément fondée sur un raisonnement qui part de l'hypothèse que le capital et la main-d'œuvre ne circulent pas librement d'un pays à l'autre comme ils le font à l'intérieur d'un pays. Cette hypothèse de l'immobilité du capital et de la main-d'œuvre était exacte du temps de Ricardo. Elle n'était pas vraie pour la fin du XIX<sup>e</sup> siècle et pour le début du XX<sup>e</sup>. Elle est vraie de nouveau de nos jours. Il est, par conséquent, faux de dire que le raisonnement de Ricardo n'est plus valable pour notre époque, parce que les conditions se sont modifiées. Au contraire, les conditions sont redevenues les mêmes.</p>
+
+<p>Mais la guerre n'est pas davantage la solution des conflits actuels. Étant donné les conditions géographiques et politiques de notre monde, il paraît impossible que les pays européens surpeuplés forcent les pays qui ne veulent plus d'immigrants à modifier leur attitude. C'est pourquoi M. Hitler dans <i>Mein Kampf</i>, propose, comme but de la politique allemande, non pas la conquête de territoires d'outre-mer, mais la conquête de territoires européens seulement. Toutefois, ces pays européens qui entourent l'Allemagne, en dehors du fait qu'ils sont déjà surpeuplés, ne pourraient donner à l'émigrant allemand ce qu'il désire.</p>
+
+<p>Ce serait faire la politique de l'autruche que de nier l'existence de conflits très graves entre les nations de notre monde, mais il faut nous dire que ni la guerre, ni le protectionnisme, ni l'autarcie, ne peuvent apporter une solution aux problèmes qui se posent.</p>
+
+
+
+<h4>Conclusion</h4>
+
+
+<p>Le libéralisme est une philosophie de paix et de collaboration internationale. C'est le point de départ de cette doctrine sociale et économique que les intérêts bien conçus de tous les individus et de toutes les nations doivent s'harmoniser dans une société où règnent la propriété privée et le libre-échange. Pour le libéral, la démocratie et la paix dérivent de ses idées sur la vie, le travail et la coopération humaine.</p>
+
+<p>Mais le libéralisme est, pour le moment, l'apanage d'une minorité petite et sans influence. Le monde est dominé par d'autres idées. Ces idées conduisent aux armements, au protectionnisme, aux barrières qui empêchent les marchandises, la main-d'œuvre et le capital de circuler, au militarisme et à la dictature.</p>
+
+<p>C'est une erreur de croire qu'aussi longtemps que de telles conditions régneront il sera possible d'abaisser les obstacles au commerce international. Si les théories protectionnistes et autarquistes sont tenues pour bonnes, il n'y a aucun motif d'abaisser les barrières du commerce. Seule la conviction que ces théories sont fausses et que le libre-échange est la meilleure politique peut les jeter bas. Il est illogique de vouloir des barrières au commerce peu élevées ; ou bien les barrières au commerce sont utiles, et alors elles ne sauraient être trop hautes, ou bien elles sont nuisibles, et il faut les raser. La politique de protectionnisme modéré pratiquée avant la guerre était le résultat d'un équilibre instable entre deux doctrines opposées ; maintenant que la théorie du protectionnisme a chassé celle du libre-échange, dans l'opinion publique, il n'y a plus de limites aux barrières du commerce.</p>
+
+<p>C'est en vain qu'on espérait changer cet état de choses au moyen d'un accord international. Si un pays estime de son avantage d'accroître le libre-échange, il lui est loisible d'ouvrir ses frontières unilatéralement. Mais s'il considère que le libre-échange lui porte préjudice, il ne sera pas plus disposé à l'accorder dans un traité international. Chaque nation, aujourd'hui, désire augmenter le volume de ses exportations, mais aucune ne fera le sacrifice des intérêts particuliers d'une industrie existante ou même d'une industrie qui est encore à créer. C'est cette disposition qui contribue continuellement à diminuer le volume du commerce international.</p>
+
+<p>Le peu de résultats obtenus par la Société des Nations, l'échec des conférences économiques mondiales et des conférences et négociations plus spéciales entre des groupes de nations plus restreints, s'expliquent par le fait que l'esprit de collaboration pacifique est absent du monde d'aujourd'hui. Sous l'empire des idées militaristes, les efforts visant à l'établissement d'une collaboration internationale resteront à jamais stériles.</p>
+
+<p>Le monde n'a pas besoin d'autres conférences et d'autres conventions. Il a besoin d'un changement radical de mentalité.</p>
+
+
+
+
+<p>
+<b>Notes</b>
+</p>
+
+<div id="partie-0-sdfootnote1">
+	<p><a href="#partie-0-sdfootnote1anc" id="partie-0-sdfootnote1sym">1.</a>
+Cf. Hitler, <i>Mein Kampf</i>, 42<sup>e</sup> édition, Munich, 1933, pp. 726–743, 757, 766.</p>
+</div>
+
+<br>
+
+
+</section></article><footer class="meta"><p>Source : <a href="http://herve.dequengo.free.fr/Mises/MMM/MMM_9.htm">Hervé de Quengo</a>. Texte conservé ; présentation adaptée à la lecture sur écran.</p></footer></main><nav class="chapter-nav fixed-bottom reader-bottom" aria-label="Parties précédente et suivante"><a id="previous" href="#sommaire">← Précédent</a><a href="#sommaire">Sommaire</a><a id="next" href="#partie-0">Suivant →</a></nav><div id="global-progress" aria-hidden="true"></div><script>
+document.body.classList.add('js');
+const sections=[...document.querySelectorAll('article section')],toc=document.getElementById('toc'),previous=document.getElementById('previous'),next=document.getElementById('next'),resume=document.getElementById('resume');
+function get(k){try{return localStorage.getItem('livre-27-'+k)}catch(e){return null}}function put(k,v){try{localStorage.setItem('livre-27-'+k,v)}catch(e){}}
+let size=Math.max(.95,Math.min(1.65,Number(get('size'))||1.15));
+function applySize(){document.documentElement.style.setProperty('--size',size+'rem')}applySize();
+function sharedTheme(){try{return localStorage.getItem('ebooks-theme')||get('theme')}catch(e){return get('theme')}}
+document.documentElement.dataset.theme=sharedTheme()==='dark'?'dark':'light';
+const theme=document.getElementById('toggle-theme');function themeLabel(){theme.textContent=document.documentElement.dataset.theme==='dark'?'☀':'☾';theme.setAttribute('aria-pressed',String(document.documentElement.dataset.theme==='dark'))}themeLabel();
+theme.onclick=()=>{document.documentElement.dataset.theme=document.documentElement.dataset.theme==='dark'?'light':'dark';put('theme',document.documentElement.dataset.theme);try{localStorage.setItem('ebooks-theme',document.documentElement.dataset.theme)}catch(e){}themeLabel()};
+addEventListener('pageshow',()=>{document.documentElement.dataset.theme=sharedTheme()==='dark'?'dark':'light';themeLabel()});
+document.getElementById('smaller').onclick=()=>{size=Math.max(.95,Math.round((size-.1)*100)/100);applySize();put('size',String(size))};
+document.getElementById('larger').onclick=()=>{size=Math.min(1.65,Math.round((size+.1)*100)/100);applySize();put('size',String(size))};
+const last=get('last');if(sections.some(s=>s.id===last)){resume.href='#'+last;resume.textContent='Reprendre la lecture'}
+toc.onchange=()=>{location.hash=toc.value||'sommaire'};
+let active=-1;
+function show(){const id=decodeURIComponent(location.hash.slice(1));const target=document.getElementById(id);const section=target?.closest('article section');active=sections.indexOf(section);sections.forEach(s=>s.classList.toggle('active',s===section));document.body.classList.toggle('home',active<0);toc.value=section?.id||'';previous.href=active>0?'#'+sections[active-1].id:'#sommaire';previous.setAttribute('aria-disabled',String(active<0));next.href=active<sections.length-1?'#'+sections[Math.max(0,active+1)].id:'#sommaire';next.textContent=active===sections.length-1?'Sommaire':'Suivant →';if(section){put('last',section.id);requestAnimationFrame(()=>{if(target!==section)target.scrollIntoView();else window.scrollTo(0,0)})}else window.scrollTo(0,0);progress()}
+function progress(){const bar=document.getElementById('global-progress');const max=document.documentElement.scrollHeight-innerHeight;const fraction=max>0?Math.min(1,Math.max(0,scrollY/max)):1;bar.style.width=active<0?'0%':((active+fraction)/sections.length*100)+'%'}
+addEventListener('hashchange',show);addEventListener('scroll',progress,{passive:true});addEventListener('resize',progress);show();
+</script></body></html>

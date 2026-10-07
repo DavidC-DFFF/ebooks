@@ -1,0 +1,2 @@
+# Conserver les fichiers du site source à l'identique dans l'archive.
+sources/collection/** -text

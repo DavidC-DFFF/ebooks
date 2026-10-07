@@ -1,0 +1,893 @@
+<!doctype html><html lang="fr"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>L&#x27;Aspect théorique du problème de la stabilisation monétaire — Ludwig von Mises</title><style>:root {
+  --bg: #ffffff;
+  --text: #000000;
+  --accent: #4444ff;
+  --background: #ffffff;
+  --button-bg: #f7f7f7;
+  --button-hover-bg: #eaeaea;
+  --progress-color: #660000;
+}
+
+[data-theme="dark"] {
+  --bg: #2c2c2e;
+  --text: #e0e0e0;
+  --accent: #9b9bff;
+  --background: #2c2c2e;
+  --button-bg: #3a3a3c;
+  --button-hover-bg: #48484a;
+  --progress-color: #ffdddd;
+}
+
+body {
+  margin: 0;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 1.2rem;
+  line-height: 1.6;
+  text-align: justify;
+  background: var(--bg);
+  color: var(--text);
+  padding: 0;
+}
+
+/* === NAVBAR === */
+nav.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2.2rem;
+  background-color: var(--background);
+  backdrop-filter: blur(6px);
+  box-shadow: 0 1px 6px rgba(0, 0, 0, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: nowrap;
+  padding: 0 0.5rem;
+  gap: 0.5rem;
+  z-index: 1000;
+  font-size: 0.85rem;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+nav.navbar select {
+  flex-grow: 1;
+  min-width: 0;
+  max-width: 100%;
+  padding: 0.25rem;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  background: var(--button-bg);
+  color: var(--text);
+}
+
+nav.navbar button {
+  flex-shrink: 0;
+  background: none;
+  border: none;
+  font-size: 1.2em;
+  cursor: pointer;
+  color: var(--text);
+}
+
+/* === CONTENU === */
+main {
+  padding: 3rem 1rem 2rem;
+  max-width: 600px;
+  margin: auto;
+}
+
+article p {
+  text-indent: 1.5em;
+  text-align: justify;
+  hyphens: auto;
+}
+
+/* === TITRES === */
+h1 {
+  font-family: 'Segoe UI', 'Helvetica Neue', sans-serif;
+  font-weight: bold;
+  text-align: center;
+  font-size: 1.8rem;
+  margin-bottom: 0.5em;
+}
+
+main.centered h2 {
+  font-family: 'Playfair Display', Georgia, serif;
+  /* ou ta police préférée */
+  font-size: 2.4rem;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 0.5em;
+}
+
+.subtitle {
+  font-size: 1.2em;
+  color: var(--accent);
+  margin-bottom: 2em;
+}
+
+.start-button {
+  display: inline-block;
+  padding: 1em 2em;
+  background: var(--accent);
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 0.5em;
+  transition: opacity 0.3s;
+}
+
+.start-button:hover {
+  opacity: 0.8;
+}
+
+/* === NAVIGATION CHAPITRES === */
+.chapter-nav {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 1rem;
+  margin: 2rem auto 0rem auto;
+  max-width: 640px;
+  background-color: var(--background);
+}
+
+.chapter-nav a {
+  flex: 1;
+  text-align: center;
+  text-decoration: none;
+  padding: 0.75rem;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  background-color: var(--button-bg);
+  color: inherit;
+  transition: background-color 0.2s;
+}
+
+.chapter-nav a:hover {
+  background-color: var(--button-hover-bg);
+}
+
+.fixed-bottom {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  justify-content: center;
+  background-color: var(--background);
+  box-shadow: 0 -1px 6px rgba(0, 0, 0, 0.1);
+  padding: 1rem;
+  z-index: 100;
+}
+
+main.centered {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding-top: 2.5rem;
+  /* pour éviter de passer sous la navbar */
+  box-sizing: border-box;
+  text-align: center;
+}
+
+.index-image {
+  max-width: 80%;
+  height: auto;
+  margin-top: 2rem;
+}
+
+ul.tiret {
+  list-style: none;
+  padding-left: 0.5rem;
+}
+
+ul.tiret li {
+  position: relative;
+  padding-left: 1.5rem;
+  text-align: justify;
+  margin-bottom: 0rem;
+}
+
+ul.tiret li::before {
+  content: "—";
+  /* Tiret cadratin */
+  position: absolute;
+  left: 0;
+  color: var(--text);
+}
+
+main.end-page {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 3rem 1rem;
+  text-align: center;
+}
+
+.end-page h1 {
+  font-size: 2.5rem;
+  font-family: 'Playfair Display', Georgia, serif;
+  margin-bottom: 2rem;
+  color: var(--text);
+}
+
+.end-image {
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  object-fit: cover;
+  filter: grayscale(100%);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.fade-in {
+  opacity: 0;
+  animation: fadeIn 0.8s ease-in forwards;
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
+}
+
+#global-progress {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  height: 4px;
+  background-color: var(--progress-color); /* couleur personnalisable */
+  width: 0%;
+  z-index: 9999;
+  transition: width 0.4s ease;
+}
+
+html[data-font="small"] {
+  font-size: 0.9rem;
+}
+
+html[data-font="medium"] {
+  font-size: 1.1rem;
+}
+
+html[data-font="large"] {
+  font-size: 1.3rem;
+}
+
+html {
+  transition: font-size 0.3s ease;
+}
+
+*{box-sizing:border-box}html{scroll-padding-top:4rem}nav.navbar{height:auto;min-height:3rem;max-width:600px;padding:.3rem .5rem}nav.navbar button{min-width:44px;min-height:44px}nav.navbar select{min-height:44px;width:50%;font-size:.85rem}main{padding-top:4rem;padding-bottom:7rem}h2{font-family:'Segoe UI',sans-serif;font-size:1.65rem;line-height:1.35;text-align:center}a{color:var(--accent);overflow-wrap:anywhere}header{text-align:center;margin-bottom:2rem}section{margin-top:2rem}body.js article section{display:none}body.js article section.active{display:block}body.js header,body.js details,body.js footer{display:none}body.js.home header,body.js.home details,body.js.home footer{display:block}body.js.home article section{display:none}.chapter-nav{max-width:600px;margin:auto;padding:.5rem;gap:.5rem}.chapter-nav a{min-height:44px;font-size:.9rem;padding:.65rem .4rem}.chapter-nav a[aria-disabled=true]{visibility:hidden}#global-progress{transition:none}.meta{font-size:.85rem;text-align:left}details nav a{display:block;padding:.5rem 0}button:focus-visible,a:focus-visible,select:focus-visible{outline:3px solid var(--accent);outline-offset:2px}sup{line-height:0}sup a{padding:.25rem}.reader-bottom{display:none}.js .reader-bottom{display:flex}@media print{nav.navbar,.reader-bottom,#global-progress{display:none}body.js article section{display:block!important}main{padding:0}section{break-before:page}}
+
+:root{--bg:oklch(0.98 0.008 90);--background:var(--bg);--text:oklch(0.23 0.012 160);--accent:oklch(0.35 0.077 160);--line:oklch(0.83 0.015 160);--button-bg:var(--bg);--button-hover-bg:oklch(0.94 0.012 90);--progress-color:var(--accent);--size:1.15rem}
+html{font-size:16px;transition:none}
+[data-theme="dark"]{color-scheme:dark;--bg:oklch(0.2 0.008 160);--background:var(--bg);--text:oklch(0.91 0.008 90);--accent:oklch(0.82 0.08 160);--line:oklch(0.4 0.015 160);--button-bg:var(--bg);--button-hover-bg:oklch(0.27 0.012 160);--progress-color:var(--accent)}
+body{font-family:Georgia,'Times New Roman',serif;font-size:var(--size);line-height:1.75}
+h1,h2,h3,h4{font-family:Georgia,'Times New Roman',serif}h1{font-size:clamp(2.25rem,8vw,3.75rem);line-height:1.12;letter-spacing:-.03em}h2{font-size:1.7rem;line-height:1.3}h3,h4{line-height:1.4}.subtitle{font-size:1.35rem;line-height:1.5}p{margin:0 0 1.1em}
+nav.navbar{font-family:system-ui,sans-serif;box-shadow:none;border-bottom:1px solid var(--line);gap:.3rem}
+nav.navbar button{font-size:.9rem;border:1px solid var(--line);border-radius:.3rem;padding:.4rem;min-width:40px}
+nav.navbar>a{display:flex;align-items:center;justify-content:center;min-width:32px;min-height:44px;text-decoration:none}
+nav.navbar select{border-color:var(--line);width:auto;flex:1}
+.chapter-nav a{border-color:var(--line)}.start-button{background:oklch(0.35 0.077 160);color:oklch(0.98 0.008 90)}
+@media print{body{font-size:11pt;background:white;color:black}}
+
+img{max-width:100%;height:auto}table{max-width:100%;display:block;overflow-x:auto}pre{white-space:pre-wrap;overflow-wrap:anywhere}section>h2:first-child,section>h3:first-child{margin-top:0}</style></head><body>
+<nav class="navbar" aria-label="Navigation de lecture"><a href="../index.html" aria-label="Retour à la bibliothèque">⌂</a><a href="#sommaire" aria-label="Accueil et sommaire">☰</a><select id="toc" aria-label="Choisir une partie"><option value="">Sommaire</option><option value="partie-0">Introduction</option><option value="partie-1">L&#x27;Aspect théorique du problème de la stabilisation monétaire</option><option value="partie-2">Annexe : Balance des paiements et taux de change 1</option></select><button id="smaller" aria-label="Réduire la taille du texte">A−</button><button id="larger" aria-label="Agrandir le texte">A+</button><button id="toggle-theme" aria-label="Changer le thème" aria-pressed="false">☾</button></nav>
+<main><header><h1>L&#x27;Aspect théorique du problème de la stabilisation monétaire</h1><p>Ludwig von Mises</p><a class="start-button" id="resume" href="#partie-0">Commencer la lecture</a></header><details id="sommaire" open><summary>Table des matières</summary><nav aria-label="Sommaire"><a href="#partie-0">Introduction</a><a href="#partie-1">L&#x27;Aspect théorique du problème de la stabilisation monétaire</a><a href="#partie-2">Annexe : Balance des paiements et taux de change 1</a></nav></details><article><section id="partie-0">
+
+
+
+
+
+<p> </p>
+
+<h2>L'Aspect théorique du problème de la stabilisation monétaire</h2>
+
+<p> </p>
+<p><i>Die geldtheoretische Seite des Stabilisierungsproblems </i>
+(Schriften des Vereins für Sozialpolitik. Volume 164, 2<sup>ème</sup> partie.
+Munich et Leipzig : Duncker &amp; Humblot, 1923).</p>
+
+<p>L'auteur termina le manuscrit original de cet essai et le donna à l'imprimeur en janvier 1923, plus de huit mois avant l'effondrement final du mark allemand.</p>
+
+<p> </p>
+<h3>Introduction</h3>
+<p>Les tentatives de stabilisation de la valeur de la monnaie jouent aujourd'hui un grand rôle dans la politique monétaire de presque toutes les nations. Elles ne doivent pas être confondues avec les efforts cherchant à créer une unité monétaire dont la valeur d'échange ne serait pas affectée par des changements du côté de la monnaie <sup><a href="#partie-0-sdfootnote1sym" id="partie-0-sdfootnote1anc">1</a></sup>. Dans les temps anciens et heureux, la préoccupation était de savoir comment faire en sorte que la quantité de monnaie soit en équilibre avec la demande, et ce sans modifier le pouvoir d'achat de l'unité monétaire. Ainsi, des efforts furent entrepris pour développer un système monétaire dans lequel il n'y aurait aucun changement en provenance du côté de la monnaie qui conduirait à modifier les rapports entre le moyen d'échange généralement utilisé (la monnaie) et les autres biens économiques. Il convenait d'éliminer totalement les conséquences économiques des changements, universellement déplorés, de la valeur de la monnaie <sup><a href="#partie-0-sdfootnote2sym" id="partie-0-sdfootnote2anc">2</a></sup>.</p>
+<p>Il est inutile aujourd'hui d'expliquer pourquoi ce but ne pouvait pas alors être atteint,
+et en fait pourquoi il ne pourra jamais l'être. Nous serions heureux de revenir à nouveau à la situation monétaire dont nous jouissions autrefois. Si seulement nous avions de nouveau l'étalon-or, ses défauts ne nous dérangeraient plus : nous devrions uniquement nous accommoder au mieux du fait que même la valeur de l'or est soumise à certaines fluctuations.</p>
+<p>Aujourd'hui, le problème monétaire est d'une nature très différente. Pendant et après la guerre [mondiale de 1914-1918], de nombreux pays mirent en circulation de grandes quantités de monnaie-créance, auxquelles on donna cours légal. Conformément à la loi de Gresham <sup><a href="#partie-0-sdfootnote3sym" id="partie-0-sdfootnote3anc">3</a></sup>, l'or disparut dans ces pays de la circulation monétaire. Ces pays avaient désormais du papier-monnaie, dont le pouvoir d'achat était l'objet de changements soudains. L'économie monétaire est de nos jours tellement développée que les inconvénients d'un tel système monétaire, avec ses brusques changements consécutifs à la création de grandes quantités de monnaie-créance, ne peuvent être longtemps tolérés. On réclame ainsi de partout d'éliminer les défauts du domaine monétaire. Les gens sont désormais convaincus que la restauration de la paix à l'intérieur des nations et la reprise des relations économiques internationales sont impossibles sans un système monétaire sain.</p>
+
+<p><b>Notes</b></p>
+
+<div id="partie-0-sdfootnote1">
+	<p><a href="#partie-0-sdfootnote1anc" id="partie-0-sdfootnote1sym">1.</a>
+Suivant la terminologie de Carl Menger, Mises parlait ici des changements
+de la « valeur objective interne » de la monnaie.
+La traduction reprend l'expression plus familière [en anglais] et adoptée plus tard par Mises,
+à savoir « changements de valeur de l'unité monétaire provenant du
+côté de la monnaie ». L'expression de Menger correspondant à
+« valeur d'échange externe » sera remplacée par
+« changements de valeur de l'unité monétaire provenant du
+côté des biens »
+Voir aussi Mises, <i>L'Action humaine</i>. Note de l'édition américaine.
+</p></div>
+<div id="partie-0-sdfootnote2">
+	<p><a href="#partie-0-sdfootnote2anc" id="partie-0-sdfootnote2sym">2.</a>
+Voir « Monnaie neutre », p. 97 dans
+<i>Mises Made Easier: A Glossary for Ludwig von Mises</i> (<i>MME</i>), Free
+Market Books, P.O. Box 298, Dobbs Ferry, New York 10522. Note de l'édition américaine.
+</p></div>
+<div id="partie-0-sdfootnote3">
+	<p><a href="#partie-0-sdfootnote3anc" id="partie-0-sdfootnote3sym">3.</a>
+Voir <i>MME</i> « Loi de Gresham » pp. 56-57. Note de l'édition américaine.
+</p></div>
+
+<br>
+
+
+</section><section id="partie-1">
+
+
+
+
+
+<p> </p>
+
+<h2>L'Aspect théorique du problème de la stabilisation monétaire</h2>
+
+<p> </p>
+<p><i>Die geldtheoretische Seite des Stabilisierungsproblems </i>
+(Schriften des Vereins für Sozialpolitik. Volume 164, 2<sup>ème</sup> partie.
+Munich et Leipzig : Duncker &amp; Humblot, 1923).</p>
+<p><i>Note du traducteur : Les intertitres (numérotés 1., 2., etc.) ne figurent pas dans l'article original allemand.</i>
+
+</p><p> </p>
+<a id="partie-1-par1">
+<h3>I. La conséquence de l'inflation <sup><a href="#partie-1-sdfootnote1sym" id="partie-1-sdfootnote1anc">1</a></sup></h3>
+
+<h4>1. La dépréciation monétaire</h4>
+<p>Si l'on persiste dans la pratique consistant à couvrir les déficits du gouvernements par l'émission de billets, il doit immanquablement arriver un jour, tôt ou tard, où les systèmes monétaires des nations poursuivant ce chemin s'effondreront totalement. Le pouvoir d'achat de l'unité monétaire baissera de plus en plus, jusqu'à disparaître en fin compte complètement. On pourrait certes concevoir la possibilité que le processus de dépréciation monétaire puisse continuer jusqu'à la nuit des temps. Le pouvoir d'achat de l'unité monétaire pourrait s'affaiblir continuellement sans jamais disparaître entièrement. Les prix grimperaient alors de plus en plus. Il serait toujours possible d'échanger des billets contre des biens. Au bout du compte la situation atteindrait un tel état que les gens travailleraient à coups de milliards et de milliers de milliards, et par la suite avec des sommes encore plus élevées, pour de petites transactions. Le système monétaire continuerait encore à fonctionner. Cette perspective semble toutefois fort éloignée de la réalité.</p>
+
+<p>Sur le long terme l'échange n'est pas favorisé par une unité monétaire qui perd sans cesse de sa valeur. Une telle unité monétaire ne peut pas être utilisée comme « standard of deferred payments » <sup><a href="#partie-1-sdfootnote2sym" id="partie-1-sdfootnote2anc">2</a></sup> Un autre intermédiaire doit être trouvé pour toutes les transactions dans lesquelles la monnaie et les biens ou services ne sont pas échangés simultanément. Une unité monétaire dont la valeur se déprécie continuellement ne peut pas non plus rendre de services dans les transactions en liquide. Tout un chacun s'empresse alors de ne conserver que le minimum possible d'argent liquide, qui est tout le temps une source de pertes. Toute la monnaie reçue doit être dépensée rapidement. Quand on ne fait des achats que pour se débarrasser d'une monnaie dont la valeur diminue, en l'échangeant contre des biens de valeur durable, il faut payer des prix plus élevés que ce n'indiquent par ailleurs les autres relations du marché à ce moment.</p>
+
+<p>Le Reich allemand a offert ces derniers mois une ébauche de ce qui doit se produire une fois que les gens en viennent à croire que le cours de la dépréciation monétaire ne va pas être arrêté. Si les gens achètent des biens non utiles, ou au moins des biens dont ils n'ont pas besoin sur le moment, parce qu'ils ne veulent pas conserver leurs billets de banque, alors le processus qui conduit à rendre les billets inutilisables comme moyen de paiement généralement accepté a déjà commencé. C'est le début de la « démonétisation » des billets. La panique inhérente à cet effet doit accélérer le processus. Il est peut-être possible de calmer les masses excitées une fois, deux fois, voire trois ou quatre fois. Les choses doivent cependant se terminer au bout du compte. Il n'y a alors plus de retour en arrière possible. Une fois que la dépréciation fait de si grands pas en avant que les vendeurs craignent de subir de lourdes pertes même s'ils achètent à nouveau le plus rapidement possible, il n'y a plus aucun chance de sauver la monnaie.</p>
+
+<p>Dans tous les pays où l'inflation s'est produite à grande vitesse, on a observé que la dépréciation de la monnaie est allée encore plus vite que l'augmentation de sa quantité. Si « <i>m</i> » représente le nombre effectif d'unités monétaires disponibles avant que l'inflation ne débute dans un pays, que « <i>P</i> » représente la valeur de l'unité monétaire exprimé en or, « <i>M</i> » le nombre effectif d'unités monétaires existant à un moment particulier de l'inflation et « <i>p</i> » la valeur en or de l'unité monétaire à ce moment donné, alors (comme de simples études statistiques l'ont confirmé à de multiples reprises) :</p>
+<i></i><p>mP &gt; <i>Mp</i>.</p>
+
+<p>Certains ont essayé, sur la base de cette formule, de conclure que la dévaluation s'était faite trop rapidement et que le taux de change en vigueur n'était pas justifié. D'autres ont conclu à partir de là que la dépréciation monétaire n'était pas la conséquence d'une augmentation de la quantité de monnaie et que la théorie quantitative <sup><a href="#partie-1-sdfootnote3sym" id="partie-1-sdfootnote3anc">3</a></sup> ne pouvait pas être correcte. D'autres encore, acceptant la version primitive de la théorie quantitative, ont expliqué qu'une augmentation supplémentaire de la quantité de monnaie était possible, voire nécessaire. L'augmentation de la quantité de monnaie devrait se poursuivre, affirment-ils, jusqu'à ce que la valeur totale exprimée en or de la quantité de monnaie du pays atteigne le niveau qu'elle avait avant le début de l'inflation. Soit :</p>
+<i></i><p>mP = <i>Mp</i>.</p>
+
+<p>L'erreur dans tout ceci n'est pas difficile à voir. Écartons pour le moment le fait — qui sera analysé plus complètement plus loin — qu'au début de l'inflation les mouvements des taux de change à la Bourse <sup><a href="#partie-1-sdfootnote4sym" id="partie-1-sdfootnote4anc">4</a></sup>, ainsi que la prime par rapport aux métaux, précèdent ceux du pouvoir d'achat de l'unité monétaire exprimé par le prix des biens. Ce n'est ainsi pas la valeur en or des unités monétaires, mais leur pouvoir d'achat temporairement plus élevé vis-à-vis des biens qui devrait être pris en compte. Un tel calcul, avec « <i>P</i> » et « <i>p</i> » se référant au pouvoir d'achat de l'unité monétaire en biens plutôt qu'à sa valeur exprimée en or, conduirait également, en règle générale, au résultat :</p>
+<i></i><p>mP &gt; <i>Mp</i>.</p>
+
+<p>Toutefois, comme la dépréciation monétaire progresse, il est évident que la demande de monnaie, c'est-à-dire d'unités monétaires déjà existantes, commence à décliner. Si la perte que quelqu'un subit devient d'autant plus grande qu'il conserve longtemps son argent, il essaiera de ne garder que le minimum d'argent liquide possible. Le désir de tout individu d'avoir du liquide ne demeure pas aussi fort qu'avant le début de l'inflation, même si sa situation n'a par ailleurs pas changé. Il en résulte que la demande de monnaie pour l'ensemble de l'économie, qui ne peut pas être autre chose que la somme des demandes de monnaie de la part de tous les individus, diminue.</p>
+
+<p>Dans la mesure où le commerce se met petit à petit à utiliser de la monnaie étrangère et de l'or véritable au lieu des billets nationaux, les individus n'investissent plus dans les billets nationaux et commencent à convertir une partie de leurs réserves en monnaie étrangère et en or. En examinant la situation de l'Allemagne, il est particulièrement intéressant de noter que la zone dans laquelle les Reichsmarks sont utilisés est beaucoup plus petite aujourd'hui qu'en 1914 <sup><a href="#partie-1-sdfootnote5sym" id="partie-1-sdfootnote5anc">5</a></sup> et que désormais, parce qu'ils sont devenus plus pauvres, les Allemands ont un usage bien moindre pour leur argent. Ces circonstances, qui font baisser la demande de monnaie, auraient une influence bien plus grande si elles n'étaient pas contrebalancées par deux facteurs qui font monter la demande de monnaie :</p>
+
+<ol>
+<li>La demande en provenance de l'étranger de marks de papier, qui continue dans une certaine mesure aujourd'hui chez ceux qui spéculent sur les devises étrangères.
+</li><li> Le fait que la détérioration des techniques [de crédit] permettant d'effectuer des paiements, consécutive à la détérioration générale de la situation économique, peut avoir accru la demande de monnaie [d'encaisses] au-dessus de ce qu'elle aurait été sinon.
+</li></ol>
+
+<h4>2. Les conséquences non souhaitées</h4>
+
+<p>Si les perspectives futures d'une monnaie sont mauvaises, sa valeur en ce qui concerne les spéculations, qui anticipent son pouvoir d'achat futur, sera plus faible que la situation réelle de l'offre et de demande du moment ne l'indiquerait. On demandera et paiera dans ce cas des prix correspondant plus étroitement aux conditions futures anticipées qu'à la demande et à la quantité actuelles de monnaie en circulation.</p>
+
+<p>Les achats frénétiques des clients qui se bousculent dans les magasins pour obtenir quelque chose, n'importe quoi, anticipent ce développement, ainsi que le déroulement d'une panique à la Bourse, où le prix des actions, qui ne représentent pas des titres sur des sommes fixes d'argent, et le cours des devises étrangères sont entraînés par à-coups à la hausse. Les unités monétaires disponibles du moment ne suffisent pas à payer les prix, qui correspondent à la demande et à la quantité futures anticipées d'unités monétaires. Le commerce souffre ainsi d'une pénurie de billets. Il n'y a pas assez d'unités monétaires [de billets] sous la main pour mettre fin aux transactions commerciales convenues. Les processus du marché, qui équilibrent la demande totale et l'offre totale en modifiant les rapports d'échange [les prix], n'arrivent plus
+à faire naître les rapports d'échanges réels du moment entre les unités monétaires disponibles et les autres biens. Ce phénomène put nettement se voir en Autriche à la fin de l'automne 1921 <sup><a href="#partie-1-sdfootnote6sym" id="partie-1-sdfootnote6anc">6</a></sup>. Le règlement des transactions commerciales souffrit gravement de la pénurie de billets.</p>
+
+<p>Une fois que la situation a atteint ce stade, il n'est plus possible d'éviter les conséquences non souhaitées. Si l'émission de billets est encore augmentée, comme le préconisent beaucoup, les choses ne font qu'empirer. Comme la panique continuerait à se développer, l'écart entre la dépréciation de l'unité monétaire et la quantité en circulation deviendrait encore plus grand. La pénurie de billets nécessaires pour achever les transactions est un symptôme d'inflation avancée. C'est le revers des achats frénétiques et de la folle hausse des prix, c'est l'envers de la « panique haussière ».</p>
+
+<h4>3. L'effet sur les taux d'intérêt</h4>
+
+<p>Cette pénurie d'unités monétaires ne doit évidemment pas être confondue avec ce que les hommes d'affaires comprennent habituellement en parlant d'une rareté de la monnaie, accompagnée par une hausse du taux d'intérêt des investissements à court terme. Une inflation dont la fin n'est pas en vue entraîne cela aussi. Le vieux sophisme — réfuté depuis belle lurette par David Hume et Adam Smith — sur le fait qu'une rareté de la monnaie, telle que la définit la terminologie de l'homme d'affaires, pourrait être soulagée par un accroissement de la quantité de monnaie en circulation, est encore partagé par beaucoup de gens. On continue ainsi d'entendre des personnes s'étonner du fait qu'il y ait rareté de la monnaie malgré l'accroissement ininterrompu du nombre de billets en circulation. Or le taux d'intérêt augmente alors non pas malgré l'inflation mais à cause d'elle.</p>
+
+<p>Si un arrêt de l'inflation n'est pas anticipé, le prêteur d'argent doit prendre en compte le fait que, lorsque l'emprunteur finira par lui rembourser la somme empruntée, elle représentera alors moins de pouvoir d'achat que la somme initialement prêtée. Si le prêteur n'avait pas accordé de crédit mais avait utilisé lui-même son argent pour acheter des biens, des actions ou des devises étrangères, il s'en serait mieux trouvé. Dans ce cas il aurait soit totalement évité les pertes, soit subi des pertes moindres. S'il prête son argent c'est l'emprunteur qui s'en tire bien. Si l'emprunteur achète des biens avec l'argent emprunté et les vend plus tard, il fait un bénéfice après avoir remboursé la somme. L'opération de crédit lui rapporte un profit, un véritable profit et non un profit inflationniste et illusoire. Il est ainsi facile de comprendre que, tant que l'on s'attend à une poursuite de la dépréciation monétaire, le prêteur d'argent demande, et l'emprunteur est prêt à payer, des taux d'intérêt plus élevés. Là ou les pratiques commerciales et légales s'opposent à une hausse du taux d'intérêt, la réalisation d'opérations de crédit est gravement entravée. Ceci explique le déclin de l'épargne chez les gens pour qui l'accumulation du capital n'est possible que sous la forme de dépôts monétaires dans des banques institutionnelles ou au travers de l'achat de valeurs rapportant des taux d'intérêt fixes.</p>
+
+<h4>4. La fuite devant la monnaie</h4>
+
+<p>Le divorce d'une monnaie, qui se révèle de plus en plus inutile, du commerce débute quand elle commence à sortir des coffres. Quand les gens veulent se procurer des biens vendables pour se préparer à répondre aux besoins imprévus que leur réserve l'avenir, ils commencent par accumuler d'autres monnaies — par exemple des monnaies métalliques (or et argent), des billets étrangers et parfois aussi des billets nationaux possédant une valeur plus grande parce que leur quantité ne peut plus être augmentée par le gouvernement, comme le rouble des Romanov en Russie ou la monnaie « bleue » de la Hongrie communiste <sup><a href="#partie-1-sdfootnote7sym" id="partie-1-sdfootnote7anc">7</a></sup>. Et puis, dans le même but, les gens commencent se procurer des lingots, des pierres précieuses et des perles, voire des tableaux, des objets d'art d'un autre genre et des timbres. Un autre pas en direction de la disparition d'une monnaie devenue inutile est de conclure les transactions de crédit dans des devises étrangères ou dans une monnaie-marchandise métallique, ce qui en pratique signifie toujours en or. Enfin, si l'usage de la monnaie nationale s'éteint même pour les transactions de biens, les salaires doivent eux aussi être payés autrement que par des bouts de papier qui ne servent plus dans les échanges commerciaux.</p>
+
+<p>Seul l'étatiste le plus borné peut caresser l'espoir qu'une monnaie, dont la valeur ne cesse de diminuer, puisse être conservée comme monnaie sur le long terme. Si le mark allemand est encore utilisé comme monnaie aujourd'hui [janvier 1923] c'est simplement dû au fait que les gens croient en général que sa dépréciation progressive s'arrêtera bientôt, voire peut-être que la valeur d'une unité augmentera. Dès que cet point de vue sera reconnu comme étant intenable, le processus d'expulsion des billets de papier de leur rôle de monnaie commencera. Si ce processus peut encore être repoussé pendant un certain temps, cela ne peut qu'indiquer un nouveau changement soudain de l'opinion quant à la valeur future du mark. Le phénomène décrit sous la forme des achats frénétiques nous a donné quelques avertissements sur la façon dont le processus commencera. Il se peut que nous le revoyons se développer dans sa totalité.</p>
+
+<p>A l'évidence les billets ne peuvent pas être écartés de leur position de moyen d'échange légal, sauf par une décision législative. Même s'ils perdaient totalement leur valeur, même si rien ne pouvait être acheté pour un milliard de marks, les obligations payables en marks pourraient être légalement satisfaites par la délivrance de billets en marks. Ceci veut simplement dire que les créanciers, auxquels sont dus les marks, sont précisément ceux auxquels l'effondrement de l'étalon-papier fait le plus de tort. Il en résulte qu'il deviendra impossible de sauver de la destruction le pouvoir d'achat du mark.</p>
+
+<h4>5. Les effets de la spéculation</h4>
+
+<p>Les spéculateurs représentent en réalité le plus fort soutien des billets
+en tant que monnaie. Cependant l'explication étatiste actuelle affirme exactement le contraire. Selon cette doctrine la configuration défavorable que connaît le cours de la monnaie allemande depuis 1914 est attribuée en premier lieu, ou au moins pour une grande part, à l'effet destructeur de la spéculation sur l'anticipation de sa baisse de valeur. En fait, la situation était telle que durant la guerre, et par la suite, des quantités considérables de marks avaient été absorbées à l'étranger précisément parce que l'on s'attendait à un redressement futur du taux de change du mark. Si ces sommes n'avaient pas été attirées à l'étranger, elles auraient nécessairement conduit à une hausse encore plus forte des prix sur le marché national. On constate partout, ou au moins c'était le cas jusqu'à récemment, que même les habitants du pays anticipaient une baisse ultérieure des prix. On entend, ou on entendait, sans cesse dire que tout est désormais si cher que tous les achats, sauf ceux qui ne peuvent pas être repoussés, devraient être retardés. Et d'un autre côté on répète que la situation des prix du moment est particulièrement favorable à la vente. On ne peut toutefois nier que ce point de vue est déjà sur le point de subir un brusque changement.</p>
+
+<p>Placer des obstacles sur la route de la spéculation sur les devises étrangères et rendre particulièrement difficiles les transactions à terme en devises étrangères, fit
+du tort à l'établissement du cours des billets. Mais même l'activité spéculative ne peut pas apporter de secours quand l'opinion générale pense qu'il ne reste plus d'espoir d'endiguer la dépréciation progressive de la monnaie. Dans ce cas même les optimistes resteront à l'écart des marks allemands et des couronnes autrichiennes et quitteront la compagnie de ceux qui anticipent une hausse pour rejoindre les rangs de ceux qui s'attendent à une baisse. Une fois qu'une seule analyse prévaut sur le marché, il ne peut plus y avoir d'échanges basés sur des différences d'opinion.</p>
+
+<h4>6. Les phases finales</h4>
+
+<p>Le processus de mise hors service des billets en tant que monnaie peut se passer relativement lentement ou brusquement au cours d'une panique, peut-être en quelques jours, voire en quelques heures. Si le changement se produit lentement, cela signifie que le commerce évolue, petit à petit, vers l'usage général d'un autre moyen d'échange remplaçant les billets. La pratique constituant à effectuer et à régler les transactions intérieures en monnaie étrangère ou en or, pratique qui a déjà atteint des proportions importantes dans de nombreuses branches de l'industrie, est en train d'être de plus en plus adoptée. Il en résulte, dans la mesure où les individus transfèrent de plus en plus leurs liquidités de marks allemands en monnaie étrangère, qu'une quantité encore plus grande de devises étrangères entre dans le pays. En raison de la demande croissante de monnaie étrangère, divers types de devises étrangères, équivalant à une partie de la valeur des biens envoyés à l'étranger, sont importés en lieu et place de biens. Peu à peu une quantité de monnaies étrangères est accumulée dans le pays. Ceci adoucit grandement les effets de l'effondrement final de l'étalon de papier national. Alors, si les devises étrangères sont demandées même pour de petites transactions, si, en conséquence, même les salaires doivent être payés en devises étrangères, au début en partie puis en totalité, si enfin même le gouvernement reconnaît qu'il doit faire la même chose en levant les impôts et en payant ses fonctionnaires, alors les sommes de monnaie étrangère nécessaires pour cela sont en majeure partie déjà disponibles au sein du pays. La situation qui résulte alors de l'effondrement de la devise gouvernementale ne nécessite pas le recours au troc, lourd moyen d'échange direct de biens contre d'autres biens. La monnaie étrangère en provenance de diverses sources sert alors de monnaie, même si c'est de façon peu satisfaisante.</p>
+
+<p>Ce ne sont pas seulement des considérations théoriques irréfutables qui conduisent à cette hypothèse. L'expérience de l'Histoire des effondrements monétaires en fait de même. A propos de l'effondrement de la « devise continentale » [<i>Continental Currency</i>] dans les colonies américaines rebelles (1781), Horace White dit : « Dès que le papier fut mort, la monnaie sonnante et trébuchante apparut, en quantité suffisante pour tous les buts. Une bonne partie avait été thésaurisée et bien davantage encore avait été apporté par les armées et les navires français et anglais. Elle était tellement abondante que le cours chuta. » <sup><a href="#partie-1-sdfootnote8sym" id="partie-1-sdfootnote8anc">8</a></sup> En 1796, la valeur des mandats territoriaux français tomba à zéro. Louis Adolphe Thiers commenta la situation comme suit :</p>
+<blockquote>
+<p>Personne ne traitait plus qu'en argent. Ce numéraire, qu'on avait cru enfoui ou exporté à l'étranger, remplissait la circulation. Celui qui était caché se montrait, celui qui était sorti de France y rentrait. Les provinces méridionales étaient remplies de piastres, qui venaient d'Espagne appelées chez nous par le besoin. L'or et l'argent vont, comme toutes les marchandises, là où la demande les attire ; seulement leur prix est plus élevé, et se maintient jusqu'à ce que la quantité soit suffisante et que le besoin soit satisfait. Il se commettait bien encore quelques friponneries, par les remboursements en mandats, parce que les lois, donnant cours forcé de monnaie au papier, permettaient de l'employer à l'acquittement des engagements écrits ; mais on ne l'osait guère, et, quant à toutes les stipulations, elles se faisaient en numéraire. Dans tous les marchés on ne voyait que l'argent ou l'or ; les salaires du peuple ne se payaient pas autrement. On aurait dit qu'il n'existait point de papier en France. Les mandats ne se trouvaient plus que dans les mains de spéculateurs, qui les recevaient du gouvernement, et les revendaient aux acquéreurs de biens nationaux. De cette manière, la crise financière, quoique existant encore pour l'État avait presque cessé pour les particuliers. <sup><a href="#partie-1-sdfootnote9sym" id="partie-1-sdfootnote9anc">9</a></sup></p>
+</blockquote>
+
+<h4>7. La plus grande importance de la monnaie pour une économie moderne</h4>
+
+<p>Il faut bien évidemment prendre soin de ne pas faire de parallèle entre les effets de la catastrophe, vers laquelle notre monnaie fonce tête baissée, et les conséquences des deux événements décrits plus haut. En 1781, les États-Unis étaient un pays à dominante agricole. En 1796 la France était également à un stade bien plus bas en ce concernait le développement économique de la division du travail et l'usage de la monnaie et, donc, en ce
+qui concernait les transactions en espèces et à crédit. Dans un pays industriel comme l'Allemagne les conséquences d'un effondrement monétaire seront nécessairement très différentes de celles qui se produisent dans des pays où une grande partie de la population continue de vivre dans des conditions économiques primitives.</p>
+
+<p>Les choses seront nécessairement bien pires si l'effondrement de la monnaie de papier ne se produit pas petit à petit mais arrive, comme cela semble probable, tout d'un coup sous la forme d'une panique. Les quantités de monnaie d'or et d'argent ainsi que de devises étrangères sont très faibles dans le pays. La pratique, suivie avec tant d'empressement au cours de la guerre, consistant à concentrer les stocks d'or nationaux dans les banques centrales et les restrictions infligées depuis de nombreuses années sur le commerce en monnaies étrangères ont fait en sorte que la quantité totale de bonne monnaie thésaurisée est depuis longtemps insuffisante pour permettre un développement en douceur de la circulation monétaire durant les premiers jours et les premières semaines suivant l'effondrement de l'étalon-papier. Un certain temps doit s'écouler avant que le montant de monnaie étrangère nécessaire au commerce intérieur ne soit obtenu par la vente de stocks et de marchandises, par la hausse du crédit et par le retrait de soldes à l'étranger. Entre-temps les gens devront utiliser les différents types de monnaies d'urgence.</p>
+
+<p>C'est précisément au moment où tous les épargnants et tous ceux qui touchent une pension sont le plus sévèrement touchés par la dépréciation des billets, et où toute la politique financière et économique du gouvernement doit entreprendre une transformation radicale, consécutive à l'impossibilité d'avoir recours à la planche à billets, que des difficultés techniques surgiront dans la conduite du commerce et dans le versement des paiements. Il deviendra immédiatement évident que ces difficultés doivent sérieusement aggraver les troubles des gens. Il n'y a cependant aucune raison de décrire les détails particuliers d'une telle catastrophe. Il ne faudrait y faire référence qu'en vue de montrer que l'inflation n'est pas une politique pouvant éternellement continuer. Les planches à billets doivent être fermées à temps, parce qu'une terrible catastrophe nous attend si leur utilisation se poursuit jusqu'au bout. Personne ne peut dire à quelle distance nous nous trouvons d'une telle fin.</p>
+
+<p>Il importe peu que la poursuite de l'inflation soit considérée comme souhaitable ou même non préjudiciable. Il importe peu que l'inflation semble un mal, mais un moindre mal par rapport aux autres possibilités. L'inflation ne peut être poursuivie que tant que le public ne croit pas encore qu'elle continuera. Une fois que le peuple se rend compte que l'inflation se poursuivra encore et encore et que la valeur de l'unité monétaire baissera de plus en plus, le destin de la monnaie est scellé. Ce n'est que la croyance que l'inflation s'arrêtera qui permet aux billets de conserver leur valeur.</p>
+
+
+<p> </p>
+</a><a id="partie-1-par2">
+<h3>II. L'émancipation de la valeur monétaire vis-à-vis de l'influence du gouvernement</h3>
+
+<h4>1. Arrêtez la planche à billets et l'expansion du crédit</h4>
+
+<p>La première chose à faire pour toute réforme monétaire est d'arrêter la planche à billets. L'Allemagne doit s'abstenir de financer les déficits publics en émettant des billets, que ce soit directement ou indirectement. La Reichsbank [la Banque centrale allemande qui officiait depuis 1875, disparue peu de temps après de la Deuxième Guerre mondiale] ne doit par continuer à augmenter le montant de ses billets en circulation. Les dépôts à la Reichsbank ne devraient être ouverts et accrus que par le transfert de comptes déjà existant à la Reichsbank ou en échange de paiements en billets ou en une autre monnaie nationale ou étrangère. La Reichsbank ne devrait accorder de crédits que dans la mesure où des fonds sont disponibles — provenant de ses propres réserves et d'autres ressources mises à sa disposition par des créanciers. Elle ne devrait pas créer de crédit pour augmenter le montant de ses billets non couverts par de l'or ou une autre monnaie étrangère, ni pour accroître la somme de ses dettes impayées. Si elle doit puiser de l'or ou des monnaie étrangère dans ses réserves, il faut qu'elle réduise d'autant la circulation de ses billets ou l'usage de ses obligations dans les transferts <sup><a href="#partie-1-sdfootnote10sym" id="partie-1-sdfootnote10anc">10</a></sup>.</p>
+
+<p>Il ne faudrait tolérer absolument aucune exception à ces conditions. Il est toutefois possible d'autoriser un accroissement limité — pendant deux ou trois semaines à un moment — afin de faciliter les opérations de compensation à la fin des trimestres, particulièrement vers la fin de septembre et de décembre. Ce crédit de circulation supplémentaire introduit dans l'économie, au-delà des limites sinon respectées de manière stricte, devrait être statistiquement modéré et en généralement précisé de manière stricte par la loi <sup><a href="#partie-1-sdfootnote11sym" id="partie-1-sdfootnote11anc">11</a></sup>.</p>
+
+<p>Il ne peut y avoir le moindre doute que cela arrêterait immédiatement et efficacement la dépréciation continuelle de l'unité monétaire. Il y aurait même alors une augmentation du pouvoir d'achat de l'unité monétaire allemande — dans la mesure où le pouvoir d'achat antérieur de l'unité allemande, par rapport aux biens et aux monnaie étrangères, reflétait déjà l'idée que l'inflation continuerait. Cette augmentation du pouvoir d'achat irait jusqu'au point correspondant à la véritable situation économique.</p>
+
+<h4>2. Les liens de l'unité monétaire avec la monnaie-or internationale</h4>
+
+<p>Toutefois, arrêter l'inflation ne signifie en aucun cas stabiliser la valeur de l'unité monétaire allemande par rapport à la monnaie étrangère. Une fois que des limites strictes seront décidées pour toute inflation ultérieure, la quantité de la monnaie allemande ne changera plus. Mais quand des changements se produironnt dans la demande de monnaie, des changements devront également avoir lieu dans les taux de conversion entre la monnaie allemande et les monnaies étrangères. L'économie allemande n'aura plus à endurer l'inconvénient provenant de l'inflation et de la continuelle dépréciation monétaire ; mais elle devra toujours faire face aux conséquences du fait que les cours des devises étrangères restent soumis à des fluctuations continuelles, même si elles ne sont pas importantes.</p>
+
+<p>Si, avec la suppression de la planche à billets, les réformes de la politique monétaire prennent fin, la valeur de l'unité monétaire allemande par rapport à la monnaie internationale, à l'or, devrait évidemment monter lentement mais régulièrement. La quantité d'or utilisée comme monnaie augmente sans arrêt en raison de l'extraction minière alors que la quantité de la monnaie allemande [ne reposant pas sur l'or ou des devises étrangères] serait limitée une fois pour toutes. Il faudrait donc considérer comme probable que les répercussions des changements dans les rapports entre la quantité et la demande de monnaie en Allemagne et dans les pays connaissant l'étalon-or conduiraient à la hausse de l'unité monétaire allemande sur le marché des devises. Une illustration de ce point se trouve dans les développements de la monnaie autrichienne sur le marché des devises dans les années 188-1891. Pour stabiliser la valeur relative de l'unité monétaire en dehors des frontières de la nation, il ne suffit pas de libérer la formation de la valeur monétaire de l'influence du gouvernement. Il faut également faire un effort pour établir un lien entre la monnaie mondiale et l'unité monétaire allemande, en liant étroitement la valeur du reichsmark à la valeur de l'or.</p>
+
+<p>Il faudra toujours souligner que la stabilisation de la valeur en or d'une unité monétaire ne peut être obtenue que si la planche à billet est arrêtée. Toute tentative d'y parvenir par d'autres moyens est vaine. Il est inutile d'intervenir sur le marché des devises étrangères. Si le gouvernement allemand acquiert des dollars, par exemple au moyen d'un emprunt, et paie l'emprunt avec des marks de papier, il exerce une pression, par son action, sur le taux de change du dollar. Toutefois, si la planche à billets continue de tourner, la dépréciation monétaire se sera que ralentie, et ne sera pas parvenue à un point mort. Une fois que l'élan de l'intervention se sera dissipé la dépréciation reprendra à nouveau, encore plus rapidement. En revanche, si l'augmentation du montant des billets est effectivement stoppée, aucune intervention n'est nécessaire pour stabiliser le mark par rapport à l'or.</p>
+
+<h4>3. La tendance à la dépréciation</h4>
+
+<p>A ce sujet il est à souligner que l'accroissement des billets et la dépréciation de l'unité monétaire ne coïncident pas exactement sur le plan chronologique. La valeur de l'unité monétaire reste souvent quasiment stable pendant des semaines, voire des mois, alors que le montant des billets augmente continuellement. Et un jour le prix des biens et des devises étrangères augmente brusquement, bien qu'à ce moment l'accroissement du nombre des billets ne se produise pas plus rapidement, et parfois même se ralentisse. L'explication de ce phénomène réside dans les processus des opérations du marché. La tendance à exagérer tout changement est inhérente à la spéculation. Si le comportement inauguré par quelques-uns, qui ne font confiance qu'à leur propre jugement, est exagéré et poussé trop loin par ceux qui suivent leur trace, une réaction, ou au moins un coup d'arrêt, doit se produire. L'ignorance des principes qui sous-tendent la formation de la valeur monétaire entraîne ainsi une réaction du marché.</p>
+
+<p>En spéculant sur les titres et les actions, le spéculateur a développé une procédure qu'il utilise lors de ses échanges commerciaux. Il y a appris ce qu'il essaie désormais d'appliquer dans le domaine des spéculations sur les taux de change. Son expérience lui a enseigné que les actions qui ont fortement baissé sur le marché représentent habituellement de bonnes occasions d'investissement et il croit ainsi que la situation est analogue pour la monnaie. Il considère cette dernière comme s'il s'agissait d'un action émise par le gouvernement. Quand le mark allemand fut coté à 10 francs à Zurich, un banquier affirma : « Il est désormais temps d'acheter des marks. L'économie allemande est certes plus pauvre aujourd'hui qu'avant la guerre et une évaluation plus basse du mark est justifiée. Mais la richesse du peuple allemand n'est certainement pas tombée à un douzième des avoirs d'avant-guerre. La valeur du mark doit donc monter. » Et lorsque le mark polonais chuta à 5 francs à Zurich, un autre banquier s'exclama : « Ce faible prix est pour moi incompréhensible ! La Pologne est un pays riche. Elle possède une économie agricole lucrative, des forêts, du charbon et du pétrole. Le cours de la monnaie devrait donc être bien plus élevé. » De façon similaire, au printemps 1919, un personnage de haut rang de la République soviétique de Hongrie <sup><a href="#partie-1-sdfootnote12sym" id="partie-1-sdfootnote12anc">12</a></sup> m'avait dit : « En fait, le papier-monnaie émis par la République soviétique de Hongrie devrait bénéficier du cours le plus élevé, Russie exceptée. Après le gouvernement russe, le gouvernement hongrois est devenu, en socialisant la propriété privée dans toute la Hongrie, le plus riche et donc le plus solvable du monde. » Ces observateurs ne comprennent pas que la valeur que l'on donne à l'unité monétaire ne dépend pas de la richesse d'un pays mais plutôt du rapport entre la quantité et la demande de monnaie. Ainsi, même le pays le plus riche peut avoir une mauvaise monnaie et le pays le plus pauvre en avoir une bonne. Néanmoins, même si la théorie de ces banquiers est fausse et doit en définitive conduire à des pertes pour ceux qui l'utilisent comme un guide pour agir, elle peut temporairement ralentir et même donner un coup d'arrêt à la baisse du cours de l'unité monétaire.</p>
+
+<p> </p>
+</a><a id="partie-1-par3">
+<h3>III. Le retour à l'or</h3>
+
+<h4>1. L'éminence de l'or</h4>
+
+<p>Dans les années de guerre et dans celles qui l'ont précédée, les auteurs qui préparaient le terrain au chaos monétaire actuel étaient pressés de rompre le lien entre l'étalon monétaire et l'or. On proposa ainsi de développer, pour remplacer un étalon directement basé sur l'or, un étalon ne promettant rien de plus qu'un taux de change constant par rapport à la monnaie étrangère. Ces propositions, dans la mesure où elles avaient pour objet de transférer le contrôle de la formation de la valeur monétaire au gouvernement, n'ont pas besoin d'être discutées plus longtemps. La raison pour laquelle on utilise une monnaie-<i>marchandise</i> est précisément d'éviter toute influence politique directe sur la valeur de l'unité monétaire. L'or n'est pas la monnaie étalon uniquement par ce qu'il brille ou en raison de ses caractéristiques physico-chimiques. L'or est d'abord la monnaie étalon parce que l'augmentation ou la diminution de la quantité disponible est indépendante des ordres émis par les autorités politiques. Le trait distinctif de l'étalon-or est de ne faire dépendre les changements de la quantité de monnaie que de la rentabilité de la production d'or.</p>
+
+<p>Au lieu de l'étalon-or, un étalon monétaire basé sur une devise étrangère pourrait être introduit. La valeur du mark serait alors liée <i>non</i> à l'or mais à la valeur d'une devise étrangère particulière, à un taux de change fixe. La Reichsbank serait prête à tout instant à acheter ou à vendre des marks, en quantité illimitée et à un taux de change fixe, contre la monnaie étrangère spécifiée. Si l'unité monétaire choisie comme base d'un tel système ne repose pas sur un étalon-or sain, les conditions engendrées seraient absolument intenables. Le pouvoir d'achat de la monnaie allemande dépendrait des fluctuations du pouvoir d'achat de cette monnaie étrangère. La politique allemande devrait renoncer à son influence sur la création de la valeur monétaire et la laisser sous la coupe de la politique d'un gouvernement étranger. Et quand bien même la monnaie étrangère choisie comme base pour l'unité monétaire allemande reposerait actuellement sur un étalon-or parfaitement sain, il resterait la possibilité que ce lien avec l'or soit rompu ultérieurement. Il n'y a donc aucune base permettant de choisir cette route détournée vers un bon système monétaire. Il n'est pas vrai que l'adoption de l'étalon-or conduise à une dépendance économique vis-à-vis de l'Angleterre, des producteurs d'or ou de quelque autre pouvoir. Bien au contraire ! En réalité c'est l'étalon monétaire dépendant de la monnaie d'un gouvernement étranger qui mérite le nom « d'étalon vassal ou subsidiaire. » <sup><a href="#partie-1-sdfootnote13sym" id="partie-1-sdfootnote13anc">13</a></sup></p>
+
+<h4>2. La disponibilité suffisante de l'or</h4>
+
+<p>Il n'y a aucun raison pour dire qu'il n'y a pas assez d'or disponible pour permettre à tous les pays du monde d'avoir un étalon-or. Il ne pourra jamais y avoir trop, ou pas assez, d'or pour servir de monnaie. L'offre et la demande sont mises en équilibre par la formation des prix. Il n'y a aucune raison non plus de craindre que les prix soient généralement trop orientés à la baisse dans le cas d'un retour à l'étalon-or de la part des pays ayant des monnaies dépréciées. Les réserves d'or mondiales n'ont pas baissé depuis 1914. Elles ont augmenté. En raison de la baisse du commerce et de l'augmentation de la pauvreté, la demande d'or devrait être inférieure à ce qu'elle était avant 1914, y compris après un retour complet à l'étalon-or.</p>
+
+<p>Après tout, un retour à l'étalon-or ne signifierait qu'un retour à l'usage effectif de la monnaie d'or au sein du pays pour payer des transactions de petite et moyenne importance. Car même l'étalon de change-or [Goldkernwährung] développé par Ricardo dans son ouvrage <i>Proposals for an Economical and Secure Currency </i>(1816), est un authentique et légitime étalon-or <sup><a href="#partie-1-sdfootnote14sym" id="partie-1-sdfootnote14anc">14</a></sup> comme le montre clairement l'histoire de la monnaie de ces dernières décennies.</p>
+
+<p>Baser le système monétaire allemand sur une quelconque monnaie étrangère au lieu de le baser sur l'or métallique n'aurait qu'une seule signification. En cachant la véritable nature de la réforme, cela rendrait un revirement plus facile pour les auteurs et les politiciens inflationnistes. La première condition de toute réforme monétaire est encore de mettre totalement en déroute toutes les doctrines populistes défendant le chartisme <sup><a href="#partie-1-sdfootnote15sym" id="partie-1-sdfootnote15anc">15</a></sup>, la création de monnaie et le renversement de l'or et de la monnaie libre. Toute imperfection et tout manque de clarté est ici préjudiciable. Les inflationnistes de en tous genres doivent être totalement réfutés. Il ne faut pas nous satisfaire de compromis avec eux. Le slogan « A bas l'or » doit être évincé. La solution est de le remplacer par : « Aucune immixtion du gouvernement dans la valeur de l'unité monétaire ! »</p>
+
+
+<p> </p>
+</a><a id="partie-1-par4">
+<h3>IV. Le lien monétaire</h3>
+
+<h4>1. Victoire et inflation</h4>
+
+<p>Personne ne peut plus continuer à affirmer sérieusement que le cours du mark de papier allemand pourrait être rétabli [en 1923] à son ancienne valeur or — telle que spécifiée par la loi du 4 décembre 1871 et par la loi sur la frappe du 9 juillet 1873. Beaucoup de gens s'opposent cependant encore à la proposition de stabiliser la valeur-or du mark au faible cours actuel. Des raisons plutôt vagues de fierté nationale sont souvent invoquées contre cette idée. Trompés par de fausses idées sur les causes de la dépréciation monétaires, les gens ont pris l'habitude de considérer la devise d'un pays comme s'il s'agissait du bien le plus important de la patrie et du gouvernement. Les gens croient qu'un cours peu élevé du mark reflète un jugement défavorable de la situation politique et économique de l'Allemagne. Ils ne comprennent pas que la valeur monétaire n'est affectée que par les changements dans la relation entre la demande et la quantité de monnaie et dans l'opinion dominante quant aux changements attendus de cette relation, comprenant ceux entraînés par les politiques monétaires du gouvernement. Au cours de la guerre on disait que « la monnaie du vainqueur » se révélerait la meilleure. Mais la guerre et la défaite sur le champ de bataille ne peuvent influer sur la formation de la valeur monétaire que de manière indirecte. On s'attend généralement à ce qu'un gouvernement victorieux soit capable d'arrêter plus rapidement l'usage de la planche à billets. Il lui sera plus facile à la fois de réduire ses dépenses et d'obtenir des crédits. Cette même interprétation expliquerait aussi que le cours de la monnaie du pays vaincu connaisse un mieux en raison de l'amélioration des perspectives de paix. La valeur du mark allemand et celle de la couronne autrichienne grimpèrent en octobre 1918. On estimait qu'un arrêt de l'inflation était à attendre y compris en Allemagne et en Autriche, mais cette prévision ne s'est évidemment pas réalisée.</p>
+
+<p>L'Histoire montre que la valeur du cours de la « monnaie du vainqueur » peut également être très faible. Il y a rarement eu victoire plus brillante que celle remportée par les rebelles américains, menés par Washington, sur les forces britanniques. Et pourtant la monnaie américaine n'en a pas bénéficié. Plus la bannière étoilée était hissée avec fierté, plus le cours des « continentaux », comme on appelait les billets de papier émis par les États rebelles, baissait. Et juste au moment où les rebelles remportaient enfin la victoire, les « continentaux » avaient perdu toute valeur. Peu de temps après, une situation analogue se produisit en France. Malgré la victoire obtenue par les Révolutionnaires, l'agio sur les métaux monta de plus en plus jusqu'à ce qu'en définitive, en 1796, la valeur de l'unité monétaire de papier atteigne zéro. Dans les deux cas, les gouvernements victorieux avaient poursuivi l'inflation jusqu'au bout.</p>
+
+<h4>2. Établir un « taux » or</h4>
+
+<p>Il est totalement erroné de considérer la « dévaluation » comme un faillite de l'État. La stabilisation de la faible valeur monétaire actuelle, même en ne la considérant que vis-à-vis de son effet sur les dettes en cours, est quelque chose de très différent d'une faillite étatique. Elle est à la fois plus et moins que cette dernière. Elle est <i>plus</i> qu'une faillite de l'État dans la mesure où elle ne concerne pas que les dettes publiques mais aussi toutes les dettes privées. Elle est <i>moins</i> qu'une faillite de l'État car elle ne concerne parmi les dettes non remboursées du gouvernement que celles qui sont payables en papier-monnaie, et ne modifie rien quant aux obligations remboursables en monnaie sonnante et trébuchante ou en monnaie étrangère. Là aussi la stabilisation monétaire ne change rien en ce qui concerne les relations entre les parties contractantes pour ce qui est des dettes monétaires déjà contractées sans garantie d'un accroissement de la valeur monétaire.</p>
+
+<p>Compenser les propriétaires de titres en marks pour les pertes subies entre 1914 et 1923 demande autre chose que de faire monter le cours du mark. Les dettes datant de cette période devraient être converties par la loi en obligations remboursables en marks-or conformément à la valeur du mark au moment de l'émission de chaque obligation. Il est extrêmement peu probable que le but désiré soit atteint y compris de cette façon. Les détenteurs actuels de titres ne sont pas toujours les mêmes que ceux qui ont subi les pertes. La majorité des titres à échoir est constituée de titres payables au porteur et une partie considérable de tous les autres a changé de mains au cours des ans. Quand il s'agit de déterminer les profits et les pertes monétaires au cours des ans, les méthodes comptables se trouvent devant les formidables obstacles des techniques commerciales et de la structure juridique des entreprises.</p>
+
+<p>Les effets des changements de la situation économique globale sur le commerce, en particulier ceux de tout changement de la valeur monétaire lié à la monnaie et de tout accroissement de son pouvoir d'achat, militent contre les tentatives de faire monter la valeur de l'unité monétaire avant de l'avoir [redéfinie et] stabilisée par rapport à l'or. La valeur de l'unité monétaire devrait être [légalement définie et] stabilisée par rapport à l'or au cours du moment.</p>
+
+<p>Tant que la dépréciation monétaire se poursuit, il est évidemment impossible de parler d'un « cours » spécifique de la valeur de la monnaie. Car les changements de la valeur de l'unité monétaire n'affectent pas tous les biens et services de l'économie au même moment et dans la même mesure. Ces changements de la valeur monétaire se produisent nécessairement de manière irrégulière et petit à petit. Il est en général reconnu qu'à court terme, ou même à plus long terme, il peut exister un écart entre la valeur de l'unité monétaire telle qu'elle est exprimée par son cours par rapport aux diverses devises étrangères, et son pouvoir d'achat en biens et en services sur le marché intérieur.</p>
+
+<p>Les cours de Bourse des devises étrangères reflètent toujours des taux spéculatifs en fonction de l'évolution en cours, mais non encore terminée, du changement du pouvoir d'achat de l'unité monétaire. Cependant, la dépréciation monétaire, au début de sa lente évolution, exerce déjà son plein impact sur les taux de change avant de trouver sa pleine expression dans le prix de tous les biens et des services du pays. Ce délai concernant le prix des biens, qui a du retard par rapport à la montée des taux de change des monnaies étrangères, est d'une durée limitée. Les taux de change ne sont déterminés en dernière analyse par rien d'autre que le futur pouvoir d'achat anticipé que l'on attribue à l'unité monétaire. Les taux de change doivent s'établir à des niveaux tels que le pouvoir d'achat de l'unité monétaire reste le même, qu'elle soit utilisée directement pour acheter des marchandises ou qu'elle soit au préalable convertie en une autre devise avec laquelle les biens sont achetés. A long terme le taux ne peut pas s'écarter du ratio déterminé par son pouvoir d'achat. Ce ratio est connu sous le nom de ratio « naturel » ou « statique ». <sup><a href="#partie-1-sdfootnote16sym" id="partie-1-sdfootnote16anc">16</a></sup></p>
+
+<p>Afin de stabiliser la valeur de l'unité monétaire à sa valeur actuelle, il faut tout d'abord mettre fin à son déclin. La valeur de l'unité monétaire par rapport à l'or doit en premier lieu connaître une certaine stabilité. Ce n'est qu'alors que l'on peut donner à la relation entre l'unité monétaire et l'or un statut durable. Avant toute chose, comme il a été souligné plus haut, il faut bloquer les progrès de l'inflation en arrêtant toute émission supplémentaire de billets. Il faut ensuite attendre que le cours des devises étrangères et du prix des biens, qui vont fluctuer pendant un certain temps, se soient ajustés. Comme il a déjà été expliqué, cet ajustement se produira non seulement par une hausse du prix des biens mais aussi, dans une certaine mesure, par une baisse du taux de change des monnaies étrangères <sup><a href="#partie-1-sdfootnote17sym" id="partie-1-sdfootnote17anc">17</a></sup>.</p>
+
+<p> </p>
+</a><a id="partie-1-par5">
+<h3>V. Commentaires sur la doctrine de la « balance des paiements »</h3>
+
+<h4>1. Un raffinement de la théorie quantitative de la monnaie</h4>
+
+<p>La doctrine habituellement acceptée affirme qu'établir des relations saines entre les monnaies n'est possible qu'avec une « balance favorable des paiements ». Selon cette analyse, un pays présentant une « balance défavorable des paiements » ne pourrait pas maintenir la stabilité de la valeur de sa monnaie. Dans ce cas la détérioration du cours de la monnaie est considérée comme étant de nature structurelle et les gens pensent qu'elle ne peut être efficacement combattue qu'en éliminant les défauts structurels.</p>
+
+<p>La réponse à ce argument et à d'autres similaires se trouve dans la théorie quantitative et dans la loi de Gresham.</p>
+
+<p>La théorie quantitative a démontré que dans un pays n'utilisant qu'une monnaie-marchandise, l'étalon de « monnaie purement métallique » de la théorie de la circulation <sup><a href="#partie-1-sdfootnote18sym" id="partie-1-sdfootnote18anc">18</a></sup>, la monnaie ne peut jamais partir continuellement pour l'étranger pendant longtemps. Le départ d'une partie des réserves d'or entraîne une tension dans la quantité de monnaie disponible sur le marché intérieur. Ceci fait baisser le prix des biens, favorise les exportations et réduit les importations jusqu'à ce que la quantité de monnaie dans l'économie nationale soit restaurée depuis l'étranger. Les métaux précieux servant de monnaie sont répartis entre les diverses entreprises individuelles et donc entre les différentes économies nationales, en fonction de l'importance et de l'intensité de leurs demandes respectives de monnaie. Les interventions gouvernementales, qui cherchent à réglementer les mouvements monétaires internationaux afin d'assurer à l'économie une quantité « nécessaire » de monnaie, sont superflues.</p>
+
+<p>La fuite indésirable de monnaie résulte toujours de l'intervention du gouvernement qui a doté des monnaies évaluées différemment du même pouvoir d'achat légal. La seule chose qu'un gouvernement doit faire pour éviter de perturber la situation monétaire, et la seule chose qu'il puisse faire, c'est d'abandonner de genre d'interventions. Voilà le fond de la théorie monétaire de l'économie classique et de ceux qui ont suivi sa trace, les théoriciens de l'École de la circulation, la <i>Currency school</i> <sup><a href="#partie-1-sdfootnote19sym" id="partie-1-sdfootnote19anc">19</a></sup>.</p>
+
+<p>Avec l'aide de la théorie subjectiviste moderne, cette théorie peut être raffinée et développé plus profondément. Elle ne peut cependant pas être réfutée. Et aucune autre théorie ne peut venir la remplacer. Ceux qui choisissent de l'ignorer ne font que montrer qu'ils ne sont pas des économistes.</p>
+
+<h4>2. La parité des pouvoirs d'achat</h4>
+
+<p>On entend fréquemment, quand la monnaie-marchandise est remplacée dans un pays par une monnaie-créance ou une monnaie symbolique — parce que l'égalité décrétée par la loi entre le papier émis en trop grande quantité et la monnaie métallique a conduit aux événements décrits par la loi de Gresham — que c'est la balance des paiements qui détermine les taux de change. Ceci est totalement faux. Les taux de change sont déterminés par le pouvoir d'achat relatif de l'unité de chaque type de monnaie. Comme il a été indiqué plus haut, les taux de change doivent en fin de compte s'établir à un niveau auquel il n'y a plus de différence entre l'usage direct d'une pièce de monnaie pour acheter un bien et son usage indirect par échange préalable contre des devises étrangères dépensées ensuite pour se procurer le bien désiré. Si le cours s'écarte de celui que celui que détermine la parité du pouvoir d'achat, cours connu sous le nom de cours « naturel » ou « statique », il apparaît une occasion de se lancer dans une entreprise rapportant des profits. Il serait avantageux d'acheter des biens avec la monnaie dont le cours est légalement <i>sous-évalué</i> comparativement à la parité de son pouvoir d'achat, et de vendre ces biens contre la monnaie dont le cours est légalement <i>surévalué</i> par rapport à son véritable pouvoir d'achat. A chaque fois qu'existent de telles occasions, des acheteurs apparaissent sur le marché des devises étrangères, demandant la monnaie sous-évaluée. Cette demande fait monter son cours jusqu'à ce qu'il atteigne le « cours final ». <sup><a href="#partie-1-sdfootnote20sym" id="partie-1-sdfootnote20anc">20</a></sup></p>
+
+<p>Le cours des devises étrangères monte parce que la quantité de la monnaie [nationale] s'est accrue et que le prix des biens a augmenté. Comme déjà expliqué, c'est uniquement en raison de détails techniques du marché que cette relation de cause à effet n'apparaît pas plus tôt. Sous l'influence de la spéculation, les cours des devises étrangères, dans les prévisions boursières, anticipent les changements futurs du prix des biens.</p>
+
+<p>La doctrine de la balance des paiements ne s'aperçoit pas du fait que l'ampleur du commerce extérieur dépend totalement des prix. Elle écarte le fait que rien ne pourrait être importé ou exporté s'il n'y avait pas de différences de prix, qui rendent le commerce avantageux. La doctrine de la balance des paiements découle d'un manque de profondeur. Quiconque se contente de regarder ce qui se passe tous les jours et à toute heure à la Bourse voit uniquement, c'est certain, que l'état instantané de la balance des paiements est le facteur décisif de l'offre et de la demande sur le marché des devises. Mais ce diagnostic n'est que le point de départ d'une recherche des facteurs déterminant le cours des devises. La question suivante est celle-ci : Qu'est-ce qui détermine l'état instantané de la balance des paiements ? Ce qui doit forcément conduire à la conclusion que la balance des paiements est déterminée par la structure des prix et par les ventes et les achats que suscitent les différents prix.</p>
+
+<h4>3. Le cours des devises étrangères</h4>
+
+<p>Avec des cours des devises étrangères orientés à la hausse, les biens étrangers ne peuvent être importés que s'ils trouvent des acheteurs à leurs prix élevés. Une version de la doctrine de la balance des paiements essaie de faire une distinction entre l'importation de biens vitaux et celle d'articles considérés comme moins essentiels ou nécessaires. On y suppose que les biens vitaux doivent être acquis à tout prix parce qu'il est absolument impossible de s'en passer. En conséquence, on croit que la devise d'un pays doit continuellement se déprécier si ce dernier doit importer des biens absolument nécessaires alors qu'il ne peut exporter que des articles moins essentiels. Ce raisonnement ignore le fait que le besoin plus ou moins grand de certains biens, l'ampleur et l'intensité de la demande qu'ils engendrent ou la capacité à s'en passer, s'expriment déjà pleinement dans le niveau relatif des prix attribués aux divers biens sur le marché.</p>
+
+<p>Peu importe l'intensité du désir des Autrichiens à se procurer du pain, du charbon ou du sucre étrangers, ils ne peuvent satisfaire leur désir que s'ils sont en mesure de le payer. S'ils veulent importer plus, ils doivent exporter davantage de produits manufacturés ou semi-finis, ils doivent exporter des actions, des obligations et des titres de propriété de différents types.</p>
+
+<p>Si la quantité de billets n'était pas accrue, le prix des articles vendus serait plus bas. Si les gens demandent alors davantage de biens importés, le prix des ces articles importés doit monter. Ou sinon la hausse du prix des biens vitaux doit être compensée par une baisse du prix des articles moins essentiels, dont l'achat diminue pour permettre d'acheter un plus grand nombre de produits vitaux. Une hausse générale des prix est ainsi impossible [sans accroissement de la quantité de billets]. Les paiements internationaux s'équilibreraient soit par une augmentation des exportations des biens dont on peut se passer, soit par une exportation de titres et d'articles similaires. Ce n'est que parce que la quantité des billets a été accrue qu'ils peuvent continuer à permettre des importations à des taux de change plus élevés sans augmentation des exportations. C'est la seule raison pour laquelle l'augmentation des taux de change n'étouffe pas totalement les importations et ne favorise pas les exportations jusqu'à ce que la « balance des paiements » soit à nouveau « favorable ». <sup><a href="#partie-1-sdfootnote21sym" id="partie-1-sdfootnote21anc">21</a></sup></p>
+
+<p>Il n'est assurément pas besoin de preuve pour démontrer que la spéculation n'est pas responsable de la détérioration du cours de la monnaie. Celui qui spécule sur les changes essaie d'anticiper les fluctuations futures du cours des monnaies. Il peut se tromper. Dans ce cas il doit payer ses erreurs. Les spéculateurs ne peuvent cependant jamais maintenir pendant longtemps un cours qui ne soit pas en accord avec les ratios du marché. Les gouvernements et les politiciens, qui accusent la spéculation d'être responsable de la baisse de la monnaie, le savent très bien. S'ils avaient une autre analyse des taux de change futurs, ils pourraient spéculer pour le compte du gouvernement contre une hausse et sur l'anticipation d'une baisse. Par cette simple action ils amélioraient non seulement le cours de la monnaie mais réaliseraient aussi un joli bénéfice au profit du Trésor.</p>
+
+<h4>4. Les réglementations sur les taux de change</h4>
+
+<p>Les vieilles erreurs mercantilistes <sup><a href="#partie-1-sdfootnote22sym" id="partie-1-sdfootnote22anc">22</a></sup> représentent un fantôme que nous n'avons pas à craindre. Aucun peuple, pas même le plus pauvre, n'a besoin d'abandonner une politique monétaire saine. Ce n'est ni la pauvreté de l'individu ni celle du groupe, ce n'est ni la dette étrangère ni les conditions de production défavorables qui font monter le cours des monnaies étrangères. L'inflation en est la seule cause.</p>
+
+<p>Par conséquent, tout autre moyen employé dans la lutte contre la hausse des taux de change est inutile. Si l'inflation continue il sera inefficace. S'il n'y a pas d'inflation il sera superflu. Le plus important de ces autres moyens est l'interdiction, ou tout au moins la restriction, de l'importation de certains biens considérés comme non indispensables, ou au moins non vitaux. Les sommes d'argent qui auraient été dépensées dans le pays pour acheter ces biens sont dès lors utilisées pour d'autres achats. A l'évidence, les seuls biens impliqués sont ceux qui auraient été vendus sinon à l'étranger. Ces biens sont dès lors achetés par des habitants du pays, à des prix plus élevés que ceux que proposent les étrangers. Il en résulte d'une part une baisse des importations et donc de la demande de devises étrangères, et d'autre part une réduction toute aussi forte des exportations et donc aussi une baisse de l'offre de devises étrangères. Les importations sont payées par les exportations et non avec de la monnaie comme l'affirme superficiellement encore maintenant la doctrine néomercantiliste</p>
+
+<p>Si l'on veut véritablement contrôler la demande de devises étrangères, alors, dans la mesure où l'on veut réduire les importations, la monnaie doit être retirée au peuple — au moyen par exemple de l'impôt. Cette somme devrait être totalement retirée de la circulation : elle devrait être détruite et non utilisée dans des buts gouvernementaux. Cela signifie l'adoption d'une politique de déflation. Au lieu de réduire les importations de chocolat, de vin et de cigarettes, les sommes que les gens auraient dépensées pour ces biens doivent leur être confisquées. Les gens pourraient alors réduire leur consommation soit pour des biens importés, soit pour d'autres. Dans le premier cas on recherchera moins de devises étrangères. Dans le second davantage de biens seront exportés et ainsi un plus grand nombre de devises étrangères sera disponible.</p>
+
+<p>Il est également impossible d'influer sur le marché des devises en interdisant la thésaurisation de monnaies étrangères. Si les gens n'ont pas confiance dans la valeur des billets, ils chercheront à investir une partie de leurs réserves liquides en monnaie étrangère. Si cela est rendu impossible, soit ils vendront moins de biens et d'actions, soit ils achèteront plus de biens, d'actions, etc. Mais ils ne conserveront certainement pas la devise nationale en lieu et place des devises étrangères. De toute façon, ce comportement réduit le total des exportations. La demande de devises étrangères en vue d'une constitution de réserves disparaît et, au même moment, l'offre de devises étrangères entrant sur le sol national pour payer les exportations diminue. Au passage, on peut signaler que rendre l'acquisition des devises étrangères plus difficile empêche l'accumulation d'un fond de réserve qui pourrait aider la conjoncture économique au moment critique qui suivra immédiatement l'effondrement de l'étalon-papier. En fait cette politique pourrait même conduire à de graves problèmes.</p>
+
+<p>Il est totalement incompréhensible que l'on ait pu penser que rendre l'exportation de ses propres billets plus difficile puisse être une méthode de réduction des taux de change. Si moins de billets quittent le pays, davantage de biens devront être exportés ou moins devront être importés. Le cours des billets sur les marchés des changes étrangers ne dépend pas de la plus ou moins grande quantité de billets qui y est disponible. Il dépend au contraire du prix des biens. Le fait que les spéculateurs étrangers raflent des billets et les amassent, conduisant à un boom spéculatif, ne peut que faire monter leur cours. Si les sommes détenues par des spéculateurs étrangers étaient restées au pays, le prix des biens y aurait monté encore plus haut, entraînant avec lui la « valeur finale » du taux de change.</p>
+
+<p>Si l'inflation continue, ni les réglementations sur les taux de change ni le contrôle des changes ne peut arrêter la dépréciation de l'unité monétaire à l'étranger.</p>
+
+<p> </p>
+</a><a id="partie-1-par6">
+<h3>VI. L'argument inflationniste</h3>
+
+<h4>1. Remplacer les impôts</h4>
+
+<p>De nos jours on soutient la thèse qu'il est certes louable de se battre pour des relations monétaires saines, mais que la politique publique a d'autres buts plus nobles et plus  importants. Aussi sérieux soit le mal représenté par l'inflation, il n'est pas considéré comme le plus grave. S'il s'agit de protéger la patrie de ses ennemis, de nourrir ceux qui ont faim et de sauver le pays de la destruction, alors il faut laisser tomber la monnaie, la laisser tomber en ruines. Et si le peuple allemand doit payer une formidable dette de guerre, la seule façon de l'aider est par l'intermédiaire de l'inflation.</p>
+
+<p>Cette ligne de raisonnement en faveur de l'inflation doit être clairement distinguée du vieil argument inflationniste qui approuvait bel et bien les conséquences économiques de la dépréciation monétaire continuelle et qui considérait l'inflationnisme comme un objectif politique très valable. Selon la nouvelle doctrine l'inflationnisme est considéré comme un mal bien que ne représentant, dans certaines circonstances, qu'un moindre mal. Pour elle, la dépréciation monétaire n'est pas considérée comme l'aboutissement inévitable d'un certain type de situation monétaire comme elle l'est pour les adhérents de la doctrine de la « balance des paiements » étudiée dans le chapitre précédent. Les partisans d'un inflationnisme limité admettent implicitement, s'ils ne le font pas ouvertement, dans leur argumentation que l'inflation de papier-monnaie, tout comme la dépréciation monétaire qui en résulte, est toujours le produit d'une politique inflationniste. Ils croient cependant qu'un gouvernement peut se trouver dans une situation où il serait plus avantageux de contrer un mal plus grand par le moindre mal qu'est l'inflation.</p>
+
+<p>L'argument en faveur de l'inflationnisme est souvent présenté pour faire apparaître l'inflation comme une sorte d'impôt nécessaire dans certaines conditions. Dans certaines situations il est considéré comme plus avantageux de financer les dépenses du gouvernement par l'émission de nouveaux billets, plutôt qu'en augmentant la charge des impôts ou qu'en empruntant de l'argent. Ce fut l'argument utilisé pendant la guerre, quand il était question de payer les dépenses de l'armée et de la marine. Le même argument est aujourd'hui avancé quand il s'agit d'offrir à une partie de la population des aliments bon marché, de financer les pertes d'exploitation des entreprises publiques (chemins de fer, etc.) et de régler les paiements de  réparation. La vérité est que l'inflationnisme est utilisé quand l'augmentation des impôts est considérée comme désagréable et quand l'emprunt est considéré comme impossible. La question est maintenant de chercher les raisons qui font que l'on estime désagréable ou impossible de recourir à ces deux méthodes usuelles pour se procurer de l'argent en vue de payer les dépenses du gouvernement.</p>
+
+<h4>2. Financer les dépenses impopulaires</h4>
+
+<p>On ne peut imposer de lourdes taxes que si le grand public est d'accord avec le objectifs pour lesquels les fonds collectés seront utilisés. A ce sujet il vaut la peine d'être noté que plus la charge générale des impôts est lourde, plus il devient difficile de tromper l'opinion publique en lui cachant le fait que les taxes ne peuvent pas être supportées uniquement par la minorité la plus riche de la population. Même les taxes sur les propriétaires et les gens les plus riches touchent l'ensemble de l'économie. Leurs effets indirects sur les moins aisés sont souvent ressentis plus intensément que ceux qui proviendraient d'une taxation proportionnelle directe.</p>
+
+<p>Il n'est pas forcément facile d'apercevoir ces effets lorsque les taux d'imposition sont relativement faibles mais il est impossible de passer à côté quand les impôts sont plus élevés. Il n'y a cependant aucun doute sur le fait que le système actuel de taxation de la « propriété » peut difficilement être poussé plus loin qu'il ne l'est déjà dans les pays où prévaut aujourd'hui l'inflationnisme. Il faudra ainsi se décider à compter directement sur les masses pour fournir les fonds. Pour des hommes politiques qui ne jouissent de la confiance des masses que s'ils n'imposent aucun sacrifice évident, cela constitue quelque chose qu'ils n'osent pas risquer.</p>
+
+<p>Quelqu'un peut-il mettre en doute que les peuples d'Europe en guerre se seraient fatigués plus vite du conflit si leurs gouvernements avaient présenté clairement, honnêtement et rapidement la note des dépenses militaires ? Aucun parti favorable à la guerre d'un quelconque pays européen n'aurait osé collecter des impôts considérables auprès des masses pour payer les coûts de la guerre. La planche à billets fut mise en route même en Angleterre. L'inflation a le grand avantage de donner l'apparence du bien-être économique, d'un accroissement de la richesse. Elle cache aussi la consommation du capital en faussant les calculs monétaires. L'inflation a engendré d'illusoires profits capitalistique et entrepreneuriaux, qui purent être taxés à des taux particulièrement élevés en tant que revenu. Cela put être fait sans que les masses, ni même souvent les contribuables eux-mêmes, ne s'aperçoivent qu'une partie du capital lui-même était en train d'être taxé. L'inflation a permis de détourner la colère du peuple vers les « profiteurs de guerre, les spéculateurs et les contrebandiers. » L'inflation s'est ainsi révélée être un allié psychologique excellent de la politique de guerre, conduisant à la destruction et à l'anéantissement.</p>
+
+<p>Ce que la guerre commence, la révolution le continue. Un gouvernement socialiste ou semi-socialiste a besoin d'argent pour faire tourner ses entreprises non rentables, pour subventionner les chômeurs et pour offrir au peuple des aliments bon marché. Or il ne peut pas augmenter les fonds par le biais des impôts. Il n'ose pas dire la vérité aux gens. La doctrine pro-étatique, pro-socialiste, qui demande la gestion étatique des chemins de fer perdrait très vite sa popularité si un impôt spécial était prélevé pour financer les pertes d'exploitation des chemins de fer étatiques. Si les masses autrichiennes avaient dû payer elles-mêmes un  impôt spécial sur le pain, elles auraient compris très vite d'où venaient les fonds permettant de payer le pain moins cher.</p>
+
+<h4>3. Les réparations de guerre</h4>
+
+<p>Le point crucial de l'économie allemande est évidemment le paiement des réparations de guerre imposées par le Traité de Versailles et par ses accords annexes. Selon Karl Helfferich <sup><a href="#partie-1-sdfootnote23sym" id="partie-1-sdfootnote23anc">23</a></sup>, ces paiements ont imposé au peuple allemand une obligation annuelle estimée à deux tiers du revenu national. Ce chiffre est sans doute bien trop élevé. Certes, d'autres estimations, particulièrement celles des observateurs français, sous-estiment considérablement la véritable proportion. En tout état de cause, il demeure qu'une part très importante du revenu actuel de l'Allemagne est consommée par le prélèvement imposé à la nation et que, s'il faut retirer chaque année la somme spécifiée du revenu, le niveau de vie du peuple allemand doit se réduire substantiellement.</p>
+
+<p>Même quelque peu entravé par les vestiges du féodalisme, par une constitution autoritaire et par la montée de l'étatisme et du socialisme, le capitalisme a largement pu se développer sur le sol allemand. Au cours des dernières générations, le système économique capitaliste a plusieurs fois multiplié la richesse allemande. En 1914 l'économie allemande pouvait nourrir trois fois plus de monde que cent ans auparavant et elle leur offrait en outre incomparablement plus. La guerre et ses conséquences immédiates ont réduit de manière drastique le niveau de vue du peuple allemand. La destruction socialiste a continué ce processus d'appauvrissement. Même si les Allemands n'étaient pas obligés de payer des réparations, ils seraient encore bien plus pauvres qu'avant la guerre. La charge de ces obligations doit inévitablement réduire encore davantage leur niveau de vie — au niveau de celui des années 1830 et 1840. On peut encore espérer que cet appauvrissement entraînera un réexamen de l'idéologie socialiste qui domine aujourd'hui la pensée allemande, que cela réussira à éliminer les obstacles qui empêchent actuellement d'accroître la productivité, et que la création illimitée de nouvelles possibilités de développement, qui existent dans le cadre capitaliste et dans lui seul, augmentera fortement la production de la main-d'œuvre allemande. Il reste que si l'obligation supposée doit être payée à partir du revenu, la seule issue est de produire davantage et de consommer moins.</p>
+
+<p>Une partie de la charge, ou même sa totalité, pourrait bien entendu être payée par l'exportation de biens du capital. Des actions, des obligations <sup><a href="#partie-1-sdfootnote24sym" id="partie-1-sdfootnote24anc">24</a></sup>, des actifs commerciaux, des terres, des bâtiments, devraient alors changer de mains, devenant propriété étrangère et non plus allemande. Cela réduirait aussi le revenu total du peuple dans le futur, si ce n'est immédiatement.</p>
+
+<h4>4. Les autres possibilités</h4>
+
+<p>Ces diverses méthodes sont cependant les seuls moyens permettant de remplir les obligations de réparations. Des biens ou du capital qui auraient été sinon consommés dans le pays sont exportés. Débattre pour savoir lequel est le plus approprié sort du cadre de cet essai. La seule question qui nous concerne est de savoir comment le gouvernement peut procéder afin de faire porter la charge des paiements, qui incombe avant tout au Trésor allemand, par les citoyens. Il y a trois possibilités : augmenter les impôts ; emprunter auprès des habitants du pays ou émettre du papier-monnaie. Quelle que soit la méthode retenue, la nature de son effet à l'étranger reste inchangée. Ces trois possibilités ne diffèrent que dans la répartition de la charge entre les citoyens.</p>
+
+<p>Si les fonds sont collectés en émettant un emprunt national, les souscripteurs de cet emprunt devront soit réduire leur consommation soit se défaire d'une partie de leurs capitaux. Si des taxes sont imposées, les contribuables devront en faire de même. Les fonds recueillis par les impôts ou les emprunts, qui partent vers le Trésor et que ce dernier utilise pour acheter de l'or, des lettres de change et des devises étrangères, afin de rembourser ses dettes étrangères, sont fournis par les prêteurs et les contribuables au travers de la vente à l'étranger de marchandises et de biens du capital. Le gouvernement ne peut acheter que les devises étrangères disponibles qui entrent dans le pays du fait de ces ventes. Tant que le gouvernement n'a que le pouvoir de distribuer les fonds qu'il perçoit de l'impôt et d'emprunts à court terme, ses achats de devises étrangères ne peuvent pas faire monter le cours de l'or et des monnaies étrangères. A tout instant le gouvernement ne peut acheter que la quantité d'or et de devises étrangères que les citoyens ont acquis par les ventes à l'exportation. En réalité, le prix mondial des biens et des services ne peut pas monter à cause de cela. Les prix auront plutôt tendance à baisser en raison des grandes quantités mises en vente. Toutefois, si et dans la mesure où le gouvernement poursuit une troisième voie en émettant de nouveaux billets afin d'acheter de l'or et des devises étrangères au lieu d'augmenter les impôts et de contracter des emprunts, alors sa demande d'or et de devises étrangères, qui n'est évidemment pas contrebalancée par une offre proportionnelle, pousse les prix des différents types de monnaies étrangères à la hausse. Il devient alors avantageux pour les étrangers de se procurer davantage de marks pour acheter des biens du capital et des marchandises en Allemagne à des prix ne reflétant pas les nouveaux ratios. Ces achats font immédiatement monter les prix en Allemagne et les remettent en accord avec le marché mondial. Telle est la situation actuelle. Les devises étrangères dans lesquelles les réparations sont payées proviennent des ventes à l'étranger de capitaux et de biens allemands. La seule différence vient de la façon dont le gouvernement se procure les devises. Dans le cas présent le gouvernement achète d'abord les devises à l'extérieur du pays contre des marks, que les étrangers utilisent alors pour faire des achats en Allemagne, au lieu d'acquérir des devises auprès de ceux qui, en Allemagne, les ont reçues comme paiement de ventes déjà effectuées à l'étranger.</p>
+
+<p>On en retire la leçon que la dépréciation du cours du mark allemand ne peut pas être la conséquence du paiement des réparations. Cette dépréciation résulte simplement du fait que les gouvernement se procure les fonds nécessaires au paiement en émettant de nouveaux billets. Même ceux qui souhaitent mettre la baisse du cours de la monnaie sur le marché sur le compte du paiement des réparations plutôt que sur celui de l'inflation soulignent que le cours du mark est inévitablement perturbé par l'offre de marks du gouvernement en vue de l'achat de devises étrangères <sup><a href="#partie-1-sdfootnote25sym" id="partie-1-sdfootnote25anc">25</a></sup>. Toutefois, si le gouvernement ne dispose pour acheter ces devises que des marks qu'il a reçu par le biais de l'impôt et d'emprunts, sa demande ne pourrait excéder l'offre. Ce n'est que parce qu'il offre des billets nouvellement créés qu'il pousse les taux de change à la hausse.</p>
+
+<h4>5. Le dilemme du gouvernement</h4>
+
+<p>C'est néanmoins la seule méthode dont dispose le gouvernement allemand pour rembourser la dette des réparations. S'il essayait d'obtenir les sommes réclamées par l'impôt ou par l'emprunt, il échouerait. La situation du peuple allemand étant ce qu'elle est aujourd'hui, si les conséquences économiques du respect de cet engagement étaient clairement comprises et qu'il n'y avait aucune tromperie sur les coûts de cette politique, le gouvernement ne pourrait pas compter sur le soutien de la majorité. L'opinion publique se retournerait avec une très grande force contre tout gouvernement qui essaierait de remplir pleinement les obligations imposées par les puissances alliées. Il ne nous revient pas d'étudier si cela pourrait oui ou non être une politique sage.</p>
+
+<p>Dire toutefois que la baisse de la valeur du mark allemand n'est pas la conséquence directe du paiement des réparations, mais est en réalité due aux méthodes que pratique le gouvernement allemand pour collecter les fonds nécessaires au paiements, n'a en aucun cas l'importance que lui accorde les politiciens français ou d'autres nationalités. Ces derniers affirment qu'il est justifié, du point de vue de la politique mondiale, de faire porter ce lourd fardeau au peuple allemand. Cette explication de la dépréciation monétaire allemande n'a absolument rien à voir avec la question de savoir si, d'après les termes de l'Armistice, la demande alliée en général et son montant en particulier sont fondés en justice.</p>
+
+<p>La seule chose qui compte pour nous, toutefois, est encore un autre point, car il explique le rôle politique de cette procédure inflationniste. Nous avons vu que si un gouvernement n'est pas en mesure de négocier des prêts et n'ose pas prélever des impôts supplémentaires de crainte que les effets économiques et financiers généraux ne soient révélés trop clairement et trop tôt, de sorte qu'il perdrait tout soutien à son programme, alors il considère toujours comme nécessaire de prendre des mesures inflationnistes. L'inflation devient ainsi l'une des aides psychologiques les plus importantes d'une campagne économique cherchant à camoufler ses effets. On peut en ce sens la décrire comme un outil de politique antidémocratique. En trompant l'opinion publique, elle permet de perpétuer un système de gouvernement qui n'aurait aucun espoir d'obtenir l'approbation du peuple si la situation lui était franchement expliquée </p>
+
+<p>Une politique inflationniste n'est jamais la conséquence d'une situation économique particulière. Elle est toujours le produit de l'action humaine — d'une politique menée par des hommes. Quelle qu'en soit la raison, la quantité de monnaie en circulation est accrue. Il se peut que les gens soient influencés par des doctrines théoriques incorrectes concernant la façon dont la valeur de la monnaie se développe et qu'ils ne soient pas conscients des conséquences de leur action. Il se peut que, en pleine connaissance des effets de l'inflation, ils aient intentionnellement pour objet, pour une raison ou pour une autre, de faire baisser la valeur de l'unité monétaire. Aucune excuse ne pourra donc jamais être trouvée à une politique inflationniste. Si elle repose sur des doctrines monétaires théoriquement incorrectes, cela est inexcusable, car il ne faudrait jamais, au grand jamais, accorder son pardon à des théories erronées. Si elle repose sur un jugement particulier des effets de la dépréciation monétaire, <i>vouloir</i> « l'excuser » est incohérent. Si la dépréciation monétaire a été orchestrée en toute connaissance de cause, ses défenseurs ne devraient pas vouloir d'excuses mais plutôt essayer de démontrer qu'il s'agissait d'une bonne politique. Il devraient vouloir montrer qu'il valait encore mieux, étant données les circonstances, déprécier la monnaie que d'augmenter davantage les impôts ou d'autoriser les chemins de fer criblés de dettes et nationalisés à passer du contrôle gouvernemental vers des mains privées.</p>
+
+<p>Même les gouvernements doivent apprendre une fois de plus à adapter leur train de vie à leurs revenus. Une fois que les résultats finals auxquels doit aboutir l'inflation seront reconnus, la thèse selon laquelle il est justifié pour un gouvernement d'émettre des billets pour pallier sa pénurie de fonds disparaîtra des manuels de stratégie politique.</p>
+
+
+<p> </p>
+</a><a id="partie-1-par7">
+<h3>VII. Le nouveau système monétaire</h3>
+
+<h4>1. Les premiers pas</h4>
+
+<p>Le socle et la clef de voûte du nouveau système monétaire proposé doit être l'interdiction absolue de l'émission de tout nouveau billet supplémentaire non couvert par de l'or. La limite maximale des billets allemands en circulation [non entièrement couvert par de l'or] sera la somme des billets de banque, de billets émis par les agences de prêt (<i>Darlehenskassenscheinen</i>), de la monnaie d'urgence (<i>Notgeld</i>) de tout type et des petites pièces, effectivement en circulation au moment de la réforme monétaire, moins les stocks d'or et les quantités de titres étrangers détenus comme réserves par la Reichsbank et les banques d'émission privées. Il ne doit y avoir absolument aucun dépassement de ce maximum, quelles que soient les circonstances, sauf pour le soulagement mentionné plus haut à la fin de chaque trimestre. Les billets de tout genre dépassant ce montant doivent être entièrement couverts par des dépôts d'or ou de devises étrangères à la Reichsbank. Comme on peut le voir, ceci revient à accepter le principe directeur du la loi sur la banque de Peel <sup><a href="#partie-1-sdfootnote26sym" id="partie-1-sdfootnote26anc">26</a></sup>, avec tous ses inconvénients.</p>
+
+<p>Ces défauts ont cependant peu d'importance actuellement. Notre préoccupation première n'est que de nous débarrasser de l'inflation en arrêtant la planche à billets. Cet objectif, seul but immédiat, sera le plus efficacement atteint par une interdiction stricte de toute émission de billets supplémentaires non couverts par du métal. Une fois les ajustements à la nouvelle situation obtenus, il sera toujours temps de prendre en compte :</p>
+
+<ol>
+<li>D'une part s'il ne serait peut-être pas plus indiqué de tolérer l'émission, dans des limites étroites, de billets non couverts par du métal.
+</li><li> D'autre part s'il ne serait pas non plus nécessaire de limiter de manière analogue l'émission d'autres instruments fiduciaires en édictant des réglementations sur les encaisses liquides des banques et sur leurs transactions par chèques et traites.
+</li></ol>
+
+<p>La question de la liberté bancaire devra alors être débattu, en s'y reprenant à plusieurs fois, sur la base des principes fondamentaux. Mais cela peut attendre plus tard. Ce qu'il faut faire maintenant, c'est uniquement interdire l'émission supplémentaire de billets non couverts par du métal. C'est la seule chose que l'on puisse faire à présent. Dans l'idéal les limitations de l'émission de monnaie pourraient être étendues, y compris maintenant, aux dépôts à la Reichsbank <sup><a href="#partie-1-sdfootnote27sym" id="partie-1-sdfootnote27anc">27</a></sup>. Ceci n'est toutefois pas d'une importance cruciale, car l'inflation monétaire actuelle a été et ne peut être consécutive qu'à l'émission de billets.</p>
+
+<p>Simultanément à la promulgation de l'interdiction de l'émission de nouveaux billets non couverts par du métal, la Reichsbank devrait avoir obligation d'acheter toutes les quantités d'or offertes en échange des billets à un prix correspondant précisément au nouveau taux. Au même moment, la Reichsbank devrait être obligée d'offrir tout montant d'or réclamé à ce taux, à quiconque capable de le payer en billets allemands. Avec cette réforme l'étalon allemand deviendrait un étalon de change-or (<i>Goldkernwährung</i>). Il sera largement temps d'examiner plus tard si oui ou non il convient de renoncer à la circulation effective de l'or dans le pays. Il faudra attentivement prendre en compte si oui ou non les coûts plus élevés nécessaires au maintien de la circulation effective de l'or dans le pays ne seraient pas amplement compensés par le fait que cela permettrait au peuple d'arrêter d'utiliser des billets.</p>
+<p>Détourner les gens du papier-monnaie pourrait peut-être anticiper de futurs efforts visant à une surémission de billets ayant cours légal. L'étalon de change-or suffit néanmoins sans aucun doute pour le moment <sup><a href="#partie-1-sdfootnote28sym" id="partie-1-sdfootnote28anc">28</a></sup>. Le cours légal des billets pour effectuer des paiements peut être temporairement maintenu sans risque.</p>
+
+<p>Il faut également souligner en particulier que l'obligation faite à la Reichsbank de rembourser ses billets doit être interprétée de la façon la plus stricte possible. Il faut arrêter tous les subterfuges par lesquels les banques centrales européennes ont cherché à poursuivre une forme ou une autre de « politique de prime sur l'or » <sup><a href="#partie-1-sdfootnote29sym" id="partie-1-sdfootnote29anc">29</a></sup> au cours des décennies qui ont précédé la [Première] Guerre mondiale.</p>
+
+<h4>2. Les taux d'intérêt du marché</h4>
+
+<p>Si la Reichsbank fonctionnait suivant ces principes, elle ne serait évidemment pas en mesure d'approvisionner le marché monétaire avec des fonds obtenus par l'accroissement de la circulation de billets non couverts par du métal. Sans ces possibilités de transferts auparavant illimités, la Banque ne serait capable que de prêter sur ses seules ressources et sur les fonds apportés par ses créanciers. Les augmentations inflationnistes de la circulation des billets au bénéfice des demandes de crédit privées comme publiques seraient ainsi éliminées. La Banque ne serait pas en mesure de suivre une politique — comme elle a sans cesse essayé de le faire — de baisse artificielle du taux d'intérêt du marché.</p>
+
+<p>L'explication de la doctrine de la balance des paiements qui a été présenté ici montre que sous cet arrangement la Reichsbank ne courrait pas le risque d'une fuite de ses réserves d'or et de devises étrangères. Les citoyens n'ayant pas confiance dans la politique future de la Banque, et qui dans les premières années du nouveau système monétaire essaieraient d'échanger leurs billets contre de l'or ou des devises étrangères, ne se satisferont pas de l'affirmation selon laquelle la Banque sera obligée de ne rembourser ses billets que pour de grosses sommes, contre des lingots d'or et des devises étrangères, et non contre des pièces d'or. Il ne sera alors pas possible d'éliminer tous les billets de la circulation. Au début une somme importante [de devises étrangères et de monnaie métallique] pourrait même être retirée de la Banque et thésaurisée. Mais dès qu'une certaine confiance vis-à-vis de la fiabilité de la nouvelle monnaie se sera développée, les réserves de monnaies étrangères et d'or accumulées retourneront à la Banque.</p>
+
+<p>La Reichsbank doit renoncer à toute tentative pour faire baisser les taux d'intérêt en deçà du niveau reflétant la véritable situation de l'offre et de la demande existant sur les marchés des capitaux, et pour encourager de la sorte une demande de prêts ne pouvant être satisfaite que par l'augmentation de la quantité de billets <sup><a href="#partie-1-sdfootnote30sym" id="partie-1-sdfootnote30anc">30</a></sup>. Ce préalable à la réforme monétaire sera l'objet d'une critique de la part des inflationnistes naïfs du monde des affaires. Ces critiques augmenteront avec les difficultés à trouver des crédits pour l'économie allemande dans les années à venir. D'après l'homme d'affaires, le rôle de la banque d'émission est de permettre un crédit bon marché. L'homme d'affaires croit qu'il ne faudrait pas interdire à la Banque d'imprimer de nouveaux billets pour ceux qui veulent des crédits supplémentaires. Pendant des décennies les erreurs des théoriciens de l'École anglaise de la banque [la <i>Banking School</i>] ont prévalu en Allemagne. Bendixen les a récemment rendues populaires par son ouvrage facilement accessible <i>Theorie der klassischen Geldschöpfung</i> <sup><a href="#partie-1-sdfootnote31sym" id="partie-1-sdfootnote31anc">31</a></sup>.</p>
+
+<p>Les gens continuent d'oublier que l'accroissement du coût du crédit — connu désormais sous le nom très trompeur de « pénurie de monnaie » — ne peut pas être contourné sur le long terme par des mesures inflationnistes. Ils oublient aussi que l'expansion du crédit ne peut pas faire baisser le taux d'intérêt à long terme. L'expansion du crédit conduit toujours à des prix plus chers pour les biens et à des taux plus élevés pour les devises étrangères.</p>
+
+
+<p> </p>
+</a><a id="partie-1-par8">
+<h3>VIII. La signification idéologique de la réforme</h3>
+
+<h4>1. Le conflit idéologique</h4>
+
+<p>La doctrine purement matérialiste désormais utilisée pour expliquer n'importe quel événement considère la dépréciation monétaire comme un phénomène résultant de certaines causes « matérielles ». On a essayé de contrecarrer ces causes supposées par diverses techniques monétaires. Les gens ignorent, peut-être consciemment, que les racines de la dépréciation monétaire sont de nature idéologique. C'est toujours une politique inflationniste et non les « conditions économiques » qui conduisent à une dépréciation monétaire. Le mal est de nature philosophique. Cette situation, universellement déplorée aujourd'hui, résulte d'un malentendu sur la nature de la monnaie et d'un jugement erroné quant aux conséquences de la dépréciation monétaire.</p>
+
+<p>L'inflationnisme n'est cependant pas un phénomène isolé. Il n'est qu'une pièce dans le cadre général des idées politico-économiques et socio-philosophiques de notre temps. Tout comme les partisans de la saine politique monétaire de l'étalon-or allaient main dans la main avec le libéralisme, le libre-échange, le capitalisme et la paix, l'inflationnisme est une composante de l'impérialisme, du militarisme, du protectionnisme, de l'étatisme et du socialisme <sup><a href="#partie-1-sdfootnote32sym" id="partie-1-sdfootnote32anc">32</a></sup>. De même que la catastrophe mondiale qui a balayé l'humanité depuis 1914 n'est pas un phénomène naturel mais le résultat inéluctable des idées qui dominent notre époque, la crise monétaire n'est rien d'autre que la conséquence inévitable de la suprématie de certaines idéologies à propos de la politique monétaire.</p>
+
+<p>La théorie étatiste a essayé d'expliquer tous les phénomènes sociaux par l'action de mystérieux facteurs de puissance. Elle a combattu l'idée que l'on puisse démontrer des lois économiques à propos de la formation des prix. Incapable de reconnaître l'importance du prix des biens dans le développement des rapports d'échange entre les différentes monnaies, elle a essayé de faire une distinction entre les valeurs intérieure et étrangère de la monnaie. Elle a essayé d'attribuer les modifications des taux de change à diverses causes — balance des paiements, activité spéculatrice, facteurs politiques. Ignorant complètement l'importante critique adressée par la théorie des partisans de la <i>Currency school</i> à la théorie des adeptes de la <i>Banking school</i>, c'est en réalité la théorie de cette dernière qu'a prescrit la théorie étatiste <sup><a href="#partie-1-sdfootnote33sym" id="partie-1-sdfootnote33anc">33</a></sup>. Elle a même en outre redonné vie à la doctrine des canonistes et des autorités légales du Moyen Âge disant que la monnaie serait une créature du gouvernement et de l'ordre social. La théorie étatiste a ainsi préparé le terrain philosophique sur lequel s'est développé l'inflationnisme des dernières années.</p>
+
+<p>Croire qu'un système monétaire sain peut à nouveau être obtenu sans effectuer de substantiels changements en politique économique est une grave erreur. Ce qu'il faut en premier lieu et principalement, c'est renoncer à tous les sophismes inflationnistes. Ce renoncement ne peut cependant pas durer s'il n'est pas solidement fondé sur un divorce idéologique total et complet d'avec toutes les idées impérialistes, militaristes, protectionnistes, étatistes et socialistes.</p>
+
+
+
+<p>
+<b>Notes</b>
+</p>
+
+<div id="partie-1-sdfootnote1">
+	<p><a href="#partie-1-sdfootnote1anc" id="partie-1-sdfootnote1sym">1.</a>
+Mises utilise le terme d' « inflation » dans son sens historique et scientifique pour signifier un accroissement de la quantité de monnaie. Voir <i>MME</i>, « Inflation, » pp. 66-67. Note de l'édition américaine.</p>
+</div>
+<div id="partie-1-sdfootnote2">
+	<p><a href="#partie-1-sdfootnote2anc" id="partie-1-sdfootnote2sym">2.</a>
+Dans le texte allemand Mises utilise, sans commentaire particulier, l'expression anglaise « standard of deferred payments. » Sur ces raisons voir la <a href="http://herve.dequengo.free.fr/Mises/MMC/MMC_2_1.htm#sdfootnote1">note 1</a> de la première
+partie du deuxième texte du recueil. Note de l'édition américaine.</p>
+</div>
+<div id="partie-1-sdfootnote3">
+	<p><a href="#partie-1-sdfootnote3anc" id="partie-1-sdfootnote3sym">3.</a>
+Cf. <i>MME</i>. « Quantity theory of money, » p. 115. Note de l'édition américaine.</p>
+</div>
+<div id="partie-1-sdfootnote4">
+	<p><a href="#partie-1-sdfootnote4anc" id="partie-1-sdfootnote4sym">4.</a>
+En français dans le texte. Note du traducteur.</p>
+</div>
+<div id="partie-1-sdfootnote5">
+	<p><a href="#partie-1-sdfootnote5anc" id="partie-1-sdfootnote5sym">5.</a>
+Le Traité de Versailles, à la fin de la Première Guerre mondiale, avait considérablement réduit le territoire contrôlé par les Allemands, rendant l'Alsace-Lorraine à la France, cédant de vastes parties de la Prusse occidentale à la Pologne et de petites régions à la Belgique et retirant à l'Allemagne ses ancienne colonies d'Afrique et d'Asie. Note de l'édition américaine.</p>
+</div>
+<div id="partie-1-sdfootnote6">
+	<p><a href="#partie-1-sdfootnote6anc" id="partie-1-sdfootnote6sym">6.</a>
+L'inflation qui s'est produite après la Première Guerre mondiale en Autriche n'est pas aussi connue que l'inflation allemande de 1923. La couronne autrichienne se déprécia de manière désastreuse à cette époque, bien que dans une mesure moins grande que le mark allemand. Le dirigeant du parti chrétien-social et chancelier d'Autriche (de 1922 à 1924 puis de 1926 à 1929), le Dr. Ignaz Seipel (1876-1932), suivant le conseil du professeur Mises et de certains de ses associés, réussit à arrêter l'inflation autrichienne en 1922. Note de l'édition américaine.</p>
+</div>
+<div id="partie-1-sdfootnote7">
+	<p><a href="#partie-1-sdfootnote7anc" id="partie-1-sdfootnote7sym">7.</a>
+Monnaies émises par des gouvernements n'existant plus. Les Romanov furent renversés du pouvoir en Russie par la Révolution communiste de 1917 ; le gouvernement communiste hongrois d'après la Première Guerre mondiale ne dura que du 21 mars au 1er août 1919. Note de l'édition américaine.</p>
+</div>
+<div id="partie-1-sdfootnote8">
+	<p><a href="#partie-1-sdfootnote8anc" id="partie-1-sdfootnote8sym">8.</a>
+White, Horace. <i>Money and Banking: Illustrated by American History. </i>Boston, 1895, p. 142. Note de Ludwig von Mises. [Note de l'édition américaine : Nous n'avons pas réussi à trouver de copie de l'édition de 1895 pour vérifier cette citation. Elle apparaît cependant, sans la dernière phrase, dans la cinquième édition de 1911, p. 99.]</p>
+</div>
+<div id="partie-1-sdfootnote9">
+	<p><a href="#partie-1-sdfootnote9anc" id="partie-1-sdfootnote9sym">9.</a>
+Thiers, Louis Adolphe. <i>Histoire de la Révolution Française</i>, 7<sup>ème</sup> édition, Vol. V, Bruxelles, 1838, p. 171. L'interprétation de ces événements par « l'École » de G. F. Knapp est particulièrement inouïe. Voir <i>Das Geldwesen Frankreichs zur Zeit der ersten Revolution bis zum Ende der Papiergeldwährung [Le Système monétaire français à l'époque de la première Révolution jusqu'à la fin de la monnaie de papier]</i> de H. Illig, Strasbourg, 1914, p. 56. Après avoir mentionné les tentatives de l'État pour « manipuler le cours de la monnaie », il souligne : « Les tentatives de rétablir une situation correspondant aux encaisses désirées commencèrent à réussir en 1796. » Ainsi, même l'effondrement de l'étalon-papier était considéré comme un « succès » par la théorie politique [théorie étatique] de la monnaie. Note de Ludwig von Mises. [Note de l'édition américaine : La « théorie politique de la monnaie » était à la base des politique monétaires de la plupart des gouvernements de ce siècle. Mises a souvent attribué au compte du livre de Georg Friedrich Knapp (<i>Statliche Theorie des Geldes</i>, 3<sup>ème</sup> édition allemande de 1921) le fait de l'avoir popularisée auprès des peuples de langue allemande. Knapp considérait que la monnaie était tout ce que le gouvernement décrétait être — les individus agissant et échangeant sur le marché n'ayant rien à voir dans cette affaire. Voir <i>La Théorie de la monnaie et du crédit</i>, de Mises, pp. 463-469 dans l'édition anglaise].</p>
+</div>
+<div id="partie-1-sdfootnote10">
+	<p><a href="#partie-1-sdfootnote10anc" id="partie-1-sdfootnote10sym">10.</a>
+Les devises étrangères et les titres légaux analogues pourrait être considérés comme de la monnaie étrangère. Toutefois, la monnaie étrangère ne signifie ici évidemment que la monnaie des pays bénéficiant de conditions monétaires au moins assez saines. Note de Ludwig von Mises.</p>
+</div>
+<div id="partie-1-sdfootnote11">
+	<p><a href="#partie-1-sdfootnote11anc" id="partie-1-sdfootnote11sym">11.</a>
+Mises développa plus tard plus à fond sa position sur ces questions. Il retira son soutien à une exemption légale, même soigneusement prescrite, qui contredisait sa thèse générale selon laquelle la monnaie et la banque devaient être laissées à l'écart de toute interférence législative. Même les dispositions de compensation entre les banques doivent être laissées aux vicissitudes du marché. Voir sa défense de la banque libre dans <i>Stabilisation monétaire et politique cyclique</i> (1928), et plus particulièrement les pages 138-140. Voir aussi dans L'Action humaine, partie 12 du Chapitre XVII sur « l'échange indirect » et l'essai sur la « reconstruction monétaire » écrit comme épilogue de l'édition de 1953 de <i>La Théorie de la monnaie et du crédit</i>. Pour des détails bibliographiques sur ces ouvrages, voir pp. 281-288. Note de l'édition américaine.</p>
+</div>
+<div id="partie-1-sdfootnote12">
+	<p><a href="#partie-1-sdfootnote12anc" id="partie-1-sdfootnote12sym">12.</a>
+Qui n'est resté au pouvoir que du 21 mars au 1<sup>er</sup> août 1919. Note de l'édition américaine.</p>
+</div>
+<div id="partie-1-sdfootnote13">
+	<p><a href="#partie-1-sdfootnote13anc" id="partie-1-sdfootnote13sym">13.</a>
+Schaefer, Carl A. <i>Klassische Valutastabilisierungen. </i>Hambourg, 1922. p. 65. Note de Ludwig von Mises.</p>
+</div>
+<div id="partie-1-sdfootnote14">
+	<p><a href="#partie-1-sdfootnote14anc" id="partie-1-sdfootnote14sym">14.</a>
+En 1928, lorsque Mises écrivit , <i>Stabilisation monétaire et politique cyclique</i>, deuxième essai du recueil, il rejeta l'étalon flexible (l'étalon de change-or) (voir plus loin, pp. 69 et suivantes), soulignant que le seul espoir de freiner les puissantes incitations politiques à pratiquer l'inflation réside dans un étalon-or « pur » de pièces. Il « confessa » ce changement d'idées dans <i>L'Action humaine</i> (p. 780 dans la 1<sup>ère</sup> édition de 1949 en langue anglaise, et p. 786 pour les éditions suivantes de 1963 et 1966). Voir aussi <i>MME</i>, « Gold Exchange Standard, » pp. 53-54. Note de l'édition américaine.</p>
+</div>
+<div id="partie-1-sdfootnote15">
+	<p><a href="#partie-1-sdfootnote15anc" id="partie-1-sdfootnote15sym">15.</a>
+Le chartisme, mouvement anglais de la classe ouvrière, surgit comme révolte face à la « Poor Law » [Loi sur les pauvres] de 1835, qui obligeait tous les gens aptes au travail à entrer dans des hospices avant de recevoir une aide publique. Le mouvement fut soutenu par Marx et Engels et acceptait la théorie de la valeur-travail. Ses membres comprenaient des partisans du papier-monnaie inconvertible et toutes sortes d'interventions politiques et de mesure d'aide. Ces défenseurs de projets divers n'étaient unis que par le soutien à une charte prévoyant le suffrage universel pour tous les adultes de sexe masculin, charte dont chaque faction pensait qu'elle conduirait à adopter ses propres remèdes. Les tentatives des chartistes pour obtenir le soutien populaire furent un échec manifeste et le mouvement disparut après 1848. Note de l'édition américaine.</p>
+</div>
+<div id="partie-1-sdfootnote16">
+	<p><a href="#partie-1-sdfootnote16anc" id="partie-1-sdfootnote16sym">16.</a>
+Mises préféra plus tard le terme de « cours final » ou de cours qui prévaudrait si un « état final de repos », reflétant les effets ultimes de tous les changements déjà commencés, était effectivement atteint. Voir <i>L'Action Humaine</i>, Chapitre XIV, point 5. Voir aussi <i>MME</i>, « Final state of rest, » pp. 48-49. Note de l'édition américaine.</p>
+</div>
+<div id="partie-1-sdfootnote17">
+	<p><a href="#partie-1-sdfootnote17anc" id="partie-1-sdfootnote17sym">17.</a>
+Pour un raffinement ultérieur de sa position, voir le texte « La reconstruction monétaire » de Mises, épilogue à l'édition de 1953 (ainsi qu'aux éditions suivantes) de la <i>Théorie de la monnaie et du crédit</i>. Note de l'édition américaine.</p>
+</div>
+<div id="partie-1-sdfootnote18">
+	<p><a href="#partie-1-sdfootnote18anc" id="partie-1-sdfootnote18sym">18.</a>
+Cf. <i>MME</i>. « Currency School, » p. 28. Note de l'édition américaine.</p>
+</div>
+<div id="partie-1-sdfootnote19">
+	<p><a href="#partie-1-sdfootnote19anc" id="partie-1-sdfootnote19sym">19.</a>
+Voir la <i>Théorie de la monnaie et du crédit</i> de Mises<i> </i>(pp. 180-186 de l'édition en langue anglaise). Note de l'édition américaine.</p>
+</div>
+<div id="partie-1-sdfootnote20">
+	<p><a href="#partie-1-sdfootnote20anc" id="partie-1-sdfootnote20sym">20.</a>
+Voir mon article « Zahlungsbilanz und Valutenkurse, » <i>Mitteilungen des Verbandes österreichischer Banken und Bankiers</i>, II, 1919, pp. 39 et suivantes. Note de Ludwig von Mises. [Note de l'édition américaine : Des extraits choisis de cette explication sur le sophisme de la « balance des paiements » ont été traduits et sont donnés dans l'annexe. Voir aussi <i>L'Action humaine</i>, pp. 450-458 de l'édition en langue anglaise]</p>
+</div>
+<div id="partie-1-sdfootnote21">
+	<p><a href="#partie-1-sdfootnote21anc" id="partie-1-sdfootnote21sym">21.</a>
+Dans l'abondante littérature sur le sujet, je n'attirerai l'attention que sur l'ouvrage de T. E. Gregory : <i>Foreign Exchange Before, During and After the War. </i>Londres, 1921. Note de Ludwig von Mises.</p>
+</div>
+<div id="partie-1-sdfootnote22">
+	<p><a href="#partie-1-sdfootnote22anc" id="partie-1-sdfootnote22sym">22.</a>
+Cf. <i>MME</i>. « Mercantilism, » p.89. Note de l'édition américaine.</p>
+</div>
+<div id="partie-1-sdfootnote23">
+	<p><a href="#partie-1-sdfootnote23anc" id="partie-1-sdfootnote23sym">23.</a>
+Helfferich, Karl. <i>Die Politik der Erfüllung. </i>Munich, 1922. p. 22. Note de Ludwig von Mises. [Note de l'édition américaine : Helfferich (1872-1924), en tant que ministre du Trésor de l'Allemagne impériale en 1915-1916, et par la suite à divers titres officiels et officieux, joua un rôle important dans la promotion de l'inflation et dans l'opposition au paiement des réparations de guerre.]</p>
+</div>
+<div id="partie-1-sdfootnote24">
+	<p><a href="#partie-1-sdfootnote24anc" id="partie-1-sdfootnote24sym">24.</a>
+Ainsi, émettre un emprunt auprès de l'étranger tombe également dans cette catégorie. Note de Ludwig von Mises.</p>
+</div>
+<div id="partie-1-sdfootnote25">
+	<p><a href="#partie-1-sdfootnote25anc" id="partie-1-sdfootnote25sym">25.</a>
+Voir les discours de Walter Rathenau — du 12 janvier 1922, devant le Sénat des puissances alliées à Cannes, et du 29 mars 1922, devant le Reichstag (<i>Cannes und Genua, Vier Reden zum Reparationsproblem</i>, Berlin 1922, pp. 11 et suivantes ainsi que 34 et suivantes). Note de Ludwig von Mises. [Note de l'édition américaine : Rathenau (1867-1922), industriel allemand, occupa des postes officiels dans le gouvernement allemand de l'après Première Guerre mondiale — ministre de la Reconstruction (1921) et ministre des affaires étrangères (1922).]</p>
+</div>
+<div id="partie-1-sdfootnote26">
+	<p><a href="#partie-1-sdfootnote26anc" id="partie-1-sdfootnote26sym">26.</a>
+<i>MME</i>. « Peel's Act of 1844, » pp. 104-105. Note de l'édition américaine.</p>
+</div>
+<div id="partie-1-sdfootnote27">
+	<p><a href="#partie-1-sdfootnote27anc" id="partie-1-sdfootnote27sym">27.</a>
+Voir p. 17 plus haut. Note de Ludwig von Mises. [Précision figurant dans l'édition américaine : Le terme allemand est « Giroguthaben. » En Allemagne prévalait le système bancaire des virements où les dépositaires, au lieu d'écrire des chèques, autorisaient les banques à transférer des sommes spécifiées vers les comptes qu'ils souhaitaient payer.]</p>
+</div>
+<div id="partie-1-sdfootnote28">
+	<p><a href="#partie-1-sdfootnote28anc" id="partie-1-sdfootnote28sym">28.</a>
+D'après ces commentaires de Mises, il apparaît qu'il avait pour intention que la Reichsbank ne rembourse les marks en or et en devises étrangères à ce taux que dans le cas des grosses sommes. L'insistance de Mises, quelques années plus tard, sur un étalon basé sur des pièces d'or, <i>utilisant des pièces d'or dans l'usage quotidien</i>, dès le tout début de la réforme monétaire, constitue une modification substantielle par rapport à ces recommandations précédentes. Voir <i>L'Action humaine</i>, Chapitre XXXI, point 3, et son article de 1953, « La Reconstruction monétaire, » épilogue de la <i>Théorie de la monnaie et du crédit</i>, en particulier pp. 448-452. Voir aussi ci-dessus, note de la page 24. Note de l'édition américaine.</p>
+</div>
+<div id="partie-1-sdfootnote29">
+	<p><a href="#partie-1-sdfootnote29anc" id="partie-1-sdfootnote29sym">29.</a>
+Dans sa <i>Théorie de la monnaie et du crédit </i>(pp. 377 et suivantes), Mises décrit la « politique de prime sur l'or » comme consistant à rendre plus difficile et plus cher l'obtention d'or — en empêchant son exportation par la manipulation des taux d'escompte et en limitant le remboursement en or de la monnaie nationale. Note de l'édition américaine.</p>
+</div>
+<div id="partie-1-sdfootnote30">
+	<p><a href="#partie-1-sdfootnote30anc" id="partie-1-sdfootnote30sym">30.</a>
+Voir le texte de l'éditeur américain (Percy Greaves) « La loi peut-elle faire baisser les taux d'intérêts ? ». Note de l'édition américaine.</p>
+</div>
+<div id="partie-1-sdfootnote31">
+	<p><a href="#partie-1-sdfootnote31anc" id="partie-1-sdfootnote31sym">31.</a>
+Ouvrage de Friedrich Bendixen (1864-1920) apparemment non disponible en langue anglaise. Note de l'édition américaine.</p>
+</div>
+<div id="partie-1-sdfootnote32">
+	<p><a href="#partie-1-sdfootnote32anc" id="partie-1-sdfootnote32sym">32.</a>
+Dans ses ouvrages postérieurs, Mises auraient associé toutes ces idées, à l'exception du « socialisme, » aux termes « interventionnisme » ou « marché entravé. » Voir <i>MME</i>, « Interventionism, » p. 70, et « Market economy, the hampered, » p. 86. Note de l'édition américaine.</p>
+</div>
+<div id="partie-1-sdfootnote33">
+	<p><a href="#partie-1-sdfootnote33anc" id="partie-1-sdfootnote33sym">33.</a>
+Cf. <i>MME</i>. « Banking School, » pp. 8-9. Note de l'édition américaine.</p>
+</div>
+
+
+<br>
+
+
+</a></section><section id="partie-2">
+
+
+
+
+
+<p> </p>
+
+<h2>L'Aspect théorique du problème de la stabilisation monétaire</h2>
+
+<p> </p>
+<p><i>Die geldtheoretische Seite des Stabilisierungsproblems </i>
+(Schriften des Vereins für Sozialpolitik. Volume 164, 2<sup>ème</sup> partie.
+Munich et Leipzig : Duncker &amp; Humblot, 1923).</p>
+
+
+<p> </p>
+<h3>Annexe : Balance des paiements et taux de change <sup><a href="#partie-2-sdfootnote1sym" id="partie-2-sdfootnote1anc">1</a></sup></h3>
+
+<p>La planche à billets a joué un rôle important en procurant les moyens de poursuivre la guerre. Toutes les nations belligérantes et de nombreux pays neutres l'ont utilisée. Avec la cessation des hostilités personne n'appela toutefois à arrêter les activités de création monétaire des banques d'émission. Auparavant les billets étaient imprimés pour financer la guerre. Aujourdhui on imprime toujours des billets, au moins dans certains pays, pour répondre aux demandes intérieures en tout genre. Le monde entier est sous l'emprise de l'inflation. Le prix de tous les biens et services augmentent de jour en jour et personne ne peut dire quand ces hausses prendront fin.</p>
+
+<p>L'inflation est aujourd'hui un phénomène courant mais son ampleur n'est pas la même dans tous les pays. L'augmentation de la quantité de billets dans les différentes zones monétaires n'est jamais statistiquement égale — égalité qui, étant données les différentes demandes de monnaie dans les différentes zones, ne serait qu'apparente — et l'augmentation ne s'est pas produite dans toutes les zones dans la même proportion par rapport à la demande de monnaie. Les hausses de prix, dans la mesure où elles sont dues à des changements du côté de la monnaie, n'ont ainsi pas été partout les mêmes. [....]</p>
+
+<p>Les hausses de prix, qui se produisent à la suite d'un accroissement de la quantité de monnaie, n'apparaissent pas en une nuit. Un certain temps s'écoule avant qu'elles n'apparaissent. La quantité de monnaie supplémentaire entre dans l'économie en un certain point. Ce n'est qu'à partir de là que, petit à petit, elle se disperse. Elle part tout d'abord en direction de certaines personnes seulement et de certaines branches de la production. Il en résulte qu'au début elle ne fait monter la demande que pour certains biens et services, pas pour tous. Ce n'est que plus tard que le prix des autres biens et services monte aussi. Le cours des devises étrangères est toutefois un taux de change spéculatif — c'est-à-dire qu'il provient de transactions du monde des affaires qui, dans ses activités, ne considère pas seulement le présent mais aussi les développements potentiels futurs. La dépréciation monétaire apparaît ainsi relativement tôt dans le cours boursier des monnaies — bien avant que le prix des autres biens et services ne soit affecté. [...]</p>
+
+<p>Certes, il existe une théorie qui cherche à expliquer la formation des taux de change par la balance des paiements plutôt que par le pouvoir d'achat d'une monnaie. Cette théorie établit une distinction dans la dépréciation de la monnaie entre la baisse de la valeur monétaire sur les marchés internationaux et la réduction de son pouvoir d'achat à l'intérieur du pays. Elle prétend qu'il n'y aurait qu'un lien ténu entre les deux voire, comme le disent beaucoup, aucun lien du tout. Le cours des monnaies étrangères résulterait de la balance des paiements du moment. Si les paiements sortant du pays augmentent sans qu'il y ait d'accroissement des paiements arrivant au pays, ou si les paiements en provenance de l'étranger baissent sans qu'il y ait de réduction correspondante des paiements sortant du pays, alors les taux de change des monnaies étrangères doivent monter. Nous ne spéculerons pas sur les raisons expliquant pourquoi une telle théorie a pu être avancée. Entre le changement du taux de change des devises étrangères et le changement du pouvoir d'achat de l'unité monétaire nationale, il existe habituellement un délai — plus ou moins long. Par conséquent, une observation superficielle pourrait facilement conduire à la conclusion que les deux données sont indépendantes. Nous avons aussi entendu que la balance des paiements est la cause immédiate des fluctuations quotidiennes des taux de change. Une théorie qui n'expliquerait que les apparences et n'analyserait pas la situation en profondeur pourrait facilement passer à côté du fait que (a) le rapport au jour le jour entre l'offre et la demande de devises étrangères déterminé par la balance des paiements ne peut que se référer à des écarts transitoires par rapport au taux « statique » formé à partir du pouvoir d'achat des différents types de monnaie, (b) ces écarts doivent disparaître rapidement et (c) ces écarts doivent cesser d'autant plus rapidement et complètement que le commerce est à l'abri des contraintes et que la spéculation est libre.</p>
+
+<p>Il ne devrait assurément pas y avoir de raisons d'examiner cette théorie plus en détail. Son compte a été réglé sur le plan scientifique. Le fait qu'elle joue un rôle important en politique économique peut être une raison d'étudier la base politique de son indéniable popularité auprès des officiels et des auteurs du gouvernement. Il est cependant possible de laisser cette tâche à d'autres.</p>
+
+<p>Nous devons toutefois nous intéresser à une nouvelle variante de cette doctrine de la balance des paiements, variante née avec la guerre. Les gens disent qu'il est peut-être vrai en général que c'est le pouvoir d'achat de la monnaie, plutôt que la balance des paiements, qui détermine le cours des devises étrangères. Mais de nos jours, en raison de la diminution du commerce consécutive à la guerre, ce ne serait plus le cas. Comme le commerce est entravé, le processus qui restaurerait les rapports d'échange « statiques », perturbés, entre les devises étrangères serait tenu en échec. Il en résulterait par conséquent que la balance des paiements deviendrait le facteur décisif du cours des devises étrangères <sup><a href="#partie-2-sdfootnote2sym" id="partie-2-sdfootnote2anc">2</a></sup>. Si l'on désire faire monter le cours de la monnaie, ou l'empêcher de descendre davantage, il faudrait essayer de rétablir une balance des paiements favorable. [...]</p>
+
+<p>L'erreur fondamentale de cette théorie vient de ce qu'elle ignore complètement le fait que le niveau des importations et des exportations dépend principalement des prix. Ni les importations ni les exportations ne sont entreprises par caprice ou pour le plaisir.</p>
+
+<p>Elles sont entreprises pour réaliser un échange avantageux, c'est-à-dire pour gagner de l'argent sur la différence de prix de chaque côté. Importations et exportations ont donc lieu jusqu'à ce que la différence de prix disparaisse.</p>
+
+<p>La doctrine de l'explication des taux de change par la balance des paiements ne s'aperçoit absolument pas de la signification des prix dans le mouvement international des biens. Elle part de manière erronée de l'acte de paiement au lieu de partir de la transaction commerciale elle-même. C'est une retombée de la théorie pseudo-légale de la monnaie — théorie qui a eu les conséquences les plus cruelles pour la science allemande. Cette théorie considère la monnaie uniquement comme un moyen de paiement, et non comme un moyen d'échange généralisé. Lorsqu'il se décide à effectuer une transaction commerciale, un marchand n'ignore pas les coûts d'obtention des devises étrangères jusqu'au moment où le paiement se réalise effectivement. Un marchand qui se comporterait ainsi ne conserverait pas longtemps son métier. Un marchand tient parfaitement compte du cours de la devise étrangère dans ses calculs, de même qu'il a toujours un œil sur les prix de vente. Ainsi, qu'il se couvre contre des changements de cours futurs ou qu'il accepte de courir lui-même le risque de modifications de la valeur des devises, il prend en compte les fluctuations anticipées des cours. La même situation prévaut <i>mutatis mutandis </i>pour la fréquentation touristique et pour le transport international. [...]</p>
+
+<p>Il est facile de voir que nous n'avons affaire ici qu'à une nouvelle forme de la vieille théorie de la balance commerciale favorable et défavorable que soutenait l'École mercantiliste de XVI<sup>e</sup> au XVIII<sup>e</sup> siècles. C'était avant l'usage répandu des billets de banque et des autres devises bancaires. On craignait alors qu'un pays avec une balance commerciale défavorable ne perde tout son stock de métaux précieux au profit d'autres pays. On estimait par conséquent qu'en encourageant les exportations et en limitant les importations autant que possible, un pays pouvait prendre des précautions pour éviter cette situation. Par la suite, on développa l'idée que ce n'était pas la seule balance commerciale qui comptait, qu'elle n'était qu'<i>un</i> facteur contribuant à la balance des paiements et qu'il fallait tenir compte de la totalité de cette dernière. Il en résulta une réorganisation partielle de la théorie. Mais son principe de base — à savoir que si un gouvernement ne contrôlait pas les rapports commerciaux avec l'étranger tout ses métaux précieux pourraient partir pour l'étranger — persista jusqu'à ce qu'il fut finalement vaincu par la critique percutante de l'économie classique.</p>
+
+<p>La balance des paiements d'un pays n'est rien d'autre que la somme des balance des paiements de toutes ses entreprises individuelles. L'essence de chaque balance est d'avoir un débit et un crédit équilibré. Si l'on compare les entrées créditrices et les entrées débitrices d'une entreprise, les totaux des deux colonnes doivent être en équilibre. La situation ne peut pas être différente dans le cas de la balance des pays du pays tout entier. Dans ce cas aussi les totaux doivent toujours être en équilibre. Cet équilibre, qui doit nécessairement prévaloir parce que les biens sont échangés — et non donnés — au cours d'une transaction commerciale, ne vient pas au monde en entreprenant tout d'abord des opérations d'exportation et d'importation, sans s'occuper des moyens de paiement, puis en ajustant ensuite la balance monétaire. Au contraire, la monnaie occupe précisément la même position quand il s'agit d'effectuer une transaction que les autres biens échangés. La monnaie peut même être la raison habituelle de faire des échanges.</p>
+
+<p>Dans une société où les transactions commerciales sont des transactions monétaires, toute entreprise individuelle doit toujours prendre soin d'avoir à portée de main une certaine quantité de monnaie. Elle ne peut pas se permettre de voir ses encaisses tomber en deçà d'un certain montant considéré comme nécessaire pour mener ses transactions. Inversement, une entreprise n'acceptera pas de voir ses réserves de liquidités dépasser le montant nécessaire, car accepter que cette quantité de monnaie reste stérile conduirait à perdre des intérêts. Si elle a trop peu de monnaie, elle doit réduire ses achats ou vendre certains articles. Si elle en a trop, elle doit acheter des biens.</p>
+
+<p>Pour les buts qui nous concernent ici, il importe peu de savoir si l'entreprise achète des biens de production ou de consommation. De la même manière, tout individu veille à ne pas être sans argent. Comme chacun s'occupe de ses propres intérêts à ce sujet, il est impossible que le libre jeu des forces du marché cause une fuite de toute la monnaie hors d'une ville, d'une province ou de tout un pays. Le gouvernement n'a pas plus besoin de s'occuper de ce problème que la ville de Vienne n'a besoin de se soucier de la perte de ses réserves monétaires vers la campagne environnante. Le gouvernement n'a pas non plus à se préoccuper — en supposant l'existence d'un étalon constitué par un métal précieux (la monnaie purement métallique de la <i>Currency School</i> anglaise) — de la possibilité que toutes les réserves de métaux précieux ne sortent du pays.</p>
+
+<p>Par conséquent, si nous avions un étalon-or pur, le gouvernement n'aurait pas besoin de se sentir le moins du monde concerné par la balance des paiements. Il pourrait tranquillement laisser au marché la responsabilité d'assurer le maintien d'une quantité d'or suffisante dans le pays. Sous l'influence des forces du libre-échange, les métaux précieux ne quitteraient le pays que si un surplus était disponible et ils reviendraient s'ils n'y en avait pas assez de disponible, de la même façon que tous les autres biens sont importés s'il en manque et sont exportés s'ils sont en surplus. Nous voyons ainsi que l'or est constamment transféré des pays qui en produisent beaucoup vers ceux où la demande d'or dépasse la quantité extraite — sans que la moindre action gouvernementale ne soit nécessaire pour que cela se produise <sup><a href="#partie-2-sdfootnote3sym" id="partie-2-sdfootnote3anc">3</a></sup>. [...]</p>
+
+<p>On pourrait néanmoins se demander si l'Histoire n'offre pas de nombreux exemples de pays dont la monnaie métallique (or et argent) est partie vers l'étranger ? Les pièces d'or n'ont-elles pas disparu du marché en Allemagne très récemment ? Les pièces d'argent ne disparaissent-elles pas ici même, en Autriche ? Ces exemples ne sont-ils pas clairement en contradiction avec l'affirmation selon laquelle le commerce maintient spontanément les réserves monétaires ? N'est-ce pas là la preuve que l'État a besoin d'intervenir dans la balance des paiements ?</p>
+
+<p>Ces faits ne contredisent cependant nullement notre affirmation. La monnaie ne part pas parce que la balance des paiements est défavorable et parce que l'État n'est pas intervenu. Au contraire la monnaie part précisément parce que l'État <i>est</i> intervenu et que ses interventions ont entraîné le phénomène décrit par la célèbre loi de Gresham. C'est le gouvernement lui-même qui a conduit à la ruine de la monnaie par les mesures qu'il a prises. Et il essaie ensuite en vain, par d'autres mesures, de restaurer la monnaie qu'il a ruiné.</p>
+
+<p>La disparition de la monnaie-or du commerce vient du fait que l'État rend équivalente, du point de vue du pouvoir d'achat légal, une monnaie possédant une valeur moindre et une monnaie ayant une valeur plus grande. Si le gouvernement introduit dans le commerce de grandes quantités de billets de banque non convertibles, cela doit conduire à une dépréciation monétaire. La valeur de l'unité monétaire baisse. Cette dépréciation de la valeur ne peut cependant concerner que les billets non convertibles. La monnaie d'or conserve toute, ou presque toute, sa valeur sur le plan international. Mais comme l'État — et son pouvoir de faire usage de la force de la loi — déclare que les billets de valeur moindre ont un pouvoir d'achat équivalent à la monnaie-or de valeur plus importante et interdit d'échanger la monnaie d'or contre des billets de papier à des taux plus élevés, les pièces d'or doivent disparaître du marché. Elles peuvent disparaître à l'étranger. Elles peuvent être fondues pour être utilisées par l'industrie nationale. Ou elles peuvent être thésaurisées. C'est le phénomène où la mauvaise monnaie chasse la bonne, observé il y a fort longtemps par Aristophane et que l'on appelle loi de Gresham.</p>
+
+<p>Aucun intervention spéciale du gouvernement n'est nécessaire pour retenir les métaux précieux en circulation au sein d'un pays. Il suffit à l'État de renoncer à toute tentative de soulager ses difficultés financières en ayant recours à la planche à billet. Pour soutenir la monnaie il ne faut pas faire plus que cela. Et il suffit de le faire pour atteindre cet objectif. Tous les ordres et toutes les interdictions, toutes les mesures limitant les transactions commerciales avec l'étranger, etc. sont totalement vaines et inutiles.</p>
+
+<p>Si nous avions un étalon-or pur, les mesures destinées à éviter une fuite de l'or hors du pays à la suite d'une balance défavorable des paiements seraient complètement superflues. Celui qui n'a pas de monnaie pour acheter à l'étranger, parce qu'il n'a ni exporté de biens ni rendu de service à l'étranger, ne pourra acheter à l'extérieur que si des étrangers lui font crédit. Ses achats à l'étranger ne perturberont alors en aucun façon la stabilité de la monnaie nationale. [...]</p>
+
+
+
+<br><br>
+
+<p>
+<b>Notes</b>
+</p>
+
+
+<div id="partie-2-sdfootnote1">
+	<p><a href="#partie-2-sdfootnote1anc" id="partie-2-sdfootnote1sym">1.</a>
+Publié initialement sous le titre « Zahlungsbilanz und Devisenkurse » dans <i>Mitteilungen des Verbandes Oesterreichischer Banken und Bankiers</i>, Volume 2, p. 3-4, 1919. Cet extrait partiel ne constitue qu'environ un tiers de l'article original.</p>
+</div>
+<div id="partie-2-sdfootnote2">
+	<p><a href="#partie-2-sdfootnote2anc" id="partie-2-sdfootnote2sym">2.</a>
+On pourrait signaler, dans le seul but d'être complet, que les partisans de cette théorie attribuent la hausse des prix intérieurs non à l'inflation mais exclusivement à la pénurie de biens. Note de Ludwig von Mises.</p>
+</div>
+<div id="partie-2-sdfootnote3">
+	<p><a href="#partie-2-sdfootnote3anc" id="partie-2-sdfootnote3sym">3.</a>
+Voir Hertzka, <i>Das Wesen des Geldes </i>(Leipzig, 1887), pp. 44 et suivantes ; Wieser, « Der Geldwert und seine Veränderungen » (<i>Schriften des Vereins für Sozialpolitik</i>,Vol. 132), Leipzig, 1910. pp. 530 et suivantes. Note de Ludwig von Mises.</p>
+</div>
+
+<br>
+
+
+</section></article><footer class="meta"><p>Source : <a href="http://herve.dequengo.free.fr/Mises/MMC/MMC_1_0.htm">Hervé de Quengo</a>. Texte conservé ; présentation adaptée à la lecture sur écran.</p></footer></main><nav class="chapter-nav fixed-bottom reader-bottom" aria-label="Parties précédente et suivante"><a id="previous" href="#sommaire">← Précédent</a><a href="#sommaire">Sommaire</a><a id="next" href="#partie-0">Suivant →</a></nav><div id="global-progress" aria-hidden="true"></div><script>
+document.body.classList.add('js');
+const sections=[...document.querySelectorAll('article section')],toc=document.getElementById('toc'),previous=document.getElementById('previous'),next=document.getElementById('next'),resume=document.getElementById('resume');
+function get(k){try{return localStorage.getItem('livre-03-'+k)}catch(e){return null}}function put(k,v){try{localStorage.setItem('livre-03-'+k,v)}catch(e){}}
+let size=Math.max(.95,Math.min(1.65,Number(get('size'))||1.15));
+function applySize(){document.documentElement.style.setProperty('--size',size+'rem')}applySize();
+function sharedTheme(){try{return localStorage.getItem('ebooks-theme')||get('theme')}catch(e){return get('theme')}}
+document.documentElement.dataset.theme=sharedTheme()==='dark'?'dark':'light';
+const theme=document.getElementById('toggle-theme');function themeLabel(){theme.textContent=document.documentElement.dataset.theme==='dark'?'☀':'☾';theme.setAttribute('aria-pressed',String(document.documentElement.dataset.theme==='dark'))}themeLabel();
+theme.onclick=()=>{document.documentElement.dataset.theme=document.documentElement.dataset.theme==='dark'?'light':'dark';put('theme',document.documentElement.dataset.theme);try{localStorage.setItem('ebooks-theme',document.documentElement.dataset.theme)}catch(e){}themeLabel()};
+addEventListener('pageshow',()=>{document.documentElement.dataset.theme=sharedTheme()==='dark'?'dark':'light';themeLabel()});
+document.getElementById('smaller').onclick=()=>{size=Math.max(.95,Math.round((size-.1)*100)/100);applySize();put('size',String(size))};
+document.getElementById('larger').onclick=()=>{size=Math.min(1.65,Math.round((size+.1)*100)/100);applySize();put('size',String(size))};
+const last=get('last');if(sections.some(s=>s.id===last)){resume.href='#'+last;resume.textContent='Reprendre la lecture'}
+toc.onchange=()=>{location.hash=toc.value||'sommaire'};
+let active=-1;
+function show(){const id=decodeURIComponent(location.hash.slice(1));const target=document.getElementById(id);const section=target?.closest('article section');active=sections.indexOf(section);sections.forEach(s=>s.classList.toggle('active',s===section));document.body.classList.toggle('home',active<0);toc.value=section?.id||'';previous.href=active>0?'#'+sections[active-1].id:'#sommaire';previous.setAttribute('aria-disabled',String(active<0));next.href=active<sections.length-1?'#'+sections[Math.max(0,active+1)].id:'#sommaire';next.textContent=active===sections.length-1?'Sommaire':'Suivant →';if(section){put('last',section.id);requestAnimationFrame(()=>{if(target!==section)target.scrollIntoView();else window.scrollTo(0,0)})}else window.scrollTo(0,0);progress()}
+function progress(){const bar=document.getElementById('global-progress');const max=document.documentElement.scrollHeight-innerHeight;const fraction=max>0?Math.min(1,Math.max(0,scrollY/max)):1;bar.style.width=active<0?'0%':((active+fraction)/sections.length*100)+'%'}
+addEventListener('hashchange',show);addEventListener('scroll',progress,{passive:true});addEventListener('resize',progress);show();
+</script></body></html>

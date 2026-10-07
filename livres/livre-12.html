@@ -1,0 +1,880 @@
+<!doctype html><html lang="fr"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Notes sur le mouvement coopératif — Ludwig von Mises</title><style>:root {
+  --bg: #ffffff;
+  --text: #000000;
+  --accent: #4444ff;
+  --background: #ffffff;
+  --button-bg: #f7f7f7;
+  --button-hover-bg: #eaeaea;
+  --progress-color: #660000;
+}
+
+[data-theme="dark"] {
+  --bg: #2c2c2e;
+  --text: #e0e0e0;
+  --accent: #9b9bff;
+  --background: #2c2c2e;
+  --button-bg: #3a3a3c;
+  --button-hover-bg: #48484a;
+  --progress-color: #ffdddd;
+}
+
+body {
+  margin: 0;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 1.2rem;
+  line-height: 1.6;
+  text-align: justify;
+  background: var(--bg);
+  color: var(--text);
+  padding: 0;
+}
+
+/* === NAVBAR === */
+nav.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2.2rem;
+  background-color: var(--background);
+  backdrop-filter: blur(6px);
+  box-shadow: 0 1px 6px rgba(0, 0, 0, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: nowrap;
+  padding: 0 0.5rem;
+  gap: 0.5rem;
+  z-index: 1000;
+  font-size: 0.85rem;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+nav.navbar select {
+  flex-grow: 1;
+  min-width: 0;
+  max-width: 100%;
+  padding: 0.25rem;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  background: var(--button-bg);
+  color: var(--text);
+}
+
+nav.navbar button {
+  flex-shrink: 0;
+  background: none;
+  border: none;
+  font-size: 1.2em;
+  cursor: pointer;
+  color: var(--text);
+}
+
+/* === CONTENU === */
+main {
+  padding: 3rem 1rem 2rem;
+  max-width: 600px;
+  margin: auto;
+}
+
+article p {
+  text-indent: 1.5em;
+  text-align: justify;
+  hyphens: auto;
+}
+
+/* === TITRES === */
+h1 {
+  font-family: 'Segoe UI', 'Helvetica Neue', sans-serif;
+  font-weight: bold;
+  text-align: center;
+  font-size: 1.8rem;
+  margin-bottom: 0.5em;
+}
+
+main.centered h2 {
+  font-family: 'Playfair Display', Georgia, serif;
+  /* ou ta police préférée */
+  font-size: 2.4rem;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 0.5em;
+}
+
+.subtitle {
+  font-size: 1.2em;
+  color: var(--accent);
+  margin-bottom: 2em;
+}
+
+.start-button {
+  display: inline-block;
+  padding: 1em 2em;
+  background: var(--accent);
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 0.5em;
+  transition: opacity 0.3s;
+}
+
+.start-button:hover {
+  opacity: 0.8;
+}
+
+/* === NAVIGATION CHAPITRES === */
+.chapter-nav {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 1rem;
+  margin: 2rem auto 0rem auto;
+  max-width: 640px;
+  background-color: var(--background);
+}
+
+.chapter-nav a {
+  flex: 1;
+  text-align: center;
+  text-decoration: none;
+  padding: 0.75rem;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  background-color: var(--button-bg);
+  color: inherit;
+  transition: background-color 0.2s;
+}
+
+.chapter-nav a:hover {
+  background-color: var(--button-hover-bg);
+}
+
+.fixed-bottom {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  justify-content: center;
+  background-color: var(--background);
+  box-shadow: 0 -1px 6px rgba(0, 0, 0, 0.1);
+  padding: 1rem;
+  z-index: 100;
+}
+
+main.centered {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding-top: 2.5rem;
+  /* pour éviter de passer sous la navbar */
+  box-sizing: border-box;
+  text-align: center;
+}
+
+.index-image {
+  max-width: 80%;
+  height: auto;
+  margin-top: 2rem;
+}
+
+ul.tiret {
+  list-style: none;
+  padding-left: 0.5rem;
+}
+
+ul.tiret li {
+  position: relative;
+  padding-left: 1.5rem;
+  text-align: justify;
+  margin-bottom: 0rem;
+}
+
+ul.tiret li::before {
+  content: "—";
+  /* Tiret cadratin */
+  position: absolute;
+  left: 0;
+  color: var(--text);
+}
+
+main.end-page {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 3rem 1rem;
+  text-align: center;
+}
+
+.end-page h1 {
+  font-size: 2.5rem;
+  font-family: 'Playfair Display', Georgia, serif;
+  margin-bottom: 2rem;
+  color: var(--text);
+}
+
+.end-image {
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  object-fit: cover;
+  filter: grayscale(100%);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.fade-in {
+  opacity: 0;
+  animation: fadeIn 0.8s ease-in forwards;
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
+}
+
+#global-progress {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  height: 4px;
+  background-color: var(--progress-color); /* couleur personnalisable */
+  width: 0%;
+  z-index: 9999;
+  transition: width 0.4s ease;
+}
+
+html[data-font="small"] {
+  font-size: 0.9rem;
+}
+
+html[data-font="medium"] {
+  font-size: 1.1rem;
+}
+
+html[data-font="large"] {
+  font-size: 1.3rem;
+}
+
+html {
+  transition: font-size 0.3s ease;
+}
+
+*{box-sizing:border-box}html{scroll-padding-top:4rem}nav.navbar{height:auto;min-height:3rem;max-width:600px;padding:.3rem .5rem}nav.navbar button{min-width:44px;min-height:44px}nav.navbar select{min-height:44px;width:50%;font-size:.85rem}main{padding-top:4rem;padding-bottom:7rem}h2{font-family:'Segoe UI',sans-serif;font-size:1.65rem;line-height:1.35;text-align:center}a{color:var(--accent);overflow-wrap:anywhere}header{text-align:center;margin-bottom:2rem}section{margin-top:2rem}body.js article section{display:none}body.js article section.active{display:block}body.js header,body.js details,body.js footer{display:none}body.js.home header,body.js.home details,body.js.home footer{display:block}body.js.home article section{display:none}.chapter-nav{max-width:600px;margin:auto;padding:.5rem;gap:.5rem}.chapter-nav a{min-height:44px;font-size:.9rem;padding:.65rem .4rem}.chapter-nav a[aria-disabled=true]{visibility:hidden}#global-progress{transition:none}.meta{font-size:.85rem;text-align:left}details nav a{display:block;padding:.5rem 0}button:focus-visible,a:focus-visible,select:focus-visible{outline:3px solid var(--accent);outline-offset:2px}sup{line-height:0}sup a{padding:.25rem}.reader-bottom{display:none}.js .reader-bottom{display:flex}@media print{nav.navbar,.reader-bottom,#global-progress{display:none}body.js article section{display:block!important}main{padding:0}section{break-before:page}}
+
+:root{--bg:oklch(0.98 0.008 90);--background:var(--bg);--text:oklch(0.23 0.012 160);--accent:oklch(0.35 0.077 160);--line:oklch(0.83 0.015 160);--button-bg:var(--bg);--button-hover-bg:oklch(0.94 0.012 90);--progress-color:var(--accent);--size:1.15rem}
+html{font-size:16px;transition:none}
+[data-theme="dark"]{color-scheme:dark;--bg:oklch(0.2 0.008 160);--background:var(--bg);--text:oklch(0.91 0.008 90);--accent:oklch(0.82 0.08 160);--line:oklch(0.4 0.015 160);--button-bg:var(--bg);--button-hover-bg:oklch(0.27 0.012 160);--progress-color:var(--accent)}
+body{font-family:Georgia,'Times New Roman',serif;font-size:var(--size);line-height:1.75}
+h1,h2,h3,h4{font-family:Georgia,'Times New Roman',serif}h1{font-size:clamp(2.25rem,8vw,3.75rem);line-height:1.12;letter-spacing:-.03em}h2{font-size:1.7rem;line-height:1.3}h3,h4{line-height:1.4}.subtitle{font-size:1.35rem;line-height:1.5}p{margin:0 0 1.1em}
+nav.navbar{font-family:system-ui,sans-serif;box-shadow:none;border-bottom:1px solid var(--line);gap:.3rem}
+nav.navbar button{font-size:.9rem;border:1px solid var(--line);border-radius:.3rem;padding:.4rem;min-width:40px}
+nav.navbar>a{display:flex;align-items:center;justify-content:center;min-width:32px;min-height:44px;text-decoration:none}
+nav.navbar select{border-color:var(--line);width:auto;flex:1}
+.chapter-nav a{border-color:var(--line)}.start-button{background:oklch(0.35 0.077 160);color:oklch(0.98 0.008 90)}
+@media print{body{font-size:11pt;background:white;color:black}}
+
+img{max-width:100%;height:auto}table{max-width:100%;display:block;overflow-x:auto}pre{white-space:pre-wrap;overflow-wrap:anywhere}section>h2:first-child,section>h3:first-child{margin-top:0}</style></head><body>
+<nav class="navbar" aria-label="Navigation de lecture"><a href="../index.html" aria-label="Retour à la bibliothèque">⌂</a><a href="#sommaire" aria-label="Accueil et sommaire">☰</a><select id="toc" aria-label="Choisir une partie"><option value="">Sommaire</option><option value="partie-0">18. Notes sur le mouvement coopératif</option></select><button id="smaller" aria-label="Réduire la taille du texte">A−</button><button id="larger" aria-label="Agrandir le texte">A+</button><button id="toggle-theme" aria-label="Changer le thème" aria-pressed="false">☾</button></nav>
+<main><header><h1>Notes sur le mouvement coopératif</h1><p>Ludwig von Mises</p><a class="start-button" id="resume" href="#partie-0">Commencer la lecture</a></header><details id="sommaire" open><summary>Table des matières</summary><nav aria-label="Sommaire"><a href="#partie-0">18. Notes sur le mouvement coopératif</a></nav></details><article><section id="partie-0">
+
+
+
+
+
+<p> </p>
+
+<h2>18. Notes sur le mouvement coopératif</h2>
+
+<p> </p>
+
+<p><em>Texte publié comme première partie de </em>Cooperatives in the Petroleum and Industry<em>,
+rapport pour la Petroleum Industry Research Foundation for the Empire State Petroleum Association et la Illinois Petroleum
+Marketers Association (1947).</em></p>
+
+<h3>L'idée coopérative</h3>
+
+<h4>I. Les coopératives ne sont pas une méthode de reconstruction du monde</h4>
+<p>Malgré leur expansion régulière et la croissance de leur chiffre d'affaires, les coopératives telles qu'elle existent et fonctionnent aujourd'hui ne sont que l'ombre de ce qu'elles étaient censées être dans les projets ambitieux de leurs premiers promoteurs. Robert Owen, William King et Ferdinand Lassalle prévoyaient une organisation coopérative de la production industrielle destinée à assurer un « nouveau type de société ». Ils voulaient éliminer totalement les capitalistes et les entrepreneurs. Dès lors les associations d'ouvriers devaient diriger elles-mêmes les usines, « leurs » usines, sans aucune interférence de la part des « exploiteurs inutiles ».</p>
+
+<p>Le but de ce mouvement était l'abolition du salariat et l'organisation de l'industrie sous la forme de coopératives de producteurs. Chaque ouvrier devait recevoir une part égale de l'usine, de l'atelier ou de la ferme où il était employé. Il devait recevoir une part égale des produits ou des bénéfices de cette unité. Il devait devenir son propre employeur, contrôlant le fonctionnement et conservant les produits de la coopérative.</p>
+
+<p>Personne ne niera que toutes les tentatives visant à mettre en œuvre ces plans tirés par les cheveux ont lamentablement échoué. S'il existe des coopératives de producteurs aujourd'hui, leur nombre est tellement négligeable que presque personne ne fait attention à elles. Même les livres traitant du coopératisme évitent de faire référence aux projets d'unions coopératives de producteurs.</p>
+
+<p>Les agriculteurs sont des producteurs. Mais les coopératives agricoles ne réunissent pas les agriculteurs en leur qualité de producteurs agricoles : elles ne les rassemblent que comme acheteurs de divers équipements et matériel requis pour leur production et comme vendeurs de leurs produits. L'agriculteur individuel demeure un entrepreneur indépendant et n'est pas, en ce qui concerne ses activités de production, intégré dans une unité de production coopérative.</p>
+
+<p>Les coopératives d'achat sont entrées en jeu dans le domaine de la production de nombreuses branches de l'industrie. Mais ces entreprises ne sont pas des coopératives de producteurs. Elles ne sont pas la propriété des gens qui y travaillent. Elles sont la propriété de diverses coopératives ou unions de coopératives. Les employés sont embauchés comme les salariés embauchés par toute autre entreprise. Ils n'ont pas leur mot à dire sur la conduite des affaires. Les bénéfices vont aux propriétaires, c'est-à-dire aux coopératives ou aux unions de coopératives, pas aux employés. Il n'est nullement question d'abolir le système des salaires.</p>
+
+<p>Tout ce qui reste des ambitieux projets des pionniers de la coopération dont on chante les louanges, c'est trois types d'organisations coopératives : les coopératives de consommation, les coopératives agricoles d'achat et les coopératives agricoles de vente. C'est une surestimation dithyrambique que de dire, en parlant des coopératives, que la voie coopérative est une méthode de reconstruction du monde <sup><a href="#partie-0-sdfootnote1sym" id="partie-0-sdfootnote1anc">1</a></sup>.</p>
+
+<h4>II. Ce ne sont pas les coopératives, mais l'industrie privée à la recherche du profit qui est la source du progrès économique</h4>
+
+<p>L'économie de marché capitaliste, le système de l'entreprise privée à la recherche du profit, est fondamentalement un système de coopération sociale dans le cadre de la division du travail. Les diverses branches industrielles et entreprises spécialisées coopèrent les unes avec les autres. L'objectif de chacune d'elles est de collaborer pour produire tous les biens et services que veulent les consommateurs. Au sein de chaque entreprise, les différentes divisions et subdivisions fabriquent de manière coopérative des produits qui sont fournis à d'autres entreprises qui les utilisent à leur tour pour fabriquer des produits plus élaborés. En fin de compte, quand tous ces processus coopératifs se terminent, le produit fini aboutit au consommateur. De ce point de vue, le système capitaliste apparaît comme une organisation coopérative englobant le monde entier, organisation dans laquelle chaque individu assure son propre bien-être en rendant service à ses semblables.</p>
+
+<p>De nos jours, les coopératives se sont arrogé l'usage exclusif de l'épithète « coopératif ». Ce qui sous-entend qu'elles seules seraient coopératives et qu'aucune autre entreprise industrielle ne le serait. C'est en réalité un triste expédient sémantique.</p>
+
+<p>Face à cette attitude prétentieuse de la part des diverses associations coopératives, il est nécessaire de souligner le fait qu'elles ne contribuent en rien à faire progresser substantiellement la situation matérielle des gens. Pendant de nombreuses décennies, ils s'en sont très bien sortis avec l'aide charitable que leur accordaient les autorités. Mais il n'y a pas trace de la moindre innovation importante qui doive son introduction aux coopératives. Alors que l'entreprise privée, écrasée par les taxes dont les coopératives sont exemptées, améliore année après année la qualité,
+augmente la quantité de ses produits et inonde les marchés de nouveaux articles inconnus auparavant, les coopératives sont stériles.  Ce ne sont pas les coopératives, mais l'industrie privée à la recherche du profit qui est la source du progrès économique. Si nous jetons un coup d'œil à l'intérieur du foyer d'un ouvrier ou d'un fermier américain moyen et à la vie quotidienne de sa famille, nous pouvons nous rendre compte des énormes changements apportés par l'activité de l'entreprise privée. Les coopératives n'ont joué aucun rôle dans cette transformation miraculeuse. « L'avènement du consommateur » n'est pas le résultat du mouvement coopératif. C'est une réalisation de la « production pour le profit » menée par de « farouches individualistes » et des « impérialistes économiques ».</p>
+
+<h4>III. Les coopératives agricole de vente et les coopératives de consommation</h4>
+
+<p>Au sein du mouvement coopératif de tous les pays, il est possible de distinguer deux groupes principaux : les coopératives agricoles et les coopératives de consommation de la population non agricole.</p>
+
+<p>Les objectifs des coopératives agricoles sont de commercialiser les produits agricoles d'une part,
+de distribuer des provisions agricoles et des biens de consommation dont les agriculteurs ont besoin d'autre part. Les deux objectifs sont en eux-mêmes parfaitement légitimes et pourraient, hormis le problème des privilèges fiscaux et de crédit, être approuvés par tout le monde.</p>
+
+<p>Il est cependant impossible de considérer les coopératives agricoles comme un phénomène isolé et de ne pas voir qu'elles ne sont qu'un moyen au sein d'un système complexe de politiques agricoles et d'activités politiques des organisations d'agriculteurs. En tant que groupe de pression, les agriculteurs organisés visent à faire monter le prix des produits agricoles. Afin de réaliser ce but, un rôle important est assigné aux coopératives de vente. Elles sont un rouage d'une machine politique construite en vue de l'augmentation du prix des denrées alimentaires, ce qui est un objectif radicalement opposé à celui des coopératives de consommateurs de la population non rurale.</p>
+
+<p>Une étude sur les coopératives n'a pas pour but de mettre en relief tous les aspects de ce grand antagonisme entre les organisations politiques de producteurs de biens alimentaires et celles de la masse des consommateurs de ces biens. Ce qu'il faut néanmoins dire, c'est que les objectifs des coopératives agricoles s'opposent de manière irrémédiable aux objectifs que les coopératives de consommation prétendent rechercher. Les coopératives de consommateurs disent qu'elles veulent faire baisser le prix des choses nécessaires à la vie. Les coopératives d'agriculteurs cherchent ouvertement à augmenter le prix des denrées alimentaires et d'autres articles comme le coton, le tabac et la laine. Il est par conséquent bien étrange qu'il y ait une amicale collaboration et une amitié entre ces deux types de coopératives, et qu'elles soient unies dans des alliances coopératives.</p>
+
+<p>Les coopératives de consommateurs traitent à la légère cette contradiction en soulignant que les deux branches du mouvement coopératif sont d'accord quant à leur empressement à éliminer les intermédiaires superflus. Il serait ainsi possible d'augmenter le prix payé à l'agriculteur pour son produit tout en diminuant en même temps le prix payé par le consommateur lors de son achat. La défense est boiteuse. Il n'est tout d'abord pas vrai que l'élimination de l'homme d'affaires privé qu'est « l'intermédiaire » ait réduit les coûts de vente. Elle les a au contraire augmentés. La preuve en est que les coopératives agricoles de vente ne peuvent faire face à la concurrence privée sans l'aide d'exemptions fiscales et de crédit bon marché. Deuxièmement, l'élimination de l'intermédiaire n'est qu'une question secondaire dans le programme détaillé des groupes de pression agricoles. Leur principal objectif est d'augmenter les prix des denrées alimentaires et des autres produits agricoles par l'intermédiaire de diverses mesures gouvernementales.</p>
+
+<p>La vaste littérature de propagande sur les coopératives traite bien plus des coopératives de consommation que des deux types de coopératives agricoles. Elle passe sous silence le conflit entre les intérêts des consommateurs urbains de produits agricoles et les tentatives des coopératives d'agriculteurs de faire adopter par le gouvernement diverses mesures de restriction sur ces produits. La plupart des arguments avancés en faveur du coopératisme se réfèrent exclusivement aux coopératives des consommateurs urbains. Cet aspect est particulièrement paradoxal aux États-Unis où les coopératives de consommateurs urbains ne jouent qu'un rôle insignifiant comparativement aux coopératives agricoles.</p>
+
+<h4>IV. La philosophie et la théologie de la consommation</h4>
+
+<p>Le capitalisme n'a besoin ni de propagande ni d'apôtres. Ses réalisations parlent d'elles-mêmes. Le capitalisme livre les biens.</p>
+
+<p>Mais les coopératives ne peuvent elles se passer d'une propagande véhémente. Elles appellent leur campagne de promotion « éducation coopérative ».</p>
+
+<p>La consommation est la fin et le seul objectif de la production. Tous ce que vise l'industrie à la recherche du profit, c'est de rendre service au consommateur dans un effort incessant pour offrir davantage de biens, de meilleure qualité et à meilleur prix. L'homme d'affaires est pleinement conscient du fait qu'il n'y a pas d'autre moyen pour accroître la consommation que d'accroître la production. Comme la consommation
+apporte le plaisir et est en elle-même agréable, il n'est pas nécessaire de s'étendre abondamment sur son caractère agréable. Il est surérogatoire d'enseigner aux gens quel plaisir on a à consommer davantage et de meilleurs biens. Même un esprit peu instruit sait tout de la douceur d'un niveau de vie plus élevé.</p>
+
+<p>Mais le labeur et les difficultés exigés par la production sont pénibles. Il y a très peu de gens qui ne profitent pas d'une occasion d'augmenter leur propre consommation. Mais il y a beaucoup de gens qui regardent leur travail avec dédain. La tentation de l'oisiveté est très grande et constitue un sérieux danger pour la société. C'est pourquoi les parents et les éducateurs ont voulu depuis des temps immémoriaux enseigner la philosophie du travail à la génération montante. Les jeunes gens doivent apprendre que le plaisir d'une bonne vie doit se payer par l'effort et en travaillant dur. Ils doivent comprendre que celui qui veut consommer doit d'abord produire. Il ne peut être question d'une « économie de la
+consommation » <sup><a href="#partie-0-sdfootnote3sym" id="partie-0-sdfootnote3anc">3</a></sup>. L'économie doit toujours être une économie de la production en vue de la consommation.</p>
+
+<p>Il est vain de parler de la « primauté de la consommation » <sup><a href="#partie-0-sdfootnote4sym" id="partie-0-sdfootnote4anc">4</a></sup>. La production doit immanquablement précéder la consommation. Il est futile de propager une prétendue philosophie de la consommation qui s'opposerait à la philosophie de la production.</p>
+
+<p>Dans leur zèle excessif, les champions du coopératisme ont aussi mis un pied dans le domaine de la théologie. Ils voudraient nous faire croire « que les enseignements sociaux des religions chrétienne et juive ont naturellement conduit à la formation de coopératives » <sup><a href="#partie-0-sdfootnote5sym" id="partie-0-sdfootnote5anc">5</a></sup>. Ils trouvent « les béatitudes de Jésus » dans « la pratique et les principes des coopératives » <sup><a href="#partie-0-sdfootnote6sym" id="partie-0-sdfootnote6anc">6</a></sup>. Il semble approprié de laisser l'examen de cette question dogmatique aux docteurs des différentes Églises et aux rabbins.</p>
+
+<h4>V. Les véritables objectifs du mouvement coopératif</h4>
+
+<p>L'objectif avoué des coopératives de consommation et des coopératives agricoles d'achat est d'offrir à leurs membres des biens et des services à des prix inférieurs à ceux qu'ils auraient dû payer en l'absence de ces associations. C'est une activité parfaitement légitime. Nous aurons à examiner si et comment les coopératives atteignent véritablement ce but.</p>
+
+<p>Épargner de l'argent en effectuant un achat est certainement une bonne chose. Nous pouvons comprendre la satisfaction qu'un homme retire d'une telle réduction de ses dépenses. Nous pouvons de tout cœur le féliciter de son succès. Mais c'est d'une chose assez différente lorsque les champions des coopératives parlent de ces économies pécuniaires dans un style ampoulé. Les membres des coopératives sont des gens qui veulent acheter au prix le plus bas possible. Les employés des coopératives sont des gens qui croient que l'emploi le plus rémunérateur qu'ils puissent trouver est un emploi auprès de leur employeur, une coopérative. En prenant la défense des privilèges fiscaux et d'autres prérogatives accordées aux coopératives, ces membres et ces employés se battent pour leurs propres intérêts matériels. Ils veulent améliorer leur propre niveau de vie ; ils ont envie de consommer davantage. Il n'est pas convenable de leur part d'avoir recours à des phrases qui ne sont appropriées que pour décrire le travail de moines dévots faisant preuve d'abnégation ou de religieuses soignant des personnes atteintes de la lèpre.</p>
+
+<p>Une entreprise coopérative cherche à faire baisser le prix du savon ou de l'essence ; ce n'est pas « une manifestation concrète de la fraternité humaine » <sup><a href="#partie-0-sdfootnote7sym" id="partie-0-sdfootnote7anc">7</a></sup>. Lors de leurs achats, les coopératives négocient avec les fournisseurs : en embauchant de l'aide, elles négocient avec les employés. Les relations contractuelles mutuelles entre l'association coopérative et ses membres sont déterminées avec précision par le règlement de la société, par des arrêtés et des statuts soigneusement élaborés par des avocats. Appliquer le terme de « fraternité » à de telles questions purement pécuniaires, guidées par le principe « do ut des »
+[« donnant donnant »], est une insulte à l'intelligence du peuple. S'il s'agit là de fraternité, alors les activités d'I.G. Farben, le plus grande fabricant mondial de produits de soins médicaux, seraient pareillement des manifestations de la fraternité humaine. La phraséologie de la littérature de propagande du mouvement coopératif est écœurante. Ils parlent de valeurs spirituelles <sup><a href="#partie-0-sdfootnote8sym" id="partie-0-sdfootnote8anc">8</a></sup>, de culture et de liberté <sup><a href="#partie-0-sdfootnote9sym" id="partie-0-sdfootnote9anc">9</a></sup>, quand il est question de réduire le prix de divers biens de quelques centimes.</p>
+
+<p>Dans son <i>Utopie</i>, Platon mentionne l'ancien adage « les amis possèdent toutes les choses en commun » <sup><a href="#partie-0-sdfootnote10sym" id="partie-0-sdfootnote10anc">10</a></sup>. Si cela est vrai, les membres des coopératives se trompent lourdement en appelant leurs associations sociétés amicales. Ils n'ont pas de « choses en commun ». Ils ont une système pointilleux de comptabilité et d'audit. Les droits et les devoirs de membres des coopératives sont définis avec soin <sup><a href="#partie-0-sdfootnote11sym" id="partie-0-sdfootnote11anc">11</a></sup>.</p>
+<br><br>
+
+<h3>Les principes et les méthodes des coopératives</h3>
+<h4>I. Les origines du coopératisme</h4>
+
+<p>Le système mondial de la division du travail prit naissance dans l'aide occasionnelle que s'accordaient mutuellement des voisins. Jean, plus efficace pour travailler le fer, fabrique un soc de charrue pour Paul, qui est moins efficace dans cet art. D'une autre côté Paul, plus efficace dans le travail du cuir, fabrique une paire de chaussures pour Jean, qui est moins doué pour ce type de production. Il ne s'agissait que d'amitié et de sentiment de sympathie entre bon voisins. C'est en partant de ces débuts modestes que s'est développée la merveilleuse spécialisation de l'industrie telle qu'elle fonctionne aujourd'hui.</p>
+
+<p>Il serait absurde de se référer à ces origines lointaines de la division du travail pour traiter de la situation industrielle actuelle. Personne n'est assez déraisonnable pour fonder ses affirmations et ses prétentions sur le fait que l'échange de biens et de services fut à l'origine une manifestation de pure solidarité fraternelle. Aucune entreprise sidérurgique moderne ne demande de privilège ou de subvention en raison du fait qu'autrefois, à l'époque de l'humanité primitive, un Jean mythique offrit volontairement ses services à son non moins mythique voisin Paul.</p>
+
+<p>Dans l'étude des coopératives, toutefois, une telle procédure est assez courante.</p>
+
+<p>Nous pouvons admettre, pour les besoins du raisonnement, que le coopératisme trouve son point de départ dans les relations amicales entre voisins. Le villageois Jean alla en ville pour acheter cinq livres de café. Son voisin Paul lui demanda d'acheter également cinq livres pour lui. Quand Jean revint et tendit les cinq livres de café à Paul, ce dernier lui remboursa ce qu'il avait dépensé pour les acheter. Peut-être que les deux se mirent aussi d'accord pour partager les frais de transport encourus par Jean. Par ailleurs, si l'achat de dix livres de café fut fait à un prix de gros, Jean faisait bénéficier son ami Paul de la différence, Paul jouissant ainsi aussi des avantages inhérents à l'achat en gros.</p>
+
+<p>Tout ceci n'était que camaraderie. Mais c'est faire preuve d'une inacceptable naïveté que de se référer à ces personnages mythiques, Jean et Paul, au sujet des coopératives telles qu'elles fonctionnent aujourd'hui. Ces coopératives sont de grandes entreprises comptant des millions d'adhérents ne se rencontrant jamais. Leur chiffre d'affaires se monte à des milliards de dollars. Elles sont organisées suivant une hiérarchie complexe de coopératives simples, de super-coopératives et de super-super unions. Elles ont mis en place de gigantesques organisations verticales. Elles font des affaires avec le gouvernement et s'adonnent au commerce international. Elles possèdent des usines, des puits de pétroles et des moyens de transport ; elles effectuent des opérations financières et s'engagent dans toutes les activités commerciales et industrielles. Leurs affaires sont si compliquées que leur traitement nécessite l'emploi d'une armée de directeurs,
+d'administrateurs, d'employés de bureau, de comptables et d'avocats. Il y a des écoles spécialisées dans la formation du personnel des coopératives. De nombreuses universités ont créé des chaires d'enseignement des méthodes coopératives en gestion des affaires et en comptabilité ainsi que du droit des coopératives.</p>
+
+<p>Il est ridicule d'évoquer les spectres de mythiques Jean et Paul pour étudier ces énormes entreprises.</p>
+
+<p>Dans les écrits de ceux qui se battent pour préserver les privilèges des coopératives, ces dernières sont décrites comme les agents de ses membres. Cependant, quelle que soit la manière dont les juristes définissent le terme d'agent du point de vue des lois en vigueur dans la nation, lois qui sont après tout susceptibles d'être modifiées par le corps législatif, il est évident que du point de vue économique les coopératives ne peuvent en aucune façon être considérées comme étant davantage des agents ou des mandataires de leurs membres que ne l'est toute autre entreprise travaillant dans le cadre de la division du travail. Si on dit que la coopérative est un agent de ses membres parce qu'elle transmet l'essence qu'elle achète à ses membres, alors le terme convient également aux activités de tout autre entreprise. L'entreprise de sidérurgie est alors l'agent de tous ceux dont le bien-être dépend de l'utilisation de l'acier. S'il n'y avait pas d'aciéries, tout individu devrait produire l'acier dont il a besoin pour son propre usage. L'existence d'une aciérie permet aux individus d'éviter de devoir s'occuper d'une branche importante de la production. Les entreprises sidérurgiques ne fabriquent
+pas des produits pour leur propre usage, mais pour celui de tous. Les gens pourraient vivre sans les services rendus par les coopératives, et ce sans changement radical de leur niveau de vie et de leurs activités quotidiennes. Mais ils retourneraient aux conditions de vie de la barbarie et de la pénurie primitives si les industries spécialisées devaient s'arrêter.</p>
+
+<p>Quand une coopérative achète certains biens, elle tient compte des intérêts de ceux de ses membres qui demandent ces articles. Mais c'est tout autant le cas lorsque les hommes d'affaires et les agriculteurs sont résolus à produire toutes les choses dont l'homme moyen a besoin pour sa propre consommation.</p>
+
+<p>La décence réclamerait que les défenseurs des coopératives cessent de
+se glorifier de leur propre idéalisme et de leur propre désintéressement. Tous ceux dont le travail
+contribue au commerce des coopératives gagnent leur vie avec cet emploi. Rétablir la vérité, ce n'est pas dénigrer ces individus. Ils ne sont pas des citoyens moins honnêtes et moins utiles qu'un industriel, agriculteur ou salarié. Mais ils ne peuvent pas être appelés idéalistes dans un sens qui ne puisse s'appliquer à toute autre personne ayant un métier lucratif. La société civile n'est pas fondée sur un simple idéalisme et sur l'altruisme. Sa force motrice, c'est l'égoïsme bien compris de tout homme raisonnable. L'égoïsme, bien compris, pousse chacun à s'intégrer au système de la division sociale du travail. En rendant des services utiles à ses semblables, il sert ses propres intérêts vitaux.</p>
+
+<p>La référence à l'idéalisme, à l'altruisme et à d'autres idées grandiloquentes similaires, est particulièrement inopportun en ce qui concerne les coopératives agricoles. Les agriculteurs sont des hommes d'affaires et des entrepreneurs du type dénoncé par la littérature coopérative comme égoïstes sans cœur et durs à cuire. Ils ne labourent pas la terre pour une récompense céleste mais pour leur propre profit. Ils n'approvisionnent pas les marchés avec des céréales pour accomplir un acte de charité envers les consommateurs, mais pour gagner de l'argent et acheter les produits des métiers de transformation. Ils utilisent le pouvoir politique et forment des groupes de pression afin d'obtenir des privilèges spéciaux augmentant leurs revenus. Ils sont très désireux de payer moins d'impôts que le reste de la population, de recevoir des subventions tirées des fonds publics, d'être protégés par des taxes sur les importations et de bénéficier de milliers d'autres privilèges et prérogatives. Il n'y a certainement aucun idéalisme dans les lois anti-margarine.</p>
+
+<p>Les tentatives des coopératives agricoles pour permettre aux agriculteurs d'économiser de l'argent sont parfaitement saines et légitimes tant qu'elles ne demandent pas des privilèges spéciaux aux dépens de toute la population. Les agriculteurs sont des fabricants et il est tout à fait normal pour eux de chercher à faire baisser les coûts de production. Mais c'est une autre affaire s'ils cherchent à atteindre cet objectif en échappant à l'impôt et à d'autres obligations pesantes, qui doivent alors être supportés par tous les autres citoyens producteurs.</p>
+
+<h4>II. Producteurs et consommateurs</h4>
+
+<p>Le trait caractéristique de la société libre du capitalisme concurrentiel est la souveraineté illimitée des consommateurs. Les capitalistes, les propriétaires du sol et les entrepreneurs sont obligés par la loi irrémédiable du marché d'employer leur ingéniosité et les facteurs matériels dont ils disposent de façon à satisfaire au mieux et au prix le plus bas les besoins les plus urgents et non encore assouvis des consommateurs. Les hommes d'affaires ne sont pas des tsars irresponsables. Ils sont soumis sans condition à la suprématie des consommateurs. S'ils ne parviennent pas à obéir aux ordres du public des consommateurs, ils subissent des pertes. S'ils ne modifient pas rapidement leur conduite des affaires de façon à s'adapter aux demandes du public, ils sont forcés de quitter le monde des affaires et d'abandonner leur poste éminent. Les consommateurs, en achetant ou en s'abstenant d'acheter, rendent riches des gens pauvres et pauvres des gens riches. Ils déterminent qui doit posséder le capital et le sol et qui doit diriger les entreprises. Ils déterminent ce qui doit être produit, de quelle qualité et en quelle quantité. L'économie de marché est une démocratie des consommateurs.</p>
+
+<p>Il est vrai que des éléments funestes cherchent à saper l'économie de marché libre et à substituer une suprématie de producteurs à la suprématie des consommateurs. Il prévaut une tendance générale au sein des gouvernements et des partis politiques actuels à protéger le producteur moins efficace de la concurrence du producteur plus efficace. L'essence même de l'interférence du gouvernement dans le monde des affaires est de paralyser le fonctionnement de l'économie de marché libre, ce qui tend invariablement à atteindre cette fin que l'on appelle de nos jours, assez improprement, la « liberté vis-à-vis des besoins ».
+Tout en faisant une flamboyante publicité à leur prétendue préoccupation du bien-être matériel des masses, ceux qui occupent les bureaux politiques se sont fermement engagés dans des pratiques restrictives qui réduisent la quantité de biens disponibles pour la consommation. Ils appellent ces actions nuisibles « politique sociale », « New Deal », « progressisme » et  insultent leurs adversaires en les traitant de « réactionnaires » et de « Bourbons économiques ».</p>
+
+<p>Les partisans les plus enthousiastes des restrictions sont les groupes de pression organisés d'agriculteurs et de salariés. Induits en erreur par de fallacieuses doctrines pseudo-économiques, ces groupes de pression croient qu'ils peuvent améliorer leur propre bien-être matériel par toutes sortes de restrictions et de limitations du rendement, par des subventions et d'autres privilèges.</p>
+
+<p>Il est certes vrai qu'un privilège accordé à un groupe particulier de producteurs améliore sur <i>le court terme</i> les conditions matérielles de ceux qui sont favorisés aux dépens du reste de la population. Dans une société fondée sur la division sociale du travail, chaque groupe spécialisé n'est qu'une minorité. Si un privilège est octroyé à une telle minorité, le résultat est à coup sûr une amélioration de la condition de ses membres. Mais il n'y a pas d'espoir pour une telle minorité de conserver durablement la possession exclusive d'une position privilégiée.
+Aussi crédule que soit le reste du peuple, ses membres finiront par découvrir qu'ils sont les gogos payant la note de privilèges accordés à un groupe relativement petit. Ils ne toléreront pas qu'un tel état de choses perdure. Soit ils aboliront les privilèges octroyés aux autres, soit ils garantiront des privilèges similaires pour eux-mêmes.</p>
+
+<p>Malheureusement, ce qui prévaut aujourd'hui est la seconde possibilité. Face au problème du privilège, les non privilégiés ne demandent pas l'abolition de tous les privilèges. Ils demandent des privilèges pour eux aussi. Ils sont trop bornés pour comprendre que ce système, s'il est conduit jusqu'au bout de ses conséquences logiques, est l'apogée de cette absurdité. Ce qu'un homme peut gagner comme producteur par un privilège accordé à sa branche de production, il le perd comme consommateur en achetant les produits des autres branches également privilégiées. Ce qui reste n'est qu'une détérioration du bien-être matériel de tous en raison d'une baisse générale de la productivité du travail.</p>
+
+<p>Cela semble une très bonne chose pour les producteurs de lait que d'interdire la margarine et pour les musiciens que d'interdire la musique enregistrée. Mais si l'on arrête pareillement le progrès dans chaque branche de production, personne ne gagne et cela nuit à tout le monde. Les revenus des producteurs de lait et des musiciens sont augmentés mais les prix de tous les biens qu'ils veulent acheter augmentent concomitamment. Ce qui reste, c'est que tous les individus passent à côté des avantages qu'ils pourraient obtenir du progrès technique.</p>
+
+<p>Cette politique absurde et autodestructrice des privilèges défile aujourd'hui sous l'étiquette trompeuse de « politique favorable aux
+producteurs ». Le pire péché du capitalisme, prétendent les défenseurs des
+privilèges des producteurs, c'est qu'il donne la primauté au consommateur « oisif » et non au producteur « industrieux ». Ils n'arrivent pas à voir que les producteurs et les consommateurs sont les mêmes personnes. Ce n'est que la réflexion de l'analyse économique qui distingue l'homme en tant que producteur de l'homme en tant que consommateur. Dans la vie et en réalité, ces deux aspects de chaque individu sont indissociablement liés. On ne peut pas favoriser l'homme dans sa qualité de producteur sans lui nuire dans sa qualité de consommateur. La primauté de la consommation telle que manifestée dans le fonctionnement sans entraves de l'économie de marché capitaliste vient du fait que la consommation est la seule fin et le seul but de la production.</p>
+
+<p>Si le mouvement coopératif devait attaquer les erreurs de cette politique prétendument « en faveur des producteurs », il rendrait un fier service à la promotion du bien-être. Cependant, malgré l'hommage qu'elles semblent
+rendre à ce qu'elles appellent la primauté du consommateur, les coopératives de consommation sont loin de lever des objections aux pratiques restrictives de notre époque. Elles comptent, au contraire, parmi les soutiens les plus enthousiastes de ces méthodes désastreuses. Un grand nombre de leurs membres sont précisément ceux qui réclament importunément de telles politiques en faveur des producteurs : les agriculteurs et les syndiqués.</p>
+
+<p>Tout ce discours pompeux sur les prétendus bienfaits de la coopération est vain car les coopératives sont d'accord avec l'existence de grands privilèges pour les producteurs. L'agriculteur peut économiser quelques sous comme membre d'une coopérative, mais il perd de grandes sommes en raison de la limitation du rendement et de l'hostilité au progrès technique que manifestent les syndicats. Le salarié peut au mieux faire l'économie de quelques sous quand il achète dans un magasin coopératif, mais les privilèges en faveur de l'agriculture lui coûtent bien plus cher.</p>
+
+<p>Il n'existe qu'une voie véritablement efficace pour faire avancer les intérêts des masses de consommateurs, à savoir la voie de l'entreprise privée libre. Ne pas empêcher le producteur plus efficace de l'emporter sur un rival moins efficace est une méthode bien meilleure que toutes les autres pour approvisionner l'agriculteur et le consommateur des villes plus abondamment et à moindre coût. En détournant l'attention du peuple de la principale plaie économique, à savoir la politique de restriction et de privilèges pour les producteurs, et en se concentrant sur la question dérisoire de permettre l'économie de quelques sous là où de fortes sommes sont en jeu, le mouvement coopératif fait plus de mal que bien.</p>
+
+<p>Les membres des coopératives n'ont certainement aucun droit à se glorifier du titre de défenseurs des consommateurs. Leurs résultats sont en réalité bien maigres quand on les compare à ceux des hommes d'affaires ayant réussi à fabriquer davantage de produits, de meilleure qualité et à meilleur marché.</p>
+
+<h4>III. La place des coopératives dans le cadre du système concurrentiel</h4>
+
+<p>Le libéralisme économique, aujourd'hui dénigré comme Manchesterisme, affirme que le gouvernement ne doit mettre aucun obstacle sur la route de ceux qui veulent servir leurs concitoyens. Selon l'interprétation libérale du principe de la souveraineté du consommateur, seuls les consommateurs devraient décider si une entreprise commerciale est bonne ou mauvaise. C'est ce que signifie le slogan tant décrié « laissez faire » : laissez les consommateurs choisir eux-mêmes, et non un Führer choisir pour eux.</p>
+
+<p>L'économie de marché donne sa chance à tout le monde. Ce dont un homme a besoin pour devenir capitaine d'industrie, ce n'est que de bonnes idées et de la capacité de les faire marcher. Il n'est pas besoin d'hériter de richesses ou de posséder des capitaux pour réussir. Les capitalistes, suivant leurs propres intérêts égoïstes et désirant trouver l'investissement le plus profitable pour leurs fonds, sont toujours à la recherche des hommes ingénieux auxquels ils peuvent confier leur fonds.</p>
+
+<p>Les partisans de l'omnipotence totalitaire du gouvernement voudraient nous faire croire que dans la situation actuelle, à l'ère de ce qu'ils appellent le capitalisme « mûr », ceci n'est plus vrai. Aujourd'hui, disent-ils, les conditions sont sévères. Le nouveau venu sans le sou n'a plus la moindre occasion de remettre en question les intérêts acquis des anciennes firmes et des grandes entreprises. Le pauvre est condamné à rester pauvre pour toujours, et le riche devient chaque jour de plus en plus riche.</p>
+
+<p>Cette fable ne déforme pas moins la situation réelle que ne le font les autres fables marxistes et keynésiennes. Il est bien entendu exact qu'aujourd'hui toutes les branches gouvernementales coopèrent en vue d'empêcher le progrès technique ainsi que l'émergence de nouvelles entreprises et de nouveaux millionnaires. Mais il reste encore, malgré tous ces handicaps, de la place pour le succès d'un self-made-man. La majorité des
+dirigeants d'entreprise actuels ne sont pas les fils et encore moins les petits-fils des millionnaires d'autrefois. Pour autant qu'une famille parvienne à préserver sa place au sommet de l'échelle sociale pendant plusieurs générations, elle doit son rang éminent à la capacité et à l'ardeur de ses jeunes générations. Il n'y a rien dans le fonctionnement de l'économie de marché libre qui puisse, sur le long terme, offrir aux positions acquises une protection garantie contre la concurrence de méthodes de production améliorées, de nouveaux produits, d'une meilleure qualité et
+à des prix plus bas. C'est précisément parce qu'une telle protection n'existe pas dans le marché libre que ceux qui, parce qu'ils se laissent gagner par la routine, par manque d'inventivité, par incompétence, par paresse et par négligence, mettent en péril leur propre prospérité, réclament la protection du gouvernement.</p>
+
+<p>Le principe de non ingérence dans les conditions du marché et consistant à laisser
+sa chance à tout le monde, s'applique tout autant aux nouvelles méthodes de l'organisation des affaires. La constitution sous forme de société d'une entreprise commerciale ne doit pas son rôle actuel à une aide quelconque de la part de la législation et des fonctionnaires de l'Administration. Au contraire. Elle rencontra dès ses débuts l'hostilité de ceux au pouvoir. Cette hostilité s'est développée au cours des dernières décennies pour devenir une persécution non dissimulée. Les autorités pratiquent la discrimination à l'encontre des sociétés commerciales sous de multiples aspects, tout d'abord dans le domaine de la  taxation. Les sociétés commerciales sont singularisées et paient des taxes bien plus lourdes que des entreprises non constituées sous forme de société commerciale. Mais l'immense efficacité de cette forme de société commerciale a résisté victorieusement aux assauts du pouvoir en vue de la détruire.</p>
+
+<p>Les coopératives sont entrées sur la scène du monde des affaires avec des diatribes enflammées contre les marchands et plus particulièrement contre les détaillants. C'eut été compréhensible si les détaillants avaient demandé aux autorités de supprimer ces nouveaux concurrents qui semblaient attendre moins des services qu'elles rendaient à leurs membres que de l'insulte envers les firmes en place. Une demande de l'industrie de détail visant à interdire les coopératives et à supprimer totalement leur activité n'aurait pas été
+plus perverse que les tentatives des agriculteurs d'interdire la margarine et de limiter les importations de viande et de céréales. Mais hormis les déclarations pleines de colère de quelques entêtés, de telles demandes ne furent jamais faites. L'honnêteté des marchands tellement calomniés et leur totale
+acceptation du principe de la libre concurrence se manifestèrent par l'attitude qu'ils montrèrent face aux coopératives. Ils ne demandèrent pas à la police de réduire au silence ces diffamateurs et calomniateurs insidieux. Tout ce qu'ils demandèrent, c'est que les coopératives ne soient pas favorisées par des privilèges et des prérogatives. Pleinement partisans de la maxime fondamentale de la libre entreprise et de la libre concurrence, tout ce que les hommes d'affaires privés recherchaient, c'était une égalité de traitement pour toutes les formes d'entreprises commerciales. Ils ne demandaient ni privilèges en leur faveur ni discrimination hostile à l'encontre d'une quelconque association rivale. Tout ce qu'ils demandaient, c'était que le gouvernement restât neutre. Ni privilèges ni discrimination. La liberté pour le public de choisir entre les nombreux vendeurs concurrents et de préférer le magasin lui rendant les meilleurs services ne devrait pas être limitée par des aides réelles accordées aux entreprises moins efficaces. Pour la souveraineté du consommateur et le bénéfice de tout le monde, il devrait y avoir égalité de traitement entre tous les types et toutes les variétés d'entreprises commerciales.</p>
+
+<h4>IV. La nature des profits des coopératives</h4>
+
+<p>Il y a trois éléments différents compris dans la conception du profit tel qu'on le comprend habituellement dans le langage courant et dans les statistiques : l'intérêt sur le capital investi, la rétribution du propre travail de l'entrepreneur dans la conduite des affaires et, enfin, le véritable profit. Dans le cas des sociétés commerciales et des coopératives, le deuxième de ces trois éléments est absent car les propriétaires de l'entreprise sont légalement distincts de ceux qui travaillent au sein de l'entreprise, même si ces derniers possèdent une part de la société ou sont membres de la coopérative.</p>
+
+<p>Le véritable profit est le surplus qu'une entreprise gagne de la vente à des prix excédant le montant total des coûts. Il n'est pas besoin d'étudier de près les conditions nécessaires à l'émergence de véritables profits, de leur importance sur le plan économique et du rôle qu'ils jouent dans le fonctionnement de toutes les affaires économiques. Une telle analyse relève des traités traitant de théorie économique.</p>
+
+<p>Les coopératives prétendent que l'objectif de leur gestion des affaires n'est pas de faire des profits et que le surplus qu'elles font passer dans la poche de leurs consommateurs proportionnellement à leurs achats n'est pas un dividende, mais une « ristourne à la clientèle » ; qu'il ne s'agit pas d'un profit, mais d'économies faites dans la conduite de l'entreprise. Les coopératives fondent sur cette doctrine leurs grandes revendications d'une situation privilégiée et particulièrement d'une exemption fiscale.</p>
+
+<p>Il est possible d'imaginer une méthode pour mener une entreprise coopérative de façon à ce qu'aucun surplus ne se dégage. Les coopératives pourraient vendre chaque article à un prix qui comprendrait uniquement les coûts payés par la coopérative elle-même lors du traitement de cet article. Aucune coopérative n'a en réalité adopté cette procédure. Les coopératives vendent à un prix supérieur à leurs coûts. A la fin d'une période donnée, il reste, à condition que la conduite des affaires ait connu le succès, un profit net, c'est-à-dire un surplus des
+recettes issues des ventes par rapport aux coûts.</p>
+
+<p>Mrs. Beatrice Potter Webb (Lady Passfield), cette apologiste inflexible des pires excès du bolchevisme, essaya d'expliquer pourquoi les coopératives ne réalisaient pas « l'idéal d'Owen consistant à éliminer le profit des transactions commerciales », pourquoi elles ne vendaient pas « leurs articles au prix coûtant augmenté des dépenses de gestion. » Selon Mrs. Webb, la responsabilité en incombait à l'imperfection des institutions monétaires. La vente de petites quantités à prix coûtant, affirmait-elle, « implique l'usage de fractions non représentées par les pièces existantes » <sup><a href="#partie-0-sdfootnote12sym" id="partie-0-sdfootnote12anc">12</a></sup>. Et pourtant le fait que la divisibilité des pièces n'est pas illimitée n'a jamais empêché le commerce de très bien ajuster les prix à chaque niveau requis par la structure du marché. Dans la vente au détail des fruits et d'autres nécessités de la vie courante, des prix comme « cinq unités pour sept cents » et « trois unités pour onze cents » sont assez courants. Il n'y a pas de raison pour que les coopératives n'adoptent pas le même procédé. En fait, elles l'adoptent car il est indispensable. Mais quand elles l'adoptent, leur objectif n'est pas d'éliminer le profit mais plutôt la nécessité de rivaliser avec leurs concurrents.</p>
+
+<p>Mr. Jacob Baker explique ces pratiques des coopératives d'une autre façon. Selon lui, cela conduirait à bien trop de comptabilité que de calculer le coût de gros et la part proportionnelle des dépenses de gestion pour chaque douzaine d'œufs et pour chaque livre de beurre <sup><a href="#partie-0-sdfootnote13sym" id="partie-0-sdfootnote13anc">13</a></sup>. Un homme d'affaires, toutefois, qui ne se représenterait pas clairement ce que sont ses propres coûts et tâtonnerait à l'aveuglette dans le noir, serait
+un incompétent maladroit et se dirigerait vers la faillite. La concurrence oblige chaque vendeur — qu'il soit un marchand à la recherche du profit, une station d'essence ou un magasin coopératif prétendument altruiste — à ne pas demander plus que le prix du marché. Mais chaque vendeur doit savoir si ses transactions représentent un profit ou une perte. S'il l'ignorait et vendait en dessous de ses propres coûts, il perdrait rapidement sa situation dans le cadre de la division sociale du travail. Si le calcul économique montre à un homme d'affaires qu'il ne peut pas offrir un article donné sans perdre de l'argent, il doit en général arrêter cette branche d'activité. Dans des cas exceptionnels, il peut continuer délibérément à fournir cet article eu égard à des considérations spéciales comme ne pas détourner la clientèle de son magasin ou autres considérations similaires. Mais même dans ce cas, il doit être parfaitement conscient de la signification de sa décision. Dans la gestion commerciale, il n'y a pas de place laissée à l'ignorance et à la négligence. Calculer les coûts aussi précisément que possible est la colonne vertébrale du commerce.</p>
+
+<p>De fait, l'immense majorité des coopératives bien dirigées ont totalement adopté les méthodes comptables bien rodées, telles qu'elles ont été développées par des générations d'hommes d'affaires. Elles
+se sont même vantées de leurs réussites dans le domaine de la comptabilité et des relevés de compte financiers <sup><a href="#partie-0-sdfootnote14sym" id="partie-0-sdfootnote14anc">14</a></sup>.</p>
+
+<p>La méthode consistant à vendre à des prix supérieurs aux coûts ne doit certainement pas être excusée en se référant au prétendu fait que les coopératives ne savent pas quels sont leurs coûts.</p>
+
+<p>Les véritables raisons de ces méthodes sont très différentes de celles avancées par ces doctrines apologétiques.</p>
+
+<p>Un surplus du produit des ventes par rapport aux coûts n'apparaît que si la transaction a été un succès. Même l'homme d'affaires le plus ingénieux ne peut pas toujours éviter des pertes. Il peut parfois se tromper sur la tendance des prix et dépenser plus pour l'acquisition d'un article que ne le justifient les développements ultérieurs effectifs. Le monde des affaires est toujours spéculatif car il est basé sur l'anticipation de l'avenir dont découlent les pertes et les profits commerciaux. Dans un monde sans changement, où demain ne diffère pas d'aujourd'hui, il n'y aurait ni pertes ni profits. Notre monde n'est heureusement pas en stagnation. Les conditions sont en perpétuel changement et il existe — au moins aux États-Unis — une tendance continue à l'amélioration. Dans une telle situation, les prix fluctuent sans cesse. Celui qui achète afin de vendre ne peut tirer un profit que s'il a acheté à un prix inférieur à celui auquel il le vend diminué de ses frais de vente totaux.</p>
+
+<p>L'entreprise coopérative n'est pas une exception. Elle aussi est soumise à la loi du marché. Si une coopérative achète 10 000 livres d'un article pour 2 000 dollars et que ses frais de vente sont de cinq cents par livre, le prix de vente doit être de 25 cents par livre pour qu'il n'y ait pas de perte. Mais si au cours de l'intervalle temporel séparant l'achat de la vente, le prix de vente au détail baisse et atteint 18 cents, la coopérative est forcée de vendre à perte, en perdant sept cents par livre, soit une perte totale de 700 dollars. Bien entendu, une coopérative qui ne feraient que de telles transactions malheureuses tournerait rapidement mal. Dans le cas d'une coopérative prospère, sur une période donnée, le montant total des profits doit au moins être égal au montant total des pertes. Mais pour chaque entreprise commerciale, coopérative ou autre, les diverses transactions individuelles contribuent de différentes façons au résultat final de l'ensemble des affaires traitées sur une période donnée. Certaines transactions sont plus rentables, d'autres soit moins rentables ou conduisent à des pertes de montants divers.</p>
+
+<p>Ce sont ces dures réalités qui obligent les coopératives à ne pas vendre un article à un prix exactement proportionnel à leur part dans les coûts totaux (prix de gros augmenté de coûts de vente et de fonctionnement). Si elles essayaient de le faire, elles ne pourraient pas vendre du tout la partie de leur stock achetée à des prix paraissant déraisonnables du point de vue de la structure actuelle des prix de détail.</p>
+
+<p>La connaissance de cet état de choses démolit complètement la doctrine
+coopérative concernant les ristournes à la clientèle ou les dividendes versés à cette même
+clientèle. Ces ristournes n'ont rien à voir du tout avec les achats des membres individuels. Elles ne sont pas ajustées à la marge séparant les coûts des prix auxquels les achats concrets ont été facturés aux membres. Elles représentent la distribution du profit total gagné par la coopérative sur une période donnée. Elles n'ont pas la moindre relation avec les achats individuels. Un membre qui n'achète que des articles dont la vente engendrent des pertes pour la coopérative n'en a pas moins qu'un autre droit à une ristourne proportionnelle au montant total de ses achats.</p>
+
+<p>Si la coopérative était uniquement un agent de ses membres, les membres auraient l'obligation de payer leur part des achats de la coopérative et de rembourser tous les coûts payés par elle que ce soit ou non avantageux pour eux. Ils auraient l'obligation d'acheter même si cela signifiait pour eux payer un prix supérieur à ce qu'ils auraient dépensé en achetant ailleurs. C'est la conclusion qu'il faut tirer de la fable tant discutée de Jean et Paul. Si Jean demande à Paul de lui acheter une cravate à New York, il doit prendre la cravate et rembourser à Paul l'argent que ce dernier a dépensé pour cet achat. Il importe peu de savoir si Paul s'aperçoit ou non qu'il aurait pu acheter une cravate équivalente dans son propre lieu de résidence à un prix bien plus bas. Il a donné à Paul le pouvoir discrétionnaire d'agir comme son agent pour l'achat d'un cravate et doit en subir les conséquences.</p>
+
+<p>Il est par conséquent évident que la doctrine de membres de coopératives selon laquelle un magasin individuel <i>vend</i> des articles <i>à</i> ses clients alors qu'un magasin coopératif <i>achète</i> des articles <i>pour</i> ses membres <sup><a href="#partie-0-sdfootnote15sym" id="partie-0-sdfootnote15anc">15</a></sup> n'est que fadaises. La coopérative ne vend pas moins qu'un magasin individuel et doit inciter ses propres membres à acheter dans le magasin coopératif par des méthodes identiques à celles pratiquées par les détaillants individuels, à savoir en demandant des prix plus bas que la concurrence. Les achats de la coopérative ne sont pas plus intimement liés à ses ventes que les achats et les ventes de tout entreprise individuelle de commerce de détail. Être membre d'une coopérative ne fait obligation à personne d'acheter le moindre bien dans le magasin ou la station-service de la coopérative, encore moins obligation de rembourser la coopérative, lors de l'achat d'un bien qu'il peut faire, de tout ce qu'elle a dépensé lors de l'acquisition de l'article en question plus les dépenses de fonctionnement. Le membre individuel de la coopérative a le droit d'acheter dans le magasin de la coopérative de la même manière que tout le monde — membre ou non de la coopérative — a le droit d'acheter dans tout magasin individuel. La phrase « la coopérative achète pour ses membres » n'est pas une description plus exacte de la situation réelle que la phrase « le détaillant individuel achète pour ses clients. »</p>
+
+<p>Le point essentiel est que le surplus du montant total des ventes par rapport au coûts totaux, surplus distribué par la coopérative entre ses membres, ne découle pas des divers achats spécifiques effectués par le membre individuel, mais de la bonne gestion de l'entreprise coopérative dans son ensemble sur une période donnée. Un tel surplus n'apparaît que si les directeurs de la coopérative sont assez habiles pour acheter à des prix suffisamment bas pour que la vente ultérieure se passe d'une façon rémunératrice.</p>
+
+<p>La nature économique d'une coopérative ne diffère pas de celle d'un magasin privé. Le succès ou l'échec d'une coopérative résulte des mêmes sources que ceux d'un magasin individuel de détail. Le succès engendre des profits, l'échec des pertes.</p>
+
+<h4>V. L'utilisation des profits des coopératives</h4>
+
+<p>Si la gestion des affaires d'une coopérative a réussi sur une période donnée et que le bilan montre par conséquent un surplus net, c'est-à-dire un profit, ce profit est traité de la même façon que dans une entreprise privée. Il est soit distribué soit réinvesti dans l'affaire en plus du fonds de roulement, soit encore en partie distribué et en partie réinvesti.</p>
+
+<p>Il importe peu de savoir à quelles formes légales on a recours pour cette accumulation de profits non distribués et quel nom on donne dans les livres comptables à cet ajout au fonds de roulement. La seule
+chose qui compte est que le montant total du profit obtenu ou une partie de celui-ci n'est pas distribué et est
+ajouté au capital. En ne distribuant pas les profits, les coopératives accumulent des capitaux
+supplémentaires de la même façon que les autres types d'entreprises commerciales. L'accumulation du
+capital est toujours le résultat d'une non-consommation du montant total des profits obtenus.</p>
+
+<p>L'évolution des coopératives, parties de simples magasins indépendants pour aboutir à de grandes entreprises, a entraîné une variété très complexe de droits concernant ses adhérents. Il y a les membres électeurs qui possèdent des parts ordinaires correspondant au capital habituel des entreprises. Il existe des parts de membres non actifs, qui n'ont pas le droit de voter
+et ne participent donc pas au contrôle de la coopérative. Il y a des parts pleinement payées et d'autres partiellement. Il est donc possible de choisir parfois des méthodes d'accumulation du
+capital supplémentaire qui semblent correspondre au paiement d'un dividende. Si le dividende est payé en parts, le résultat est en réalité un accroissement de la part du capital réinvesti dans la coopérative. La valeur des parts possédées par les adhérents est la même que le profit soit simplement conservé par la coopérative ou qu'il soit distribué sous forme de parts supplémentaires à chaque adhérent. Dans les deux cas la proportion du montant total de l'ensemble des actifs nets de la coopérative que possède l'adhérent individuel est la même.</p>
+
+<p>Les coopératives n'emploient qu'en partie leurs fonds dans la direction de leurs propres affaires. Elles ont fondé de vastes entreprises de vente en gros et des unités de production de grande taille. Elles ont organisé ces entreprises en une hiérarchie de super-coopératives, de super-super coopératives et de super-super-super coopératives. Chacune de ses associations fait ses propres profits et soit les conserve comme profits non redistribués, soit les distribue entre ses adhérents, à savoir les unions coopératives d'un rang inférieur.</p>
+
+<h4>VI. Le mouvement coopératif est-il économiquement sain ?</h4>
+
+<p>La vaste littérature de propagande des coopératives glorifie les réalisations du mouvement coopératif. En partant de débuts modestes, les coopératives se sont développées en grandes entreprises possédant une forte réserve de capitaux. Elles comptent des millions d'adhérents, plusieurs milliers d'organisations, plus d'une centaine de fabriques, d'usines, de puits de pétrole, de raffineries et d'oléoducs. Leur chiffre d'affaire annuel est énorme. Leur bonne santé ne se limite pas aux États-Unis. C'est un phénomène mondial. L'Alliance Coopérative Internationale comptait au commencement de la Deuxième Guerre mondiale des membres réunissant plus de 70 millions d'individus répartis dans trente-huit pays différents. Quel formidable succès !</p>
+
+<p>Toutefois, un examen plus attentif nous permet de découvrir quelques défauts dans ce tableau séduisant. En premier lieu, on observe que le coopératisme est bien plus puissant à l'étranger qu'aux États-Unis. Avant la guerre, les coopératives finlandaises s'occupaient d'environ 30 % du commerce de détail de leur pays ; en Suède le chiffre était de 12 %  et de 10 % en Grande-Bretagne, en France et au Danemark. Mais aux États-Unis, il était inférieur à 1 % <sup><a href="#partie-0-sdfootnote16sym" id="partie-0-sdfootnote16anc">16</a></sup>.</p>
+
+<p>C'est un fait surprenant. Précisément dans le pays où le niveau de vie de l'homme ordinaire est le plus élevé, le rôle joué par les coopératives dans le domaine de vente au détail est très modeste quand on la compare à la fois à la situation à l'étranger et au chiffre d'affaires total du commerce intérieur. Les États-Unis sont les premiers dans le monde en ce qui concerne le bien-être matériel, mais sont plutôt en retard pour ce qui est du développement des coopératives de consommation. Il est ainsi évident que la prospérité des citoyens moyens ne dépend pas de l'épanouissement des coopératives mais d'autres facteurs.</p>
+
+<p>Le deuxième idée qui vient à l'esprit d'un observateur impartial est que les coopératives n'ont pas eu l'occasion de tester leur efficacité dans des conditions de concurrence égales vis-à-vis des autres types d'entreprises. Dans tous les pays du monde, elles ont été copieusement choyées par l'intermédiaire de privilèges, et en particulier par des exemptions fiscales et des crédits à bon marché. Elles n'ont pas résisté à la concurrence des détaillants et des fabricants individuels ou réunis en société commerciale, par leur propres moyens et grâce à leurs propres réalisations. Les subventions de fait qu'elles ont reçues aux dépens du revenu du peuple ont été suffisamment importantes pour leur permettre de se développer malgré une lamentable inefficacité et une gestion inepte et gaspilleuse. L'expérience de la longue histoire du mouvement coopératif ne peut rien démontrer en faveur des méthodes coopératives. Elle démontre simplement que les privilèges fiscaux, à notre époque de taxation confiscatoire, ont une grande valeur et rendent prospères leurs détenteurs. L'ardeur avec laquelle les porte-parole
+des coopératives se battent pour préserver ces privilèges et leurs affirmations réitérées selon lesquelles l'abolition de ces privilèges ruinerait le mouvement coopératif suggèrent qu'ils ont eux-mêmes bien peu confiance dans le pouvoir des coopératives à tenir bon face à la concurrence du secteur privé.</p>
+
+<p>Le fait même que le détaillant individuel soit capable de résister à la concurrence d'un magasin coopératif
+témoigne de la supériorité économique de l'entreprise libre à la recherche du profit. La coopérative jouit en effet de nombreux privilèges fiscaux ; elle est soutenue par une organisation dont le capital dépasse de loin celui du détaillant moyen et elle bénéficie d'autres privilèges. Dans ses tentatives de concurrence, le secteur privé est handicapé sur tous les plans institutionnels et politiques. Il ne doit son succès qu'à sa plus grande efficacité et au fait qu'il rend de meilleurs services au consommateur.</p>
+
+<p>La propagande pro-coopérative déborde d'arguments prétendant montrer pourquoi le commerce de détail à la recherche du profit doit nécessairement être gaspilleur et coûteux, et pourquoi les coopératives sont plus économiques et peuvent vendre à meilleur prix. Si ces affirmations étaient vraies, les coopératives auraient depuis longtemps — même en l'absence des abondantes subventions dont elles jouissent sous la forme de privilèges fiscaux — pris la place des détaillants individuels. Mais la réalité reste que les coopératives ne sont pas capables de faire mieux que le distributeur individuel, que ce soit en ce qui concerne le niveau des prix (c'est-à-dire le prix net payé par l'acheteur) ou que ce soit en ce qui concerne les autres services rendus à la clientèle. Le fait que l'écrasante majorité des ménagères américaines se fournissent chez les détaillants individuels et qu'à tout prendre, sur chaque dollar dépensé par les consommateurs, moins d'un cent l'est dans les magasins coopératifs, constitue un témoignage frappant de la reconnaissance par la nation de la supériorité du commerçant privé. Il n'est pas nécessaire de démasquer les sophismes inclus dans toutes ces démonstrations sophistiquées des prétendus défauts de l'entreprise privée. La ménagère qui passe devant le magasin coopératif pour se rendre dans celui du détaillant individuel les démolit de
+façon plus convaincante que ne le pourrait aucun théoricien.</p>
+
+<p>L'erreur fondamentale de la doctrine coopérative est le contresens qu'elle fait sur le rôle joué par les distributeurs et les détaillants. Selon les défenseurs de la doctrine coopérative, la vente au détail est une activité stérile parce qu'elle n'ajoute rien aux propriétés physiques et chimiques de la marchandise. Le marchand ne serait qu'un intermédiaire superflu dont l'intervention fait monter les prix sans améliorer la qualité du produit et sans rendre le moindre service de valeur. On pourrait facilement se débarrasser de ce fainéant et de ses gains immérités.</p>
+
+<p>Si les coopératives n'avaient pas bénéficié d'amples privilèges fiscaux, elles auraient très rapidement appris de la pratique que cet argument apparemment plausible est totalement faux. Le détaillant n'est pas un simple intermédiaire dont on peut se passer. Le commerce de détail est une fonction nécessaire dans la marche de l'économie de marché. C'est l'un des mécanismes qui réajustent quotidiennement la production aux demandes changeantes des consommateurs. Bien qu'en règle générale le détaillant ne modifie pas les propriétés physico-chimiques de la marchandise, il augmente sa valeur en la proposant prête à l'emploi précisément dans les lieux et au moment où on la demande le plus instamment. Les services que rend le détaillant au public ne sont pas surpayés car la concurrence — toujours très vive dans le domaine de la distribution — maintient leurs prix dans les marges les plus étroites possibles. En parlant des coopératives de consommateurs, on ne soulignera jamais assez que ces coopératives, malgré leurs prérogatives fiscales, ne sont pas en mesure de supplanter le marchant individuel. C'est un fait qui détruit toutes les verbeuses dissertations de la littérature coopérative.</p>
+
+<h4>VII. L'élément politique dans le mouvement coopératif</h4>
+
+<p>Dès ses débuts, le mouvement coopératif fut avant tout un mouvement politique. Ce n'était, dans les projets de ses initiateurs, pas tant un instrument destiné à améliorer la situation de ses adhérents qu'une arme à utiliser pour détruire la « bourgeoisie » et le « mode de production capitaliste ou bourgeois ». Parce qu'ils apprécient les coopératives de ce point de vue, les partis socialistes s'entendent toujours avec le mouvement coopératif. Hormis les coopératives agricoles, un grand nombre des membres des coopératives de consommation sont socialistes. Dans les rêves de ces adhérents socialistes, le paradis socialiste du futur sera organisé comme une union d'unions de coopératives de consommation. L'ouverture d'un nouveau magasin coopératif et le développement et l'amélioration des coopératives déjà existantes sont des pas en avant sur la route qui mène au salut social de l'humanité.</p>
+
+<p>En fait, tout ceci est un discours tout à fait confus et contradictoire. Dans le cadre d'un système socialiste de production, il ne peut pas être question de coopératives. Le socialisme est l'antithèse absolue de toute liberté accordée aux consommateurs. Il supprime le marché, l'échange marchand et tous les droits des acheteurs. Sous un régime socialiste, l'individu doit se satisfaire de ce que l'autorité daigne lui donner. Le socialisme, c'est la suprématie du tsar de la production.</p>
+
+<p>Il est bien entendu possible pour une communauté socialiste de conserver le mot de « coopérative » et d'appeler « coopératifs » ses magasins de distribution. Les communistes de l'Union soviétique, tout comme les nazis de l'Allemagne hitlérienne, ont eu recours à cette astuce. Mais personne ne peut être dupe d'un tel expédient terminologique.</p>
+
+<p>L'un des traits caractéristiques du système capitaliste (que les marxistes ont surnommé système « d'esclavage » où « le travail est une marchandise ») est que le salarié est libre de dépenser ses revenus comme il l'entend. La décision d'acheter ou de ne pas acheter de la part du consommateur détermine au bout du compte ce qui doit être produit, en quelle quantité et à quelle qualité. La suprématie du consommateur est garantie par l'ordre concurrentiel de la production industrielle où tous les producteurs, quelque différents puissent être leurs produits, rivalisent entre eux pour obtenir la plus grande part possible des dollars du consommateur. S'il n'y avait qu'une seule agence de production, à savoir le gouvernement, cette concurrence cesserait : la ménagère devrait alors prendre dans le magasin ce que l'agent du gouvernement serait disposé à lui donner. Dans un régime capitaliste, le commerçant, qu'il soit marchand à son compte ou employé d'une coopérative, cherche à servir sa clientèle : une fois la vente accomplie, il remercie le client d'avoir choisi son magasin et lui demande d'y revenir également dans l'avenir. Dans un régime socialiste, le commerçant cherche à faire plaisir au gouvernement, à ses supérieurs, : il distribue la marchandise comme une faveur et engage le bénéficiaire à être reconnaissant envers le sublime donateur, envers le grand dictateur.</p>
+
+<p>Les gens qui associent le mot de socialisme avec l'image de magasins coopératifs bien propres, abondamment approvisionnés, dans lesquels des vendeurs courtois sont au service des consommateurs, se trompent lourdement. Les magasins coopératifs sont propres, abondamment approvisionnés et disposent d'un personnel d'employés serviables parce qu'ils sont en concurrence avec le commerce de détail privé à la poursuite du profit. Les magasins d'un système socialiste seraient très différents.</p>
+
+<h4>VIII. Les tendances monopolistes et totalitaires au sein mouvement coopératif</h4>
+
+<p>Les directeurs des coopératives sont pleinement conscients du fait que les coopératives ne seraient pas capables de résister à la concurrence de l'entreprise privée si elles devaient lutter dans des conditions égales. C'est parce qu'ils le comprennent que d'une part ils défendent avec passion leurs précieux privilèges, et que d'autre part ils sont poussés vers des tentatives monopolistes et totalitaires.</p>
+
+<p>Les écrits et les discours de la propagande coopérative n'ont jamais essayé de cacher leurs ambitions monopolistes. Ils dénigrent la concurrence en tant que telle et vantent de façon exubérante les bienfaits ce qu'ils appellent l'unité. Dans chaque pays les coopératives locales tendent à s'unir pour former une organisation nationale. Les sociétés nationales de la planète sont réunies dans l'Alliance Coopérative Internationale. L'idéal avoué des champions du coopératisme est d'abolir tout type de concurrence par l'élimination non seulement de la libre entreprise, mais aussi des entreprises possédées et gérées par l'État. Ils rêvent d'un monde comprenant une « Union Coopérative Mondiale » qui disposerait d'un pouvoir quasi suprême dans « l'Ère des coopératives de consommation » <sup><a href="#partie-0-sdfootnote17sym" id="partie-0-sdfootnote17anc">17</a></sup>. Cette « Union » suprême et sans rivale
+pour ce qui concerne à la fois la production et la distribution, devrait jouir d'une situation de monopole dans chaque domaine des activités économiques. Elle aurait précisément le même pouvoir totalitaire exclusif que les nazis donnaient à leur <i>Reichswirtschaftsministerium</i> et les bolcheviques à leur <i>Gosplan</i>.</p>
+
+<p>Dans notre monde imparfait, toutefois, les coopératives sont forcées de modérer leurs prétentions. Elles désirent grandement s'associer et conspirer pour éliminer la concurrence ainsi que
+pour limiter le commerce. Leurs activités offrent l'exemple classique d'une association à la fois horizontale et verticale. Elles tendent à se ramifier dans tous les domaines, y compris ceux qui ne sont que très vaguement en rapport avec leurs activités principales. Dans leurs efforts, elles sont grandement encouragées par le soutien direct et indirect
+que leur accordent divers services du gouvernement fédéral et du gouvernement de l'État. Mais l'infériorité inhérente de la méthode coopérative quand
+il s'agit de faire du commerce contrebalance tous les privilèges et faveurs. Le progrès que les coopératives de consommateurs ont faits dans leur voie vers leur objectif final, à savoir le contrôle monopoliste des marchés de détail, est comparativement lent parce qu'il n'est pas facile de tromper la ménagère. Le fait qu'aux États-Unis les
+coopératives de consommation sont petites et insignifiantes quand on les compare avec celles de nombreux pays européens est la preuve de la plus grande sagacité des consommateurs américains et de leur plus grande capacité à distinguer entre une bonne et une mauvaise marchandise.</p>
+
+<h4>IX. Les coopératives sont-elles démocratiques</h4>
+
+<p>Plus la faiblesse des arguments économiques avancés en faveur du coopératisme devient évidente, plus ses propagandistes soulignent son prétendu caractère démocratique. Selon eux, le coopératisme est démocratique alors que l'industrie à la poursuite du profit est réactionnaire : l'instauration de la démocratie politique réclamerait l'instauration de la démocratie économique, à savoir la suprématie des coopératives.</p>
+
+<p>La vérité est que l'économie de marché est la seule réalisation possible du principe d'une économie démocratique et qu'elle la réalise pleinement. Le processus du marché est un voté réitéré chaque jour, au cours duquel chaque sou donne un droit de vote. Les acheteurs, en préférant les biens qui en raison de leur prix et de leur qualité sont les mieux adaptés à satisfaire leurs besoins, rendent chaque entreprise rentable ou non rentable, font grandir les entreprises de petite taille et enrichissent les débutants sans le sou. Dans le cadre du marché, rien ne compte en définitive hormis les dollars du consommateur. Il est vrai que ces bulletins de papier ne sont pas distribués de façon égale au sein de la population. Le riche dépose plus de bulletins
+dans l'urne que son concitoyen moins prospère. Mais être riche est en soi le résultat d'un vote effectué, car dans l'économie de marché non seulement l'acquisition mais aussi la préservation des richesses
+requiert de réussir de façon continue à être le meilleur dans l'approvisionnement des consommateurs. Le capitaliste qui n'investit pas ses fonds dans les affaires permettant de satisfaire les besoins les plus pressants du public est pénalisé par des pertes et voit sa fortune complètement disparaître s'il ne modifie pas sa conduite à temps.</p>
+
+<p>La démocratie politique telle qu'elle s'incarne dans le gouvernement représentatif est le corollaire de la démocratie économique du marché. Du point de vue d'une application cohérente du matérialisme dialectique marxiste, il faut décrire le parlementarisme, le gouvernement par le peuple et toutes les libertés accordées par la déclaration des droits comme étant la « superstructure idéologique et politique du système capitaliste de l'entreprise privée. » En tout état de cause, les marxistes étaient assez cohérents pour désapprouver et dénigrer la démocratie vue comme « ploutocratie » et le parlementarisme considéré comme « invention bourgeoise ». Il n'y eut jamais d'adversaires plus inflexibles de tout type d'institution démocratique que les bolcheviques. Ce n'est que lorsque les nazis les ont conduits à implorer l'aide des nations capitalistes occidentales qu'ils ont commencé à s'arroger le titre de démocrates. Ce n'est qu'alors que les communistes et leurs alliés de l'Europe occidentale et de l'Amérique ont découvert que les coopératives étaient des institutions démocratiques, et même les parangons de la démocratie économique.</p>
+
+<p>En ayant recours à cette innovation sémantique, les agitateurs défendant les coopératives adoptèrent une terminologie qui trouve ses origines chez Mrs. Beatrice Potter Webb (Lady Passfield). C'est Mrs. Webb qui a déguisé le mouvement syndical en « démocratie industrielle » et décrit le mouvement coopératif comme l'un des aspects de cette démocratie industrielle <sup><a href="#partie-0-sdfootnote18sym" id="partie-0-sdfootnote18anc">18</a></sup>. Il n'est nul besoin d'étudier de près ces affirmations. Ce que Mr. et Mrs. Sidney Webb appellent démocratie et liberté est l'exact contraire
+de ce qu'ils représentent. A leurs yeux, la dictature soviétique est la véritable démocratie et l'extermination sans pitié de tous ceux qui ne sont pas d'accord avec les dirigeants constitue l'authentique liberté.</p>
+
+<p>La coopérative est un type d'organisation commerciale qui n'est ni démocratique ni anti-démocratique. C'est l'un des modes légaux de propriété collective. Dans une société libre, les coopératives ont le droit de fonctionner de la même façon que tous les autres types d'entreprises commerciales. Si les coopératives ne bénéficiaient d'aucune faveur gouvernementale, on aurait le droit de dire qu'elles doivent leur rôle et l'augmentation de leur chiffre d'affaires au soutien volontaire de leurs clients, tel qu'il se manifeste dans le processus démocratique du marché. Mais ce n'est précisément pas le cas. Les coopératives sont abondamment subventionnées par le favoritisme gouvernemental. Ce qui fait grossir le nombre de leurs membres,
+ce n sont ni leurs propres réalisations ni les services qu'elles rendent aux clients, mais l'accumulation des faveurs de la part du gouvernement. En adhérant à la coopérative, le consommateur n'approuve pas l'idée coopérative : ce qu'il cherche est une part des bénéfices que le gouvernement accorde aux adhérents.</p>
+
+<p>La propagande coopérative soulignent amplement le fait que les coopératives sont des associations volontaires. De telles affirmations déforment totalement la véritable situation.</p>
+
+<p>En premier lieu, le gouvernement intervient d'une façon considérable dans la décision finale d'un individu sur le point de choisir entre adhérer ou non à une coopérative. La coopérative est privilégiée au détriment de tous les contribuables qui n'ont pas de carte de membre. Si pour deux lignes de bus en concurrence, la ligne rouge et la ligne bleue, les tickets de la première sont soumis à une taxe alors que ceux de la seconde en sont exempts, il serait trompeur de dire qu'un passager préférant la ligne bleue effectue son choix de manière volontaire. Il agit sous la contrainte parce que, en raison de l'intervention du gouvernement, la ligne rouge est pénalisée.</p>
+
+<p>En second lieu, la triste réalité est que dans de nombreuses communautés les membres ont recours à la pression sociale et à des menaces plus ou moins ouvertes afin d'accroître les adhésions. Il est vrai que ces abus sont moins fréquents aux États-Unis que dans les pays européens. Mais cela ne prouve pas que les adhérents américains des coopératives sont des citoyens à l'esprit plus démocratique. Cela montre tout simplement que les États-Unis sont encore un pays dans lequel les lois et la législation sont appliquées.</p>
+
+<p>Les coopératives ne sont ni plus ni moins démocratiques que toute autre organisation commerciale à laquelle l'économie de marché démocratique offre l'occasion de montrer ce qu'elle est capable de faire. Cependant, les coopératives n'osent pas prendre le risque d'essayer une telle épreuve et cherchent la protection du favoritisme.</p>
+
+
+<h3>Les privilèges, prérogatives et immunités des coopératives</h3>
+<h4>I. Le biais du gouvernement en faveur des coopératives</h4>
+
+<p>Aucun être humain ne peut se libérer de la partialité et d'un biais particulier en
+faveur de certaines personnes, institutions ou choses. Un gouvernement est toujours composé d'hommes mortels et n'est donc jamais indifférent aux
+querelles entre peuples, partis et idéologies. Seule l'idolâtrie de l'État présente les dirigeants comme des administrateurs et des arbitres incorruptibles des affaires terrestres. Les observateurs réalistes savent combien différents sont les véritables administrateurs et gens au pouvoir.</p>
+
+<p>Ce qui ne va pas avec les gouvernements contemporains n'est pas simplement qu'ils ont des préférences et des biais excessifs, mais encore plus qu'ils sont guidés par des préjugés aveugles. Le résultat est que leurs meilleures intentions sont déçues et qu'elles causent immanquablement des ravages.</p>
+
+<p>L'ensemble des progrès économiques modernes est fondé sur le fonctionnement de deux types principaux d'organisation commerciale : la propriété et l'association individuelles d'une part ; la société commerciale de l'autre. Toutes les réalisations sans précédents de l'industrialisme moderne, qui ont procuré une amélioration constante du niveau de vie pour une population sans cesse croissante, ont été le résultat de ces deux types d'organisation. C'est exclusivement l'industrie à la recherche du profit qui a transformé le monde des chevaux, des bateaux à voiles et des moulins à vent en monde de la machine à vapeur, de l'électricité et de la production de masse pour répondre aux besoins des masses. C'est l'entreprise privée à la poursuite du profit qui accumula le capital, c'est-à-dire les machines et les outils, qui seuls avaient le pouvoir d'accroître la productivité du travail et donc de faire monter les taux salariaux. Même les partisans les plus sectaires du coopératisme n'osent revendiquer le moindre de ces mérites pour les coopératives. Le mieux qu'ils puissent dire au bénéfice des coopératives est qu'elles ont plus ou moins bien copié — en tirant bien sûr avantage des privilèges importants qui leur étaient accordés — les méthodes techniques éprouvées des entreprises recherchant le profit. Il serait impossible de réécrire l'histoire de notre époque sans mettre à la première place les efforts de l'entreprise privée qui approvisionne quotidiennement les foyers avec des produits nouveaux, de meilleure qualité et moins chers. Mais les historiens n'oublierait rien d'important s'ils ne mentionnaient pas le fait que certains de ces produits sont distribués ou mis sur le marché par des coopératives et que certains des processus les plus simples de la fabrication sont également effectués dans des usines possédées par des associations coopératives. Il n'y a pas un Américain dont la vie quotidienne ne serait pas moins confortable si l'on avait empêché l'entreprise privée d'accomplir tout ce qu'elle a apporté au cours des cent dernières années. En revanche la grande majorité de la nation ne serait en aucun cas dans une moins bonne situation s'il n'y avait jamais eu de coopératives.</p>
+
+<p>Néanmoins, les gouvernements agissent comme si l'entreprise privée était une chose répréhensible et comme si le salut de l'humanité était totalement dépendant des coopératives. Ils établissent ouvertement et clairement une discrimination à l'encontre de l'entreprise privée en soumettant ses bénéfices à une taxation écrasante, dont les bénéfices obtenus par une coopérative sont exempts. Ils établissent en particulier une discrimination contre les sociétés en taxant leurs revenus à la fois au niveau de l'entreprise et au niveau des actionnaires percevant des dividendes. Des taux confiscatoires de l'impôt sur le revenu des personnes réduisent le montant du capital disponible pour le fonctionnement des entreprises privées alors que les coopératives sont autorisées à accumuler du capital soit sans être taxées du tout soit sans l'être au niveau de l'entreprise privée.</p>
+
+<p>Dans tous les pays du monde, les coopératives jouissent d'abondants privilèges.</p>
+
+<p>Aux États-Unis, à la fois les lois fédérales et les lois des États garantissent que les activités ordinaires des associations coopératives ne sont pas soumises aux lois anti-trusts. Le ministère de l'agriculture fournit gratuitement aux coopératives agricoles des conseils techniques, statistiques et légaux. Les agences gouvernementales accordent des prêts à faibles taux d'intérêt aux coopératives.</p>
+
+<p>Les privilèges les plus importants sont ceux octroyés dans le domaine de la taxation. Certaines exemptions ne comptent pas pour beaucoup, comme par exemple l'exemption des taxes d'autorisation annuelles. En revanche, celles qui concernent l'imposition sur le revenu sont d'une importance primordiale.</p>
+
+<p>Dès ses débuts, la législation fédérale de l'impôt sur le revenu en a exempté les coopératives. Ces exemptions ont été accrues et étendues par les lois ultérieures. Par ailleurs, elles devenaient d'autant plus utiles et avantageuses que les taux de taxation atteignaient des niveaux confiscatoires. Avec les taux d'imposition actuels, elles sont équivalentes à des subventions considérables faites aux frais de tous les contribuables et de toute la nation.</p>
+
+<h4>II. Les problèmes fondamentaux des privilèges fiscaux</h4>
+
+<p>En défendant et en justifiant leur privilèges fiscaux, les coopératives insistent délibérément sur des difficultés dérisoires et des syllogismes juridiques afin de détourner l'attention du public de la question essentielle.</p>
+
+<p>Comme il a déjà été signalé, depuis le début de la législation fédérale concernant l'impôt sur le revenu, la volonté était d'en exempter les coopératives. La galaxie politique de la nation et du Congrès était telle qu'aucune loi ne pouvait passer sans les votes de certains sénateurs et représentants pour qui ces exemptions fiscales avaient une suprême importance. Ainsi, toutes les définitions et dispositions des lois fiscales étaient formulées de façon à laisser les coopératives en paix. Quand l'expérience pratique de l'application des lois et les jugements des tribunaux apportèrent la preuve que ces privilèges n'étaient pas aussi grands que l'auraient voulu les coopératives et quand, avec une charge fiscale devenant de plus en plus lourde, l'appétit d'exemptions des coopératives s'accrut, ces formulations furent sans cesse rédigées à nouveau. Bien que certains membres du Congrès essayèrent de faire prévaloir le principe constitutionnel fondamental de l'égalité devant la loi, les prérogatives des coopératives étaient en pratique toujours élargies par ces nouvelles rédactions.</p>
+
+<p>Dans cette situation, il est facile de comprendre pourquoi les adhérents des coopératives désiraient fortement faire tourner la discussion autour du problème consistant à déterminer si oui ou non les coopératives font des profits au sens technique que les lois fiscales attribuent à ce terme. La définition légale actuelle du revenu a été influencée par la volonté d'en exempter les coopératives. Il n'est pas surprenant que les coopératives puissent l'interpréter en leur faveur.</p>
+
+<p>Bien sûr, ces interprétations sont contradictoires et indéfendables. Aucun artifice dialectique ne peut conduire à une définition acceptable du revenu qui puisse comprendre le bénéfice gagné par une société et en exclure celui gagné par une coopérative. Mais l'exemption des coopératives ne dépend pas de la définition du revenu telle qu'elle est inscrite dans la loi. Les coopératives sont explicitement exemptées à la fois par les lois fédérales et par les lois des États.</p>
+
+<p>Un débat concernant ce que la loi devrait être doit être radicalement différent de l'interprétation de la loi existante. Alors que cette dernière se limite strictement à la lettre et à l'esprit de la loi, la première question ne connaît qu'un critère : le bien-être public et l'efficacité économique.</p>
+
+<p>Les taxes sont perçues afin d'obtenir les fonds nécessaires pour conduire les affaires du gouvernement. Contribuer à une partie de ces fonds est un devoir civique. Ce n'est pas une amende. Le gouvernement ne pénalise pas ses citoyens parce qu'ils possèdent une maison, fument des cigarettes ou voyagent par le train. Il les taxe selon les critères prévus par ces conditions.</p>
+
+<p>Il en va de même de l'impôt sur le revenu. Ce dernier n'est pas une pénalité pour avoir fait des profits. Son idée est que les gens dont le revenu est plus élevé ont une plus grande capacité de payer que ceux ayant de faibles revenus. (Il n'est pas besoin d'étudier si ce principe de taxation selon la capacité est sain et s'il n'en est pas déjà arrivé au point de montrer sa propre absurdité.) Mais les adhérents des coopératives, empêtrés dans leur préjugé selon lequel les profits privés gagnés par les hommes d'affaires sont un mal devant être éradiqué, considèrent l'impôt sur le revenu comme une amende imposée aux « profiteurs ». L'impôt sur le revenu est d'après eux le moyen légal de balayer l'entreprise à la recherche du profit et de donner aux coopératives le rôle que visent les partisans les plus ambitieux des coopératives, à savoir le monopole exclusif de l'approvisionnement des consommateurs, pour tous les biens et services qu'ils demandent, et le contrôle des usines produisant ces biens.</p>
+
+<p>Au fond de l'argument des coopératives se trouve l'idée que vendre un bien à un prix dépassant les coûts encourus est injuste et devrait être puni par la confiscation d'au moins une partie du bénéfice. Mais si cela était vrai, cela s'appliquerait tout autant aux bénéfices des coopératives qu'à ceux des sociétés commerciales.</p>
+
+<p>Étudions en détail les arguments avancés par les coopératives en faveur de leurs privilèges fiscaux :</p>
+
+<p>1. La transaction entre une coopérative et ses membres ne serait pas une vente et un achat. Le processus, explique un éminent porte-parole des coopératives, M. James Peter Warbasse, président émérite de la Ligue Coopérative des États-Unis, est « simple. Un groupe de gens réunissent un certain montant d'argent avec lequel elles achètent des biens pour les mettre dans les rayons de leur magasin de vente. Ils possèdent les biens et ne peuvent donc pas se les vendre à eux-mêmes. Quand un membre veut certains de ces biens, il va au magasin et prend, par exemple, une boîte de petits pois. Les petits pois sont déjà à lui — il les a déjà payés. » <sup><a href="#partie-0-sdfootnote19sym" id="partie-0-sdfootnote19anc">19</a></sup> Or, cette description est impropre et trompeuse du début à la fin.</p>
+
+<p>Le groupe d'individus dont parle M. James Peter Warbasse ne se contente pas de réunir une certaine somme d'argent. Ils créent une association organisée dans le cadre d'une loi bien précise de leur État. Ils agissent intentionnellement de cette façon et en pleine connaissance de la loi parce qu'ils souhaitent que cette association soit reconnue par la législation et les tribunaux comme une entité juridique qui ne puisse poursuivre et être poursuivie que sous sa raison sociale, de sorte que les associés individuels ne soient pas obligés de répondre des dettes de l'association. Il n'est par conséquent pas vrai que les adhérents « possèdent les biens et ne peuvent donc pas se les vendre à eux-mêmes. » Les biens sont propriété de l'association et non des adhérents individuels. Si un membre désire les acquérir d'une manière légale — et non par le vol ou par le détournement de fonds — il doit les acheter à l'association. Il ne doit pas « les prendre dans les rayons ». Il n'y a à cet égard pas la moindre différence entre une société commerciale et une coopérative. L'adhérent de la coopérative n'a pas plus de titres à prendre une boîte de petits pois dans les rayons du magasin coopératif que n'en a l'actionnaire d'un grand magasin en ce qui concerne les boîtes figurant dans les rayons du grand magasin.</p>
+
+<p>Il ne s'agit pas seulement d'un détail juridique. C'est l'élément vital de la coopérative qui est considérée par la législation comme une personne dont l'actif et le passif sont distincts de l'actif et du passif de ses membres. Tout le système des entreprises coopératives s'effondrerait immédiatement si ce principe devait être abandonné.</p>
+
+<p>2. Même si nous devions accepter l'argument pervers selon lequel les coopératives ne <i>vendraient</i> en réalité pas lorsqu'elles vendent à leurs adhérents, cela n'expliquerait pas tous ces cas fréquents où les coopératives vendent à des non adhérents. Il est paradoxal que des associations pratiquant tous les types de transactions en gros et en détail, dans le domaine de l'exportation et de contrats gouvernementaux, aient recours à un tel prétexte boiteux.</p>
+
+<p>L'emploi des bénéfices bruts totaux issus des ventes par rapport à tous les frais engagés peut être classé en trois catégories :</p>
+
+<ol>
+<li>Une part est mise de côté comme amortissement, afin de remplacer l'équipement usagé.
+</li><li>Une part est réinvestie dans l'entreprise et augmente le capital investi, soit de l'unité elle-même, soit des ses filiales.
+</li><li>Une part est retirée de l'entreprise et va aux ayants droit : au propriétaire de l'entreprise individuelle, aux actionnaires de la société commerciale ou aux membres de la coopérative.
+</li></ol>
+
+<p>Les parts <i>b</i> et <i>c</i> constituent ensemble le revenu net du point de vue légal. Les
+défenseurs des coopératives, lorsqu'ils prétendent que les ristournes à la clientèle ne sont pas des profits, ne font allusion qu'à la part <i>c</i>. Or la part <i>b</i> n'est pas moins importante : elle est même plus importante car la principale fonction sociale et historique du profit est d'accumuler des capitaux supplémentaires. Le rôle énorme que le réinvestissement des profits et que l'investissement des profits dans de nouvelles entreprises a joué dans l'évolution de l'activité des coopératives est bien connu. Presque tous le capital en actions des super-coopératives, et plus particulièrement pour leurs entreprises de production et de transport, a été fourni par de tels profits.</p>
+
+<p>4. Un examen des principes et des méthodes selon lesquelles les coopératives dirigent leurs opérations commerciales et des règles comptables qu'elles utilisent montre clairement qu'elles sont guidées — comme toutes les autres entreprises commerciales — par la nécessité de faire un bénéfice ou un profit et d'éviter les pertes. Leur répugnance à utiliser le terme de « profit » en ce qui concerne leurs activités n'est que pur verbalisme sans aucun fondement substantiel.</p>
+
+<p>Ouvrons un document officiel de la Ligue Coopérative des États-Unis, publié sous le titre <i>Learning the Langage</i> (<i>Apprendre les mots</i>) <sup><a href="#partie-0-sdfootnote20sym" id="partie-0-sdfootnote20anc">20</a></sup>. Les auteurs y admettent librement que « nous », c'est-à-dire les coopératives, « faisons des affaires <i>pour gagner de l'argent</i>. » Ainsi, disent-ils, de nombreux adhérents posent la même question que l'homme d'affaires individuel, à savoir : « Avons nous fait des profits ou subi des pertes ? » L'homme d'affaires individuel appelle le relevé qui nous donne la réponse « état des pertes et
+profits » <sup><a href="#partie-0-sdfootnoteasym" id="partie-0-sdfootnoteaanc">a</a></sup>. Mais les
+auteurs de la brochure n'aiment pas cette appellation. Les comptables et les membres des coopératives, disent-ils,
+devraient éviter l'usage de l'expression « état des pertes et profits » et lui
+préférer soit « état des dépenses et des recettes » ou « état d'exploitation » <sup><a href="#partie-0-sdfootnote21sym" id="partie-0-sdfootnote21anc">21</a></sup>.</p>
+
+<p>C'est une pure manipulation sémantique. Les auteurs n'essaient même pas de démontrer que ces inquiétants « bénéfices » qu'ils essaient de soustraire à l'impôt ne sont ni un revenu ni un profit. Tout ce qu'ils font est de leur donner un autre nom. S'il était suffisant pour éviter de payer l'impôt sur le revenu de changer l'expression « état des pertes et profits » en « état d'exploitation », toutes les firmes individuelles et toutes les sociétés le feraient.</p>
+
+<p>Le même verbalisme se manifeste dans la proposition de la Ligue Coopérative de remplacer par le terme « restitution d'épargne » ceux de « remise », « dividende client » ou « ristourne à l'achat » <sup><a href="#partie-0-sdfootnote22sym" id="partie-0-sdfootnote22anc">22</a></sup>.</p>
+
+<p>5. Les coopératives nient le fait qu'elles bénéficient d'exemptions fiscales et sont donc privilégiés par rapport aux
+activités cherchant le profit. Leurs exemptions fiscales, disent-elles, ne sont pas un privilège car l'homme d'affaires individuel pourrait facilement bénéficier de la même liberté. Laissez lui rendre au consommateur la différence entre le prix coûtant et le prix de vente, comme le font les coopératives, et le problème est résolu <sup><a href="#partie-0-sdfootnote23sym" id="partie-0-sdfootnote23anc">23</a></sup>. Il est évident que ce raisonnement ne s'applique pas à l'exemption fiscale accordée à la part des profits d'une coopérative qui n'est pas distribuée mais réinvestie. Elle ne s'applique pas non plus à la part qui provient des ventes aux non-adhérents et d'un investissement préalable dans les filiales. En mettant de côté ces points mineurs, il faut remarquer que le concept de prix coûtant ou de prix de revient est différent pour les coopératives et pour le propriétaire individuel d'un magasin ou d'une station-service Pour une coopérative, il comprend les salaires et les autres paiements effectués aux employés et aux directeurs de l'entreprise coopérative. Pour le petit épicier, il ne comprend pas la rémunération du travail accompli par cet épicier. Si le petit épicier ou le propriétaire d'une station-service devaient « rendre » aux consommateurs la différence entre le prix de revient et le prix de vente, il n'aurait pas le moindre revenu : il travaillerait pour une récompense céleste alors que seul le personnel des coopératives toucherait sa paie.</p>
+
+<h4>III. Comment le travail et le capital sont gaspillés par les coopératives</h4>
+
+<p>L'éminence de l'économie de marché concurrentielle consiste en premier lieu dans le fait qu'elle tend sans cesse à transférer les moyens de production dans les mains de ceux qui les emploient de la façon la plus économique, en satisfaisant au mieux les besoins des consommateurs. Elle tend à éliminer les producteurs moins efficaces et à donner la direction du contrôle de la production aux plus efficaces. Pour comprendre la signification de cette fonction assurée par le marché, il est nécessaire de se rendre compte que l'on fait du tort au bien-être matériel de tout un chacun, lorsque les facteurs matériels de production ou le travail humain sont employés quelque part d'une façon qui fait qu'ils ne produisent pas autant qu'une gestion plus appropriée le permettrait. En comparaison des méthodes plus économiques de fonctionnement, des méthodes moins économiques conduisent à réduire la production totale. Elles appauvrissent la nation dans son ensemble et tous ses membres individuellement.</p>
+
+<p>En l'absence d'interférence dans le monde des affaires de la part du gouvernement, une entreprise qui utilise un montant plus élevé de capital et de travail qu'il n'est nécessaire dans des circonstances données ne peut pas survivre. Comme ses coûts sont plus élevés, des concurrents plus efficaces l'obligent en fin de compte à se retirer des affaires. Seules demeurent les organisations les plus efficaces.</p>
+
+<p>Mais dès que le gouvernement intervient par des subventions, du crédit bon marché ou des exemptions fiscales, la situation est totalement modifiée. Si l'épicier inefficace <i>A</i> est exempté d'une taxe que son concurrent plus efficace <i>B</i> est forcé de payer, alors la capacité qu'a <i>A</i> de résister à la concurrence de <i>B</i> est renforcée. Les véritables coûts de fonctionnement de <i>A</i> (c'est-à-dire ses coûts de fonctionnement hors taxes) sont toujours plus élevés que ceux de <i>B</i>. Mais face à cette différence entre les véritables coûts de fonctionnement il faut tenir compte de l'avantage que <i>A</i> obtient de l'exemption fiscale. Bien que la gestion de <i>A</i> soit gaspilleuse, bien qu'elle absorbe un montant de capital et de travail qui, sans la moindre détérioration des services rendus au public, pourrait être rendu disponible pour satisfaire d'autres besoins qui ne sont précisément pas satisfaits en raison du gaspillage de <i>A</i>, son magasin peut continuer à faire des affaires. Le gouvernement protège A contre les conséquences de sa propre inefficacité.</p>
+
+<p>Une exemption fiscale n'est par conséquent pas simplement un sujet qui ne concernerait que <i>A</i> et <i>B</i> et qui n'affecterait pas les intérêts des autres gens. Ce que le gouvernement obtient en taxant seulement <i>B</i> au lieu de répartir l'impôt de façon égale entre <i>A</i> et <i>B</i>, ce n'est pas uniquement une perturbation de la situation de concurrence mutuelle entre <i>A</i> et <i>B</i>. Le principal effet économique et social consiste à préserver une entreprise travaillant à coûts élevés aux dépens d'une entreprise travaillant à bas coûts, à préserver un gaspillage particulièrement inutile et à l'évidence nuisible des facteurs de production rares.</p>
+
+<p>Ce <i>A</i> inefficace choyé par le gouvernement afin de lui permettre de faire concurrence à <i>B</i>, c'est la coopérative en tant qu'elle bénéficie d'exemptions fiscales et d'autres faveurs gouvernementales. Il ne sert à rien que les amis du coopératisme essaient de justifier ces privilèges fiscaux en ayant recours à des arguments métaphysiques. La simple vérité est la suivante : le gouvernement intervient pour permettre aux coopératives de résister à la concurrence des entreprises privées, concurrence à laquelle elles ne pourraient de l'aveu de tous résister sans aides.</p>
+
+<p>Les pères de l'idée coopérative et les fondateurs des premières coopératives croyaient à tort qu'elles pourraient rendre service au public à des coûts plus faibles que ceux de l'entreprise privée. Toutefois, un siècle d'expériences coopératives a démoli cette hypothèse en montrant qu'elle est pure illusion. Les coopératives n'ont pas résisté à l'épreuve du temps. Là où elles prospèrent et dans la mesure où elles prospèrent, elles doivent leur existence aux divers privilèges octroyés par le gouvernement, en particulier aux exemptions fiscales et au crédit bon marché accordé par le gouvernement.</p>
+
+<p>Ces privilèges sont d'autant plus grands pour les coopératives et nuisent d'autant plus à l'effort industriel et au bien-être économique de toute la nation, que les coopératives participent aux activités de production.</p>
+
+<p>Dans l'économie de marché libre, prévaut une tendance à n'investir le capital disponible pour réaliser de nouveaux projets que dans les entreprises dont on s'attend le plus à ce qu'elles évitent le gaspillage et l'inefficacité. Cependant, le favoritisme en faveur des coopératives contrebalance cette tendance. Comme d'un côté le gouvernement taxe lourdement les entreprises individuelles et taxe deux fois les sociétés commerciales, et que d'un autre côté il laisse libres les coopératives, cela donne aux usines coopératives inefficaces l'apparence trompeuse de l'efficacité et l'occasion d'amasser des bénéfices. Les défenseurs du coopératisme vantent le fait qu'aujourd'hui aux États-Unis les propriétaires d'usines approchent les coopératives et proposent de leur vendre leurs entreprises, que les banques viennent vers elles, leur disent où il y a une usine qui pourrait être achetée à bon marché et proposent de leur prêter l'argent pour l'acquérir <sup><a href="#partie-0-sdfootnote24sym" id="partie-0-sdfootnote24anc">24</a></sup>. De telles offres ne sont toutefois pas, comme le présument les défenseurs du coopératisme, la preuve de la supériorité du mode coopératif de production. Elles montrent simplement que des usines qui, parce qu'elles produisent à coûts trop élevés, sont condamnées sur le marché libre, peuvent continuer tranquillement à survivre dès que les larges privilèges des coopératives leur sont accordés.</p>
+
+<p>Alors que le système fiscal à la fois du gouvernement fédéral et des États freine considérablement l'accumulation de capital pour les sociétés, les entreprises individuelles et les personnes physiques, il encourage cette accumulation du capital pour les coopératives. Ces dernières sont pleinement conscientes du formidable potentiel de cette situation. Elles ont forgé le slogan « <i>Les usines sont libres</i> » <sup><a href="#partie-0-sdfootnote25sym" id="partie-0-sdfootnote25anc">25</a></sup>. Leur éminent porte-parole, en parlant d'un exemple de transaction d'une coopérative de consommateurs, dit : « C'était une bonne affaire pour les adhérents de la coopérative, car sans aucun sacrifice de leur part ils étaient devenus propriétaires d'une grande entreprise de fabrication » <sup><a href="#partie-0-sdfootnote26sym" id="partie-0-sdfootnote26anc">26</a></sup>. Or, il n'existe rien qui ne puisse être acquis sans sacrifice. Il est vrai que les membres de la coopérative sont devenus propriétaires de l'entreprise de fabrication en question « sans aucun sacrifice de <i>leur</i> part ». Mais ce n'était le cas que parce que le
+gouvernement avait obligé d'autres gens à faire un sacrifice au bénéfice des adhérents
+de la coopérative. Il les avait forcé à payer des impôts plus élevés afin de libérer les coopératives du fardeau fiscal. La coopérative a acheté l'usine grâce à une subvention reçue sous la forme d'une exemption fiscale.</p>
+
+<p>Les coopératives, lorsqu'elles parlent de leur expansion, passent leurs privilèges sous silence. Elles attribuent leur succès exclusivement au fait qu'elles « ne sont pas obligées de faire des profits » <sup><a href="#partie-0-sdfootnote27sym" id="partie-0-sdfootnote27anc">27</a></sup>. Il n'est pas nécessaire de recommencer l'examen de tous les problèmes concernés par ce sujet. Étudions la chose d'un point de vue purement pragmatique.</p>
+
+<p>Le point fondamental du raisonnement des pionniers et des pères du coopératisme est : les détaillants et les distributeurs, ces intermédiaires parfaitement inutiles, augmentent le prix des articles parce qu'ils veulent faire des profits. Les coopératives élimineront le profit et seront donc en position de vendre à leurs membres les biens à des prix inférieurs à ceux pratiqués par l'entreprise privée à la poursuite du profit. Comme tout le monde cherche à acheter au prix le plus bas, le développement des coopératives éliminera très rapidement le détaillant individuel.</p>
+
+<p>L'histoire a totalement réfuté cette doctrine. Les coopératives ne sont pas en position de résister à la concurrence des entreprises privées à la recherche du profit. Elles auraient disparu depuis longtemps si elles n'avaient pas joui d'importants privilèges de la part du gouvernement.</p>
+
+<p>Le fait même que malgré ces privilèges elles n'aient pas une plus grande part de marché dans le domaine de la vente au détail est une preuve de leur inefficacité inhérente.</p>
+
+<p>En coupant les cheveux en quatre et en s'adonnant aux syllogismes subtils concernant les concepts de profit, d'épargne, de gain, de bénéfice, de coût, etc., les partisans des coopératives ont évité la discussion sur la principale question. Dans un pays libre comme les États-Unis, l'immense majorité du public qui achète préfère se fournir auprès de l'entreprise individuelle et non chez les coopératives. Ces dernières insistent toujours sur le fait qu'elle rendent à leurs consommateurs la différence entre le prix de revient et le prix de vente, sous la forme d'une « ristourne », d'un « dividende » versé au client, alors que l'entreprise privée, selon eux, garde cette différence sous forme de profit. Mais le consommateur intelligent prend en compte tous les termes du contrat lorsqu'il doit choisir entre entreprise privée et entreprise coopérative : la qualité de la marchandise tout autant que son prix et que la valeur des services supplémentaires rendus par le vendeur. En se posant la question d'acheter ou non dans une coopérative, il prend aussi en compte la ristourne à attendre. C'est un fait qu'aux États-Unis cette comparaison entre magasin individuel et magasin coopératif se fait dans l'immense majorité des cas au bénéfice de l'entreprise individuelle. Le comportement de la population américaine pour ses achats témoigne du fait qu'on achète moins cher, ou pour une meilleure qualité, ou encore moins cher et à meilleure qualité, dans un magasin individuel malgré la remise des coopératives. Il est ainsi prouvé que le profit de l'homme d'affaires individuel n'est pas dû à des prix excessifs pour le consommateur. Il est touché par une entreprise qui dans la majorité des cas sert mieux et à meilleur marché le consommateur que la coopérative « altruiste ». Les coopératives n'ont aucune raison de se vanter des ristournes. Le détaillant individuel donne davantage au consommateur, soit sous la forme d'une meilleure marchandise, soit par des prix plus bas, soit encore par d'autres services.</p>
+
+<h4>IV. La fabrication dans les coopératives et dans les autres entreprises de production</h4>
+
+<p>Le développement spectaculaire des activités de fabrication et d'autres activités de production et de transport de la part des coopératives et de diverses unions de coopératives fut, comme il a déjà été mentionné, une conséquence du fait que les privilèges fiscaux des coopératives sont devenus d'autant plus précieux que les taxes payées par les groupes commerciaux non exemptés sont devenues de plus en plus lourdes.</p>
+
+<p>Les différences entre une usine de production possédée et gérée par une coopérative ou une union de coopératives et une usine similaire possédée et gérée par une société commerciale ou une entreprise individuelle à la recherche du profit sont de deux ordres :</p>
+
+<ol>
+<li>La gestion des premières est moins efficaces que celle des secondes.
+</li><li> Les premières jouissent de privilèges dans le domaine fiscal et dans celui de l'obtention de crédits, privilèges qui sont refusés aux secondes.
+</li></ol>
+
+<p>Ceux qui sont prêts à mettre en doute la première de ces affirmations sont incapables d'expliquer pourquoi la concurrence de ces entreprises privilégiées n'a pas totalement détruit leurs rivales non privilégiées. Un expert éminent, M. A.G. Black, ancien directeur de l'administration chargée du crédit aux agriculteurs, déclarait avant la Deuxième Guerre mondiale que « quand les taxes absorbent une large part des bénéfices des entreprises privées, la forme coopérative procure véritablement un avantage énorme » <sup><a href="#partie-0-sdfootnote28sym" id="partie-0-sdfootnote28anc">28</a></sup>. Cette avantage énorme est entièrement encaissé par la bureaucratie coopérative pour compenser l'inefficacité de sa gestion. Aucune part de cet avantage n'est reversée aux consommateurs car ceux-ci, si l'on tient compte de la qualité des produits ou des services rendus, ne sont pas approvisionnés par les coopératives à des prix nets (les prix nets étant les prix moins la ristourne) inférieurs à ceux des firmes individuelles non exemptées de taxes. Les ouvriers employés dans les usines des coopératives ne touchent pas non plus des salaires plus élevés que les autres ouvriers.</p>
+
+<p>Le Trésor, en accordant ces privilèges fiscaux aux activités de production des coopératives, renonce à des revenus qu'il pourrait empocher si ces usines étaient propriété de sociétés commerciales ou si aucun privilège n'était accordé aux coopératives. Les dépenses publiques doivent être réduites d'autant. Il faut renoncer à certains bénéfices que peut rendre une allocation budgétaire. Qui en profite ? La réponse est : personne. Le montant de la baisse du revenu est gaspillé par l'ineptie, la négligence et la maladresse.</p>
+
+<p>Si ce n'était pas vrai, les coopératives pourraient soit, en vendant au même prix que les autres firmes, obtenir d'énormes profits, soit, en baissant leurs prix, ruiner leurs rivales. Elles auraient atteint dans les deux cas depuis longtemps ce qu'elles considèrent comme le but ultime de leur mouvement, à savoir une situation où les coopératives produiraient dans leurs propres usines tout ce dont leurs adhérents ont besoin. Le simple fait que leurs succès ont été bien plus modestes démontre qu'il y a dans le coopératisme lui-même un facteur qui freine sa progression malgré l'énorme soutien qu'il reçoit du gouvernement. Nous ne pouvons pas ne pas appeler « infériorité économique » ce facteur.</p>
+
+<h4>V. Comment le favoritisme nuit aux coopératives</h4>
+
+<p>Le favoritisme ne nuit pas moins aux bénéficiaires de la faveur que ceux aux dépens desquels elle est accordée. Il corrompt et affaiblit le protégé.</p>
+
+<p>En faisant confiance à la tutelle politique, les coopératives ont souvent négligé de nommer des employés, des directeurs et du personnel efficaces dans la gestion de l'entreprise et ont donné la préférence aux gens versés dans les affaires politiques, la propagande et le lobbying et familiers des politiciens et des bureaucrates. Dans les pays de l'Europe continentale, dont les activités coopératives sont largement vantées par les partisans des coopératives américaines et données comme modèles pour leurs propres activités, les coopératives sont totalement dépendantes des divers partis politiques. Tous les partis importants — en particulier les sociaux-démocrates, les socialistes catholiques, les partis chrétiens non catholiques et les divers partis nationalistes — ont créé leur propre système de coopératives qui collaborent étroitement avec les dirigeants politiques.</p>
+
+<p>L'entreprise privée a très envie de réussir en améliorant la qualité de ses produits et de ses services et en baissant ses prix. Elle a recours à la publicité pour faire connaître au public les articles qu'elle met en vente. Une publicité d'un marchand à la recherche du profit met en relief les propres réalisations de l'annonceur, et les avantages que les clients potentiels pourraient en tirer. Elle ne dénigre jamais les concurrents. La propagande des coopératives est incapable de trouver assez de choses méritoires dans leurs propres réalisations. Leur leitmotiv est de calomnier l'entreprise privée et d'insinuer que ses profit sont obtenus en trompant les consommateurs.</p>
+
+<p>Quand un marchand individuel est mécontent du rendement de son magasin, il essaie d'améliorer sa gestion. Quand une coopérative travaille de façon peu satisfaisante, la première idée qui vient aux employés responsables et aux directeurs n'est pas de recourir à une réforme adéquate de l'exploitation. Il leur est plus facile de demander davantage d'exemptions fiscales et encore plus de crédit public à bon marché.</p>
+
+<p>Les auteurs n'innombrables livres, brochures et périodiques publiés par la propagande coopérative se préoccupent tellement des aspects politiques du coopératisme qu'il ne posent jamais la question à laquelle on ne peut répondre sans démolir totalement les dogmes fondamentaux du mouvement coopératif. Ils ne demandent jamais : Les pères du coopératisme avaient-ils raison de supposer que l'élimination du profit permettra d'approvisionner le consommateur à meilleur prix qu'il ne l'est par l'entreprise à la recherche du profit ? Si la réponse à cette question était positive, il serait impossible d'expliquer comment l'entreprise individuelle — même sans tenir compte des privilèges accordés aux entreprises — pourrait concurrencer les coopératives. L'échec spectaculaire des coopératives de consommation dans les agglomérations urbaines des États-Unis, voilà le seul problème à étudier dans un livre sérieux et honnête sur le coopératisme. Comment cet échec a-t-il pu se produire malgré toutes les taxes imposées à l'entreprise privée et tous les larges privilèges accordés aux coopératives ?</p>
+
+<p>Les défenseurs du coopératisme pensent qu'ils se sont suffisamment dispensés de répondre à cette question en couvrant d'insultes et d'injures tous ceux qui ne sont pas d'accord avec eux. Le langage ordurier qu'emploie la littérature en faveur des coopératives dans ses polémiques est tout à fait choquant. Mais le fait même qu'ils aient recours à de tels termes injurieux prouve qu'ils sont pleinement conscients de leur incapacité à répondre aux objections soulevées par les économistes.</p>
+
+<p>Il n'est pas non plus nécessaire de jeter de la poudre aux yeux en s'étendant sur les succès du coopératisme dans d'autres régions du monde. Le fait que l'Islande est,
+rapportée à sa population, le « pays le plus "coopératisé"
+du monde » <sup><a href="#partie-0-sdfootnote29sym" id="partie-0-sdfootnote29anc">29</a></sup>, ne
+compense pas le fait que les États-Unis, pays ayant le niveau de vie le plus élevé, sont — en
+ce qui concerne les coopératives de consommation — celui qui est le moins "coopératisé". Le développement du coopératisme dans ces pays d'Europe de l'Est qui n'ont jamais connu d'institutions libérales ne comptera certainement pas pour grand-chose aux yeux des citoyens des pays libres.</p>
+
+<p>La littérature coopérative manque totalement d'esprit d'autocritique et d'appréciation réaliste des faits. Elle est pleine de vanité, d'orgueil et d'autosatisfaction. Elle ressasse encore et toujours les mêmes vieilles erreurs, déjà réfutées une centaine de fois, et ne prête aucune attention à la moindre idée nouvelle. Elle reflète ainsi fidèlement la stérilité intellectuelle d'un mouvement qui doit son développement exclusivement à la partialité bienveillante des politiciens.</p>
+
+<h4>Conclusion</h4>
+
+<p>Le mouvement coopératif est entièrement fondé sur l'idée totalement fausse mais toujours populaire que le profit est un péage injuste que l'homme d'affaires fait payer
+aux clients et sur l'affirmation que le vendeur ne devrait en toute justice pas demander plus que ce que lui a coûté la marchandise. Les coopératives ont été créées comme moyens d'abolir entièrement la pratique perverse de vente au-dessus des coûts.</p>
+
+<p>Cent années de pratique des associations coopératives ont clairement prouvé qu'elles ne sont pas capables de saisir leur chance sur un marché libre. Elles ne peuvent perdurer par leurs propres efforts. On ne peut au moins pas
+nier qu'il y a pas d'exemple de coopérative qui ait résisté à la concurrence de l'entreprise privée sans favoritisme de la part du gouvernement. Dans tous les pays du monde, le mouvement coopératif doit son développement et son expansion actuelle, quels qu'ils puissent être, à des exemptions fiscales, à un crédit public bon marché et à d'autres privilèges. En affirmant avec véhémence que l'abolition de ces privilèges reviendrait à supprimer les coopératives, leurs
+porte-parole avouent qu'ils considèrent eux-mêmes ces privilèges comme un élément indispensable à la survie du coopératisme.</p>
+
+<p>Le monde des affaires n'est pas une fin en soi. Il existe et fonctionne pour le bénéfice du public. La seule justification de l'exploitation d'une affaire réside dans le fait qu'un nombre suffisant de gens se fournissent volontairement auprès d'elle. Si les gens n'achètent pas d'eux-mêmes dans un magasin, il n'est certainement pas du rôle du gouvernement que de le favoriser aux dépens du revenu de la population et d'y amener ainsi comme clients des gens qui désirent partager les bénéfices de ces faveurs. Une entreprise commerciale qui doit sa survie aux pressions politiques et non au soutien volontaire du public qui achète est parasitaire. Sa préservation conduit à un gaspillage de travail et de facteurs matériels de production, elle réduit la somme totale de biens disponibles à la consommation, elle est perverse du point de vue du bien-être commun.</p>
+
+<p>Le type coopératif d'organisation commerciale ne peut justifier son existence qu'en renonçant aux privilèges dont il jouit aujourd'hui. Ce n'est que dans la mesure où les coopératives sont capables de résister par leurs propres moyens, sans le soutien d'exemptions fiscales, de crédit public à bon marché et d'autres faveurs, que le coopératisme peut être considéré comme une méthode légitime de faire des affaires dans une société libre.</p>
+
+<br><br>
+<p>
+<b>Notes</b>
+</p>
+
+<div id="partie-0-sdfootnotea">
+	<p><a href="#partie-0-sdfootnoteaanc" id="partie-0-sdfootnoteasym">a.</a>
+« État des résultats » est l'expression comptable consacrée en français, qui n'a donc pas la connotation que veulent éviter les coopératives. NdT.
+</p></div>
+<div id="partie-0-sdfootnote1">
+	<p><a href="#partie-0-sdfootnote1anc" id="partie-0-sdfootnote1sym">1.</a>
+J.P. Warbasse, <i>The Cooperative Way, a Method of World Reconstruction</i> (New York : Barnes and Noble, 1946).</p>
+</div>
+<div id="partie-0-sdfootnote2">
+	<p><a href="#partie-0" id="partie-0-sdfootnote2sym" title="Renvoi au début de la partie : ancre absente du site source.">2.</a>
+H.M. Kallen, <i>The Decline and Rise of the Consumer</i> (Chicago : Packard, 1945).</p>
+</div>
+<div id="partie-0-sdfootnote3">
+	<p><a href="#partie-0-sdfootnote3anc" id="partie-0-sdfootnote3sym">3.</a>
+Ibid., pp. 196-197.</p>
+</div>
+<div id="partie-0-sdfootnote4">
+	<p><a href="#partie-0-sdfootnote4anc" id="partie-0-sdfootnote4sym">4.</a>
+Ibid., p. 422.</p>
+</div>
+<div id="partie-0-sdfootnote5">
+	<p><a href="#partie-0-sdfootnote5anc" id="partie-0-sdfootnote5sym">5.</a>
+Cf. E.S. Bogardus, <i>Dictionary of Cooperation</i> (New York et Chicago : Cooperative League of the U.S.A., 1943 et 1945), p. 54.</p>
+</div>
+<div id="partie-0-sdfootnote6">
+	<p><a href="#partie-0-sdfootnote6anc" id="partie-0-sdfootnote6sym">6.</a>
+Cf. Kallen, <i>The Decline and Rise of the Consumer</i>, p. 294.</p>
+</div>
+<div id="partie-0-sdfootnote7">
+	<p><a href="#partie-0-sdfootnote7anc" id="partie-0-sdfootnote7sym">7.</a>
+Cf. Bogardus, <i>Dictionary of Cooperation</i>, p. 54.</p>
+</div>
+<div id="partie-0-sdfootnote8">
+	<p><a href="#partie-0-sdfootnote8anc" id="partie-0-sdfootnote8sym">8.</a>
+Cf. Kallen, <i>The Decline and Rise of the Consumer</i>, p. 294.</p>
+</div>
+<div id="partie-0-sdfootnote9">
+	<p><a href="#partie-0-sdfootnote9anc" id="partie-0-sdfootnote9sym">9.</a>
+Ibid., p. 435.</p>
+</div>
+<div id="partie-0-sdfootnote10">
+	<p><a href="#partie-0-sdfootnote10anc" id="partie-0-sdfootnote10sym">10.</a>
+Platon., <i>Les Lois</i>, livre 5 p. 739.</p>
+</div>
+<div id="partie-0-sdfootnote11">
+	<p><a href="#partie-0-sdfootnote11anc" id="partie-0-sdfootnote11sym">11.</a>
+Le résultat le plus surprenant de la propagande coopérative est le livre déjà cité du
+professeur Kallen. Pages 436–459, le professeur Kallen introduit un personnage fictif, le Président Robert Adam Owen Smith qui, en l'an 2044, prend la parole devant « l'Union Coopérative du Monde » et qui raconte dans son discours l'histoire du mouvement coopératif, y compris pour les années séparant notre génération de l'année 2044. Voici ce qui dit M. Smith sur l'histoire future du mouvement coopératif : « La grande industrie [...] utilisa toute sa ruse et tout son pouvoir pour le briser, en ayant recours aux armes et à l'oppression financière [...]. Ces tentatives ayant échoué, des bandes armées furent employées pour détruire les établissement coopératifs et tuer leurs adhérents » (p. 443). Sans commentaire.</p>
+
+<div id="partie-0-sdfootnote12">
+	<p><a href="#partie-0-sdfootnote12anc" id="partie-0-sdfootnote12sym">12.</a>
+Cf. B. Potter Webb <i>The Cooperative Movement in Great Britain</i>, 10<sup>ème</sup> édition (Londres : G. Allen, 1920), p. 65.</p>
+</div>
+<div id="partie-0-sdfootnote13">
+	<p><a href="#partie-0-sdfootnote13anc" id="partie-0-sdfootnote13sym">13.</a>
+Cf. J. Baker, <i>Inquiry on Cooperative Enterprise</i> (Washington, D.C. : U.S. Goverment Printing Office, 1937), p. 7.</p>
+</div>
+<div id="partie-0-sdfootnote14">
+	<p><a href="#partie-0-sdfootnote14anc" id="partie-0-sdfootnote14sym">14.</a>
+Cf. <i>Learning the langage of Study and Action</i> (Cooperative League of U.S.A. Pamphlet numéro 43).</p>
+</div>
+<div id="partie-0-sdfootnote15">
+	<p><a href="#partie-0-sdfootnote15anc" id="partie-0-sdfootnote15sym">15.</a>
+Cf. J. Baker, <i>Inquiry on Cooperative Enterprise</i>, p. 6.</p>
+</div>
+<div id="partie-0-sdfootnote16">
+	<p><a href="#partie-0-sdfootnote16anc" id="partie-0-sdfootnote16sym">16.</a>
+Cf. M.L. Steward, Cooperatives in the U.S. — a Balance Sheet. (Public Affairs Pamphlets numéro 32, 1944), p. 6.</p>
+</div>
+<div id="partie-0-sdfootnote17">
+	<p><a href="#partie-0-sdfootnote17anc" id="partie-0-sdfootnote17sym">17.</a>
+Cf. Kallen, <i>The Decline and Rise of the Consumer</i>, p. 436.</p>
+</div>
+<div id="partie-0-sdfootnote18">
+	<p><a href="#partie-0-sdfootnote18anc" id="partie-0-sdfootnote18sym">18.</a>
+En 1891. Cf. Webb, <i>The Cooperative Movement in Great Britain</i>, p. xxiii.</p>
+</div>
+<div id="partie-0-sdfootnote19">
+	<p><a href="#partie-0-sdfootnote19anc" id="partie-0-sdfootnote19sym">19.</a>
+Cf. Warbasse, <i>The Cooperative Way, a Method of World Reconstruction</i>, p. 115.</p>
+</div>
+<div id="partie-0-sdfootnote20">
+	<p><a href="#partie-0-sdfootnote20anc" id="partie-0-sdfootnote20sym">20.</a>
+Cooperative League of U.S.A., Brochure numéro 43.</p>
+</div>
+<div id="partie-0-sdfootnote21">
+	<p><a href="#partie-0-sdfootnote21anc" id="partie-0-sdfootnote21sym">21.</a>
+<i>Ibid</i>., p. 18.</p>
+</div>
+<div id="partie-0-sdfootnote22">
+	<p><a href="#partie-0-sdfootnote22anc" id="partie-0-sdfootnote22sym">22.</a>
+Cf. W.E. Regli, <i>A Primer of Bookkeeping for Coopératives</i>, 2<sup>ème</sup> édition (1937), p. 5.</p>
+</div>
+<div id="partie-0-sdfootnote23">
+	<p><a href="#partie-0-sdfootnote23anc" id="partie-0-sdfootnote23sym">23.</a>
+Warbasse, <i>The Cooperative Way, a Method of World Reconstruction</i>, p. 158.</p>
+</div>
+<div id="partie-0-sdfootnote24">
+	<p><a href="#partie-0-sdfootnote24anc" id="partie-0-sdfootnote24sym">24.</a>
+<i>Ibid</i>., pp. 45-46.</p>
+</div>
+<div id="partie-0-sdfootnote25">
+	<p><a href="#partie-0-sdfootnote25anc" id="partie-0-sdfootnote25sym">25.</a>
+<i>Ibid</i>., p. 46.</p>
+</div>
+<div id="partie-0-sdfootnote26">
+	<p><a href="#partie-0-sdfootnote26anc" id="partie-0-sdfootnote26sym">26.</a>
+<i>Ibid</i>., pp. 46-47.</p>
+</div>
+<div id="partie-0-sdfootnote27">
+	<p><a href="#partie-0-sdfootnote27anc" id="partie-0-sdfootnote27sym">27.</a>
+<i>Ibid</i>., p. 46.</p>
+</div>
+<div id="partie-0-sdfootnote28">
+	<p><a href="#partie-0-sdfootnote28anc" id="partie-0-sdfootnote28sym">28.</a>
+Cité dans <i>Tax-Free Manufacturing Coopérative Associations</i> (préparé par la « National Tax Equality Assocation », 1945), p. 2.</p>
+</div>
+<div id="partie-0-sdfootnote29">
+	<p><a href="#partie-0-sdfootnote29anc" id="partie-0-sdfootnote29sym">29.</a>
+Cf. Warbasse, <i>The Cooperative Way, a Method of World Reconstruction</i>, p. 126.</p>
+</div>
+
+<br>
+
+
+</div></section></article><footer class="meta"><p>Source : <a href="http://herve.dequengo.free.fr/Mises/MMM/MMM_18.htm">Hervé de Quengo</a>. Texte conservé ; présentation adaptée à la lecture sur écran.</p></footer></main><nav class="chapter-nav fixed-bottom reader-bottom" aria-label="Parties précédente et suivante"><a id="previous" href="#sommaire">← Précédent</a><a href="#sommaire">Sommaire</a><a id="next" href="#partie-0">Suivant →</a></nav><div id="global-progress" aria-hidden="true"></div><script>
+document.body.classList.add('js');
+const sections=[...document.querySelectorAll('article section')],toc=document.getElementById('toc'),previous=document.getElementById('previous'),next=document.getElementById('next'),resume=document.getElementById('resume');
+function get(k){try{return localStorage.getItem('livre-12-'+k)}catch(e){return null}}function put(k,v){try{localStorage.setItem('livre-12-'+k,v)}catch(e){}}
+let size=Math.max(.95,Math.min(1.65,Number(get('size'))||1.15));
+function applySize(){document.documentElement.style.setProperty('--size',size+'rem')}applySize();
+function sharedTheme(){try{return localStorage.getItem('ebooks-theme')||get('theme')}catch(e){return get('theme')}}
+document.documentElement.dataset.theme=sharedTheme()==='dark'?'dark':'light';
+const theme=document.getElementById('toggle-theme');function themeLabel(){theme.textContent=document.documentElement.dataset.theme==='dark'?'☀':'☾';theme.setAttribute('aria-pressed',String(document.documentElement.dataset.theme==='dark'))}themeLabel();
+theme.onclick=()=>{document.documentElement.dataset.theme=document.documentElement.dataset.theme==='dark'?'light':'dark';put('theme',document.documentElement.dataset.theme);try{localStorage.setItem('ebooks-theme',document.documentElement.dataset.theme)}catch(e){}themeLabel()};
+addEventListener('pageshow',()=>{document.documentElement.dataset.theme=sharedTheme()==='dark'?'dark':'light';themeLabel()});
+document.getElementById('smaller').onclick=()=>{size=Math.max(.95,Math.round((size-.1)*100)/100);applySize();put('size',String(size))};
+document.getElementById('larger').onclick=()=>{size=Math.min(1.65,Math.round((size+.1)*100)/100);applySize();put('size',String(size))};
+const last=get('last');if(sections.some(s=>s.id===last)){resume.href='#'+last;resume.textContent='Reprendre la lecture'}
+toc.onchange=()=>{location.hash=toc.value||'sommaire'};
+let active=-1;
+function show(){const id=decodeURIComponent(location.hash.slice(1));const target=document.getElementById(id);const section=target?.closest('article section');active=sections.indexOf(section);sections.forEach(s=>s.classList.toggle('active',s===section));document.body.classList.toggle('home',active<0);toc.value=section?.id||'';previous.href=active>0?'#'+sections[active-1].id:'#sommaire';previous.setAttribute('aria-disabled',String(active<0));next.href=active<sections.length-1?'#'+sections[Math.max(0,active+1)].id:'#sommaire';next.textContent=active===sections.length-1?'Sommaire':'Suivant →';if(section){put('last',section.id);requestAnimationFrame(()=>{if(target!==section)target.scrollIntoView();else window.scrollTo(0,0)})}else window.scrollTo(0,0);progress()}
+function progress(){const bar=document.getElementById('global-progress');const max=document.documentElement.scrollHeight-innerHeight;const fraction=max>0?Math.min(1,Math.max(0,scrollY/max)):1;bar.style.width=active<0?'0%':((active+fraction)/sections.length*100)+'%'}
+addEventListener('hashchange',show);addEventListener('scroll',progress,{passive:true});addEventListener('resize',progress);show();
+</script></body></html>

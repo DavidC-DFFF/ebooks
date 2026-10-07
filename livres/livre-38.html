@@ -1,0 +1,1358 @@
+<!doctype html><html lang="fr"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Toits ou plafonds ? — Milton Friedman et George Stigler</title><style>:root {
+  --bg: #ffffff;
+  --text: #000000;
+  --accent: #4444ff;
+  --background: #ffffff;
+  --button-bg: #f7f7f7;
+  --button-hover-bg: #eaeaea;
+  --progress-color: #660000;
+}
+
+[data-theme="dark"] {
+  --bg: #2c2c2e;
+  --text: #e0e0e0;
+  --accent: #9b9bff;
+  --background: #2c2c2e;
+  --button-bg: #3a3a3c;
+  --button-hover-bg: #48484a;
+  --progress-color: #ffdddd;
+}
+
+body {
+  margin: 0;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 1.2rem;
+  line-height: 1.6;
+  text-align: justify;
+  background: var(--bg);
+  color: var(--text);
+  padding: 0;
+}
+
+/* === NAVBAR === */
+nav.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2.2rem;
+  background-color: var(--background);
+  backdrop-filter: blur(6px);
+  box-shadow: 0 1px 6px rgba(0, 0, 0, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: nowrap;
+  padding: 0 0.5rem;
+  gap: 0.5rem;
+  z-index: 1000;
+  font-size: 0.85rem;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+nav.navbar select {
+  flex-grow: 1;
+  min-width: 0;
+  max-width: 100%;
+  padding: 0.25rem;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  background: var(--button-bg);
+  color: var(--text);
+}
+
+nav.navbar button {
+  flex-shrink: 0;
+  background: none;
+  border: none;
+  font-size: 1.2em;
+  cursor: pointer;
+  color: var(--text);
+}
+
+/* === CONTENU === */
+main {
+  padding: 3rem 1rem 2rem;
+  max-width: 600px;
+  margin: auto;
+}
+
+article p {
+  text-indent: 1.5em;
+  text-align: justify;
+  hyphens: auto;
+}
+
+/* === TITRES === */
+h1 {
+  font-family: 'Segoe UI', 'Helvetica Neue', sans-serif;
+  font-weight: bold;
+  text-align: center;
+  font-size: 1.8rem;
+  margin-bottom: 0.5em;
+}
+
+main.centered h2 {
+  font-family: 'Playfair Display', Georgia, serif;
+  /* ou ta police préférée */
+  font-size: 2.4rem;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 0.5em;
+}
+
+.subtitle {
+  font-size: 1.2em;
+  color: var(--accent);
+  margin-bottom: 2em;
+}
+
+.start-button {
+  display: inline-block;
+  padding: 1em 2em;
+  background: var(--accent);
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 0.5em;
+  transition: opacity 0.3s;
+}
+
+.start-button:hover {
+  opacity: 0.8;
+}
+
+/* === NAVIGATION CHAPITRES === */
+.chapter-nav {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 1rem;
+  margin: 2rem auto 0rem auto;
+  max-width: 640px;
+  background-color: var(--background);
+}
+
+.chapter-nav a {
+  flex: 1;
+  text-align: center;
+  text-decoration: none;
+  padding: 0.75rem;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  background-color: var(--button-bg);
+  color: inherit;
+  transition: background-color 0.2s;
+}
+
+.chapter-nav a:hover {
+  background-color: var(--button-hover-bg);
+}
+
+.fixed-bottom {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  justify-content: center;
+  background-color: var(--background);
+  box-shadow: 0 -1px 6px rgba(0, 0, 0, 0.1);
+  padding: 1rem;
+  z-index: 100;
+}
+
+main.centered {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding-top: 2.5rem;
+  /* pour éviter de passer sous la navbar */
+  box-sizing: border-box;
+  text-align: center;
+}
+
+.index-image {
+  max-width: 80%;
+  height: auto;
+  margin-top: 2rem;
+}
+
+ul.tiret {
+  list-style: none;
+  padding-left: 0.5rem;
+}
+
+ul.tiret li {
+  position: relative;
+  padding-left: 1.5rem;
+  text-align: justify;
+  margin-bottom: 0rem;
+}
+
+ul.tiret li::before {
+  content: "—";
+  /* Tiret cadratin */
+  position: absolute;
+  left: 0;
+  color: var(--text);
+}
+
+main.end-page {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 3rem 1rem;
+  text-align: center;
+}
+
+.end-page h1 {
+  font-size: 2.5rem;
+  font-family: 'Playfair Display', Georgia, serif;
+  margin-bottom: 2rem;
+  color: var(--text);
+}
+
+.end-image {
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  object-fit: cover;
+  filter: grayscale(100%);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.fade-in {
+  opacity: 0;
+  animation: fadeIn 0.8s ease-in forwards;
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
+}
+
+#global-progress {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  height: 4px;
+  background-color: var(--progress-color); /* couleur personnalisable */
+  width: 0%;
+  z-index: 9999;
+  transition: width 0.4s ease;
+}
+
+html[data-font="small"] {
+  font-size: 0.9rem;
+}
+
+html[data-font="medium"] {
+  font-size: 1.1rem;
+}
+
+html[data-font="large"] {
+  font-size: 1.3rem;
+}
+
+html {
+  transition: font-size 0.3s ease;
+}
+
+*{box-sizing:border-box}html{scroll-padding-top:4rem}nav.navbar{height:auto;min-height:3rem;max-width:600px;padding:.3rem .5rem}nav.navbar button{min-width:44px;min-height:44px}nav.navbar select{min-height:44px;width:50%;font-size:.85rem}main{padding-top:4rem;padding-bottom:7rem}h2{font-family:'Segoe UI',sans-serif;font-size:1.65rem;line-height:1.35;text-align:center}a{color:var(--accent);overflow-wrap:anywhere}header{text-align:center;margin-bottom:2rem}section{margin-top:2rem}body.js article section{display:none}body.js article section.active{display:block}body.js header,body.js details,body.js footer{display:none}body.js.home header,body.js.home details,body.js.home footer{display:block}body.js.home article section{display:none}.chapter-nav{max-width:600px;margin:auto;padding:.5rem;gap:.5rem}.chapter-nav a{min-height:44px;font-size:.9rem;padding:.65rem .4rem}.chapter-nav a[aria-disabled=true]{visibility:hidden}#global-progress{transition:none}.meta{font-size:.85rem;text-align:left}details nav a{display:block;padding:.5rem 0}button:focus-visible,a:focus-visible,select:focus-visible{outline:3px solid var(--accent);outline-offset:2px}sup{line-height:0}sup a{padding:.25rem}.reader-bottom{display:none}.js .reader-bottom{display:flex}@media print{nav.navbar,.reader-bottom,#global-progress{display:none}body.js article section{display:block!important}main{padding:0}section{break-before:page}}
+
+:root{--bg:oklch(0.98 0.008 90);--background:var(--bg);--text:oklch(0.23 0.012 160);--accent:oklch(0.35 0.077 160);--line:oklch(0.83 0.015 160);--button-bg:var(--bg);--button-hover-bg:oklch(0.94 0.012 90);--progress-color:var(--accent);--size:1.15rem}
+html{font-size:16px;transition:none}
+[data-theme="dark"]{color-scheme:dark;--bg:oklch(0.2 0.008 160);--background:var(--bg);--text:oklch(0.91 0.008 90);--accent:oklch(0.82 0.08 160);--line:oklch(0.4 0.015 160);--button-bg:var(--bg);--button-hover-bg:oklch(0.27 0.012 160);--progress-color:var(--accent)}
+body{font-family:Georgia,'Times New Roman',serif;font-size:var(--size);line-height:1.75}
+h1,h2,h3,h4{font-family:Georgia,'Times New Roman',serif}h1{font-size:clamp(2.25rem,8vw,3.75rem);line-height:1.12;letter-spacing:-.03em}h2{font-size:1.7rem;line-height:1.3}h3,h4{line-height:1.4}.subtitle{font-size:1.35rem;line-height:1.5}p{margin:0 0 1.1em}
+nav.navbar{font-family:system-ui,sans-serif;box-shadow:none;border-bottom:1px solid var(--line);gap:.3rem}
+nav.navbar button{font-size:.9rem;border:1px solid var(--line);border-radius:.3rem;padding:.4rem;min-width:40px}
+nav.navbar>a{display:flex;align-items:center;justify-content:center;min-width:32px;min-height:44px;text-decoration:none}
+nav.navbar select{border-color:var(--line);width:auto;flex:1}
+.chapter-nav a{border-color:var(--line)}.start-button{background:oklch(0.35 0.077 160);color:oklch(0.98 0.008 90)}
+@media print{body{font-size:11pt;background:white;color:black}}
+
+img{max-width:100%;height:auto}table{max-width:100%;display:block;overflow-x:auto}pre{white-space:pre-wrap;overflow-wrap:anywhere}section>h2:first-child,section>h3:first-child{margin-top:0}</style></head><body>
+<nav class="navbar" aria-label="Navigation de lecture"><a href="../index.html" aria-label="Retour à la bibliothèque">⌂</a><a href="#sommaire" aria-label="Accueil et sommaire">☰</a><select id="toc" aria-label="Choisir une partie"><option value="">Sommaire</option><option value="partie-0">Préface</option></select><button id="smaller" aria-label="Réduire la taille du texte">A−</button><button id="larger" aria-label="Agrandir le texte">A+</button><button id="toggle-theme" aria-label="Changer le thème" aria-pressed="false">☾</button></nav>
+<main><header><h1>Toits ou plafonds ?</h1><p>Milton Friedman et George Stigler</p><a class="start-button" id="resume" href="#partie-0">Commencer la lecture</a></header><details id="sommaire" open><summary>Table des matières</summary><nav aria-label="Sommaire"><a href="#partie-0">Préface</a></nav></details><article><section id="partie-0">
+
+
+
+
+
+
+<br>
+<br>
+
+<h2>Préface</h2>
+<p>Si les manœuvres
+parlementaires avaient empêchées le renouvellement des
+pouvoirs de l'OPA (Office of Price Administration = Bureau de la Gestion des Prix, NdT) en juillet 1946, le contrôle des prix
+par le gouvernement aurait-il cessé ? Ou aurait-il été
+ressuscité par les autorités des différents
+États et les autorités locales et par de nouvelles lois
+fédérales ?</p>
+<p>Dans le cas du contrôle
+des loyers, au moins, la réponse est claire. Durant le
+relâchement des contrôles fédéraux au mois
+de juin, tous les États et les toutes les localités avaient
+l'un après l'autre mis en place ou prévu de
+mettre en place ses propres agences chargées de maintenir un
+plafonnement des loyers.</p>
+<p>Pourquoi ?</p>
+<p>Parce que beaucoup de
+citoyens et de fonctionnaires du gouvernement considèrent que
+ces contrôles sont nécessaires ou souhaitables, pour une
+raison ou pour une autre. Même parmi ceux qui s'opposent
+au maintien d'autres formes de contrôle des prix ou des
+salaires, un grand nombre fait une exception en faveur du contrôle
+des loyers. Celui-ci, au moins, disent-ils, devrait être
+conservé.</p>
+<p>Or le contrôle
+des loyers, avec les lois protégeant les locataires contre
+l'expulsion, impliquent une expropriation partielle des droits
+de propriété. Il limite restreint aussi la possibilité
+que d'autres puissent surenchérir pour obtenir l'usage
+des propriétés  ainsi contrôlées par le
+gouvernement.</p>
+<p>Cette méthode
+particulière d'expropriation des droits de propriété
+et de restriction des choix en temps de paix est quelque chose de
+nouveau aux États-Unis. Combien de temps cela durera-t-il et
+jusqu'où sa corrosive influence se diffusera-t-elle au
+sein des réactions américaines vis-à-vis de
+l'entreprise individuelle et de la propriété
+privée en général ?</p>
+<p>La « nécessité
+militaire » avait été introduite pendant la
+guerre pour justifier l'introduction de nombreuses obligations
+et restrictions dans l'économie américaine. La
+plupart des partisans du contrôle des loyers justifient encore
+son maintien comme simple mesure temporaire « d'urgence ».
+La guerre aurait prétendument restreint la construction
+résidentielle, alors que la population continuait à
+croître, d'où une « pénurie de
+logement » temporaire.</p>
+<p>Mais que disent les
+faits à ce propos ? L'accroissement de la
+population ou du nombre des familles a-t-il effectivement dépassé
+la construction résidentielle ?</p>
+<p>Et le contrôle
+gouvernemental des loyers  sert-il les objectifs déclarés
+de ses partisans ? Aide-t-il les vétérans, les
+anciens ouvriers de guerre, les jeunes mariés et les familles
+à bas revenu à trouver des logements à un coût
+« raisonnable » ?</p>
+<p>Qu'est-ce qu'un
+loyer « raisonnable » ? Pourquoi paie-t-on
+des loyers – uniquement pour donner un revenu au propriétaire ?
+Ou le marché locatif sert-il aussi un autre but supposé
+automatique depuis si longtemps qu'il a été
+oublié ?</p>
+<p>Les professeurs
+Friedman et Stigler ont passé des années à
+étudier et à enseigner, de telle sorte qu'ils
+seront mieux à même de traiter de ces questions. Leurs
+réponses pourront vous surprendre.</p>
+<br>
+
+<p>Leonard E. Read,<br>
+président de la FEE</p>
+
+<br>
+<br>
+
+<h2>Toits ou plafonds ? —
+Le  problème actuel du logement</h2>
+par Milton Friedman et
+George J. Stigler
+
+<br>
+
+<p>Le tremblement de
+terre de San Francisco du 18 avril 1906 fut suivi par de grands
+incendies qui détruisirent totalement en 3 jours 1 260
+hectares de bâtiments au cœur de la ville.</p>
+<p>Le général
+de division Greely, commandant des troupes fédérales de
+la zone, décrivait la situation en ces termes :</p>
+<blockquote>
+<p>« Il
+ne restait aucun hôtel important. Les grands immeubles avaient
+disparu […] Deux cent vingt-cinq mille personnes étaient
+[…] sans abri. »</p>
+</blockquote>
+<p>De plus, le séisme
+avait endommagé ou détruit de nombreuses autres
+maisons.</p>
+<p>Une ville d'environ
+400 000 habitants avait ainsi perdu plus de la moitié de
+ses capacités de logement en trois jours.</p>
+<p>De nombreux facteurs
+atténuaient la pénurie aiguë de logements. De
+nombreuses personnes quittèrent temporairement la ville –
+une estimation en donne jusqu'à 75 000. Des camps
+et des abris provisoires furent mis en place et, au pic de leur
+remplissage, au cours de l'été 1946, ils
+accueillaient environ 30 000 individus. On se mit rapidement à
+reconstruire.</p>
+<p>Toutefois, après
+le désastre, peut-être un cinquième de l'ancienne
+population de la ville dut pendant de nombreux mois être
+absorbé dans la moitié restante des logements. Dit
+autrement, chaque maison restante dut abriter en moyenne 40% de gens
+en plus.</p>
+<p>Mais si l'on
+ouvre le <i>San Francisco Chronicle</i> du 24 mai 1906 – le
+premier numéro paru après le tremblement de terre –
+<i>il n'y est pas fait une seule fois mention d'une
+pénurie du logement !</i> Les petites annonces comptaient
+64 offres (certaines concernant plus d'une résidence)
+d'appartements et de maisons à louer, et 19 maisons à
+vendre, contre 5 demandes d'appartements ou de maisons. Ensuite
+un nombre considérable de tous les types d'hébergement
+(sans compter les chambres d'hôtel) étaient
+proposés à la location.</p>
+<h4>Le problème du logement en 1946</h4>
+<p>Quarante ans plus tard
+une autre pénurie de logements s'abattit sur San
+Francisco. Cette fois la pénurie était nationale. La
+situation à San Francisco n'était pas la pire du
+pays, mais en raison des migrations vers l'Ouest elle fut pire
+que la moyenne. En 1940, la population de 635 000 âmes ne
+connaissait aucune pénurie de logements, au sens où
+seulement 93% des résidences étaient occupées.
+En 1946 la population avait cru au plus d'un tiers –
+d'environ 200 000 personnes. Entre-temps le nombre des
+résidences avait augmenté d'au moins un
+cinquième.</p>
+<p>On demandait par
+conséquent à la ville d'abriter 10% de plus dans
+chaque résidence par rapport à la situation
+d'avant-guerre. On pourrait dire que l'ampleur de la
+pénurie de 1946 était un quart de celle de 1906, quand
+chaque résidence restante dut abriter 40% de gens en plus par
+rapport à la situation d'avant le séisme.</p>
+<p>En 1946, toutefois, la
+pénurie du logement ne passa pas inaperçue dans le
+<i>Chronicle</i> ou dans les autres journaux. Le 8 janvier, les
+instances législatives de l'État californien
+furent convoquées et le Gouverneur déclara que la
+pénurie de logements était « le problème
+le plus critique auquel la Californie était confrontée. »
+Durant les cinq premiers jours de l'année, il n'y
+eut au total que 4 annonces offrant des maisons ou des appartements à
+louer, à comparer au 64 en un jour en mai 1906, et 9 annonces
+proposant d'échanger des résidences à San
+Francisco contre des résidences ailleurs. Mais en 1946 il y
+avait 30 annonces par jour de personnes cherchant à louer des
+maisons o des appartements, contre seulement 5 en 1906 après
+le grand désastre. Durant la même période, il y
+eut en 1946 environ 60 annonces par jour de maisons à vendre,
+contre 19 en 1906.</p>
+<p>En 1906 comme en 1946
+San Francisco faisait face à un problème auquel la
+nation entière est désormais confrontée :
+comment une quantité relativement figée de logements
+peut-elle être divisée (c'est-à-dire
+rationnée) entre des gens qui en veulent bien plus, en
+attendant que les nouvelles constructions comblent le manque ?
+En 1906 le rationnement fut fait avec par l'augmentation des
+loyers. En 1946 l'utilisation de loyers plus élevés
+en vue de rationner les logements avait été rendue
+illégale par l'imposition de loyers plafonds et le
+rationnement se faisait par le biais de la chance et du favoritisme.
+Une troisième possibilité serait que l'OPA se
+charge du rationnement.</p>
+<p>Quels sont les mérites
+comparatifs de ces trois méthodes ?</p>
+<br>
+
+<h3>I. La méthode de 1906 : le rationnement par les prix</h3>
+<br>
+<p>L'expérience
+de la guerre avait conduit beaucoup de gens à penser au
+rationnement comme quelque chose d'équivalent aux
+cartes, coupons et mandats de l'OPA.</p>
+<p>Mais ceci est une
+vision superficielle ; tout ce qui n'est pas abondant
+comme l'air ou la lumière du soleil doit, en ce sens,
+être rationné. Cela veut dire que lorsque les gens
+veulent plus de quelque chose que ce qu'il est possible
+d'avoir, que ce soit du pain, des billets de théâtre,
+des couvertures ou des coupes de cheveux, il doit exister une
+certaine façon de déterminer comment le distribuer
+entre ceux qui le veulent.</p>
+<p>Notre méthode
+normale de rationnement en temps de paix a été la
+méthode des ventes aux enchères. Si la demande pour
+quelque chose augmente, la concurrence entre les acheteurs tend à
+faire monter son prix. Cette augmentation du prix pousse les
+acheteurs à utiliser l'article de manière plus
+modérée, plus prudente et plus économique, et
+par conséquent elle réduit la consommation du stock. En
+même temps la hausse du prix encourage les producteurs à
+accroître leur production. De manière analogue, si la
+demande d'un article diminue, son prix tend à baisser,
+augmentant la consommation du stock et décourageant sa
+production.</p>
+<p>En 1906 San Francisco
+utilisa cette méthode de l'économie de marché
+pour traiter de ses problèmes de logement, avec une hausse
+conséquente des loyers. Pourtant, bien que les loyers fussent
+plus élevés qu'avant le tremblement de terre, il
+est cruel pour les personnes aujourd'hui à la recherche
+d'une maison de citer une annonce de 1906 postérieure au
+désastre : « Six chambres plus salle de bain,
+avec deux pièces supplémentaires en sous-sol ayant des
+cheminées, bien équipées ; piano en bon
+état ; […] 45 $. »</p>
+<p>Les avantages du
+rationnement par la hausse des loyers sont clairement montrés
+par notre exemple :</p>
+<ol>
+	<li><p>Sur un marché
+	libre, il y a toujours quelques logements immédiatement
+	disponibles à la location – pour tout niveau de loyer.</p>
+	</li><li><p>La surenchère
+	sur les loyers force certaines personnes à économiser
+	de l'espace. <i>Jusqu'à ce qu'il y ait
+	suffisamment de nouvelles constructions, ce partage est la seule
+	solution.</i></p>
+	</li><li><p>Les loyers élevés
+	agissent comme un fort stimulant en faveur de nouvelles
+	constructions.</p>
+	</li><li><p>Aucune machinerie
+	complexe, coûteuse et expansible n'est nécessaire.
+	Le rationnement est effectué calmement et anonymement au
+	travers du système des prix.</p>
+</li></ol>
+<p>La pleine
+signification de ces avantages sera plus claire quand nous aurons
+étudié les autres possibilités.</p>
+<h4>Objections au rationnement par les prix</h4>
+<p>Face à ces
+mérites, qui avant la guerre étaient rarement mis en
+doute aux États-Unis, trois objections sont désormais
+levées. La première est habituellement énoncée
+sous cette forme : « Les riches auront tous les
+logements, et les pauvres aucun. »</p>
+<p>Cette objection est
+erronée : <i>Durant la pénurie aiguë de 1906,
+à tout moment des appartements et des maisons bon marché
+étaient disponibles.</i> Ce qui est vrai est que, dans les
+conditions d'un marché libre, les meilleures résidences
+iront à ceux qui paient davantage, soit parce qu'ils ont
+des revenus plus élevés ou davantage de richesses, soit
+parce qu'ils préfèrent un meilleur logement à,
+par exemple, de meilleurs automobiles.</p>
+<p>Mais ce fait n'a
+pas plus de lien avec le problème du logement d'aujourd'hui
+qu'avec celui de 1940. En réalité, si l'inégalité
+des revenus et des richesses entre les individus justifie de nos
+jours le contrôle des loyers, elle aurait fourni une raison
+encore plus forte en faveur de ces contrôles en 1940. Le
+danger, s'il existe, que les riches obtiennent tous les
+logements était alors plus grand qu'il ne l'est
+maintenant.</p>
+<p>Chaque personne ou
+famille utilisent aujourd'hui au moins autant d'espace,
+en moyenne, qu'avant la guerre (voir plus loin, p. <a href="#partie-0-p18">18</a>).
+En outre, le revenu total de la nation est désormais distribué
+de manière plus égale qu'avant la guerre entre
+les familles du pays. Par conséquent, <i>si les loyers étaient
+libérés de tout contrôle et laissé libres
+d'atteindre leur propre niveau, une quantité de logement
+identique à celle occupée avant la guerre serait
+distribuée de façon plus égale qu'elle ne
+l'était alors.</i></p>
+<p>Le fait que, dans des
+conditions de marché libre, les meilleures résidences
+vont à ceux qui ont des revenus plus élevés ou
+davantage de richesses, est à tout prendre simplement une
+raison qui pousserait à prendre des mesures à long
+terme en vue de réduire les inégalités de revenu
+et de richesse. Pour ceux qui, comme nous, aimeraient voir encore
+davantage d'égalité qu'il n'en existe
+à présent, non seulement pour le logement mais pour
+tous les produits, il vaut certainement mieux s'attaquer
+directement à la source aux inégalités de revenu
+et de richesse existantes, plutôt que de rationner chacun des
+centaines de biens et de services qui composent notre niveau de vie.
+C'est le comble de la sottise que de permettre à des
+individus de percevoir des revenus monétaires inégaux,
+pour ensuite prendre de mesures compliquées et coûteuses
+pour les empêcher de faire usage de leurs revenus <sup><a href="#partie-0-sdfootnote1sym" id="partie-0-sdfootnote1anc"><sup>1</sup></a></sup>.</p>
+<p>La deuxième
+objection fréquemment levée contre la suppression du
+contrôle des loyers est que les propriétaires en
+tireraient bénéfice. Les loyers augmenteraient
+certainement, sauf sur ce qu'on appelle le marché noir ;
+et les revenus des propriétaires augmenteraient donc aussi.
+Mais est-ce une objection ? Il y aura toujours certains groupes
+qui tireront bénéfice dans tout système de
+rationnement, et il est assurément vrai que les propriétaires
+de résidences urbaines ont moins bénéficié
+que la quasi-totalité des autres groupes de l'expansion
+du temps de guerre.</p>
+<p>La solution ultime à
+la pénurie du logement doit venir des nouvelles constructions.
+Une bonne part de ces nouvelles constructions sera occupée par
+des propriétaires. Mais de nombreuses personnes préfèrent
+ou doivent vivre dans des logements locatifs. L'accroissement
+ou l'amélioration du logement de ces personnes en grande
+partie de la construction de nouvelles propriétés à
+louer. C'est une étrange façon d'encourager
+la nouvelle construction locative (c'est-à-dire de
+devenir propriétaire) que d'accorder à contrecœur
+aux constructeurs entreprenants un rendement attractif.</p>
+<p>La troisième
+objection courante au marché libre du logement est qu'une
+hausse des loyers signifie une inflation, ou en entraîne une.</p>
+<p>Or l'inflation
+des prix est une hausse de nombreux prix individuels et il est bien
+plus simple d'attaquer la menace à sa source, qui est
+l'accroissement du revenu familial  et des liquidités
+qui financent la dépense accrue de presque tout. Une lourde
+taxation, des économies de l'État et le contrôle
+de la masse monétaire sont les armes fondamentales pour lutter
+contre l'inflation. Tripatouiller des millions de prix
+individuels – le loyer de la maison A à San Francisco,
+le prix du steak B à Chicago, le prix du costume C à
+New York – signifie traiter de manière maladroite et
+inefficace les symptômes et les résultats de l'inflation
+au lieu de s'attaquer à ses causes véritables.</p>
+<p>Cependant, on nous
+dira que nous ne réclamons pas des contrôles fiscaux et
+monétaires et ne sommes pas susceptibles de le faire, de sorte
+que la suppression du plafonnement des loyers suscitera <i>bel et
+bien</i>, en fait, une hausse des salaires puis une hausse des prix –
+suivant la spirale familière de l'inflation. Nous ne
+nions pas que cette position soit défendable, mais est-elle
+convaincante ? Pour répondre à cette question,
+nous devons d'une part évaluer les coûts de la
+poursuite du contrôle des loyers et d'autre part la
+contribution additionnelle probable à l'inflation due à
+une suppression de ce contrôle. Nous discuterons ensuite des
+coûts du système actuel et, en conclusion, nous
+évaluerons rapidement la menace inflationniste de loyers plus
+élevés.</p>
+<h4>Le rationnement actuel des maisons à
+vendre</h4>
+<p>L'absence de
+plafonnement du prix de vente des logements signifie que les maisons
+actuellement occupées par leurs propriétaires sont
+rationnées par la méthode de 1906 – au bénéfice
+de l'enchère la plus élevée. Le prix de
+vente des maisons monte au fur et à mesure que la demande
+forte et croissante se heurte à une offre relativement figée.
+Par conséquent, plus d'un propriétaire décide
+qu'il vaut mieux vendre au prix gonflé du marché
+que de louer à un prix plafond fixé.</p>
+<p>Le plafonnement des
+loyers veut donc dire qu'une fraction croissante de l'ensemble
+des logements est mise sur le marché pour y être occupée
+par leurs propriétaires, alors que les locations deviennent
+presque impossibles à trouver, au moins aux loyers légaux.
+En 1906, quand les loyers et les prix de vente étaient tous
+deux libres de monter, le <i>San Francisco Chronicle</i> comptait 3
+« maisons à vendre » pour 10 « maisons
+ou appartements à louer ». En 1946, avec le
+contrôle des loyers, il y avait environ 730 « maisons
+à vendre » pour 10 « maisons ou
+appartements à louer ».</p>
+<p>Le marché libre
+des maisons à vendre permet donc à quelqu'un qui
+dispose d'assez de capital pour verser des acomptes de résoudre
+son problème par l'achat d'une maison. Cela veut
+souvent dire qu'il doit d'endetter lourdement et qu'il
+doit verser en acomptes des sommes qu'il aurait préféré
+dépenser autrement.</p>
+<p>Néanmoins,
+celui qui a de l'argent trouvera plein de maisons – et
+agréables en plus – à acheter. Les prix seront
+élevés – mais c'est précisément
+la raison pour laquelle ces maisons sont disponibles. Il y a des
+chances qu'il se retrouve avec un logement, un mobilier et
+d'autres choses inférieurs à ce qu'il
+aimerait, ou que ses souvenirs des prix d'avant-guerre le lui
+avaient laissé espérer, mais au moins il aura un toit
+pour sa famille.</p>
+<p>Les méthodes du
+contrôle des loyers utilisées en 1946 n'évitent
+donc pas l'une des principales critiques adressées au
+rationnement par des loyers plus élevés – à
+savoir que le riche a un avantage quand il s'agit de satisfaire
+ses besoins de logement. De fait, les méthodes de 1946 ne font
+qu'empirer les choses. En encourageant les locataires actuels à
+utiliser gratuitement de l'espace et en obligeant beaucoup de
+gens à emprunter pour acheter, alors qu'ils
+préfèreraient louer, les méthodes actuelles font
+monter le prix des maisons à vendre au-delà du prix qui
+prévaudrait s'il n'y avait pas de contrôle
+des loyers.</p>
+<p>Une façon
+d'éviter de donner aux personnes disposant de capitaux
+un droit à une part croissante dans la répartition des
+logements serait d'imposer un plafond au prix de vente des
+maisons. Cela réduirait encore davantage le domaine du
+rationnement par les prix et augmenterait de manière
+correspondante les méthodes actuelles du contrôle des
+loyers en matière de rationnement de la propriété
+locative. Ceci pourrait être une mesure sage <i>si</i> la
+méthode actuelle de rationnement des résidences
+locatives était satisfaisante.</p>
+<p>Mais quelle est la
+situation de celui qui désire louer ?</p>
+<br>
+
+<h3>II. La méthode
+de 1946 : le rationnement par la chance et le favoritisme</h3>
+<br>
+<p>Le candidat locataire
+est dans une position très différente de celui qui est
+prêt à payer. S'il peut trouver un logement, il se
+peut qu'il paie un prix « raisonnable »,
+c'est-à-dire à un loyer d'avant-guerre.
+Mais à moins qu'il soit prêt à payer une
+comme considérable à côté – pour le
+« mobilier » ou d'une autre manière
+détournée – il a peu de chances de trouver
+quelque chose à louer.</p>
+<p><i>Le plafonnement
+légal des loyers est la raison pour laquelle il y a si peu de
+places à louer.</i> Le revenu monétaire national a
+doublé, de sorte que la plupart des individus et des familles
+touchent des revenus monétaires plus élevés
+qu'avant la guerre. Ils peuvent se permettre de payer des
+loyers substantiellement plus élevés qu'avant la
+guerre, mais légalement ils n'ont pas à payer
+davantage ; ils essaient par conséquent d'obtenir
+des logements plus grands et de meilleure qualité.</p>
+<p>Mais les millions de
+personnes et de familles qui ont ainsi essayé de se disperser
+depuis 1940 ne peuvent pas toutes réussir, car l'offre
+de logements n'a augmenté qu'environ aussi vite
+que la population. Ceux qui réussissent forcent les autres à
+repartir bredouilles. La tentative des moins chanceux et des nouveaux
+venus sur le marché du logement – hommes revenant du
+service, jeunes mariés et personnes changeant de résidence
+– d'obtenir davantage d'espace qu'il n'y
+en a, et plus qu'ils n'en utilisaient avant la guerre,
+aboutit au spectacle familier d'une horde de candidats pour
+chaque logement vacant.</p>
+<p>Lees annonces dans le
+<i>San Francisco Chronicle</i> montrent à nouveau l'effet
+du plafonnement des loyers. En 1906, après le tremblement de
+terre, quand les loyers étaient libres de monter, il y avait 1
+« recherche de location » pour 10 « maisons
+ou appartements à louer » ; en 1946, il y
+avait 375 « recherches de location » pour 10
+« offres de location ».</p>
+<h4>Un vétéran cherche une maison</h4>
+<p>Le <i>New York Times</i>
+du 28 janvier 1946 rapporte l'expérience de Charles
+Schwartzmann, « jeune trentenaire vigoureux »
+récemment sorti de l'armé. M. Schwartzmann
+chercha énergiquement pendant trois mois, « partant
+dans sa voiture à la recherche d'une place pour vivre
+[…] Il avait traversé la ville et les environs de
+Jamaica, Queens, à Larchmont et s'était inscrit
+dans presque toutes les agences immobilières. Il avait passé
+des annonces dans les journaux et avait répondu à
+d'autres annonces. Il avait visité le Centre des
+Vétérans de la ville de New York, au 500 Park Avenue,
+et le sous-comité du logement du Comité des Vétérans
+Américains ; il avait parlé à des amis et
+imploré des parents ; il avait écrit au Gouverneur
+Dewey. Résultats ?</p>
+<p>« Une offre
+d'appartement bas de gamme avec eau froide. Une offre de quatre
+pièces à Central Park West sur la 101<sup>ème</sup>
+rue, pour un loyer de 300 $ par mois, à condition d'être
+prêt à payer 5 000 $ pour le mobilier de
+l'appartement. Une offre d'une pièce dans une
+vieille maison de grès brun, repeinte mais non rénovée,
+sur la 88<sup>ème</sup> rue à Central Park West par une
+jeune femme (qui partait pour La Havane) à un loyer de 80 $
+par mois, à condition d'acheter les meubles pour 1 300 $
+et de la rembourser des 100 $ qu'elle avait dû payer
+à un agent pour obtenir « l'appartement ».</p>
+<p>« Et une
+offre de sous-location deux grandes pièces dans un hôtel
+de West Side pour un loyer de 75 $ par mois, uniquement pour
+trouver que le propriétaire de l'hôtel avait
+retiré la suite de la liste des locations au mois pour les
+mettre sur la liste transitoire à des taux journaliers (et
+plus élevés) pour chacune des deux pièces. »</p>
+<h4>Qui obtient les logements ?</h4>
+<p>La propriété
+locative est alors rationnée par diverses formes de chance et
+de favoritisme. Les premiers sur la liste sont les familles qui
+louaient avant la pénurie du logement et qui sont prêtes
+à rester dans la même demeure.</p>
+<p>Les deuxièmes
+sur la liste sont deux classes de nouveaux arrivants : d'abord
+les personnes voulant et pouvant éviter ou échapper aux
+loyers plafonds, par un quelconque procédé légal
+ou en payant un supplément en liquide en plus du loyer plafond
+de l'OPA ; puis les amis ou les parents des propriétaires
+ou d'autres personnes en charge des résidences
+locatives.</p>
+<p>Les candidats à
+la location qui ne font pas partie de ces classes favorisées
+luttent pour les places restantes. Le succès va à ceux
+qui ont de la chance, qui ont les plus petites familles, qui peuvent
+passer plus de temps à chercher, qui sont plus malins quand il
+s'agit d'imaginer des plans pour trouver de possibles
+logements vacants, et qui sont les locataires les plus désirables.</p>
+<p>Le dernier sur la
+liste est probablement l'homme qui doit travailler pour
+soutenir leur famille et dont la femme doit s'occupe de petits
+enfants. Lui et sa femme ne peuvent passer que peu de temps à
+chercher l'aiguille dans la meule de foin. S'il devait
+trouver une place, elle pourrait bien lui être refusée
+parce qu'une famille avec des petits enfants constitue des
+locataires moins désirables qu'une famille sans enfant.</p>
+<h4>Les coûts des méthodes actuelles</h4>
+<p>Presque tous ceux qui
+n'arrivent pas à acheter une maison ou à louer
+une maison ou un appartement est logé d'une façon
+ou d'une autre. Quelques-uns sont hébergés dans
+des logements d'urgence – camps de caravaning, logements
+préfabriqués d'urgence, camps de l'armée
+reconvertis. La plupart sont logés chez des parents ou des
+amis, solution qui présente de sérieux inconvénients
+sociaux.</p>
+<p>Le lieu de résidence
+des parents ou des amis prêts et capables d'offrir un
+logement peut avoir  peu ou pas de lien avec l'endroit désiré.
+Afin de vivre avec sa famille, le mari doit sacrifier sa mobilité
+et accepter tout emploi disponible dans les environs. Si aucun emploi
+ou uniquement un emploi très inférieur est disponible
+dans cet endroit, il peut devoir se séparer de sa famille
+pendant une période imprévisible en vue de tirer
+avantage des opportunités d'emploi ailleurs. Or il y a
+un grand besoin social de mobilité, particulièrement
+actuellement. La meilleure distribution possible de la population
+après la guerre est certainement différente de celle du
+temps de la guerre, et une reconversion rapide réclame que les
+hommes acceptent et puissent changer d'endroit.</p>
+<p>Le spectre des
+méthodes actuelles de partage restreint de partage restreint
+le mouvement non seulement de ceux qui partagent mais aussi de ceux
+qui ne le font pas. Celui qui a suffisamment de chance d'avoir
+une maison ou un appartement y réfléchira à deux
+fois avant de bouger et de partir pour une autre ville où il
+fera partie des nouveaux arrivés défavorisés.
+L'un des coûts les plus facilement prévisibles
+sera probablement un éloignement prolongé de sa famille
+quand il cherchera un logement et qu'elle restera où
+elle était ou ira chez des parents.</p>
+<p>Le plafonnement des
+loyers ont aussi des effets importants parce qu'ils réduisent
+l'efficacité de l'utilisation des logements de la
+part de ceux qui ne partagent pas leur logement. Les incitations à
+économiser l'espace sont bien plus faibles qu'avant
+la guerre parce que les loyers sont désormais plus faibles
+relativement aux revenus monétaires moyens. S'il ne
+semblait pas souhaitable de déménager pour de plus
+petites résidences ou prendre un locataire avant la guerre, il
+n'y a pas de raison supplémentaire de le faire
+maintenant, hormis les élans patriotiques et humanitaires –
+ou peut-être la crainte de voir des parents venir pour occuper
+la place en surplus.</p>
+<p>De fait, la rareté
+résultant du plafonnement des loyers impose de nouveaux
+obstacles à l'usage efficace du logement : un
+locataire n'abandonnera pas souvent son appartement trop grand
+pour commencer l'horrible quête d'une résidence
+plus appropriée. Et à chaque fois qu'un logement
+à louer devient vacant il y a des chances que le propriétaire
+donne la préférence à des familles plus petites
+ou à des personnes seules.</p>
+<p>
+L'élimination du plafonnement des loyers conduirait à
+un partage organisé d'une manière radicalement
+différente. Dans un marché libre de la location, les
+personnes qui considèrent que le sacrifice d'espace est
+remboursé par le loyer perçu céderaient cet
+espace. Le partage serait le fait de ceux qui ont de l'espace
+dont ils pouvaient se passer et qui veulent un revenu supplémentaire,
+et non, comme aujourd'hui, de ceux qui agissent par sens du
+devoir familial ou par obligation, sans tenir compte de l'espace
+disponible ou d'autres circonstances. Ceux qui louaient de
+l'espace à d'autres participeraient à une
+transaction purement commerciale et ne se sentiraient pas des intrus
+accumulant des obligations personnelles ou imposant des charges
+injustes ou malvenues à leurs bienfaiteurs. Ils seraient mieux
+à même de trouver des locations dans des endroits liés
+à leurs possibilités d'emploi. Les travailleurs
+regagneraient leur mobilité et les propriétaires de
+logements locatifs retrouveraient leur incitation à prendre
+davantage de monde.</p>
+<br>
+
+<h3>III. La méthode
+du rationnement public</h3>
+<br>
+<p>Les défauts de
+notre méthode de rationnement actuelle par les propriétaires
+sont évidents et importants. Il faut s'y attendre avec
+un régime de rationnement privé et personnel et c'est
+ce qui explique, bien entendu, pourquoi l'OPA a assumé
+le rôle de responsable du rationnement de la viande, des
+matières grasses, des conserves et du sucre pendant la guerre
+au lieu de laisser les épiciers les rationner. L'OPA
+devrait-elle se charger du rationnement des logements ? Ceux qui
+défendent le rationnement des logements par une agence
+publique prétendent que cela éliminerait la
+discrimination à l'encontre des nouveaux arrivants ou
+des familles avec enfants et en faveur des familles ayant des amis
+bien placés.</p>
+<p>Pour être juste
+avec les propriétaires et les locataires, l'OPA devrait
+cependant être capable de dire aux propriétaires qu'ils
+avaient trop d'espace et qu'ils doivent en céder
+une partie ou déménager pour une plus petite résidence.
+Il n'est pas besoin d'être très à
+l'écoute des choses pour savoir qu'il est
+parfaitement impraticable du point de vue politique d'ordonner
+à une famille américaine propriétaire de sa
+maison d'y accueillir une famille étrangère (le
+libre choix s'opposerait en effet au but du rationnement) ou de
+déménager.</p>
+<p>Même s'il
+était possible de surmonter cette difficulté
+fondamentale, comment déterminer la quantité d'espace
+que mériterait une famille donnée ? A quel âge
+les enfants de sexes différents ont-ils besoin de chambres
+séparées ? Les invalides ont-ils besoin de
+logement au rez-de-chaussée et qui est invalide ? Les
+personnes qui travaillent à domicile (médecins,
+écrivains, musiciens) réclament-elles plus d'espace ?
+Quels métiers faudrait-il favoriser avec des locations
+accessibles et quelles familles avec de grands jardins ? La
+belle-mère doit-elle vivre avec la famille ou a-t-elle droit à
+un logement distinct ?</p>
+<p>Combien de temps
+faudrait-il à un comité de l'OPA pour répondre
+à ces questions et pour décider quels locataires ou
+quels propriétaires doivent « déménager »
+pour faire de la place à ceux qui, d'après le
+comité, devraient l'avoir ?</p>
+<p>La durée de la
+pénurie du logement en serait également affectée.
+Pour être juste vis-à-vis à la fois des
+locataires et des propriétaires actuels, il faudrait aussi
+rationner les nouvelles constructions et les soumettre e contrôle
+des loyers. Si les loyers des nouvelles résidences étaient
+considérablement plus élevés que ceux des
+logements comparables existants, l'un des principaux objectifs
+du contrôle des loyers et du rationnement – un traitement
+égal pour tous – serait sacrifié. D'un
+autre côté, si les loyers des nouvelles résidences
+sont maintenus à un niveau identique à celui des loyers
+des logements existants, la construction privée de propriétés
+locatives serait faible ou inexistante.</p>
+<p>Nous pouvons conclure
+que le rationnement par une agence publique a peu de chances d'être
+accepté sur une base universelle. Même s'il
+n'était appliqué qu'aux logements loués,
+il soulèverait de formidables problèmes éthiques
+et administratifs.</p>
+<h4>Les origines et la durée probable de la
+pénurie actuelle</h4>
+<p>La pénurie
+actuelle du logement apparaît être si aiguë, à
+la lumière de l'augmentation modérée de la
+population et de la croissance effective des possibilités de
+logement depuis 1940, que la plupart des gens sont incapables de
+fournir une explication générale. Ils préfèrent
+se référer à la croissance rapide de certaines
+villes – mais toutes les villes connaissent de sérieuses
+pénuries. Ou ils se réfèrent aux nombreux
+mariages et à la hausse des taux de natalité –
+mais ces chiffres sont rarement mesurés ou comparés
+avec les possibilités de logements.</p>
+<a id="partie-0-p18">
+<p>En fait, l'offre
+de logements a à peu près suivi le rythme de la
+croissance de la population civile non agricole, comme le montrent
+les estimations suivantes, basées sur des données du
+gouvernement :</p>
+
+<dl>
+	<dd>
+	<table>
+		<col>
+		<col>
+		<col>
+		<col>
+		<tr>
+			<td rowspan="2">
+				<p>Date</p>
+			</td>
+			<td colspan="3">
+				<p>Population non agricole</p>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<p>Résidences unitaires occupées</p>
+			</td>
+			<td>
+				<p>Population civile</p>
+			</td>
+			<td>
+				<p>Personnes par résidence occupée</p>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<p>30 juin 1940</p>
+			</td>
+			<td>
+				<p>27,9 millions</p>
+			</td>
+			<td>
+				<p>101 millions</p>
+			</td>
+			<td>
+				<p>3,6</p>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<p>30 juin 1944</p>
+			</td>
+			<td>
+				<p>30,6 millions</p>
+			</td>
+			<td>
+				<p>101 millions</p>
+			</td>
+			<td>
+				<p>3,3</p>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<p>Fin de la démobilisation (printemps 1946)</p>
+			</td>
+			<td>
+				<p>Plus de 31,3 millions</p>
+			</td>
+			<td>
+				<p>Environ 111 millions</p>
+			</td>
+			<td>
+				<p>Moins de 3,6</p>
+			</td>
+		</tr>
+	</table>
+</dd></dl>
+
+
+<p>Certaines zones seront
+plus encombrées dans un sens physique qu'en 1940,
+d'autres le seront moins, mais le fait général
+est que le nombre de gens à loger et le nombre de familles ont
+augmenté d'environ 10%, tandis que le nombre de
+logements unitaires a lui aussi augmenté de 10% environ.</p>
+<p>Deux faits expliquent
+pourquoi la pénurie du logement semble bien plus désespérée
+aujourd'hui qu'en 1940, même si la quantité
+de logements par personne ou par famille est resté en gros le
+même.</p>
+<p>Le premier est que le
+revenu monétaire total du public américain a doublé
+depuis 1940, de sorte que la famille moyenne aurait pu se permettre
+des résidences plus spacieuses et de meilleure qualité,
+même si les loyers avaient substantiellement monté.</p>
+<p>Le deuxième est
+que les loyers ont très peu monté. Ils ont augmenté
+de moins de 4% de juin 1940 à septembre 1945, alors que tous
+les autres articles entrant dans le coût de la vie ont cru de
+33%.</p>
+<p>Ainsi, à la
+fois la structure des prix et l'augmentation des revenus
+encouragent la famille moyenne à s'assurer de meilleures
+résidences qu'avant la guerre. <i>Le succès même
+de l'OPA dans la réglementation des loyers a donc
+grandement contribué à la demande de logement et de là
+à la pénurie, car le logement est bon marché par
+rapport aux autres choses.</i></p>
+<h4>Les futurs problèmes du logement</h4>
+<p>Le plafonnement des
+loyers ne fait rien pour soulager cette pénurie. En fait il
+est bien plus probable qu'il la perpétue : les
+conséquences du plafonnement des loyers sur les nouvelles
+constructions sont inquiétantes. Le loyer est le seul article
+important du coût de la vie qui n'ait pas fortement
+augmenté. A moins d'une violente déflation, ce
+dont personne ne veut et qu'aucun gouvernement ne peut se
+permettre, les loyers sont décalés par rapport à
+tous les autres prix et coûts, coûts de construction
+compris. Les nouvelles constructions doivent donc être
+tristement faibles en volume <i>à moins</i> que (1) une
+révolution industrielle ne réduise grandement les coûts
+de construction des logements ou que (2) le gouvernement ne
+subventionne l'industrie du bâtiment.</p>
+<p>On espère
+sincèrement une révolution industrielle des méthodes
+de construction. Mais si elle survient, elle se produira bien plus
+vite si les loyers sont plus élevés. Et si elle ne
+vient pas, les méthodes de construction actuelle ne
+fourniront, en majorité, des maisons qu'à ceux
+qui désirent et peuvent se permettre de posséder leur
+propre demeure. Les locations seront de plus en plus difficiles à
+trouver.</p>
+<p>Le recours à
+une subvention au bâtiment, avec nos revenus monétaires
+élevés et une demande pressante de logements, serait un
+paradoxe inutile. Aujourd'hui plus que jamais, les gens peuvent
+se permettre de payer leur logement.</p>
+<p>Si la subvention était
+nécessaire pour stimuler la construction, après
+quelques années le plafonnement des loyers pourrait être
+levé sans hausse des loyers. Mais les coûts du bâtiment
+resteraient toujours élevés – plus élevés
+que s'il n'y avait pas eu de subvention – de sorte
+que la construction de logements s'effondrerait pour atteindre
+de faibles niveaux et qu'elle y resterait pendant une longue
+période. Petit à petit, l'offre de logements
+baisserait suffisamment et la population croîtrait assez pour
+faire monter les loyers à un niveau rémunérateur.
+Une subvention promet ainsi une dépression d'une gravité
+sans précédent dans la construction résidentielle
+et ce serait un optimisme irresponsable que d'espérer
+une économie prospère si cette grande industrie était
+malade.</p>
+<p>A moins, par
+conséquent, que nous n'ayons de la chance (une réduction
+révolutionnaire des coûts de construction des
+appartements et des maisons) ou de la malchance (une déflation
+violente), ou que nous soyons particulièrement malavisés
+(en ayant recours à des subventions), la « pénurie
+de logements » demeurera ainsi longtemps que les loyers
+seront empêchés de monter par des contrôles
+légaux. <i>Tant que la pénurie créée par
+le plafonnement des loyers persistera, il y aura des gens pour
+réclamer de continuer le contrôle des loyers.</i> C'est
+peut-être le reproche le plus fort que l'on puisse faire
+au plafonnement des loyers. Lui et la pénurie accompagnatrice
+des logements à louer se perpétuent d'eux-mêmes
+et la progéniture est encore moins attrayante que les parents.</p>
+<p>Une prise de
+conscience incomplète et en grande partie subconsciente de ce
+dilemme inconfortable explique la proposition fréquente de ne
+pas imposer de plafonnement des loyers, ou d'imposer des
+plafonds plus élevés, aux nouvelles constructions.
+Cette proposition implique un abandon partiel du plafonnement des
+loyers. La conservation du reste ne peut alors être défendue
+qu'en disant que la méthode de rationnement actuelle des
+logements par la chance et le favoritisme est plus équitable
+que le rationnement par des loyers plus élevés, mais
+que le rationnement de l'offre de logements.</p>
+<br>
+
+<h3>Conclusion</h3>
+<br>
+<p>Le plafonnement des
+loyers entraîne par conséquent une allocation de
+l'espace aléatoire et arbitraire, à une
+utilisation inefficace de l'espace, à retarder les
+nouvelles constructions et à conserver indéfiniment des
+loyers plafonnés, ou à subventionner les nouvelles
+constructions et à avoir une future dépression de la
+construction de bâtiments résidentiels. Le rationnement
+officiel par les autorités publiques ne ferait probablement
+qu'empirer les choses.</p>
+<p>A moins que la
+suppression du plafonnement des loyers ne soit un nouveau et puissant
+stimulant de l'inflation, il n'y a par conséquent
+aucune justification importante de leur côté. Dans les
+faits des loyers plus élevés auraient peu d'effets
+directs sur la pression inflationniste concernant les autres biens et
+services. Le revenu supplémentaire touché par les
+propriétaires compenserait la diminution des fonds dont les
+locataires disposent pour l'achat des autres biens et services.</p>
+<p>La pression
+inflationniste additionnelle due à la hausse des loyers
+surviendrait de manière indirecte : les loyers plus
+élevés feraient monter le coût de la vie et
+fourniraient ainsi une excuse à la hausse des salaires. Dans
+une ère d'intervention gouvernementale directe dans la
+détermination des salaires, l'existence de cette excuse
+pourrait conduire à certaines hausses salariales qui ne
+seraient sinon pas produites et donc à quelques hausses de
+prix par la suite.</p>
+<p>Quelle serait
+l'importance de cet effet indirect ?</p>
+<p>Immédiatement
+après le déplafonnement, les loyers demandés aux
+nouveaux locataires et à certains locataires actuels sans bail
+monteraient de manière substantielle. La plupart des
+locataires actuels ne connaîtraient que des hausses modérées
+ou, s'ils sont protégés par des baux, aucune
+hausse du tout. Comme les résidences n'entrent sur le
+marché de la location que lentement, les loyers moyens pour
+l'ensemble des résidences monteraient moins que les
+loyers demandés aux nouveaux locataires, et le coût de
+la vie monterait encore moins.</p>
+<p>A mesure que davantage
+de résidences sur le marché locatif, la hausse initiale
+demandée aux nouveaux locataires serait, en l'absence
+d'une inflation générale, modérée,
+même si les loyers moyens sur l'ensemble de toutes les
+résidences continueraient à monter.</p>
+<p>Après un an
+environ, la moyenne des loyers pourrait avoir augmenté de 30%.
+Mais même cela signifierait une hausse de seulement 5% du coût
+de la vie, car les loyers comptent pour moins d'un cinquième
+du coût de la vie total. Une hausse de cette ampleur –
+moins de 0,5% par mois pour le coût de la vie total – a
+peu de chances de déclencher une inflation générale.</p>
+<p>Le problème de
+la prévention d'une inflation générale
+devrait être attaqué de manière directe : il
+ne peut pas être résolu par des contrôles spéciaux
+dans des domaines spécifiques, qui peuvent contenir pendant un
+temps les pressions inflationnistes fondamentales mais qui ne les
+éliminent pas. Nous ne croyons pas, par conséquent, que
+le plafonnement des loyers constitue une défense suffisante
+contre l'inflation au point de justifier ne serait-ce qu'une
+fraction des grands coûts sociaux qu'il entraîne.</p>
+<p>Aucune solution au
+problème du logement ne peut bénéficier à
+tous le monde : certains doivent être touchés
+négativement. L'essence du problème est que
+certaines personnes doivent être obligées ou incitées
+à utiliser moins de logement que ce qu'elles sont prêtes
+de payer aux taux légaux actuels. Les méthodes
+existantes du rationnement du logement forcent une petite minorité
+– en premier lieu les vétérans ayant quitté
+l'armée et les ouvriers de guerre migrant, ainsi que
+leurs familles, amis et parents – à supporter la plus
+grande partie du sacrifice.</p>
+<p>Le rationnement par
+des loyers plus élevés aiderait ce groupe en incitant
+les nombreux autres à utiliser moins de logement et aurait
+donc le mérite de diffuser la charge de manière plus
+égale au sein de la population dans son ensemble. Cela
+frapperait davantage de gens immédiatement, <i>mais chacun
+moins sévèrement</i>, que les méthodes
+existantes. Ceci constitue en même temps la justification de
+l'utilisation des loyers élevés pour rationner
+les logements et le principal obstacle politique à la
+suppression du plafonnement des loyers.</p>
+<p>Un dernier point à
+l'attention du lecteur – nous voudrions souligner aussi
+nettement que nous le pouvons que nos objectifs sont les même
+que les siens : <i>la distribution la plus équitable
+possible de l'offre de logements disponibles </i>et<i> la
+reprise la plus rapide possible de nouvelles constructions</i>. La
+hausse des loyers qui suivrait l'arrêt du contrôle
+des loyers n'est pas une vertu en soi. Nous ne désirons
+nullement payer des loyers plus élevés, de voir
+d'autres gens forcés de les payer, ou de voir les
+propriétaires récolter des profits tombés du
+ciel. Mais nous réclamons instamment la suppression du
+plafonnement des loyers parce que, selon nous, toute autre solution
+au problème du logement entraînerait des maux pires
+encore.</p>
+
+<br>
+<h4>Note</h4>
+<div id="partie-0-sdfootnote1">
+	<p><a href="#partie-0-sdfootnote1anc" id="partie-0-sdfootnote1sym">1</a>
+	<i>Note de l'éditeur</i> : Les auteurs oublient de dire
+	si les « mesures à long terme » qu'ils
+	adopteraient vont au-delà de l'élimination de
+	privilèges spéciaux, comme les monopoles actuellement
+	protégés par le gouvernement. En tout cas, néanmoins,
+	l'importance de leur argument à ce sujet mérite
+	d'être notée. Il signifie que, même du
+	point de vue de ceux qui placent l'égalité avant
+	la justice et la liberté, le contrôle des loyers sont
+	« le comble de la sottise ».</p>
+<p>
+	<i>Note d'Hervé de Quengo</i> : peut-être en raison de cette remarque, Milton Friedman,
+	dans <i>Capitalisme et liberté</i> (Robert Laffont, 1971, traduction de <i>Capitalism and Freedom</i>,
+	1962) précisa au chapitre XII :</p>
+<blockquote>
+<p>« Au cœur de
+la philosophie libérale, il y a la croyance dans la dignité de
+l'individu, dans sa liberté d'utiliser au maximum et selon ses propres
+lumières ses capacités et les occasions qui se présentent
+à lui, à cette seule condition qu'il ne compromette pas, ce
+faisant, la liberté qu'ont les autres individus de faire la même
+chose. Cela implique en un sens la croyance en l'égalité des
+hommes ; en un autre sens, dans leur inégalité. Chaque homme
+a un droit égal à la liberté. C'est
+précisément parce que les hommes sont différents – parce
+que tel homme voudra faire de sa liberté tout autre chose que tel autre
+et, par là même, pourra peut-être faire plus pour la
+société – que c'est un droit important et fondamental.</p>
+<p>Le libéral fera par conséquent une nette distinction entre
+l'égalité des droits et des chances, d'une part, et
+l'égalité matérielle ou égalité des
+résultats, d'autre part. Il pourra considérer avec faveur le fait
+qu'une société libre tende plus que toute autre à une plus
+grande égalité matérielle, mais il y apercevra un
+important effet secondaire de la société libre, et non sa
+justification principale. Il fera bon accueil aux mesures qui favorisent en
+même temps la liberté et l'égalité, telles celles
+qui éliminent le pouvoir des monopoles et qui améliorent le
+fonctionnement du marché. Il verra dans l'exercice de la charité
+privée un bon exemple de l'usage convenable de la liberté. Et
+s'il peut approuver l'action de l'État dans l'amélioration du sort des
+pauvres parce que c'est là une façon plus efficace pour la masse
+de la communauté d'atteindre l'objectif commun, il ne le fera cepend=
+ant qu'à regret, car ce sera substituer l'action obligatoire à
+l'action volontaire.</p>
+<p>L'égalitarisme
+ira tout aussi loin. Mais il voudra aller plus loin encore. Il proposera de
+prendre aux uns pour donner aux autres, non pas parce qu'il s'agira là
+d'un moyen plus efficace grâce auquel les « uns »
+pourront atteindre leurs objectifs, mais au nom de la justice. Ce point
+atteint, l'égalité entre ouvertement en conflit avec la
+liberté: on doit choisir. On ne peut être à la fois en
+ce sens égalitariste et libéral. »</p>
+</blockquote>
+
+
+</div>
+
+
+<br>
+
+
+</a></section></article><footer class="meta"><p>Source : <a href="http://herve.dequengo.free.fr/Friedman/TOP/TOP.htm">Hervé de Quengo</a>. Texte conservé ; présentation adaptée à la lecture sur écran.</p></footer></main><nav class="chapter-nav fixed-bottom reader-bottom" aria-label="Parties précédente et suivante"><a id="previous" href="#sommaire">← Précédent</a><a href="#sommaire">Sommaire</a><a id="next" href="#partie-0">Suivant →</a></nav><div id="global-progress" aria-hidden="true"></div><script>
+document.body.classList.add('js');
+const sections=[...document.querySelectorAll('article section')],toc=document.getElementById('toc'),previous=document.getElementById('previous'),next=document.getElementById('next'),resume=document.getElementById('resume');
+function get(k){try{return localStorage.getItem('livre-38-'+k)}catch(e){return null}}function put(k,v){try{localStorage.setItem('livre-38-'+k,v)}catch(e){}}
+let size=Math.max(.95,Math.min(1.65,Number(get('size'))||1.15));
+function applySize(){document.documentElement.style.setProperty('--size',size+'rem')}applySize();
+function sharedTheme(){try{return localStorage.getItem('ebooks-theme')||get('theme')}catch(e){return get('theme')}}
+document.documentElement.dataset.theme=sharedTheme()==='dark'?'dark':'light';
+const theme=document.getElementById('toggle-theme');function themeLabel(){theme.textContent=document.documentElement.dataset.theme==='dark'?'☀':'☾';theme.setAttribute('aria-pressed',String(document.documentElement.dataset.theme==='dark'))}themeLabel();
+theme.onclick=()=>{document.documentElement.dataset.theme=document.documentElement.dataset.theme==='dark'?'light':'dark';put('theme',document.documentElement.dataset.theme);try{localStorage.setItem('ebooks-theme',document.documentElement.dataset.theme)}catch(e){}themeLabel()};
+addEventListener('pageshow',()=>{document.documentElement.dataset.theme=sharedTheme()==='dark'?'dark':'light';themeLabel()});
+document.getElementById('smaller').onclick=()=>{size=Math.max(.95,Math.round((size-.1)*100)/100);applySize();put('size',String(size))};
+document.getElementById('larger').onclick=()=>{size=Math.min(1.65,Math.round((size+.1)*100)/100);applySize();put('size',String(size))};
+const last=get('last');if(sections.some(s=>s.id===last)){resume.href='#'+last;resume.textContent='Reprendre la lecture'}
+toc.onchange=()=>{location.hash=toc.value||'sommaire'};
+let active=-1;
+function show(){const id=decodeURIComponent(location.hash.slice(1));const target=document.getElementById(id);const section=target?.closest('article section');active=sections.indexOf(section);sections.forEach(s=>s.classList.toggle('active',s===section));document.body.classList.toggle('home',active<0);toc.value=section?.id||'';previous.href=active>0?'#'+sections[active-1].id:'#sommaire';previous.setAttribute('aria-disabled',String(active<0));next.href=active<sections.length-1?'#'+sections[Math.max(0,active+1)].id:'#sommaire';next.textContent=active===sections.length-1?'Sommaire':'Suivant →';if(section){put('last',section.id);requestAnimationFrame(()=>{if(target!==section)target.scrollIntoView();else window.scrollTo(0,0)})}else window.scrollTo(0,0);progress()}
+function progress(){const bar=document.getElementById('global-progress');const max=document.documentElement.scrollHeight-innerHeight;const fraction=max>0?Math.min(1,Math.max(0,scrollY/max)):1;bar.style.width=active<0?'0%':((active+fraction)/sections.length*100)+'%'}
+addEventListener('hashchange',show);addEventListener('scroll',progress,{passive:true});addEventListener('resize',progress);show();
+</script></body></html>

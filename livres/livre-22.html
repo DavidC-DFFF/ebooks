@@ -1,0 +1,669 @@
+<!doctype html><html lang="fr"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Le Choc des intérêts de groupe et autres essais — Ludwig von Mises</title><style>:root {
+  --bg: #ffffff;
+  --text: #000000;
+  --accent: #4444ff;
+  --background: #ffffff;
+  --button-bg: #f7f7f7;
+  --button-hover-bg: #eaeaea;
+  --progress-color: #660000;
+}
+
+[data-theme="dark"] {
+  --bg: #2c2c2e;
+  --text: #e0e0e0;
+  --accent: #9b9bff;
+  --background: #2c2c2e;
+  --button-bg: #3a3a3c;
+  --button-hover-bg: #48484a;
+  --progress-color: #ffdddd;
+}
+
+body {
+  margin: 0;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 1.2rem;
+  line-height: 1.6;
+  text-align: justify;
+  background: var(--bg);
+  color: var(--text);
+  padding: 0;
+}
+
+/* === NAVBAR === */
+nav.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2.2rem;
+  background-color: var(--background);
+  backdrop-filter: blur(6px);
+  box-shadow: 0 1px 6px rgba(0, 0, 0, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: nowrap;
+  padding: 0 0.5rem;
+  gap: 0.5rem;
+  z-index: 1000;
+  font-size: 0.85rem;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+nav.navbar select {
+  flex-grow: 1;
+  min-width: 0;
+  max-width: 100%;
+  padding: 0.25rem;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  background: var(--button-bg);
+  color: var(--text);
+}
+
+nav.navbar button {
+  flex-shrink: 0;
+  background: none;
+  border: none;
+  font-size: 1.2em;
+  cursor: pointer;
+  color: var(--text);
+}
+
+/* === CONTENU === */
+main {
+  padding: 3rem 1rem 2rem;
+  max-width: 600px;
+  margin: auto;
+}
+
+article p {
+  text-indent: 1.5em;
+  text-align: justify;
+  hyphens: auto;
+}
+
+/* === TITRES === */
+h1 {
+  font-family: 'Segoe UI', 'Helvetica Neue', sans-serif;
+  font-weight: bold;
+  text-align: center;
+  font-size: 1.8rem;
+  margin-bottom: 0.5em;
+}
+
+main.centered h2 {
+  font-family: 'Playfair Display', Georgia, serif;
+  /* ou ta police préférée */
+  font-size: 2.4rem;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 0.5em;
+}
+
+.subtitle {
+  font-size: 1.2em;
+  color: var(--accent);
+  margin-bottom: 2em;
+}
+
+.start-button {
+  display: inline-block;
+  padding: 1em 2em;
+  background: var(--accent);
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 0.5em;
+  transition: opacity 0.3s;
+}
+
+.start-button:hover {
+  opacity: 0.8;
+}
+
+/* === NAVIGATION CHAPITRES === */
+.chapter-nav {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 1rem;
+  margin: 2rem auto 0rem auto;
+  max-width: 640px;
+  background-color: var(--background);
+}
+
+.chapter-nav a {
+  flex: 1;
+  text-align: center;
+  text-decoration: none;
+  padding: 0.75rem;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  background-color: var(--button-bg);
+  color: inherit;
+  transition: background-color 0.2s;
+}
+
+.chapter-nav a:hover {
+  background-color: var(--button-hover-bg);
+}
+
+.fixed-bottom {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  justify-content: center;
+  background-color: var(--background);
+  box-shadow: 0 -1px 6px rgba(0, 0, 0, 0.1);
+  padding: 1rem;
+  z-index: 100;
+}
+
+main.centered {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding-top: 2.5rem;
+  /* pour éviter de passer sous la navbar */
+  box-sizing: border-box;
+  text-align: center;
+}
+
+.index-image {
+  max-width: 80%;
+  height: auto;
+  margin-top: 2rem;
+}
+
+ul.tiret {
+  list-style: none;
+  padding-left: 0.5rem;
+}
+
+ul.tiret li {
+  position: relative;
+  padding-left: 1.5rem;
+  text-align: justify;
+  margin-bottom: 0rem;
+}
+
+ul.tiret li::before {
+  content: "—";
+  /* Tiret cadratin */
+  position: absolute;
+  left: 0;
+  color: var(--text);
+}
+
+main.end-page {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 3rem 1rem;
+  text-align: center;
+}
+
+.end-page h1 {
+  font-size: 2.5rem;
+  font-family: 'Playfair Display', Georgia, serif;
+  margin-bottom: 2rem;
+  color: var(--text);
+}
+
+.end-image {
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  object-fit: cover;
+  filter: grayscale(100%);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.fade-in {
+  opacity: 0;
+  animation: fadeIn 0.8s ease-in forwards;
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
+}
+
+#global-progress {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  height: 4px;
+  background-color: var(--progress-color); /* couleur personnalisable */
+  width: 0%;
+  z-index: 9999;
+  transition: width 0.4s ease;
+}
+
+html[data-font="small"] {
+  font-size: 0.9rem;
+}
+
+html[data-font="medium"] {
+  font-size: 1.1rem;
+}
+
+html[data-font="large"] {
+  font-size: 1.3rem;
+}
+
+html {
+  transition: font-size 0.3s ease;
+}
+
+*{box-sizing:border-box}html{scroll-padding-top:4rem}nav.navbar{height:auto;min-height:3rem;max-width:600px;padding:.3rem .5rem}nav.navbar button{min-width:44px;min-height:44px}nav.navbar select{min-height:44px;width:50%;font-size:.85rem}main{padding-top:4rem;padding-bottom:7rem}h2{font-family:'Segoe UI',sans-serif;font-size:1.65rem;line-height:1.35;text-align:center}a{color:var(--accent);overflow-wrap:anywhere}header{text-align:center;margin-bottom:2rem}section{margin-top:2rem}body.js article section{display:none}body.js article section.active{display:block}body.js header,body.js details,body.js footer{display:none}body.js.home header,body.js.home details,body.js.home footer{display:block}body.js.home article section{display:none}.chapter-nav{max-width:600px;margin:auto;padding:.5rem;gap:.5rem}.chapter-nav a{min-height:44px;font-size:.9rem;padding:.65rem .4rem}.chapter-nav a[aria-disabled=true]{visibility:hidden}#global-progress{transition:none}.meta{font-size:.85rem;text-align:left}details nav a{display:block;padding:.5rem 0}button:focus-visible,a:focus-visible,select:focus-visible{outline:3px solid var(--accent);outline-offset:2px}sup{line-height:0}sup a{padding:.25rem}.reader-bottom{display:none}.js .reader-bottom{display:flex}@media print{nav.navbar,.reader-bottom,#global-progress{display:none}body.js article section{display:block!important}main{padding:0}section{break-before:page}}
+
+:root{--bg:oklch(0.98 0.008 90);--background:var(--bg);--text:oklch(0.23 0.012 160);--accent:oklch(0.35 0.077 160);--line:oklch(0.83 0.015 160);--button-bg:var(--bg);--button-hover-bg:oklch(0.94 0.012 90);--progress-color:var(--accent);--size:1.15rem}
+html{font-size:16px;transition:none}
+[data-theme="dark"]{color-scheme:dark;--bg:oklch(0.2 0.008 160);--background:var(--bg);--text:oklch(0.91 0.008 90);--accent:oklch(0.82 0.08 160);--line:oklch(0.4 0.015 160);--button-bg:var(--bg);--button-hover-bg:oklch(0.27 0.012 160);--progress-color:var(--accent)}
+body{font-family:Georgia,'Times New Roman',serif;font-size:var(--size);line-height:1.75}
+h1,h2,h3,h4{font-family:Georgia,'Times New Roman',serif}h1{font-size:clamp(2.25rem,8vw,3.75rem);line-height:1.12;letter-spacing:-.03em}h2{font-size:1.7rem;line-height:1.3}h3,h4{line-height:1.4}.subtitle{font-size:1.35rem;line-height:1.5}p{margin:0 0 1.1em}
+nav.navbar{font-family:system-ui,sans-serif;box-shadow:none;border-bottom:1px solid var(--line);gap:.3rem}
+nav.navbar button{font-size:.9rem;border:1px solid var(--line);border-radius:.3rem;padding:.4rem;min-width:40px}
+nav.navbar>a{display:flex;align-items:center;justify-content:center;min-width:32px;min-height:44px;text-decoration:none}
+nav.navbar select{border-color:var(--line);width:auto;flex:1}
+.chapter-nav a{border-color:var(--line)}.start-button{background:oklch(0.35 0.077 160);color:oklch(0.98 0.008 90)}
+@media print{body{font-size:11pt;background:white;color:black}}
+
+img{max-width:100%;height:auto}table{max-width:100%;display:block;overflow-x:auto}pre{white-space:pre-wrap;overflow-wrap:anywhere}section>h2:first-child,section>h3:first-child{margin-top:0}</style></head><body>
+<nav class="navbar" aria-label="Navigation de lecture"><a href="../index.html" aria-label="Retour à la bibliothèque">⌂</a><a href="#sommaire" aria-label="Accueil et sommaire">☰</a><select id="toc" aria-label="Choisir une partie"><option value="">Sommaire</option><option value="partie-0">Préface de Murray Rothbard</option><option value="partie-1">1. Le Choc des intérêts de groupe</option><option value="partie-2">2. Le Mythe de l&#x27;échec du capitalisme</option><option value="partie-3">3. La Liberté de circulation en tant que problème international</option><option value="partie-4">4. Carl Menger et l&#x27;École économique autrichienne</option></select><button id="smaller" aria-label="Réduire la taille du texte">A−</button><button id="larger" aria-label="Agrandir le texte">A+</button><button id="toggle-theme" aria-label="Changer le thème" aria-pressed="false">☾</button></nav>
+<main><header><h1>Le Choc des intérêts de groupe et autres essais</h1><p>Ludwig von Mises</p><a class="start-button" id="resume" href="#partie-0">Commencer la lecture</a></header><details id="sommaire" open><summary>Table des matières</summary><nav aria-label="Sommaire"><a href="#partie-0">Préface de Murray Rothbard</a><a href="#partie-1">1. Le Choc des intérêts de groupe</a><a href="#partie-2">2. Le Mythe de l&#x27;échec du capitalisme</a><a href="#partie-3">3. La Liberté de circulation en tant que problème international</a><a href="#partie-4">4. Carl Menger et l&#x27;École économique autrichienne</a></nav></details><article><section id="partie-0">
+
+
+
+
+
+<p> </p>
+
+<h2>Préface de Murray Rothbard</h2>
+
+<p> </p>
+
+<p>Au XX<sup>e</sup> siècle, les défenseurs de l'économie de marché ont presque toujours rejeté la responsabilité de l'intervention gouvernementale sur le seul compte des idées erronées — c'est-à-dire sur des idées fausses concernant les politiques permettant d'améliorer le bien public. Pour la plupart de ces auteurs un concept comme celui de la « classe dirigeante » avait une sonorité épouvantablement marxiste. En résumé, ce qu'ils disaient était qu'il n'existait pas de conflits irrémédiables de classe ni d'intérêts particuliers de groupe dans l'histoire humaine, que les intérêts de tous était toujours compatibles, et que par conséquent toute confrontation
+politique ne pouvait venir que de malentendus à propos de cet intérêt commun.</p>
+<p>Dans « Le Choc des intérêts de groupe », le plus important des essais peu connus reproduits ici, Ludwig von Mises, l'éminent champion du marché libre de ce siècle, évite ce piège naïf dans lequel sont tombés tant de ses collègues. Au lieu de cela, Mises expose une théorie des classes et du conflit de classe très sophistiquée et libérale, en distinguant nettement entre le marché libre et l'intervention gouvernementale. Il est vrai que sur le <i>marché libre</i> il n'y a pas de confrontations de classe ni d'intérêts de groupe particuliers : tous les participants tirent bénéfice du marché et tous leurs intérêts sont par conséquent en harmonie. Mais il en va tout autrement, souligne Mises, quand nous en arrivons à l'intervention du gouvernement. Car cette intervention <i>crée</i> nécessairement un conflit entre les classes d'individus qui tirent un bénéfice ou sont privilégiés du fait de l'État d'une part, et les classes qui en subissent le poids. Mises appelle <i>castes</i> ces classes conflictuelles, créées par l'intervention de l'État. Comme il le dit :</p>
+<blockquote>
+<p>Une solidarité d'intérêts prévaut ainsi entre tous les membres d'une même caste tandis qu'un conflit d'intérêts prévaut entre les diverses castes. Chaque caste privilégiée vise à obtenir de nouveaux privilèges et à préserver les anciens. Chaque classe non privilégiée cherche à abolir les exclusions dont elle est victime. Au sein d'une société de castes, il existe un antagonisme irrémédiable entre les intérêts des différentes castes.</p>
+</blockquote>
+<p>Mises, par cette profonde analyse, revient à la théorie libérale originelle de l'analyse des classes, initiée par Charles Comte et Charles Dunoyer, chefs de file du libéralisme laissez-fairiste français au début du
+XIX<sup>e</sup> siècle.</p>
+<p>Mais Mises a un grave problème : utilitariste, assimilant l'utilitarisme à l'économie et au marché libre, il doit se montrer capable de convaincre <i>tout le monde</i>, y compris ceux qu'il considère comme faisant partie des castes dirigeantes, qu'ils obtiendraient une meilleure situation dans un marché et dans une société libres et qu'eux aussi devraient faire campagne en faveur de cet objectif.
+Il essaie de le faire en établissant une dichotomie entre les intérêts à « court terme » et à « long terme », ces derniers étant qualifiés d'intérêts « bien compris ». Même ceux qui bénéficient à court terme de l'étatisme, prétend Mises, y perdront à long terme. Comme le dit Mises :</p>
+<blockquote>
+<p>Sur le court terme un individu ou un groupe peuvent retirer un profit en violant les intérêts d'autres groupes ou individus. Mais sur le long terme, en se livrant à de telles actions, ils nuisent à leurs propres intérêts égoïstes tout autant qu'à ceux des personnes auxquelles ils ont porté préjudice. Le sacrifice qu'un homme ou un groupe fait en renonçant à certains gains à court terme, de peur qu'ils ne mettent en péril le fonctionnement pacifique de l'appareil de coopération sociale, n'est que temporaire. Il revient à abandonner un petit profit immédiat pour des avantages incomparablement plus grands à long terme.</p>
+</blockquote>
+<p>Le grand problème est ici le suivant : pourquoi les gens <i>devraient</i>-ils toujours prendre en considération leurs intérêts à long terme, et non ceux à court terme ? Pourquoi le long terme est-il la façon de « bien comprendre » ? Ludwig von Mises, plus que tout autre économiste de son temps, a fait prendre conscience à la discipline économique de la grande et éternelle importance de la <i>préférence temporelle</i> dans l'action humaine : la préférence accordée à l'obtention d'une satisfaction donnée maintenant plutôt qu'ultérieurement. Bref, tout le monde préfère le court au long terme, à des degrés différents. Comment Mises peut-il, en tant qu'utilitariste, dire qu'une préférence temporelle moindre en faveur du présent serait « meilleure » qu'une préférence plus élevée ? En résumé, il faut une doctrine morale au-delà de l'utilitarisme pour affirmer que les gens <i>devraient</i> prendre davantage en compte leurs intérêts à long terme que ceux à court terme. Cette considération devient encore plus importante dans les cas où l'intervention du gouvernement confère des avantages importants et non de « petits avantages » aux privilégiés et où le châtiment n'arrive pas avant un long moment, de sorte que le « temporaire » de la citation ci-dessus correspond en fait à une longue période.</p>
+<p>Cet aspect devient encore plus intense dans le noble et surprenant essai intitulé « La Liberté de circulation en tant que problème international », nouvelle traduction d'un article publié dans un journal viennois de 1935. Il est surprenant parce qu'il constitue une vive attaque
+portée à l'encontre des barrières à l'immigration établies par les États-Unis et dans les dominions britanniques. Car Mises identifie avec un ton incisif ces barrières à la création d'une classe
+d'une élite dirigeante, certes étendue, dans laquelle les travailleurs d'une zone géographique particulière, jouissant d'un niveau de vie élevé, utilisent l'État pour laisser à l'extérieur les immigrants de zones à salaires inférieurs, maintenant ainsi ces derniers de manière permanente dans une situation de salaires plus faibles. Mises ajoute avec justesse que, contrairement au mythe marxiste de la solidarité internationale du prolétariat, ce sont les syndicats des pays à niveau de vie élevé qui se sont battus en faveur des restrictions à l'immigration. Mises est sévère à propos des privilèges conférés par les barrières à l'immigration : « Le "miracle", dont on parle si souvent, des hauts salaires aux États-Unis et en Australie peut facilement s'expliquer par la politique essayant d'empêcher toute nouvelle immigration. Pendant des décennies, les gens n'ont pas osé débattre de ces choses en Europe. » Mises conclut cet essai en justifiant de manière implicite
+l'Europe surpeuplée faisant la guerre contre les pays restrictifs : « Il s'agit d'un problème du droit à l'immigration dans les pays les plus grands et les plus productifs [...]. Si l'on ne rétablit pas la liberté de circulation des individus dans le monde, il ne peut y avoir de paix durable. »</p>
+<p>Même ici Mises tente de montrer que, sur le long terme, les travailleurs des pays privilégiés sont moins bien lotis du fait des barrières à l'immigration, mais il est clair que ce « terme » est tellement long et que les avantages intermédiaires sont si substantiels que l'harmonie utilitariste des intérêts universels disparaît dans ce cas.</p>
+<p>La même disparition se produit quand Mises, dans son « Choc des intérêts de groupe » essaie de rejeter comme non-sens les nationalismes et la guerre entre les nations, au moins à long terme. Mais il ne s'attaque pas au problème des frontières nationales : comme l'essence de l'État-nation est d'exercer le monopole de la force sur une zone territoriale donnée, il existe inéluctablement un conflit d'intérêts entre les États et entre leurs dirigeants quant à la
+taille de leurs territoires, sur la taille des régions sur lesquelles s'exerce leur souveraineté. Alors que dans un marché libre le gain de chacun est également le gain d'un autre, le gain territorial d'un État est nécessairement une perte pour un autre État, et les conflits d'intérêts portant sur les frontières sont irréconciliables — même s'ils sont d'autant moins importants que les interventions du gouvernement
+dans la société sont rares.</p>
+<p>La théorie des classes de Mises a été curieusement négligée par ses successeurs. En la remettant au premier rang, nous devons abandonner l'idée confortable selon laquelle nous serions tous, nous <i>tout comme</i> nos dirigeants privilégiés, dans une harmonie d'intérêts continuelle. En modifiant la théorie de Mises afin de tenir compte de la préférence temporelle et d'autres problèmes concernant son analyse sur ce qui est « bien compris », nous concluons par l'idée encore moins confortable selon laquelle les intérêts des privilégiés d'État et ceux du reste de la société sont en désaccord. Et nous concluons en outre que seuls des principes moraux situés au-delà de l'utilitarisme peuvent en fin de compte trancher le conflit qui les oppose.</p>
+
+<br>
+
+
+</section><section id="partie-1">
+
+
+
+
+
+<p> </p>
+
+<h2>1. Le Choc des intérêts de groupe</h2>
+
+<p> </p>
+
+<p><em>Article publié pour la première fois dans </em>Approaches to National Unity <em>(1945)</em>.</p>
+
+<h4>I</h4>
+<p>Utiliser l'expression de « tensions de groupes » pour décrire les antagonismes contemporains est certainement un euphémisme. Ce que nous avons en face de nous, ce sont des
+conflits considérés comme irréconciliables et conduisant à des guerres presque perpétuelles, à des
+guerres civiles et à des révolutions. Pour autant qu'il y ait la paix, la raison n'en est certes pas l'amour de la paix sur la base de principes philosophiques, mais le fait que les groupes concernés n'ont pas encore terminé leur préparation au combat et qu'ils attendent, pour des questions d'efficacité, un moment plus propice pour frapper les premiers.</p>
+
+<p>Alors qu'ils luttent les uns contre les autres, les gens ne sont pas en désaccord à propos du consensus sur les doctrines sociales contemporaines. C'est un dogme presque universellement accepté que de dire qu'il existe des conflits irrémédiables entre les intérêts des différents groupes. Les avis
+ne diffèrent généralement parlant qu'en ce qui concerne la question de savoir ce qu'il convient de considérer comme des groupes authentiques et par conséquent quels sont les véritables conflits. Les nationalistes disent que ce sont les nations (ce qui veut dire les groupes linguistiques en Europe) qui constituent les véritables groupes, et pour les marxistes ce sont les « classes sociales ». Mais il y a unanimité à propos de la doctrine selon laquelle un groupe authentique ne peut prospérer sans que ce soit au détriment d'autres groupes authentiques. D'après cette vision des choses le conflit représente l'état naturel des relations entre les groupes. Cette philosophie sociale s'est mise à l'abri de toute critique en affirmant le principe du polylogisme. Marx, Dietzgen et les représentants radicaux de la « sociologie de la connaissance » enseignent que la structure logique de l'esprit est différente selon les classes sociales. Si quelqu'un s'écarte des enseignements du marxisme, c'est soit qu'il fait partie d'une classe non prolétarienne et est donc de par sa constitution incapable de saisir la philosophie prolétarienne, soit, si c'est un prolétaire, par qu'il est tout simplement un traître. Les objections portées à l'encontre du marxisme ne servent à rien parce que leurs auteurs sont des « sycophantes de la bourgeoisie ». D'une manière analogue les racistes allemands déclarent que les logiques des diverses races sont essentiellement différentes. Les principes de la logique « non aryenne » et les théories scientifiques développées par son application ne sont pas valables pour les « Aryens ».</p>
+
+<p>Or, si cela est vrai, la défense de la coopération pacifique entre les hommes est sans espoir. Si les membres des divers groupes ne peuvent même pas se mettre d'accord sur les théorèmes physiques et mathématiques ou à propos des problèmes biologiques, ils ne trouveront certainement pas une formule
+permettant le fonctionnement harmonieux de l'organisation sociale.</p>
+
+<p>Il est vrai que la plupart de nos contemporains, dans leur acceptation du polylogisme, ne vont pas aussi loin que les marxistes, racistes, etc. cohérents. Mais une doctrine perverse n'est pas rendue moins critiquable si elle s'exprime de manière timide et modérée. C'est un fait que la science sociale et politique contemporaine fait un usage abondant du polylogisme, bien que ses champions s'abstiennent de présenter clairement et ouvertement les fondements philosophiques des enseignements du polylogisme. Ainsi, par exemple, la théorie ricardienne du commerce extérieur est simplement écartée en indiquant qu'il s'agissait de la « superstructure idéologique » des intérêts de classe de la bourgeoisie du
+XIX<sup>e</sup> siècle. Quiconque s'oppose aux doctrines en vogue de l'intervention du gouvernement dans les affaires ou du syndicalisme est — selon la terminologie marxiste — stigmatisé comme défenseur des intérêts de classe injustes des « exploiteurs ».</p>
+
+<p>La façon même dont les spécialistes des sciences sociales, les historiens, les rédacteurs de journaux et les politiciens utilisent les termes « capital » et « travail » ou traitent des problèmes du nationalisme économique prouve qu'ils ont entièrement adopté la doctrine du conflit irrémédiable entre les intérêts des différents groupes. S'il est vrai qu'il existe un tel conflit irréconciliable, ni la guerre entre les nations ni la guerre civile ne peuvent être évitées.</p>
+
+<p>Nos guerres internationales ou civiles ne sont pas contraires aux doctrines sociales généralement acceptées de nos jours. Elles en sont le résultat logique parfait.</p>
+
+<h4>II</h4>
+
+<p>La première question à laquelle nous devons répondre est la suivante : qu'est-ce qui unifie ces groupes dont les conflits sont notre objet ?</p>
+
+<p>Dans un système de castes la réponse est évidente. La société y est divisée en castes rigides. L'appartenance à l'une d'elles attribue à chaque individu certains privilèges (<i>privilegia favorabilia</i>) ou certains handicaps (<i>privilegia odiosa</i>). En règle générale un homme hérite sa caste de ses parents, y reste toute sa vie et transmet son statut à ses enfants. Son destin personnel est inséparablement lié à celui de sa caste. Il ne peut attendre d'amélioration de sa situation en dehors d'une amélioration de la situation de sa caste ou de son état. Une solidarité d'intérêts prévaut ainsi entre tous les membres d'une même caste tandis qu'un conflit d'intérêts prévaut entre les diverses castes. Chaque caste privilégiée cherche à obtenir de nouveaux privilèges et à préserver les anciens. Chaque classe non privilégiée cherche à abolir les exclusions dont elle est victime. Au sein d'une société de castes, il existe un antagonisme irrémédiable entre les intérêts des différentes castes.</p>
+
+<p>Le capitalisme a substitué l'égalité devant la loi au système des castes des temps anciens. Dans une société de marché libre, dit l'économiste libéral, il n'y a ni privilégiés ni défavorisés. Il y prévaut une pleine harmonie des intérêts bien compris (nous dirions aujourd'hui à long terme) de tous les individus et de tous les groupes. L'économiste libéral ne conteste pas le fait qu'un privilège accordé à un groupe précis de gens peut favoriser ses intérêts à court terme aux dépens du reste de la nation. Une taxe sur les importations de blé augmente le prix du blé sur le marché intérieur et augmente ainsi le revenu des agriculteurs nationaux. (Comme il ne s'agit pas d'un essai sur les problèmes économiques, il n'est pas nécessaire de préciser les conditions spécifiques du marché nécessaires pour que le tarif douanier ait cet effet.) Mais il est peu probable que les consommateurs, la grande majorité, acceptent durablement un état de choses qui leur soit défavorable au seul bénéfice des cultivateurs de blé. Soit ils
+aboliront le tarif douanier, soit ils essaieront de s'assurer une protection similaire. Si tous les groupes jouissent de
+privilèges, seuls  ceux qui sont privilégiés à un bien plus grand degré que les autres en tirent un véritable bénéfice. Avec un privilège égal pour tous les groupes, le profit d'un homme en sa qualité de producteur et de vendeur est absorbé d'un autre côté par les prix plus élevés qu'il doit payer en sa qualité de consommateur et d'acheteur. Mais au delà de cela, tous sont perdants parce que le tarif douanier détourne la production des lieux offrant les conditions de production les plus favorables vers des lieux offrant des conditions moins favorables et parce qu'il réduit ainsi le montant total du revenu national. Les intérêts à court terme d'un groupe peuvent être servis par un privilège aux dépens d'autres personnes. Les intérêts bien compris, c'est-à-dire à long terme, sont certainement mieux servis par l'absence de tout privilège.</p>
+
+<p>Le fait que des gens aient la même situation dans le cadre de la société de marché libre n'entraîne pas une solidarité de leurs intérêts à court terme. Au contraire, c'est précisément le fait qu'ils occupent la même place au sein du système de la division du travail et de la coopération sociale, qui en fait des concurrents et des rivaux. Le conflit à court terme entre les concurrents peut être annulé et remplacé par la solidarité des intérêts bien compris de tous les membres de la société capitaliste. Mais — en l'absence de privilèges accordés à des groupes — il ne peut jamais conduire à une solidarité de groupe et à un antagonisme entre les intérêts d'un groupe avec le reste de la société. Dans un régime de libre-échange, les fabricants de chaussures sont simplement des concurrents. Ils ne peuvent être réunis dans un groupe ayant une solidarité d'intérêts que si un privilège entre en jeu, par exemple un tarif douanier sur les chaussures (<i>privilegium favorabile</i>) ou une loi établissant une discrimination à leur égard au bénéfice d'autres gens (<i>privilegium odiosum</i>).</p>
+
+<p>C'était contre cette doctrine que Karl Marx avait exposé sa doctrine du conflit irrémédiable des intérêts de classe. Il n'y a pas de castes au sein du capitalisme ou de la démocratie bourgeoise. Mais il y aurait des classes sociales : les exploiteurs et les exploités. Les prolétaires auraient un intérêt commun, l'abolition du régime des salaires et l'établissement de la société socialiste sans classes. Les bourgeois, de l'autre côté, seraient unis en vue d'essayer de préserver le capitalisme.</p>
+
+<p>La doctrine marxiste de la lutte des classes est entièrement basée sur son analyse du fonctionnement du système capitaliste et sur son appréciation du mode de production socialiste. Son analyse économique du capitalisme, totalement erronée, a été démolie depuis longtemps. La
+seule raison que Marx avait avancée en vue de démontrer que le socialisme serait un meilleur système que le capitalisme était sa prétention à avoir découvert la loi de l'évolution historique, à savoir le fait que le socialisme devait arriver avec « l'inexorabilité d'une loi de la nature ». Comme il était pleinement convaincu que le cours de l'Histoire était un mouvement de progrès continuel de modes de production sociale inférieurs et moins désirables vers des modes supérieurs et plus souhaitables, et que par conséquent tout stade postérieur de l'organisation sociale devait nécessairement être meilleur que les précédents, il ne pouvait avoir de doutes quant aux bienfaits du socialisme. Ayant considéré de manière tout à fait arbitraire comme acquis le fait que la « vague du futur » dirigeait l'humanité vers le socialisme, il croyait avoir fait tout ce qu'il fallait pour démontrer la supériorité du socialisme. Marx ne s'est
+pas seulement abstenu de toute analyse de l'économie socialiste. Il a proscrit ce genre études, les qualifiant de totalement « utopiques » et de « non scientifiques ».</p>
+
+<p>Chaque page de l'histoire des cent dernières années contredit le dogme marxiste selon lequel les prolétaires seraient nécessairement enclins aux idées internationales et sauraient qu'il existe une solidarité inébranlable entre les salariés du monde entier. Les délégués des partis « travaillistes » de divers pays se sont mis d'accord entre eux au sein de diverses Associations internationales des travailleurs. Mais tandis qu'ils s'adonnaient à des discours stériles sur la camaraderie et la fraternité internationales, les groupes de pression des travailleurs de plusieurs pays étaient occupés à lutter les uns contre les autres. Les travailleurs des pays comparativement sous-peuplés protègent, par le biais
+de barrières à l'immigration, leurs niveaux de salaires élevés face à la tendance à l'égalisation des taux de salaire, tendance inhérente à un système permettant la libre circulation de la main-d'œuvre d'un pays à un autre. Ils essaient de sauvegarder le succès à court terme de politiques « en faveur du travail » en barrant l'accès des articles produits à l'étranger au marché intérieur de leurs propres pays. Ils créent ainsi les tensions qui doivent conduire à une guerre lorsque les victimes d'une telle politique estiment pouvoir éliminer par la violence les mesures des gouvernements étrangers qui nuisent à leur bien-être.</p>
+
+<p>Notre époque est pleine de sérieux conflits d'intérêts entre les groupes économiques. Mais ces conflits ne sont pas inhérents au fonctionnement d'une économie capitaliste libre de toute entrave. Ils sont le résultat nécessaire des politiques gouvernementales intervenant dans le fonctionnement du marché. Ce ne sont pas des conflits entre des classes marxistes. Ils résultent de ce que l'humanité est revenue aux privilèges de groupe et donc à un nouveau système de castes.</p>
+
+<p>Dans une société capitaliste, la classe possédante est constituée des gens qui ont réussi à satisfaire les besoins des consommateurs et de leurs héritiers. Toutefois, le mérite et le succès passés ne leur donne qu'un avantage temporaire et sans cesse contesté par d'autres personnes. Non seulement ils doivent sans arrêt se faire concurrence entre eux, mais ils doivent encore défendre quotidiennement leur situation face à des nouveaux venus cherchant à les éliminer. Le fonctionnement du marché écarte constamment des capitalistes et des entrepreneurs incapables et les remplace par des parvenus.</p>
+
+<p>Il rend sans arrêt riches des hommes pauvres et pauvres des gens riches. Les traits caractéristiques de la classe possédante est d'être composée de membres changeant continuellement, d'être ouverte à tout le monde, qu'il faut connaître une suite ininterrompue de succès commerciaux pour continuer à y appartenir et que ses membres sont désunis en raison de la concurrence qu'ils se livrent entre eux. L'homme d'affaires à succès n'a pas intérêt à une politique de protection des capitalistes et des entrepreneurs incapables face aux vicissitudes du marché. Seuls les capitalistes et les entrepreneurs incompétents (la plupart issus des dernières générations) ont un intérêt égoïste à de telles mesures « stabilisatrices ». Toutefois, dans un monde capitaliste pur, fidèle aux principes d'une politique des consommateurs, ils n'ont aucune chance de s'assurer de tels privilèges.</p>
+
+<p>Mais notre époque est celle de la politique des producteurs. Les doctrines « hétérodoxes » actuelles considèrent que la première tâche d'un bon gouvernement est de placer des obstacles sur la route d'un innovateur à succès au seul bénéfice des concurrents moins efficaces, et ce aux dépens des consommateurs. Dans les pays à dominante industrielle la principale caractéristique de cette politique est de protéger les agriculteurs nationaux face à la concurrence d'une agriculture étrangère travaillant dans des conditions physiques plus favorables. Dans les pays à dominante agricole elle consiste, à l'inverse, à protéger l'industrie de fabrication nationale de la concurrence des industries étrangères produisant à moindres frais. Il s'agit d'un retour aux politiques économiques restrictives abandonnées par les pays libéraux au cours des
+XVIII<sup>e</sup> et XIX<sup>e</sup> siècles. Si l'on n'avait pas éliminé ces politiques à cette époque, le formidable progrès économique de l'ère capitaliste n'aurait jamais pu être obtenu. Si les pays européens n'avaient pas ouvert leurs frontières aux importations de produits américains — coton, tabac, blé, etc. — et si les anciennes générations américaines avaient interdit de manière stricte l'importation de biens manufacturés européens, les États-Unis n'auraient jamais atteint leur degré actuel de prospérité économique.</p>
+
+<p>C'est cette politique qu'on dit favorable aux producteurs qui rassemble plusieurs personnes, qui autrement se considéreraient simplement comme des concurrents, en groupes de pression ayant des intérêts communs. Quand les chemins de fer naquirent, les cochers ne purent envisager d'action commune contre cette concurrence nouvelle. Le climat intellectuel d'alors aurait rendu une telle lutte inutile. Mais aujourd'hui les producteurs de beurre se battent avec succès contre la margarine et les musiciens contre les enregistrements musicaux. Les conflits internationaux d'aujourd'hui ont la même origine. Les fermiers américains ont l'intention de barrer l'accès aux céréales, au bétail et à la viande en provenance d'Argentine. Les pays européens agissent de la même manière vis-à-vis des produits américains et australiens.</p>
+
+<p>Les racines des antagonismes actuels entre les groupes doivent être trouvées dans le fait que nous sommes sur le point de revenir à un système de castes rigides. L'Australie et la Nouvelle-Zélande sont des pays démocratiques. Si nous oublions le fait que leurs politiques intérieures nourrissent des groupes de pression nationaux en lutte les uns contre les autres, nous pourrions dire qu'ils ont construit des sociétés homogènes avec égalité devant la loi. Mais avec leurs lois sur l'immigration, empêchant l'accès non seulement d'immigrants de couleur mais aussi d'immigrants blancs, ils ont fait de l'ensemble de leurs habitants une caste privilégiée. Leurs citoyens sont en situation de travailler dans des conditions garantissant une plus grande productivité du travail d'un individu et donc des salaires plus élevés. Les travailleurs et les agriculteurs étrangers auxquels on a refusé l'entrée sont exclus de la jouissance de telles possibilités. Si un syndicat ouvrier américain interdit l'accès à son industrie aux Américains de couleur, il transforme la différence raciale en une question de caste.</p>
+
+<p>Nous n'avons pas à discuter du problème de savoir s'il est vrai ou faux que la préservation et le développement futur de la civilisation occidentale réclame le maintien d'une ségrégation géographique entre les divers groupes raciaux. L'objet de cet article est de traiter des aspects économiques des conflits de groupe. S'il est vrai que des considérations raciales rendent inopportun d'offrir un débouché aux habitants de couleur des zones comparativement surpeuplées, ceci ne contredirait pas l'affirmation selon laquelle il n'existe pas d'irrémédiables conflits d'intérêts entre les groupes dans une société capitaliste sans entraves. Cela démontrerait seulement que des facteurs raciaux rendent inopportun de pousser le principe du capitalisme et de l'économie de marché jusqu'à ses conséquences ultimes, et que le conflit entre les diverses races est, pour des raisons habituellement qualifiées de non économiques, irréconciliable. Cela ne réfuterait en aucun cas l'affirmation des libéraux selon laquelle au sein d'une société de libre entreprise et de libre circulation des hommes, des biens et des capitaux, il n'y a pas de conflits irrémédiables entre les intérêts bien compris des divers individus ou groupes d'individus.</p>
+
+<h4>III</h4>
+
+<p>La croyance actuelle d'après laquelle il existe un irrémédiable conflit d'intérêts entre les groupes est séculaire. Il s'agissait de la proposition fondamentale de la doctrine mercantiliste. Les mercantilistes étaient suffisamment cohérents pour déduire de ce principe que la guerre était une caractéristique inhérente et éternelle des relations humaines. Le mercantilisme était une philosophie de guerre.</p>
+
+<p>Je veux citer deux manifestations tardives de cette doctrine. Tout d'abord une proposition de Voltaire. A son époque le sortilège du mercantilisme avait déjà été brisé. Les Physiocrates français et l'économie politique britannique étaient sur le point de la remplacer. Mais Voltaire n'était pas encore familier des nouvelles doctrines, bien que l'un de ses amis, David Hume, en était son principal champion. Il écrivit ainsi en 1764 dans son <i>Dictionnaire Philosophique</i> : « être bon patriote, c'est souhaiter que sa ville s'enrichisse par
+le commerce et soit puissante par les armes. Il est clair qu'un pays ne peut gagner sans qu'un autre perde, et qu'il ne
+peut vaincre sans faire des malheureux. » Nous avons ici exprimé en excellent français la formule de la guerre moderne, à la fois économique et militaire. Plus de quatre-vingts ans plus tard, nous pouvons trouver une autre proposition. Son français est moins bon, mais sa formulation est plus directe. Le Prince Louis Napoléon Bonaparte, le futur empereur Napoléon III dit : « <i>La quantité des marchandises qu'un pays exporte est toujours en raison directe du nombre des boulets qu'il peut envoyer à ses ennemis, quand son honneur et sa dignité le commandent.</i> » <sup><a href="#partie-1-sdfootnote1sym" id="partie-1-sdfootnote1anc">1</a></sup></p>
+
+<p>A l'encontre de telles opinions, nous devons opposer les accomplissements des économistes classiques et des politiques libérales qu'ils ont inspirées. Pour la première fois dans l'histoire de l'humanité apparut une philosophie sociale qui démontrait l'accord harmonieux des intérêts bien compris de tous les hommes et de tous les groupes d'hommes. Pour la première fois une philosophie de coopération humaine pacifique vit le jour. Ceci représenta un bouleversement radical des critères moraux traditionnels. C'était la mise en place d'un nouveau code éthique.</p>
+
+<p>Toutes les anciennes écoles de morale étaient hétéronomes. Elles considéraient la loi morale comme une contrainte imposée à l'homme par des décrets insondables du Ciel ou par la voix mystérieuse de la conscience. Bien qu'un groupe puissant ait le pouvoir d'améliorer son propre bien-être terrestre en infligeant des dommages à des groupes plus faibles, il devait se soumettre à la loi morale et renoncer à favoriser ses propres intérêts égoïstes aux dépens du faible. Observer cette loi morale revient à sacrifier un avantage que pourrait s'assurer l'individu ou le groupe.</p>
+
+<p>A la lumière de la doctrine économique les choses sont totalement différentes. Il n'existe pas, dans une société de marché non entravée, de conflits entre les intérêts égoïstes bien compris des divers individus ou groupes. Sur le court terme un individu ou un groupe peuvent retirer un profit en violant les intérêts d'autres groupes ou individus. Mais sur le long terme, en se livrant à de telles actions, ils nuisent à leurs propres intérêts égoïstes tout autant qu'à ceux des personnes auxquelles ils ont porté préjudice. Le sacrifice qu'un homme ou un groupe fait en renonçant à certains gains à court terme, de peur qu'ils ne mettent en péril le fonctionnement pacifique de l'appareil de coopération sociale, n'est que temporaire. Il revient à abandonner un petit profit immédiat pour des avantages incomparablement plus grands à long terme.</p>
+
+<p>Tel est le cœur des enseignements moraux de l'utilitarisme du XIX<sup>e</sup> siècle. Observez la loi morale pour votre propre bien, non par crainte de l'enfer ou par égard envers d'autres groupes mais pour votre propre bénéfice. Renoncez au nationalisme économique et à la conquête, non par égard envers les étrangers mais pour le bénéfice de votre nation et de votre État.</p>
+
+<p>Ce fut la victoire partielle de cette philosophie qui conduisit aux merveilleuses réussites économiques et politiques du capitalisme moderne. C'est grâce à elle que bien plus de gens vivent aujourd'hui sur la surface de la terre qu'il n'y en avait à la veille de la « Révolution industrielle » et que dans les pays les plus avancés dans la voie du capitalisme les masses jouissent d'une vie plus confortable que les gens aisés des époques passées.</p>
+
+<p>Le fondement scientifique de cette éthique utilitariste venait des enseignements de l'économie. L'éthique utilitariste repose sur l'économie et dépend d'elle.</p>
+
+<p>Ce serait bien entendu une erreur de raisonnement que de supposer à l'avance qu'une telle science de l'économie est possible et nécessaire parce que nous sommes partisans de son application concernant le problème de la préservation de la paix. L'existence même d'une régularité dans les phénomènes économiques et la possibilité d'une étude scientifique et systématique des lois économiques ne doit pas être postulée <i>a priori</i>. La première tâche de toute préoccupation concernant les problèmes habituellement qualifiés d'économiques est de poser la question épistémologique : l'économie existe-t-elle oui ou non ?</p>
+
+<p>Nous devons réaliser la chose suivante : si cet examen minutieux des fondements épistémologiques de l'économie devait confirmer les affirmations de l'École historique allemande ou des Institutionnalistes américains expliquant qu'il ne peut y avoir de théorie économique et que les principes sur lesquels les économistes ont bâti leur système sont illusoires, alors les conflits violents entre les diverses races, nations et classes seraient inévitables. La doctrine militariste de la guerre et de l'effusion de sang perpétuelles devrait alors remplacer la doctrine de la coopération sociale pacifique. Les avocats de la paix seraient des fous. Leur programme serait issu de la méconnaissance des problèmes fondamentaux des rapports humains.</p>
+
+<p>Il n'existe pas de doctrine sociale autre que celle des économistes « orthodoxes » et « réactionnaires » qui permette de conclure que la paix est désirable et possible. Bien entendu, les nazis nous promettent la paix après leur victoire finale, quand toutes les autres races et nations auront appris que leur place dans la société est de servir d'esclaves à la race des seigneurs. Les marxistes nous promettent la paix après la victoire finale des prolétaires, plus précisément, selon les mots de Marx, après que la classe laborieuse aura traversé de « longues luttes, toute une série de processus historiques, transformant totalement à la fois les circonstances et les hommes. » <sup><a href="#partie-1-sdfootnote2sym" id="partie-1-sdfootnote2anc">2</a></sup></p>
+
+<p>C'est une bien maigre consolation en vérité. En tout cas, de telles affirmations ne modifient
+pas la proposition selon laquelle les nationalistes et les marxistes considèrent le conflit violent des
+intérêts de groupe comme un phénomène nécessaire de notre époque et qu'ils attachent une valeur morale soit à la guerre entre les nations, soit à la guerre entre les classes.</p>
+
+<h4>IV</h4>
+
+<p>Le fait le plus remarquable de l'histoire de notre époque est la révolte contre le rationalisme, l'économie et la philosophie sociale utilitariste ; et c'est au même moment un retour contre la liberté, la démocratie et le gouvernement représentatif. Il est courant de distinguer dans ce mouvement une aile droite et une aile gauche. Cette distinction est fallacieuse. La preuve en est qu'il est impossible de classer dans l'un de ces deux groupes les grands chefs de file de ce mouvement. Hegel était-il un homme de la gauche ou de la droite ? Les hégéliens de gauche comme ceux de droite avaient sans le moindre doute raison de considérer Hegel comme leur maître. Georges Sorel était-il de droite ou de gauche ? Lénine et Mussolini sont tous les deux ses disciples intellectuels. Bismarck est généralement considéré comme un réactionnaire. Mais son projet de sécurité sociale constitue le point culminant du progressisme actuel. Si Ferdinand Lassalle n'avait pas été le fils de parents juifs, les nazis l'auraient désigné comme le premier dirigeant ouvrier allemand et comme le fondateur du parti socialiste allemand, et l'auraient considéré comme l'un de leurs plus grands hommes. Du point de vue du libéralisme authentique, tous les partisans de la doctrine du conflit forment un seul parti homogène.</p>
+
+<p>L'arme principale des anti-libéraux de gauche et de droite consiste à couvrir leurs adversaires d'injures. Le rationalisme est déclaré superficiel et non historique. L'utilitarisme est dénigré comme un mesquin système d'éthique d'agioteurs. Dans les pays non anglo-saxons il est de plus qualifié de produit de la « mentalité de camelot » britannique et la « philosophie du dollar » américaine. On méprise l'économie en l'affublant des termes « orthodoxe », « réactionnaire », « royalisme économique » et « idéologie de Wall Street ». </p>
+
+<p>Il est triste que la plupart de nos contemporains ne connaissent pas l'économie. Toutes les grandes questions des controverses politiques actuelles sont de nature économique. Même si nous devions laisser de côté le problème fondamental du capitalisme et du socialisme, nous devons nous rendre compte que les sujets débattus quotidiennement sur la scène politique ne peuvent être compris que par le raisonnement économique. Mais les gens, y compris les dirigeants, les politiciens et les rédacteurs des journaux évitent toute étude sérieuse de l'économie. Ils sont fiers de leur ignorance. Ils ont peur qu'une familiarité avec l'économie n'interfère avec l'assurance et la suffisance naïves avec laquelle ils répètent des slogans ramassés en route.</p>
+
+<p>Il est hautement probable que pas plus d'un électeur sur mille ne sait ce que disent les économistes sur les effets des taux de salaires minimums, qu'ils soient fixés par décret gouvernemental ou par la pression et la contrainte syndicales. La plupart
+des gens considèrent comme allant de soi que l'obligation de payer un taux de salaire minimum supérieur au niveau qui se serait établi sur un marché du travail non entravé est une
+politique bénéfique pour tous ceux qui souhaitent toucher un salaire. Ils ne soupçonnent pas que ces taux minimums doivent conduire à un chômage permanent pour une fraction considérable de la force de travail potentielle. Ils ne savent pas que même Marx niait catégoriquement que les syndicats puissent augmenter le revenu de tous les travailleurs et que les marxistes cohérents des premiers temps s'étaient par conséquent opposés à toutes les tentatives de décréter des taux de salaire minimums. Ils ne comprennent pas non plus que le plan de Lord Keynes pour atteindre le plein emploi, plan adopté avec enthousiasme par tous les « progressistes », est essentiellement basé sur une réduction du niveau des taux de salaire <i>réels</i>. Keynes recommande une politique d'expansion du crédit parce qu'il croit que « la baisse progressive et automatique des salaires réels résultant de la hausse des prix » ne rencontrerait pas une résistance aussi forte de la main-d'œuvre que les autres possibilités de diminution des taux de salaire <sup><a href="#partie-1-sdfootnote3sym" id="partie-1-sdfootnote3anc">3</a></sup>. Il n'est pas trop hardi d'affirmer qu'à propos de ce problème primordial les experts « progressistes » ne sont pas différents de ceux que l'on dénonce communément comme « persécuteurs réactionnaires du travail. » Mais alors la doctrine selon laquelle
+un conflit irrémédiable d'intérêts prévaut entre les employeurs et les employés est privée de tout fondement scientifique. Une hausse durable des taux de salaire pour tous ceux qui désirent toucher un salaire ne peut être obtenue que par l'accumulation de capital supplémentaire et par l'amélioration des méthodes techniques de production que permet cette richesse additionnelle. Les intérêts bien compris des employeurs et des employés coïncident.</p>
+
+<p>Il est tout aussi probable que seuls quelques petits groupes comprennent que les libre-échangistes s'opposent aux diverses mesures du nationalisme économique parce qu'ils les considèrent comme nuisibles au bien-être de leur propre nation et non parce qu'ils souhaitent sacrifier les intérêts de leurs compatriotes à ceux des étrangers. Il est hors de doute que presque pas un Allemand, dans les années critiques précédant l'arrivée d'Hitler au pouvoir, ne comprenait que ceux qui combattaient le nationalisme agressif et souhaitaient ardemment éviter une nouvelle guerre n'étaient pas des traîtres, prêts à vendre les intérêts vitaux de la nation allemande au capitalisme étranger, mais des patriotes voulant épargner à leurs concitoyens l'épreuve d'un massacre absurde.</p>
+
+<p>La terminologie usuelle qui classe les gens comme amis ou ennemis du travail, et comme nationalistes ou internationalistes, montre que cette ignorance des enseignements élémentaires de l'économie est un phénomène quasi universel. La philosophie du conflit est fermement implantée dans les esprits de nos contemporains.</p>
+
+<p>L'une des objections soulevées à l'encontre de la philosophie libérale recommandant une société de marché libre est la suivante : « L'humanité ne peut jamais revenir à un quelconque système du passé. Le capitalisme est fichu parce qu'il constituait l'organisation sociale du
+XIX<sup>e</sup> siècle, époque révolue. »</p>
+
+<p>Toutefois ce que ces prétendus progressistes soutiennent équivaut à un retour à l'organisation sociale des époques ayant précédé la
+« Révolution industrielle ». Les diverses mesures du nationalisme économique sont une copie conforme des politiques du mercantilisme.
+Les conflits juridictionnels
+entre les syndicats ne différent fondamentalement pas des luttes entre les auberges et les guildes médiévales. Tout comme les princes absolus de l'Europe des
+XVII<sup>e</sup> et XVIII<sup>e</sup> siècles, ces modernes recherchent un système dans lequel le
+gouvernement décide de la direction de toutes les activités économiques de ses citoyens. Il n'est pas cohérent d'exclure par avance le retour aux politiques de Cobden et de Bright si l'on ne voit aucun défaut à revenir à celles de Louis XIV et de Colbert.</p>
+
+<h4>V</h4>
+
+<p>C'est un fait que la philosophie dominante de notre époque est une philosophie du conflit irréconciliable et de la dissociation. Les gens donnent la plus haute valeur à leur parti, à leur classe, à leur groupe linguistique ou à leur nation et croient que leur propre groupe ne peut prospérer qu'aux dépens des autres. Et ils ne sont pas préparés à tolérer des mesures qui à leurs yeux seraient considérés comme un abandon des intérêts vitaux du groupe. Un règlement pacifique avec les autres groupes est ainsi hors de question. Considérons par exemple l'intransigeance implacable du léninisme, du <i>nationalisme intégral</i> français ou des nazis. Il en va de même en ce qui concerne les questions intérieures. Aucun groupe de pression n'est prêt à renoncer à la moindre de ses prétentions pour des considérations d'unité nationale.</p>
+
+<p>Il est vrai que des forces puissantes contrecarrent encore heureusement ces tendances à la désintégration et au conflit. Aux États-Unis, le prestige traditionnel de la Constitution est l'un de ces facteurs. Il a tué dans l'œuf les tentatives faites par divers groupes de pression locaux pour briser l'unité économique de la nation par la mise en place de barrières commerciales entre les États de l'Union. Mais même ces nobles traditions peuvent sur le long terme se révéler insuffisantes si elles ne sont pas soutenues, de manière positive, par une philosophie sociale qui proclame la primauté des intérêts de la Grande Société et l'harmonie des intérêts bien compris de tous les individus.</p>
+
+
+<br><br>
+
+<p>
+<b>Notes</b>
+</p>
+
+<div id="partie-1-sdfootnote1">
+	<p><a href="#partie-1-sdfootnote1anc" id="partie-1-sdfootnote1sym">1.</a>
+<i>Extinction du Paupérisme, </i>(Paris, La Guilotère, 1848), p. 6.</p>
+</div>
+<div id="partie-1-sdfootnote2">
+	<p><a href="#partie-1-sdfootnote2anc" id="partie-1-sdfootnote2sym">2.</a>
+Marx, <i>Der Bürgerkrieg in Frankreich, </i>édité par Pfemfert (Berlin : Politische Aktions Bibliothek 1919), p. 54</p></div>
+<div id="partie-1-sdfootnote3">
+	<p><a href="#partie-1-sdfootnote3anc" id="partie-1-sdfootnote3sym">3.</a>
+Keynes, <i>The General Theory a/Employment, Interest and Money </i>(Londres, 1939), p. 264. Pour un examen critique de cette idée, voir Albert Hahn, <i>Deficit Spending and Private Enterprise </i>(Postwar Readjustments Bulletin, N° 8, U.S. Chamber of Commerce), pp. 28-29.</p>
+</div>
+
+<br>
+
+
+</section><section id="partie-2">
+
+
+
+
+
+<p> </p>
+
+<h2>2. Le Mythe de l'échec du capitalisme</h2>
+
+<p> </p>
+
+<p><em>Article publié pour la première fois en allemand,
+sous le titre « Die Legende von Versagen des Kapitalismus »<br>
+dans </em>Der Internationale Kapitalismus und die Krise, Festschrift für Julius Wolf<em> (1932).</em></p>
+
+<p>De nos jours, un sentiment quasi universel veut que la crise économique des dernières années marque la fin du capitalisme. Ce dernier aurait échoué, dit-on. Il se serait révélé incapable de remplir son rôle économique et l'humanité n'aurait ainsi pas d'autre choix, en vue de survivre, que d'effectuer la transition vers une économie planifiée, vers le socialisme.</p>
+
+<p>Ce n'est vraiment pas une idée nouvelle. Les socialistes ont toujours prétendu que les crises économiques étaient le résultat inévitable du mode de production capitaliste et qu'il n'y avait pas d'autre moyen pour éliminer la résurgence des crises économiques que de se convertir au socialisme. Si ces affirmations sont exprimées de nos jours avec plus de force et rencontrent un plus grand écho auprès du public, ce n'est pas parce que la crise actuelle est plus sévère ou plus longue que celles qui l'ont précédée, mais plutôt parce que l'opinion publique d'aujourd'hui est bien davantage influencée par les idées socialistes qu'elle ne l'était au cours des décennies précédentes.</p>
+
+<h4>I</h4>
+<p>Quand la théorie économique n'existait pas encore, on croyait que celui qui détenait le pouvoir et était déterminé à l'utiliser pouvait tout faire. Dans l'intérêt de leur bien-être spirituel et dans la perspective de leur récompense céleste, les dirigeants étaient exhortés par les prêtres à faire preuve de modération dans l'usage du pouvoir. Ainsi, la question n'était pas de savoir quelles limites les conditions inhérentes de la vie humaine et de la production établissaient pour le pouvoir : elles étaient en fait considérées comme illimitées et omnipotentes dans le domaine des questions sociales.</p>
+
+<p>La naissance des sciences sociales, œuvre d'un bon nombre de grands intellectuels, dont les noms
+de David Hume et d'Adam Smith sont les plus illustres, a démoli cette vision des choses. On découvrit que le pouvoir social était un pouvoir moral et intellectuel et non, comme on le pensait, un pouvoir matériel ou « véritable » au sens courant du terme. Et l'on accepta l'idée d'une unité nécessaire des phénomènes du marché, unité que même le pouvoir est incapable de détruire. On réalisa également que quelque chose était à l'œuvre dans les affaires sociales, que les puissants ne pouvaient rien y changer et qu'ils devaient s'en accommoder, tout comme ils devaient s'adapter aux lois de la nature. Il n'y a pas de plus grande découverte dans l'histoire de la pensée humaine et de la science.</p>
+
+<p>En partant de la reconnaissance des lois du marché, la théorie économique montre simplement quel type de situation se produit en raison de l'intervention de la force et du pouvoir dans les processus du marché. L'intervention isolée ne peut pas parvenir aux fins que les autorités poursuivent en y ayant recours et doit nécessairement mener à des conséquences jugées indésirables du point de vue de ces autorités. L'intervention est vaine et néfaste y compris du point de vue des autorités elles-mêmes. Si l'on comprend cela et que l'on veut aménager l'activité économique en fonction des conclusions de la pensée scientifique — et nous ne réfléchissons pas uniquement sur ces sujets parce que nous cherchons la connaissance en soi, mais aussi parce que nous voulons adapter nos actions de façon à atteindre les buts que nous visons — on en vient alors inévitablement à rejeter l'interventionnisme comme superflu, inutile et nuisible, tout comme le montre la doctrine libérale.</p>
+
+<p>Ce n'est pas que le libéralisme veuille introduire des jugements de valeur dans la science : il souhaite seulement trouver dans la science un guide pour l'action. Le libéralisme utilise les résultats de la recherche scientifique afin de bâtir une société de telle sorte qu'elle soit capable de réaliser de manière aussi efficace que possible les objectifs qu'elle à l'intention d'atteindre. Les partis politico-économiques ne sont pas en désaccord sur le résultat final qu'ils poursuivent mais sur les moyens qu'il faudrait employer pour parvenir à leur but commun. Les libéraux sont d'avis que la propriété privée des moyens de production est la seule façon de créer la richesse pour tous, parce qu'ils considèrent le socialisme comme impossible et parce qu'ils pensent que le système interventionniste (qui se situe selon ses défenseurs entre le capitalisme et le socialisme) ne peut pas aboutir aux buts de ses partisans.</p>
+
+<p>L'optique libérale a rencontré une violente opposition. Mais les adversaires du libéralisme n'ont pas réussi à ébranler sa théorie fondamentale ni l'application pratique de cette théorie. Ils n'ont pas cherché à se défendre contre la critique dévastatrice que les libéraux avaient portée à l'encontre de leurs plans par le biais d'une réfutation logique, et ont à la place de cela fui le débat. Les socialistes se considéraient à l'abri de cette critique parce que le marxisme avait décrété hérétique toute recherche sur la mise en œuvre et l'efficacité d'une communauté socialiste, et ils continuaient à chérir l'État socialiste du futur comme étant le paradis sur terre mais refusaient d'entrer dans une discussion sur les détails de leur plan. Les interventionnistes ont choisi une autre voie. Ils combattent, pour des raisons insuffisantes, la validité universelle de la théorie économique. Incapables de répondre par la logique à la théorie économique, ils ne pouvaient se référer qu'à un vague « pathos moral », dont ils ont parlé à l'occasion de l'assemblée fondatrice de la <i>Verein für Sozialpolitik</i> [<i>Association pour la politique sociale</i>] à Eisenach. A la logique ils opposaient la morale, à la théorie les préjugés émotionnels et au raisonnement la référence à la volonté de l'État.</p>
+
+<i></i><p>La théorie économique avait prédit les effets de l'interventionnisme et du socialisme étatique ou municipal exactement comme ils ont eu lieu. Tous les avertissements furent ignorés. Pendant cinquante ou soixante ans la politique des pays européens fut anti-capitaliste et anti-libérale. Il y a plus de quarante ans Sidney Webb  (Lord Passfield) écrivait : « ...  on peut désormais affirmer que la philosophie socialiste d'aujourd'hui n'est rien d'autre que l'affirmation consciente et explicite des principes d'organisation sociale qui ont été déjà en grande partie adoptée de façon inconsciente. L'histoire économique de ce siècle est un récit presque ininterrompu des progrès du socialisme. » <sup><a href="#partie-2-sdfootnote1sym" id="partie-2-sdfootnote1anc">1</a></sup> C'était au début de ce développement et c'était en Angleterre, où le libéralisme fut capable de résister le plus longtemps aux politiques économiques anti-capitalistes. Depuis lors les politiques interventionnistes ont fait des pas de géant. En général l'opinion actuelle est que nous vivons une époque où règne « l'économie entravée » — annonciatrice du sentiment collectif socialiste et bienheureux à venir. Désormais, précisément parce que ce que la théorie économique prédisait est arrivé, parce que les résultats des politiques économiques anti-capitalistes sont visibles au grand jour, on entend le même cri de tous côtés : « C'est le déclin du capitalisme, le système capitaliste a échoué ! »</p>
+
+<p>Le libéralisme ne peut pas être rendu responsable d'une seule de ces institutions qui donnent aujourd'hui leur caractère aux politiques économiques. Il était contre la nationalisation et la prise de contrôle municipale des projets qui se révèlent être des catastrophes pour le secteur public et une source de corruption obscène ; il était contre le refus de protéger ceux qui désirent travailler et contre la mise  du pouvoir de l'État à disposition des syndicats, contre les indemnités de chômage, qui ont fait de ce dernier un
+phénomène permanent et universel, contre la sécurité sociale, qui a transformé les assurés en râleurs, faux malades et neurasthéniques, contre les tarifs douaniers (et donc implicitement contre les cartels), contre les limitations imposées à la liberté de vivre, de voyager ou d'étudier où on le souhaite, contre la taxation excessive et contre l'inflation, contre l'armement, contre les conquêtes coloniales, contre l'oppression des minorités, contre l'impérialisme et contre la guerre. Il offrit une résistance opiniâtre à la politique de consommation du capital. Et le libéralisme n'a pas créé de troupes armées au service d'un parti n'attendant que le moment opportun pour déclencher une guerre civile.</p>
+
+<h4>II</h4>
+<p>Le raisonnement qui conduit à accuser le capitalisme d'au moins certaines de ces choses se fonde sur le fait que les entrepreneurs et les capitalistes ne sont plus libéraux mais interventionnistes et étatistes. Ce fait est exact mais les conclusions que les gens veulent en tirer sont butées. Ces déductions proviennent de l'idée marxiste totalement intenable selon laquelle les entrepreneurs et les capitalistes protégeaient leurs intérêts particuliers de classe par l'intermédiaire du libéralisme quand le capitalisme prospérait mais que désormais, dans la période finale et déclinante du capitalisme, ils les protègent par l'interventionnisme. Telle est la preuve supposée de ce que « l'économie contrôlée » de l'interventionnisme constitue le système économique historiquement nécessaire du stade du capitalisme où nous nous trouvons aujourd'hui. Mais considérer l'économie politique classique et le libéralisme comme l'idéologie (au sens marxiste du terme) de la bourgeoisie est l'une des techniques les plus malhonnêtes du marxisme. Si les entrepreneurs et les capitalistes furent des penseurs libéraux autour de 1800 en Angleterre et des penseurs interventionnistes, étatistes et socialistes autour de 1930 en Allemagne, la raison en est que les entrepreneurs et les capitalistes sont également sous l'emprise des idées dominantes de leur époque. Les entrepreneurs avaient des intérêts particuliers que l'interventionnisme protégeait et auxquels le libéralisme faisait du tort, en 1800 pas moins qu'en 1930.</p>
+
+<p>Aujourd'hui les grands entrepreneurs sont souvent cités comme étant des « dirigeants économiques ». La société capitaliste ne connaît pas de « dirigeants économiques ». C'est là que réside la différence entre les économies socialistes d'une part et les économies capitalistes de l'autre : dans ces dernières les entrepreneurs et les propriétaires des moyens de production ne suivent aucun chef en dehors du marché lui-même. L'habitude prise de parler des fondateurs des grandes entreprises comme de dirigeants économiques donne déjà une indication qu'il n'est pas habituel de nos jours d'atteindre ces postes par le biais de réussites économiques mais qu'on les obtient plutôt par d'autres moyens.</p>
+
+<p>Dans l'État interventionniste le succès d'une entreprise ne dépend plus d'une manière cruciale du fait qu'elle soit dirigée de façon à satisfaire au mieux et au meilleur prix les besoins des consommateurs ; il est bien plus important d'entretenir de « bonnes relations » avec les factions politiques exerçant le contrôle, et que les interventions s'exercent dans un sens favorable et non défavorable à l'entreprise. Une protection par des tarifs douaniers un peu plus élevés pour les biens produits par l'entreprise et des tarifs douaniers un peu moins élevés pour les biens utilisés au cours du processus de fabrication peuvent davantage aider l'entreprise que davantage de prudence dans la conduite des affaires. Une entreprise peut être bien gérée mais disparaître si elle ne sait pas comment protéger ses intérêts dans l'aménagement des tarifs douaniers, au cours des négociations salariales devant les commissions d'arbitrage et dans les instances dirigeantes des cartels. Il est bien plus important d'avoir des « relations » que de produire bien et à bon marché. Par conséquent, les hommes qui parviennent au sommet de telles entreprises ne sont pas ceux qui savent comment organiser l'entreprise ni comment orienter la production dans la direction que réclame la situation du marché, mais plutôt des individus qui sont bien vus « en haut » comme « en bas », des hommes qui savent comment se débrouiller avec la presse et les partis politiques, en particulier avec les extrémistes, de sorte que leur comportement n'offense personne. Telle est la classe des directeurs généraux qui ont davantage à faire avec les dignitaires de l'État et avec les dirigeants de partis qu'avec ceux à qui ils achètent ou à qui ils vendent.</p>
+
+<p>Comme de nombreuses entreprises dépendent de faveurs politiques, ceux qui s'y lancent doivent renvoyer l'ascenseur aux politiciens. Il n'y a pas eu de grande aventure ces dernières années qui n'ait pas dû payer des sommes considérables en transactions, clairement défavorables dès le départ mais qui, malgré les pertes prévisibles, devaient être conclues pour des raisons politiques. Et ceci sans compter les contributions à des entreprises non commerciales — financement d'élections, institutions d'assistance publique, etc.</p>
+
+<p>Les forces qui travaillent en faveur de l'indépendance des directeurs des grandes banques, des firmes industrielles et des sociétés par actions vis-à-vis de leurs actionnaires s'affirment de plus en plus. Cette « tendance des grandes entreprises à se socialiser », politiquement soutenue et qui consiste à laisser des intérêts autres que la préoccupation « du plus haut rendement possible pour les actionnaires » déterminer la gestion des entreprises, a été saluée par des auteurs étatistes comme un signe indiquant que nous aurions déjà vaincu le capitalisme <sup><a href="#partie-2-sdfootnote2sym" id="partie-2-sdfootnote2anc">2</a></sup>.</p>
+<p>Au cours de la réforme du droit allemands des titres, des efforts légaux avaient déjà été faits pour placer l'intérêt et le bien-être de l'entreprise, à savoir « sa valeur intrinsèque économique, légale et sociale et son indépendance par rapport à un changement de majorité d'actionnaires changeants, » <sup><a href="#partie-2-sdfootnote3sym" id="partie-2-sdfootnote3anc">3</a></sup> au-dessus de ceux de l'actionnaire. Ayant l'influence de l'État derrière eux et soutenus par une opinion publique profondément interventionniste, les dirigeants des grandes entreprises d'aujourd'hui se sentent tellement puissants par rapport aux actionnaires qu'ils croient ne pas avoir à prendre les intérêts de ces derniers en compte. Dans les pays où l'étatisme a le plus pris le pouvoir — par exemple dans les États qui ont succédé à l'ancien empire austro-hongrois — ils gèrent les affaires de leur société en se souciant aussi peu
+de la rentabilité de la firme que ne le font les directeurs des entreprises publiques. Il en résulte la ruine. La théorie qui a été avancée dit que ces entreprises sont trop grosses pour être simplement dirigées en vue du profit. Ce concept est extrêmement pratique, étant donné que le fait de renoncer à la rentabilité dans la gestion des affaires conduit à la banqueroute. Les gens impliqués ont la chance que cette même théorie demande alors l'intervention de l'État afin de soutenir des entreprises considérées comme trop grosses pour qu'on les laisse tomber.</p>
+
+<h4>III</h4>
+<p>Il est vrai  que le socialisme et l'interventionnisme n'ont pas encore réussi à éliminer complètement le capitalisme. S'ils l'avaient fait nous autres Européens, après des siècles de prospérité, redécouvririons ce que veut dire la faim à grande échelle. Le capitalisme est encore suffisamment dominant pour que de nouvelles industries naissent et que celles qui existent déjà améliorent et accroissent leur équipement et leur gestion des affaires. Tous les progrès économiques qui ont été et qui seront faits proviennent des restes persistants du capitalisme dans notre société. Mais le capitalisme a toujours été harassé par l'intervention du gouvernement et doit verser en impôts une part considérable de ses profits afin de couvrir la productivité moindre des entreprises publiques.</p>
+
+<p>La crise dont souffre actuellement le monde est celle de l'interventionnisme, du socialisme d'État et du socialisme municipal, bref la crise des politiques anti-capitalistes. La société capitaliste est guidée par le jeu des forces du marché. Il n'y a pas de différence d'opinion à ce sujet. Les prix du marché mettent en équilibre l'offre et la demande et déterminent l'orientation et l'étendue de la production. C'est le marché qui donne son sens à l'économie capitaliste. Si la fonction du marché en tant que régulateur de la production est sans cesse contrariée par des politiques économiques dans la mesure où ces dernières essaient de fixer les prix, les salaires et les taux d'intérêt,
+au lieu de laisser le marché les déterminer, alors une crise se développera certainement.</p>
+
+<p><i>Ce n'est pas Bastiat qui a échoué, mais bien plutôt Marx et Schmoller</i>.</p>
+
+<br><br>
+
+<p>
+<b>Notes</b>
+</p>
+
+<div id="partie-2-sdfootnote1">
+	<p><a href="#partie-2-sdfootnote1anc" id="partie-2-sdfootnote1sym">1.</a>
+Cf. Webb, « Historic », dans <i>Fabian Essays in Socialism</i>,édité par G. Bernard Shaw (édition américaine par H.G. Wilshire. New York : The Humboldt Publishing Co., 1891) p. 47.</p>
+</div>
+<div id="partie-2-sdfootnote2">
+	<p><a href="#partie-2-sdfootnote2anc" id="partie-2-sdfootnote2sym">2.</a>
+Cf. Keynes, « The End of Laisser-faire, » 1926, voir, <i>Essays in Persuasion </i>(New York: W.W. Norton &amp; Co., Inc., 1932) pp. 314-315.</p>
+</div>
+<div id="partie-2-sdfootnote3">
+	<p><a href="#partie-2-sdfootnote3anc" id="partie-2-sdfootnote3sym">3.</a>
+Cf. Passow, <i>Der Strukturwandel der Aktiengesellschaft im Lichte der Wirtschaftsenquente</i>, (Iéna 1939), p. 4.</p>
+</div>
+
+<br>
+
+
+</section><section id="partie-3">
+
+
+
+
+
+<p> </p>
+
+<h2>3. La Liberté de circulation en tant que problème international</h2>
+
+<p> </p>
+
+<p><em>Article publié pour la première fois en allemand
+sous le titre « Freizügigkeit als Internationales Problem »
+dans la </em>Wiener Wirtschaftswoche<em> (noël 1935).</em></p>
+
+<p>Les discussions sur les problèmes de la paix et de la Société des Nations ont fait de grands progrès ces derniers mois. On entend fréquemment dire aujourd'hui que la paix ne peut pas être garantie par un simple décret. Au contraire, pour assurer une paix durable, il faut tout d'abord établir des conditions permettant de vivre sans guerre. Et comme l'on pense que la principale source des conflits conduisant à la guerre se trouve dans « l'inégale distribution des matières premières », la première idée qui vient est de rendre cette distribution « plus équitable ». Ce que cela signifie précisément n'est toutefois pas très clair.</p>
+<p>La laine est principalement produite en Australie, le coton aux États-Unis, en Inde et en Égypte. Propose-t-on désormais d'offrir une partie de ces territoires aux États européens qui ne possèdent pas de régions productrices de laine ou de coton chez eux ? Supposons le cas le plus absurde, que les territoires d'Australie produisant de la laine soient divisés et répartis entre les États européens. Comment cela améliorerait-il la situation de ces pays d'Europe ? Après la nouvelle partition, les Européens devraient toujours acheter de la laine, comme auparavant, aux producteurs de laine dont la vie n'est pas aujourd'hui, en définitive, une partie de plaisir.</p>
+<p>Les Anglais achètent eux aussi de la laine en Australie. Eux aussi doivent payer cette laine, comme tous les autres acheteurs. Le fait que la souveraineté du Roi d'Angleterre s'étende également à l'Australie ne joue aucun rôle dans ces achats. L'Australie est totalement indépendante de l'Angleterre, du Parlement anglais et du gouvernement anglais — dans sa constitution, dans sa législation, pour son administration et pour toutes ses affaires politiques. L'industrie anglaise ne tire pas de bénéfices, par rapport à ses concurrents du continent, de ce qu'une part considérable des matières premières qu'elle utilise vienne de l'Empire britannique. Elle se procure ces matières premières de la même façon et les paie autant que les manufacturiers allemands, italiens ou autrichiens. Les conditions de transport sont habituellement plus favorables pour l'industrie anglaise, mais ce point ne serait en rien modifié par un changement de souveraineté. Personne ne peut ainsi dire en Europe : « Je souffre parce que l'État auquel j'appartiens ne comprend pas de régions mieux adaptées à la production de matières premières. » Ce dont se plaignent les Européens, c'est d'autre chose.</p>
+<p>Il existe de vastes étendues de terres, comparables à celles qui se trouvent en Europe et peu peuplées. Les États-Unis d'Amérique et les dominions britanniques du Canada, l'Australie, la Nouvelle-Zélande, l'Afrique du Sud etc., ont une population moins dense, par rapport aux potentialités de production dont la nature les a dotés, que les pays d'Europe. Le résultat, c'est que la productivité du travail y est plus grande qu'en Europe. On y offre par conséquent des salaires plus élevés.</p>
+<p>Comme ces pays offrent des possibilités de production plus favorables que l'Europe, les candidats européens à l'émigration les ont choisis depuis plus de 300 ans comme lieu de destination. Mais les descendants des premiers émigrants disent désormais : « Il y a eu suffisamment de mouvements migratoires comme çà. Nous ne voulons pas que d'autres Européens fassent ce que nos ancêtres ont fait lorsqu'ils ont émigré pour améliorer leur sort. Nous ne voulons pas que nos salaires baissent à cause d'un nouveau contingent de travailleurs de la patrie de nos pères. Nous ne voulons pas que les migrations de travailleurs continuent jusqu'à ce qu'elles égalisent le niveau des salaires. Vous les Européens, restez gentiment dans votre vieille patrie et contentez-vous de vos bas salaires. »</p>
+<p>Le « miracle », dont on parle si souvent, des hauts salaires aux États-Unis et en Australie peut facilement s'expliquer par la politique essayant d'empêcher toute nouvelle immigration. Pendant des décennies, les gens n'ont pas osé débattre de ces choses en Europe. L'opinion publique a été égarée par l'écran de fumée mis en place par l'idéologie marxiste, qui voulait faire croire que « les prolétaires de tous les pays », organisés en syndicats, avaient les mêmes intérêts et que seuls les entrepreneurs et les capitalistes étaient nationalistes. On passait sous silence la dure vérité concernant ce sujet — à savoir que les syndicats de tous les pays jouissant de conditions de production plus favorables, d'un nombre relativement plus faible de travailleurs et donc de salaires plus élevés, essaient d'empêcher l'arrivée de travailleurs en provenance de pays moins favorisés. Au moment où les syndicats ouvriers des États-Unis d'Amérique et des dominions britanniques mettaient en place des lois sur l'immigration interdisant en pratique tout renfort, les pédants marxistes écrivaient des livres affirmant que la cause de l'impérialisme et de la guerre était due à la recherche du profit des capitalistes et que le prolétariat, uni par une harmonie et une solidarité d'intérêts, voulait la paix.</p>
+<p>Aucun Italien ne devrait dire que ses intérêts sont mis à mal par le fait que les terres d'où l'on extrait les métaux et les matières premières textiles ne regardent pas le Roi d'Italie comme leur souverain. Mais chaque travailleur italien souffre <i>effectivement</i> parce que ces régions n'autorisent pas l'immigration des travailleurs italiens. Cette barrière écarte ou au moins affaiblit l'égalisation du niveau des salaires, égalisation qui accompagne la liberté de circulation. Et la situation qui prévaut pour les travailleurs italiens vaut également pour les Allemands, les Tchèques, les Hongrois et beaucoup d'autres.</p>
+<p>Il faut certainement se garder d'accepter l'interprétation erronée selon laquelle les travailleurs des pays jouissant de conditions de production plus favorables peuvent obtenir une meilleure situation en interdisant l'immigration qu'en laissant cette dernière libre. Si l'on empêche les travailleurs européens d'émigrer et qu'ils doivent ainsi rester chez eux, cela ne veut pas dire qu'ils resteront oisifs de ce fait. Ils continueront à travailler dans leur vieille patrie, dans des conditions moins favorables. Et en raison de ces conditions de production moins avantageuses, ils obtiendront des salaires plus bas. Leur concurrence s'exercera alors sur le marché mondial, ainsi que sur le marché national de l'industrie produisant dans des conditions plus favorables. Ces pays pourront alors très vraisemblablement, face à ce qu'ils appellent une concurrence « déloyale » de la main-d'œuvre bon marché, avoir recours à des tarifs douaniers et à des embargos sur les importations. Ce faisant, ils abandonneront les avantages que procure la plus grande division du travail. Ils pâtiront du refus d'exploiter, dans leurs propres pays, des possibilités de production plus favorables, c'est-à-dire offrant pour des frais identiques un rendement supérieur aux possibilités de production devant être utilisées dans d'autres pays. Si seules les ressources les plus productives étaient exploitées sur toute la surface de la terre, et que les ressources moins productives étaient laissées à l'écart, leur situation serait également meilleure sur le long terme. En effet, le résultat total de la production mondiale serait plus grand. Et ils obtiendraient une plus grosse part de ce plus grand « gâteau » total.</p>
+<p>La tentative de créer artificiellement certaines industries dans les pays de l'Europe de l'Est, sous la protection de tarifs douaniers et d'embargos sur les importations, peut assurément être considérée comme un échec. Néanmoins, si la liberté de circulation des hommes n'est pas rétablie, les salaires inférieurs de ces pays attireront des capitaux et des efforts entrepreneuriaux. Et alors, au lieu des industries sous serre, encouragées par des mesures gouvernementales et toujours non viables malgré ces mesures, on verra s'y développer des industries avec des salaires et des niveaux de vie inférieurs pour les masses, industries qui <i>seront</i> viables en raison de leur emplacement. Ces gens auront certainement autant de raisons de se plaindre qu'auparavant — non plus à propos de la distribution inégale des matières premières, mais à propos de l'érection de barrières à l'immigration autour des pays jouissant de conditions de production plus favorables. Et il se peut qu'un jour ils en arriveront à la conclusion que seules les armes peuvent changer cette situation peu satisfaisante. Nous pourrons ainsi nous retrouver devant une grande coalition des pays de candidats à l'émigration, faisant face à l'opposition des pays érigeant des barrières pour exclure les candidats à l'immigration.</p>
+<p>Au travers de son Bureau pour la coopération intellectuelle, la Société des Nations entreprend des recherches pour savoir comment provoquer, sans déclencher de guerre, des changements qui réclament l'apaisement général. Si ces recherches et la conférence durant laquelle elles vont
+être présentées ne portent que sur le problème des matières premières, alors ces efforts auront été dépensés en vain. Le principal problème sera également évité si les propositions n'envisagent qu'un nouveau partage des colonies africaines et des mandats territoriaux en Asie et en Polynésie. Les principales difficultés ne seraient pas non plus réglées, même si le Reich allemand devait récupérer ses anciennes colonies augmentées d'autres terres, même si la part de l'Italie sur le continent africain était agrandie et même si les Tchèques et les Hongrois n'étaient pas oubliés. Ce que cherchent les émigrants européens, ce sont des terres où les Européens peuvent travailler dans des conditions climatiques qu'ils tolèrent et où ils peuvent gagner davantage que dans leur pays natal, surpeuplé et moins bien doté par la nature. Dans les circonstances actuelles, ceci n'est possible que dans le Nouveau Monde, en Amérique et en Australie. Il ne s'agit pas d'un problème de matières premières. La question n'est pas de savoir quel État devrait exercer sa souveraineté sur certaines colonies rarement
+habitables par des émigrants européens. Il s'agit d'un problème du droit à l'immigration dans les pays les plus grands et les plus productifs, dont le climat est adapté aux travailleurs blancs européens. Si l'on ne rétablit pas la liberté de circulation des individus dans le monde, il ne peut y avoir de paix durable.</p>
+
+<br>
+
+
+</section><section id="partie-4">
+
+
+
+
+
+<p> </p>
+
+<h2>4. Carl Menger et l'École économique autrichienne</h2>
+
+<p> </p>
+
+<p><em>Article publié pour la première fois en allemand
+sous le titre « Karl Menger  <sup><a href="#partie-4-sdfootnoteasym" id="partie-4-sdfootnoteaanc">a</a></sup> und die österreichische Schule der Nationalökonomie »
+<br>dans la </em>Neue Freie Presse<em> (29 et 30 janvier 1929).</em></p>
+
+<p>Le jour de la consécration du monument à la mémoire de Carl Menger dans la cour de l'Université de Vienne, il est particulièrement approprié de jeter un coup d'œil à l'œuvre de l'École économique autrichienne, fondée par Carl Menger. Il ne s'agit pas d'un simple panégyrique de personnes mortes et disparues. Même si les hommes qui les ont produits nous ont quittés, leurs travaux continuent à vivre et sont devenus le socle de tous les efforts scientifiques en matière de théorie économique. Il ne peut aujourd'hui exister de pensée économique qui ne s'appuie sur ce que Menger et son école ont démontré. Il est généralement admis que la première apparition de Menger sur la scène scientifique, avec ses <i>Grundsätze der Volkswirtschaftslehre</i> [<i>Principes de l'enseignement économique</i>] publiés en 1871, a marqué le début d'une nouvelle ère de l'histoire de notre science</p>
+<p>Aucun endroit ne convient mieux que les colonnes de la <i>Neue Freie Presse</i> pour essayer d'offrir au grand public un bref aperçu des travaux de l'École économique autrichienne. En effet, Carl Menger lui-même et tous les autres auteurs que l'on peut compter dans l'ancienne École autrichienne au sens le plus étroit ou au sens le plus large (Eugen von Böhm-Bawerk, Friedrich Wieser, Robert Zuckerkandl, Emil Sax, Robert Meyer, Johann Komorzynski, Rudolf Auspitz, Richard Lieben), se sont souvent exprimés dans la <i>Neue Freie Presse</i> afin de débattre
+des questions économiques du moment ou de faire le compte rendu des résultats de leurs recherches théoriques.</p>
+
+<h4>I</h4>
+<p>Historiquement, le point de départ de l'économie scientifique est l'idée suggérée par les Physiocrates en France et par les Écossais David Hume et Adam Smith selon laquelle les prix, les salaires et les taux d'intérêt sont déterminés de manière claire par les conditions du marché, et même dans des limites étroites, et selon laquelle le prix du marché fonctionne comme un régulateur de la production.  Là où leurs prédécesseurs ne voyaient que hasard et arbitraire, ils reconnurent un processus présentant une régularité.
+L'École économique classique dont les contributions trouvèrent leur point culminant
+dans l'œuvre de David Ricardo, se donna pour tâche de développer la catallaxie, science de l'échange et du revenu, en un système complet.</p>
+<p>A partir de ces idées de la recherche théorique, d'importantes conclusions purent être tirées en politique économique. On comprit petit à petit que les interventions par lesquelles les gouvernements voulaient orienter les forces économiques dans une certaine direction devaient rater la cible fixée. La mise en place d'un prix maximum ne permet pas d'atteindre le but qui est de proposer l'offre la moins chère à la population, si l'ordre autoritaire est poursuivi ceci conduit à la restriction si ce n'est à la cessation complète de l'offre des biens en question sur le marché. L'intervention aboutit ainsi à l'opposé de ce qui était visé.</p>
+<p>Il en va de même pour la régulation autoritaire des salaires ou des taux d'intérêt et pour l'intervention dans le commerce international. Les mercantilistes croyaient que la balance du commerce extérieur devait être assurée par des politiques commerciales (tarifs douaniers, interdictions, etc.) afin d'éviter la fuite de la monnaie. Ricardo montra que cette balance se rétablissait automatiquement. Les restrictions en matière de commerce extérieur dans le but de protéger la devise sont superflues tant que cette dernière n'est pas détruite par l'inflation. Par ailleurs ces mesures seraient incapables d'enrayer l'érosion du pouvoir d'achat de la devise résultant de l'inflation. Les politiques commerciales protectionnistes détournent la production des endroits où elle peut tirer au mieux avantage des conditions naturelles et réduisent ainsi l'abondance produite par l'activité économique et diminuent le niveau de vie des masses.</p>
+<p>Aux yeux des économistes classiques, l'utilisation de l'interventionnisme apparaît comme contre-productive à tous les égards et ce n'est pas des interventions du gouvernement, qui ne peuvent qu'empêcher et entraver, mais de la liberté accordée à toutes les forces qu'ils attendaient un accroissement continu du bien-être pour tous les groupes. De cette façon le programme politique du libéralisme est basé sur les fondements des enseignements des économistes classiques et réclame la liberté du commerce comme politique économique, que ce soit sur le plan intérieur ou international.</p>
+<p>Ceux qui voulaient attaquer le libéralisme devaient essayer de réfuter ces conclusions. Mais c'était impossible. La partie de l'enseignement des économistes classiques sur laquelle reposaient ces conclusions étaient inébranlables. Les adversaires du libéralisme n'avaient qu'une façon de s'en sortir : il leur fallait rejeter par principe, comme le fit l'École historique allemande, toute science de l'économie sociale prétendant à la validité générale de ses principes. Seules l'histoire économique et l'économie descriptive devaient rester valides. Les recherches sur les fondements des relations entre les phénomènes économiques étaient déclarées « abstraites » et « non scientifiques ».</p>
+<p>Après que Walter Bagehot, dont la réputation d'économiste est basée sur son célèbre livre sur le marché monétaire de Londres, <i>Lombard Street,</i> eut attaqué ces sophismes au milieu des années 1870, Menger entra en scène en 1883 avec son ouvrage <i>Untersuchungen über die Methode der Sozialwissenschaften</i>
+[<i>Recherches sur la méthode des sciences sociales</i>]. Les débats connus sous le nom de « Methodenstreit » [querelle des méthodes] qui suivirent ce livre ont détruit avec succès la validité logique et méthodologique de la critique adressée par l'École historique à l'encontre de la possibilité fondamentale d'une compréhension universellement valable des problèmes économiques. Toute recherche économique d'une nature historique ou descriptive contient au moins implicitement des principes et des concepts théoriques dont la validité générale doit être affirmée. Il est impossible de dire quoi que ce soit sans y avoir recours. Dans tout énoncé portant sur le prix d'un bien, les attaques contre une mesure sociopolitique ou contre un intérêt particulier doivent déjà contenir une « théorie ». Le fait que les « socialistes de la chaire » ne l'aient pas noté ne les rend pas pour autant « libres de toute théorie ». Tout ce qu'ils ont fait, c'est de travailler sans se livrer à une étude sérieuse de l'exactitude des théories qu'ils utilisaient, en les poursuivant jusqu'à leur conclusion logique, en les rassemblant au sein d'un système permettant ce faisant de vérifier l'absence de contradictions, en montrant leur cohérence logique et avant tout en les confrontant aux faits. Ils ont uniquement remplacé des théories utiles qui avaient résisté à la critique par des sophismes intenables, contradictoires et réfutés depuis longtemps, sophismes dont ils faisaient le point de départ de leurs recherches qui avaient par conséquent très peu de valeur. La pratique de la théorie économique impose une critique constante et vive de tous les énoncés de nature économique, et ce à l'aide de tous les moyens à la disposition de l'esprit humain.</p>
+
+<h4>II</h4>
+<p>Le système de l'économie classique était incapable de fournir une solution satisfaisante au problème de la détermination des prix. Il aurait dû être évident qu'il fallait faire découler l'évaluation des biens, qui représente la base du processus de détermination des prix, de leur utilité (à satisfaire les besoins humains). Mais il y avait une difficulté particulière que les économistes classiques n'arrivèrent pas à surmonter malgré toute leur ingéniosité.</p>
+<p>Certains des biens les plus utiles sont associés à une valeur faible, comme le fer, le charbon ou le pain, ou n'ont pas de valeur du tout, comme l'eau ou l'air, tandis que des biens indiscutablement moins utiles, comme les pierres précieuses, ont une très grande valeur. En raison de l'échec de tous les efforts faits pour expliquer ce paradoxe, il fut décidé de chercher d'autres explications à la valeur, qui ne purent cependant pas être imaginées sans des aides artificielles et sans contradiction. Il y avait manifestement quelque chose d'erroné. Menger réussit dans son premier ouvrage à résoudre cet apparent paradoxe de la valeur : ce n'est pas l'importance de
+la catégorie toute entière des biens qui détermine la valeur, mais l'importance qui est attribuée à la partie présentement disponible. C'est la valeur de la quantité partielle concrète qui influe sur la détermination des prix, et non la valeur de l'ensemble de la catégorie des biens. Comme nous n'attribuons à chaque partie individuelle d'un stock donné que l'importance qui découle de la satisfaction des besoins qu'elle procure, et comme pour chaque catégorie individuelle de besoins l'urgence d'une satisfaction supplémentaire diminue au fur et à mesure que l'assouvissement progresse, chaque quantité partielle concrète est évaluée sur la base de l'importance du dernier besoin concret, du moins important, qui peut être tout juste satisfait par l'offre disponible (utilité marginale). On fait ainsi remonter la détermination des prix des biens du premier ordre, c'est-à-dire des biens servant la consommation et l'usage immédiats, aux jugements de valeur subjectifs des consommateurs. Le prix des biens d'un ordre supérieur (également appelés moyens de production) nécessaires à la production de biens de consommation, ce qui comprend les salaires, c'est-à-dire le prix de la main-d'œuvre, découle des prix des biens du premier ordre. Ce sont en définitive les consommateurs qui déterminent et qui paient les prix des moyens de production ainsi que les salaires. Entreprendre cette détermination dans un cas spécifique est le rôle de la théorie de l'imputation, qui traite des prix du sol, des salaires, de la rente du capital et du profit. Sur ces nouvelles fondations Menger et ses successeurs bâtirent, en utilisant les principes établis par les économistes classiques, un système complet expliquant les phénomènes économiques.</p>
+
+<h4>III</h4>
+<p>A peu près au même moment et indépendamment de Menger, l'économiste britannique William Stanley Jevons et le Français Léon Walras, qui travaillait à Lausanne, enseignaient des théories similaires. Après que fut passé le temps dont toute nouvelle idée a besoin pour s'établir, la théorie de l'utilité marginale subjective commença sa marche victorieuse à travers le monde. Menger fut plus heureux que son précurseur le plus important, l'employé du gouvernement prussien Gossen, et put assister à la reconnaissance de ses enseignements par les économistes du monde entier.</p>
+<p>Aux États-Unis, ce fut principalement John Bates Clark, le fondateur de la grande école américaine, qui appliqua les idées de l'École autrichienne et les étendit. Clark est aussi — comme Henry Oswalt à Francfort et Richard Reisch — membre honoraire de la Société des économistes de Vienne. Aux Pays-Bas et dans les pays scandinaves, les enseignements furent rapidement fructueux. Mais ce fut particulièrement en Italie qu'une recherche scientifique eut du succès et prospéra sur cette base.</p>
+<p>Menger n'a jamais formé d'école de pensée au sens ordinaire du terme. Il était trop grand et se faisait une trop haute opinion de la dignité de la science pour utiliser les petits stratagèmes que d'autres utilisaient pour faire avancer leur cause. Il faisait de la recherche, écrivait et enseignait et les meilleurs de ceux qui ont travaillé pour le gouvernement et l'économie de l'Autriche au cours des dernières décennies sont sortis de son École. En outre il attendait, plein de l'optimisme du libéral, que la raison finisse par l'emporter à la longue. Et un jour, deux compagnons le rejoignirent pour continuer ses travaux. Ils étaient plus jeunes que Menger d'une dizaine d'années et, ayant mûri, avaient compris les problèmes à l'aide des écrits de Menger. Eugen von Böhm-Bawerk et Friedrich von Wieser, hommes du même âge et amis d'enfance, beaux-frères et liés par leurs convictions, leur caractère et leur
+culture d'esprit, étaient aussi différents en tant que personnalités scientifiques que pouvaient l'être deux contemporains ambitieux. Chacun à sa façon commença à poursuivre le travail où Menger l'avait laissé. Dans l'histoire des sciences, leurs noms ne peuvent pas être séparés de celui de Menger.</p>
+<p>Les deux ont depuis rapproché leurs travaux et leurs vies. Toutefois, une nouvelle génération arrivait et les séries d'excellentes études scientifiques qui ont été publiées au cours des dernières années par des hommes de moins de trente ans montrent que l'Autriche n'a pas l'intention d'abandonner son titre de patrie de la recherche économique rigoureuse.</p>
+
+<h4>IV</h4>
+<p>A l'origine, l'École historique des « aspects économiques des sciences politiques »
+(<i>wirtschaftliche Staatswissenschaften</i>) se souciait très peu du travail critique et positif de l'École autrichienne et était à cet égard très proche des écoles interventionnistes étrangères. Ses partisans continuaient à regarder de haut tout travail théorique sérieux et à diffuser sans inhibition les enseignements de l'omnipotence de l'État vis-à-vis de l'économie, en sachant que leur position de force était garantie par les gouvernements et les partis politiques. Les expériences de politique économique qui furent menées durant la guerre et au cours des années qui la suivirent, catapultèrent l'interventionnisme et l'étatisme au sommet. Toutes ces expériences, comme les prix maximums, l'économie dirigée et l'inflation conduisirent au résultat prédit par les théoriciens tant détestés par les hommes d'État et les représentants de l'École historique. Pendant un temps, les adversaires de « l'abstraite et irréaliste théorie autrichienne de la valeur » essayèrent de conserver leur position avec entêtement. Pour illustrer jusqu'à quel point ils entretenaient leur illusion, on peut prendre l'exemple de l'un de leurs membres, salué comme une autorité en matière monétaire. Ce fut le président de banque Bendixen qui déclara que la dépréciation de la devise allemande à l'étranger durant la guerre était « dans une certaine mesure même souhaitable car cela nous permet de vendre des devises étrangères à des taux plus attractifs. » A la fin, une réaction devait cependant survenir. On commença à renoncer à l'hostilité manifestée par l'École historique envers la théorie. Les décennies de désintérêt pour les études théoriques conduisirent par conséquent à cette situation étrange où aujourd'hui un étranger, le Suédois Cassel, a gagné la gratitude du public allemand pour l'avoir éclairé sur les problèmes et les principes de l'économie allemande. Ainsi, par exemple, Cassel apprit aux lecteurs des journaux allemands que la vieille théorie de la parité des pouvoirs d'achat pour expliquer les taux de change fut développée à l'origine par Ricardo, tout en soulignant que le chômage, en tant que phénomène durable, est une conséquence nécessaire de la politique salariale des syndicats. Dans son œuvre théorique, Cassel expose les enseignements de l'École subjectiviste, bien qu'il s'exprime d'une façon quelque peu différente en soulignant parfois avec
+une insistance curieuse qu'il n'est pas vraiment nécessaire d'imiter.</p>
+<p>Bien que les derniers partisans de l'École historique essayent encore de chanter la vieille rengaine de la fin de l'effondrement de la théorie de l'utilité marginale, il est impossible de ne pas noter que les écrits de tous les jeunes économistes — y compris dans l'Empire allemand — contiennent de plus en plus les idées et les réflexions de l'École autrichienne. L'œuvre de Menger et de ses amis est devenue le fondement de toute la science économique moderne.</p>
+
+<br><br>
+
+<p>
+<b>Note</b>
+</p>
+
+<div id="partie-4-sdfootnotea">
+	<p><a href="#partie-4-sdfootnoteaanc" id="partie-4-sdfootnoteasym">a.</a>
+La graphie de l'article original de Mises est « Karl » Menger. Il ne s'agit pas d'une coquille : on la retrouve dans d'autres articles de l'époque ainsi que dans les ouvrages économiques originaux publiés en allemand. De nos jours on écrit « Carl » Menger, la graphie « Karl » Menger étant réservée à son fils, économiste lui aussi, mais partisan d'une économie mathématique. NdT.
+</p></div>
+<br>
+
+
+</section></article><footer class="meta"><p>Source : <a href="http://herve.dequengo.free.fr/Mises/CIG/CIG.htm">Hervé de Quengo</a>. Texte conservé ; présentation adaptée à la lecture sur écran.</p></footer></main><nav class="chapter-nav fixed-bottom reader-bottom" aria-label="Parties précédente et suivante"><a id="previous" href="#sommaire">← Précédent</a><a href="#sommaire">Sommaire</a><a id="next" href="#partie-0">Suivant →</a></nav><div id="global-progress" aria-hidden="true"></div><script>
+document.body.classList.add('js');
+const sections=[...document.querySelectorAll('article section')],toc=document.getElementById('toc'),previous=document.getElementById('previous'),next=document.getElementById('next'),resume=document.getElementById('resume');
+function get(k){try{return localStorage.getItem('livre-22-'+k)}catch(e){return null}}function put(k,v){try{localStorage.setItem('livre-22-'+k,v)}catch(e){}}
+let size=Math.max(.95,Math.min(1.65,Number(get('size'))||1.15));
+function applySize(){document.documentElement.style.setProperty('--size',size+'rem')}applySize();
+function sharedTheme(){try{return localStorage.getItem('ebooks-theme')||get('theme')}catch(e){return get('theme')}}
+document.documentElement.dataset.theme=sharedTheme()==='dark'?'dark':'light';
+const theme=document.getElementById('toggle-theme');function themeLabel(){theme.textContent=document.documentElement.dataset.theme==='dark'?'☀':'☾';theme.setAttribute('aria-pressed',String(document.documentElement.dataset.theme==='dark'))}themeLabel();
+theme.onclick=()=>{document.documentElement.dataset.theme=document.documentElement.dataset.theme==='dark'?'light':'dark';put('theme',document.documentElement.dataset.theme);try{localStorage.setItem('ebooks-theme',document.documentElement.dataset.theme)}catch(e){}themeLabel()};
+addEventListener('pageshow',()=>{document.documentElement.dataset.theme=sharedTheme()==='dark'?'dark':'light';themeLabel()});
+document.getElementById('smaller').onclick=()=>{size=Math.max(.95,Math.round((size-.1)*100)/100);applySize();put('size',String(size))};
+document.getElementById('larger').onclick=()=>{size=Math.min(1.65,Math.round((size+.1)*100)/100);applySize();put('size',String(size))};
+const last=get('last');if(sections.some(s=>s.id===last)){resume.href='#'+last;resume.textContent='Reprendre la lecture'}
+toc.onchange=()=>{location.hash=toc.value||'sommaire'};
+let active=-1;
+function show(){const id=decodeURIComponent(location.hash.slice(1));const target=document.getElementById(id);const section=target?.closest('article section');active=sections.indexOf(section);sections.forEach(s=>s.classList.toggle('active',s===section));document.body.classList.toggle('home',active<0);toc.value=section?.id||'';previous.href=active>0?'#'+sections[active-1].id:'#sommaire';previous.setAttribute('aria-disabled',String(active<0));next.href=active<sections.length-1?'#'+sections[Math.max(0,active+1)].id:'#sommaire';next.textContent=active===sections.length-1?'Sommaire':'Suivant →';if(section){put('last',section.id);requestAnimationFrame(()=>{if(target!==section)target.scrollIntoView();else window.scrollTo(0,0)})}else window.scrollTo(0,0);progress()}
+function progress(){const bar=document.getElementById('global-progress');const max=document.documentElement.scrollHeight-innerHeight;const fraction=max>0?Math.min(1,Math.max(0,scrollY/max)):1;bar.style.width=active<0?'0%':((active+fraction)/sections.length*100)+'%'}
+addEventListener('hashchange',show);addEventListener('scroll',progress,{passive:true});addEventListener('resize',progress);show();
+</script></body></html>
