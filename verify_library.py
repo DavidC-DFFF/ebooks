@@ -8,7 +8,11 @@ ROOT=Path(__file__).parent
 catalog=json.loads((ROOT/'catalogue-livres.json').read_text(encoding='utf-8'))
 assert len(catalog)==41
 index=html.fromstring((ROOT/'index.html').read_bytes())
-assert len(index.xpath('//ul[@aria-label="Livres disponibles"]/li'))==len(catalog)
+assert len(index.xpath('//*[@id="catalogue"]//li'))==len(catalog)
+groups=index.xpath('//*[@id="catalogue"]/details')
+assert len(groups)==len(set(b['author'] for b in catalog))
+assert all(not g.get('open') for g in groups)
+assert not index.xpath('//a[@class="read"]')
 parts=0
 for book in catalog:
     path=ROOT/book['output']

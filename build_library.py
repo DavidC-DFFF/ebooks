@@ -225,11 +225,16 @@ for book in BOOKS:
     report.append({'id':book['id'],'title':book['title'],'parties':len(book['sections']),'characters':sum(len(s['original']) for s in book['sections']),'status':'texte et ancres vérifiés','source_errors':book['errors'],'missing_anchor_fallbacks':missing_anchors,'missing_images':missing_images,'sources':book['ordered']})
 
 index=(ROOT/'index.html').read_text(encoding='utf-8')
-items=[]
+groups={}
 for book in BOOKS:
-    author=esc(book['author']); title=esc(book['title']); url=esc(book['output'])
-    items.append(f'<li><h2><a href="{url}">{title}</a></h2><p class="author">{author}</p><a class="read" href="{url}">Lire le livre →</a></li>')
-index=re.sub(r'<ul aria-label="Livres disponibles">.*?</ul>','<ul aria-label="Livres disponibles">\n'+'\n'.join(items)+'\n</ul>',index,flags=re.S)
+    groups.setdefault(book['author'],[]).append(book)
+items=[]
+for author,books in groups.items():
+    links=''.join(f'<li><a href="{esc(b["output"])}">{esc(b["title"])}</a></li>' for b in books)
+    items.append(f'<details><summary>{esc(author)}</summary><ul aria-label="Livres de {esc(author)}">{links}</ul></details>')
+catalogue='<div id="catalogue">\n'+'\n'.join(items)+'\n</div>'
+pattern=r'<div id="catalogue">.*?</div>' if 'id="catalogue"' in index else r'<ul aria-label="Livres disponibles">.*?</ul>'
+index=re.sub(pattern,catalogue,index,flags=re.S)
 (ROOT/'index.html').write_text(index,encoding='utf-8')
 (ROOT/'verification-collection.json').write_text(json.dumps(report,ensure_ascii=False,indent=2),encoding='utf-8')
 (ROOT/'catalogue-livres.json').write_text(json.dumps([{k:b[k] for k in ('id','title','author','url','output')} for b in BOOKS],ensure_ascii=False,indent=2),encoding='utf-8')

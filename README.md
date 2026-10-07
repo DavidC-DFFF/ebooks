@@ -4,6 +4,8 @@ Présentation retenue par David : **PMTV**, après comparaison avec la version I
 
 La page d’accueil est `index.html`. Elle liste les 41 ouvrages et brochures du catalogue retenu et ouvre leur version PMTV. Le bouton « Bibliothèque » du lecteur permet de revenir à l’accueil.
 
+L’accueil regroupe les titres dans une liste repliable par auteur. Un clic sur le nom affiche ses livres ; seul le titre sert de lien vers le lecteur.
+
 ## Collection complète
 
 - 27 titres de Ludwig von Mises, 9 de Gustave de Molinari et 5 des autres auteurs.
