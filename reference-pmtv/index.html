@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="fr" data-theme="light">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Prête-moi ta voix</title>
+  <link rel="icon" type="image/png" href="./Images/favicon.ico">
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+  <link rel="manifest" href="manifest.json" />
+  <script src="script.js" defer></script>
+</head>
+
+<body>
+<div id="global-progress"></div>
+  <header>
+    <div id="navbar"></div>
+  </header>
+
+  <main class="centered fade-in">
+    <h2>Prête-moi ta voix</h2>
+    <p style="text-align: center">par David Chessa</p>
+    <img src="./Images/doudou.png" alt="Doudou Mickey" class="index-image" />
+
+    <div class="chapter-nav fixed-bottom">
+      <a class="nav-right" href="./chapitres/chapitre01.html">Commencer la lecture</a>
+    </div>
+  </main>
+
+  <script>
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('/PMTV/service-worker.js')
+        .then(() => console.log('Service Worker enregistré ✅'))
+        .catch((error) => console.error('Service Worker erreur ❌', error));
+    }
+  </script>
+
+</body>
+
+</html>

@@ -1,0 +1,56 @@
+[
+  {
+    "source": "PE_0.htm",
+    "titre": "Préface",
+    "caracteres": 2558,
+    "texte_identique": true
+  },
+  {
+    "source": "PE_I.htm",
+    "titre": "Introduction",
+    "caracteres": 11193,
+    "texte_identique": true
+  },
+  {
+    "source": "PE_AP.htm",
+    "titre": "Avant-propos",
+    "caracteres": 4639,
+    "texte_identique": true
+  },
+  {
+    "source": "PE_1.htm",
+    "titre": "Première leçon — Capitalisme",
+    "caracteres": 29094,
+    "texte_identique": true
+  },
+  {
+    "source": "PE_2.htm",
+    "titre": "Deuxième leçon — Socialisme",
+    "caracteres": 38549,
+    "texte_identique": true
+  },
+  {
+    "source": "PE_3.htm",
+    "titre": "Troisième leçon — Interventionnisme",
+    "caracteres": 33934,
+    "texte_identique": true
+  },
+  {
+    "source": "PE_4.htm",
+    "titre": "Quatrième leçon — Inflation",
+    "caracteres": 35524,
+    "texte_identique": true
+  },
+  {
+    "source": "PE_5.htm",
+    "titre": "Cinquième leçon — Investissement étranger",
+    "caracteres": 31819,
+    "texte_identique": true
+  },
+  {
+    "source": "PE_6.htm",
+    "titre": "Sixième leçon — Politiques et idées",
+    "caracteres": 26707,
+    "texte_identique": true
+  }
+]

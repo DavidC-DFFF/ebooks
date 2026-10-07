@@ -1,0 +1,15 @@
+# Livres déjà présents localement, hors du site HTML
+*.epub
+*.mobi
+*.pdf
+
+# Téléchargements de travail conservés localement
+pe-source.htm
+pe-tdm.htm
+pe0.htm
+pmtv-catalogue.json
+
+# Python et environnement local
+__pycache__/
+*.pyc
+.venv/
