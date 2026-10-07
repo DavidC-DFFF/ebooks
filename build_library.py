@@ -213,6 +213,7 @@ for book in BOOKS:
     page=f'''<!doctype html><html lang="fr"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>{esc(book['title'])} — {esc(book['author'])}</title><style>{css}</style></head><body>
 <nav class="navbar" aria-label="Navigation de lecture"><a href="../index.html" aria-label="Retour à la bibliothèque">⌂</a><a href="#sommaire" aria-label="Accueil et sommaire">☰</a><select id="toc" aria-label="Choisir une partie"><option value="">Sommaire</option>{options}</select><button id="smaller" aria-label="Réduire la taille du texte">A−</button><button id="larger" aria-label="Agrandir le texte">A+</button><button id="toggle-theme" aria-label="Changer le thème" aria-pressed="false">☾</button></nav>
 <main><header><h1>{esc(book['title'])}</h1><p>{esc(book['author'])}</p><a class="start-button" id="resume" href="#partie-0">Commencer la lecture</a></header><details id="sommaire" open><summary>Table des matières</summary><nav aria-label="Sommaire">{toc}</nav></details><article>{content}</article><footer class="meta"><p>Source : <a href="{esc(book['url'])}">Hervé de Quengo</a>. Texte conservé ; présentation adaptée à la lecture sur écran.</p>{warning}</footer></main><nav class="chapter-nav fixed-bottom reader-bottom" aria-label="Parties précédente et suivante"><a id="previous" href="#sommaire">← Précédent</a><a href="#sommaire">Sommaire</a><a id="next" href="#partie-0">Suivant →</a></nav><div id="global-progress" aria-hidden="true"></div><script>{script}</script></body></html>'''
+    page=page.replace('aria-pressed="false">☾</button></nav>', 'aria-pressed="false">☾</button><button id="fullscreen" aria-label="Passer en plein écran" aria-pressed="false">⛶</button></nav>')
     tree=html.fromstring(page)
     ids=tree.xpath('//@id')
     assert len(ids)==len(set(ids)),f"Identifiants dupliqués : {book['id']}"
@@ -229,8 +230,9 @@ groups={}
 for book in BOOKS:
     groups.setdefault(book['author'],[]).append(book)
 items=[]
-for author,books in groups.items():
-    links=''.join(f'<li><a href="{esc(b["output"])}">{esc(b["title"])}</a></li>' for b in books)
+part_counts={r['id']:r['parties'] for r in report}
+for author,books in sorted(groups.items()):
+    links=''.join(f'<li data-prefix="{"mises-pe-pmtv" if b["id"]=="livre-23" else b["id"]}" data-parts="{part_counts[b["id"]]}"><a href="{esc(b["output"])}">{esc(b["title"])}</a><button class="reading-state" type="button" aria-label="Progression : {esc(b["title"])}">(0 %)</button></li>' for b in sorted(books,key=lambda b:b['title'].casefold()))
     items.append(f'<details><summary>{esc(author)}</summary><ul aria-label="Livres de {esc(author)}">{links}</ul></details>')
 catalogue='<div id="catalogue">\n'+'\n'.join(items)+'\n</div>'
 pattern=r'<div id="catalogue">.*?</div>' if 'id="catalogue"' in index else r'<ul aria-label="Livres disponibles">.*?</ul>'
@@ -238,4 +240,8 @@ index=re.sub(pattern,catalogue,index,flags=re.S)
 (ROOT/'index.html').write_text(index,encoding='utf-8')
 (ROOT/'verification-collection.json').write_text(json.dumps(report,ensure_ascii=False,indent=2),encoding='utf-8')
 (ROOT/'catalogue-livres.json').write_text(json.dumps([{k:b[k] for k in ('id','title','author','url','output')} for b in BOOKS],ensure_ascii=False,indent=2),encoding='utf-8')
+import hashlib
+offline_paths=['index.html','offline-client.js','library-state.js','catalogue-livres.json']+[b['output'] for b in BOOKS]
+manifest={'books':len(BOOKS),'files':[{'path':p,'sha256':hashlib.sha256((ROOT/p).read_bytes()).hexdigest()} for p in offline_paths]}
+(ROOT/'offline-manifest.json').write_text(json.dumps(manifest,ensure_ascii=False,indent=2),encoding='utf-8')
 print(f'{len(BOOKS)} livres, {sum(r["parties"] for r in report)} parties ; index et ancres vérifiés.')

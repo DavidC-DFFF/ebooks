@@ -1,0 +1,185 @@
+{
+  "books": 41,
+  "files": [
+    {
+      "path": "index.html",
+      "sha256": "4d0cc7622c476eb57174735c2f110cf319fed3fee9782199001af91816c53a17"
+    },
+    {
+      "path": "offline-client.js",
+      "sha256": "39bdc21584869494813f1b45cccbd946f1e57b1b2738986018893d18caeac400"
+    },
+    {
+      "path": "library-state.js",
+      "sha256": "51b7d82e723874a2df9c3efc7bbbd820f5d28ed6360b0172d5263e0aaf013b74"
+    },
+    {
+      "path": "catalogue-livres.json",
+      "sha256": "e59e49a20c070e8802e08175491362216a44980466f2b3ccda81e96f8d9bc420"
+    },
+    {
+      "path": "livres/livre-01.html",
+      "sha256": "6dcb32ea5ec4855fd072470d516116280883243cb81706e6dd7a94d5b7af3790"
+    },
+    {
+      "path": "livres/livre-02.html",
+      "sha256": "b2dbe91f9c1d84ee0884a1ebf1e33634ecd502bd122597ecbf715fe55d117d95"
+    },
+    {
+      "path": "livres/livre-03.html",
+      "sha256": "3629331c4b1d814599ed46f01ff74174b6edc1f0978b97aee3f6ac2aed7169fe"
+    },
+    {
+      "path": "livres/livre-04.html",
+      "sha256": "15c6fcc697ba9760ea8d002489b161b4e746fb135dfbc3dfe20e61f33017732a"
+    },
+    {
+      "path": "livres/livre-05.html",
+      "sha256": "1c7418c82e12e01a8efe6136c9e2fd6c52a6c8aa713c601fe0dd03e1822c9fd0"
+    },
+    {
+      "path": "livres/livre-06.html",
+      "sha256": "948ca369f1dc663e45cf1d61310e493db5894c7db9cdbaae552116d5dd064134"
+    },
+    {
+      "path": "livres/livre-07.html",
+      "sha256": "7ee5e1b73995a846c09925a1b805f07364b739e1bfb3da137acabb3bdea55269"
+    },
+    {
+      "path": "livres/livre-08.html",
+      "sha256": "298c732a1b58f30e5e97e8c3a079173b30be0f4cfb27af8c0ea6c1fb6128e9df"
+    },
+    {
+      "path": "livres/livre-09.html",
+      "sha256": "08ed5ea5a2fa1e5b9a15c52de5a3365ae3fa8c9d2026ebf524c3ed437943a251"
+    },
+    {
+      "path": "livres/livre-10.html",
+      "sha256": "d17cf1ac53e3d40aa9ee3368450f20c2638ae933dc1b52daff758ee3f2141f01"
+    },
+    {
+      "path": "livres/livre-11.html",
+      "sha256": "b20dbfa7953fc1f7ca44abfdb8663a1520a61ebecc73bc7da299a4ec30f19660"
+    },
+    {
+      "path": "livres/livre-12.html",
+      "sha256": "1a517a3c6e0265475f9780a57fea1233dca9833b0127054b475d394e544d5aa2"
+    },
+    {
+      "path": "livres/livre-13.html",
+      "sha256": "11543fa79e6f8bfbaf77d6f31cb6aaf26f339328a45b6b3e14d019c5e9f39948"
+    },
+    {
+      "path": "livres/livre-14.html",
+      "sha256": "9f5cd928936eeeda1e498f212077bf56076c602f35e68f2acb43f7f08c36ee3d"
+    },
+    {
+      "path": "livres/livre-15.html",
+      "sha256": "271fd0e2a0c2d5120dfb7dce56ee4b2f11a069aca633950556b9821f1472ec1c"
+    },
+    {
+      "path": "livres/livre-16.html",
+      "sha256": "94631aeefb3432abc7a996c3e635b8ed206385b6e378f6f1cc75284768037164"
+    },
+    {
+      "path": "livres/livre-17.html",
+      "sha256": "8b3888bdaf71fdbe71291888fc5d07be98fcdd0693a300b6006a37eb1134d61c"
+    },
+    {
+      "path": "livres/livre-18.html",
+      "sha256": "da247eeece7f9399ef627e1b3d620322650c7c93bb01e7ffde14be0cc5208d59"
+    },
+    {
+      "path": "livres/livre-19.html",
+      "sha256": "c2ea148399aed82d68cc01a833275d3a99b6fdace103b9ed5c1bd8883335ef6c"
+    },
+    {
+      "path": "livres/livre-20.html",
+      "sha256": "38e207a9f019616c2bf77cdcc15cd221a63cceaa7e0c7003bbf65d49eec5c054"
+    },
+    {
+      "path": "livres/livre-21.html",
+      "sha256": "786080caeac0c58172d07411695060e60c2d8c8dbaa46c6e544d1fb40913768a"
+    },
+    {
+      "path": "livres/livre-22.html",
+      "sha256": "c14d27aaab00cdf3c43cf7d1957147b8087672c443d4e29942e56a2910f71fdd"
+    },
+    {
+      "path": "Mises - Politique économique.html",
+      "sha256": "eed60ea28d39ba7ef2e99fcea3fc280267f89031be61eff88bae014612be376c"
+    },
+    {
+      "path": "livres/livre-24.html",
+      "sha256": "1173ce8e7dcae0a7a9270caa7b4128af1e6b08b5654493bb66f55978e819ab5e"
+    },
+    {
+      "path": "livres/livre-25.html",
+      "sha256": "7d92016718f87490c91b8567a36bf255f6fbaa685f6dafe9f014ea712ef63064"
+    },
+    {
+      "path": "livres/livre-26.html",
+      "sha256": "5591938d96eda41c1f0fc8c1977650ffa5664225407bc1963e776beb4b5be997"
+    },
+    {
+      "path": "livres/livre-27.html",
+      "sha256": "4128ef0866292bcc9218961cd489069bdf2fdad6ccac002064ee6a2a77c31413"
+    },
+    {
+      "path": "livres/livre-28.html",
+      "sha256": "13b59e81e9e6bb5bebd875081ba8335b790ab1c8b74c8a35a7a40fdf7d6a7ae2"
+    },
+    {
+      "path": "livres/livre-29.html",
+      "sha256": "166a3bc88c7680d98faaafca84824b271cf0be0d10bad0c3b98f60f38a45f630"
+    },
+    {
+      "path": "livres/livre-30.html",
+      "sha256": "6347ac30df4afa5ff0c5c438cdb69e82df9d30d81abb26576eac7da2531c1825"
+    },
+    {
+      "path": "livres/livre-31.html",
+      "sha256": "d3da849ac91d97641d27babf441d639a038682a7beee52df4bfe328f10e15ee3"
+    },
+    {
+      "path": "livres/livre-32.html",
+      "sha256": "59dbbe7145b505bc791f3f321e39b9368ff12e5aaf9e38af54cd49493ce9a965"
+    },
+    {
+      "path": "livres/livre-33.html",
+      "sha256": "b6ed4a16b3b7c8e0b724fe6435f0693c8134824689069842c77b32e422e741ba"
+    },
+    {
+      "path": "livres/livre-34.html",
+      "sha256": "bdeeb0552f946ebb6bd223c0767de45f3d4db67542cf3c42245464a91b997775"
+    },
+    {
+      "path": "livres/livre-35.html",
+      "sha256": "0eff9f816739400dca99acedc8aa04755f99ef66fbb3779f43c2df66721031a7"
+    },
+    {
+      "path": "livres/livre-36.html",
+      "sha256": "3cd868cc5e57cb26f7a2921c433e94f02e8dbf1f37388accd641a3b22714b0f4"
+    },
+    {
+      "path": "livres/livre-37.html",
+      "sha256": "4714cd8c5e1b62f793bfc20de13f2f865cbb6ae558fc26d0a6af789a4cf70535"
+    },
+    {
+      "path": "livres/livre-38.html",
+      "sha256": "e226049fd16d99d14d217b4eb192150300d20df1c880230f22ddeec2beafbc18"
+    },
+    {
+      "path": "livres/livre-39.html",
+      "sha256": "30e2722545fd5343bfa8e1daf6361c63993683233d2f64dd3e2c8349602dd8e7"
+    },
+    {
+      "path": "livres/livre-40.html",
+      "sha256": "1730734c2a013ecc54e5b4c8c8f51daec6972592f825f69f397cf55fb5e500e0"
+    },
+    {
+      "path": "livres/livre-41.html",
+      "sha256": "315c2aa1428ad87b43fdebb1a675c00217a12f64dcbd1e0d3d9823602a4f5013"
+    }
+  ]
+}

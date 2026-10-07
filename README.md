@@ -31,9 +31,17 @@ L’accueil dispose d’un bouton clair/sombre visible et partage le thème avec
 - Fichier principal : `Mises - Politique économique.html` (présentation PMTV).
 - Les deux variantes et `Comparer les versions.html` sont conservés pour référence.
 - Chaque HTML est autonome et lisible hors connexion ; les liens vers les autres ouvrages restent externes.
-- La reprise mémorise la dernière partie, pas la position exacte dans cette partie. Le stockage des réglages dépend du navigateur.
+- La reprise mémorise le dernier passage lu dans la partie. Le stockage des réglages dépend du navigateur.
 - Sources originales conservées dans `sources/mises-politique-economique/`.
 - Régénération : `python build_mises_html.py` (nécessite lxml).
 - Vérifications : neuf parties présentes, texte identique entre variantes, ancres internes du livre valides ; rapport dans `verification-mises.json`.
 
 L’EPUB est reporté à la demande de David.
+
+## Lecture et bibliothèque hors connexion
+
+Le site télécharge automatiquement la bibliothèque complète via un service worker, sous HTTPS ou sur localhost. Attendre le message « 41 livres disponibles hors connexion » avant de couper la connexion. Le bouton « Resynchroniser » télécharge une nouvelle copie et ne remplace la précédente qu’après vérification complète des fichiers. Les sources archivées et les anciennes variantes de comparaison ne font pas partie de cette copie.
+
+La progression et la position de lecture sont conservées localement, par livre et par navigateur. L’accueil affiche le pourcentage entre parenthèses : un clic ouvre un dialogue permettant de reprendre ou d’effacer cet état, sans effacer le thème ni la taille du texte. Le pourcentage suit les parties du lecteur et la position dans la partie affichée. Les livres sont classés par dernière lecture puis par titre ; les auteurs par leur lecture la plus récente puis par nom. Le bouton ⛶ active le plein écran sur les navigateurs compatibles.
+
+Ces données restent sur l’appareil et disparaissent si le stockage du site est effacé. Les nouveaux livres sont inclus dans le manifeste lors de `python build_library.py`. Tests du cache et des mises à jour : `node --test test-offline.mjs`.
