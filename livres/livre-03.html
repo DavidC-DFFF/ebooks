@@ -279,6 +279,16 @@ nav.navbar select{border-color:var(--line);width:auto;flex:1}
 .chapter-nav a{border-color:var(--line)}.start-button{background:oklch(0.35 0.077 160);color:oklch(0.98 0.008 90)}
 @media print{body{font-size:11pt;background:white;color:black}}
 
+#global-progress{width:100%;height:10px;left:0;right:0;max-width:600px;margin:auto;display:flex;background:var(--bg);z-index:101;gap:1px}
+.chapter-segment{flex-basis:0;min-width:0;height:100%;background:var(--line);position:relative;overflow:hidden}
+.chapter-fill{display:block;height:100%;background:var(--accent);width:0}
+.chapter-segment.current{outline:1px solid var(--text);outline-offset:-1px}
+.chapter-nav{padding-bottom:calc(.5rem + 10px)}
+.book-progress-summary{font:600 1rem/1.5 system-ui,sans-serif;text-align:left;margin:1rem 0;color:var(--accent)}
+#sommaire nav a{display:flex;justify-content:space-between;align-items:baseline;gap:1rem;text-align:left}
+.chapter-percentage{white-space:nowrap;font:.85rem/1.5 system-ui,sans-serif;color:var(--text)}
+@media print{#global-progress{display:none}}
+
 nav.navbar button[hidden]{display:none}nav.navbar{gap:.2rem}nav.navbar button{min-width:36px;padding:.3rem}
 img{max-width:100%;height:auto}table{max-width:100%;display:block;overflow-x:auto}pre{white-space:pre-wrap;overflow-wrap:anywhere}section>h2:first-child,section>h3:first-child{margin-top:0}</style></head><body>
 <nav class="navbar" aria-label="Navigation de lecture"><a href="../index.html" aria-label="Retour à la bibliothèque">⌂</a><a href="#sommaire" aria-label="Accueil et sommaire">☰</a><select id="toc" aria-label="Choisir une partie"><option value="">Sommaire</option><option value="partie-0">Introduction</option><option value="partie-1">L&#x27;Aspect théorique du problème de la stabilisation monétaire</option><option value="partie-2">Annexe : Balance des paiements et taux de change 1</option></select><button id="smaller" aria-label="Réduire la taille du texte">A−</button><button id="larger" aria-label="Agrandir le texte">A+</button><button id="toggle-theme" aria-label="Changer le thème" aria-pressed="false">☾</button><button id="fullscreen" aria-label="Passer en plein écran" aria-pressed="false">⛶</button></nav>
@@ -888,9 +898,88 @@ document.getElementById('larger').onclick=()=>{size=Math.min(1.65,Math.round((si
 const last=get('last');if(sections.some(s=>s.id===last)){resume.href='#'+last;resume.textContent='Reprendre la lecture'}
 toc.onchange=()=>{saveReadingPosition();location.hash=toc.value||'sommaire'};
 let active=-1;
-function show(){const id=decodeURIComponent(location.hash.slice(1));const target=document.getElementById(id);const section=target?.closest('article section');active=sections.indexOf(section);sections.forEach(s=>s.classList.toggle('active',s===section));document.body.classList.toggle('home',active<0);toc.value=section?.id||'';previous.href=active>0?'#'+sections[active-1].id:'#sommaire';previous.setAttribute('aria-disabled',String(active<0));next.href=active<sections.length-1?'#'+sections[Math.max(0,active+1)].id:'#sommaire';next.textContent=active===sections.length-1?'Sommaire':'Suivant →';if(section){put('last',section.id);restoreReadingPosition(section,target)}else window.scrollTo(0,0);progress()}
-function progress(){const bar=document.getElementById('global-progress');const max=document.documentElement.scrollHeight-innerHeight;const fraction=max>0?Math.min(1,Math.max(0,scrollY/max)):1;bar.style.width=active<0?'0%':((active+fraction)/sections.length*100)+'%'}
+function show(){const id=decodeURIComponent(location.hash.slice(1));const target=document.getElementById(id);const section=target?.closest('article section');active=sections.indexOf(section);sections.forEach(s=>s.classList.toggle('active',s===section));document.body.classList.toggle('home',active<0);toc.value=section?.id||'';previous.href=active>0?'#'+sections[active-1].id:'#sommaire';previous.setAttribute('aria-disabled',String(active<0));next.href=active<sections.length-1?'#'+sections[Math.max(0,active+1)].id:'#sommaire';next.textContent=active===sections.length-1?'Sommaire':'Suivant →';if(section){put('last',section.id);resume.href='#'+section.id;resume.textContent='Reprendre la lecture';restoreReadingPosition(section,target)}else if(id==='sommaire')requestAnimationFrame(()=>target.scrollIntoView());else window.scrollTo(0,0);progress()}
+function progress(){updateChapterProgress()}
 addEventListener('hashchange',show);addEventListener('scroll',progress,{passive:true});addEventListener('resize',progress);
+// Poids stables : nombre de mots, indépendant de l’écran et de A− / A+.
+const readingMath = {
+  clamp(value) { return Math.min(1, Math.max(0, Number(value) || 0)); },
+  total(weights, chapters) {
+    const sum = weights.reduce((a, b) => a + b, 0);
+    return sum ? weights.reduce((a, weight, i) => a + weight * this.clamp(chapters[i]), 0) / sum : 0;
+  },
+  advance(chapters, index, fraction) {
+    const next = [...chapters];
+    if (index >= 0 && index < next.length)
+      next[index] = Math.max(this.clamp(next[index]), this.clamp(fraction));
+    return next;
+  },
+  percent(fraction) {
+    // Réserver 100 % à une lecture arrivée au bout.
+    return fraction >= 1 ? 100 : Math.min(99, Math.round(this.clamp(fraction) * 100));
+  }
+};
+const chapterWeights = sections.map(section => Math.max(1,
+  section.textContent.trim().split(/\s+/u).filter(Boolean).length));
+let chapterRead = sections.map(() => 0);
+try {
+  const saved = JSON.parse(get('chapters'));
+  if (saved && typeof saved === 'object')
+    chapterRead = sections.map(section => readingMath.clamp(saved[section.id]));
+} catch (e) {}
+const progressBar = document.getElementById('global-progress');
+progressBar.removeAttribute('aria-hidden');
+progressBar.setAttribute('role', 'img');
+const chapterSegments = sections.map((section, i) => {
+  const segment = document.createElement('span');
+  segment.className = 'chapter-segment';
+  segment.style.flexGrow = chapterWeights[i];
+  const fill = document.createElement('span');
+  fill.className = 'chapter-fill';
+  segment.append(fill);
+  progressBar.append(segment);
+  return segment;
+});
+const bookSummary = document.createElement('p');
+bookSummary.className = 'book-progress-summary';
+bookSummary.id = 'book-progress-summary';
+document.getElementById('sommaire').querySelector('nav').before(bookSummary);
+const chapterLabels = sections.map(section => {
+  const link = document.querySelector(`#sommaire nav a[href="#${section.id}"]`);
+  if (!link) return null;
+  const label = document.createElement('span');
+  label.className = 'chapter-percentage';
+  link.append(label);
+  return label;
+});
+function chapterFraction() {
+  if (active < 0) return 0;
+  const rect = sections[active].getBoundingClientRect();
+  const top = document.querySelector('.navbar').getBoundingClientRect().bottom + 12;
+  const bottom = document.querySelector('.reader-bottom').getBoundingClientRect().top - 12;
+  const distance = rect.height - Math.max(1, bottom - top);
+  if (distance <= 0) return 1;
+  return readingMath.clamp((top - rect.top) / distance);
+}
+function updateChapterProgress(record = false) {
+  if (record && active >= 0 && !restoringReading) {
+    chapterRead = readingMath.advance(chapterRead, active, chapterFraction());
+    put('chapters', JSON.stringify(Object.fromEntries(sections.map((section, i) => [section.id, chapterRead[i]]))));
+  }
+  const total = readingMath.total(chapterWeights, chapterRead);
+  const percent = readingMath.percent(total);
+  chapterSegments.forEach((segment, i) => {
+    const value = readingMath.percent(chapterRead[i]);
+    segment.firstChild.style.width = `${chapterRead[i] * 100}%`;
+    segment.classList.toggle('current', i === active);
+    const title = sections[i].querySelector('h2,h3')?.textContent.trim() || `Partie ${i + 1}`;
+    segment.title = `${title} : ${value} %`;
+    if (chapterLabels[i]) chapterLabels[i].textContent = `(${value} %)`;
+  });
+  progressBar.setAttribute('aria-label', `Ouvrage lu à ${percent} %. Progression par chapitre disponible dans le sommaire.`);
+  bookSummary.textContent = `Ouvrage lu à ${percent} %`;
+  return percent;
+}
 // Position indépendante par livre, intégrée aux HTML autonomes.
 let restoringReading = false;
 let readingTimer;
@@ -910,10 +999,8 @@ function saveReadingPosition() {
     signature: blocks[block].textContent.trim().slice(0, 100),
     offset: blocks[block].getBoundingClientRect().top - margin
   }));
-  const max = document.documentElement.scrollHeight - innerHeight;
-  const fraction = max > 0 ? Math.min(1, Math.max(0, scrollY / max)) : 1;
   put('reading', JSON.stringify({ section: section.id,
-    percent: Math.round((active + fraction) / sections.length * 100),
+    percent: updateChapterProgress(true),
     updated: Date.now() }));
 }
 function restoreReadingPosition(section, target) {

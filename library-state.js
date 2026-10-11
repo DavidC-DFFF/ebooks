@@ -50,7 +50,7 @@
     if (saved.section) location.href = selected.querySelector('a').getAttribute('href') + '#' + saved.section;
   });
   document.getElementById('reset-book').addEventListener('click', () => {
-    try { ['reading', 'position', 'last'].forEach(key => localStorage.removeItem(selected.dataset.prefix + '-' + key)); } catch (e) {}
+    try { ['reading', 'position', 'last', 'chapters'].forEach(key => localStorage.removeItem(selected.dataset.prefix + '-' + key)); } catch (e) {}
     dialog.close();
     refresh();
   });

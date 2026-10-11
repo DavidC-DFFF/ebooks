@@ -105,6 +105,17 @@ nav.navbar select{border-color:var(--line);width:auto;flex:1}
 .chapter-nav a{border-color:var(--line)}.start-button{background:oklch(0.35 0.077 160);color:oklch(0.98 0.008 90)}
 @media print{body{font-size:11pt;background:white;color:black}}
 '''
+pmtv_css += '''
+#global-progress{width:100%;height:10px;left:0;right:0;max-width:600px;margin:auto;display:flex;background:var(--bg);z-index:101;gap:1px}
+.chapter-segment{flex-basis:0;min-width:0;height:100%;background:var(--line);position:relative;overflow:hidden}
+.chapter-fill{display:block;height:100%;background:var(--accent);width:0}
+.chapter-segment.current{outline:1px solid var(--text);outline-offset:-1px}
+.chapter-nav{padding-bottom:calc(.5rem + 10px)}
+.book-progress-summary{font:600 1rem/1.5 system-ui,sans-serif;text-align:left;margin:1rem 0;color:var(--accent)}
+#sommaire nav a{display:flex;justify-content:space-between;align-items:baseline;gap:1rem;text-align:left}
+.chapter-percentage{white-space:nowrap;font:.85rem/1.5 system-ui,sans-serif;color:var(--text)}
+@media print{#global-progress{display:none}}
+'''
 pmtv_script = '''
 document.body.classList.add('js');
 const sections=[...document.querySelectorAll('article section')],toc=document.getElementById('toc'),previous=document.getElementById('previous'),next=document.getElementById('next'),resume=document.getElementById('resume');
@@ -121,10 +132,12 @@ document.getElementById('larger').onclick=()=>{size=Math.min(1.65,Math.round((si
 const last=get('last');if(sections.some(s=>s.id===last)){resume.href='#'+last;resume.textContent='Reprendre la lecture'}
 toc.onchange=()=>{saveReadingPosition();location.hash=toc.value||'sommaire'};
 let active=-1;
-function show(){const id=decodeURIComponent(location.hash.slice(1));const target=document.getElementById(id);const section=target?.closest('article section');active=sections.indexOf(section);sections.forEach(s=>s.classList.toggle('active',s===section));document.body.classList.toggle('home',active<0);toc.value=section?.id||'';previous.href=active>0?'#'+sections[active-1].id:'#sommaire';previous.setAttribute('aria-disabled',String(active<0));next.href=active<sections.length-1?'#'+sections[Math.max(0,active+1)].id:'#sommaire';next.textContent=active===sections.length-1?'Sommaire':'Suivant →';if(section){put('last',section.id);restoreReadingPosition(section,target)}else window.scrollTo(0,0);progress()}
-function progress(){const bar=document.getElementById('global-progress');const max=document.documentElement.scrollHeight-innerHeight;const fraction=max>0?Math.min(1,Math.max(0,scrollY/max)):1;bar.style.width=active<0?'0%':((active+fraction)/sections.length*100)+'%'}
+function show(){const id=decodeURIComponent(location.hash.slice(1));const target=document.getElementById(id);const section=target?.closest('article section');active=sections.indexOf(section);sections.forEach(s=>s.classList.toggle('active',s===section));document.body.classList.toggle('home',active<0);toc.value=section?.id||'';previous.href=active>0?'#'+sections[active-1].id:'#sommaire';previous.setAttribute('aria-disabled',String(active<0));next.href=active<sections.length-1?'#'+sections[Math.max(0,active+1)].id:'#sommaire';next.textContent=active===sections.length-1?'Sommaire':'Suivant →';if(section){put('last',section.id);resume.href='#'+section.id;resume.textContent='Reprendre la lecture';restoreReadingPosition(section,target)}else if(id==='sommaire')requestAnimationFrame(()=>target.scrollIntoView());else window.scrollTo(0,0);progress()}
+function progress(){updateChapterProgress()}
 addEventListener('hashchange',show);addEventListener('scroll',progress,{passive:true});addEventListener('resize',progress);
 '''
+pmtv_script += (ROOT / 'progress-math.js').read_text(encoding='utf-8')
+pmtv_script += (ROOT / 'reader-progress.js').read_text(encoding='utf-8')
 pmtv_script += (ROOT / 'reader-position.js').read_text(encoding='utf-8')
 pmtv_script += (ROOT / 'offline-client.js').read_text(encoding='utf-8')
 pmtv_css += '\nnav.navbar button[hidden]{display:none}nav.navbar{gap:.2rem}nav.navbar button{min-width:36px;padding:.3rem}'

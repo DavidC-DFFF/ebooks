@@ -32,6 +32,7 @@ for book in catalog:
     assert doc.xpath('//*[@id="smaller"]') and doc.xpath('//*[@id="larger"]'),path
     assert doc.xpath('//*[@id="fullscreen"]'),path
     assert "put('reading'" in raw,path
+    assert "chapter-segment" in raw and "book-progress-summary" in raw,path
     for link in doc.xpath('//a/@href'):
         url=urlsplit(link)
         if link.startswith('#'):

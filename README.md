@@ -45,3 +45,11 @@ Le site télécharge automatiquement la bibliothèque complète via un service w
 La progression et la position de lecture sont conservées localement, par livre et par navigateur. L’accueil affiche le pourcentage entre parenthèses : un clic ouvre un dialogue permettant de reprendre ou d’effacer cet état, sans effacer le thème ni la taille du texte. Le pourcentage suit les parties du lecteur et la position dans la partie affichée. Les livres sont classés par dernière lecture puis par titre ; les auteurs par leur lecture la plus récente puis par nom. Le bouton ⛶ active le plein écran sur les navigateurs compatibles.
 
 Ces données restent sur l’appareil et disparaissent si le stockage du site est effacé. Les nouveaux livres sont inclus dans le manifeste lors de `python build_library.py`. Tests du cache et des mises à jour : `node --test test-offline.mjs`.
+
+## Progression par chapitre
+
+La barre comporte un segment par partie du sommaire, proportionnel au nombre de mots de cette partie (notes comprises). Les segments vierges utilisent la couleur de séparation ; les passages lus remplissent le segment avec la couleur d’accent. Un contour repère le chapitre affiché. Le sommaire indique le pourcentage de chaque chapitre et le total pondéré de l’ouvrage.
+
+L’avancée maximale atteinte dans chaque chapitre est mémorisée : revenir en arrière ne diminue pas la progression et sauter à un autre chapitre ne valide pas les précédents. La remise à zéro depuis l’accueil efface aussi cet état. Les anciennes positions restent utilisables, mais les anciens pourcentages ne permettent pas de reconstituer rétroactivement l’historique chapitre par chapitre. Vérification du calcul : `node --test test-progress.mjs`.
+
+Cette évolution a été validée par David le 11 octobre 2026.

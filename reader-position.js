@@ -17,10 +17,8 @@ function saveReadingPosition() {
     signature: blocks[block].textContent.trim().slice(0, 100),
     offset: blocks[block].getBoundingClientRect().top - margin
   }));
-  const max = document.documentElement.scrollHeight - innerHeight;
-  const fraction = max > 0 ? Math.min(1, Math.max(0, scrollY / max)) : 1;
   put('reading', JSON.stringify({ section: section.id,
-    percent: Math.round((active + fraction) / sections.length * 100),
+    percent: updateChapterProgress(true),
     updated: Date.now() }));
 }
 function restoreReadingPosition(section, target) {
