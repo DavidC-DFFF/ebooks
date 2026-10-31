@@ -7,15 +7,21 @@ import hashlib
 
 ROOT=Path(__file__).parent
 catalog=json.loads((ROOT/'catalogue-livres.json').read_text(encoding='utf-8'))
-assert len(catalog)==41
+assert len(catalog)==sum(len(json.loads((ROOT/file).read_text(encoding='utf-8'))) for file in ('collection.json','epub-books.json','markdown-books.json'))
 index=html.fromstring((ROOT/'index.html').read_bytes())
 assert len(index.xpath('//*[@id="catalogue"]//li'))==len(catalog)
 groups=index.xpath('//*[@id="catalogue"]/details')
-assert len(groups)==len(set(b['author'] for b in catalog))
+assert len(groups)==len(set(b.get('group',b['author']) for b in catalog))
 assert all(not g.get('open') for g in groups)
 assert not index.xpath('//a[@class="read"]')
 assert len(index.xpath('//*[@class="reading-state"]'))==len(catalog)
 assert index.xpath('//dialog[@id="reading-dialog"]')
+robinson=next(b for b in catalog if b['id']=='robinson-essai-marxienne')
+assert robinson['author']=='Joan Robinson' and robinson['group']=='Karl Marx'
+marx=index.xpath('//*[@id="catalogue"]/details[summary="Karl Marx"]')[0]
+assert robinson['output'] in marx.xpath('.//a/@href')
+hayek=next(b for b in catalog if b['id']=='hayek-route-servitude')
+assert index.xpath('//*[@id="catalogue"]/details[summary="Friedrich Hayek"]//a/@href')==[hayek['output']]
 parts=0
 for book in catalog:
     path=ROOT/book['output']
@@ -47,5 +53,8 @@ manifest=json.loads((ROOT/'offline-manifest.json').read_text(encoding='utf-8'))
 assert manifest['books']==len(catalog)
 for entry in manifest['files']:
     assert hashlib.sha256((ROOT/entry['path']).read_bytes()).hexdigest()==entry['sha256'],entry['path']
+    if (ROOT/entry['path']).suffix in ('.html','.js','.json'):
+        assert b'\r\n' not in (ROOT/entry['path']).read_bytes(),f"Fins de ligne incompatibles avec les octets publiés : {entry['path']}"
 assert {b['output'] for b in catalog}.issubset({e['path'] for e in manifest['files']})
+assert 'assets/robinson-facsimile.pdf' in {e['path'] for e in manifest['files']}
 print(f'OK : {len(catalog)} livres, {parts} parties, liens, ancres, images et UTF-8 vérifiés.')

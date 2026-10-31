@@ -1,0 +1,973 @@
+{
+  "source_pdf": "An essay on Marxian economics - Joan Robinson.pdf",
+  "source_pdf_pages": 136,
+  "editorial_pages": 123,
+  "provider": "Google Traduction, en vers fr",
+  "status": "traduction automatique complète, révision ciblée ; relecture éditoriale exhaustive non effectuée",
+  "pages": [
+    {
+      "pdf_page": 10,
+      "blocks": 4,
+      "source_characters": 1533,
+      "translated_characters": 1764
+    },
+    {
+      "pdf_page": 11,
+      "blocks": 7,
+      "source_characters": 1651,
+      "translated_characters": 1740
+    },
+    {
+      "pdf_page": 12,
+      "blocks": 4,
+      "source_characters": 1823,
+      "translated_characters": 2028
+    },
+    {
+      "pdf_page": 13,
+      "blocks": 3,
+      "source_characters": 1849,
+      "translated_characters": 2037
+    },
+    {
+      "pdf_page": 14,
+      "blocks": 6,
+      "source_characters": 1892,
+      "translated_characters": 2124
+    },
+    {
+      "pdf_page": 15,
+      "blocks": 6,
+      "source_characters": 1783,
+      "translated_characters": 1976
+    },
+    {
+      "pdf_page": 16,
+      "blocks": 3,
+      "source_characters": 1826,
+      "translated_characters": 2000
+    },
+    {
+      "pdf_page": 17,
+      "blocks": 6,
+      "source_characters": 1694,
+      "translated_characters": 1956
+    },
+    {
+      "pdf_page": 18,
+      "blocks": 4,
+      "source_characters": 1821,
+      "translated_characters": 2029
+    },
+    {
+      "pdf_page": 19,
+      "blocks": 4,
+      "source_characters": 1841,
+      "translated_characters": 1963
+    },
+    {
+      "pdf_page": 20,
+      "blocks": 4,
+      "source_characters": 1776,
+      "translated_characters": 1986
+    },
+    {
+      "pdf_page": 21,
+      "blocks": 6,
+      "source_characters": 1737,
+      "translated_characters": 1881
+    },
+    {
+      "pdf_page": 22,
+      "blocks": 7,
+      "source_characters": 1779,
+      "translated_characters": 1933
+    },
+    {
+      "pdf_page": 23,
+      "blocks": 5,
+      "source_characters": 1832,
+      "translated_characters": 1997
+    },
+    {
+      "pdf_page": 24,
+      "blocks": 4,
+      "source_characters": 1880,
+      "translated_characters": 2094
+    },
+    {
+      "pdf_page": 25,
+      "blocks": 5,
+      "source_characters": 1545,
+      "translated_characters": 1696
+    },
+    {
+      "pdf_page": 26,
+      "blocks": 3,
+      "source_characters": 1562,
+      "translated_characters": 1716
+    },
+    {
+      "pdf_page": 27,
+      "blocks": 5,
+      "source_characters": 1803,
+      "translated_characters": 1960
+    },
+    {
+      "pdf_page": 28,
+      "blocks": 9,
+      "source_characters": 439,
+      "translated_characters": 485
+    },
+    {
+      "pdf_page": 29,
+      "blocks": 4,
+      "source_characters": 1477,
+      "translated_characters": 1638
+    },
+    {
+      "pdf_page": 30,
+      "blocks": 5,
+      "source_characters": 1820,
+      "translated_characters": 2018
+    },
+    {
+      "pdf_page": 31,
+      "blocks": 5,
+      "source_characters": 1811,
+      "translated_characters": 1883
+    },
+    {
+      "pdf_page": 32,
+      "blocks": 4,
+      "source_characters": 1870,
+      "translated_characters": 2089
+    },
+    {
+      "pdf_page": 33,
+      "blocks": 3,
+      "source_characters": 1210,
+      "translated_characters": 1360
+    },
+    {
+      "pdf_page": 34,
+      "blocks": 8,
+      "source_characters": 1454,
+      "translated_characters": 1619
+    },
+    {
+      "pdf_page": 35,
+      "blocks": 10,
+      "source_characters": 1652,
+      "translated_characters": 1889
+    },
+    {
+      "pdf_page": 36,
+      "blocks": 5,
+      "source_characters": 2006,
+      "translated_characters": 2256
+    },
+    {
+      "pdf_page": 37,
+      "blocks": 2,
+      "source_characters": 247,
+      "translated_characters": 287
+    },
+    {
+      "pdf_page": 38,
+      "blocks": 5,
+      "source_characters": 1503,
+      "translated_characters": 1651
+    },
+    {
+      "pdf_page": 39,
+      "blocks": 6,
+      "source_characters": 2040,
+      "translated_characters": 2314
+    },
+    {
+      "pdf_page": 40,
+      "blocks": 7,
+      "source_characters": 2176,
+      "translated_characters": 2347
+    },
+    {
+      "pdf_page": 41,
+      "blocks": 8,
+      "source_characters": 1879,
+      "translated_characters": 2068
+    },
+    {
+      "pdf_page": 42,
+      "blocks": 6,
+      "source_characters": 1866,
+      "translated_characters": 2063
+    },
+    {
+      "pdf_page": 43,
+      "blocks": 4,
+      "source_characters": 2113,
+      "translated_characters": 2282
+    },
+    {
+      "pdf_page": 44,
+      "blocks": 6,
+      "source_characters": 2089,
+      "translated_characters": 2239
+    },
+    {
+      "pdf_page": 45,
+      "blocks": 6,
+      "source_characters": 1880,
+      "translated_characters": 1988
+    },
+    {
+      "pdf_page": 46,
+      "blocks": 4,
+      "source_characters": 1949,
+      "translated_characters": 2165
+    },
+    {
+      "pdf_page": 47,
+      "blocks": 5,
+      "source_characters": 1888,
+      "translated_characters": 2048
+    },
+    {
+      "pdf_page": 48,
+      "blocks": 4,
+      "source_characters": 2115,
+      "translated_characters": 2367
+    },
+    {
+      "pdf_page": 49,
+      "blocks": 5,
+      "source_characters": 2376,
+      "translated_characters": 2584
+    },
+    {
+      "pdf_page": 50,
+      "blocks": 9,
+      "source_characters": 1640,
+      "translated_characters": 1800
+    },
+    {
+      "pdf_page": 51,
+      "blocks": 4,
+      "source_characters": 1599,
+      "translated_characters": 1678
+    },
+    {
+      "pdf_page": 52,
+      "blocks": 7,
+      "source_characters": 2158,
+      "translated_characters": 2391
+    },
+    {
+      "pdf_page": 53,
+      "blocks": 5,
+      "source_characters": 1857,
+      "translated_characters": 2119
+    },
+    {
+      "pdf_page": 54,
+      "blocks": 4,
+      "source_characters": 1846,
+      "translated_characters": 2096
+    },
+    {
+      "pdf_page": 55,
+      "blocks": 6,
+      "source_characters": 1517,
+      "translated_characters": 1615
+    },
+    {
+      "pdf_page": 56,
+      "blocks": 4,
+      "source_characters": 958,
+      "translated_characters": 1086
+    },
+    {
+      "pdf_page": 57,
+      "blocks": 5,
+      "source_characters": 1521,
+      "translated_characters": 1554
+    },
+    {
+      "pdf_page": 58,
+      "blocks": 7,
+      "source_characters": 2408,
+      "translated_characters": 2814
+    },
+    {
+      "pdf_page": 59,
+      "blocks": 5,
+      "source_characters": 1849,
+      "translated_characters": 2138
+    },
+    {
+      "pdf_page": 60,
+      "blocks": 9,
+      "source_characters": 1821,
+      "translated_characters": 2121
+    },
+    {
+      "pdf_page": 61,
+      "blocks": 5,
+      "source_characters": 2092,
+      "translated_characters": 2318
+    },
+    {
+      "pdf_page": 62,
+      "blocks": 2,
+      "source_characters": 1025,
+      "translated_characters": 1135
+    },
+    {
+      "pdf_page": 63,
+      "blocks": 4,
+      "source_characters": 1554,
+      "translated_characters": 1786
+    },
+    {
+      "pdf_page": 64,
+      "blocks": 7,
+      "source_characters": 1750,
+      "translated_characters": 2044
+    },
+    {
+      "pdf_page": 65,
+      "blocks": 4,
+      "source_characters": 1879,
+      "translated_characters": 2178
+    },
+    {
+      "pdf_page": 66,
+      "blocks": 7,
+      "source_characters": 1897,
+      "translated_characters": 2185
+    },
+    {
+      "pdf_page": 67,
+      "blocks": 5,
+      "source_characters": 2127,
+      "translated_characters": 2230
+    },
+    {
+      "pdf_page": 68,
+      "blocks": 6,
+      "source_characters": 1810,
+      "translated_characters": 1981
+    },
+    {
+      "pdf_page": 69,
+      "blocks": 10,
+      "source_characters": 1612,
+      "translated_characters": 1805
+    },
+    {
+      "pdf_page": 70,
+      "blocks": 3,
+      "source_characters": 361,
+      "translated_characters": 396
+    },
+    {
+      "pdf_page": 71,
+      "blocks": 3,
+      "source_characters": 1443,
+      "translated_characters": 1623
+    },
+    {
+      "pdf_page": 72,
+      "blocks": 5,
+      "source_characters": 1755,
+      "translated_characters": 1922
+    },
+    {
+      "pdf_page": 73,
+      "blocks": 5,
+      "source_characters": 1822,
+      "translated_characters": 2128
+    },
+    {
+      "pdf_page": 74,
+      "blocks": 6,
+      "source_characters": 1826,
+      "translated_characters": 1994
+    },
+    {
+      "pdf_page": 75,
+      "blocks": 5,
+      "source_characters": 1795,
+      "translated_characters": 1976
+    },
+    {
+      "pdf_page": 76,
+      "blocks": 4,
+      "source_characters": 1894,
+      "translated_characters": 2157
+    },
+    {
+      "pdf_page": 77,
+      "blocks": 4,
+      "source_characters": 1804,
+      "translated_characters": 1967
+    },
+    {
+      "pdf_page": 78,
+      "blocks": 4,
+      "source_characters": 1844,
+      "translated_characters": 1977
+    },
+    {
+      "pdf_page": 79,
+      "blocks": 2,
+      "source_characters": 652,
+      "translated_characters": 657
+    },
+    {
+      "pdf_page": 80,
+      "blocks": 3,
+      "source_characters": 1469,
+      "translated_characters": 1626
+    },
+    {
+      "pdf_page": 81,
+      "blocks": 5,
+      "source_characters": 1844,
+      "translated_characters": 2065
+    },
+    {
+      "pdf_page": 82,
+      "blocks": 4,
+      "source_characters": 1872,
+      "translated_characters": 2041
+    },
+    {
+      "pdf_page": 83,
+      "blocks": 3,
+      "source_characters": 2353,
+      "translated_characters": 2564
+    },
+    {
+      "pdf_page": 84,
+      "blocks": 5,
+      "source_characters": 1844,
+      "translated_characters": 1859
+    },
+    {
+      "pdf_page": 85,
+      "blocks": 4,
+      "source_characters": 1944,
+      "translated_characters": 2151
+    },
+    {
+      "pdf_page": 86,
+      "blocks": 5,
+      "source_characters": 1863,
+      "translated_characters": 2112
+    },
+    {
+      "pdf_page": 87,
+      "blocks": 5,
+      "source_characters": 1830,
+      "translated_characters": 2007
+    },
+    {
+      "pdf_page": 88,
+      "blocks": 4,
+      "source_characters": 1871,
+      "translated_characters": 2069
+    },
+    {
+      "pdf_page": 89,
+      "blocks": 5,
+      "source_characters": 1763,
+      "translated_characters": 1923
+    },
+    {
+      "pdf_page": 90,
+      "blocks": 5,
+      "source_characters": 1370,
+      "translated_characters": 1473
+    },
+    {
+      "pdf_page": 91,
+      "blocks": 4,
+      "source_characters": 1576,
+      "translated_characters": 1638
+    },
+    {
+      "pdf_page": 92,
+      "blocks": 4,
+      "source_characters": 1921,
+      "translated_characters": 2096
+    },
+    {
+      "pdf_page": 93,
+      "blocks": 5,
+      "source_characters": 1775,
+      "translated_characters": 1907
+    },
+    {
+      "pdf_page": 94,
+      "blocks": 3,
+      "source_characters": 1876,
+      "translated_characters": 2107
+    },
+    {
+      "pdf_page": 95,
+      "blocks": 5,
+      "source_characters": 1791,
+      "translated_characters": 1946
+    },
+    {
+      "pdf_page": 96,
+      "blocks": 4,
+      "source_characters": 1840,
+      "translated_characters": 2019
+    },
+    {
+      "pdf_page": 97,
+      "blocks": 6,
+      "source_characters": 1830,
+      "translated_characters": 1920
+    },
+    {
+      "pdf_page": 98,
+      "blocks": 5,
+      "source_characters": 1843,
+      "translated_characters": 1987
+    },
+    {
+      "pdf_page": 99,
+      "blocks": 4,
+      "source_characters": 1899,
+      "translated_characters": 2014
+    },
+    {
+      "pdf_page": 100,
+      "blocks": 4,
+      "source_characters": 1441,
+      "translated_characters": 1656
+    },
+    {
+      "pdf_page": 101,
+      "blocks": 4,
+      "source_characters": 1410,
+      "translated_characters": 1647
+    },
+    {
+      "pdf_page": 102,
+      "blocks": 5,
+      "source_characters": 1860,
+      "translated_characters": 2135
+    },
+    {
+      "pdf_page": 103,
+      "blocks": 4,
+      "source_characters": 1801,
+      "translated_characters": 2102
+    },
+    {
+      "pdf_page": 104,
+      "blocks": 6,
+      "source_characters": 1816,
+      "translated_characters": 1991
+    },
+    {
+      "pdf_page": 105,
+      "blocks": 6,
+      "source_characters": 2186,
+      "translated_characters": 2377
+    },
+    {
+      "pdf_page": 106,
+      "blocks": 6,
+      "source_characters": 1801,
+      "translated_characters": 2090
+    },
+    {
+      "pdf_page": 107,
+      "blocks": 5,
+      "source_characters": 1809,
+      "translated_characters": 1920
+    },
+    {
+      "pdf_page": 108,
+      "blocks": 7,
+      "source_characters": 1771,
+      "translated_characters": 2046
+    },
+    {
+      "pdf_page": 109,
+      "blocks": 2,
+      "source_characters": 513,
+      "translated_characters": 543
+    },
+    {
+      "pdf_page": 110,
+      "blocks": 4,
+      "source_characters": 1529,
+      "translated_characters": 1852
+    },
+    {
+      "pdf_page": 111,
+      "blocks": 5,
+      "source_characters": 1847,
+      "translated_characters": 2050
+    },
+    {
+      "pdf_page": 112,
+      "blocks": 6,
+      "source_characters": 2143,
+      "translated_characters": 2459
+    },
+    {
+      "pdf_page": 113,
+      "blocks": 4,
+      "source_characters": 2016,
+      "translated_characters": 2295
+    },
+    {
+      "pdf_page": 114,
+      "blocks": 5,
+      "source_characters": 1882,
+      "translated_characters": 2087
+    },
+    {
+      "pdf_page": 115,
+      "blocks": 5,
+      "source_characters": 1851,
+      "translated_characters": 2139
+    },
+    {
+      "pdf_page": 116,
+      "blocks": 7,
+      "source_characters": 1836,
+      "translated_characters": 1953
+    },
+    {
+      "pdf_page": 117,
+      "blocks": 6,
+      "source_characters": 1973,
+      "translated_characters": 2327
+    },
+    {
+      "pdf_page": 118,
+      "blocks": 7,
+      "source_characters": 2011,
+      "translated_characters": 2339
+    },
+    {
+      "pdf_page": 119,
+      "blocks": 2,
+      "source_characters": 1111,
+      "translated_characters": 1359
+    },
+    {
+      "pdf_page": 120,
+      "blocks": 4,
+      "source_characters": 1472,
+      "translated_characters": 1655
+    },
+    {
+      "pdf_page": 121,
+      "blocks": 5,
+      "source_characters": 1869,
+      "translated_characters": 1977
+    },
+    {
+      "pdf_page": 122,
+      "blocks": 5,
+      "source_characters": 1819,
+      "translated_characters": 2000
+    },
+    {
+      "pdf_page": 123,
+      "blocks": 4,
+      "source_characters": 1105,
+      "translated_characters": 1218
+    },
+    {
+      "pdf_page": 124,
+      "blocks": 15,
+      "source_characters": 1643,
+      "translated_characters": 1718
+    },
+    {
+      "pdf_page": 125,
+      "blocks": 17,
+      "source_characters": 1600,
+      "translated_characters": 1719
+    },
+    {
+      "pdf_page": 126,
+      "blocks": 17,
+      "source_characters": 1827,
+      "translated_characters": 1866
+    },
+    {
+      "pdf_page": 127,
+      "blocks": 15,
+      "source_characters": 1724,
+      "translated_characters": 1805
+    },
+    {
+      "pdf_page": 128,
+      "blocks": 16,
+      "source_characters": 1950,
+      "translated_characters": 1923
+    },
+    {
+      "pdf_page": 129,
+      "blocks": 2,
+      "source_characters": 476,
+      "translated_characters": 481
+    },
+    {
+      "pdf_page": 131,
+      "blocks": 22,
+      "source_characters": 1573,
+      "translated_characters": 1657
+    },
+    {
+      "pdf_page": 132,
+      "blocks": 11,
+      "source_characters": 972,
+      "translated_characters": 1054
+    },
+    {
+      "pdf_page": 136,
+      "blocks": 9,
+      "source_characters": 1142,
+      "translated_characters": 1194
+    }
+  ],
+  "revised_pdf_pages": [
+    34,
+    35,
+    55,
+    67,
+    68,
+    72,
+    73
+  ],
+  "remaining_ocr_flags": [
+    {
+      "pdf_page": 16,
+      "printed_page": null,
+      "reasons": [
+        "formule ou fraction mal reconnue dans le scan"
+      ]
+    },
+    {
+      "pdf_page": 21,
+      "printed_page": null,
+      "reasons": [
+        "formule ou fraction mal reconnue dans le scan"
+      ]
+    },
+    {
+      "pdf_page": 36,
+      "printed_page": 8,
+      "reasons": [
+        "appels de références ou numéros de notes incertains"
+      ]
+    },
+    {
+      "pdf_page": 37,
+      "printed_page": 9,
+      "reasons": [
+        "formule ou fraction mal reconnue dans le scan"
+      ]
+    },
+    {
+      "pdf_page": 38,
+      "printed_page": 10,
+      "reasons": [
+        "appels de références ou numéros de notes incertains"
+      ]
+    },
+    {
+      "pdf_page": 39,
+      "printed_page": 11,
+      "reasons": [
+        "appels de références ou numéros de notes incertains"
+      ]
+    },
+    {
+      "pdf_page": 41,
+      "printed_page": 13,
+      "reasons": [
+        "formule ou fraction mal reconnue dans le scan",
+        "appels de références ou numéros de notes incertains"
+      ]
+    },
+    {
+      "pdf_page": 42,
+      "printed_page": 14,
+      "reasons": [
+        "appels de références ou numéros de notes incertains"
+      ]
+    },
+    {
+      "pdf_page": 45,
+      "printed_page": 17,
+      "reasons": [
+        "formule ou fraction mal reconnue dans le scan",
+        "appels de références ou numéros de notes incertains"
+      ]
+    },
+    {
+      "pdf_page": 46,
+      "printed_page": 18,
+      "reasons": [
+        "formule ou fraction mal reconnue dans le scan",
+        "appels de références ou numéros de notes incertains"
+      ]
+    },
+    {
+      "pdf_page": 47,
+      "printed_page": 19,
+      "reasons": [
+        "appels de références ou numéros de notes incertains"
+      ]
+    },
+    {
+      "pdf_page": 48,
+      "printed_page": 20,
+      "reasons": [
+        "appels de références ou numéros de notes incertains"
+      ]
+    },
+    {
+      "pdf_page": 50,
+      "printed_page": 22,
+      "reasons": [
+        "formule ou fraction mal reconnue dans le scan",
+        "appels de références ou numéros de notes incertains"
+      ]
+    },
+    {
+      "pdf_page": 51,
+      "printed_page": 23,
+      "reasons": [
+        "appels de références ou numéros de notes incertains"
+      ]
+    },
+    {
+      "pdf_page": 57,
+      "printed_page": 29,
+      "reasons": [
+        "appels de références ou numéros de notes incertains"
+      ]
+    },
+    {
+      "pdf_page": 58,
+      "printed_page": 30,
+      "reasons": [
+        "appels de références ou numéros de notes incertains"
+      ]
+    },
+    {
+      "pdf_page": 59,
+      "printed_page": 31,
+      "reasons": [
+        "appels de références ou numéros de notes incertains"
+      ]
+    },
+    {
+      "pdf_page": 60,
+      "printed_page": 32,
+      "reasons": [
+        "appels de références ou numéros de notes incertains"
+      ]
+    },
+    {
+      "pdf_page": 63,
+      "printed_page": 35,
+      "reasons": [
+        "appels de références ou numéros de notes incertains"
+      ]
+    },
+    {
+      "pdf_page": 64,
+      "printed_page": 36,
+      "reasons": [
+        "formule ou fraction mal reconnue dans le scan"
+      ]
+    },
+    {
+      "pdf_page": 69,
+      "printed_page": 41,
+      "reasons": [
+        "formule ou fraction mal reconnue dans le scan"
+      ]
+    },
+    {
+      "pdf_page": 74,
+      "printed_page": 46,
+      "reasons": [
+        "appels de références ou numéros de notes incertains"
+      ]
+    },
+    {
+      "pdf_page": 75,
+      "printed_page": 47,
+      "reasons": [
+        "appels de références ou numéros de notes incertains"
+      ]
+    },
+    {
+      "pdf_page": 76,
+      "printed_page": 48,
+      "reasons": [
+        "appels de références ou numéros de notes incertains"
+      ]
+    },
+    {
+      "pdf_page": 77,
+      "printed_page": 49,
+      "reasons": [
+        "appels de références ou numéros de notes incertains"
+      ]
+    },
+    {
+      "pdf_page": 78,
+      "printed_page": 50,
+      "reasons": [
+        "appels de références ou numéros de notes incertains"
+      ]
+    },
+    {
+      "pdf_page": 96,
+      "printed_page": 68,
+      "reasons": [
+        "appels de références ou numéros de notes incertains"
+      ]
+    },
+    {
+      "pdf_page": 100,
+      "printed_page": 72,
+      "reasons": [
+        "appels de références ou numéros de notes incertains"
+      ]
+    },
+    {
+      "pdf_page": 112,
+      "printed_page": 84,
+      "reasons": [
+        "appels de références ou numéros de notes incertains"
+      ]
+    },
+    {
+      "pdf_page": 116,
+      "printed_page": 88,
+      "reasons": [
+        "appels de références ou numéros de notes incertains"
+      ]
+    }
+  ],
+  "output_characters": 259381
+}

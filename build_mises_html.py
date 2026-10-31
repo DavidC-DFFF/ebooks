@@ -86,8 +86,8 @@ page = f'''<!doctype html>
 <main><header><p>Ludwig von Mises</p><h1>Politique économique</h1><p class="subtitle">Réflexions pour aujourd'hui et pour demain</p><p class="meta">Traduit par Raoul Audouin<br>Six conférences données à Buenos Aires</p></header>
 <details id="sommaire" open><summary>Table des matières</summary><nav aria-label="Table des matières">{toc}</nav></details><article id="lecture">{''.join(parts)}</article>
 <footer class="meta"><p>Source : <a href="{BASE}PE.htm">site d’Hervé de Quengo</a>. Texte et notes conservés ; présentation adaptée à la lecture sur écran.</p><p>Repères bibliographiques du site : première édition anglaise en 1979, traduction française indiquée en 1983 et mention d’édition française de 1986 dans les en-têtes. Ces indications sont conservées sans les harmoniser.</p></footer></main><script>{script}</script></body></html>'''
-OUT.write_text(page, encoding='utf-8')
-(ROOT / 'Mises - Politique économique - Impeccable.html').write_text(page, encoding='utf-8')
+OUT.write_text(page, encoding='utf-8', newline='\n')
+(ROOT / 'Mises - Politique économique - Impeccable.html').write_text(page, encoding='utf-8', newline='\n')
 options = ''.join(f'<option value="{i}">{title}</option>' for i,title in titles)
 pmtv_css = (ROOT / 'reference-pmtv/style.css').read_text(encoding='utf-8') + '''
 *{box-sizing:border-box}html{scroll-padding-top:4rem}nav.navbar{height:auto;min-height:3rem;max-width:600px;padding:.3rem .5rem}nav.navbar button{min-width:44px;min-height:44px}nav.navbar select{min-height:44px;width:50%;font-size:.85rem}main{padding-top:4rem;padding-bottom:7rem}h2{font-family:'Segoe UI',sans-serif;font-size:1.65rem;line-height:1.35;text-align:center}a{color:var(--accent);overflow-wrap:anywhere}header{text-align:center;margin-bottom:2rem}section{margin-top:2rem}body.js article section{display:none}body.js article section.active{display:block}body.js header,body.js details,body.js footer{display:none}body.js.home header,body.js.home details,body.js.home footer{display:block}body.js.home article section{display:none}.chapter-nav{max-width:600px;margin:auto;padding:.5rem;gap:.5rem}.chapter-nav a{min-height:44px;font-size:.9rem;padding:.65rem .4rem}.chapter-nav a[aria-disabled=true]{visibility:hidden}#global-progress{transition:none}.meta{font-size:.85rem;text-align:left}details nav a{display:block;padding:.5rem 0}button:focus-visible,a:focus-visible,select:focus-visible{outline:3px solid var(--accent);outline-offset:2px}sup{line-height:0}sup a{padding:.25rem}.reader-bottom{display:none}.js .reader-bottom{display:flex}@media print{nav.navbar,.reader-bottom,#global-progress{display:none}body.js article section{display:block!important}main{padding:0}section{break-before:page}}
@@ -107,13 +107,19 @@ nav.navbar select{border-color:var(--line);width:auto;flex:1}
 '''
 pmtv_css += '''
 #global-progress{width:100%;height:10px;left:0;right:0;max-width:600px;margin:auto;display:flex;background:var(--bg);z-index:101;gap:1px}
-.chapter-segment{flex-basis:0;min-width:0;height:100%;background:var(--line);position:relative;overflow:hidden}
-.chapter-fill{display:block;height:100%;background:var(--accent);width:0}
+:root{--progress-unread:oklch(0.8 0 0);--progress-read:oklch(0.38 0.08 160);--progress-current:oklch(0.72 0.11 160)}
+[data-theme="dark"]{--progress-unread:oklch(0.4 0 0);--progress-read:oklch(0.48 0.08 160);--progress-current:oklch(0.79 0.1 160)}
+.chapter-segment{flex-basis:0;min-width:0;height:100%;background:var(--progress-unread);position:relative;overflow:hidden}
+.chapter-fill,.chapter-cursor{display:block;position:absolute;inset:0 auto 0 0;height:100%;width:0}
+.chapter-fill{background:var(--progress-read)}.chapter-cursor{background:var(--progress-current)}
 .chapter-segment.current{outline:1px solid var(--text);outline-offset:-1px}
 .chapter-nav{padding-bottom:calc(.5rem + 10px)}
 .book-progress-summary{font:600 1rem/1.5 system-ui,sans-serif;text-align:left;margin:1rem 0;color:var(--accent)}
 #sommaire nav a{display:flex;justify-content:space-between;align-items:baseline;gap:1rem;text-align:left}
 .chapter-percentage{white-space:nowrap;font:.85rem/1.5 system-ui,sans-serif;color:var(--text)}
+.progress-legend{display:flex;flex-wrap:wrap;gap:.5rem 1rem;font:.78rem/1.5 system-ui,sans-serif;text-align:left}
+.progress-legend span::before{content:'';display:inline-block;width:.7rem;height:.7rem;margin-right:.35rem;background:var(--progress-unread)}
+.progress-legend .legend-current::before{background:var(--progress-current)}.progress-legend .legend-read::before{background:var(--progress-read)}
 @media print{#global-progress{display:none}}
 '''
 pmtv_script = '''
@@ -144,13 +150,13 @@ pmtv_css += '\nnav.navbar button[hidden]{display:none}nav.navbar{gap:.2rem}nav.n
 pmtv_page = f'''<!doctype html><html lang="fr" data-theme="light"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Politique économique — version PMTV</title><style>{pmtv_css}</style></head><body>
 <nav class="navbar" aria-label="Navigation de lecture"><a href="index.html" aria-label="Retour à la bibliothèque" title="Bibliothèque">⌂</a><a href="#sommaire" aria-label="Accueil et sommaire">☰</a><select id="toc" aria-label="Choisir une partie"><option value="">Sommaire</option>{options}</select><button id="smaller" aria-label="Réduire la taille du texte">A−</button><button id="larger" aria-label="Agrandir le texte">A+</button><button id="toggle-theme" aria-label="Changer le thème" aria-pressed="false">☾</button><button id="fullscreen" aria-label="Passer en plein écran" aria-pressed="false">⛶</button></nav>
 <main><header><h1>Politique économique</h1><p class="subtitle">Réflexions pour aujourd'hui et pour demain</p><p>Ludwig von Mises<br>Traduit par Raoul Audouin</p><a class="start-button" id="resume" href="#partie-0">Commencer la lecture</a></header><details id="sommaire" open><summary>Table des matières</summary><nav aria-label="Sommaire">{toc}</nav></details><article>{''.join(parts)}</article><footer class="meta"><p>Texte et notes : <a href="{BASE}PE.htm">Hervé de Quengo</a>. Présentation inspirée de <a href="https://github.com/DavidC-DFFF/PMTV">PMTV</a>. Repères du site : 1979, traduction 1983, en-têtes 1986.</p></footer></main><nav class="chapter-nav fixed-bottom reader-bottom" aria-label="Parties précédente et suivante"><a id="previous" href="#sommaire">← Précédent</a><a href="#sommaire">Sommaire</a><a id="next" href="#partie-0">Suivant →</a></nav><div id="global-progress" aria-hidden="true"></div><script>{pmtv_script}</script></body></html>'''
-(ROOT / 'Mises - Politique économique - PMTV.html').write_text(pmtv_page, encoding='utf-8')
-OUT.write_text(pmtv_page, encoding='utf-8')
+(ROOT / 'Mises - Politique économique - PMTV.html').write_text(pmtv_page, encoding='utf-8', newline='\n')
+OUT.write_text(pmtv_page, encoding='utf-8', newline='\n')
 for candidate in (page,pmtv_page):
     tree=html.fromstring(candidate)
     assert [normalized(s.text_content()) for s in tree.xpath('//article/section')] == [normalized(html.fromstring(p).text_content()) for p in parts]
 comparison='''<!doctype html><html lang="fr"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Comparer les versions de Politique économique</title><style>body{font:18px/1.6 system-ui;margin:2rem auto;padding:1rem;max-width:46rem;color:#18251f;background:#fafaf7}a{color:#245640;display:inline-block;padding:.6rem 0}h1{line-height:1.2}article{border-top:1px solid #bbb;padding:1rem 0}p{margin:.5rem 0}</style><h1>Politique économique</h1><p>Deux présentations, un texte identique : préface, introduction, avant-propos, six leçons et notes.</p><article><h2>Version Impeccable</h2><p>Lecture continue, texte aligné à gauche, fond légèrement ivoire, sommaire dépliable et taille du texte réglable.</p><a href="Mises - Politique économique - Impeccable.html#partie-3">Lire la première leçon — Impeccable →</a></article><article><h2>Version PMTV</h2><p>Lecture par partie, paragraphes justifiés avec alinéas, menu des chapitres, précédent/suivant, progression et reprise de la dernière partie.</p><a href="Mises - Politique économique - PMTV.html#partie-3">Lire la première leçon — PMTV →</a></article><p>Les deux fichiers sont autonomes et fonctionnent hors connexion. Les réglages de lecture sont mémorisés si le navigateur autorise le stockage local.</p></html>'''
-(ROOT / 'Comparer les versions.html').write_text(comparison, encoding='utf-8')
+(ROOT / 'Comparer les versions.html').write_text(comparison, encoding='utf-8', newline='\n')
 parsed = html.fromstring(page)
 all_ids = parsed.xpath('//@id')
 assert len(all_ids) == len(set(all_ids)), 'Identifiants dupliqués'
@@ -159,5 +165,5 @@ for href in parsed.xpath('//a/@href'):
         assert href[1:] in all_ids, f'Ancre manquante : {href}'
 assert len(parsed.xpath('//article/section')) == 9
 assert '\ufffd' not in page
-(ROOT / 'verification-mises.json').write_text(json.dumps(checks, ensure_ascii=False, indent=2), encoding='utf-8')
+(ROOT / 'verification-mises.json').write_text(json.dumps(checks, ensure_ascii=False, indent=2), encoding='utf-8', newline='\n')
 print(f'{OUT.name} : 9 parties, texte conservé, toutes les ancres vérifiées, {len(page.encode("utf-8"))} octets')

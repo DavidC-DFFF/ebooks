@@ -1,0 +1,5 @@
+[
+  {"id":"marx-capital-livre-1","title":"Le Capital — Livre I","author":"Karl Marx","epub":"sources_marx/Le capital - Karl Marx .epub","url":"../sources_marx/Le capital - Karl Marx .epub","source_label":"EPUB fourni par David — Le Capital, Livre I"},
+  {"id":"marx-capital-populaire","title":"Le Capital — Édition populaire","author":"Karl Marx","epub":"sources_marx/Le capital édition populaire - Karl Marx .epub","url":"../sources_marx/Le capital édition populaire - Karl Marx .epub","source_label":"EPUB fourni par David — résumés et extraits de Julien Borchardt, texte français de J.-P. Samson"},
+  {"id":"hayek-route-servitude","title":"La Route de la servitude","author":"Friedrich Hayek","epub":"sources_autre/La route de la servitude - Friedrich Hayek.epub","url":"../sources_autre/La route de la servitude - Friedrich Hayek.epub","source_label":"EPUB fourni par David — Friedrich Hayek, La Route de la servitude"}
+]

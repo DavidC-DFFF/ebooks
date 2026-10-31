@@ -11,6 +11,12 @@ const readingMath = {
       next[index] = Math.max(this.clamp(next[index]), this.clamp(fraction));
     return next;
   },
+  colors(read, index, cursorIndex, cursorFraction) {
+    const reached = this.clamp(read);
+    const beforeCursor = index < cursorIndex ? 1 : index === cursorIndex ? this.clamp(cursorFraction) : 0;
+    const current = Math.min(reached, beforeCursor);
+    return { current, retained: reached - current, unread: 1 - reached };
+  },
   percent(fraction) {
     // Réserver 100 % à une lecture arrivée au bout.
     return fraction >= 1 ? 100 : Math.min(99, Math.round(this.clamp(fraction) * 100));

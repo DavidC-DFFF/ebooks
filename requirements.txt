@@ -1,0 +1,2 @@
+lxml
+Markdown>=3.7,<4

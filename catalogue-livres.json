@@ -4,286 +4,359 @@
     "title": "Nation, État et Économie",
     "author": "Ludwig von Mises",
     "url": "http://herve.dequengo.free.fr/Mises/NEE/NEE.htm",
-    "output": "livres/livre-01.html"
+    "output": "livres/livre-01.html",
+    "group": "Ludwig von Mises"
   },
   {
     "id": "livre-02",
     "title": "Le Socialisme",
     "author": "Ludwig von Mises",
     "url": "http://herve.dequengo.free.fr/Mises/LS/LS.htm",
-    "output": "livres/livre-02.html"
+    "output": "livres/livre-02.html",
+    "group": "Ludwig von Mises"
   },
   {
     "id": "livre-03",
     "title": "L'Aspect théorique du problème de la stabilisation monétaire",
     "author": "Ludwig von Mises",
     "url": "http://herve.dequengo.free.fr/Mises/MMC/MMC_1_0.htm",
-    "output": "livres/livre-03.html"
+    "output": "livres/livre-03.html",
+    "group": "Ludwig von Mises"
   },
   {
     "id": "livre-04",
     "title": "Le Libéralisme",
     "author": "Ludwig von Mises",
     "url": "http://herve.dequengo.free.fr/Mises/LL/LL.htm",
-    "output": "livres/livre-04.html"
+    "output": "livres/livre-04.html",
+    "group": "Ludwig von Mises"
   },
   {
     "id": "livre-05",
     "title": "Stabilisation monétaire et politique cyclique",
     "author": "Ludwig von Mises",
     "url": "http://herve.dequengo.free.fr/Mises/MMC/MMC_2_0.htm",
-    "output": "livres/livre-05.html"
+    "output": "livres/livre-05.html",
+    "group": "Ludwig von Mises"
   },
   {
     "id": "livre-06",
     "title": "Critique de l'interventionnisme",
     "author": "Ludwig von Mises",
     "url": "http://herve.dequengo.free.fr/Mises/CDI/CDI.htm",
-    "output": "livres/livre-06.html"
+    "output": "livres/livre-06.html",
+    "group": "Ludwig von Mises"
   },
   {
     "id": "livre-07",
     "title": "Les Raisons de la crise économique — une contribution",
     "author": "Ludwig von Mises",
     "url": "http://herve.dequengo.free.fr/Mises/MMC/MMC_3.htm",
-    "output": "livres/livre-07.html"
+    "output": "livres/livre-07.html",
+    "group": "Ludwig von Mises"
   },
   {
     "id": "livre-08",
     "title": "Les Problèmes fondamentaux de l'économie politique",
     "author": "Ludwig von Mises",
     "url": "http://herve.dequengo.free.fr/Mises/PFEP/PFEP.htm",
-    "output": "livres/livre-08.html"
+    "output": "livres/livre-08.html",
+    "group": "Ludwig von Mises"
   },
   {
     "id": "livre-09",
     "title": "Le Gouvernement omnipotent",
     "author": "Ludwig von Mises",
     "url": "http://herve.dequengo.free.fr/Mises/GO/GO.htm",
-    "output": "livres/livre-09.html"
+    "output": "livres/livre-09.html",
+    "group": "Ludwig von Mises"
   },
   {
     "id": "livre-10",
     "title": "La Bureaucratie",
     "author": "Ludwig von Mises",
     "url": "http://herve.dequengo.free.fr/Mises/LB/LB.htm",
-    "output": "livres/livre-10.html"
+    "output": "livres/livre-10.html",
+    "group": "Ludwig von Mises"
   },
   {
     "id": "livre-11",
     "title": "Le Chaos du planisme",
     "author": "Ludwig von Mises",
     "url": "http://herve.dequengo.free.fr/Mises/CP/CP.htm",
-    "output": "livres/livre-11.html"
+    "output": "livres/livre-11.html",
+    "group": "Ludwig von Mises"
   },
   {
     "id": "livre-12",
     "title": "Notes sur le mouvement coopératif",
     "author": "Ludwig von Mises",
     "url": "http://herve.dequengo.free.fr/Mises/MMM/MMM_18.htm",
-    "output": "livres/livre-12.html"
+    "output": "livres/livre-12.html",
+    "group": "Ludwig von Mises"
   },
   {
     "id": "livre-13",
     "title": "L'Action humaine — Traité d'économie",
     "author": "Ludwig von Mises",
     "url": "http://herve.dequengo.free.fr/Mises/AH/AH.htm",
-    "output": "livres/livre-13.html"
+    "output": "livres/livre-13.html",
+    "group": "Ludwig von Mises"
   },
   {
     "id": "livre-14",
     "title": "Profits et pertes",
     "author": "Ludwig von Mises",
     "url": "http://herve.dequengo.free.fr/Mises/PLL/PLL_9.htm",
-    "output": "livres/livre-14.html"
+    "output": "livres/livre-14.html",
+    "group": "Ludwig von Mises"
   },
   {
     "id": "livre-15",
     "title": "Planifier la liberté et autres essais",
     "author": "Ludwig von Mises",
     "url": "http://herve.dequengo.free.fr/Mises/PLL/PLL.htm",
-    "output": "livres/livre-15.html"
+    "output": "livres/livre-15.html",
+    "group": "Ludwig von Mises"
   },
   {
     "id": "livre-16",
     "title": "La Mentalité anti-capitaliste",
     "author": "Ludwig von Mises",
     "url": "http://herve.dequengo.free.fr/Mises/MAC/MAC.htm",
-    "output": "livres/livre-16.html"
+    "output": "livres/livre-16.html",
+    "group": "Ludwig von Mises"
   },
   {
     "id": "livre-17",
     "title": "Théorie et Histoire",
     "author": "Ludwig von Mises",
     "url": "http://herve.dequengo.free.fr/Mises/TH/TH.htm",
-    "output": "livres/livre-17.html"
+    "output": "livres/livre-17.html",
+    "group": "Ludwig von Mises"
   },
   {
     "id": "livre-18",
     "title": "Les Débuts historiques de l'École économique autrichienne",
     "author": "Ludwig von Mises",
     "url": "http://herve.dequengo.free.fr/Mises/EAE.htm",
-    "output": "livres/livre-18.html"
+    "output": "livres/livre-18.html",
+    "group": "Ludwig von Mises"
   },
   {
     "id": "livre-19",
     "title": "Le Fondement ultime de la science économique",
     "author": "Ludwig von Mises",
     "url": "http://herve.dequengo.free.fr/Mises/FUSE/FUSE.htm",
-    "output": "livres/livre-19.html"
+    "output": "livres/livre-19.html",
+    "group": "Ludwig von Mises"
   },
   {
     "id": "livre-20",
     "title": "Souvenirs d'Europe",
     "author": "Ludwig von Mises",
     "url": "http://herve.dequengo.free.fr/Mises/SE/SE.htm",
-    "output": "livres/livre-20.html"
+    "output": "livres/livre-20.html",
+    "group": "Ludwig von Mises"
   },
   {
     "id": "livre-21",
     "title": "De la Manipulation de la monnaie et du crédit",
     "author": "Ludwig von Mises",
     "url": "http://herve.dequengo.free.fr/Mises/MMC/MMC.htm",
-    "output": "livres/livre-21.html"
+    "output": "livres/livre-21.html",
+    "group": "Ludwig von Mises"
   },
   {
     "id": "livre-22",
     "title": "Le Choc des intérêts de groupe et autres essais",
     "author": "Ludwig von Mises",
     "url": "http://herve.dequengo.free.fr/Mises/CIG/CIG.htm",
-    "output": "livres/livre-22.html"
+    "output": "livres/livre-22.html",
+    "group": "Ludwig von Mises"
   },
   {
     "id": "livre-23",
     "title": "Politique économique — Réflexions pour aujourd'hui et pour demain",
     "author": "Ludwig von Mises",
     "url": "http://herve.dequengo.free.fr/Mises/PE/PE.htm",
-    "output": "Mises - Politique économique.html"
+    "output": "Mises - Politique économique.html",
+    "group": "Ludwig von Mises"
   },
   {
     "id": "livre-24",
     "title": "Monnaie, méthode et marché",
     "author": "Ludwig von Mises",
     "url": "http://herve.dequengo.free.fr/Mises/MMM/MMM.htm",
-    "output": "livres/livre-24.html"
+    "output": "livres/livre-24.html",
+    "group": "Ludwig von Mises"
   },
   {
     "id": "livre-25",
     "title": "Liberté économique et interventionnisme",
     "author": "Ludwig von Mises",
     "url": "http://herve.dequengo.free.fr/Mises/LEI/LEI.htm",
-    "output": "livres/livre-25.html"
+    "output": "livres/livre-25.html",
+    "group": "Ludwig von Mises"
   },
   {
     "id": "livre-26",
     "title": "L'Interventionnisme",
     "author": "Ludwig von Mises",
     "url": "http://herve.dequengo.free.fr/Mises/Interventionnisme/Interventionnisme.htm",
-    "output": "livres/livre-26.html"
+    "output": "livres/livre-26.html",
+    "group": "Ludwig von Mises"
   },
   {
     "id": "livre-27",
     "title": "Les Illusions du protectionnisme et de l'autarcie",
     "author": "Ludwig von Mises",
     "url": "http://herve.dequengo.free.fr/Mises/MMM/MMM_9.htm",
-    "output": "livres/livre-27.html"
+    "output": "livres/livre-27.html",
+    "group": "Ludwig von Mises"
   },
   {
     "id": "livre-28",
     "title": "Les Soirées de la rue Saint-Lazare",
     "author": "Gustave de Molinari",
     "url": "http://herve.dequengo.free.fr/Molinari/SRSL/SRSL_0.htm",
-    "output": "livres/livre-28.html"
+    "output": "livres/livre-28.html",
+    "group": "Gustave de Molinari"
   },
   {
     "id": "livre-29",
     "title": "De l'Enseignement obligatoire",
     "author": "Gustave de Molinari",
     "url": "http://herve.dequengo.free.fr/Molinari/EO/EO.htm",
-    "output": "livres/livre-29.html"
+    "output": "livres/livre-29.html",
+    "group": "Gustave de Molinari"
   },
   {
     "id": "livre-30",
     "title": "L'Irlande, le Canada, Jersey",
     "author": "Gustave de Molinari",
     "url": "http://herve.dequengo.free.fr/Molinari/ICJ/ICJ_0.htm",
-    "output": "livres/livre-30.html"
+    "output": "livres/livre-30.html",
+    "group": "Gustave de Molinari"
   },
   {
     "id": "livre-31",
     "title": "Conversations sur le commerce des grains et la protection de l'agriculture",
     "author": "Gustave de Molinari",
     "url": "http://herve.dequengo.free.fr/Molinari/CG/CG_0.htm",
-    "output": "livres/livre-31.html"
+    "output": "livres/livre-31.html",
+    "group": "Gustave de Molinari"
   },
   {
     "id": "livre-32",
     "title": "A Panama. L'isthme de Panama, la Martinique, Haïti",
     "author": "Gustave de Molinari",
     "url": "http://herve.dequengo.free.fr/Molinari/AP/AP_0.htm",
-    "output": "livres/livre-32.html"
+    "output": "livres/livre-32.html",
+    "group": "Gustave de Molinari"
   },
   {
     "id": "livre-33",
     "title": "Les Bourses du travail",
     "author": "Gustave de Molinari",
     "url": "http://herve.dequengo.free.fr/Molinari/BT/BT_0.htm",
-    "output": "livres/livre-33.html"
+    "output": "livres/livre-33.html",
+    "group": "Gustave de Molinari"
   },
   {
     "id": "livre-34",
     "title": "Grandeur et décadence de la guerre",
     "author": "Gustave de Molinari",
     "url": "http://herve.dequengo.free.fr/Molinari/GDG/GDG_0.htm",
-    "output": "livres/livre-34.html"
+    "output": "livres/livre-34.html",
+    "group": "Gustave de Molinari"
   },
   {
     "id": "livre-35",
     "title": "Esquisse de l'organisation politique et économique de la société future",
     "author": "Gustave de Molinari",
     "url": "http://herve.dequengo.free.fr/Molinari/SF/SF.htm",
-    "output": "livres/livre-35.html"
+    "output": "livres/livre-35.html",
+    "group": "Gustave de Molinari"
   },
   {
     "id": "livre-36",
     "title": "Questions économiques à l'ordre du jour",
     "author": "Gustave de Molinari",
     "url": "http://herve.dequengo.free.fr/Molinari/QE/QE_0.htm",
-    "output": "livres/livre-36.html"
+    "output": "livres/livre-36.html",
+    "group": "Gustave de Molinari"
   },
   {
     "id": "livre-37",
     "title": "L'Empire socialiste des Inka",
     "author": "Louis Baudin",
     "url": "http://herve.dequengo.free.fr/Baudin/ESI/ESI.htm",
-    "output": "livres/livre-37.html"
+    "output": "livres/livre-37.html",
+    "group": "Louis Baudin"
   },
   {
     "id": "livre-38",
     "title": "Toits ou plafonds ?",
     "author": "Milton Friedman et George Stigler",
     "url": "http://herve.dequengo.free.fr/Friedman/TOP/TOP.htm",
-    "output": "livres/livre-38.html"
+    "output": "livres/livre-38.html",
+    "group": "Milton Friedman et George Stigler"
   },
   {
     "id": "livre-39",
     "title": "L'Économie politique en une leçon",
     "author": "Henry Hazlitt",
     "url": "http://herve.dequengo.free.fr/Hazlitt/EPL/EPL.htm",
-    "output": "livres/livre-39.html"
+    "output": "livres/livre-39.html",
+    "group": "Henry Hazlitt"
   },
   {
     "id": "livre-40",
     "title": "Guide à travers les panacées économiques",
     "author": "Fritz Machlup",
     "url": "http://herve.dequengo.free.fr/Machlup/GTPE/GTPE.htm",
-    "output": "livres/livre-40.html"
+    "output": "livres/livre-40.html",
+    "group": "Fritz Machlup"
   },
   {
     "id": "livre-41",
     "title": "Introduction aux principes fondamentaux de l'économie politique",
     "author": "Richard von Strigl",
     "url": "http://herve.dequengo.free.fr/Strigl/IPFEP/IPFEP.htm",
-    "output": "livres/livre-41.html"
+    "output": "livres/livre-41.html",
+    "group": "Richard von Strigl"
+  },
+  {
+    "id": "marx-capital-livre-1",
+    "title": "Le Capital — Livre I",
+    "author": "Karl Marx",
+    "url": "../sources_marx/Le capital - Karl Marx .epub",
+    "output": "livres/marx-capital-livre-1.html",
+    "group": "Karl Marx"
+  },
+  {
+    "id": "marx-capital-populaire",
+    "title": "Le Capital — Édition populaire",
+    "author": "Karl Marx",
+    "url": "../sources_marx/Le capital édition populaire - Karl Marx .epub",
+    "output": "livres/marx-capital-populaire.html",
+    "group": "Karl Marx"
+  },
+  {
+    "id": "hayek-route-servitude",
+    "title": "La Route de la servitude",
+    "author": "Friedrich Hayek",
+    "url": "../sources_autre/La route de la servitude - Friedrich Hayek.epub",
+    "output": "livres/hayek-route-servitude.html",
+    "group": "Friedrich Hayek"
+  },
+  {
+    "id": "robinson-essai-marxienne",
+    "title": "Essai sur l’économie marxienne",
+    "author": "Joan Robinson",
+    "url": "../sources_marx/Joan Robinson - Essai sur l’économie marxienne.md",
+    "output": "livres/robinson-essai-marxienne.html",
+    "group": "Karl Marx"
   }
 ]

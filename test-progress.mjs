@@ -19,3 +19,15 @@ test('100 % exige la fin effective ; les données invalides restent bornées', (
   assert.equal(math.total([1, 4], [1, 1]), 1);
   assert.equal(math.total([1, 4], [-8, 40]), .8);
 });
+test('retour de la page 12 à la page 8 : clair jusqu’à 8, foncé jusqu’à 12, gris après', () => {
+  const colors = math.colors(.6, 0, 0, .4);
+  assert.equal(colors.current, .4);
+  assert.ok(Math.abs(colors.retained - .2) < 1e-10);
+  assert.equal(colors.unread, .4);
+});
+test('les chapitres sautés restent gris, même avant le curseur', () => {
+  assert.equal(math.colors(0, 0, 2, .5).current, 0);
+  assert.equal(math.colors(0, 0, 2, .5).unread, 1);
+  assert.equal(math.colors(.8, 3, 2, .5).current, 0);
+  assert.equal(math.colors(.8, 3, 2, .5).retained, .8);
+});

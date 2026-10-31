@@ -1,2 +1,7 @@
+# Les empreintes du cache sont calculées sur les octets publiés, toujours en LF.
+*.html text eol=lf
+*.js text eol=lf
+*.json text eol=lf
+
 # Conserver les fichiers du site source à l'identique dans l'archive.
 sources/collection/** -text

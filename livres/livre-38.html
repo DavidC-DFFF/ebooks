@@ -280,13 +280,19 @@ nav.navbar select{border-color:var(--line);width:auto;flex:1}
 @media print{body{font-size:11pt;background:white;color:black}}
 
 #global-progress{width:100%;height:10px;left:0;right:0;max-width:600px;margin:auto;display:flex;background:var(--bg);z-index:101;gap:1px}
-.chapter-segment{flex-basis:0;min-width:0;height:100%;background:var(--line);position:relative;overflow:hidden}
-.chapter-fill{display:block;height:100%;background:var(--accent);width:0}
+:root{--progress-unread:oklch(0.8 0 0);--progress-read:oklch(0.38 0.08 160);--progress-current:oklch(0.72 0.11 160)}
+[data-theme="dark"]{--progress-unread:oklch(0.4 0 0);--progress-read:oklch(0.48 0.08 160);--progress-current:oklch(0.79 0.1 160)}
+.chapter-segment{flex-basis:0;min-width:0;height:100%;background:var(--progress-unread);position:relative;overflow:hidden}
+.chapter-fill,.chapter-cursor{display:block;position:absolute;inset:0 auto 0 0;height:100%;width:0}
+.chapter-fill{background:var(--progress-read)}.chapter-cursor{background:var(--progress-current)}
 .chapter-segment.current{outline:1px solid var(--text);outline-offset:-1px}
 .chapter-nav{padding-bottom:calc(.5rem + 10px)}
 .book-progress-summary{font:600 1rem/1.5 system-ui,sans-serif;text-align:left;margin:1rem 0;color:var(--accent)}
 #sommaire nav a{display:flex;justify-content:space-between;align-items:baseline;gap:1rem;text-align:left}
 .chapter-percentage{white-space:nowrap;font:.85rem/1.5 system-ui,sans-serif;color:var(--text)}
+.progress-legend{display:flex;flex-wrap:wrap;gap:.5rem 1rem;font:.78rem/1.5 system-ui,sans-serif;text-align:left}
+.progress-legend span::before{content:'';display:inline-block;width:.7rem;height:.7rem;margin-right:.35rem;background:var(--progress-unread)}
+.progress-legend .legend-current::before{background:var(--progress-current)}.progress-legend .legend-read::before{background:var(--progress-read)}
 @media print{#global-progress{display:none}}
 
 nav.navbar button[hidden]{display:none}nav.navbar{gap:.2rem}nav.navbar button{min-width:36px;padding:.3rem}
@@ -1379,6 +1385,12 @@ const readingMath = {
       next[index] = Math.max(this.clamp(next[index]), this.clamp(fraction));
     return next;
   },
+  colors(read, index, cursorIndex, cursorFraction) {
+    const reached = this.clamp(read);
+    const beforeCursor = index < cursorIndex ? 1 : index === cursorIndex ? this.clamp(cursorFraction) : 0;
+    const current = Math.min(reached, beforeCursor);
+    return { current, retained: reached - current, unread: 1 - reached };
+  },
   percent(fraction) {
     // Réserver 100 % à une lecture arrivée au bout.
     return fraction >= 1 ? 100 : Math.min(99, Math.round(this.clamp(fraction) * 100));
@@ -1392,6 +1404,11 @@ try {
   if (saved && typeof saved === 'object')
     chapterRead = sections.map(section => readingMath.clamp(saved[section.id]));
 } catch (e) {}
+let readingCursor = { index: -1, fraction: 0 };
+try {
+  const saved = JSON.parse(get('reading'));
+  readingCursor = { index: sections.findIndex(section => section.id === saved?.section), fraction: readingMath.clamp(saved?.currentFraction) };
+} catch (e) {}
 const progressBar = document.getElementById('global-progress');
 progressBar.removeAttribute('aria-hidden');
 progressBar.setAttribute('role', 'img');
@@ -1401,7 +1418,9 @@ const chapterSegments = sections.map((section, i) => {
   segment.style.flexGrow = chapterWeights[i];
   const fill = document.createElement('span');
   fill.className = 'chapter-fill';
-  segment.append(fill);
+  const cursor = document.createElement('span');
+  cursor.className = 'chapter-cursor';
+  segment.append(fill, cursor);
   progressBar.append(segment);
   return segment;
 });
@@ -1409,6 +1428,10 @@ const bookSummary = document.createElement('p');
 bookSummary.className = 'book-progress-summary';
 bookSummary.id = 'book-progress-summary';
 document.getElementById('sommaire').querySelector('nav').before(bookSummary);
+const progressLegend = document.createElement('p');
+progressLegend.className = 'progress-legend';
+progressLegend.innerHTML = '<span class="legend-current">Position actuelle</span><span class="legend-read">Déjà lu plus loin</span><span class="legend-unread">Non lu</span>';
+bookSummary.after(progressLegend);
 const chapterLabels = sections.map(section => {
   const link = document.querySelector(`#sommaire nav a[href="#${section.id}"]`);
   if (!link) return null;
@@ -1427,6 +1450,8 @@ function chapterFraction() {
   return readingMath.clamp((top - rect.top) / distance);
 }
 function updateChapterProgress(record = false) {
+  if (active >= 0 && !restoringReading)
+    readingCursor = { index: active, fraction: chapterFraction() };
   if (record && active >= 0 && !restoringReading) {
     chapterRead = readingMath.advance(chapterRead, active, chapterFraction());
     put('chapters', JSON.stringify(Object.fromEntries(sections.map((section, i) => [section.id, chapterRead[i]]))));
@@ -1436,12 +1461,14 @@ function updateChapterProgress(record = false) {
   chapterSegments.forEach((segment, i) => {
     const value = readingMath.percent(chapterRead[i]);
     segment.firstChild.style.width = `${chapterRead[i] * 100}%`;
+    const colors = readingMath.colors(chapterRead[i], i, readingCursor.index, readingCursor.fraction);
+    segment.lastChild.style.width = `${colors.current * 100}%`;
     segment.classList.toggle('current', i === active);
     const title = sections[i].querySelector('h2,h3')?.textContent.trim() || `Partie ${i + 1}`;
-    segment.title = `${title} : ${value} %`;
+    segment.title = `${title} : ${value} % lu ; ${readingMath.percent(colors.current)} % avant la position actuelle`;
     if (chapterLabels[i]) chapterLabels[i].textContent = `(${value} %)`;
   });
-  progressBar.setAttribute('aria-label', `Ouvrage lu à ${percent} %. Progression par chapitre disponible dans le sommaire.`);
+  progressBar.setAttribute('aria-label', `Ouvrage lu à ${percent} %. Vert clair : jusqu’à la position actuelle ; vert foncé : déjà lu plus loin ; gris : non lu. Détail par chapitre dans le sommaire.`);
   bookSummary.textContent = `Ouvrage lu à ${percent} %`;
   return percent;
 }
@@ -1466,6 +1493,7 @@ function saveReadingPosition() {
   }));
   put('reading', JSON.stringify({ section: section.id,
     percent: updateChapterProgress(true),
+    currentFraction: chapterFraction(),
     updated: Date.now() }));
 }
 function restoreReadingPosition(section, target) {

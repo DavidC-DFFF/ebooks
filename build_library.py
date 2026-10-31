@@ -9,6 +9,10 @@ import base64, json, re, runpy, mimetypes
 ROOT = Path(__file__).parent
 STYLE = runpy.run_path(str(ROOT / 'build_mises_html.py'))
 BOOKS = json.loads((ROOT / 'collection.json').read_text(encoding='utf-8'))
+from import_epubs import import_epub
+BOOKS += json.loads((ROOT / 'epub-books.json').read_text(encoding='utf-8'))
+from import_markdown import import_markdown
+BOOKS += json.loads((ROOT / 'markdown-books.json').read_text(encoding='utf-8'))
 for book in BOOKS:
     book['title']=re.sub(r'\s*\(complet\)', '', book['title'], flags=re.I)
 DEST = ROOT / 'livres'
@@ -150,6 +154,12 @@ for book in BOOKS:
     if book['id']=='livre-23':
         book['output']='Mises - Politique économique.html'
         continue
+    if book.get('markdown'):
+        import_markdown(book, ROOT)
+        continue
+    if book.get('epub'):
+        import_epub(book, ROOT)
+        continue
     book['ordered']=arrange(book)
     book['output']='livres/'+book['id']+'.html'
     book['sections']=[]
@@ -166,6 +176,7 @@ for book in BOOKS:
     missing_anchors=[]
     missing_images=[]
     for s in book['sections']:
+        if book.get('epub') or book.get('markdown'): continue  # liens et images déjà traités lors de l'import
         for a in s['element'].xpath('.//a[@href]'):
             url,fragment=urldefrag(urljoin(s['url'],a.get('href')))
             url=corrected(url,fragment,book['pages'])
@@ -214,6 +225,11 @@ for book in BOOKS:
 <nav class="navbar" aria-label="Navigation de lecture"><a href="../index.html" aria-label="Retour à la bibliothèque">⌂</a><a href="#sommaire" aria-label="Accueil et sommaire">☰</a><select id="toc" aria-label="Choisir une partie"><option value="">Sommaire</option>{options}</select><button id="smaller" aria-label="Réduire la taille du texte">A−</button><button id="larger" aria-label="Agrandir le texte">A+</button><button id="toggle-theme" aria-label="Changer le thème" aria-pressed="false">☾</button></nav>
 <main><header><h1>{esc(book['title'])}</h1><p>{esc(book['author'])}</p><a class="start-button" id="resume" href="#partie-0">Commencer la lecture</a></header><details id="sommaire" open><summary>Table des matières</summary><nav aria-label="Sommaire">{toc}</nav></details><article>{content}</article><footer class="meta"><p>Source : <a href="{esc(book['url'])}">Hervé de Quengo</a>. Texte conservé ; présentation adaptée à la lecture sur écran.</p>{warning}</footer></main><nav class="chapter-nav fixed-bottom reader-bottom" aria-label="Parties précédente et suivante"><a id="previous" href="#sommaire">← Précédent</a><a href="#sommaire">Sommaire</a><a id="next" href="#partie-0">Suivant →</a></nav><div id="global-progress" aria-hidden="true"></div><script>{script}</script></body></html>'''
     page=page.replace('aria-pressed="false">☾</button></nav>', 'aria-pressed="false">☾</button><button id="fullscreen" aria-label="Passer en plein écran" aria-pressed="false">⛶</button></nav>')
+    if book.get('epub') or book.get('markdown'):
+        page=page.replace(f'<a href="{esc(book["url"])}">Hervé de Quengo</a>',esc(book['source_label']))
+    if book.get('notice'):
+        page=page.replace('<a class="start-button" id="resume"',f'<p class="meta">{esc(book["notice"])}</p><a class="start-button" id="resume"')
+        page=page.replace('</style>','.equation{text-align:center;margin:1.2rem 0}.math,.equation{font-style:italic}blockquote{margin:1rem 0;padding:1rem;border:1px solid var(--line);font-size:.95rem}sub{line-height:0}</style>')
     tree=html.fromstring(page)
     ids=tree.xpath('//@id')
     assert len(ids)==len(set(ids)),f"Identifiants dupliqués : {book['id']}"
@@ -222,26 +238,27 @@ for book in BOOKS:
             assert href[1:] in ids,href
     assert len(tree.xpath('//article/section'))==len(book['sections'])
     assert '\ufffd' not in page,book['id']
-    (ROOT / book['output']).write_text(page,encoding='utf-8')
+    (ROOT / book['output']).write_text(page,encoding='utf-8',newline='\n')
     report.append({'id':book['id'],'title':book['title'],'parties':len(book['sections']),'characters':sum(len(s['original']) for s in book['sections']),'status':'texte et ancres vérifiés','source_errors':book['errors'],'missing_anchor_fallbacks':missing_anchors,'missing_images':missing_images,'sources':book['ordered']})
 
 index=(ROOT/'index.html').read_text(encoding='utf-8')
 groups={}
 for book in BOOKS:
-    groups.setdefault(book['author'],[]).append(book)
+    groups.setdefault(book.get('group',book['author']),[]).append(book)
 items=[]
 part_counts={r['id']:r['parties'] for r in report}
 for author,books in sorted(groups.items()):
-    links=''.join(f'<li data-prefix="{"mises-pe-pmtv" if b["id"]=="livre-23" else b["id"]}" data-parts="{part_counts[b["id"]]}"><a href="{esc(b["output"])}">{esc(b["title"])}</a><button class="reading-state" type="button" aria-label="Progression : {esc(b["title"])}">(0 %)</button></li>' for b in sorted(books,key=lambda b:b['title'].casefold()))
+    links=''.join(f'<li data-prefix="{"mises-pe-pmtv" if b["id"]=="livre-23" else b["id"]}" data-parts="{part_counts[b["id"]]}"><a href="{esc(b["output"])}">{esc(b.get("catalogue_title",b["title"]))}</a><button class="reading-state" type="button" aria-label="Progression : {esc(b["title"])}">(0 %)</button></li>' for b in sorted(books,key=lambda b:b['title'].casefold()))
     items.append(f'<details><summary>{esc(author)}</summary><ul aria-label="Livres de {esc(author)}">{links}</ul></details>')
 catalogue='<div id="catalogue">\n'+'\n'.join(items)+'\n</div>'
 pattern=r'<div id="catalogue">.*?</div>' if 'id="catalogue"' in index else r'<ul aria-label="Livres disponibles">.*?</ul>'
 index=re.sub(pattern,catalogue,index,flags=re.S)
-(ROOT/'index.html').write_text(index,encoding='utf-8')
-(ROOT/'verification-collection.json').write_text(json.dumps(report,ensure_ascii=False,indent=2),encoding='utf-8')
-(ROOT/'catalogue-livres.json').write_text(json.dumps([{k:b[k] for k in ('id','title','author','url','output')} for b in BOOKS],ensure_ascii=False,indent=2),encoding='utf-8')
+(ROOT/'index.html').write_text(index,encoding='utf-8',newline='\n')
+(ROOT/'verification-collection.json').write_text(json.dumps(report,ensure_ascii=False,indent=2),encoding='utf-8',newline='\n')
+(ROOT/'catalogue-livres.json').write_text(json.dumps([{**{k:b[k] for k in ('id','title','author','url','output')},'group':b.get('group',b['author'])} for b in BOOKS],ensure_ascii=False,indent=2),encoding='utf-8',newline='\n')
 import hashlib
 offline_paths=['index.html','offline-client.js','library-state.js','catalogue-livres.json']+[b['output'] for b in BOOKS]
+offline_paths+=sorted({asset for b in BOOKS for asset in b.get('assets',[])})
 manifest={'books':len(BOOKS),'files':[{'path':p,'sha256':hashlib.sha256((ROOT/p).read_bytes()).hexdigest()} for p in offline_paths]}
-(ROOT/'offline-manifest.json').write_text(json.dumps(manifest,ensure_ascii=False,indent=2),encoding='utf-8')
+(ROOT/'offline-manifest.json').write_text(json.dumps(manifest,ensure_ascii=False,indent=2),encoding='utf-8',newline='\n')
 print(f'{len(BOOKS)} livres, {sum(r["parties"] for r in report)} parties ; index et ancres vérifiés.')

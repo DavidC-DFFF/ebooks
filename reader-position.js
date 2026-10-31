@@ -19,6 +19,7 @@ function saveReadingPosition() {
   }));
   put('reading', JSON.stringify({ section: section.id,
     percent: updateChapterProgress(true),
+    currentFraction: chapterFraction(),
     updated: Date.now() }));
 }
 function restoreReadingPosition(section, target) {

@@ -13,3 +13,6 @@ pmtv-catalogue.json
 __pycache__/
 *.pyc
 .venv/
+tmp/
+.vendor/
+!assets/robinson-facsimile.pdf
