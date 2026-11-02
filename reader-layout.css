@@ -1,0 +1,40 @@
+/* Deux pages à hauteur d’écran ; le téléphone conserve le défilement vertical. */
+.spread-end { display: none; }
+@media screen and (min-width: 1100px) and (min-height: 540px) {
+  .spread-end { display: block; }
+  body.js:not(.home) { overflow: hidden; }
+  body.js:not(.home) main {
+    max-width: 1440px;
+    width: calc(100% - 4rem);
+    padding: 0;
+    margin: 0 auto;
+    position: relative;
+    top: var(--reader-top, 76px);
+  }
+  body.js:not(.home) article {
+    position: relative;
+    height: var(--reader-height, calc(100dvh - 180px));
+    overflow-x: auto;
+    overflow-y: hidden;
+    scrollbar-width: none;
+    overscroll-behavior-x: contain;
+  }
+  body.js:not(.home) article::-webkit-scrollbar { display: none; }
+  body.js:not(.home) article section.active {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    column-count: 2;
+    column-gap: 4rem;
+    column-fill: auto;
+    orphans: 2;
+    widows: 2;
+  }
+  body.js:not(.home) article h2,
+  body.js:not(.home) article h3,
+  body.js:not(.home) article h4 { break-after: avoid; }
+  body.js:not(.home) article img { max-height: 100%; object-fit: contain; }
+  body.js:not(.home) article table { break-inside: auto; }
+  body.js:not(.home) .chapter-nav,
+  body.js:not(.home) #global-progress { max-width: 1440px; width: calc(100% - 4rem); }
+}

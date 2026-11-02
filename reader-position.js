@@ -10,11 +10,15 @@ function saveReadingPosition() {
   const section = sections[active];
   const margin = (document.querySelector('.navbar')?.getBoundingClientRect().height || 60) + 12;
   const blocks = readingBlocks(section);
-  const block = blocks.findIndex(e => e.getBoundingClientRect().bottom > margin);
+  const viewport = readingArticle.getBoundingClientRect();
+  const block = blocks.findIndex(e => isSpreadReading()
+    ? [...e.getClientRects()].some(r => r.right > viewport.left + 1 && r.left < viewport.right - 1)
+    : e.getBoundingClientRect().bottom > margin);
   if (block < 0) return;
   put('position', JSON.stringify({
     section: section.id, block,
     signature: blocks[block].textContent.trim().slice(0, 100),
+    fragment: isSpreadReading() ? Math.max(0, [...blocks[block].getClientRects()].findIndex(r => r.right > viewport.left + 1 && r.left < viewport.right - 1)) : 0,
     offset: blocks[block].getBoundingClientRect().top - margin
   }));
   put('reading', JSON.stringify({ section: section.id,
@@ -25,9 +29,11 @@ function saveReadingPosition() {
 function restoreReadingPosition(section, target) {
   restoringReading = true;
   requestAnimationFrame(() => requestAnimationFrame(() => {
+    sizeSpread();
+    readingArticle.scrollLeft = 0;
     let saved;
     try { saved = JSON.parse(get('position')); } catch (e) {}
-    if (target !== section) target.scrollIntoView();
+    if (target !== section) scrollToReadingBlock(target);
     else if (saved?.section === section.id &&
              (location.hash === initialReadingHash || resumeReadingRequested)) {
       const blocks = readingBlocks(section);
@@ -35,12 +41,11 @@ function restoreReadingPosition(section, target) {
       if (block?.textContent.trim().slice(0, 100) !== saved.signature)
         block = blocks.find(e => e.textContent.trim().slice(0, 100) === saved.signature);
       if (block) {
-        const margin = (document.querySelector('.navbar')?.getBoundingClientRect().height || 60) + 12;
-        window.scrollTo(0, Math.max(0, scrollY + block.getBoundingClientRect().top - margin - saved.offset));
+        scrollToReadingBlock(block, saved.offset, saved.fragment || 0);
       } else window.scrollTo(0, 0);
     } else window.scrollTo(0, 0);
     resumeReadingRequested = false;
-    requestAnimationFrame(() => { restoringReading = false; progress(); saveReadingPosition(); });
+    requestAnimationFrame(() => { restoringReading = false; updateSpreadControls(); progress(); saveReadingPosition(); });
   }));
 }
 let resumeReadingRequested = false;

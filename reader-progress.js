@@ -44,6 +44,7 @@ const chapterLabels = sections.map(section => {
 });
 function chapterFraction() {
   if (active < 0) return 0;
+  if (isSpreadReading()) return spreadFraction();
   const rect = sections[active].getBoundingClientRect();
   const top = document.querySelector('.navbar').getBoundingClientRect().bottom + 12;
   const bottom = document.querySelector('.reader-bottom').getBoundingClientRect().top - 12;

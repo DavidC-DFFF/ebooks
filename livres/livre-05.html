@@ -294,6 +294,46 @@ nav.navbar select{border-color:var(--line);width:auto;flex:1}
 .progress-legend span::before{content:'';display:inline-block;width:.7rem;height:.7rem;margin-right:.35rem;background:var(--progress-unread)}
 .progress-legend .legend-current::before{background:var(--progress-current)}.progress-legend .legend-read::before{background:var(--progress-read)}
 @media print{#global-progress{display:none}}
+/* Deux pages à hauteur d’écran ; le téléphone conserve le défilement vertical. */
+.spread-end { display: none; }
+@media screen and (min-width: 1100px) and (min-height: 540px) {
+  .spread-end { display: block; }
+  body.js:not(.home) { overflow: hidden; }
+  body.js:not(.home) main {
+    max-width: 1440px;
+    width: calc(100% - 4rem);
+    padding: 0;
+    margin: 0 auto;
+    position: relative;
+    top: var(--reader-top, 76px);
+  }
+  body.js:not(.home) article {
+    position: relative;
+    height: var(--reader-height, calc(100dvh - 180px));
+    overflow-x: auto;
+    overflow-y: hidden;
+    scrollbar-width: none;
+    overscroll-behavior-x: contain;
+  }
+  body.js:not(.home) article::-webkit-scrollbar { display: none; }
+  body.js:not(.home) article section.active {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    column-count: 2;
+    column-gap: 4rem;
+    column-fill: auto;
+    orphans: 2;
+    widows: 2;
+  }
+  body.js:not(.home) article h2,
+  body.js:not(.home) article h3,
+  body.js:not(.home) article h4 { break-after: avoid; }
+  body.js:not(.home) article img { max-height: 100%; object-fit: contain; }
+  body.js:not(.home) article table { break-inside: auto; }
+  body.js:not(.home) .chapter-nav,
+  body.js:not(.home) #global-progress { max-width: 1440px; width: calc(100% - 4rem); }
+}
 
 nav.navbar button[hidden]{display:none}nav.navbar{gap:.2rem}nav.navbar button{min-width:36px;padding:.3rem}
 img{max-width:100%;height:auto}table{max-width:100%;display:block;overflow-x:auto}pre{white-space:pre-wrap;overflow-wrap:anywhere}section>h2:first-child,section>h3:first-child{margin-top:0}</style></head><body>
@@ -5171,6 +5211,115 @@ const readingMath = {
     return fraction >= 1 ? 100 : Math.min(99, Math.round(this.clamp(fraction) * 100));
   }
 };
+// Les colonnes sont paginées par doubles pages, sans modifier le texte source.
+const spreadQuery = matchMedia('(min-width: 1100px) and (min-height: 540px)');
+const readingArticle = document.querySelector('main article');
+const spreadEnd = document.createElement('span');
+spreadEnd.setAttribute('aria-hidden', 'true');
+spreadEnd.className = 'spread-end';
+spreadEnd.style.cssText = 'position:absolute;top:0;width:1px;height:1px;pointer-events:none';
+readingArticle.append(spreadEnd);
+function isSpreadReading() { return spreadQuery.matches && active >= 0; }
+function spreadStep() {
+  return readingArticle.clientWidth + parseFloat(getComputedStyle(sections[active]).columnGap);
+}
+function spreadMax() {
+  return Math.max(0, Math.ceil((readingArticle.scrollWidth - readingArticle.clientWidth - 2) / spreadStep()));
+}
+function spreadIndex() { return Math.round(readingArticle.scrollLeft / spreadStep()); }
+function spreadFraction() {
+  const max = spreadMax();
+  return max ? readingMath.clamp(spreadIndex() / max) : 1;
+}
+function updateSpreadControls() {
+  if (active < 0) return;
+  const spread = isSpreadReading();
+  const before = spread && spreadIndex() > 0;
+  const after = spread && spreadIndex() < spreadMax();
+  previous.textContent = before ? '← Page précédente' : '← Précédent';
+  previous.setAttribute('aria-disabled', String(active < 0));
+  next.textContent = after ? 'Page suivante →' : active === sections.length - 1 ? 'Sommaire' : 'Suivant →';
+}
+function turnSpread(direction) {
+  if (!isSpreadReading()) return false;
+  const target = spreadIndex() + direction;
+  if (target < 0 || target > spreadMax()) return false;
+  saveReadingPosition();
+  readingArticle.scrollLeft = target * spreadStep();
+  updateSpreadControls();
+  progress();
+  saveReadingPosition();
+  return true;
+}
+function scrollToReadingBlock(block, offset = 0, fragment = 0) {
+  if (!isSpreadReading()) {
+    const margin = (document.querySelector('.navbar')?.getBoundingClientRect().height || 60) + 12;
+    window.scrollTo(0, Math.max(0, scrollY + block.getBoundingClientRect().top - margin - offset));
+    return;
+  }
+  const fragments = block.getClientRects();
+  const first = fragments[Math.min(fragment, fragments.length - 1)];
+  if (!first) return;
+  const x = readingArticle.scrollLeft + first.left - readingArticle.getBoundingClientRect().left;
+  readingArticle.scrollLeft = Math.max(0, Math.floor((x + 1) / spreadStep())) * spreadStep();
+}
+function sizeSpread() {
+  const top = document.querySelector('.navbar').getBoundingClientRect().bottom + 24;
+  const bottom = document.querySelector('.reader-bottom').getBoundingClientRect().top - 24;
+  document.documentElement.style.setProperty('--reader-top', `${top}px`);
+  document.documentElement.style.setProperty('--reader-height', `${Math.max(160, bottom - top)}px`);
+  spreadEnd.style.left = '0';
+  if (isSpreadReading()) {
+    const step = spreadStep();
+    const gap = parseFloat(getComputedStyle(sections[active]).columnGap);
+    const spreads = Math.ceil((sections[active].scrollWidth + gap - 2) / step);
+    spreadEnd.style.left = `${Math.max(0, spreads * step - gap - 1)}px`;
+  }
+}
+previous.addEventListener('click', event => { if (turnSpread(-1)) event.preventDefault(); });
+next.addEventListener('click', event => { if (turnSpread(1)) event.preventDefault(); });
+readingArticle.addEventListener('scroll', () => {
+  if (!isSpreadReading()) return;
+  updateSpreadControls();
+  progress();
+  clearTimeout(readingTimer);
+  readingTimer = setTimeout(saveReadingPosition, 200);
+}, { passive: true });
+let lastWheelTurn = 0;
+readingArticle.addEventListener('wheel', event => {
+  if (!isSpreadReading() || event.ctrlKey || Math.abs(event.deltaX) > Math.abs(event.deltaY)) return;
+  // Laisser défiler un tableau ou un autre contenu imbriqué.
+  if (event.target.closest('table,pre')) return;
+  event.preventDefault();
+  if (Math.abs(event.deltaY) < 8 || Date.now() - lastWheelTurn < 350) return;
+  if (turnSpread(event.deltaY > 0 ? 1 : -1)) lastWheelTurn = Date.now();
+}, { passive: false });
+document.addEventListener('keydown', event => {
+  if (!isSpreadReading() || event.altKey || event.ctrlKey || event.metaKey ||
+      event.target.closest('input,select,textarea,[contenteditable]') ||
+      (event.key === ' ' && event.target.closest('button,a'))) return;
+  const direction = {ArrowRight: 1, ArrowDown: 1, PageDown: 1, ArrowLeft: -1, ArrowUp: -1, PageUp: -1}[event.key] || (event.key === ' ' ? (event.shiftKey ? -1 : 1) : 0);
+  if (direction && turnSpread(direction)) event.preventDefault();
+});
+let layoutFrame;
+function reflowReading() {
+  cancelAnimationFrame(layoutFrame);
+  layoutFrame = requestAnimationFrame(() => {
+    let saved;
+    try { saved = JSON.parse(get('position')); } catch (e) {}
+    sizeSpread();
+    if (active >= 0 && saved?.section === sections[active].id) {
+      const block = readingBlocks(sections[active]).find(e => e.textContent.trim().slice(0, 100) === saved.signature);
+      if (block) scrollToReadingBlock(block, saved.offset, saved.fragment || 0);
+    }
+    updateSpreadControls();
+    progress();
+  });
+}
+addEventListener('resize', reflowReading);
+document.addEventListener('fullscreenchange', reflowReading);
+document.getElementById('smaller').addEventListener('click', reflowReading);
+document.getElementById('larger').addEventListener('click', reflowReading);
 const chapterWeights = sections.map(section => Math.max(1,
   section.textContent.trim().split(/\s+/u).filter(Boolean).length));
 let chapterRead = sections.map(() => 0);
@@ -5217,6 +5366,7 @@ const chapterLabels = sections.map(section => {
 });
 function chapterFraction() {
   if (active < 0) return 0;
+  if (isSpreadReading()) return spreadFraction();
   const rect = sections[active].getBoundingClientRect();
   const top = document.querySelector('.navbar').getBoundingClientRect().bottom + 12;
   const bottom = document.querySelector('.reader-bottom').getBoundingClientRect().top - 12;
@@ -5259,11 +5409,15 @@ function saveReadingPosition() {
   const section = sections[active];
   const margin = (document.querySelector('.navbar')?.getBoundingClientRect().height || 60) + 12;
   const blocks = readingBlocks(section);
-  const block = blocks.findIndex(e => e.getBoundingClientRect().bottom > margin);
+  const viewport = readingArticle.getBoundingClientRect();
+  const block = blocks.findIndex(e => isSpreadReading()
+    ? [...e.getClientRects()].some(r => r.right > viewport.left + 1 && r.left < viewport.right - 1)
+    : e.getBoundingClientRect().bottom > margin);
   if (block < 0) return;
   put('position', JSON.stringify({
     section: section.id, block,
     signature: blocks[block].textContent.trim().slice(0, 100),
+    fragment: isSpreadReading() ? Math.max(0, [...blocks[block].getClientRects()].findIndex(r => r.right > viewport.left + 1 && r.left < viewport.right - 1)) : 0,
     offset: blocks[block].getBoundingClientRect().top - margin
   }));
   put('reading', JSON.stringify({ section: section.id,
@@ -5274,9 +5428,11 @@ function saveReadingPosition() {
 function restoreReadingPosition(section, target) {
   restoringReading = true;
   requestAnimationFrame(() => requestAnimationFrame(() => {
+    sizeSpread();
+    readingArticle.scrollLeft = 0;
     let saved;
     try { saved = JSON.parse(get('position')); } catch (e) {}
-    if (target !== section) target.scrollIntoView();
+    if (target !== section) scrollToReadingBlock(target);
     else if (saved?.section === section.id &&
              (location.hash === initialReadingHash || resumeReadingRequested)) {
       const blocks = readingBlocks(section);
@@ -5284,12 +5440,11 @@ function restoreReadingPosition(section, target) {
       if (block?.textContent.trim().slice(0, 100) !== saved.signature)
         block = blocks.find(e => e.textContent.trim().slice(0, 100) === saved.signature);
       if (block) {
-        const margin = (document.querySelector('.navbar')?.getBoundingClientRect().height || 60) + 12;
-        window.scrollTo(0, Math.max(0, scrollY + block.getBoundingClientRect().top - margin - saved.offset));
+        scrollToReadingBlock(block, saved.offset, saved.fragment || 0);
       } else window.scrollTo(0, 0);
     } else window.scrollTo(0, 0);
     resumeReadingRequested = false;
-    requestAnimationFrame(() => { restoringReading = false; progress(); saveReadingPosition(); });
+    requestAnimationFrame(() => { restoringReading = false; updateSpreadControls(); progress(); saveReadingPosition(); });
   }));
 }
 let resumeReadingRequested = false;

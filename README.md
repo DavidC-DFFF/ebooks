@@ -28,6 +28,8 @@ Pour les prochains ouvrages, reprendre la lecture par partie, les paragraphes ju
 
 Le lecteur PMTV reprend désormais les couleurs et la typographie de la variante Impeccable : fond ivoire, texte sombre, accents verts, police Georgia, interligne 1,75 et réglages indépendants A− / A+ mémorisés. La navigation par partie et les paragraphes justifiés avec alinéas restent ceux de PMTV.
 
+Sur les fenêtres d’au moins 1100 × 540 pixels, le texte se présente en deux colonnes à hauteur d’écran, y compris en plein écran. Les boutons précédent/suivant parcourent les doubles pages, puis les chapitres ; la molette et les flèches du clavier permettent aussi de tourner les pages dans un chapitre. La progression et la reprise suivent cette pagination. Les fenêtres plus étroites conservent le défilement vertical. `reader-layout.css` et `reader-layout.js` sont intégrés dans chaque HTML autonome à la génération.
+
 L’accueil dispose d’un bouton clair/sombre visible et partage le thème avec les lecteurs via la préférence locale `ebooks-theme`.
 
 ## Politique économique — Ludwig von Mises

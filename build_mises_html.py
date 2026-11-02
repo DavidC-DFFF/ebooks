@@ -122,6 +122,7 @@ pmtv_css += '''
 .progress-legend .legend-current::before{background:var(--progress-current)}.progress-legend .legend-read::before{background:var(--progress-read)}
 @media print{#global-progress{display:none}}
 '''
+pmtv_css += (ROOT / 'reader-layout.css').read_text(encoding='utf-8')
 pmtv_script = '''
 document.body.classList.add('js');
 const sections=[...document.querySelectorAll('article section')],toc=document.getElementById('toc'),previous=document.getElementById('previous'),next=document.getElementById('next'),resume=document.getElementById('resume');
@@ -143,6 +144,7 @@ function progress(){updateChapterProgress()}
 addEventListener('hashchange',show);addEventListener('scroll',progress,{passive:true});addEventListener('resize',progress);
 '''
 pmtv_script += (ROOT / 'progress-math.js').read_text(encoding='utf-8')
+pmtv_script += (ROOT / 'reader-layout.js').read_text(encoding='utf-8')
 pmtv_script += (ROOT / 'reader-progress.js').read_text(encoding='utf-8')
 pmtv_script += (ROOT / 'reader-position.js').read_text(encoding='utf-8')
 pmtv_script += (ROOT / 'offline-client.js').read_text(encoding='utf-8')
