@@ -32,10 +32,24 @@
     .reading-state { border: 0; padding: .45rem .25rem; white-space: nowrap; font-size: .9rem; color: var(--accent); }
     dialog { background: var(--bg); color: var(--text); border: 1px solid var(--line); border-radius: .5rem; max-width: min(90vw, 460px); padding: 1.5rem; }
     dialog::backdrop { background: rgb(0 0 0 / .45); }
+    body:has(dialog[open]) { overflow: hidden; }
     dialog h2 { margin-top: 0; font-size: 1.2rem; }
     .dialog-actions { display: flex; flex-wrap: wrap; gap: .6rem; }
     a { color: var(--accent); text-underline-offset: .2em; }
     a:focus-visible { outline: 3px solid var(--accent); outline-offset: 4px; }
+    #sync-settings { width: min(92vw, 560px); max-width: min(92vw, 560px); max-height: 90dvh; overflow-y: auto; font: 1rem/1.5 system-ui, sans-serif; }
+    #sync-login { padding-bottom: 1rem; }
+    #sync-login label { display: block; margin: .75rem 0; }
+    #sync-login input:not([type="checkbox"]) { display: block; width: 100%; min-height: 44px; font: inherit; padding: .5rem; background: var(--bg); color: var(--text); border: 1px solid var(--line); border-radius: .3rem; }
+    #sync-login input:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+    .sync-help, #sync-status { font-size: .9rem; }
+    [hidden] { display: none !important; }
+    .account-dialog-header { display: flex; align-items: center; justify-content: space-between; gap: 1rem; margin-bottom: 1rem; }
+    #sync-settings .account-dialog-header h2 { margin: 0; font-size: 1.2rem; }
+    #close-account { flex: 0 0 auto; }
+    #sync-settings h2 { font: 600 1.35rem/1.4 system-ui, sans-serif; margin: 1.25rem 0 .75rem; }
+    #account-switch { display: flex; gap: .5rem; margin: 1rem 0; }
+    #account-switch button[aria-pressed="true"], #sync-login button[type="submit"] { background: var(--accent); color: var(--bg); border-color: var(--accent); }
   </style>
   <script>
     try {
@@ -45,15 +59,35 @@
   </script>
   <script src="offline-client.js" defer></script>
   <script src="library-state.js" defer></script>
+  <script src="sync-config.js" defer></script>
+  <script src="sync-core.js" defer></script>
+  <script src="reading-sync.js" defer></script>
+  <script src="sync-ui.js" defer></script>
 </head>
 <body>
   <main>
-    <div class="settings"><button id="refresh-site" type="button">↻ Resynchroniser</button><button id="toggle-theme" type="button" aria-label="Activer le mode sombre" aria-pressed="false">Mode sombre</button></div>
+    <div class="settings"><button id="open-account" type="button">Se connecter</button><button id="refresh-site" type="button">↻ Resynchroniser</button><button id="toggle-theme" type="button" aria-label="Activer le mode sombre" aria-pressed="false">Mode sombre</button></div>
     <p id="offline-status" role="status" aria-live="polite">Préparation de la copie hors connexion…</p>
     <header>
       <h1>Bibliothèque</h1>
       <p>Des livres à lire, à votre rythme.</p>
     </header>
+    <dialog id="sync-settings" aria-labelledby="account-dialog-title">
+      <div class="account-dialog-header"><h2 id="account-dialog-title">Mon compte</h2><button id="close-account" type="button" aria-label="Fermer la fenêtre du compte">Fermer</button></div>
+      <p id="sync-status" role="status" aria-live="polite">Lectures enregistrées sur cet appareil.</p>
+      <div id="account-switch"><button id="choose-login" type="button" aria-pressed="true">Se connecter</button><button id="choose-register" type="button" aria-pressed="false">Créer un compte</button></div>
+      <h2 id="account-title">Se connecter</h2>
+      <form id="sync-login">
+        <label>Identifiant <input name="username" autocomplete="username" autocapitalize="none" spellcheck="false" required maxlength="100"></label>
+        <label>Mot de passe <input name="password" type="password" autocomplete="current-password" required maxlength="200"></label>
+        <label id="confirm-password" hidden>Confirmer le mot de passe <input name="confirm" type="password" autocomplete="new-password" maxlength="200"></label>
+        <label><input name="remember" type="checkbox" checked> Rester connecté sur cet appareil</label>
+        <label><input name="importLocal" type="checkbox" checked> Ajouter les lectures de cet appareil à mon compte</label>
+        <p class="sync-help">Retrouve ta progression et ton dernier passage lu sur tes autres appareils. Tu peux aussi continuer à lire sans connexion.</p>
+        <button type="submit">Se connecter</button>
+      </form>
+      <div id="account-connected" hidden><p id="account-name"></p><div class="dialog-actions"><button id="sync-now" type="button">Synchroniser les lectures</button><button id="sync-disconnect" type="button">Se déconnecter</button></div></div>
+    </dialog>
     <div id="catalogue">
 <details><summary>Friedrich Hayek</summary><ul aria-label="Livres de Friedrich Hayek"><li data-prefix="hayek-route-servitude" data-parts="21"><a href="livres/hayek-route-servitude.html">La Route de la servitude</a><button class="reading-state" type="button" aria-label="Progression : La Route de la servitude">(0 %)</button></li></ul></details>
 <details><summary>Fritz Machlup</summary><ul aria-label="Livres de Fritz Machlup"><li data-prefix="livre-40" data-parts="17"><a href="livres/livre-40.html">Guide à travers les panacées économiques</a><button class="reading-state" type="button" aria-label="Progression : Guide à travers les panacées économiques">(0 %)</button></li></ul></details>

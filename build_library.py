@@ -218,7 +218,7 @@ for book in BOOKS:
     options=''.join(f'<option value="{s["element"].get("id")}">{esc(s["title"])}</option>' for s in book['sections'])
     toc=''.join(f'<a href="#{s["element"].get("id")}">{esc(s["title"])}</a>' for s in book['sections'])
     content=''.join(html.tostring(s['element'],encoding='unicode') for s in book['sections'])
-    script=STYLE['pmtv_script'].replace('mises-pe-pmtv-',book['id']+'-')
+    script=STYLE['pmtv_script'].replace('mises-pe-pmtv',book['id'])
     css=STYLE['pmtv_css']+'\nimg{max-width:100%;height:auto}table{max-width:100%;display:block;overflow-x:auto}pre{white-space:pre-wrap;overflow-wrap:anywhere}section>h2:first-child,section>h3:first-child{margin-top:0}'
     warning=f'<p>{len(missing_images)} illustration(s) indisponible(s) sur le site original.</p>' if missing_images else ''
     page=f'''<!doctype html><html lang="fr"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>{esc(book['title'])} — {esc(book['author'])}</title><style>{css}</style></head><body>
@@ -257,7 +257,9 @@ index=re.sub(pattern,catalogue,index,flags=re.S)
 (ROOT/'verification-collection.json').write_text(json.dumps(report,ensure_ascii=False,indent=2),encoding='utf-8',newline='\n')
 (ROOT/'catalogue-livres.json').write_text(json.dumps([{**{k:b[k] for k in ('id','title','author','url','output')},'group':b.get('group',b['author'])} for b in BOOKS],ensure_ascii=False,indent=2),encoding='utf-8',newline='\n')
 import hashlib
-offline_paths=['index.html','offline-client.js','library-state.js','catalogue-livres.json']+[b['output'] for b in BOOKS]
+sync_books={('mises-pe-pmtv' if b['id']=='livre-23' else b['id']):{s.get('id'):max(1,len(s.text_content().split())) for s in html.fromstring((ROOT/b['output']).read_text(encoding='utf-8')).xpath('//article/section')} for b in BOOKS}
+(ROOT/'sync-books.json').write_text(json.dumps(sync_books,ensure_ascii=False,indent=2),encoding='utf-8',newline='\n')
+offline_paths=['index.html','offline-client.js','library-state.js','catalogue-livres.json','sync-config.js','sync-core.js','reading-sync.js','sync-ui.js','sync-books.json']+[b['output'] for b in BOOKS]
 offline_paths+=sorted({asset for b in BOOKS for asset in b.get('assets',[])})
 manifest={'books':len(BOOKS),'files':[{'path':p,'sha256':hashlib.sha256((ROOT/p).read_bytes()).hexdigest()} for p in offline_paths]}
 (ROOT/'offline-manifest.json').write_text(json.dumps(manifest,ensure_ascii=False,indent=2),encoding='utf-8',newline='\n')

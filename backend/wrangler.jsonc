@@ -1,0 +1,15 @@
+{
+  "name": "ebooks-reading",
+  "main": "accounts.mjs",
+  "compatibility_date": "2026-11-02",
+  "workers_dev": true,
+  "observability": {"enabled": false},
+  "vars": {
+    "ALLOWED_ORIGINS": "https://davidc-dfff.github.io,http://localhost:8765,http://localhost:8768"
+  },
+  "d1_databases": [{
+    "binding": "DB",
+    "database_name": "ebooks-reading",
+    "database_id": "dfcecd1e-4593-4661-852d-938fa2f2f529"
+  }]
+}

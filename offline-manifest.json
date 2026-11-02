@@ -3,7 +3,7 @@
   "files": [
     {
       "path": "index.html",
-      "sha256": "fc8755827d7a7ef6e280aa37444fb1cb0ff02f30de7f357de986ed29851c3f8e"
+      "sha256": "dade8e29574ac1ada656923e9bc51a17d91dbfff97188b8ec8ef532677144538"
     },
     {
       "path": "offline-client.js",
@@ -11,191 +11,211 @@
     },
     {
       "path": "library-state.js",
-      "sha256": "59fca8b7fbf6c5c87f1110e81aff1b22aec04443216041361591d6770d68e406"
+      "sha256": "edc3fc471c8354bce69aacda0e6db2636ee7dfb311aa9506690cf3ef613b8a64"
     },
     {
       "path": "catalogue-livres.json",
       "sha256": "f950d0b664ed3bf6421aecddb46d2618d0f23c90de8bfe8c56762afaa3d7bcc7"
     },
     {
+      "path": "sync-config.js",
+      "sha256": "bb39f7dd0f07a7142a3ecf55bc6601ee36be8e94bd38b0b9f201632b851193f1"
+    },
+    {
+      "path": "sync-core.js",
+      "sha256": "935a718dad9b2739900752a6092cbc4af5b8ec3939e8425cd0a6f65ee7e2a018"
+    },
+    {
+      "path": "reading-sync.js",
+      "sha256": "cc6f5f77ddcb971b31eba94d5820b798c90a195241907e23fbe8751c904045d3"
+    },
+    {
+      "path": "sync-ui.js",
+      "sha256": "b919ef33864f0900a38c5dcfc2e7a35425d4f07a000277c666ac8a98b7a0ae72"
+    },
+    {
+      "path": "sync-books.json",
+      "sha256": "fb543604c446363d8241be359d891bc47a245ea0e4f75815372ac4ceb811e0ee"
+    },
+    {
       "path": "livres/livre-01.html",
-      "sha256": "1975161df0bd85bfbd294ee9a759cd330bd747da5010df69542227b613b3ec6e"
+      "sha256": "a781363a6a13fa46ddad172541feef9cecf55eeeb7f6ae725fda918c1045a335"
     },
     {
       "path": "livres/livre-02.html",
-      "sha256": "564fe9107c7c235d0c7d37abdd76c80f7de75ae0f7284b389119ffe38913f056"
+      "sha256": "e1d205547611e98ebb49e526e15ec58561907c26c5635b5b3371ad66c30ef30e"
     },
     {
       "path": "livres/livre-03.html",
-      "sha256": "90988005af3b464956576ad39c83579a9165eede4c31041095971327476c6401"
+      "sha256": "62f2fc361d29756db02ccf21834d89a2124c8ab3ce9bd06c2236836a70dba342"
     },
     {
       "path": "livres/livre-04.html",
-      "sha256": "05ca386ee8884a9b4ab6c6bd48ee689692713875988069a3141dfc3461168996"
+      "sha256": "173298ab489732f116934e41391b79e883f124152b75a56215df6852a4b401dd"
     },
     {
       "path": "livres/livre-05.html",
-      "sha256": "801ec43090c76992d116281a51bbdad49c1164ce9d92404c3a144704bcbcf09c"
+      "sha256": "db940a727de9e634c929ca3ba560801f6f4956ee507dc675f55218eae1111c17"
     },
     {
       "path": "livres/livre-06.html",
-      "sha256": "bf12127f8ddf0d3bf061211df9a660f6fa64631821eae4b66002363157bbb53d"
+      "sha256": "da6f88fa47a3103e00e36e391d7878ca501ab54b305a4ede0746aa435a9117ff"
     },
     {
       "path": "livres/livre-07.html",
-      "sha256": "f61816b290198d5d9335c9041af55e2076541915379dd9af06c12c44881fe57d"
+      "sha256": "5a2d5e674454284ebd33600645fe01c900eaf388a6043a1cfa58fea0f2ef47c8"
     },
     {
       "path": "livres/livre-08.html",
-      "sha256": "a50adf48fec2a3a66fd8928df20e5db3b98346173cf8ccb5a2575a24e7b31aa5"
+      "sha256": "a0e642ddf31af0273ee176b33a020577e2b611b067bc0ae0a75783e79dbcc8c3"
     },
     {
       "path": "livres/livre-09.html",
-      "sha256": "c0e618cfe94788db7b2420f869aee913aed420079c00b97f6e2d2a92d6c25490"
+      "sha256": "c06706091cf0302382b32802b11abd43e216c1b64ea6e5827640ece4fb566a99"
     },
     {
       "path": "livres/livre-10.html",
-      "sha256": "baf625db51c6cf610ca5c1f978bdf5e309ace9596cbe05f4904796a9b83d47a9"
+      "sha256": "14a69778558502554255fbe5fd811f63df7334545695cf027f04373c35a2d470"
     },
     {
       "path": "livres/livre-11.html",
-      "sha256": "a08cb85f47f41b8b2d3be4ca720c1b7a27c2d10954951b94be76115351b21c4b"
+      "sha256": "193320f0b2c758a7243ae93079840bb0f1b82fadbc7286562eba11abf7ea26b7"
     },
     {
       "path": "livres/livre-12.html",
-      "sha256": "6d0e37859dc39b8a678faeda397b514e3a69199812928c124e386ea294405985"
+      "sha256": "e01430a7364c3196a61152f244e25e0a8cdf1d0970ee51a2133ae56f4a1f4b06"
     },
     {
       "path": "livres/livre-13.html",
-      "sha256": "858c5cbd6628413bc16abf4a10185bb59b44108e7320e5b8fb6dfa6e55753d19"
+      "sha256": "2b0c00b0f4c0469c84829d58531e24e648f78c8302f27b19e7b076c6e2236d50"
     },
     {
       "path": "livres/livre-14.html",
-      "sha256": "30d8cf52fa51a5a1b0965591ed3293d98f9797a2c869f5378a3120b063baabb4"
+      "sha256": "7df629dcaa657eb3b46b2c9df18da83b6187f22f4d5e51484ab7fe20cc310dec"
     },
     {
       "path": "livres/livre-15.html",
-      "sha256": "b3a9a5386c8f1585f5d902044332a2dacc9e97bf99877330fae901f7ec3d4d09"
+      "sha256": "5db1cbecc289ccd0edf8aed302c6f3be0abe061c99b7bec0a3b1ff11ba947546"
     },
     {
       "path": "livres/livre-16.html",
-      "sha256": "aa932821a020e309118c6dfca1891ba427b08dd0e577734fcd6f9c8f6a750451"
+      "sha256": "d579ce5ade198cfddbbd50c9748b3af4be8b9abc799e27397790266b55e0a360"
     },
     {
       "path": "livres/livre-17.html",
-      "sha256": "a94b9cfeb7ee7f21bcf93122e0e7097b4a24d32804859f1e648e56533bfdd7ac"
+      "sha256": "c347dae3420b91690711926788be68b229e6f88c632573ac8f59185b099ca042"
     },
     {
       "path": "livres/livre-18.html",
-      "sha256": "672b5c5e51b92f533d665fdb827a7e9f969f004cdf9d32ad1bd340591ed855cc"
+      "sha256": "668806f524f7e13f325e404e5e4e396a03de3560d2605382bfa2eeba8b4ac4e6"
     },
     {
       "path": "livres/livre-19.html",
-      "sha256": "6deffaeb2918d6e6cfcbe42dcc14cebb91a282314b9af77031a444d034196a21"
+      "sha256": "2f2e649315f10a81045e0eca26b210c32b814d4ac0cf7da33b5b9263e85a7aee"
     },
     {
       "path": "livres/livre-20.html",
-      "sha256": "b0a758d56d0b20f874d00d16cd8b50c3aca0bdf3cf726dea10fdb46e96dcebfb"
+      "sha256": "c523570b46f3ed4ec8f102111c74a17c3f554ebceb42d7fd1ad9d7d993e7108f"
     },
     {
       "path": "livres/livre-21.html",
-      "sha256": "d8c853e46ef1c148ffed12a86b38417d4436c4f80d58b8cc47f4f566b62fdd71"
+      "sha256": "69d627a05c310df59ef95bd530d836802a2c53cf2936714554597160d7d0d015"
     },
     {
       "path": "livres/livre-22.html",
-      "sha256": "67afd9df8341dd4205fc25dfa419bf4b18e6a0ce295002c3b44de76337bf8e23"
+      "sha256": "d563e52a83db33d1e0414819c2cd8d700ae81b878687e08a1089a69d51875c2c"
     },
     {
       "path": "Mises - Politique économique.html",
-      "sha256": "8bf01972da745dcbfe21eef0cef007e49c38f5ea6bbdd13a1fc8bebb421ad925"
+      "sha256": "d14c4ba80cd6054e26040a39cede6a58cce5a4a68c9653b5ed4aec91f2aa093a"
     },
     {
       "path": "livres/livre-24.html",
-      "sha256": "22095316958911bf46f3eba3f5670d293865a01c532634785674cc4701b7738b"
+      "sha256": "9682b3b8613c429969c1e7e31ef6881fe03d8907345b398554ee46d6a3581988"
     },
     {
       "path": "livres/livre-25.html",
-      "sha256": "993f64c22c8f1df427356d388e861c826b3b96ed9634ef41c679ff74dc026d5a"
+      "sha256": "623318d223d5cd53ead2e3eb81db1eca923153d720bf91ce65f949b247d24173"
     },
     {
       "path": "livres/livre-26.html",
-      "sha256": "08e5037d010b00f92e3d82f10d618457b05e09d5143cdb0ea269c141f82b20e3"
+      "sha256": "edb45f478cd27a3b857bd9d47db2c777f1b768d1a78118f5b66c95d5708c983d"
     },
     {
       "path": "livres/livre-27.html",
-      "sha256": "1780bb8f695906cb2006f60d0da451c3b312f314ddef52a8bc67b51c25c7db1a"
+      "sha256": "2bd5aa78042850c7e86ed3a6e133593077f9bfff1bde2e9189c0cfc83f371e1d"
     },
     {
       "path": "livres/livre-28.html",
-      "sha256": "94ee2f83ce4fc251e89a42618d02ca937c73963462db0843466e019511dbdb9b"
+      "sha256": "d3ad7349b806794f090474f23a3c5ee3934f2cd44e5ce8a73fe9bf32888822ac"
     },
     {
       "path": "livres/livre-29.html",
-      "sha256": "621612940efa4ae4b2077d7d24941d044568b8115bf51735d55d0dd7d9edc674"
+      "sha256": "f70532e3adb7c6a129a581dc50cd52307e01cca30383a9a784eb07943a8bf1a3"
     },
     {
       "path": "livres/livre-30.html",
-      "sha256": "7b8d3be724344c5de3c0cdb29cef1d9227bd52eb5dd911fd4697cce986ae985f"
+      "sha256": "fa0548b4e5c8e049675b27449b8063c32b1c7f4db2a4a081f4216d740314a599"
     },
     {
       "path": "livres/livre-31.html",
-      "sha256": "345c84ca775acf5f98e631e5a27c24b7faf0b85f8777a1e5396b059edf120766"
+      "sha256": "89392bb45a371bbe0ab7c52cedf1e62d9901713c0a58bae292285f4f76f6ac4b"
     },
     {
       "path": "livres/livre-32.html",
-      "sha256": "84fa32075ce3a9ec127277235a9d2831a851844fd6bc5e154b428113946866d7"
+      "sha256": "bc0284ea7705a75db539b271e98d5b75b35f8ffee589eba630c7655046fba793"
     },
     {
       "path": "livres/livre-33.html",
-      "sha256": "89ec17e72ec3b1b808cb2e32eaab131e76492a0fc59edaa7ab9e3d3f3b8f5271"
+      "sha256": "4fcb7fcd0b1b9f63f35b541c0b2d58009ca463911a340412e105a724afa22b76"
     },
     {
       "path": "livres/livre-34.html",
-      "sha256": "dbc3b5526464f4550554dae2a5b1597bd81551e5404f788ef31e93288783dd0e"
+      "sha256": "de8bad0baee341f5c40bbb8172af7eff8dd33a125865f5cafefb56c3c4272319"
     },
     {
       "path": "livres/livre-35.html",
-      "sha256": "0595061c8a84f226ef47bf35f126e36ff9029698ba762db8dc90f3fa96b53e49"
+      "sha256": "78b8bbbf8015921685eada55ecd59e0874bcbec54888c88dbcc381cbd71a1432"
     },
     {
       "path": "livres/livre-36.html",
-      "sha256": "ff2c62cae60222e0d667be11eded1a8cf0ad57e793e200d460be752ccc9295fe"
+      "sha256": "a9473ea5610e8f98dceb1acec3b3c54d1dfc3df9816ef4f67236fcd477788e5b"
     },
     {
       "path": "livres/livre-37.html",
-      "sha256": "46a774460ba212abaea76f58a90fbfc51f80f656987bf8558e4c58672951fffc"
+      "sha256": "88753b9e4fbb7ae53410621e4498c4f6ec3977300c825fb6fa8654a365dba55b"
     },
     {
       "path": "livres/livre-38.html",
-      "sha256": "274fcaf05fbc130d68e4373e1c8d254e9d644e65952ed12e2e61aa0e143f0fda"
+      "sha256": "67f43e84670170810b2fd25d9050a66460add90890ff313ae8b20835f4fba013"
     },
     {
       "path": "livres/livre-39.html",
-      "sha256": "ac5482c87aa3b22aea9f9715b674c3d48412454dc3e3b3ff7715ee73f8a24a54"
+      "sha256": "adca281cd5ea094e2c8462fac24c86753732dbd18adc2ac325540353d76b5db5"
     },
     {
       "path": "livres/livre-40.html",
-      "sha256": "2f2fecc4a5844328c16841b1b3a60e3d859fc4e0cbd5ea414bdb414f1ccd70f9"
+      "sha256": "032f82cd86b3e2484ed53eda48dccee9b8fabb219007142b8ce32a91904fabd0"
     },
     {
       "path": "livres/livre-41.html",
-      "sha256": "ba2159509774cade177786f475138ea4866105aea82897b7a6d11b4f0f328f55"
+      "sha256": "a5424a3b15f71fb269d89acb1c98202a96eefbae60575e57b8ab2b6414cb0d3c"
     },
     {
       "path": "livres/marx-capital-livre-1.html",
-      "sha256": "1e20516789190e540c93d07adf396c13c06f50d21cea6abae034c12f5f081ed4"
+      "sha256": "f3c531ed2486a4493639e4a20347a92b848e4fbc2b0e187698444443f34cce81"
     },
     {
       "path": "livres/marx-capital-populaire.html",
-      "sha256": "11a1613e5a780d5c98451e81dd4283315b377ad6fc7fe8be1537d9aaf6e921f2"
+      "sha256": "421f0a26bb95562f59f00fc3d8a23ae1279c62ad8616ce02fdd85431cbeae78e"
     },
     {
       "path": "livres/hayek-route-servitude.html",
-      "sha256": "a7fa0f72f2133f38367f6d305b7039a90047a7cb06a93f1bb24f5dadd46992bd"
+      "sha256": "4ab1abf627c7433c1207182cb2d03a8f8f5337bafd543f524c625d1e8035f23c"
     },
     {
       "path": "livres/robinson-essai-marxienne.html",
-      "sha256": "b62e8c7ae81159fa5aaa12ae5fea16503b4397e1dc575c2f8465756b1ff0303c"
+      "sha256": "80f70da558aa430c07954a268bfaf8a6168b846e71d647378dafd3d912414ba7"
     },
     {
       "path": "assets/robinson-facsimile.pdf",

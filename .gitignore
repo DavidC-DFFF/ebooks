@@ -15,4 +15,10 @@ __pycache__/
 .venv/
 tmp/
 .vendor/
+node_modules/
+.wrangler/
+.dev.vars
+.dev.vars.*
+.sync-secrets/
+*.private.json
 !assets/robinson-facsimile.pdf

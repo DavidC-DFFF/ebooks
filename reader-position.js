@@ -2,6 +2,17 @@
 let restoringReading = false;
 let readingTimer;
 const initialReadingHash = location.hash;
+let readingSyncEngaged = false;
+for (const type of ['pointerdown', 'keydown', 'wheel', 'touchstart'])
+  document.addEventListener(type, () => { readingSyncEngaged = true; }, {passive: true});
+addEventListener('reading-sync-applied', event => {
+  if (!event.detail.includes('mises-pe-pmtv')) return;
+  try {
+    const saved = JSON.parse(get('chapters')) || {};
+    chapterRead = sections.map(section => readingMath.clamp(saved[section.id]));
+    progress();
+  } catch {}
+});
 function readingBlocks(section) {
   return [...section.querySelectorAll('p,h2,h3,h4,li,table')].filter(e => e.textContent.trim());
 }
@@ -25,6 +36,7 @@ function saveReadingPosition() {
     percent: updateChapterProgress(true),
     currentFraction: chapterFraction(),
     updated: Date.now() }));
+  if (readingSyncEngaged) globalThis.ebooksSync?.capture('mises-pe-pmtv');
 }
 function restoreReadingPosition(section, target) {
   restoringReading = true;

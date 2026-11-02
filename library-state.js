@@ -51,11 +51,13 @@
   });
   document.getElementById('reset-book').addEventListener('click', () => {
     try { ['reading', 'position', 'last', 'chapters'].forEach(key => localStorage.removeItem(selected.dataset.prefix + '-' + key)); } catch (e) {}
+    globalThis.ebooksSync?.capture(selected.dataset.prefix, true);
     dialog.close();
     refresh();
   });
   document.getElementById('close-reading').addEventListener('click', () => dialog.close());
   addEventListener('pageshow', refresh);
   addEventListener('storage', refresh);
+  addEventListener('reading-sync-applied', refresh);
   refresh();
 })();
