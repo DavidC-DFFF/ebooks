@@ -62,10 +62,22 @@ self.addEventListener('fetch', event => {
     const canonical = new URL(url.href);
     canonical.search = ''; canonical.hash = '';
     if (canonical.pathname === ROOT.pathname) canonical.pathname += 'index.html';
+    // Les lecteurs et le code doivent refléter la version publiée, même lorsqu'une
+    // copie complète plus ancienne est conservée pour le mode hors connexion.
+    const fresh = /\.(?:html|js|css|json)$/i.test(canonical.pathname);
+    let networkResponse, networkError;
+    if (fresh) {
+      try {
+        networkResponse = await fetch(event.request, { cache: 'no-cache' });
+        if (networkResponse.ok) return networkResponse;
+      } catch (error) { networkError = error; }
+    }
     if (current) {
       const cached = await (await caches.open(current.cache)).match(canonical.href);
       if (cached) return cached;
     }
+    if (networkResponse) return networkResponse;
+    if (networkError) throw networkError;
     return fetch(event.request);
   })());
 });

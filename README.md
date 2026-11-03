@@ -30,6 +30,8 @@ Le lecteur PMTV reprend désormais les couleurs et la typographie de la variante
 
 Sur les fenêtres d’au moins 1100 × 540 pixels, le texte se présente en deux colonnes à hauteur d’écran, y compris en plein écran. Les boutons précédent/suivant parcourent les doubles pages, puis les chapitres ; la molette et les flèches du clavier permettent aussi de tourner les pages dans un chapitre. La progression et la reprise suivent cette pagination. Les fenêtres plus étroites conservent le défilement vertical. `reader-layout.css` et `reader-layout.js` sont intégrés dans chaque HTML autonome à la génération.
 
+En ligne, les pages et le code sont vérifiés auprès du serveur pour éviter qu’une ancienne copie hors connexion masque une mise à jour du lecteur. En cas d’échec réseau ou de ressource indisponible, la copie complète reste utilisée. Le bouton « Resynchroniser » renouvelle cette copie pour disposer aussi des dernières versions hors connexion.
+
 L’accueil dispose d’un bouton clair/sombre visible et partage le thème avec les lecteurs via la préférence locale `ebooks-theme`.
 
 ## Politique économique — Ludwig von Mises

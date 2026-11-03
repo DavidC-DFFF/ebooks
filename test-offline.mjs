@@ -26,7 +26,8 @@ function worker() {
       for(const [path,content] of assets) files.push({path:path.slice(root.length),sha256:badHash?'invalid':await hash(content)});
       return new Response(JSON.stringify({books:1,files}));
     }
-    return assets.has(url)?new Response(assets.get(url)):new Response('missing',{status:404});
+    const assetURL=url===root?root+'index.html':url;
+    return assets.has(assetURL)?new Response(assets.get(assetURL)):new Response('missing',{status:404});
   };
   vm.runInNewContext(readFileSync('service-worker.js','utf8'),{
     URL,Response,Uint8Array,crypto:webcrypto,caches,fetch,
@@ -34,6 +35,7 @@ function worker() {
   });
   return {
     requests,stores,setOffline(v){fail=v},setBadHash(v){badHash=v},
+    setAsset(path,content){assets.set(root+path,content)},removeAsset(path){assets.delete(root+path)},
     async send(type){let pending;const messages=[];handlers.message({data:{type},ports:[{postMessage:m=>messages.push(m)}],waitUntil:p=>pending=p});await pending;return messages.at(-1)},
     async navigate(path){let response;handlers.fetch({request:new Request(root+path),respondWith:r=>response=r});return response},
   };
@@ -43,7 +45,22 @@ test('la copie complète sert un livre jamais ouvert et la racine sans réseau',
   w.setOffline(true); const before=w.requests.length;
   assert.equal(await (await w.navigate('livres/one.html')).text(),'book');
   assert.equal(await (await w.navigate('')).text(),'home');
-  assert.equal(w.requests.length,before);
+  assert.equal(w.requests.length,before+2);
+});
+
+test('un lecteur publié plus récent est servi en ligne malgré une ancienne copie hors connexion',async()=>{
+  const w=worker(); await w.send('SYNC');
+  w.setAsset('livres/one.html','reader with two pages');
+  w.setAsset('index.html','updated account menu');
+  assert.equal(await (await w.navigate('livres/one.html')).text(),'reader with two pages');
+  assert.equal(await (await w.navigate('')).text(),'updated account menu');
+  w.setOffline(true);
+  assert.equal(await (await w.navigate('livres/one.html')).text(),'book');
+});
+
+test('une ressource indisponible sur le serveur conserve le repli sur la copie complète',async()=>{
+  const w=worker(); await w.send('SYNC');w.removeAsset('livres/one.html');
+  assert.equal(await (await w.navigate('livres/one.html')).text(),'book');
 });
 test('une erreur réseau ne remplace pas la copie précédente',async()=>{
   const w=worker(); const initial=(await w.send('SYNC')).state;
