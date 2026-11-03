@@ -52,7 +52,7 @@ La progression et la position de lecture sont conservées localement, par livre 
 
 Ces données restent sur l’appareil et disparaissent si le stockage du site est effacé. Les nouveaux livres sont inclus dans le manifeste lors de `python build_library.py`. Tests du cache et des mises à jour : `node --test test-offline.mjs`.
 
-Une synchronisation personnelle Cloudflare Workers + D1 est préparée dans `backend/` et documentée dans `backend/README.md`. Elle fusionne les progressions et les remises à zéro entre appareils, avec connexion par identifiant et mot de passe. Elle reste inactive tant que l’URL du Worker n’est pas configurée dans `sync-config.js`. Les secrets et fichiers privés sont exclus de Git ; la copie hors connexion n’inclut pas la page locale de préparation des identifiants.
+La synchronisation Cloudflare Workers + D1 est déployée et documentée dans `backend/README.md`. Elle fusionne les progressions et les remises à zéro entre appareils, avec connexion par identifiant et mot de passe. Son URL publique est configurée dans `sync-config.js`. Créer un compte depuis l’accueil, puis utiliser le même compte sur chaque appareil. Les secrets et fichiers privés sont exclus de Git et de la copie hors connexion. Après une mise à jour, le bouton de resynchronisation de l’accueil renouvelle la copie locale du site.
 
 ## Progression par chapitre
 

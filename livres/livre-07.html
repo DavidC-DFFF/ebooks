@@ -818,7 +818,7 @@ function updateChapterProgress(record = false) {
   return percent;
 }
 // URL publique du Worker ; aucun identifiant ni secret dans ce fichier.
-globalThis.ebooksSyncConfig = { url: '' };
+globalThis.ebooksSyncConfig = { url: 'https://ebooks-reading.chessa-david.workers.dev' };
 // Fusion déterministe : maximum par chapitre, curseur récent, remise à zéro prioritaire.
 (() => {
   const zero = [0, ''];

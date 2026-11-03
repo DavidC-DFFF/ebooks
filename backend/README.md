@@ -1,6 +1,8 @@
 # Comptes et synchronisation des lectures
 
-Le site reste sur GitHub Pages. Cloudflare Workers et D1 gèrent les comptes, les sessions et les lectures. La base D1 `ebooks-reading` est créée ; le Worker reste à déployer. L’URL de production dans `sync-config.js` est encore vide.
+Le site reste sur GitHub Pages. Cloudflare Workers et D1 gèrent les comptes, les sessions et les lectures. Le Worker est déployé sur `https://ebooks-reading.chessa-david.workers.dev`, avec la base D1 `ebooks-reading` et le secret `AUTH_PEPPER`. L’URL publique est configurée dans `sync-config.js` et intégrée aux lecteurs générés.
+
+Le 3 novembre 2026, une vérification sur Cloudflare a validé l’inscription, la connexion, la récupération d’une progression depuis une seconde session, l’isolation entre comptes, le refus d’une révision périmée et la révocation des sessions. Les comptes temporaires de cette vérification sont supprimés après le test. Les 21 tests locaux passent également. La vérification réelle ne remplace pas un essai sur deux appareils physiques.
 
 ## Parcours utilisateur
 
@@ -24,7 +26,7 @@ Les tentatives sont limitées par adresse réseau et identifiant sur une fenêtr
 
 ## Mise en ligne
 
-1. Autoriser Wrangler sur le compte Cloudflare ou utiliser le tableau de bord.
+1. Autoriser Wrangler sur le compte Cloudflare ou utiliser le tableau de bord. Pour limiter les permissions : `npx wrangler login --device --use-keyring --scopes account:read user:read workers:write workers_scripts:write d1:write`.
 2. Depuis `backend`, appliquer `npx wrangler d1 execute ebooks-reading --remote --file=schema.sql`. Le schéma ajoute les tables sans supprimer les données existantes.
 3. Créer un pepper aléatoire de 32 octets ou plus et le conserver comme secret `AUTH_PEPPER`, hors de Git et des journaux. Préserver ce secret : le changer rend les mots de passe existants invérifiables.
 4. Déployer `accounts.mjs` avec la liaison D1 `DB` définie dans `wrangler.jsonc`. Vérifier les opérations d’inscription et de connexion sur Workers Free, notamment leur consommation CPU.
