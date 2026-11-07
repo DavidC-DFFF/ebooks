@@ -1,5 +1,35 @@
 [
-  {"id":"marx-capital-livre-1","title":"Le Capital — Livre I","author":"Karl Marx","epub":"sources_marx/Le capital - Karl Marx .epub","url":"../sources_marx/Le capital - Karl Marx .epub","source_label":"EPUB fourni par David — Le Capital, Livre I"},
-  {"id":"marx-capital-populaire","title":"Le Capital — Édition populaire","author":"Karl Marx","epub":"sources_marx/Le capital édition populaire - Karl Marx .epub","url":"../sources_marx/Le capital édition populaire - Karl Marx .epub","source_label":"EPUB fourni par David — résumés et extraits de Julien Borchardt, texte français de J.-P. Samson"},
-  {"id":"hayek-route-servitude","title":"La Route de la servitude","author":"Friedrich Hayek","epub":"sources_autre/La route de la servitude - Friedrich Hayek.epub","url":"../sources_autre/La route de la servitude - Friedrich Hayek.epub","source_label":"EPUB fourni par David — Friedrich Hayek, La Route de la servitude"}
+  {
+    "id": "marx-capital-livre-1",
+    "title": "Le Capital — Livre I",
+    "author": "Karl Marx",
+    "epub": "sources_marx/Le capital - Karl Marx .epub",
+    "url": "../sources_marx/Le capital - Karl Marx .epub",
+    "source_label": "EPUB fourni par David — Le Capital, Livre I"
+  },
+  {
+    "id": "marx-capital-populaire",
+    "title": "Le Capital — Édition populaire",
+    "author": "Karl Marx",
+    "epub": "sources_marx/Le capital édition populaire - Karl Marx .epub",
+    "url": "../sources_marx/Le capital édition populaire - Karl Marx .epub",
+    "source_label": "EPUB fourni par David — résumés et extraits de Julien Borchardt, texte français de J.-P. Samson"
+  },
+  {
+    "id": "hayek-route-servitude",
+    "title": "La Route de la servitude",
+    "author": "Friedrich Hayek",
+    "epub": "sources_autre/La route de la servitude - Friedrich Hayek.epub",
+    "url": "../sources_autre/La route de la servitude - Friedrich Hayek.epub",
+    "source_label": "EPUB fourni par David — Friedrich Hayek, La Route de la servitude"
+  },
+  {
+    "id": "salin-vrai-liberalisme",
+    "title": "Le Vrai Libéralisme",
+    "author": "Pascal Salin",
+    "epub": "sources_autre/Le Vrai Libéralisme - Pascal Salin.epub",
+    "url": "../sources_autre/Le Vrai Libéralisme - Pascal Salin.epub",
+    "source_label": "EPUB fourni par David — Pascal Salin, Le Vrai Libéralisme",
+    "section_heading_xpath": "self::p[@class='calibre_6'][normalize-space(.)='Introduction' or starts-with(normalize-space(.),'CHAPITRE ') or normalize-space(.)='Notes' or normalize-space(.)='Table of Contents']"
+  }
 ]

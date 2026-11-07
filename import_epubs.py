@@ -41,7 +41,7 @@ def import_epub(book, root):
             if body is None: continue
             for node in list(body.xpath('.//script|.//style|.//link|.//iframe|.//object')): node.drop_tree()
             for node in list(body.xpath('.//div[not(@id) and not(@name)]')): node.drop_tag()
-            source_text.append(normal(body.text_content()))
+            source_text.append(normal(' '.join([body.text or ''] + [node.text_content() for node in body if isinstance(node.tag,str)])))
             if body.text and body.text.strip():
                 if current is None: current=new_section('Présentation et préfaces')
                 paragraph=html.Element('p'); paragraph.text=body.text; current['element'].append(paragraph)
@@ -53,10 +53,16 @@ def import_epub(book, root):
                 toc_title=next((titles[(filename,i)] for i in node_ids if (filename,i) in titles),None)
                 is_note=bool(re.match(r'ftn\d+',node.get('id','')))
                 heading=(node.tag in ('h1','h2') and bool(content)) or (toc_title and len(content)<350) or (content in labels and len(content)<350)
+                if book.get('section_heading_xpath'):
+                    heading=bool(node.xpath(book['section_heading_xpath']))
+                    toc_title=None
                 if current is None: current=new_section('Présentation et préfaces')
                 if heading:
                     # Ne pas conserver une section initiale vide.
                     title=toc_title or content
+                    if book.get('section_heading_xpath') and content.startswith('CHAPITRE '):
+                        subtitle=node.getnext()
+                        if subtitle is not None: title += ' — ' + normal(subtitle.text_content())
                     if len(current['element'])==0: current['title']=title
                     else: current=new_section(title)
                     notes=False
@@ -83,7 +89,7 @@ def import_epub(book, root):
                     if element.tag=='h1': element.tag='h2'
                 current['element'].append(node)
         # Fidélité textuelle contrôlée avant l'ajout de titres de navigation.
-        assert normal(' '.join(source_text))==normal(' '.join(s['element'].text_content() for s in sections)),book['id']
+        assert normal(' '.join(source_text))==normal(' '.join(node.text_content() for s in sections for node in s['element'])),book['id']
         for section in sections:
             section['original']=normal(section['element'].text_content())
             for link in section['element'].xpath('.//a[@href]'):

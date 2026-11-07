@@ -352,6 +352,14 @@
     "group": "Friedrich Hayek"
   },
   {
+    "id": "salin-vrai-liberalisme",
+    "title": "Le Vrai Libéralisme",
+    "author": "Pascal Salin",
+    "url": "../sources_autre/Le Vrai Libéralisme - Pascal Salin.epub",
+    "output": "livres/salin-vrai-liberalisme.html",
+    "group": "Pascal Salin"
+  },
+  {
     "id": "robinson-essai-marxienne",
     "title": "Essai sur l’économie marxienne",
     "author": "Joan Robinson",

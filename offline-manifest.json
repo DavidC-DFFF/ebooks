@@ -1,9 +1,9 @@
 {
-  "books": 45,
+  "books": 46,
   "files": [
     {
       "path": "index.html",
-      "sha256": "dade8e29574ac1ada656923e9bc51a17d91dbfff97188b8ec8ef532677144538"
+      "sha256": "fd9204468cd076cc42916426a82f57ec801ac2c3a0c384ccb0752e1d0e64c095"
     },
     {
       "path": "offline-client.js",
@@ -15,7 +15,7 @@
     },
     {
       "path": "catalogue-livres.json",
-      "sha256": "f950d0b664ed3bf6421aecddb46d2618d0f23c90de8bfe8c56762afaa3d7bcc7"
+      "sha256": "e288b1d0b375d2b88c546e9e58722d85443443c81c212ac7106d12c05e7bb7eb"
     },
     {
       "path": "sync-config.js",
@@ -35,7 +35,7 @@
     },
     {
       "path": "sync-books.json",
-      "sha256": "fb543604c446363d8241be359d891bc47a245ea0e4f75815372ac4ceb811e0ee"
+      "sha256": "2905b3e37dc87daad61c34270ff5943791d7b8614f12d5a50b2b3622dc8af182"
     },
     {
       "path": "livres/livre-01.html",
@@ -212,6 +212,10 @@
     {
       "path": "livres/hayek-route-servitude.html",
       "sha256": "592c0db9eeff1f312fe3438ccb7a0aeb03714c9f46304c2c2af7b62c16b0c946"
+    },
+    {
+      "path": "livres/salin-vrai-liberalisme.html",
+      "sha256": "75fd66b29c53ffacb631bfdb35b7ae20dd7b423d3965d3d1471e37778516cbac"
     },
     {
       "path": "livres/robinson-essai-marxienne.html",
